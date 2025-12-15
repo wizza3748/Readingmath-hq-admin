@@ -2,6 +2,8 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import {
   Card,
   CardContent,
@@ -81,7 +83,7 @@ function BasicInfo({ institution }: { institution: Institution }) {
     return timestamp.toDate().toLocaleString("ko-KR");
   };
 
-  const institutionCode = id.substring(0, 6);
+  const institutionCode = id ? id.substring(0, 6).toUpperCase() : "";
 
   return (
     <Card>
@@ -122,8 +124,21 @@ export default function InstitutionDetailLayout({
   params: { institutionId: string };
 }) {
   const firestore = useFirestore();
+  const router = useRouter();
+  const pathname = usePathname();
   const [institution, setInstitution] = React.useState<Institution | null>(null);
   const [loading, setLoading] = React.useState(true);
+  
+  const segments = pathname.split('/');
+  const activeTab = segments[segments.length -1] === params.institutionId ? 'info' : segments[segments.length -1];
+  
+  const handleTabChange = (value: string) => {
+    if (value === 'info') {
+      router.push(`/institutions/${params.institutionId}`);
+    } else {
+      router.push(`/institutions/${params.institutionId}/${value}`);
+    }
+  };
   
   React.useEffect(() => {
     if (firestore && params.institutionId) {
@@ -136,12 +151,20 @@ export default function InstitutionDetailLayout({
     }
   }, [firestore, params.institutionId]);
 
+  const childrenWithProps = React.Children.map(children, child => {
+    if (React.isValidElement(child)) {
+      // @ts-ignore
+      return React.cloneElement(child, { institution, loading });
+    }
+    return child;
+  });
+
   return (
     <div className="p-4 sm:p-6 lg:p-8 space-y-6">
       {loading ? <BasicInfoSkeleton /> : institution ? <BasicInfo institution={institution} /> : <div>기관 정보를 찾을 수 없습니다.</div>}
 
-      <Tabs defaultValue="info" className="w-full">
-        <div className="sticky top-16 bg-background z-10">
+      <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
+        <div className="sticky top-16 bg-background z-10 py-2">
             <TabsList className="grid w-full grid-cols-7">
                 <TabsTrigger value="info">기관정보</TabsTrigger>
                 <TabsTrigger value="students">학생목록</TabsTrigger>
@@ -154,7 +177,7 @@ export default function InstitutionDetailLayout({
         </div>
         <div className="mt-6">
           <TabsContent value="info">
-            {children}
+            {childrenWithProps}
           </TabsContent>
           <TabsContent value="students">
             <Card>
@@ -197,5 +220,3 @@ export default function InstitutionDetailLayout({
     </div>
   );
 }
-
-    

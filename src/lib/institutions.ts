@@ -1,3 +1,4 @@
+
 'use client';
 import {
   collection,
@@ -12,6 +13,8 @@ import {
   getDocs,
   doc,
   getDoc,
+  updateDoc,
+  deleteDoc,
 } from 'firebase/firestore';
 
 export type Institution = {
@@ -52,7 +55,7 @@ export type Institution = {
 // A helper function to remove commas from a string
 const parseCurrency = (value: string | undefined): number => {
     if (!value) return 0;
-    const parsed = parseInt(value.replace(/[^0-9]/g, ''), 10);
+    const parsed = parseInt(String(value).replace(/[^0-9]/g, ''), 10);
     return isNaN(parsed) ? 0 : parsed;
 };
 
@@ -94,6 +97,54 @@ export async function createInstitution(db: Firestore, institutionData: any) {
     throw new Error('Failed to create institution');
   }
 }
+
+// This function updates an existing institution document in Firestore.
+export async function updateInstitution(db: Firestore, id: string, institutionData: any) {
+    try {
+        const docRef = doc(db, "institutions", id);
+        const { lastContractDate, ...dataToSave } = institutionData;
+
+        const docData: any = {
+            ...dataToSave,
+            fees: {
+                minFee: parseCurrency(institutionData.minFee),
+                perStudentFee: parseCurrency(institutionData.perStudentFee),
+                perStudentFee1: parseCurrency(institutionData.perStudentFee1),
+                perStudentFee2: parseCurrency(institutionData.perStudentFee2),
+            },
+            updatedAt: serverTimestamp(),
+        };
+
+        if (lastContractDate && lastContractDate instanceof Date) {
+            docData.lastContractDate = Timestamp.fromDate(lastContractDate);
+        } else if (!lastContractDate) {
+            docData.lastContractDate = null;
+        }
+
+        if (docData.attachment === undefined) {
+            delete docData.attachment;
+        }
+
+        await updateDoc(docRef, docData);
+        console.log('Document updated with ID: ', id);
+    } catch (e) {
+        console.error('Error updating document: ', e);
+        throw new Error('Failed to update institution');
+    }
+}
+
+// This function deletes an institution document from Firestore.
+export async function deleteInstitution(db: Firestore, id: string) {
+    try {
+        const docRef = doc(db, "institutions", id);
+        await deleteDoc(docRef);
+        console.log('Document deleted with ID: ', id);
+    } catch (e) {
+        console.error('Error deleting document: ', e);
+        throw new Error('Failed to delete institution');
+    }
+}
+
 
 // This function fetches all institutions from Firestore in real-time.
 export function getInstitutions(db: Firestore, callback: (institutions: Institution[]) => void) {
@@ -138,5 +189,3 @@ export async function checkLoginIdExists(db: Firestore, loginId: string): Promis
   const querySnapshot = await getDocs(q);
   return !querySnapshot.empty;
 }
-
-    
