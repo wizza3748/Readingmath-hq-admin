@@ -123,38 +123,35 @@ export default function InstitutionDetailLayout({
   children: React.ReactNode;
   params: { institutionId: string };
 }) {
-  const { firestore } = useFirebase();
+  const firebase = useFirebase();
   const router = useRouter();
   const pathname = usePathname();
   const [institution, setInstitution] = React.useState<Institution | null>(null);
   const [loading, setLoading] = React.useState(true);
   
+  const institutionId = params.institutionId;
   const segments = pathname.split('/');
-  const activeTab = segments[segments.length -1] === params.institutionId ? 'info' : segments[segments.length -1];
+  const activeTab = segments[segments.length -1] === institutionId ? 'info' : segments[segments.length -1];
   
   const handleTabChange = (value: string) => {
     if (value === 'info') {
-      router.push(`/institutions/${params.institutionId}`);
+      router.push(`/institutions/${institutionId}`);
     } else {
-      router.push(`/institutions/${params.institutionId}/${value}`);
+      router.push(`/institutions/${institutionId}/${value}`);
     }
   };
   
   React.useEffect(() => {
-    if (!firestore || !params.institutionId) {
-      // Keep loading if firestore is not available yet
-      setLoading(!firestore);
-      return;
-    };
+    if (!firebase?.firestore || !institutionId) return;
 
     setLoading(true);
-    const unsubscribe = getInstitution(firestore, params.institutionId, (data) => {
+    const unsubscribe = getInstitution(firebase.firestore, institutionId, (data) => {
       setInstitution(data);
       setLoading(false);
     });
 
     return () => unsubscribe();
-  }, [firestore, params.institutionId]);
+  }, [firebase, institutionId]);
 
   const childrenWithProps = React.Children.map(children, child => {
     if (React.isValidElement(child)) {
