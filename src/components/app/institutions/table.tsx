@@ -21,9 +21,6 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import {
   Table,
@@ -408,13 +405,7 @@ export function InstitutionsTable() {
   return (
     <div className="w-full space-y-6">
       <Card>
-        <CardHeader>
-          <CardTitle className="font-headline">기관 검색</CardTitle>
-          <CardDescription>
-            다양한 조건으로 기관을 검색할 수 있습니다.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
+        <CardContent className="pt-6">
           <SearchFilters table={table} />
         </CardContent>
       </Card>
