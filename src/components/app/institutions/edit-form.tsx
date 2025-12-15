@@ -189,30 +189,55 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
   
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-        name: '',
-        ownerName: '',
-        ownerContact: '',
-        email: '',
-        branch1: '',
-        branch2: '',
-        everydayKoreanName: '',
-        dokdoName: '',
-        zipCode: '',
-        address: '',
-        addressDetail: '',
-        managerName: '',
-        managerContact: '',
-        lastContractDate: null,
-        serviceStatus: '정상',
-        franchiseType: '가맹전',
-        serviceType: '수학+과학',
-        minFee: '0',
-        perStudentFee: '',
-        perStudentFee1: '',
-        perStudentFee2: '',
-        memo: '',
-      },
+    defaultValues: institution
+      ? {
+          name: institution.name || '',
+          ownerName: institution.ownerName || '',
+          ownerContact: institution.ownerContact || '',
+          email: institution.email || '',
+          branch1: institution.branch1 || '',
+          branch2: institution.branch2 || '',
+          everydayKoreanName: institution.everydayKoreanName || '',
+          dokdoName: institution.dokdoName || '',
+          zipCode: institution.address?.zipCode || '',
+          address: institution.address?.address || '',
+          addressDetail: institution.address?.addressDetail || '',
+          managerName: institution.managerName || '',
+          managerContact: institution.managerContact || '',
+          lastContractDate: institution.lastContractDate?.toDate() || null,
+          serviceStatus: institution.serviceStatus || '정상',
+          franchiseType: institution.franchiseType || '가맹전',
+          serviceType: institution.serviceType || '수학+과학',
+          minFee: formatCurrency(institution.fees?.minFee) || '0',
+          perStudentFee: formatCurrency(institution.fees?.perStudentFee) || '',
+          perStudentFee1: formatCurrency(institution.fees?.perStudentFee1) || '',
+          perStudentFee2: formatCurrency(institution.fees?.perStudentFee2) || '',
+          memo: institution.memo || '',
+        }
+      : {
+          name: '',
+          ownerName: '',
+          ownerContact: '',
+          email: '',
+          branch1: '',
+          branch2: '',
+          everydayKoreanName: '',
+          dokdoName: '',
+          zipCode: '',
+          address: '',
+          addressDetail: '',
+          managerName: '',
+          managerContact: '',
+          lastContractDate: null,
+          serviceStatus: '정상',
+          franchiseType: '가맹전',
+          serviceType: '수학+과학',
+          minFee: '0',
+          perStudentFee: '',
+          perStudentFee1: '',
+          perStudentFee2: '',
+          memo: '',
+        },
   });
 
   React.useEffect(() => {
@@ -961,6 +986,8 @@ export function InstitutionEditForm({ institution, loading }: { institution: Ins
 
     return <InstitutionEditFormContent institution={institution} />;
 }
+
+    
 
     
 
