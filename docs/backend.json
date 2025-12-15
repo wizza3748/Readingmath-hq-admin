@@ -1,0 +1,57 @@
+{
+  "entities": {
+    "Institution": {
+      "title": "Institution",
+      "description": "Represents an educational institution in the system.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Name of the institution." },
+        "ownerName": { "type": "string", "description": "Name of the owner." },
+        "loginId": { "type": "string", "description": "Login ID for the institution's account." },
+        "ownerContact": { "type": "string", "description": "Contact number of the owner." },
+        "email": { "type": "string", "format": "email", "description": "Email address of the institution." },
+        "branch1": { "type": "string", "description": "Primary branch." },
+        "branch2": { "type": "string", "description": "Secondary branch." },
+        "everydayKoreanName": { "type": "string", "description": "Name for the 'Everyday Korean' service." },
+        "dokdoName": { "type": "string", "description": "Name for the 'Dokdo' service." },
+        "address": {
+          "type": "object",
+          "properties": {
+            "zipCode": { "type": "string" },
+            "address": { "type": "string" },
+            "addressDetail": { "type": "string" }
+          }
+        },
+        "managerName": { "type": "string", "description": "Name of the manager." },
+        "managerContact": { "type": "string", "description": "Contact number of the manager." },
+        "attachmentUrl": { "type": "string", "description": "URL of the attachment file." },
+        "lastContractDate": { "type": "string", "format": "date", "description": "Date of the last contract renewal." },
+        "serviceStatus": { "type": "string", "enum": ["일시정지", "정상", "무료사용", "미납정지"] },
+        "franchiseType": { "type": "string", "enum": ["가맹전", "스탠다드", "슬림", "학교"] },
+        "serviceType": { "type": "string", "enum": ["수학+과학", "수학", "과학"] },
+        "fees": {
+          "type": "object",
+          "properties": {
+            "minFee": { "type": "number" },
+            "perStudentFee": { "type": "number" },
+            "perStudentFee1": { "type": "number" },
+            "perStudentFee2": { "type": "number" }
+          }
+        },
+        "memo": { "type": "string", "description": "Internal notes about the institution." },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "ownerName", "loginId", "ownerContact", "branch1", "serviceStatus", "serviceType", "fees"]
+    }
+  },
+  "auth": {
+    "providers": []
+  },
+  "firestore": {
+    "/institutions/{institutionId}": {
+      "schema": { "$ref": "#/entities/Institution" },
+      "description": "Stores information about each institution."
+    }
+  }
+}

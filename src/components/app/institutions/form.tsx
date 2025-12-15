@@ -15,7 +15,6 @@ import {
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -48,6 +47,9 @@ import {
 import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import React from "react";
+import { useFirestore } from "@/firebase";
+import { createInstitution } from "@/lib/institutions";
+
 
 const formSchema = z
   .object({
@@ -155,6 +157,7 @@ CurrencyInput.displayName = "CurrencyInput";
 export function InstitutionForm() {
   const router = useRouter();
   const { toast } = useToast();
+  const firestore = useFirestore();
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -167,13 +170,32 @@ export function InstitutionForm() {
   
   const serviceType = form.watch("serviceType");
 
-  const onSubmit = (data: FormValues) => {
-    console.log(data);
-    toast({
-      title: "저장되었습니다.",
-      description: `${data.name} 기관 정보가 성공적으로 등록되었습니다.`,
-    });
-    router.push("/institutions");
+  const onSubmit = async (data: FormValues) => {
+    if (!firestore) {
+      toast({
+        variant: "destructive",
+        title: "오류",
+        description: "데이터베이스에 연결할 수 없습니다.",
+      });
+      return;
+    }
+    
+    try {
+      const { passwordConfirm, ...institutionData } = data;
+      await createInstitution(firestore, institutionData);
+      toast({
+        title: "저장되었습니다.",
+        description: `${data.name} 기관 정보가 성공적으로 등록되었습니다.`,
+      });
+      router.push("/institutions");
+    } catch (error) {
+      console.error("Error creating institution:", error);
+      toast({
+        variant: "destructive",
+        title: "저장 실패",
+        description: "기관 정보 저장 중 오류가 발생했습니다.",
+      });
+    }
   };
 
   return (
