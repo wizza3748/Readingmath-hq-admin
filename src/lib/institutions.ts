@@ -15,7 +15,15 @@ import {
   getDoc,
   updateDoc,
   deleteDoc,
+  FieldValue,
 } from 'firebase/firestore';
+
+export type ServiceChangeReservation = {
+  effectiveDate: Timestamp;
+  serviceStatus: "일시정지" | "정상" | "무료사용" | "미납정지";
+  franchiseType: "가맹전" | "스탠다드" | "슬림" | "학교";
+  serviceType: "수학+과학" | "수학" | "과학";
+};
 
 export type Institution = {
   id: string;
@@ -51,6 +59,7 @@ export type Institution = {
   franchiseFeePaidAt?: Timestamp;
   trainingFeeAmount?: number;
   trainingFeePaidAt?: Timestamp;
+  serviceChangeReservation?: ServiceChangeReservation | null;
   createdAt: Timestamp;
   updatedAt: Timestamp;
 };
@@ -220,4 +229,38 @@ export async function checkLoginIdExists(db: Firestore, loginId: string): Promis
   const q = query(collection(db, "institutions"), where("loginId", "==", loginId));
   const querySnapshot = await getDocs(q);
   return !querySnapshot.empty;
+}
+
+// This function saves a service change reservation to Firestore.
+export async function updateServiceReservation(db: Firestore, id: string, reservation: Omit<ServiceChangeReservation, 'effectiveDate'> & { effectiveDate: Date }) {
+    try {
+        const docRef = doc(db, "institutions", id);
+        const reservationData = {
+            ...reservation,
+            effectiveDate: Timestamp.fromDate(reservation.effectiveDate),
+        };
+        await updateDoc(docRef, {
+            serviceChangeReservation: reservationData,
+            updatedAt: serverTimestamp(),
+        });
+        console.log('Service reservation updated for document ID: ', id);
+    } catch (e) {
+        console.error('Error updating service reservation: ', e);
+        throw new Error('Failed to update service reservation');
+    }
+}
+
+// This function cancels a service change reservation.
+export async function cancelServiceReservation(db: Firestore, id: string) {
+    try {
+        const docRef = doc(db, "institutions", id);
+        await updateDoc(docRef, {
+            serviceChangeReservation: null,
+            updatedAt: serverTimestamp(),
+        });
+        console.log('Service reservation cancelled for document ID: ', id);
+    } catch (e) {
+        console.error('Error cancelling service reservation: ', e);
+        throw new Error('Failed to cancel service reservation');
+    }
 }

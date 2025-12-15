@@ -39,6 +39,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Calendar as CalendarIcon, Info, Trash2, Upload } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
+import { ko } from "date-fns/locale";
 import {
   Tooltip,
   TooltipContent,
@@ -60,7 +61,7 @@ import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import React from "react";
 import { useFirestore } from "@/firebase";
-import { updateInstitution, deleteInstitution, type Institution, updateFeePayment } from "@/lib/institutions";
+import { updateInstitution, deleteInstitution, type Institution, updateFeePayment, cancelServiceReservation } from "@/lib/institutions";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ServiceChangeModal } from "./service-change-modal";
 
@@ -346,11 +347,32 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
     }
   };
   
+  const handleCancelReservation = async () => {
+    if (!firestore || !institution) return;
+    try {
+      await cancelServiceReservation(firestore, institution.id);
+      toast({
+        title: "예약 취소 완료",
+        description: "서비스 변경 예약이 취소되었습니다.",
+      });
+    } catch (error) {
+      console.error("Error cancelling reservation:", error);
+      toast({
+        variant: "destructive",
+        title: "예약 취소 실패",
+        description: "예약 취소 중 오류가 발생했습니다.",
+      });
+    }
+  };
+
   const formatDate = (timestamp: any) => {
     if (!timestamp) return null;
     const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
     return format(date, "yyyy-MM-dd HH:mm:ss");
   };
+
+  const reservation = institution?.serviceChangeReservation;
+  const currentValues = form.getValues();
 
   return (
     <Form {...form}>
@@ -535,7 +557,7 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
                           )}
                         >
                           {field.value ? (
-                            format(field.value, "PPP")
+                            format(field.value, "PPP", { locale: ko })
                           ) : (
                             <span>날짜를 선택하세요</span>
                           )}
@@ -621,7 +643,9 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="flex justify-start">
-              <ServiceChangeModal currentService={form.getValues()}>
+              <ServiceChangeModal 
+                institutionId={institution.id}
+                currentService={currentValues}>
                 <Button type="button" variant="outline">서비스 변경 예약</Button>
               </ServiceChangeModal>
             </div>
@@ -663,6 +687,49 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
                       </FormItem>
                     </RadioGroup>
                   </FormControl>
+                  {reservation && (
+                    <div className="mt-4 space-y-2 rounded-md border border-yellow-200 bg-yellow-50 p-3 text-sm text-yellow-800">
+                      {currentValues.serviceStatus !== reservation.serviceStatus && (
+                        <p>
+                          <strong>{format(reservation.effectiveDate.toDate(), "yyyy-MM-dd")}</strong> 기관상태{" "}
+                          <strong>'{reservation.serviceStatus}'</strong> 변경 예약
+                        </p>
+                      )}
+                      {currentValues.serviceType !== reservation.serviceType && (
+                         <p>
+                          <strong>{format(reservation.effectiveDate.toDate(), "yyyy-MM-dd")}</strong> 서비스 타입{" "}
+                          <strong>'{reservation.serviceType}'</strong> 변경 예약
+                        </p>
+                      )}
+                       {currentValues.franchiseType !== reservation.franchiseType && (
+                         <p>
+                          <strong>{format(reservation.effectiveDate.toDate(), "yyyy-MM-dd")}</strong> 가맹 타입{" "}
+                          <strong>'{reservation.franchiseType}'</strong> 변경 예약
+                        </p>
+                      )}
+                      <AlertDialog>
+                        <AlertDialogTrigger asChild>
+                           <Button variant="ghost" size="sm" className="h-auto px-2 py-1 text-xs text-red-600 hover:bg-red-100 hover:text-red-700">
+                            예약취소
+                          </Button>
+                        </AlertDialogTrigger>
+                        <AlertDialogContent>
+                          <AlertDialogHeader>
+                            <AlertDialogTitle>예약 취소</AlertDialogTitle>
+                            <AlertDialogDescription>
+                              서비스 변경 예약을 취소하시겠습니까?
+                            </AlertDialogDescription>
+                          </AlertDialogHeader>
+                          <AlertDialogFooter>
+                            <AlertDialogCancel>취소</AlertDialogCancel>
+                            <AlertDialogAction onClick={handleCancelReservation}>
+                              확인
+                            </AlertDialogAction>
+                          </AlertDialogFooter>
+                        </AlertDialogContent>
+                      </AlertDialog>
+                    </div>
+                  )}
                   <FormMessage />
                 </FormItem>
               )}
@@ -756,7 +823,7 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
                     />
                     <AlertDialog>
                       <AlertDialogTrigger asChild>
-                        <Button type="button" disabled={!!institution.franchiseFeePaidAt}>
+                        <Button type="button" disabled={!!institution.franchiseFeePaidAt || !franchiseFeeAmount}>
                           가맹비 입금 처리
                         </Button>
                       </AlertDialogTrigger>
@@ -793,7 +860,7 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
                     />
                     <AlertDialog>
                       <AlertDialogTrigger asChild>
-                        <Button type="button" disabled={!!institution.trainingFeePaidAt}>
+                        <Button type="button" disabled={!!institution.trainingFeePaidAt || !trainingFeeAmount}>
                           교육비 입금 처리
                         </Button>
                       </AlertDialogTrigger>

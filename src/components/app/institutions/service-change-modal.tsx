@@ -35,6 +35,9 @@ import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { ko } from "date-fns/locale";
 import { useToast } from "@/hooks/use-toast";
+import { useFirestore } from "@/firebase";
+import { updateServiceReservation } from "@/lib/institutions";
+
 
 const formSchema = z.object({
   effectiveDate: z.date({
@@ -49,9 +52,11 @@ type FormValues = z.infer<typeof formSchema>;
 
 export function ServiceChangeModal({
   children,
+  institutionId,
   currentService,
 }: {
   children: React.ReactNode;
+  institutionId: string;
   currentService: {
     serviceStatus: "일시정지" | "정상" | "무료사용" | "미납정지";
     franchiseType?: "가맹전" | "스탠다드" | "슬림" | "학교";
@@ -59,8 +64,8 @@ export function ServiceChangeModal({
   };
 }) {
   const { toast } = useToast();
+  const firestore = useFirestore();
   const [open, setOpen] = React.useState(false);
-  const [calendarOpen, setCalendarOpen] = React.useState(false);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -72,13 +77,38 @@ export function ServiceChangeModal({
     },
   });
 
-  const onSubmit = (data: FormValues) => {
-    console.log("Service change reservation:", data);
-    toast({
-      title: "서비스 변경 예약 완료",
-      description: `${format(data.effectiveDate, "yyyy-MM-dd")}부터 서비스가 변경됩니다.`,
-    });
-    setOpen(false);
+  React.useEffect(() => {
+    if (open) {
+      form.reset({
+        effectiveDate: undefined,
+        serviceStatus: currentService.serviceStatus,
+        franchiseType: currentService.franchiseType || "가맹전",
+        serviceType: currentService.serviceType,
+      });
+    }
+  }, [open, currentService, form]);
+
+
+  const onSubmit = async (data: FormValues) => {
+    if (!firestore) {
+      toast({ variant: "destructive", title: "오류", description: "데이터베이스에 연결할 수 없습니다." });
+      return;
+    }
+    try {
+      await updateServiceReservation(firestore, institutionId, data);
+      toast({
+        title: "서비스 변경 예약 완료",
+        description: `${format(data.effectiveDate, "yyyy-MM-dd")}부터 서비스가 변경됩니다.`,
+      });
+      setOpen(false);
+    } catch (error) {
+      console.error("Error updating service reservation:", error);
+      toast({
+        variant: "destructive",
+        title: "예약 실패",
+        description: "서비스 변경 예약 중 오류가 발생했습니다.",
+      });
+    }
   };
   
   const tomorrow = new Date();
@@ -99,7 +129,7 @@ export function ServiceChangeModal({
               render={({ field }) => (
                 <FormItem className="flex flex-col">
                   <FormLabel>변경 적용일 *</FormLabel>
-                   <Popover open={calendarOpen} onOpenChange={setCalendarOpen}>
+                   <Popover>
                     <PopoverTrigger asChild>
                       <FormControl>
                         <Button
@@ -122,10 +152,7 @@ export function ServiceChangeModal({
                       <Calendar
                         mode="single"
                         selected={field.value}
-                        onSelect={(date) => {
-                          field.onChange(date)
-                          setCalendarOpen(false)
-                        }}
+                        onSelect={field.onChange}
                         disabled={(date) => date < new Date(new Date().setHours(0,0,0,0))}
                         initialFocus
                       />

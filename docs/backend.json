@@ -44,6 +44,16 @@
         "franchiseFeePaidAt": { "type": "string", "format": "date-time", "description": "Timestamp when the franchise fee was paid." },
         "trainingFeeAmount": { "type": "number", "description": "The amount paid for the training fee." },
         "trainingFeePaidAt": { "type": "string", "format": "date-time", "description": "Timestamp when the training fee was paid." },
+        "serviceChangeReservation": {
+          "type": "object",
+          "description": "Scheduled service change for the institution.",
+          "properties": {
+            "effectiveDate": { "type": "string", "format": "date" },
+            "serviceStatus": { "type": "string", "enum": ["일시정지", "정상", "무료사용", "미납정지"] },
+            "franchiseType": { "type": "string", "enum": ["가맹전", "스탠다드", "슬림", "학교"] },
+            "serviceType": { "type": "string", "enum": ["수학+과학", "수학", "과학"] }
+          }
+        },
         "createdAt": { "type": "string", "format": "date-time" },
         "updatedAt": { "type": "string", "format": "date-time" }
       },
