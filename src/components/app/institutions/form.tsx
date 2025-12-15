@@ -51,6 +51,11 @@ import { useFirebase, useFirestore } from "@/firebase";
 import { createInstitution, checkLoginIdExists } from "@/lib/institutions";
 import { Skeleton } from "@/components/ui/skeleton";
 
+declare global {
+  interface Window {
+    daum: any;
+  }
+}
 
 const formSchema = z
   .object({
@@ -230,6 +235,48 @@ function InstitutionFormContent() {
       setIsLoginIdAvailable(true);
     }
     setLoginIdChecked(currentLoginId);
+  };
+  
+  const handleAddressSearch = () => {
+    if (window.daum && window.daum.Postcode) {
+      new window.daum.Postcode({
+        oncomplete: function (data: any) {
+          let addr = ""; // 주소 변수
+          let extraAddr = ""; // 참고항목 변수
+
+          // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+          if (data.userSelectedType === "R") {
+            // 사용자가 도로명 주소를 선택했을 경우
+            addr = data.roadAddress;
+          } else {
+            // 사용자가 지번 주소를 선택했을 경우(J)
+            addr = data.jibunAddress;
+          }
+
+          // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+          if (data.userSelectedType === "R") {
+            if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
+              extraAddr += data.bname;
+            }
+            if (data.buildingName !== "" && data.apartment === "Y") {
+              extraAddr +=
+                extraAddr !== "" ? ", " + data.buildingName : data.buildingName;
+            }
+            if (extraAddr !== "") {
+              extraAddr = " (" + extraAddr + ")";
+            }
+            // 조합된 참고항목을 해당 필드에 넣는다. 여기서는 address 필드에 추가.
+            // addr += extraAddr;
+          }
+
+          // 우편번호와 주소 정보를 해당 필드에 넣는다.
+          form.setValue("zipCode", data.zonecode);
+          form.setValue("address", addr);
+          // 커서를 상세주소 필드로 이동한다.
+          form.setFocus("addressDetail");
+        },
+      }).open();
+    }
   };
 
 
@@ -449,33 +496,35 @@ function InstitutionFormContent() {
                 </FormItem>
               )}
             />
+            <div className="md:col-span-2">
+              <FormLabel>주소</FormLabel>
+              <div className="flex gap-2 mt-2">
+                <FormField
+                  control={form.control}
+                  name="zipCode"
+                  render={({ field }) => (
+                    <FormItem className="w-1/3">
+                      <FormControl>
+                        <Input placeholder="우편번호" {...field} readOnly />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+                <Button type="button" variant="outline" onClick={handleAddressSearch}>주소검색</Button>
+              </div>
+            </div>
             <FormField
-              control={form.control}
-              name="zipCode"
-              render={({ field }) => (
-                <FormItem className="md:col-span-2">
-                  <FormLabel>주소</FormLabel>
-                  <div className="flex gap-2">
-                     <FormControl>
-                        <Input placeholder="우편번호" {...field} />
-                     </FormControl>
-                    <Button type="button" variant="outline">주소검색</Button>
-                  </div>
-                </FormItem>
-              )}
-            />
-             <FormField
               control={form.control}
               name="address"
               render={({ field }) => (
                 <FormItem className="md:col-span-2">
                   <FormControl>
-                    <Input placeholder="기본 주소" {...field} />
+                    <Input placeholder="기본 주소" {...field} readOnly />
                   </FormControl>
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="addressDetail"
               render={({ field }) => (

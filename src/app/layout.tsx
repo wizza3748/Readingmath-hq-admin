@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { AppSidebar } from "@/components/app/sidebar";
 import { Header } from "@/components/app/header";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
@@ -35,6 +36,7 @@ export default function RootLayout({
           </SidebarProvider>
           <Toaster />
         </FirebaseClientProvider>
+        <Script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" strategy="afterInteractive" />
       </body>
     </html>
   );
