@@ -53,7 +53,7 @@ export type Institution = {
 
 
 // A helper function to remove commas from a string
-const parseCurrency = (value: string | undefined): number => {
+const parseCurrency = (value: string | undefined | null): number => {
     if (!value) return 0;
     const parsed = parseInt(String(value).replace(/[^0-9]/g, ''), 10);
     return isNaN(parsed) ? 0 : parsed;
@@ -118,19 +118,19 @@ export async function updateInstitution(db: Firestore, id: string, institutionDa
         if (lastContractDate && lastContractDate instanceof Date) {
             docData.lastContractDate = Timestamp.fromDate(lastContractDate);
         } else if (lastContractDate === null || lastContractDate === undefined) {
-             // Explicitly handle null/undefined if you want to remove the field
             docData.lastContractDate = null;
-        } else {
-            // This handles cases where the date might not be a Date object but is still present
-            const date = new Date(lastContractDate);
-            if (!isNaN(date.getTime())) {
-              docData.lastContractDate = Timestamp.fromDate(date);
-            }
         }
 
         if (docData.attachment === undefined) {
             delete docData.attachment;
         }
+        
+        // Remove empty strings for optional fields to avoid storing them
+        Object.keys(docData).forEach(key => {
+            if (docData[key] === '') {
+                delete docData[key];
+            }
+        });
 
         await updateDoc(docRef, docData);
         console.log('Document updated with ID: ', id);

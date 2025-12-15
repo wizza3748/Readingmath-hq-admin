@@ -97,7 +97,7 @@ const formSchema = z
     managerName: z.string().optional(),
     managerContact: z.string().optional(),
     attachment: z.any().optional(),
-    lastContractDate: z.date().optional(),
+    lastContractDate: z.date().optional().nullable(),
 
     // 서비스 정보
     serviceStatus: z.enum(["일시정지", "정상", "무료사용", "미납정지"]),
@@ -142,7 +142,7 @@ const formSchema = z
   
 type FormValues = z.infer<typeof formSchema>;
 
-const formatCurrency = (value: string | number | undefined) => {
+const formatCurrency = (value: string | number | undefined | null) => {
   if (value === undefined || value === null) return "";
   const stringValue = String(value);
   const numberValue = parseInt(stringValue.replace(/[^0-9]/g, ""), 10);
@@ -152,26 +152,33 @@ const formatCurrency = (value: string | number | undefined) => {
 
 
 const CurrencyInput = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement> & { suffix?: string }>(
-  ({ value, onChange, suffix = "원", ...props }, ref) => {
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      const { value } = e.target;
-      const numericValue = value.replace(/[^0-9]/g, "");
-      const formattedValue = formatCurrency(numericValue);
-      
-      const event = {
-        ...e,
-        target: { ...e.target, value: formattedValue }
-      };
+    ({ value, onChange, suffix = "원", ...props }, ref) => {
+        const [internalValue, setInternalValue] = React.useState(value);
 
-      if (onChange) {
-        onChange(event as React.ChangeEvent<HTMLInputElement>);
-      }
-    };
-    
-    const displayValue = value ? `${value}${suffix}` : '';
+        React.useEffect(() => {
+            setInternalValue(value);
+        }, [value]);
 
-    return <Input value={displayValue} onChange={handleChange} {...props} ref={ref} />;
-  }
+        const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+            const { value } = e.target;
+            const numericValue = value.replace(/[^0-9]/g, "");
+            const formattedValue = numericValue ? parseInt(numericValue, 10).toLocaleString() : '';
+            
+            setInternalValue(formattedValue);
+
+            if (onChange) {
+                const event = {
+                    ...e,
+                    target: { ...e.target, value: formattedValue }
+                };
+                onChange(event as React.ChangeEvent<HTMLInputElement>);
+            }
+        };
+
+        const displayValue = internalValue ? `${internalValue}${suffix}` : '';
+
+        return <Input value={displayValue} onChange={handleChange} {...props} ref={ref} />;
+    }
 );
 CurrencyInput.displayName = "CurrencyInput";
 
@@ -202,8 +209,8 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
         addressDetail: institution.address?.addressDetail || "",
         managerName: institution.managerName || "",
         managerContact: institution.managerContact || "",
-        lastContractDate: institution.lastContractDate?.toDate(),
-        serviceStatus: institution.serviceStatus || "일시정지",
+        lastContractDate: institution.lastContractDate?.toDate() || null,
+        serviceStatus: institution.serviceStatus || "정상",
         franchiseType: institution.franchiseType || "가맹전",
         serviceType: institution.serviceType || "수학+과학",
         minFee: formatCurrency(fees.minFee),
@@ -462,7 +469,7 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
                     <PopoverContent className="w-auto p-0" align="start">
                       <Calendar
                         mode="single"
-                        selected={field.value}
+                        selected={field.value ?? undefined}
                         onSelect={field.onChange}
                         initialFocus
                       />
@@ -505,7 +512,7 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
                   <FormLabel>지사2</FormLabel>
                    <Select
                     onValueChange={field.onChange}
-                    value={field.value}
+                    value={field.value || ""}
                     disabled={!selectedBranch1}
                   >
                     <FormControl>
@@ -533,6 +540,9 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
             <CardTitle>서비스 정보</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
+            <div className="flex justify-start">
+                <Button type="button" variant="outline" disabled>서비스 변경 예약</Button>
+            </div>
             <FormField
               control={form.control}
               name="serviceStatus"
@@ -625,7 +635,7 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
                   <FormLabel>서비스 타입 *</FormLabel>
                   <FormControl>
                     <RadioGroup
-                      onValueChange={field.onChange}
+                      onValuechange={field.onChange}
                       value={field.value}
                       className="flex items-center space-x-4"
                     >
@@ -653,6 +663,20 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
               )}
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <FormItem>
+                  <FormLabel>가맹비</FormLabel>
+                  <div className="flex gap-2">
+                    <Input type="number" placeholder="가맹비 금액 입력" disabled/>
+                    <Button type="button" disabled>가맹비 입금 처리</Button>
+                  </div>
+                </FormItem>
+                 <FormItem>
+                  <FormLabel>교육비</FormLabel>
+                  <div className="flex gap-2">
+                    <Input type="number" placeholder="교육비 금액 입력" disabled/>
+                    <Button type="button" disabled>교육비 입금 처리</Button>
+                  </div>
+                </FormItem>
                 <FormField
                   control={form.control}
                   name="minFee"
@@ -663,7 +687,7 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
                         <TooltipProvider>
                            <Tooltip>
                               <TooltipTrigger asChild>
-                                <Button variant="ghost" size="icon" className="h-5 w-5 ml-1">
+                                <Button variant="ghost" size="icon" className="h-5 w-5 ml-1 cursor-help">
                                     <Info className="h-4 w-4 text-muted-foreground" />
                                 </Button>
                               </TooltipTrigger>
@@ -681,6 +705,7 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
                                 <CurrencyInput 
                                     value={value}
                                     onChange={onChange}
+                                    placeholder="최소 이용 금액이 없는 경우 0을 반드시 입력해 주세요"
                                 />
                             )}
                          />
@@ -831,13 +856,13 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
 
 function FormSkeleton() {
   return (
-    <div className="space-y-8 mt-6">
+    <div className="space-y-8">
         <Card>
           <CardHeader>
             <CardTitle>기관 정보</CardTitle>
           </CardHeader>
           <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {Array.from({length: 12}).map((_, i) => (
+            {Array.from({length: 14}).map((_, i) => (
                 <div key={i} className="space-y-2">
                     <Skeleton className="h-4 w-20" />
                     <Skeleton className="h-10 w-full" />
@@ -851,13 +876,30 @@ function FormSkeleton() {
           </CardHeader>
           <CardContent className="space-y-6">
              <div className="space-y-2">
-                <Skeleton className="h-4 w-20" />
-                <Skeleton className="h-10 w-full" />
+                <Skeleton className="h-10 w-40" />
             </div>
              <div className="space-y-2">
                 <Skeleton className="h-4 w-20" />
-                <Skeleton className="h-10 w-full" />
+                <div className="flex gap-4"><Skeleton className="h-10 w-24" /><Skeleton className="h-10 w-24" /></div>
             </div>
+             <div className="space-y-2">
+                <Skeleton className="h-4 w-20" />
+                <div className="flex gap-4"><Skeleton className="h-10 w-24" /><Skeleton className="h-10 w-24" /></div>
+            </div>
+             <div className="space-y-2">
+                <Skeleton className="h-4 w-20" />
+                <div className="flex gap-4"><Skeleton className="h-10 w-24" /><Skeleton className="h-10 w-24" /></div>
+            </div>
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                    <Skeleton className="h-4 w-20" />
+                    <Skeleton className="h-10 w-full" />
+                </div>
+                <div className="space-y-2">
+                    <Skeleton className="h-4 w-20" />
+                    <Skeleton className="h-10 w-full" />
+                </div>
+             </div>
           </CardContent>
         </Card>
         <Card>
@@ -896,3 +938,5 @@ export function InstitutionEditForm({ institution, loading }: { institution: Ins
 
     return <InstitutionEditFormContent institution={institution} />;
 }
+
+    
