@@ -55,9 +55,9 @@ const parseCurrency = (value: string | undefined): number => {
 // This function saves a new institution document to Firestore.
 export async function createInstitution(db: Firestore, institutionData: any) {
   try {
-    const { password, ...dataToSave } = institutionData;
+    const { password, lastContractDate, ...dataToSave } = institutionData;
 
-    const docRef = await addDoc(collection(db, 'institutions'), {
+    const docData: any = {
       ...dataToSave,
       fees: {
         minFee: parseCurrency(institutionData.minFee),
@@ -67,7 +67,13 @@ export async function createInstitution(db: Firestore, institutionData: any) {
       },
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
-    });
+    };
+
+    if (lastContractDate && lastContractDate instanceof Date) {
+      docData.lastContractDate = Timestamp.fromDate(lastContractDate);
+    }
+
+    const docRef = await addDoc(collection(db, 'institutions'), docData);
     console.log('Document written with ID: ', docRef.id);
     return docRef.id;
   } catch (e) {
