@@ -33,6 +33,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
+import { ko } from "date-fns/locale";
 import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
@@ -109,7 +110,7 @@ export function ServiceChangeModal({
                           )}
                         >
                           {field.value ? (
-                            format(field.value, "PPP")
+                            format(field.value, "PPP", { locale: ko })
                           ) : (
                             <span>날짜를 선택하세요</span>
                           )}
