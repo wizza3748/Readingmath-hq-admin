@@ -7,7 +7,9 @@ import {
   onSnapshot,
   query,
   orderBy,
-  Timestamp
+  Timestamp,
+  where,
+  getDocs
 } from 'firebase/firestore';
 
 export type Institution = {
@@ -100,4 +102,11 @@ export function getInstitutions(db: Firestore, callback: (institutions: Institut
   });
 
   return unsubscribe; // Return the unsubscribe function to clean up the listener
+}
+
+// This function checks if a loginId already exists in the institutions collection.
+export async function checkLoginIdExists(db: Firestore, loginId: string): Promise<boolean> {
+  const q = query(collection(db, "institutions"), where("loginId", "==", loginId));
+  const querySnapshot = await getDocs(q);
+  return !querySnapshot.empty;
 }

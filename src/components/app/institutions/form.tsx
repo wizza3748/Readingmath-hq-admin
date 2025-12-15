@@ -48,7 +48,7 @@ import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import React from "react";
 import { useFirebase, useFirestore } from "@/firebase";
-import { createInstitution } from "@/lib/institutions";
+import { createInstitution, checkLoginIdExists } from "@/lib/institutions";
 import { Skeleton } from "@/components/ui/skeleton";
 
 
@@ -159,6 +159,8 @@ function InstitutionFormContent() {
   const router = useRouter();
   const { toast } = useToast();
   const firestore = useFirestore();
+  const [isLoginIdAvailable, setIsLoginIdAvailable] = React.useState<boolean | null>(null);
+  const [loginIdChecked, setLoginIdChecked] = React.useState<string | null>(null);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -191,8 +193,56 @@ function InstitutionFormContent() {
   });
   
   const serviceType = form.watch("serviceType");
+  const loginId = form.watch("loginId");
+
+  React.useEffect(() => {
+    if (loginId !== loginIdChecked) {
+      setIsLoginIdAvailable(null);
+    }
+  }, [loginId, loginIdChecked]);
+
+  const handleCheckLoginId = async () => {
+    const currentLoginId = form.getValues("loginId");
+    if (!currentLoginId) {
+      toast({
+        variant: "destructive",
+        title: "오류",
+        description: "아이디를 입력해주세요.",
+      });
+      return;
+    }
+
+    if (!firestore) return;
+
+    const exists = await checkLoginIdExists(firestore, currentLoginId);
+    if (exists) {
+      toast({
+        variant: "destructive",
+        title: "아이디 중복",
+        description: "이미 사용 중인 아이디입니다.",
+      });
+      setIsLoginIdAvailable(false);
+    } else {
+      toast({
+        title: "사용 가능",
+        description: "사용 가능한 아이디입니다.",
+      });
+      setIsLoginIdAvailable(true);
+    }
+    setLoginIdChecked(currentLoginId);
+  };
+
 
   const onSubmit = async (data: FormValues) => {
+    if (isLoginIdAvailable !== true || data.loginId !== loginIdChecked) {
+      toast({
+        variant: "destructive",
+        title: "아이디 중복 확인 필요",
+        description: "아이디 중복 확인을 해주세요.",
+      });
+      return;
+    }
+
     if (!firestore) {
       toast({
         variant: "destructive",
@@ -264,7 +314,7 @@ function InstitutionFormContent() {
                     <FormControl>
                       <Input {...field} />
                     </FormControl>
-                    <Button type="button" variant="outline">
+                    <Button type="button" variant="outline" onClick={handleCheckLoginId}>
                       중복확인
                     </Button>
                   </div>
