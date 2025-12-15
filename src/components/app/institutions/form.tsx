@@ -47,7 +47,7 @@ import {
 import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import React from "react";
-import { useFirestore } from "@/firebase";
+import { useFirebase, useFirestore } from "@/firebase";
 import { createInstitution } from "@/lib/institutions";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -813,9 +813,9 @@ function FormSkeleton() {
 
 
 export function InstitutionForm() {
-    const firestore = useFirestore();
+    const firebase = useFirebase();
 
-    if (!firestore) {
+    if (!firebase?.firestore) {
         return <FormSkeleton />;
     }
 
