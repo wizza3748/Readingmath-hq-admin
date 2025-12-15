@@ -5,7 +5,7 @@ import React from 'react';
 import { InstitutionEditForm } from "@/components/app/institutions/edit-form";
 import type { Institution } from "@/lib/institutions";
 
-export default function InstitutionInfoPage({ institution, loading }: { institution: Institution | null, loading: boolean }) {
+export default function InstitutionInfoPage({ institution, loading }: { institution?: Institution | null, loading?: boolean }) {
   
   if (loading) {
     return <InstitutionEditForm institution={null} loading={true} />;

@@ -10,7 +10,7 @@ import {
 import type { Institution } from "@/lib/institutions";
 
 
-export default function PointsPage({ institution, loading }: { institution: Institution | null, loading: boolean }) {
+export default function PointsPage({ institution, loading }: { institution?: Institution | null, loading?: boolean }) {
   return (
     <Card>
       <CardHeader>

@@ -130,8 +130,9 @@ export default function InstitutionDetailLayout({
   const { firestore } = useFirebase() ?? {};
   
   const pathSegments = pathname.split('/');
-  const institutionId = pathSegments[2];
-  const activeTab = pathSegments[3] || 'info';
+  const institutionId = params.institutionId;
+  const activeTab = pathSegments[3] === institutionId || !pathSegments[3] ? 'info' : pathSegments[3];
+
 
   const handleTabChange = (value: string) => {
     if (value === 'info') {
