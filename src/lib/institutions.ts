@@ -47,6 +47,10 @@ export type Institution = {
     perStudentFee2?: number;
   };
   memo?: string;
+  franchiseFeeAmount?: number;
+  franchiseFeePaidAt?: Timestamp;
+  trainingFeeAmount?: number;
+  trainingFeePaidAt?: Timestamp;
   createdAt: Timestamp;
   updatedAt: Timestamp;
 };
@@ -140,6 +144,23 @@ export async function updateInstitution(db: Firestore, id: string, institutionDa
     }
 }
 
+// This function updates a fee payment status for an institution.
+export async function updateFeePayment(db: Firestore, id: string, feeType: 'franchiseFee' | 'trainingFee', amount: number) {
+  try {
+    const docRef = doc(db, 'institutions', id);
+    const dataToUpdate: { [key: string]: any } = {};
+    dataToUpdate[`${feeType}Amount`] = amount;
+    dataToUpdate[`${feeType}PaidAt`] = serverTimestamp();
+    dataToUpdate.updatedAt = serverTimestamp();
+
+    await updateDoc(docRef, dataToUpdate);
+    console.log(`${feeType} payment updated for document ID: `, id);
+  } catch (e) {
+    console.error(`Error updating ${feeType} payment: `, e);
+    throw new Error(`Failed to update ${feeType} payment`);
+  }
+}
+
 // This function deletes an institution document from Firestore.
 export async function deleteInstitution(db: Firestore, id: string) {
     try {
@@ -200,5 +221,3 @@ export async function checkLoginIdExists(db: Firestore, loginId: string): Promis
   const querySnapshot = await getDocs(q);
   return !querySnapshot.empty;
 }
-
-    

@@ -60,7 +60,7 @@ import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import React from "react";
 import { useFirestore } from "@/firebase";
-import { updateInstitution, deleteInstitution, type Institution } from "@/lib/institutions";
+import { updateInstitution, deleteInstitution, type Institution, updateFeePayment } from "@/lib/institutions";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ServiceChangeModal } from "./service-change-modal";
 
@@ -151,6 +151,13 @@ const formatCurrency = (value: string | number | undefined | null) => {
   return numberValue.toLocaleString();
 };
 
+const parseCurrency = (value: string | undefined | null): number => {
+    if (value === undefined || value === null) return 0;
+    const stringValue = String(value);
+    const numberValue = parseInt(stringValue.replace(/[^0-9]/g, ""), 10);
+    return isNaN(numberValue) ? 0 : numberValue;
+};
+
 
 const CurrencyInput = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement> & { suffix?: string }>(
     ({ value, onChange, suffix = "원", ...props }, ref) => {
@@ -189,10 +196,13 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
   const firestore = useFirestore();
   const [calendarOpen, setCalendarOpen] = React.useState(false);
   
+  const [franchiseFeeAmount, setFranchiseFeeAmount] = React.useState<string>(formatCurrency(institution.franchiseFeeAmount) || '');
+  const [trainingFeeAmount, setTrainingFeeAmount] = React.useState<string>(formatCurrency(institution.trainingFeeAmount) || '');
+
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: institution
-      ? {
+    defaultValues: {
           name: institution.name || '',
           ownerName: institution.ownerName || '',
           ownerContact: institution.ownerContact || '',
@@ -215,30 +225,6 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
           perStudentFee1: formatCurrency(institution.fees?.perStudentFee1) || '',
           perStudentFee2: formatCurrency(institution.fees?.perStudentFee2) || '',
           memo: institution.memo || '',
-        }
-      : {
-          name: '',
-          ownerName: '',
-          ownerContact: '',
-          email: '',
-          branch1: '',
-          branch2: '',
-          everydayKoreanName: '',
-          dokdoName: '',
-          zipCode: '',
-          address: '',
-          addressDetail: '',
-          managerName: '',
-          managerContact: '',
-          lastContractDate: null,
-          serviceStatus: '정상',
-          franchiseType: '가맹전',
-          serviceType: '수학+과학',
-          minFee: '0',
-          perStudentFee: '',
-          perStudentFee1: '',
-          perStudentFee2: '',
-          memo: '',
         },
   });
 
@@ -269,6 +255,8 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
         perStudentFee2: formatCurrency(fees.perStudentFee2),
         memo: institution.memo || "",
       });
+      setFranchiseFeeAmount(formatCurrency(institution.franchiseFeeAmount) || '');
+      setTrainingFeeAmount(formatCurrency(institution.trainingFeeAmount) || '');
     }
   }, [institution, form]);
   
@@ -325,12 +313,44 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
     }
   }
 
-  const handlePayment = (type: '가맹비' | '교육비') => {
-    toast({
-        title: `${type} 입금 처리`,
-        description: `기능이 구현될 예정입니다.`,
-    })
-  }
+  const handlePayment = async (type: 'franchise' | 'training') => {
+    if (!firestore || !institution) return;
+    const amountStr = type === 'franchise' ? franchiseFeeAmount : trainingFeeAmount;
+    const amount = parseCurrency(amountStr);
+
+    const feeName = type === 'franchise' ? '가맹비' : '교육비';
+
+    if (amount === 0) {
+      toast({
+        variant: "destructive",
+        title: "오류",
+        description: `${feeName}를 입력해 주세요.`,
+      });
+      return;
+    }
+    
+    try {
+      const field = type === 'franchise' ? 'franchiseFee' : 'trainingFee';
+      await updateFeePayment(firestore, institution.id, field, amount);
+      toast({
+        title: `${feeName} 입금 처리 완료`,
+        description: `${feeName} ${formatCurrency(amount)}원이 처리되었습니다.`,
+      });
+    } catch (error) {
+       console.error(`Error processing ${feeName}:`, error);
+        toast({
+            variant: "destructive",
+            title: `${feeName} 처리 실패`,
+            description: "입금 처리 중 오류가 발생했습니다.",
+        });
+    }
+  };
+  
+  const formatDate = (timestamp: any) => {
+    if (!timestamp) return null;
+    const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+    return format(date, "yyyy-MM-dd HH:mm:ss");
+  };
 
   return (
     <Form {...form}>
@@ -728,16 +748,76 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
                 <FormItem>
                   <FormLabel>가맹비</FormLabel>
                   <div className="flex gap-2">
-                    <Input type="number" placeholder="가맹비 금액 입력" />
-                    <Button type="button" onClick={() => handlePayment('가맹비')}>가맹비 입금 처리</Button>
+                    <CurrencyInput
+                        value={franchiseFeeAmount}
+                        onChange={(e) => setFranchiseFeeAmount(e.target.value)}
+                        placeholder="가맹비 금액 입력"
+                        disabled={!!institution.franchiseFeePaidAt}
+                    />
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button type="button" disabled={!!institution.franchiseFeePaidAt}>
+                          가맹비 입금 처리
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>가맹비 입금 처리</AlertDialogTitle>
+                          <AlertDialogDescription>
+                            가맹비 {formatCurrency(franchiseFeeAmount)}원을 입금 처리하시겠습니까?
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>취소</AlertDialogCancel>
+                          <AlertDialogAction onClick={() => handlePayment('franchise')}>
+                            확인
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                   </div>
+                  {institution.franchiseFeePaidAt && (
+                      <p className="text-sm text-muted-foreground mt-2">
+                          입금 처리 일시: {formatDate(institution.franchiseFeePaidAt)}
+                      </p>
+                  )}
                 </FormItem>
                  <FormItem>
                   <FormLabel>교육비</FormLabel>
                   <div className="flex gap-2">
-                    <Input type="number" placeholder="교육비 금액 입력" />
-                    <Button type="button" onClick={() => handlePayment('교육비')}>교육비 입금 처리</Button>
+                    <CurrencyInput
+                      value={trainingFeeAmount}
+                      onChange={(e) => setTrainingFeeAmount(e.target.value)}
+                      placeholder="교육비 금액 입력"
+                      disabled={!!institution.trainingFeePaidAt}
+                    />
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button type="button" disabled={!!institution.trainingFeePaidAt}>
+                          교육비 입금 처리
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>교육비 입금 처리</AlertDialogTitle>
+                          <AlertDialogDescription>
+                            교육비 {formatCurrency(trainingFeeAmount)}원을 입금 처리하시겠습니까?
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>취소</AlertDialogCancel>
+                          <AlertDialogAction onClick={() => handlePayment('training')}>
+                            확인
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                   </div>
+                   {institution.trainingFeePaidAt && (
+                      <p className="text-sm text-muted-foreground mt-2">
+                          입금 처리 일시: {formatDate(institution.trainingFeePaidAt)}
+                      </p>
+                  )}
                 </FormItem>
                 <FormField
                   control={form.control}

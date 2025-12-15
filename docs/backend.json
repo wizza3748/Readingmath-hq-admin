@@ -1,3 +1,4 @@
+
 {
   "entities": {
     "Institution": {
@@ -39,6 +40,10 @@
           }
         },
         "memo": { "type": "string", "description": "Internal notes about the institution." },
+        "franchiseFeeAmount": { "type": "number", "description": "The amount paid for the franchise fee." },
+        "franchiseFeePaidAt": { "type": "string", "format": "date-time", "description": "Timestamp when the franchise fee was paid." },
+        "trainingFeeAmount": { "type": "number", "description": "The amount paid for the training fee." },
+        "trainingFeePaidAt": { "type": "string", "format": "date-time", "description": "Timestamp when the training fee was paid." },
         "createdAt": { "type": "string", "format": "date-time" },
         "updatedAt": { "type": "string", "format": "date-time" }
       },
