@@ -1,3 +1,4 @@
+'use client';
 import {initializeApp, getApp, getApps, FirebaseApp} from 'firebase/app';
 import {getFirestore, Firestore} from 'firebase/firestore';
 import {getAuth, Auth} from 'firebase/auth';
@@ -8,12 +9,12 @@ let firestore: Firestore;
 
 // IMPORTANT: Replace this with your actual Firebase config object
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  projectId: 'eduview-thyg6',
+  appId: '1:507190045435:web:ef72be433f750e4274de5e',
+  apiKey: 'AIzaSyD4q-CmMqNhpgbyFzopNprbGw5kRK6J604',
+  authDomain: 'eduview-thyg6.firebaseapp.com',
+  measurementId: '',
+  messagingSenderId: '507190045435',
 };
 
 function initializeFirebase() {
