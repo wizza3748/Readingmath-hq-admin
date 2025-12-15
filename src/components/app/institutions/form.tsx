@@ -57,6 +57,14 @@ declare global {
   }
 }
 
+const branchList = [
+  "강남", "강북", "강서", "강원", "경남", "경산", "공주", "광주", "교육다움", 
+  "구리", "구미", "김포", "대구", "대전", "동부", "동작", "부산", "본사", 
+  "성남", "안산", "안양", "울산", "의정부", "인천", "인천B", "일산", "전주", 
+  "제주", "천안", "청주", "평택안성", "포항", "화성"
+];
+
+
 const formSchema = z
   .object({
     // 기관 정보
@@ -199,6 +207,7 @@ function InstitutionFormContent() {
   
   const serviceType = form.watch("serviceType");
   const loginId = form.watch("loginId");
+  const selectedBranch1 = form.watch("branch1");
 
   React.useEffect(() => {
     if (loginId !== loginIdChecked) {
@@ -424,56 +433,6 @@ function InstitutionFormContent() {
             />
             <FormField
               control={form.control}
-              name="branch1"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>지사1 *</FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="1차 지사를 선택하세요" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="본사">본사</SelectItem>
-                      <SelectItem value="연구소">연구소</SelectItem>
-                      <SelectItem value="서울">서울</SelectItem>
-                      <SelectItem value="경기">경기</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-             <FormField
-              control={form.control}
-              name="branch2"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>지사2</FormLabel>
-                   <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="2차 지사를 선택하세요" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                       <SelectItem value="강남">강남</SelectItem>
-                       <SelectItem value="분당">분당</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
               name="everydayKoreanName"
               render={({ field }) => (
                 <FormItem>
@@ -612,6 +571,59 @@ function InstitutionFormContent() {
                       />
                     </PopoverContent>
                   </Popover>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+             <FormField
+              control={form.control}
+              name="branch1"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>지사1 *</FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="1차 지사를 선택하세요" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {branchList.map(branch => (
+                        <SelectItem key={branch} value={branch}>{branch}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+             <FormField
+              control={form.control}
+              name="branch2"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>지사2</FormLabel>
+                   <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                    disabled={!selectedBranch1}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder={!selectedBranch1 ? "지사1을 먼저 선택하세요" : "2차 지사를 선택하세요"} />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                       {branchList
+                        .filter(branch => branch !== selectedBranch1)
+                        .map(branch => (
+                          <SelectItem key={branch} value={branch}>{branch}</SelectItem>
+                       ))}
+                    </SelectContent>
+                  </Select>
                   <FormMessage />
                 </FormItem>
               )}
