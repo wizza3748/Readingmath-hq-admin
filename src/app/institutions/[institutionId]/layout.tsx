@@ -179,9 +179,11 @@ export default function InstitutionDetailLayout({
             </TabsList>
         </div>
         <div className="mt-6">
-          <TabsContent value="info">
-            {childrenWithProps}
-          </TabsContent>
+          {activeTab === 'info' && (
+            <TabsContent value="info" forceMount>
+              {childrenWithProps}
+            </TabsContent>
+          )}
           <TabsContent value="students">
             <Card>
                 <CardHeader><CardTitle>학생목록</CardTitle></CardHeader>
@@ -223,5 +225,3 @@ export default function InstitutionDetailLayout({
     </div>
   );
 }
-
-    

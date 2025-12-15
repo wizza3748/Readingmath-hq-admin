@@ -59,7 +59,7 @@ import {
 import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import React from "react";
-import { useFirebase, useFirestore } from "@/firebase";
+import { useFirestore } from "@/firebase";
 import { updateInstitution, deleteInstitution, type Institution } from "@/lib/institutions";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -639,8 +639,7 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
                         <FormControl>
                           <RadioGroupItem value="수학" />
                         </FormControl>
-                        <FormLabel className="font-normal">수학</FormLabel>
-                      </FormItem>
+                        <FormLabel className="font-normal">수학</FormLabel>                      </FormItem>
                        <FormItem className="flex items-center space-x-2 space-y-0">
                         <FormControl>
                           <RadioGroupItem value="과학" />
