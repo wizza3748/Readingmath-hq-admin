@@ -90,7 +90,7 @@ const columns: ColumnDef<Institution>[] = [
       </Button>
     ),
     cell: ({ row }) => (
-      <Link href="#" className="font-medium text-primary hover:underline">
+      <Link href={`/institutions/${row.original.id}`} className="font-medium text-primary hover:underline">
         {row.getValue("name")}
       </Link>
     ),
@@ -329,6 +329,11 @@ function InstitutionsTableContent() {
       columnVisibility,
       rowSelection,
     },
+    initialState: {
+        pagination: {
+            pageSize: 10,
+        },
+    }
   });
 
   return (
@@ -437,3 +442,5 @@ export function InstitutionsTable() {
 
     return <InstitutionsTableContent />;
 }
+
+    

@@ -36,6 +36,7 @@ type NavItem = {
   href?: string;
   icon?: React.ReactNode;
   children?: NavItem[];
+  disabled?: boolean;
 };
 
 const navConfig: NavItem[] = [
@@ -51,6 +52,7 @@ const navConfig: NavItem[] = [
       { title: "기관목록", href: "/institutions" },
       {
         title: "기관상세",
+        disabled: true, // This is a placeholder for the sub-menu, not a direct link
         children: [
           { title: "기관정보", href: "/institutions/details/info" },
           { title: "학생목록", href: "/institutions/details/students" },
@@ -73,6 +75,7 @@ const navConfig: NavItem[] = [
       { title: "학생목록", href: "/students" },
       {
         title: "학생상세",
+        disabled: true,
         children: [
           { title: "학생정보", href: "/students/details/info" },
           { title: "학습내역", href: "/students/details/history" },
@@ -146,14 +149,14 @@ function NavMenu({ items, level = 0 }: { items: NavItem[], level?: number }) {
   return (
     <>
       {items.map((item, index) => {
-        const isActive = item.href ? pathname === item.href : false;
+        const isActive = item.href ? pathname.startsWith(item.href) : false;
         
         if (item.children) {
           return (
             <SidebarMenuItem key={index} asChild>
               <Collapsible>
                 <div className="relative">
-                  <CollapsibleTrigger asChild>
+                  <CollapsibleTrigger asChild disabled={item.disabled}>
                     <SidebarMenuButton className="group/collapsible-button justify-between">
                       <div className="flex items-center gap-2">
                         {item.icon}
@@ -200,3 +203,5 @@ export function AppNav() {
     </SidebarMenu>
   );
 }
+
+    

@@ -9,7 +9,9 @@ import {
   orderBy,
   Timestamp,
   where,
-  getDocs
+  getDocs,
+  doc,
+  getDoc,
 } from 'firebase/firestore';
 
 export type Institution = {
@@ -110,9 +112,31 @@ export function getInstitutions(db: Firestore, callback: (institutions: Institut
   return unsubscribe; // Return the unsubscribe function to clean up the listener
 }
 
+// This function fetches a single institution from Firestore in real-time.
+export function getInstitution(db: Firestore, id: string, callback: (institution: Institution | null) => void) {
+  const docRef = doc(db, "institutions", id);
+
+  const unsubscribe = onSnapshot(docRef, (docSnap) => {
+    if (docSnap.exists()) {
+      callback({ id: docSnap.id, ...docSnap.data() } as Institution);
+    } else {
+      console.log("No such document!");
+      callback(null);
+    }
+  }, (error) => {
+    console.error("Error fetching institution:", error);
+    callback(null);
+  });
+
+  return unsubscribe;
+}
+
+
 // This function checks if a loginId already exists in the institutions collection.
 export async function checkLoginIdExists(db: Firestore, loginId: string): Promise<boolean> {
   const q = query(collection(db, "institutions"), where("loginId", "==", loginId));
   const querySnapshot = await getDocs(q);
   return !querySnapshot.empty;
 }
+
+    
