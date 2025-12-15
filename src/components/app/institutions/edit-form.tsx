@@ -187,6 +187,7 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
   const router = useRouter();
   const { toast } = useToast();
   const firestore = useFirestore();
+  const [calendarOpen, setCalendarOpen] = React.useState(false);
   
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -503,7 +504,7 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>최근 계약 갱신일</FormLabel>
-                   <Popover>
+                   <Popover open={calendarOpen} onOpenChange={setCalendarOpen}>
                     <PopoverTrigger asChild>
                       <FormControl>
                         <Button
@@ -526,7 +527,10 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
                       <Calendar
                         mode="single"
                         selected={field.value ?? undefined}
-                        onSelect={field.onChange}
+                        onSelect={(date) => {
+                          field.onChange(date);
+                          setCalendarOpen(false);
+                        }}
                         initialFocus
                       />
                     </PopoverContent>

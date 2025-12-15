@@ -59,6 +59,7 @@ export function ServiceChangeModal({
 }) {
   const { toast } = useToast();
   const [open, setOpen] = React.useState(false);
+  const [calendarOpen, setCalendarOpen] = React.useState(false);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -80,7 +81,7 @@ export function ServiceChangeModal({
   };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={setOpen} modal={false}>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
@@ -94,7 +95,7 @@ export function ServiceChangeModal({
               render={({ field }) => (
                 <FormItem className="flex flex-col">
                   <FormLabel>변경 적용일 *</FormLabel>
-                  <Popover>
+                   <Popover open={calendarOpen} onOpenChange={setCalendarOpen}>
                     <PopoverTrigger asChild>
                       <FormControl>
                         <Button
@@ -117,7 +118,10 @@ export function ServiceChangeModal({
                       <Calendar
                         mode="single"
                         selected={field.value}
-                        onSelect={field.onChange}
+                        onSelect={(date) => {
+                          field.onChange(date)
+                          setCalendarOpen(false)
+                        }}
                         initialFocus
                       />
                     </PopoverContent>
