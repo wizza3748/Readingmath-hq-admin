@@ -184,41 +184,8 @@ export default function InstitutionDetailLayout({
             </TabsContent>
           ) : (
             <>
-                <TabsContent value="students">
-                    <Card>
-                        <CardHeader><CardTitle>학생목록</CardTitle></CardHeader>
-                        <CardContent><p>학생목록이 여기에 표시됩니다.</p></CardContent>
-                    </Card>
-                </TabsContent>
-                <TabsContent value="teachers">
-                    <Card>
-                        <CardHeader><CardTitle>선생님목록</CardTitle></CardHeader>
-                        <CardContent><p>선생님목록이 여기에 표시됩니다.</p></CardContent>
-                    </Card>
-                </TabsContent>
-                <TabsContent value="points">
-                    <Card>
-                        <CardHeader><CardTitle>포인트내역</CardTitle></CardHeader>
-                        <CardContent><p>포인트내역이 여기에 표시됩니다.</p></CardContent>
-                    </Card>
-                </TabsContent>
-                <TabsContent value="payments">
-                    <Card>
-                        <CardHeader><CardTitle>결제내역</CardTitle></CardHeader>
-                        <CardContent><p>결제내역이 여기에 표시됩니다.</p></CardContent>
-                    </Card>
-                </TabsContent>
-                <TabsContent value="inquiries">
-                    <Card>
-                        <CardHeader><CardTitle>문의내역</CardTitle></CardHeader>
-                        <CardContent><p>문의내역이 여기에 표시됩니다.</p></CardContent>
-                    </Card>
-                </TabsContent>
-                <TabsContent value="logs">
-                    <Card>
-                        <CardHeader><CardTitle>활동로그</CardTitle></CardHeader>
-                        <CardContent><p>활동로그가 여기에 표시됩니다.</p></CardContent>
-                    </Card>
+                <TabsContent value={activeTab} forceMount>
+                  {childrenWithProps}
                 </TabsContent>
             </>
           )}
