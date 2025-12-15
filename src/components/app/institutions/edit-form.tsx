@@ -635,7 +635,7 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
                   <FormLabel>서비스 타입 *</FormLabel>
                   <FormControl>
                     <RadioGroup
-                      onValuechange={field.onChange}
+                      onValueChange={field.onChange}
                       value={field.value}
                       className="flex items-center space-x-4"
                     >
@@ -938,5 +938,7 @@ export function InstitutionEditForm({ institution, loading }: { institution: Ins
 
     return <InstitutionEditFormContent institution={institution} />;
 }
+
+    
 
     
