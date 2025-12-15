@@ -71,7 +71,10 @@ export async function createInstitution(db: Firestore, institutionData: any) {
 
     if (lastContractDate && lastContractDate instanceof Date) {
       docData.lastContractDate = Timestamp.fromDate(lastContractDate);
+    } else {
+      delete docData.lastContractDate;
     }
+
 
     const docRef = await addDoc(collection(db, 'institutions'), docData);
     console.log('Document written with ID: ', docRef.id);
