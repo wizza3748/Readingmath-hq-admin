@@ -2,12 +2,10 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -18,7 +16,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
-import { useFirestore } from "@/firebase";
+import { useFirebase } from "@/firebase";
 import { getInstitution, type Institution } from "@/lib/institutions";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Separator } from "@/components/ui/separator";
@@ -125,7 +123,7 @@ export default function InstitutionDetailLayout({
   children: React.ReactNode;
   params: { institutionId: string };
 }) {
-  const firestore = useFirestore();
+  const { firestore } = useFirebase();
   const router = useRouter();
   const pathname = usePathname();
   const [institution, setInstitution] = React.useState<Institution | null>(null);
@@ -143,7 +141,11 @@ export default function InstitutionDetailLayout({
   };
   
   React.useEffect(() => {
-    if (!firestore || !params.institutionId) return;
+    if (!firestore || !params.institutionId) {
+      // Keep loading if firestore is not available yet
+      setLoading(!firestore);
+      return;
+    };
 
     setLoading(true);
     const unsubscribe = getInstitution(firestore, params.institutionId, (data) => {
@@ -179,47 +181,50 @@ export default function InstitutionDetailLayout({
             </TabsList>
         </div>
         <div className="mt-6">
-          {activeTab === 'info' && (
+          {activeTab === 'info' ? (
             <TabsContent value="info" forceMount>
               {childrenWithProps}
             </TabsContent>
+          ) : (
+            <>
+                <TabsContent value="students">
+                    <Card>
+                        <CardHeader><CardTitle>학생목록</CardTitle></CardHeader>
+                        <CardContent><p>학생목록이 여기에 표시됩니다.</p></CardContent>
+                    </Card>
+                </TabsContent>
+                <TabsContent value="teachers">
+                    <Card>
+                        <CardHeader><CardTitle>선생님목록</CardTitle></CardHeader>
+                        <CardContent><p>선생님목록이 여기에 표시됩니다.</p></CardContent>
+                    </Card>
+                </TabsContent>
+                <TabsContent value="points">
+                    <Card>
+                        <CardHeader><CardTitle>포인트내역</CardTitle></CardHeader>
+                        <CardContent><p>포인트내역이 여기에 표시됩니다.</p></CardContent>
+                    </Card>
+                </TabsContent>
+                <TabsContent value="payments">
+                    <Card>
+                        <CardHeader><CardTitle>결제내역</CardTitle></CardHeader>
+                        <CardContent><p>결제내역이 여기에 표시됩니다.</p></CardContent>
+                    </Card>
+                </TabsContent>
+                <TabsContent value="inquiries">
+                    <Card>
+                        <CardHeader><CardTitle>문의내역</CardTitle></CardHeader>
+                        <CardContent><p>문의내역이 여기에 표시됩니다.</p></CardContent>
+                    </Card>
+                </TabsContent>
+                <TabsContent value="logs">
+                    <Card>
+                        <CardHeader><CardTitle>활동로그</CardTitle></CardHeader>
+                        <CardContent><p>활동로그가 여기에 표시됩니다.</p></CardContent>
+                    </Card>
+                </TabsContent>
+            </>
           )}
-          <TabsContent value="students">
-            <Card>
-                <CardHeader><CardTitle>학생목록</CardTitle></CardHeader>
-                <CardContent><p>학생목록이 여기에 표시됩니다.</p></CardContent>
-            </Card>
-          </TabsContent>
-          <TabsContent value="teachers">
-            <Card>
-                <CardHeader><CardTitle>선생님목록</CardTitle></CardHeader>
-                <CardContent><p>선생님목록이 여기에 표시됩니다.</p></CardContent>
-            </Card>
-          </TabsContent>
-          <TabsContent value="points">
-            <Card>
-                <CardHeader><CardTitle>포인트내역</CardTitle></CardHeader>
-                <CardContent><p>포인트내역이 여기에 표시됩니다.</p></CardContent>
-            </Card>
-          </TabsContent>
-          <TabsContent value="payments">
-            <Card>
-                <CardHeader><CardTitle>결제내역</CardTitle></CardHeader>
-                <CardContent><p>결제내역이 여기에 표시됩니다.</p></CardContent>
-            </Card>
-          </TabsContent>
-          <TabsContent value="inquiries">
-            <Card>
-                <CardHeader><CardTitle>문의내역</CardTitle></CardHeader>
-                <CardContent><p>문의내역이 여기에 표시됩니다.</p></CardContent>
-            </Card>
-          </TabsContent>
-          <TabsContent value="logs">
-            <Card>
-                <CardHeader><CardTitle>활동로그</CardTitle></CardHeader>
-                <CardContent><p>활동로그가 여기에 표시됩니다.</p></CardContent>
-            </Card>
-          </TabsContent>
         </div>
       </Tabs>
     </div>
