@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -37,7 +38,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { MultiSelect, type MultiSelectOption } from "@/components/ui/multi-select";
-import { useFirestore } from "@/firebase";
+import { useFirebase, useFirestore } from "@/firebase";
 import { getInstitutions, type Institution } from "@/lib/institutions";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent } from "@/components/ui/card";
@@ -423,7 +424,7 @@ function InstitutionsTableContent() {
 }
 
 export function InstitutionsTable() {
-    const firestore = useFirestore();
+    const { firestore } = useFirebase();
 
     if (!firestore) {
         return (
@@ -435,7 +436,9 @@ export function InstitutionsTable() {
                         </div>
                     </CardContent>
                 </Card>
-                <TableSkeleton />
+                <div className="py-4">
+                  <TableSkeleton />
+                </div>
             </div>
         )
     }
