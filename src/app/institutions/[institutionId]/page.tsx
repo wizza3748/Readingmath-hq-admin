@@ -5,12 +5,12 @@ import React from 'react';
 import { useParams } from 'next/navigation';
 import { InstitutionEditForm } from "@/components/app/institutions/edit-form";
 import { getInstitution, type Institution } from "@/lib/institutions";
-import { useFirestore } from '@/firebase';
+import { useFirebase } from '@/firebase';
 
 export default function InstitutionInfoPage() {
   const params = useParams();
   const institutionId = params.institutionId as string;
-  const firestore = useFirestore();
+  const { firestore } = useFirebase() ?? {};
   const [institution, setInstitution] = React.useState<Institution | null>(null);
   const [loading, setLoading] = React.useState(true);
 
