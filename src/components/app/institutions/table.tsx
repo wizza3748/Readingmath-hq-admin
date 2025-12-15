@@ -20,13 +20,6 @@ import { ArrowUpDown, Download, Plus } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
   Table,
   TableBody,
   TableCell,
@@ -44,103 +37,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { MultiSelect, type MultiSelectOption } from "@/components/ui/multi-select";
-
-type Institution = {
-  id: string;
-  branch1: string;
-  branch2: string;
-  name: string;
-  serviceType: "수학+과학" | "수학" | "과학";
-  serviceStatus: "정상" | "무료사용" | "일시정지" | "미납정지";
-  franchiseType: "가맹전" | "스탠다드" | "슬림" | "학교";
-  autoPayment: "등록" | "미등록";
-  points: {
-    paid: number;
-    free?: number;
-  };
-  minFee: number;
-  perStudentFee: number;
-  studentCount: number;
-  registrationDate: string;
-};
-
-const DUMMY_DATA: Institution[] = [
-  {
-    id: "INST001",
-    branch1: "서울",
-    branch2: "강남",
-    name: "강남 리딩수학",
-    serviceType: "수학+과학",
-    serviceStatus: "정상",
-    franchiseType: "스탠다드",
-    autoPayment: "등록",
-    points: { paid: 350000, free: 100000 },
-    minFee: 500000,
-    perStudentFee: 50000,
-    studentCount: 25,
-    registrationDate: "2023-01-15",
-  },
-  {
-    id: "INST002",
-    branch1: "경기",
-    branch2: "분당",
-    name: "분당 과학의 신",
-    serviceType: "과학",
-    serviceStatus: "무료사용",
-    franchiseType: "가맹전",
-    autoPayment: "미등록",
-    points: { paid: 0 },
-    minFee: 0,
-    perStudentFee: 0,
-    studentCount: 10,
-    registrationDate: "2023-02-20",
-  },
-  {
-    id: "INST003",
-    branch1: "서울",
-    branch2: "서초",
-    name: "서초 영재수학",
-    serviceType: "수학",
-    serviceStatus: "일시정지",
-    franchiseType: "슬림",
-    autoPayment: "등록",
-    points: { paid: 120000 },
-    minFee: 300000,
-    perStudentFee: 40000,
-    studentCount: 15,
-    registrationDate: "2022-11-30",
-  },
-  {
-    id: "INST004",
-    branch1: "부산",
-    branch2: "해운대",
-    name: "해운대 코딩과학",
-    serviceType: "수학+과학",
-    serviceStatus: "미납정지",
-    franchiseType: "스탠다드",
-    autoPayment: "미등록",
-    points: { paid: 50000, free: 20000 },
-    minFee: 500000,
-    perStudentFee: 55000,
-    studentCount: 30,
-    registrationDate: "2023-05-10",
-  },
-  {
-    id: "INST005",
-    branch1: "인천",
-    branch2: "송도",
-    name: "송도 국제학교",
-    serviceType: "수학+과학",
-    serviceStatus: "정상",
-    franchiseType: "학교",
-    autoPayment: "등록",
-    points: { paid: 1000000 },
-    minFee: 1000000,
-    perStudentFee: 60000,
-    studentCount: 100,
-    registrationDate: "2021-08-01",
-  },
-];
+import { useFirestore } from "@/firebase";
+import { getInstitutions, type Institution } from "@/lib/institutions";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Card, CardContent } from "@/components/ui/card";
 
 const serviceStatusVariant: {
   [key in Institution["serviceStatus"]]:
@@ -156,7 +56,7 @@ const serviceStatusVariant: {
 };
 
 const franchiseTypeVariant: {
-  [key in Institution["franchiseType"]]: "default" | "secondary" | "outline";
+  [key in NonNullable<Institution["franchiseType"]>]: "default" | "secondary" | "outline";
 } = {
   스탠다드: "default",
   슬림: "secondary",
@@ -167,16 +67,8 @@ const franchiseTypeVariant: {
 const columns: ColumnDef<Institution>[] = [
   {
     accessorKey: "id",
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      >
-        고유번호
-        <ArrowUpDown className="ml-2 h-4 w-4" />
-      </Button>
-    ),
-    cell: ({ row }) => <div className="lowercase">{row.getValue("id")}</div>,
+    header: "고유번호",
+    cell: ({ row }) => <div className="lowercase truncate w-20">{row.getValue("id")}</div>,
   },
   {
     accessorKey: "branch1",
@@ -219,48 +111,26 @@ const columns: ColumnDef<Institution>[] = [
   {
     accessorKey: "franchiseType",
     header: "가맹 타입",
-    cell: ({ row }) => (
-      <Badge variant={franchiseTypeVariant[row.getValue("franchiseType")]}>
-        {row.getValue("franchiseType")}
-      </Badge>
-    ),
-  },
-  {
-    accessorKey: "autoPayment",
-    header: "자동 결제",
-  },
-  {
-    accessorKey: "points",
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      >
-        포인트
-        <ArrowUpDown className="ml-2 h-4 w-4" />
-      </Button>
-    ),
     cell: ({ row }) => {
-      const points: Institution["points"] = row.getValue("points");
-      const formattedPaid = points.paid.toLocaleString();
-      const formattedFree = points.free?.toLocaleString();
-      return (
-        <div className="text-right">
-          {formattedPaid}
-          {formattedFree && (
-            <span className="text-muted-foreground">({formattedFree})</span>
-          )}
-        </div>
-      );
-    },
-    sortingFn: (rowA, rowB, columnId) => {
-      const pointsA = rowA.getValue(columnId) as Institution["points"];
-      const pointsB = rowB.getValue(columnId) as Institution["points"];
-      return pointsA.paid - pointsB.paid;
+        const franchiseType = row.getValue("franchiseType") as Institution["franchiseType"];
+        if (!franchiseType) return null;
+        return (
+            <Badge variant={franchiseTypeVariant[franchiseType]}>
+                {franchiseType}
+            </Badge>
+        )
     },
   },
   {
-    accessorKey: "minFee",
+    accessorKey: "ownerName",
+    header: "기관장명",
+  },
+  {
+    accessorKey: "ownerContact",
+    header: "기관장 연락처",
+  },
+   {
+    accessorKey: "fees.minFee",
     header: ({ column }) => (
       <Button
         variant="ghost"
@@ -272,44 +142,12 @@ const columns: ColumnDef<Institution>[] = [
     ),
     cell: ({ row }) => (
       <div className="text-right">
-        {row.getValue<number>("minFee").toLocaleString()}
+        {(row.original.fees.minFee ?? 0).toLocaleString()}
       </div>
     ),
   },
   {
-    accessorKey: "perStudentFee",
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      >
-        인당 이용료
-        <ArrowUpDown className="ml-2 h-4 w-4" />
-      </Button>
-    ),
-    cell: ({ row }) => (
-      <div className="text-right">
-        {row.getValue<number>("perStudentFee").toLocaleString()}
-      </div>
-    ),
-  },
-  {
-    accessorKey: "studentCount",
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      >
-        사용 중 학생 수
-        <ArrowUpDown className="ml-2 h-4 w-4" />
-      </Button>
-    ),
-    cell: ({ row }) => (
-      <div className="text-right">{row.getValue("studentCount")}</div>
-    ),
-  },
-  {
-    accessorKey: "registrationDate",
+    accessorKey: "createdAt",
     header: ({ column }) => (
       <Button
         variant="ghost"
@@ -319,6 +157,12 @@ const columns: ColumnDef<Institution>[] = [
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>
     ),
+    cell: ({ row }) => {
+        const createdAt = row.getValue("createdAt") as any;
+        if (!createdAt) return '';
+        const date = createdAt.toDate();
+        return date.toLocaleDateString('ko-KR');
+    }
   },
 ];
 
@@ -416,15 +260,57 @@ function SearchFilters({
   );
 }
 
-export function InstitutionsTable() {
+function TableSkeleton() {
+    return (
+        <div className="space-y-4">
+             <div className="rounded-md border">
+                <Table>
+                    <TableHeader>
+                        <TableRow>
+                            {Array.from({ length: 11 }).map((_, i) => (
+                                <TableHead key={i}><Skeleton className="h-5 w-20" /></TableHead>
+                            ))}
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                        {Array.from({ length: 10 }).map((_, i) => (
+                            <TableRow key={i}>
+                                {Array.from({ length: 11 }).map((_, j) => (
+                                    <TableCell key={j}><Skeleton className="h-5 w-full" /></TableCell>
+                                ))}
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </div>
+        </div>
+    )
+}
+
+function InstitutionsTableContent() {
   const router = useRouter();
-  const [data] = React.useState(() => [...DUMMY_DATA]);
+  const firestore = useFirestore();
+  const [data, setData] = React.useState<Institution[]>([]);
+  const [loading, setLoading] = React.useState(true);
+
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] =
     React.useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
+
+   React.useEffect(() => {
+    if (!firestore) return;
+    setLoading(true);
+    const unsubscribe = getInstitutions(firestore, (institutions) => {
+      setData(institutions);
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, [firestore]);
+
 
   const table = useReactTable({
     data,
@@ -469,60 +355,85 @@ export function InstitutionsTable() {
             </Button>
           </div>
         </div>
-        <div className="rounded-md border">
-          <Table>
-            <TableHeader>
-              {table.getHeaderGroups().map((headerGroup) => (
-                <TableRow key={headerGroup.id}>
-                  {headerGroup.headers.map((header) => {
-                    return (
-                      <TableHead key={header.id}>
-                        {header.isPlaceholder
-                          ? null
-                          : flexRender(
-                              header.column.columnDef.header,
-                              header.getContext()
-                            )}
-                      </TableHead>
-                    );
-                  })}
-                </TableRow>
-              ))}
-            </TableHeader>
-            <TableBody>
-              {table.getRowModel().rows?.length ? (
-                table.getRowModel().rows.map((row) => (
-                  <TableRow
-                    key={row.id}
-                    data-state={row.getIsSelected() && "selected"}
-                  >
-                    {row.getVisibleCells().map((cell) => (
-                      <TableCell key={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext()
-                        )}
-                      </TableCell>
+        {loading ? <TableSkeleton /> : (
+            <>
+                <div className="rounded-md border">
+                <Table>
+                    <TableHeader>
+                    {table.getHeaderGroups().map((headerGroup) => (
+                        <TableRow key={headerGroup.id}>
+                        {headerGroup.headers.map((header) => {
+                            return (
+                            <TableHead key={header.id}>
+                                {header.isPlaceholder
+                                ? null
+                                : flexRender(
+                                    header.column.columnDef.header,
+                                    header.getContext()
+                                    )}
+                            </TableHead>
+                            );
+                        })}
+                        </TableRow>
                     ))}
-                  </TableRow>
-                ))
-              ) : (
-                <TableRow>
-                  <TableCell
-                    colSpan={columns.length}
-                    className="h-24 text-center"
-                  >
-                    결과가 없습니다.
-                  </TableCell>
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </div>
-        <div className="py-4">
-          <DataTablePagination table={table} />
-        </div>
+                    </TableHeader>
+                    <TableBody>
+                    {table.getRowModel().rows?.length ? (
+                        table.getRowModel().rows.map((row) => (
+                        <TableRow
+                            key={row.id}
+                            data-state={row.getIsSelected() && "selected"}
+                        >
+                            {row.getVisibleCells().map((cell) => (
+                            <TableCell key={cell.id}>
+                                {flexRender(
+                                cell.column.columnDef.cell,
+                                cell.getContext()
+                                )}
+                            </TableCell>
+                            ))}
+                        </TableRow>
+                        ))
+                    ) : (
+                        <TableRow>
+                        <TableCell
+                            colSpan={columns.length}
+                            className="h-24 text-center"
+                        >
+                            결과가 없습니다.
+                        </TableCell>
+                        </TableRow>
+                    )}
+                    </TableBody>
+                </Table>
+                </div>
+                <div className="py-4">
+                <DataTablePagination table={table} />
+                </div>
+            </>
+        )}
       </div>
     </div>
   );
+}
+
+export function InstitutionsTable() {
+    const firestore = useFirestore();
+
+    if (!firestore) {
+        return (
+            <div className="w-full space-y-6">
+                <Card>
+                    <CardContent className="pt-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+                            {Array.from({length: 7}).map((_, i) => <Skeleton key={i} className="h-10 w-full" />)}
+                        </div>
+                    </CardContent>
+                </Card>
+                <TableSkeleton />
+            </div>
+        )
+    }
+
+    return <InstitutionsTableContent />;
 }
