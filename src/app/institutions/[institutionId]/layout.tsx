@@ -80,7 +80,9 @@ function BasicInfo({ institution }: { institution: Institution }) {
 
   const formatDate = (timestamp: any) => {
     if (!timestamp) return "-";
-    return timestamp.toDate().toLocaleString("ko-KR");
+    // Firestore Timestamp or JS Date
+    const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+    return date.toLocaleString("ko-KR");
   };
 
   const institutionCode = id ? id.substring(0, 6).toUpperCase() : "";
@@ -141,14 +143,15 @@ export default function InstitutionDetailLayout({
   };
   
   React.useEffect(() => {
-    if (firestore && params.institutionId) {
-      setLoading(true);
-      const unsubscribe = getInstitution(firestore, params.institutionId, (data) => {
-        setInstitution(data);
-        setLoading(false);
-      });
-      return () => unsubscribe();
-    }
+    if (!firestore || !params.institutionId) return;
+
+    setLoading(true);
+    const unsubscribe = getInstitution(firestore, params.institutionId, (data) => {
+      setInstitution(data);
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
   }, [firestore, params.institutionId]);
 
   const childrenWithProps = React.Children.map(children, child => {
@@ -220,3 +223,5 @@ export default function InstitutionDetailLayout({
     </div>
   );
 }
+
+    

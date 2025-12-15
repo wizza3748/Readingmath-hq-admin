@@ -117,8 +117,15 @@ export async function updateInstitution(db: Firestore, id: string, institutionDa
 
         if (lastContractDate && lastContractDate instanceof Date) {
             docData.lastContractDate = Timestamp.fromDate(lastContractDate);
-        } else if (!lastContractDate) {
+        } else if (lastContractDate === null || lastContractDate === undefined) {
+             // Explicitly handle null/undefined if you want to remove the field
             docData.lastContractDate = null;
+        } else {
+            // This handles cases where the date might not be a Date object but is still present
+            const date = new Date(lastContractDate);
+            if (!isNaN(date.getTime())) {
+              docData.lastContractDate = Timestamp.fromDate(date);
+            }
         }
 
         if (docData.attachment === undefined) {
@@ -165,6 +172,10 @@ export function getInstitutions(db: Firestore, callback: (institutions: Institut
 
 // This function fetches a single institution from Firestore in real-time.
 export function getInstitution(db: Firestore, id: string, callback: (institution: Institution | null) => void) {
+  if (!id) {
+    callback(null);
+    return () => {};
+  }
   const docRef = doc(db, "institutions", id);
 
   const unsubscribe = onSnapshot(docRef, (docSnap) => {
@@ -189,3 +200,5 @@ export async function checkLoginIdExists(db: Firestore, loginId: string): Promis
   const querySnapshot = await getDocs(q);
   return !querySnapshot.empty;
 }
+
+    
