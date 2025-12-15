@@ -16,8 +16,8 @@ export default function InstitutionInfoPage() {
 
   React.useEffect(() => {
     if (!firestore || !institutionId) {
-        if(!institutionId) setLoading(false);
-        return;
+      if(!institutionId) setLoading(false);
+      return;
     }
 
     setLoading(true);
