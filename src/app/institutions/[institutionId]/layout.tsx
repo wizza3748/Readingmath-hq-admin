@@ -128,11 +128,11 @@ export default function InstitutionDetailLayout({
   const [institution, setInstitution] = React.useState<Institution | null>(null);
   const [loading, setLoading] = React.useState(true);
   const { firestore } = useFirebase() ?? {};
-  const institutionId = params.institutionId;
   
-  const segments = pathname.split('/');
-  const activeTab = segments[segments.length -1] === institutionId ? 'info' : segments[segments.length -1];
-  
+  const pathSegments = pathname.split('/');
+  const institutionId = pathSegments[2];
+  const activeTab = pathSegments[3] || 'info';
+
   const handleTabChange = (value: string) => {
     if (value === 'info') {
       router.push(`/institutions/${institutionId}`);
