@@ -66,7 +66,14 @@ function BasicInfoSkeleton() {
   );
 }
 
-function BasicInfo({ institution }: { institution: Institution }) {
+function BasicInfo({ institution, loading }: { institution: Institution | null, loading: boolean }) {
+  if (loading) {
+    return <BasicInfoSkeleton />;
+  }
+  if (!institution) {
+    return null;
+  }
+
   const {
     name,
     branch1,
@@ -157,18 +164,10 @@ export default function InstitutionDetailLayout({
     return () => unsubscribe();
   }, [firestore, institutionId]);
 
-  const childrenWithProps = React.Children.map(children, child => {
-    if (React.isValidElement(child)) {
-      // @ts-ignore
-      return React.cloneElement(child, { institution, loading });
-    }
-    return child;
-  });
-
   return (
     <div className="p-4 sm:p-6 lg:p-8 space-y-6">
-      {loading ? <BasicInfoSkeleton /> : institution ? <BasicInfo institution={institution} /> : <div>기관 정보를 찾을 수 없습니다.</div>}
-
+      <BasicInfo institution={institution} loading={loading} />
+      
       <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
         <div className="sticky top-16 bg-background z-10 py-2">
             <TabsList className="grid w-full grid-cols-7">
@@ -183,7 +182,7 @@ export default function InstitutionDetailLayout({
         </div>
         <div className="mt-6">
             <TabsContent value={activeTab} forceMount>
-              {childrenWithProps}
+              {children}
             </TabsContent>
         </div>
       </Tabs>

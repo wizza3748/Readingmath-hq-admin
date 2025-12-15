@@ -2,10 +2,33 @@
 "use client";
 
 import React from 'react';
+import { useParams } from 'next/navigation';
 import { InstitutionEditForm } from "@/components/app/institutions/edit-form";
-import type { Institution } from "@/lib/institutions";
+import { getInstitution, type Institution } from "@/lib/institutions";
+import { useFirestore } from '@/firebase';
 
-export default function InstitutionInfoPage({ institution, loading }: { institution?: Institution | null, loading?: boolean }) {
+export default function InstitutionInfoPage() {
+  const params = useParams();
+  const institutionId = params.institutionId as string;
+  const firestore = useFirestore();
+  const [institution, setInstitution] = React.useState<Institution | null>(null);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    if (!firestore || !institutionId) {
+        if(!institutionId) setLoading(false);
+        return;
+    }
+
+    setLoading(true);
+    const unsubscribe = getInstitution(firestore, institutionId, (data) => {
+      setInstitution(data);
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, [firestore, institutionId]);
+
   
   if (loading) {
     return <InstitutionEditForm institution={null} loading={true} />;
