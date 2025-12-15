@@ -62,6 +62,7 @@ import React from "react";
 import { useFirestore } from "@/firebase";
 import { updateInstitution, deleteInstitution, type Institution } from "@/lib/institutions";
 import { Skeleton } from "@/components/ui/skeleton";
+import { ServiceChangeModal } from "./service-change-modal";
 
 declare global {
   interface Window {
@@ -321,6 +322,13 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
             description: "기관 정보 삭제 중 오류가 발생했습니다."
         });
     }
+  }
+
+  const handlePayment = (type: '가맹비' | '교육비') => {
+    toast({
+        title: `${type} 입금 처리`,
+        description: `기능이 구현될 예정입니다.`,
+    })
   }
 
   return (
@@ -589,7 +597,9 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="flex justify-start">
-                <Button type="button" variant="outline" disabled>서비스 변경 예약</Button>
+              <ServiceChangeModal currentService={form.getValues()}>
+                <Button type="button" variant="outline">서비스 변경 예약</Button>
+              </ServiceChangeModal>
             </div>
             <FormField
               control={form.control}
@@ -714,15 +724,15 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
                 <FormItem>
                   <FormLabel>가맹비</FormLabel>
                   <div className="flex gap-2">
-                    <Input type="number" placeholder="가맹비 금액 입력" disabled/>
-                    <Button type="button" disabled>가맹비 입금 처리</Button>
+                    <Input type="number" placeholder="가맹비 금액 입력" />
+                    <Button type="button" onClick={() => handlePayment('가맹비')}>가맹비 입금 처리</Button>
                   </div>
                 </FormItem>
                  <FormItem>
                   <FormLabel>교육비</FormLabel>
                   <div className="flex gap-2">
-                    <Input type="number" placeholder="교육비 금액 입력" disabled/>
-                    <Button type="button" disabled>교육비 입금 처리</Button>
+                    <Input type="number" placeholder="교육비 금액 입력" />
+                    <Button type="button" onClick={() => handlePayment('교육비')}>교육비 입금 처리</Button>
                   </div>
                 </FormItem>
                 <FormField
@@ -986,11 +996,3 @@ export function InstitutionEditForm({ institution, loading }: { institution: Ins
 
     return <InstitutionEditFormContent institution={institution} />;
 }
-
-    
-
-    
-
-    
-
-    
