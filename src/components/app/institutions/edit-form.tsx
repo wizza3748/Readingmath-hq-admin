@@ -189,7 +189,30 @@ function InstitutionEditFormContent({ institution }: { institution: Institution 
   
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {},
+    defaultValues: {
+        name: '',
+        ownerName: '',
+        ownerContact: '',
+        email: '',
+        branch1: '',
+        branch2: '',
+        everydayKoreanName: '',
+        dokdoName: '',
+        zipCode: '',
+        address: '',
+        addressDetail: '',
+        managerName: '',
+        managerContact: '',
+        lastContractDate: null,
+        serviceStatus: '정상',
+        franchiseType: '가맹전',
+        serviceType: '수학+과학',
+        minFee: '0',
+        perStudentFee: '',
+        perStudentFee1: '',
+        perStudentFee2: '',
+        memo: '',
+      },
   });
 
   React.useEffect(() => {
@@ -938,6 +961,8 @@ export function InstitutionEditForm({ institution, loading }: { institution: Ins
 
     return <InstitutionEditFormContent institution={institution} />;
 }
+
+    
 
     
 
