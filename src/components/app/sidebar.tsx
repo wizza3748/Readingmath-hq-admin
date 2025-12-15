@@ -31,7 +31,9 @@ export function AppSidebar() {
       <SidebarHeader>
         <Link href="/" className="flex items-center gap-2 font-bold font-headline text-lg">
           <AppLogo />
-          <span className="text-sidebar-foreground">Readingmath HQ</span>
+          <span className="text-sidebar-foreground">
+            리딩수학과학 <span className="font-normal text-sidebar-foreground/80">본사</span>
+          </span>
         </Link>
       </SidebarHeader>
       <SidebarContent>
