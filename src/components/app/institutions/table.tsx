@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -21,6 +22,9 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
 } from "@/components/ui/card";
 import {
   Table,
@@ -39,7 +43,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { MultiSelect } from "@/components/ui/multi-select";
+import { MultiSelect, type MultiSelectOption } from "@/components/ui/multi-select";
 
 type Institution = {
   id: string;
@@ -121,7 +125,7 @@ const DUMMY_DATA: Institution[] = [
     studentCount: 30,
     registrationDate: "2023-05-10",
   },
-    {
+  {
     id: "INST005",
     branch1: "인천",
     branch2: "송도",
@@ -139,7 +143,11 @@ const DUMMY_DATA: Institution[] = [
 ];
 
 const serviceStatusVariant: {
-  [key in Institution["serviceStatus"]]: "default" | "secondary" | "destructive" | "outline";
+  [key in Institution["serviceStatus"]]:
+    | "default"
+    | "secondary"
+    | "destructive"
+    | "outline";
 } = {
   정상: "default",
   무료사용: "secondary",
@@ -224,7 +232,7 @@ const columns: ColumnDef<Institution>[] = [
   {
     accessorKey: "points",
     header: ({ column }) => (
-       <Button
+      <Button
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
@@ -239,15 +247,17 @@ const columns: ColumnDef<Institution>[] = [
       return (
         <div className="text-right">
           {formattedPaid}
-          {formattedFree && <span className="text-muted-foreground">({formattedFree})</span>}
+          {formattedFree && (
+            <span className="text-muted-foreground">({formattedFree})</span>
+          )}
         </div>
       );
     },
     sortingFn: (rowA, rowB, columnId) => {
-        const pointsA = rowA.getValue(columnId) as Institution['points'];
-        const pointsB = rowB.getValue(columnId) as Institution['points'];
-        return pointsA.paid - pointsB.paid;
-    }
+      const pointsA = rowA.getValue(columnId) as Institution["points"];
+      const pointsB = rowB.getValue(columnId) as Institution["points"];
+      return pointsA.paid - pointsB.paid;
+    },
   },
   {
     accessorKey: "minFee",
@@ -261,7 +271,9 @@ const columns: ColumnDef<Institution>[] = [
       </Button>
     ),
     cell: ({ row }) => (
-      <div className="text-right">{row.getValue<number>("minFee").toLocaleString()}</div>
+      <div className="text-right">
+        {row.getValue<number>("minFee").toLocaleString()}
+      </div>
     ),
   },
   {
@@ -276,7 +288,9 @@ const columns: ColumnDef<Institution>[] = [
       </Button>
     ),
     cell: ({ row }) => (
-      <div className="text-right">{row.getValue<number>("perStudentFee").toLocaleString()}</div>
+      <div className="text-right">
+        {row.getValue<number>("perStudentFee").toLocaleString()}
+      </div>
     ),
   },
   {
@@ -290,7 +304,9 @@ const columns: ColumnDef<Institution>[] = [
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>
     ),
-    cell: ({ row }) => <div className="text-right">{row.getValue("studentCount")}</div>,
+    cell: ({ row }) => (
+      <div className="text-right">{row.getValue("studentCount")}</div>
+    ),
   },
   {
     accessorKey: "registrationDate",
@@ -306,31 +322,35 @@ const columns: ColumnDef<Institution>[] = [
   },
 ];
 
-const branchOptions = [
+const branchOptions: MultiSelectOption[] = [
   { value: "서울", label: "서울" },
   { value: "경기", label: "경기" },
   { value: "부산", label: "부산" },
   { value: "인천", label: "인천" },
 ];
-const serviceTypeOptions = [
+const serviceTypeOptions: MultiSelectOption[] = [
   { value: "수학+과학", label: "수학+과학" },
   { value: "수학", label: "수학" },
   { value: "과학", label: "과학" },
 ];
-const serviceStatusOptions = [
+const serviceStatusOptions: MultiSelectOption[] = [
   { value: "정상", label: "정상" },
   { value: "무료사용", label: "무료사용" },
   { value: "일시정지", label: "일시정지" },
   { value: "미납정지", label: "미납정지" },
 ];
-const franchiseTypeOptions = [
+const franchiseTypeOptions: MultiSelectOption[] = [
   { value: "스탠다드", label: "스탠다드" },
   { value: "슬림", label: "슬림" },
   { value: "가맹전", label: "가맹전" },
   { value: "학교", label: "학교" },
 ];
 
-function SearchFilters({ table }: { table: ReturnType<typeof useReactTable<Institution>> }) {
+function SearchFilters({
+  table,
+}: {
+  table: ReturnType<typeof useReactTable<Institution>>;
+}) {
   const [search, setSearch] = React.useState("");
 
   const handleSearch = () => {
@@ -348,10 +368,26 @@ function SearchFilters({ table }: { table: ReturnType<typeof useReactTable<Insti
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-      <MultiSelect options={branchOptions} placeholder="지사" className="lg:col-span-1" />
-      <MultiSelect options={serviceTypeOptions} placeholder="서비스 타입" className="lg:col-span-1" />
-      <MultiSelect options={serviceStatusOptions} placeholder="서비스 상태" className="lg:col-span-1" />
-      <MultiSelect options={franchiseTypeOptions} placeholder="가맹 타입" className="lg:col-span-1" />
+      <MultiSelect
+        options={branchOptions}
+        placeholder="지사"
+        className="lg:col-span-1"
+      />
+      <MultiSelect
+        options={serviceTypeOptions}
+        placeholder="서비스 타입"
+        className="lg:col-span-1"
+      />
+      <MultiSelect
+        options={serviceStatusOptions}
+        placeholder="서비스 상태"
+        className="lg:col-span-1"
+      />
+      <MultiSelect
+        options={franchiseTypeOptions}
+        placeholder="가맹 타입"
+        className="lg:col-span-1"
+      />
       <Select>
         <SelectTrigger>
           <SelectValue placeholder="자동 결제" />
@@ -369,18 +405,25 @@ function SearchFilters({ table }: { table: ReturnType<typeof useReactTable<Insti
         className="xl:col-span-2"
       />
       <div className="flex gap-2 xl:col-start-5 xl:col-span-2">
-        <Button onClick={handleSearch} className="flex-1">검색</Button>
-        <Button onClick={handleReset} variant="outline" className="flex-1">초기화</Button>
+        <Button onClick={handleSearch} className="flex-1">
+          검색
+        </Button>
+        <Button onClick={handleReset} variant="outline" className="flex-1">
+          초기화
+        </Button>
       </div>
     </div>
   );
 }
 
 export function InstitutionsTable() {
+  const router = useRouter();
   const [data] = React.useState(() => [...DUMMY_DATA]);
   const [sorting, setSorting] = React.useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
-  const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});
+  const [columnFilters, setColumnFilters] =
+    React.useState<ColumnFiltersState>([]);
+  const [columnVisibility, setColumnVisibility] =
+    React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
 
   const table = useReactTable({
@@ -401,7 +444,7 @@ export function InstitutionsTable() {
       rowSelection,
     },
   });
-  
+
   return (
     <div className="w-full space-y-6">
       <Card>
@@ -409,7 +452,7 @@ export function InstitutionsTable() {
           <SearchFilters table={table} />
         </CardContent>
       </Card>
-      
+
       <div>
         <div className="flex items-center justify-between py-4">
           <div className="flex-1 text-sm text-muted-foreground">
@@ -420,7 +463,7 @@ export function InstitutionsTable() {
               <Download className="mr-2 h-4 w-4" />
               엑셀 다운로드
             </Button>
-            <Button>
+            <Button onClick={() => router.push("/institutions/new")}>
               <Plus className="mr-2 h-4 w-4" />
               기관 등록
             </Button>
