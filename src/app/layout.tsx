@@ -33,8 +33,8 @@ export default function RootLayout({
               <main>{children}</main>
             </SidebarInset>
           </SidebarProvider>
+          <Toaster />
         </FirebaseClientProvider>
-        <Toaster />
       </body>
     </html>
   );
