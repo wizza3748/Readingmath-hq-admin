@@ -123,13 +123,13 @@ export default function InstitutionDetailLayout({
   children: React.ReactNode;
   params: { institutionId: string };
 }) {
+  const { institutionId } = params;
   const firebase = useFirebase();
   const router = useRouter();
   const pathname = usePathname();
   const [institution, setInstitution] = React.useState<Institution | null>(null);
   const [loading, setLoading] = React.useState(true);
   
-  const institutionId = params.institutionId;
   const segments = pathname.split('/');
   const activeTab = segments[segments.length -1] === institutionId ? 'info' : segments[segments.length -1];
   
