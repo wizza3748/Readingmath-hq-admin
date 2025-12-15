@@ -130,8 +130,8 @@ export default function InstitutionDetailLayout({
   const { firestore } = useFirebase() ?? {};
   
   const pathSegments = pathname.split('/');
-  const institutionId = params.institutionId;
-  const activeTab = pathSegments[3] === institutionId || !pathSegments[3] ? 'info' : pathSegments[3];
+  const institutionId = pathSegments[2];
+  const activeTab = !pathSegments[3] ? 'info' : pathSegments[3];
 
 
   const handleTabChange = (value: string) => {
@@ -143,7 +143,10 @@ export default function InstitutionDetailLayout({
   };
   
   React.useEffect(() => {
-    if (!firestore || !institutionId) return;
+    if (!firestore || !institutionId) {
+      if(!institutionId) setLoading(false);
+      return;
+    };
 
     setLoading(true);
     const unsubscribe = getInstitution(firestore, institutionId, (data) => {
