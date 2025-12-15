@@ -76,6 +76,12 @@ export async function createInstitution(db: Firestore, institutionData: any) {
     } else {
       delete docData.lastContractDate;
     }
+    
+    // In Firestore, 'undefined' is not a supported data type. 
+    // If the attachment is not provided, it can be undefined, so we remove it from the object before saving.
+    if (docData.attachment === undefined) {
+      delete docData.attachment;
+    }
 
 
     const docRef = await addDoc(collection(db, 'institutions'), docData);
