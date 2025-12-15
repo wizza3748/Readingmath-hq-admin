@@ -79,6 +79,9 @@ export function ServiceChangeModal({
     });
     setOpen(false);
   };
+  
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
 
   return (
     <Dialog open={open} onOpenChange={setOpen} modal={false}>
@@ -122,6 +125,7 @@ export function ServiceChangeModal({
                           field.onChange(date)
                           setCalendarOpen(false)
                         }}
+                        disabled={(date) => date < new Date(new Date().setHours(0,0,0,0))}
                         initialFocus
                       />
                     </PopoverContent>
