@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -50,19 +51,6 @@ const navConfig: NavItem[] = [
     icon: <Building2 />,
     children: [
       { title: "기관목록", href: "/institutions" },
-      {
-        title: "기관상세",
-        disabled: true, // This is a placeholder for the sub-menu, not a direct link
-        children: [
-          { title: "기관정보", href: "/institutions/details/info" },
-          { title: "학생목록", href: "/institutions/details/students" },
-          { title: "선생님목록", href: "/institutions/details/teachers" },
-          { title: "포인트내역", href: "/institutions/details/points" },
-          { title: "결제내역", href: "/institutions/details/payments" },
-          { title: "문의내역", href: "/institutions/details/inquiries" },
-          { title: "활동로그", href: "/institutions/details/logs" },
-        ],
-      },
       { title: "기관문의", href: "/institution-inquiries" },
       { title: "기관결제", href: "/institution-payments" },
       { title: "기관포인트", href: "/institution-points" },
@@ -73,18 +61,6 @@ const navConfig: NavItem[] = [
     icon: <Users />,
     children: [
       { title: "학생목록", href: "/students" },
-      {
-        title: "학생상세",
-        disabled: true,
-        children: [
-          { title: "학생정보", href: "/students/details/info" },
-          { title: "학습내역", href: "/students/details/history" },
-          { title: "주간학습알림", href: "/students/details/notifications" },
-          { title: "학습 보고서", href: "/students/details/learning-report" },
-          { title: "진단평가 보고서", href: "/students/details/test-report" },
-          { title: "결제내역 (B2C)", href: "/students/details/payments" },
-        ],
-      },
     ],
   },
   {
@@ -203,5 +179,3 @@ export function AppNav() {
     </SidebarMenu>
   );
 }
-
-    
