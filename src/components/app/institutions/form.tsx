@@ -49,6 +49,7 @@ import { useToast } from "@/hooks/use-toast";
 import React from "react";
 import { useFirestore } from "@/firebase";
 import { createInstitution } from "@/lib/institutions";
+import { Skeleton } from "@/components/ui/skeleton";
 
 
 const formSchema = z
@@ -154,7 +155,7 @@ const CurrencyInput = React.forwardRef<HTMLInputElement, React.InputHTMLAttribut
 );
 CurrencyInput.displayName = "CurrencyInput";
 
-export function InstitutionForm() {
+function InstitutionFormContent() {
   const router = useRouter();
   const { toast } = useToast();
   const firestore = useFirestore();
@@ -771,4 +772,52 @@ export function InstitutionForm() {
       </form>
     </Form>
   );
+}
+
+function FormSkeleton() {
+  return (
+    <div className="space-y-8 mt-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>기관 정보</CardTitle>
+          </CardHeader>
+          <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+                <Skeleton className="h-4 w-20" />
+                <Skeleton className="h-10 w-full" />
+            </div>
+            <div className="space-y-2">
+                <Skeleton className="h-4 w-20" />
+                <Skeleton className="h-10 w-full" />
+            </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>서비스 정보</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+             <div className="space-y-2">
+                <Skeleton className="h-4 w-20" />
+                <Skeleton className="h-10 w-full" />
+            </div>
+             <div className="space-y-2">
+                <Skeleton className="h-4 w-20" />
+                <Skeleton className="h-10 w-full" />
+            </div>
+          </CardContent>
+        </Card>
+    </div>
+  )
+}
+
+
+export function InstitutionForm() {
+    const firestore = useFirestore();
+
+    if (!firestore) {
+        return <FormSkeleton />;
+    }
+
+    return <InstitutionFormContent />;
 }
