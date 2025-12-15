@@ -14,10 +14,17 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ArrowUpDown, MoreHorizontal, Download, Plus } from "lucide-react";
+import { ArrowUpDown, Download, Plus } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   Table,
   TableBody,
@@ -326,6 +333,51 @@ const franchiseTypeOptions = [
   { value: "학교", label: "학교" },
 ];
 
+function SearchFilters({ table }: { table: ReturnType<typeof useReactTable<Institution>> }) {
+  const [search, setSearch] = React.useState("");
+
+  const handleSearch = () => {
+    if (search.trim().length < 2 && search.trim().length > 0) {
+      alert("검색어는 2자 이상 입력해주세요.");
+      return;
+    }
+    table.getColumn("name")?.setFilterValue(search);
+  };
+
+  const handleReset = () => {
+    setSearch("");
+    table.resetColumnFilters();
+  };
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+      <MultiSelect options={branchOptions} placeholder="지사" className="lg:col-span-1" />
+      <MultiSelect options={serviceTypeOptions} placeholder="서비스 타입" className="lg:col-span-1" />
+      <MultiSelect options={serviceStatusOptions} placeholder="서비스 상태" className="lg:col-span-1" />
+      <MultiSelect options={franchiseTypeOptions} placeholder="가맹 타입" className="lg:col-span-1" />
+      <Select>
+        <SelectTrigger>
+          <SelectValue placeholder="자동 결제" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all">전체</SelectItem>
+          <SelectItem value="registered">등록</SelectItem>
+          <SelectItem value="unregistered">미등록</SelectItem>
+        </SelectContent>
+      </Select>
+      <Input
+        placeholder="기관명으로 검색"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="xl:col-span-2"
+      />
+      <div className="flex gap-2 xl:col-start-5 xl:col-span-2">
+        <Button onClick={handleSearch} className="flex-1">검색</Button>
+        <Button onClick={handleReset} variant="outline" className="flex-1">초기화</Button>
+      </div>
+    </div>
+  );
+}
 
 export function InstitutionsTable() {
   const [data] = React.useState(() => [...DUMMY_DATA]);
@@ -352,117 +404,90 @@ export function InstitutionsTable() {
       rowSelection,
     },
   });
-
-  const [search, setSearch] = React.useState("");
-  const handleSearch = () => {
-    if (search.trim().length < 2 && search.trim().length > 0) {
-        alert("검색어는 2자 이상 입력해주세요.");
-        return;
-    }
-    table.getColumn("name")?.setFilterValue(search);
-  }
-
-  const handleReset = () => {
-    setSearch("");
-    table.resetColumnFilters();
-  }
   
   return (
-    <div className="w-full">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4 mb-4 p-4 border rounded-lg">
-        <MultiSelect options={branchOptions} placeholder="지사" className="lg:col-span-1" />
-        <MultiSelect options={serviceTypeOptions} placeholder="서비스 타입" className="lg:col-span-1" />
-        <MultiSelect options={serviceStatusOptions} placeholder="서비스 상태" className="lg:col-span-1" />
-        <MultiSelect options={franchiseTypeOptions} placeholder="가맹 타입" className="lg:col-span-1" />
-        <Select>
-            <SelectTrigger>
-                <SelectValue placeholder="자동 결제" />
-            </SelectTrigger>
-            <SelectContent>
-                <SelectItem value="all">전체</SelectItem>
-                <SelectItem value="registered">등록</SelectItem>
-                <SelectItem value="unregistered">미등록</SelectItem>
-            </SelectContent>
-        </Select>
-        <Input
-            placeholder="기관명으로 검색"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="xl:col-span-2"
-        />
-        <div className="flex gap-2 xl:col-start-5 xl:col-span-2">
-            <Button onClick={handleSearch} className="flex-1">검색</Button>
-            <Button onClick={handleReset} variant="outline" className="flex-1">초기화</Button>
+    <div className="w-full space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle className="font-headline">기관 검색</CardTitle>
+          <CardDescription>
+            다양한 조건으로 기관을 검색할 수 있습니다.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <SearchFilters table={table} />
+        </CardContent>
+      </Card>
+      
+      <div>
+        <div className="flex items-center justify-between py-4">
+          <div className="flex-1 text-sm text-muted-foreground">
+            총 {table.getFilteredRowModel().rows.length}개
+          </div>
+          <div className="flex gap-2">
+            <Button variant="outline">
+              <Download className="mr-2 h-4 w-4" />
+              엑셀 다운로드
+            </Button>
+            <Button>
+              <Plus className="mr-2 h-4 w-4" />
+              기관 등록
+            </Button>
+          </div>
         </div>
-      </div>
-
-      <div className="flex items-center justify-between py-4">
-        <div className="flex-1 text-sm text-muted-foreground">
-          총 {table.getFilteredRowModel().rows.length}개
-        </div>
-        <div className="flex gap-2">
-          <Button variant="outline">
-            <Download className="mr-2 h-4 w-4" />
-            엑셀 다운로드
-          </Button>
-          <Button>
-            <Plus className="mr-2 h-4 w-4" />
-            기관 등록
-          </Button>
-        </div>
-      </div>
-      <div className="rounded-md border">
-        <Table>
-          <TableHeader>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
-                  return (
-                    <TableHead key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                    </TableHead>
-                  );
-                })}
-              </TableRow>
-            ))}
-          </TableHeader>
-          <TableBody>
-            {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </TableCell>
-                  ))}
+        <div className="rounded-md border">
+          <Table>
+            <TableHeader>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => {
+                    return (
+                      <TableHead key={header.id}>
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
+                      </TableHead>
+                    );
+                  })}
                 </TableRow>
-              ))
-            ) : (
-              <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="h-24 text-center"
-                >
-                  결과가 없습니다.
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
-      </div>
-      <div className="py-4">
-        <DataTablePagination table={table} />
+              ))}
+            </TableHeader>
+            <TableBody>
+              {table.getRowModel().rows?.length ? (
+                table.getRowModel().rows.map((row) => (
+                  <TableRow
+                    key={row.id}
+                    data-state={row.getIsSelected() && "selected"}
+                  >
+                    {row.getVisibleCells().map((cell) => (
+                      <TableCell key={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell
+                    colSpan={columns.length}
+                    className="h-24 text-center"
+                  >
+                    결과가 없습니다.
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </div>
+        <div className="py-4">
+          <DataTablePagination table={table} />
+        </div>
       </div>
     </div>
   );
