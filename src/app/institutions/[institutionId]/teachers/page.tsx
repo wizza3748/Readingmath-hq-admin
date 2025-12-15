@@ -7,8 +7,10 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import type { Institution } from "@/lib/institutions";
 
-export default function TeachersPage() {
+
+export default function TeachersPage({ institution, loading }: { institution: Institution | null, loading: boolean }) {
   return (
     <Card>
       <CardHeader>

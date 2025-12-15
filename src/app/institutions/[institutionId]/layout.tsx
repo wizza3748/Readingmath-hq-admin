@@ -123,11 +123,11 @@ export default function InstitutionDetailLayout({
   children: React.ReactNode;
   params: { institutionId: string };
 }) {
-  const firebase = useFirebase();
   const router = useRouter();
   const pathname = usePathname();
   const [institution, setInstitution] = React.useState<Institution | null>(null);
   const [loading, setLoading] = React.useState(true);
+  const { firestore } = useFirebase() ?? {};
   
   const segments = pathname.split('/');
   const activeTab = segments[segments.length -1] === params.institutionId ? 'info' : segments[segments.length -1];
@@ -141,16 +141,16 @@ export default function InstitutionDetailLayout({
   };
   
   React.useEffect(() => {
-    if (!firebase?.firestore || !params.institutionId) return;
+    if (!firestore || !params.institutionId) return;
 
     setLoading(true);
-    const unsubscribe = getInstitution(firebase.firestore, params.institutionId, (data) => {
+    const unsubscribe = getInstitution(firestore, params.institutionId, (data) => {
       setInstitution(data);
       setLoading(false);
     });
 
     return () => unsubscribe();
-  }, [firebase, params.institutionId]);
+  }, [firestore, params.institutionId]);
 
   const childrenWithProps = React.Children.map(children, child => {
     if (React.isValidElement(child)) {
@@ -177,17 +177,9 @@ export default function InstitutionDetailLayout({
             </TabsList>
         </div>
         <div className="mt-6">
-          {activeTab === 'info' ? (
-            <TabsContent value="info" forceMount>
+            <TabsContent value={activeTab} forceMount>
               {childrenWithProps}
             </TabsContent>
-          ) : (
-            <>
-                <TabsContent value={activeTab} forceMount>
-                  {childrenWithProps}
-                </TabsContent>
-            </>
-          )}
         </div>
       </Tabs>
     </div>
