@@ -17,6 +17,8 @@ import {
   deleteDoc,
   FieldValue,
 } from 'firebase/firestore';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError, type SecurityRuleContext } from '@/firebase/errors';
 
 export type ServiceChangeReservation = {
   effectiveDate: Timestamp;
@@ -74,112 +76,130 @@ const parseCurrency = (value: string | undefined | null): number => {
 
 // This function saves a new institution document to Firestore.
 export async function createInstitution(db: Firestore, institutionData: any) {
-  try {
-    const { password, lastContractDate, ...dataToSave } = institutionData;
+  const { password, lastContractDate, ...dataToSave } = institutionData;
 
-    const docData: any = {
-      ...dataToSave,
-      fees: {
-        minFee: parseCurrency(institutionData.minFee),
-        perStudentFee: parseCurrency(institutionData.perStudentFee),
-        perStudentFee1: parseCurrency(institutionData.perStudentFee1),
-        perStudentFee2: parseCurrency(institutionData.perStudentFee2),
-      },
-      createdAt: serverTimestamp(),
-      updatedAt: serverTimestamp(),
-    };
+  const docData: any = {
+    ...dataToSave,
+    fees: {
+      minFee: parseCurrency(institutionData.minFee),
+      perStudentFee: parseCurrency(institutionData.perStudentFee),
+      perStudentFee1: parseCurrency(institutionData.perStudentFee1),
+      perStudentFee2: parseCurrency(institutionData.perStudentFee2),
+    },
+    createdAt: serverTimestamp(),
+    updatedAt: serverTimestamp(),
+  };
 
-    if (lastContractDate && lastContractDate instanceof Date) {
-      docData.lastContractDate = Timestamp.fromDate(lastContractDate);
-    } else {
-      delete docData.lastContractDate;
-    }
-    
-    // In Firestore, 'undefined' is not a supported data type. 
-    // If the attachment is not provided, it can be undefined, so we remove it from the object before saving.
-    if (docData.attachment === undefined) {
-      delete docData.attachment;
-    }
-
-
-    const docRef = await addDoc(collection(db, 'institutions'), docData);
-    console.log('Document written with ID: ', docRef.id);
-    return docRef.id;
-  } catch (e) {
-    console.error('Error adding document: ', e);
-    throw new Error('Failed to create institution');
+  if (lastContractDate && lastContractDate instanceof Date) {
+    docData.lastContractDate = Timestamp.fromDate(lastContractDate);
+  } else {
+    delete docData.lastContractDate;
   }
+  
+  // In Firestore, 'undefined' is not a supported data type. 
+  // If the attachment is not provided, it can be undefined, so we remove it from the object before saving.
+  if (docData.attachment === undefined) {
+    delete docData.attachment;
+  }
+
+  const collRef = collection(db, 'institutions');
+  addDoc(collRef, docData)
+    .then(docRef => {
+        console.log('Document written with ID: ', docRef.id);
+        return docRef.id;
+    })
+    .catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+          path: collRef.path,
+          operation: 'create',
+          requestResourceData: docData,
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+    });
 }
 
 // This function updates an existing institution document in Firestore.
 export async function updateInstitution(db: Firestore, id: string, institutionData: any) {
-    try {
-        const docRef = doc(db, "institutions", id);
-        const { lastContractDate, ...dataToSave } = institutionData;
+    const docRef = doc(db, "institutions", id);
+    const { lastContractDate, ...dataToSave } = institutionData;
 
-        const docData: any = {
-            ...dataToSave,
-            fees: {
-                minFee: parseCurrency(institutionData.minFee),
-                perStudentFee: parseCurrency(institutionData.perStudentFee),
-                perStudentFee1: parseCurrency(institutionData.perStudentFee1),
-                perStudentFee2: parseCurrency(institutionData.perStudentFee2),
-            },
-            updatedAt: serverTimestamp(),
-        };
+    const docData: any = {
+        ...dataToSave,
+        fees: {
+            minFee: parseCurrency(institutionData.minFee),
+            perStudentFee: parseCurrency(institutionData.perStudentFee),
+            perStudentFee1: parseCurrency(institutionData.perStudentFee1),
+            perStudentFee2: parseCurrency(institutionData.perStudentFee2),
+        },
+        updatedAt: serverTimestamp(),
+    };
 
-        if (lastContractDate && lastContractDate instanceof Date) {
-            docData.lastContractDate = Timestamp.fromDate(lastContractDate);
-        } else if (lastContractDate === null || lastContractDate === undefined) {
-            docData.lastContractDate = null;
-        }
-
-        if (docData.attachment === undefined) {
-            delete docData.attachment;
-        }
-        
-        // Remove empty strings for optional fields to avoid storing them
-        Object.keys(docData).forEach(key => {
-            if (docData[key] === '') {
-                delete docData[key];
-            }
-        });
-
-        await updateDoc(docRef, docData);
-        console.log('Document updated with ID: ', id);
-    } catch (e) {
-        console.error('Error updating document: ', e);
-        throw new Error('Failed to update institution');
+    if (lastContractDate && lastContractDate instanceof Date) {
+        docData.lastContractDate = Timestamp.fromDate(lastContractDate);
+    } else if (lastContractDate === null || lastContractDate === undefined) {
+        docData.lastContractDate = null;
     }
+
+    if (docData.attachment === undefined) {
+        delete docData.attachment;
+    }
+    
+    Object.keys(docData).forEach(key => {
+        if (docData[key] === '') {
+            delete docData[key];
+        }
+    });
+
+    updateDoc(docRef, docData)
+      .then(() => {
+        console.log('Document updated with ID: ', id);
+      })
+      .catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: docRef.path,
+            operation: 'update',
+            requestResourceData: docData,
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+      });
 }
 
 // This function updates a fee payment status for an institution.
 export async function updateFeePayment(db: Firestore, id: string, feeType: 'franchiseFee' | 'trainingFee', amount: number) {
-  try {
-    const docRef = doc(db, 'institutions', id);
-    const dataToUpdate: { [key: string]: any } = {};
-    dataToUpdate[`${feeType}Amount`] = amount;
-    dataToUpdate[`${feeType}PaidAt`] = serverTimestamp();
-    dataToUpdate.updatedAt = serverTimestamp();
+  const docRef = doc(db, 'institutions', id);
+  const dataToUpdate: { [key: string]: any } = {};
+  dataToUpdate[`${feeType}Amount`] = amount;
+  dataToUpdate[`${feeType}PaidAt`] = serverTimestamp();
+  dataToUpdate.updatedAt = serverTimestamp();
 
-    await updateDoc(docRef, dataToUpdate);
-    console.log(`${feeType} payment updated for document ID: `, id);
-  } catch (e) {
-    console.error(`Error updating ${feeType} payment: `, e);
-    throw new Error(`Failed to update ${feeType} payment`);
-  }
+  updateDoc(docRef, dataToUpdate)
+    .then(() => {
+        console.log(`${feeType} payment updated for document ID: `, id);
+    })
+    .catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: docRef.path,
+            operation: 'update',
+            requestResourceData: dataToUpdate,
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+    });
 }
 
 // This function deletes an institution document from Firestore.
 export async function deleteInstitution(db: Firestore, id: string) {
-    try {
-        const docRef = doc(db, "institutions", id);
-        await deleteDoc(docRef);
-        console.log('Document deleted with ID: ', id);
-    } catch (e) {
-        console.error('Error deleting document: ', e);
-        throw new Error('Failed to delete institution');
-    }
+    const docRef = doc(db, "institutions", id);
+    deleteDoc(docRef)
+      .then(() => {
+          console.log('Document deleted with ID: ', id);
+      })
+      .catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: docRef.path,
+            operation: 'delete',
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+      });
 }
 
 
@@ -193,8 +213,12 @@ export function getInstitutions(db: Firestore, callback: (institutions: Institut
       institutions.push({ id: doc.id, ...doc.data() } as Institution);
     });
     callback(institutions);
-  }, (error) => {
-    console.error("Error fetching institutions:", error);
+  }, async (serverError) => {
+    const permissionError = new FirestorePermissionError({
+        path: collection(db, "institutions").path,
+        operation: 'list',
+    } satisfies SecurityRuleContext);
+    errorEmitter.emit('permission-error', permissionError);
   });
 
   return unsubscribe; // Return the unsubscribe function to clean up the listener
@@ -215,8 +239,12 @@ export function getInstitution(db: Firestore, id: string, callback: (institution
       console.log("No such document!");
       callback(null);
     }
-  }, (error) => {
-    console.error("Error fetching institution:", error);
+  }, async (serverError) => {
+    const permissionError = new FirestorePermissionError({
+        path: docRef.path,
+        operation: 'get',
+    } satisfies SecurityRuleContext);
+    errorEmitter.emit('permission-error', permissionError);
     callback(null);
   });
 
@@ -233,34 +261,46 @@ export async function checkLoginIdExists(db: Firestore, loginId: string): Promis
 
 // This function saves a service change reservation to Firestore.
 export async function updateServiceReservation(db: Firestore, id: string, reservation: Omit<ServiceChangeReservation, 'effectiveDate'> & { effectiveDate: Date }) {
-    try {
-        const docRef = doc(db, "institutions", id);
-        const reservationData = {
-            ...reservation,
-            effectiveDate: Timestamp.fromDate(reservation.effectiveDate),
-        };
-        await updateDoc(docRef, {
-            serviceChangeReservation: reservationData,
-            updatedAt: serverTimestamp(),
-        });
+    const docRef = doc(db, "institutions", id);
+    const reservationData = {
+        ...reservation,
+        effectiveDate: Timestamp.fromDate(reservation.effectiveDate),
+    };
+    const dataToUpdate = {
+        serviceChangeReservation: reservationData,
+        updatedAt: serverTimestamp(),
+    };
+    updateDoc(docRef, dataToUpdate)
+      .then(() => {
         console.log('Service reservation updated for document ID: ', id);
-    } catch (e) {
-        console.error('Error updating service reservation: ', e);
-        throw new Error('Failed to update service reservation');
-    }
+      })
+      .catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: docRef.path,
+            operation: 'update',
+            requestResourceData: dataToUpdate,
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+      });
 }
 
 // This function cancels a service change reservation.
 export async function cancelServiceReservation(db: Firestore, id: string) {
-    try {
-        const docRef = doc(db, "institutions", id);
-        await updateDoc(docRef, {
-            serviceChangeReservation: null,
-            updatedAt: serverTimestamp(),
-        });
-        console.log('Service reservation cancelled for document ID: ', id);
-    } catch (e) {
-        console.error('Error cancelling service reservation: ', e);
-        throw new Error('Failed to cancel service reservation');
-    }
+    const docRef = doc(db, "institutions", id);
+    const dataToUpdate = {
+        serviceChangeReservation: null,
+        updatedAt: serverTimestamp(),
+    };
+    updateDoc(docRef, dataToUpdate)
+      .then(() => {
+          console.log('Service reservation cancelled for document ID: ', id);
+      })
+      .catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: docRef.path,
+            operation: 'update',
+            requestResourceData: dataToUpdate
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+      });
 }
