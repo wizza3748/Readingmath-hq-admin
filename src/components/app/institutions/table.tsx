@@ -143,7 +143,7 @@ const columns: ColumnDef<Institution>[] = [
     ),
     cell: ({ row }) => (
       <div className="text-right">
-        {(row.original.fees.minFee ?? 0).toLocaleString()}
+        {(row.original.fees?.minFee ?? 0).toLocaleString()}
       </div>
     ),
   },
@@ -445,5 +445,3 @@ export function InstitutionsTable() {
 
     return <InstitutionsTableContent />;
 }
-
-    
