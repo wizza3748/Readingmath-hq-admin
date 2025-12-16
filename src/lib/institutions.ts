@@ -205,7 +205,8 @@ export async function deleteInstitution(db: Firestore, id: string) {
 
 // This function fetches all institutions from Firestore in real-time.
 export function getInstitutions(db: Firestore, callback: (institutions: Institution[]) => void) {
-  const q = query(collection(db, "institutions"), orderBy("createdAt", "desc"));
+  const collRef = collection(db, "institutions");
+  const q = query(collRef, orderBy("createdAt", "desc"));
 
   const unsubscribe = onSnapshot(q, (querySnapshot) => {
     const institutions: Institution[] = [];
@@ -213,8 +214,12 @@ export function getInstitutions(db: Firestore, callback: (institutions: Institut
       institutions.push({ id: doc.id, ...doc.data() } as Institution);
     });
     callback(institutions);
-  }, (error) => {
-    console.warn("Permission denied fetching institutions:", error.message);
+  }, async (serverError) => {
+    const permissionError = new FirestorePermissionError({
+        path: collRef.path,
+        operation: 'list',
+    } satisfies SecurityRuleContext);
+    errorEmitter.emit('permission-error', permissionError);
     callback([]);
   });
 
@@ -236,8 +241,12 @@ export function getInstitution(db: Firestore, id: string, callback: (institution
       console.log("No such document!");
       callback(null);
     }
-  }, (error) => {
-    console.warn(`Permission denied fetching institution ${id}:`, error.message);
+  }, async (serverError) => {
+    const permissionError = new FirestorePermissionError({
+        path: docRef.path,
+        operation: 'get',
+    } satisfies SecurityRuleContext);
+    errorEmitter.emit('permission-error', permissionError);
     callback(null);
   });
 
