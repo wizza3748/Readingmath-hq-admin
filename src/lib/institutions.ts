@@ -213,12 +213,9 @@ export function getInstitutions(db: Firestore, callback: (institutions: Institut
       institutions.push({ id: doc.id, ...doc.data() } as Institution);
     });
     callback(institutions);
-  }, async (serverError) => {
-    const permissionError = new FirestorePermissionError({
-        path: collection(db, "institutions").path,
-        operation: 'list',
-    } satisfies SecurityRuleContext);
-    errorEmitter.emit('permission-error', permissionError);
+  }, (error) => {
+    console.warn("Permission denied fetching institutions:", error.message);
+    callback([]);
   });
 
   return unsubscribe; // Return the unsubscribe function to clean up the listener
@@ -239,12 +236,8 @@ export function getInstitution(db: Firestore, id: string, callback: (institution
       console.log("No such document!");
       callback(null);
     }
-  }, async (serverError) => {
-    const permissionError = new FirestorePermissionError({
-        path: docRef.path,
-        operation: 'get',
-    } satisfies SecurityRuleContext);
-    errorEmitter.emit('permission-error', permissionError);
+  }, (error) => {
+    console.warn(`Permission denied fetching institution ${id}:`, error.message);
     callback(null);
   });
 
