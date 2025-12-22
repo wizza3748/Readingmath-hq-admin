@@ -433,7 +433,7 @@ export type Question = {
     questionType: '유형' | '서술형';
     difficulty: '하' | '중하' | '중' | '중상' | '상';
     subUnitType: string;
-    contentArea: '물리' | '생명과학' | '지구과학' | '화학' | '탐구활동' | '통합과학';
+    contentArea: '물리' | '생명과학' | '지구과학' | '화학' | '탐구활동' | '통합과학' | string;
     behavioralArea: '개념이해력' | '문제해결력' | '문해력' | '추론력';
     prompt: string;
     viewContent?: string;
