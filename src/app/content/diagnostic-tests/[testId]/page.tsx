@@ -19,24 +19,25 @@ export default function DiagnosticTestDetailPage({ params }: { params: { testId:
   const { firestore } = useFirebase() ?? {};
   const [test, setTest] = React.useState<DiagnosticTest | null>(null);
   const [loading, setLoading] = React.useState(true);
+  const { testId } = params;
 
   React.useEffect(() => {
-    if (!firestore || !params.testId) return;
+    if (!firestore || !testId) return;
 
     setLoading(true);
-    const unsubscribe = getDiagnosticTest(firestore, params.testId, (data) => {
+    const unsubscribe = getDiagnosticTest(firestore, testId, (data) => {
       setTest(data);
       setLoading(false);
     });
 
     return () => unsubscribe();
-  }, [firestore, params.testId]);
+  }, [firestore, testId]);
 
   const handleStatusToggle = async (checked: boolean) => {
     if (!firestore || !test) return;
     const newStatus = checked ? '검수완료' : '검수전';
     try {
-      await updateDiagnosticTestStatus(firestore, test.id.toString(), newStatus);
+      await updateDiagnosticTestTestStatus(firestore, test.id.toString(), newStatus);
       setTest(prev => prev ? { ...prev, status: newStatus } : null);
       toast({
         title: '상태 변경 완료',
