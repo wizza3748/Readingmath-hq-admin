@@ -19,19 +19,18 @@ export default function DiagnosticTestDetailPage({ params }: { params: { testId:
   const { firestore } = useFirebase() ?? {};
   const [test, setTest] = React.useState<DiagnosticTest | null>(null);
   const [loading, setLoading] = React.useState(true);
-  const testId = params.testId;
 
   React.useEffect(() => {
-    if (!firestore || !testId) return;
+    if (!firestore || !params.testId) return;
 
     setLoading(true);
-    const unsubscribe = getDiagnosticTest(firestore, testId, (data) => {
+    const unsubscribe = getDiagnosticTest(firestore, params.testId, (data) => {
       setTest(data);
       setLoading(false);
     });
 
     return () => unsubscribe();
-  }, [firestore, testId]);
+  }, [firestore, params.testId]);
 
   const handleStatusToggle = async (checked: boolean) => {
     if (!firestore || !test) return;
