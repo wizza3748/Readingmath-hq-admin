@@ -20,6 +20,10 @@ import {
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError, type SecurityRuleContext } from '@/firebase/errors';
 
+//
+// Institutions
+//
+
 export type ServiceChangeReservation = {
   effectiveDate: Timestamp;
   serviceStatus: "일시정지" | "정상" | "무료사용" | "미납정지";
@@ -306,3 +310,39 @@ export async function cancelServiceReservation(db: Firestore, id: string) {
         errorEmitter.emit('permission-error', permissionError);
       });
 }
+
+//
+// Diagnostic Tests
+//
+
+export type DiagnosticTest = {
+  id: number;
+  semesterName: string;
+  totalQuestions: number;
+  createdAt: Timestamp;
+  status: '검수전' | '검수완료';
+};
+
+export function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTest[]) => void) {
+  const collRef = collection(db, "diagnostic-tests");
+  const q = query(collRef, orderBy("id", "asc"));
+
+  const unsubscribe = onSnapshot(q, (querySnapshot) => {
+    const tests: DiagnosticTest[] = [];
+    querySnapshot.forEach((doc) => {
+      tests.push({ ...doc.data() } as DiagnosticTest);
+    });
+    callback(tests);
+  }, async (serverError) => {
+    const permissionError = new FirestorePermissionError({
+        path: collRef.path,
+        operation: 'list',
+    } satisfies SecurityRuleContext);
+    errorEmitter.emit('permission-error', permissionError);
+    callback([]);
+  });
+
+  return unsubscribe;
+}
+
+    

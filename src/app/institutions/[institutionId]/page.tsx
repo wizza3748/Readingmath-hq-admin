@@ -4,7 +4,7 @@
 import React from 'react';
 import { useParams } from 'next/navigation';
 import { InstitutionEditForm } from "@/components/app/institutions/edit-form";
-import { getInstitution, type Institution } from "@/lib/institutions";
+import { getInstitution, type Institution } from "@/lib/db";
 import { useFirebase } from '@/firebase';
 
 export default function InstitutionInfoPage() {
@@ -51,3 +51,5 @@ export default function InstitutionInfoPage() {
     <InstitutionEditForm institution={institution} loading={false} />
   );
 }
+
+    

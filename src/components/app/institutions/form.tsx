@@ -49,7 +49,7 @@ import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import React from "react";
 import { useFirebase, useFirestore } from "@/firebase";
-import { createInstitution, checkLoginIdExists } from "@/lib/institutions";
+import { createInstitution, checkLoginIdExists } from "@/lib/db";
 import { Skeleton } from "@/components/ui/skeleton";
 
 declare global {
@@ -954,5 +954,7 @@ export function InstitutionForm() {
 
     return <InstitutionFormContent />;
 }
+
+    
 
     

@@ -6,5 +6,10 @@ service cloud.firestore {
     match /institutions/{document=**} {
       allow read, write: if true;
     }
+    match /diagnostic-tests/{document=**} {
+      allow read, write: if true;
+    }
   }
 }
+
+    

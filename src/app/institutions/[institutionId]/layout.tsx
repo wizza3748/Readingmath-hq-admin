@@ -17,7 +17,7 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs";
 import { useFirebase } from "@/firebase";
-import { getInstitution, type Institution } from "@/lib/institutions";
+import { getInstitution, type Institution } from "@/lib/db";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Separator } from "@/components/ui/separator";
 
@@ -189,3 +189,5 @@ export default function InstitutionDetailLayout({
     </div>
   );
 }
+
+    

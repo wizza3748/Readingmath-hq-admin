@@ -58,6 +58,19 @@
         "updatedAt": { "type": "string", "format": "date-time" }
       },
       "required": ["name", "ownerName", "loginId", "ownerContact", "branch1", "serviceStatus", "serviceType", "fees"]
+    },
+    "DiagnosticTest": {
+      "title": "Diagnostic Test",
+      "description": "Represents a diagnostic test for a specific semester.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number", "description": "Unique identifier for the test." },
+        "semesterName": { "type": "string", "description": "Name of the semester (e.g., '초등 3학년 1학기')." },
+        "totalQuestions": { "type": "number", "description": "Total number of questions in the test." },
+        "status": { "type": "string", "enum": ["검수전", "검수완료"], "description": "The review status of the test." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp when the test was created." }
+      },
+      "required": ["id", "semesterName", "totalQuestions", "status", "createdAt"]
     }
   },
   "auth": {
@@ -67,6 +80,12 @@
     "/institutions/{institutionId}": {
       "schema": { "$ref": "#/entities/Institution" },
       "description": "Stores information about each institution."
+    },
+    "/diagnostic-tests/{testId}": {
+      "schema": { "$ref": "#/entities/DiagnosticTest" },
+      "description": "Stores information about each diagnostic test."
     }
   }
 }
+
+    

@@ -39,7 +39,7 @@ import {
 } from "@/components/ui/select";
 import { MultiSelect, type MultiSelectOption } from "@/components/ui/multi-select";
 import { useFirebase, useFirestore } from "@/firebase";
-import { getInstitutions, type Institution } from "@/lib/institutions";
+import { getInstitutions, type Institution } from "@/lib/db";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -445,3 +445,5 @@ export function InstitutionsTable() {
 
     return <InstitutionsTableContent />;
 }
+
+    

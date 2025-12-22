@@ -36,7 +36,7 @@ import { format } from "date-fns";
 import { ko } from "date-fns/locale";
 import { useToast } from "@/hooks/use-toast";
 import { useFirestore } from "@/firebase";
-import { updateServiceReservation } from "@/lib/institutions";
+import { updateServiceReservation } from "@/lib/db";
 
 
 const formSchema = z.object({
@@ -293,3 +293,5 @@ export function ServiceChangeModal({
     </Dialog>
   );
 }
+
+    

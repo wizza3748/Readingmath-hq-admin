@@ -61,7 +61,7 @@ import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import React from "react";
 import { useFirestore } from "@/firebase";
-import { updateInstitution, deleteInstitution, type Institution, updateFeePayment, cancelServiceReservation } from "@/lib/institutions";
+import { updateInstitution, deleteInstitution, type Institution, updateFeePayment, cancelServiceReservation } from "@/lib/db";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ServiceChangeModal } from "./service-change-modal";
 
@@ -1147,3 +1147,5 @@ export function InstitutionEditForm({ institution, loading }: { institution: Ins
 
     return <InstitutionEditFormContent institution={institution} />;
 }
+
+    
