@@ -14,7 +14,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-import { ArrowUpDown, Edit } from 'lucide-react';
+import { Edit } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -63,7 +63,7 @@ const initialData: DiagnosticTest[] = [
   { id: 26, semesterName: '중등 2학년 2학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수완료' },
   { id: 27, semesterName: '중등 3학년 1학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수전' },
   { id: 28, semesterName: '중등 3학년 2학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수완료' },
-].reverse();
+];
 
 
 const statusVariant: {
@@ -82,15 +82,7 @@ const columns: ColumnDef<DiagnosticTest>[] = [
   },
   {
     accessorKey: 'semesterName',
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-      >
-        학기명
-        <ArrowUpDown className="ml-2 h-4 w-4" />
-      </Button>
-    ),
+    header: '학기명',
     cell: ({ row }) => (
       <Link href="#" className="font-medium text-primary hover:underline">
         {row.getValue('semesterName')}
@@ -99,30 +91,12 @@ const columns: ColumnDef<DiagnosticTest>[] = [
   },
   {
     accessorKey: 'totalQuestions',
-    header: ({ column }) => (
-        <div className="text-center">
-            <Button
-                variant="ghost"
-                onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-            >
-                총 문제 수
-                <ArrowUpDown className="ml-2 h-4 w-4" />
-            </Button>
-        </div>
-    ),
+    header: () => <div className="text-center">총 문제 수</div>,
     cell: ({ row }) => <div className="text-center">{row.getValue('totalQuestions')}</div>,
   },
   {
     accessorKey: 'createdAt',
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-      >
-        등록일시
-        <ArrowUpDown className="ml-2 h-4 w-4" />
-      </Button>
-    ),
+    header: '등록일시',
     cell: ({ row }) => <div>{row.getValue('createdAt')}</div>,
   },
   {
@@ -207,7 +181,9 @@ function SearchFilters({
 
 export default function DiagnosticTestsPage() {
   const [data] = React.useState<DiagnosticTest[]>(initialData);
-  const [sorting, setSorting] = React.useState<SortingState>([]);
+  const [sorting, setSorting] = React.useState<SortingState>([
+    { id: 'id', desc: false }
+  ]);
   const [columnFilters, setColumnFilters] =
     React.useState<ColumnFiltersState>([
         { id: 'status', value: '검수전' }
