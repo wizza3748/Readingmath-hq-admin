@@ -17,6 +17,12 @@ type WorkItem = {
 
 const workItems: WorkItem[] = [
   {
+    id: "RM-198",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-198",
+    title: "[본사] 콘텐츠관리 > 진단평가관리(과학)",
+    internalUrl: "#",
+  },
+  {
     id: "RM-133",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-133",
     title: "리딩수학과학 기관목록 테스트",
