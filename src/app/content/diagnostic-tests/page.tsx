@@ -48,10 +48,6 @@ type DiagnosticTest = {
 
 const initialData: DiagnosticTest[] = [
     // 초등
-    { id: 1, semesterName: '초등 1학년 1학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
-    { id: 2, semesterName: '초등 1학년 2학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
-    { id: 3, semesterName: '초등 2학년 1학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
-    { id: 4, semesterName: '초등 2학년 2학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
     { id: 15, semesterName: '초등 3학년 1학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
     { id: 16, semesterName: '초등 3학년 2학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
     { id: 17, semesterName: '초등 4학년 1학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수완료' },
@@ -67,13 +63,6 @@ const initialData: DiagnosticTest[] = [
     { id: 26, semesterName: '중등 2학년 2학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수완료' },
     { id: 27, semesterName: '중등 3학년 1학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수전' },
     { id: 28, semesterName: '중등 3학년 2학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수완료' },
-    // 고등
-    { id: 29, semesterName: '고등 1학년 1학기', totalQuestions: 100, createdAt: '2024-03-01 09:00:00', status: '검수전' },
-    { id: 30, semesterName: '고등 1학년 2학기', totalQuestions: 100, createdAt: '2024-03-01 09:00:00', status: '검수완료' },
-    { id: 31, semesterName: '고등 2학년 1학기', totalQuestions: 100, createdAt: '2024-03-01 09:00:00', status: '검수전' },
-    { id: 32, semesterName: '고등 2학년 2학기', totalQuestions: 100, createdAt: '2024-03-01 09:00:00', status: '검수완료' },
-    { id: 33, semesterName: '고등 3학년 1학기', totalQuestions: 100, createdAt: '2024-03-01 09:00:00', status: '검수전' },
-    { id: 34, semesterName: '고등 3학년 2학기', totalQuestions: 100, createdAt: '2024-03-01 09:00:00', status: '검수완료' },
 ];
 
 
