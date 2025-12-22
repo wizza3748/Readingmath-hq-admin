@@ -79,17 +79,28 @@
       "properties": {
         "questionNumber": { "type": "number", "description": "Sequential number of the question within the test." },
         "questionType": { "type": "string", "enum": ["유형", "서술형"], "description": "Type of the question." },
-        "unit": { "type": "string", "description": "The educational unit this question belongs to." },
-        "contentArea": { "type": "string", "description": "The specific content area of the question." },
-        "difficulty": { "type": "string", "enum": ["상", "중", "하"], "description": "Difficulty level of the question." },
-        "prompt": { "type": "string", "description": "The main text or prompt of the question." },
+        "difficulty": { "type": "string", "enum": ["하", "중하", "중", "중상", "상"], "description": "Difficulty level of the question." },
+        "subUnitType": { "type": "string", "description": "The sub-unit type based on the curriculum." },
+        "contentArea": { "type": "string", "enum": ["물리", "생명과학", "지구과학", "화학", "탐구활동", "통합과학"], "description": "The specific content area of the question." },
+        "behavioralArea": { "type": "string", "enum": ["개념이해력", "문제해결력", "문해력", "추론력"], "description": "The behavioral area the question assesses." },
+        "prompt": { "type": "string", "description": "The main text or prompt of the question (can be rich text)." },
+        "viewContent": { "type": "string", "description": "Auxiliary content or view for the question (can be rich text)." },
+        "answerType": { "type": "string", "enum": ["입력형", "선지형", "순서맞추기"], "description": "The type of answer format for a '유형' question." },
+        "answers": { 
+            "type": "array", 
+            "description": "A list of possible answers and their configurations.",
+            "items": { "type": "object" }
+        },
+        "solution": { "type": "string", "description": "The detailed solution or explanation for the question (can be rich text)." },
+        "videoUrl": { "type": "string", "description": "URL for a solution video." },
+        "problemSolving": { "type": "string", "description": "The entire problem-solving process text for '서술형' questions (can be rich text)." },
         "solutionCount": { "type": "number", "description": "Number of registered solutions for the question." },
         "isExtended": { "type": "boolean", "description": "Whether this is an extended question." },
         "isReviewed": { "type": "boolean", "description": "Whether the question has been reviewed." },
         "createdAt": { "type": "string", "format": "date-time" },
         "updatedAt": { "type": "string", "format": "date-time" }
       },
-      "required": ["questionNumber", "questionType", "prompt", "isReviewed"]
+      "required": ["questionNumber", "questionType", "difficulty", "subUnitType", "behavioralArea", "prompt", "isReviewed"]
     }
   },
   "auth": {

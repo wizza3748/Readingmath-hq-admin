@@ -93,7 +93,7 @@ export function QuestionList({ testId }: { testId: string }) {
   const columns: ColumnDef<Question>[] = [
     { accessorKey: 'questionNumber', header: '번호' },
     { accessorKey: 'questionType', header: '문제 타입' },
-    { accessorKey: 'unit', header: '단원', cell: ({ row }) => row.original.unit || '-' },
+    { accessorKey: 'subUnitType', header: '단원', cell: ({ row }) => row.original.subUnitType || '-' },
     { accessorKey: 'contentArea', header: '내용영역', cell: ({ row }) => row.original.contentArea || '-' },
     { accessorKey: 'difficulty', header: '난이도', cell: ({ row }) => row.original.difficulty || '-' },
     { 
