@@ -325,7 +325,7 @@ function DiagnosticTestsTable() {
 }
 
 export default function DiagnosticTestsPage() {
-    const { firestore } = useFirebase();
+    const { firestore } = useFirebase() ?? { firestore: null };
 
     if (!firestore) {
         return (
@@ -359,5 +359,3 @@ export default function DiagnosticTestsPage() {
         </div>
     );
 }
-
-    
