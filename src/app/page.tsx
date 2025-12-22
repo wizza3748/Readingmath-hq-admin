@@ -20,7 +20,7 @@ const workItems: WorkItem[] = [
     id: "RM-198",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-198",
     title: "[본사] 콘텐츠관리 > 진단평가관리(과학)",
-    internalUrl: "#",
+    internalUrl: "/content/diagnostic-tests",
   },
   {
     id: "RM-133",
