@@ -125,12 +125,13 @@ function NavMenu({ items, level = 0 }: { items: NavItem[], level?: number }) {
   return (
     <>
       {items.map((item, index) => {
-        const isActive = item.href ? pathname.startsWith(item.href) : false;
+        const isActive = item.href ? (item.href === '/' ? pathname === '/' : pathname.startsWith(item.href)) : false;
+        const isChildActive = item.children?.some(child => child.href && pathname.startsWith(child.href));
         
         if (item.children) {
           return (
             <SidebarMenuItem key={index} asChild>
-              <Collapsible>
+              <Collapsible open={isChildActive}>
                 <div className="relative">
                   <CollapsibleTrigger asChild disabled={item.disabled}>
                     <SidebarMenuButton className="group/collapsible-button justify-between">
