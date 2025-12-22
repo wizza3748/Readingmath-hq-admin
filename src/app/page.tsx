@@ -60,7 +60,7 @@ export default function WorkListPage() {
                 <div className="col-span-8">{item.title}</div>
                 <div className="col-span-2 flex justify-end">
                   <Link href={item.internalUrl}>
-                    <Link2 className="h-5 w-5 text-muted-foreground hover:text-primary" />
+                    <Link2 className="h-5 w-5 text-primary hover:opacity-80" />
                   </Link>
                 </div>
               </div>
