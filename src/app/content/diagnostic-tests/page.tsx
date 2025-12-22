@@ -132,13 +132,6 @@ function SearchFilters({
 
   const handleReset = () => {
     setColumnFilters([]);
-    // Resetting the select trigger text manually.
-    // This is a workaround as the Select component doesn't automatically reset its displayed value
-    // when the value prop is programmatically changed in this setup.
-    const statusSelect = document.getElementById('status-select-trigger');
-    if (statusSelect) {
-        (statusSelect as HTMLButtonElement).childNodes[0].textContent = '상태';
-    }
   }
 
   const status = columnFilters.find(f => f.id === 'status')?.value as string || 'all';
@@ -146,8 +139,8 @@ function SearchFilters({
   return (
     <div className="flex flex-col sm:flex-row gap-4">
         <div className="grid grid-cols-2 sm:flex sm:flex-row gap-2">
-            <Select value={status} onValueChange={(value) => handleFilterChange('status', value)}>
-                <SelectTrigger id="status-select-trigger" className="w-full sm:w-[150px]">
+            <Select key={status} value={status} onValueChange={(value) => handleFilterChange('status', value)}>
+                <SelectTrigger className="w-full sm:w-[150px]">
                     <SelectValue placeholder="상태" />
                 </SelectTrigger>
                 <SelectContent>
@@ -249,20 +242,6 @@ function DiagnosticTestsTable() {
         },
         },
     });
-
-    // This effect ensures the Select component displays the correct value when filters change.
-    React.useEffect(() => {
-        const statusFilter = columnFilters.find(filter => filter.id === 'status');
-        const statusSelect = document.getElementById('status-select-trigger');
-        if (statusSelect) {
-          if (statusFilter && statusFilter.value !== 'all') {
-            // We need to find the text content from the SelectItem to display it
-            (statusSelect as HTMLButtonElement).childNodes[0].textContent = statusFilter.value as string;
-          } else {
-            (statusSelect as HTMLButtonElement).childNodes[0].textContent = '상태';
-          }
-        }
-    }, [columnFilters]);
 
     return (
         <div className="w-full space-y-6">
