@@ -39,7 +39,7 @@ import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 
 type DiagnosticTest = {
-  id: string;
+  id: number;
   semesterName: string;
   totalQuestions: number;
   createdAt: string;
@@ -48,21 +48,21 @@ type DiagnosticTest = {
 
 const initialData: DiagnosticTest[] = [
   // 초등
-  { id: 'sci-es-3-1', semesterName: '초등 3학년 1학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
-  { id: 'sci-es-3-2', semesterName: '초등 3학년 2학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
-  { id: 'sci-es-4-1', semesterName: '초등 4학년 1학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수완료' },
-  { id: 'sci-es-4-2', semesterName: '초등 4학년 2학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
-  { id: 'sci-es-5-1', semesterName: '초등 5학년 1학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수완료' },
-  { id: 'sci-es-5-2', semesterName: '초등 5학년 2학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
-  { id: 'sci-es-6-1', semesterName: '초등 6학년 1학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수완료' },
-  { id: 'sci-es-6-2', semesterName: '초등 6학년 2학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
+  { id: 15, semesterName: '초등 3학년 1학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
+  { id: 16, semesterName: '초등 3학년 2학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
+  { id: 17, semesterName: '초등 4학년 1학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수완료' },
+  { id: 18, semesterName: '초등 4학년 2학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
+  { id: 19, semesterName: '초등 5학년 1학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수완료' },
+  { id: 20, semesterName: '초등 5학년 2학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
+  { id: 21, semesterName: '초등 6학년 1학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수완료' },
+  { id: 22, semesterName: '초등 6학년 2학기', totalQuestions: 50, createdAt: '2024-01-15 10:30:00', status: '검수전' },
   // 중등
-  { id: 'sci-ms-1-1', semesterName: '중등 1학년 1학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수전' },
-  { id: 'sci-ms-1-2', semesterName: '중등 1학년 2학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수완료' },
-  { id: 'sci-ms-2-1', semesterName: '중등 2학년 1학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수전' },
-  { id: 'sci-ms-2-2', semesterName: '중등 2학년 2학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수완료' },
-  { id: 'sci-ms-3-1', semesterName: '중등 3학년 1학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수전' },
-  { id: 'sci-ms-3-2', semesterName: '중등 3학년 2학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수완료' },
+  { id: 23, semesterName: '중등 1학년 1학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수전' },
+  { id: 24, semesterName: '중등 1학년 2학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수완료' },
+  { id: 25, semesterName: '중등 2학년 1학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수전' },
+  { id: 26, semesterName: '중등 2학년 2학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수완료' },
+  { id: 27, semesterName: '중등 3학년 1학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수전' },
+  { id: 28, semesterName: '중등 3학년 2학기', totalQuestions: 100, createdAt: '2024-02-01 14:00:00', status: '검수완료' },
 ].reverse();
 
 
@@ -78,7 +78,7 @@ const columns: ColumnDef<DiagnosticTest>[] = [
   {
     accessorKey: 'id',
     header: '고유번호',
-    cell: ({ row }) => <div className="lowercase truncate w-28">{row.getValue('id')}</div>,
+    cell: ({ row }) => <div>{row.getValue('id')}</div>,
   },
   {
     accessorKey: 'semesterName',
