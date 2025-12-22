@@ -74,7 +74,8 @@ const columns: ColumnDef<DiagnosticTest>[] = [
     header: '등록일시',
     cell: ({ row }) => {
         const createdAt = row.getValue("createdAt") as any;
-        if (!createdAt) return '';
+        if (!createdAt) return null; // Render nothing if createdAt is not yet available
+        // Firestore Timestamps can be converted to JS Date objects
         const date = createdAt.toDate ? createdAt.toDate() : new Date(createdAt);
         return date.toLocaleString('ko-KR', {
             year: 'numeric',
@@ -131,6 +132,9 @@ function SearchFilters({
 
   const handleReset = () => {
     setColumnFilters([]);
+    // Resetting the select trigger text manually.
+    // This is a workaround as the Select component doesn't automatically reset its displayed value
+    // when the value prop is programmatically changed in this setup.
     const statusSelect = document.getElementById('status-select-trigger');
     if (statusSelect) {
         (statusSelect as HTMLButtonElement).childNodes[0].textContent = '상태';
@@ -160,7 +164,9 @@ function SearchFilters({
             />
         </div>
         <div className="flex gap-2">
-            <Button onClick={() => {}} className="flex-1 sm:flex-initial">적용</Button>
+            <Button onClick={() => {
+                // The filtering is already applied on change, this button could be used for explicit apply if needed.
+            }} className="flex-1 sm:flex-initial">적용</Button>
             <Button onClick={handleReset} variant="outline" className="flex-1 sm:flex-initial">초기화</Button>
         </div>
     </div>
@@ -244,11 +250,13 @@ function DiagnosticTestsTable() {
         },
     });
 
+    // This effect ensures the Select component displays the correct value when filters change.
     React.useEffect(() => {
         const statusFilter = columnFilters.find(filter => filter.id === 'status');
         const statusSelect = document.getElementById('status-select-trigger');
         if (statusSelect) {
           if (statusFilter && statusFilter.value !== 'all') {
+            // We need to find the text content from the SelectItem to display it
             (statusSelect as HTMLButtonElement).childNodes[0].textContent = statusFilter.value as string;
           } else {
             (statusSelect as HTMLButtonElement).childNodes[0].textContent = '상태';
@@ -325,6 +333,7 @@ function DiagnosticTestsTable() {
 }
 
 export default function DiagnosticTestsPage() {
+    // useFirebase() can be undefined on initial render, so we handle that.
     const { firestore } = useFirebase() ?? { firestore: null };
 
     if (!firestore) {

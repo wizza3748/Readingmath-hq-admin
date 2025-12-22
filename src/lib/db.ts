@@ -16,6 +16,7 @@ import {
   updateDoc,
   deleteDoc,
   FieldValue,
+  writeBatch,
 } from 'firebase/firestore';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError, type SecurityRuleContext } from '@/firebase/errors';
@@ -323,16 +324,59 @@ export type DiagnosticTest = {
   status: '검수전' | '검수완료';
 };
 
+const initialDiagnosticTests: Omit<DiagnosticTest, 'createdAt'>[] = [
+    { id: 15, semesterName: '초등 3학년 1학기', totalQuestions: 25, status: '검수전' },
+    { id: 16, semesterName: '초등 3학년 2학기', totalQuestions: 25, status: '검수전' },
+    { id: 17, semesterName: '초등 4학년 1학기', totalQuestions: 25, status: '검수전' },
+    { id: 18, semesterName: '초등 4학년 2학기', totalQuestions: 25, status: '검수전' },
+    { id: 19, semesterName: '초등 5학년 1학기', totalQuestions: 25, status: '검수전' },
+    { id: 20, semesterName: '초등 5학년 2학기', totalQuestions: 25, status: '검수전' },
+    { id: 21, semesterName: '초등 6학년 1학기', totalQuestions: 25, status: '검수전' },
+    { id: 22, semesterName: '초등 6학년 2학기', totalQuestions: 25, status: '검수전' },
+    { id: 23, semesterName: '중등 1학년 1학기', totalQuestions: 30, status: '검수전' },
+    { id: 24, semesterName: '중등 1학년 2학기', totalQuestions: 30, status: '검수전' },
+    { id: 25, semesterName: '중등 2학년 1학기', totalQuestions: 30, status: '검수전' },
+    { id: 26, semesterName: '중등 2학년 2학기', totalQuestions: 30, status: '검수전' },
+    { id: 27, semesterName: '중등 3학년 1학기', totalQuestions: 30, status: '검수전' },
+    { id: 28, semesterName: '중등 3학년 2학기', totalQuestions: 30, status: '검수전' },
+];
+
+async function seedDiagnosticTests(db: Firestore) {
+    const collRef = collection(db, "diagnostic-tests");
+    const batch = writeBatch(db);
+
+    initialDiagnosticTests.forEach(test => {
+        const docRef = doc(collRef, String(test.id));
+        batch.set(docRef, { ...test, createdAt: serverTimestamp() });
+    });
+
+    await batch.commit().catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: collRef.path,
+            operation: 'create',
+            requestResourceData: initialDiagnosticTests,
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+    });
+}
+
+
 export function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTest[]) => void) {
   const collRef = collection(db, "diagnostic-tests");
   const q = query(collRef, orderBy("id", "asc"));
 
-  const unsubscribe = onSnapshot(q, (querySnapshot) => {
-    const tests: DiagnosticTest[] = [];
-    querySnapshot.forEach((doc) => {
-      tests.push({ ...doc.data() } as DiagnosticTest);
-    });
-    callback(tests);
+  const unsubscribe = onSnapshot(q, async (querySnapshot) => {
+    if (querySnapshot.empty) {
+        console.log("No diagnostic tests found, seeding initial data...");
+        await seedDiagnosticTests(db);
+        // After seeding, the onSnapshot listener will be triggered again with the new data.
+    } else {
+        const tests: DiagnosticTest[] = [];
+        querySnapshot.forEach((doc) => {
+            tests.push({ ...doc.data() } as DiagnosticTest);
+        });
+        callback(tests);
+    }
   }, async (serverError) => {
     const permissionError = new FirestorePermissionError({
         path: collRef.path,
@@ -344,5 +388,3 @@ export function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTe
 
   return unsubscribe;
 }
-
-    
