@@ -180,7 +180,7 @@ function SearchFilters({
 }
 
 export default function DiagnosticTestsPage() {
-  const [data] = React.useState<DiagnosticTest[]>(initialData);
+  const [data] = React.useState<DiagnosticTest[]>(() => [...initialData].sort((a, b) => a.id - b.id));
   const [sorting, setSorting] = React.useState<SortingState>([
     { id: 'id', desc: false }
   ]);
