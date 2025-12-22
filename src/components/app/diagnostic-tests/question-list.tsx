@@ -9,7 +9,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-import { MoreHorizontal, Trash2, Edit } from 'lucide-react';
+import { Trash2, Edit } from 'lucide-react';
 import { useFirestore } from '@/firebase';
 import { getQuestions, deleteQuestion, updateQuestionExtended, type Question } from '@/lib/db';
 import { Button } from '@/components/ui/button';
@@ -33,7 +33,6 @@ import {
     AlertDialogFooter,
     AlertDialogHeader,
     AlertDialogTitle,
-    AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { QuestionModal } from './question-modal';
 import { Switch } from '@/components/ui/switch';
@@ -116,7 +115,7 @@ export function QuestionList({ testId }: { testId: string }) {
     { 
         accessorKey: 'isReviewed', 
         header: '검수여부', 
-        cell: ({ row }) => <Switch checked={row.original.isReviewed} disabled />
+        cell: ({ row }) => <Switch checked={!!row.original.isReviewed} disabled />
     },
     {
       id: 'actions',

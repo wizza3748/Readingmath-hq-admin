@@ -25,6 +25,7 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
 import {
   Select,
   SelectContent,
@@ -41,14 +42,14 @@ import { Separator } from '@/components/ui/separator';
 const formSchema = z.object({
   difficulty: z.enum(['하', '중하', '중', '중상', '상']),
   subUnitType: z.string().min(1, '중단원 유형을 선택해주세요.'),
-  contentArea: z.string(), // 자동 노출
+  contentArea: z.string().min(1, '내용영역을 선택해주세요.'),
   behavioralArea: z.enum(['개념이해력', '문제해결력', '문해력', '추론력']),
   prompt: z.string().min(1, '발문을 입력해주세요.'),
   viewContent: z.string().optional(),
   answerType: z.enum(['입력형', '선지형', '순서맞추기']).optional(),
-  // answers: z.any().optional(), // 복잡한 구조이므로 나중에 추가
+  answers: z.array(z.any()).optional(),
   solution: z.string().optional(),
-  videoUrl: z.string().optional(),
+  videoUrl: z.string().url().optional().or(z.literal('')),
   problemSolving: z.string().optional(),
   isReviewed: z.boolean().default(false),
 });
@@ -73,9 +74,10 @@ const contentAreaMapping: { [key: string]: string } = {
 };
 
 // Mock Rich Editor
-const RichEditor = ({ field, placeholder }: { field: any, placeholder?: string }) => (
-    <Textarea {...field} placeholder={placeholder} rows={5} className="bg-gray-50" />
-);
+const RichEditor = React.forwardRef<HTMLTextAreaElement, React.ComponentProps<'textarea'>>(({ ...props }, ref) => (
+    <Textarea {...props} ref={ref} rows={5} className="bg-gray-50" />
+));
+RichEditor.displayName = 'RichEditor';
 
 
 export function QuestionModal({
@@ -95,15 +97,17 @@ export function QuestionModal({
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: question
-      ? {
-          ...question,
-          isReviewed: question.isReviewed || false,
-        }
-      : {
+    defaultValues: {
           difficulty: '중',
           behavioralArea: '개념이해력',
           isReviewed: false,
+          subUnitType: '',
+          contentArea: '',
+          prompt: '',
+          viewContent: '',
+          solution: '',
+          problemSolving: '',
+          answers: [],
         },
   });
   
@@ -118,23 +122,30 @@ export function QuestionModal({
 
   React.useEffect(() => {
     if (open) {
-      form.reset(
-        question
-          ? {
-              ...question
-            }
-          : {
-              difficulty: '중',
-              subUnitType: '',
-              contentArea: '',
-              behavioralArea: '개념이해력',
-              prompt: '',
-              viewContent: '',
-              solution: '',
-              problemSolving: '',
-              isReviewed: false,
-            }
-      );
+      const defaultValues = {
+        difficulty: '중',
+        subUnitType: '',
+        contentArea: '',
+        behavioralArea: '개념이해력',
+        prompt: '',
+        viewContent: '',
+        solution: '',
+        problemSolving: '',
+        isReviewed: false,
+        answers: [],
+        videoUrl: '',
+      };
+      
+      if (question) {
+        const contentArea = question.contentArea || (question.subUnitType ? contentAreaMapping[question.subUnitType] : '');
+        form.reset({
+          ...defaultValues,
+          ...question,
+          contentArea: contentArea,
+        });
+      } else {
+        form.reset(defaultValues);
+      }
     }
   }, [open, question, form]);
 
@@ -167,7 +178,7 @@ export function QuestionModal({
   };
 
   const difficultyOptions: ('하' | '중하' | '중' | '중상' | '상')[] = ['하', '중하', '중', '중상', '상'];
-  const behavioralAreaOptions: ('개념이해력' | '문제해결력' | '문해력' | '추론력')[] = ['개념이해력', '문제해결력', '문해력', '추론력'];
+  const behavioralAreaOptions: ('개념이해력' | '문제해결력' | '문해력', '추론력')[] = ['개념이해력', '문제해결력', '문해력', '추론력'];
   const answerTypeOptions: ('입력형' | '선지형' | '순서맞추기')[] = ['입력형', '선지형', '순서맞추기'];
 
   return (
@@ -212,7 +223,7 @@ export function QuestionModal({
                         render={({ field }) => (
                         <FormItem>
                             <FormLabel>중단원 유형 *</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <Select onValueChange={field.onChange} value={field.value}>
                             <FormControl><SelectTrigger><SelectValue placeholder="중단원 선택" /></SelectTrigger></FormControl>
                             <SelectContent>
                                 {subUnitOptions.map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}
@@ -227,8 +238,9 @@ export function QuestionModal({
                         name="contentArea"
                         render={({ field }) => (
                         <FormItem>
-                            <FormLabel>내용영역</FormLabel>
+                            <FormLabel>내용영역 *</FormLabel>
                             <FormControl><Input {...field} readOnly placeholder="중단원 유형 선택 시 자동 입력" /></FormControl>
+                            <FormMessage />
                         </FormItem>
                         )}
                     />
@@ -272,7 +284,7 @@ export function QuestionModal({
                             <FormItem>
                                 <FormLabel>문제풀이 *</FormLabel>
                                 <FormControl>
-                                    <RichEditor field={field} placeholder="전체 문항 설명 및 풀이를 입력하세요." />
+                                    <RichEditor {...field} placeholder="전체 문항 설명 및 풀이를 입력하세요." />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -289,7 +301,7 @@ export function QuestionModal({
                   <FormItem>
                     <FormLabel>발문 *</FormLabel>
                     <FormControl>
-                        <RichEditor field={field} placeholder="문제 질문 문장을 입력하세요."/>
+                        <RichEditor {...field} placeholder="문제 질문 문장을 입력하세요."/>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -302,7 +314,7 @@ export function QuestionModal({
                   <FormItem>
                     <FormLabel>보기</FormLabel>
                     <FormControl>
-                        <RichEditor field={field} placeholder="보조 자료를 입력하세요."/>
+                        <RichEditor {...field} placeholder="보조 자료를 입력하세요."/>
                     </FormControl>
                   </FormItem>
                 )}
@@ -317,7 +329,7 @@ export function QuestionModal({
                         render={({ field }) => (
                         <FormItem>
                             <FormLabel>답안 유형 *</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <Select onValueChange={field.onChange} value={field.value}>
                                 <FormControl><SelectTrigger><SelectValue placeholder="답안 유형 선택" /></SelectTrigger></FormControl>
                                 <SelectContent>
                                     {answerTypeOptions.map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}
@@ -338,8 +350,21 @@ export function QuestionModal({
                   <FormItem>
                     <FormLabel>해설</FormLabel>
                     <FormControl>
-                        <RichEditor field={field} placeholder="해설 자료를 입력하세요."/>
+                        <RichEditor {...field} placeholder="해설 자료를 입력하세요."/>
                     </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="videoUrl"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>풀이 동영상 URL</FormLabel>
+                    <FormControl>
+                      <Input {...field} placeholder="https://www.youtube.com/watch?v=..." />
+                    </FormControl>
+                    <FormMessage />
                   </FormItem>
                 )}
               />
