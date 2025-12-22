@@ -9,7 +9,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-import { MoreHorizontal, Trash2 } from 'lucide-react';
+import { MoreHorizontal, Trash2, Edit } from 'lucide-react';
 import { useFirestore } from '@/firebase';
 import { getQuestions, deleteQuestion, updateQuestionExtended, type Question } from '@/lib/db';
 import { Button } from '@/components/ui/button';
@@ -36,6 +36,7 @@ import {
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { QuestionModal } from './question-modal';
+import { Switch } from '@/components/ui/switch';
 
 
 export function QuestionList({ testId }: { testId: string }) {
@@ -93,15 +94,15 @@ export function QuestionList({ testId }: { testId: string }) {
   const columns: ColumnDef<Question>[] = [
     { accessorKey: 'questionNumber', header: '번호' },
     { accessorKey: 'questionType', header: '문제 타입' },
-    { accessorKey: 'subUnitType', header: '단원', cell: ({ row }) => row.original.subUnitType || '-' },
+    { accessorKey: 'subUnitType', header: '단원', cell: ({ row }) => <div className='w-40'>{row.original.subUnitType || '-'}</div> },
     { accessorKey: 'contentArea', header: '내용영역', cell: ({ row }) => row.original.contentArea || '-' },
     { accessorKey: 'difficulty', header: '난이도', cell: ({ row }) => row.original.difficulty || '-' },
     { 
         accessorKey: 'prompt', 
         header: '발문', 
-        cell: ({ row }) => <div className="truncate w-40">{row.original.prompt}</div> 
+        cell: ({ row }) => <div className="truncate w-60">{row.original.prompt}</div> 
     },
-    { accessorKey: 'solutionCount', header: '풀이답안수', cell: ({ row }) => row.original.solutionCount || 0 },
+    { accessorKey: 'solutionCount', header: '풀이답안수', cell: ({ row }) => <div className="text-center">{row.original.solutionCount || 0}</div> },
     { 
         accessorKey: 'isExtended', 
         header: '확장문제', 
@@ -115,7 +116,7 @@ export function QuestionList({ testId }: { testId: string }) {
     { 
         accessorKey: 'isReviewed', 
         header: '검수여부', 
-        cell: ({ row }) => row.original.isReviewed ? '검수완료' : '검수전'
+        cell: ({ row }) => <Switch checked={row.original.isReviewed} disabled />
     },
     {
       id: 'actions',
@@ -123,15 +124,15 @@ export function QuestionList({ testId }: { testId: string }) {
       cell: ({ row }) => {
         const question = row.original;
         return (
-          <div className="flex gap-2">
+          <div className="flex gap-1">
             <QuestionModal testId={testId} question={question} questionType={question.questionType}>
-                <Button variant="ghost" size="icon" className="h-8 w-8">
-                    <MoreHorizontal className="h-4 w-4" />
+                <Button variant="ghost" size="icon" className="h-8 w-8 text-blue-500 hover:text-blue-600">
+                    <Edit className="h-4 w-4" />
                 </Button>
             </QuestionModal>
             <AlertDialog>
                 <AlertDialogTrigger asChild>
-                    <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive hover:text-destructive">
+                    <Button variant="ghost" size="icon" className="h-8 w-8 text-red-500 hover:text-red-600">
                         <Trash2 className="h-4 w-4" />
                     </Button>
                 </AlertDialogTrigger>
@@ -169,14 +170,14 @@ export function QuestionList({ testId }: { testId: string }) {
   }
 
   return (
-    <div className="rounded-md border">
+    <div className="rounded-md border bg-white">
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
                 return (
-                  <TableHead key={header.id}>
+                  <TableHead key={header.id} className="text-center">
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -194,7 +195,7 @@ export function QuestionList({ testId }: { testId: string }) {
             table.getRowModel().rows.map((row) => (
               <TableRow key={row.id}>
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id}>
+                  <TableCell key={cell.id} className="text-center">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}
