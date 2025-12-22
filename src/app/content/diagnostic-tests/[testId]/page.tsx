@@ -19,9 +19,9 @@ export default function DiagnosticTestDetailPage({ params }: { params: { testId:
   const { firestore } = useFirebase() ?? {};
   const [test, setTest] = React.useState<DiagnosticTest | null>(null);
   const [loading, setLoading] = React.useState(true);
+  const { testId } = params;
 
   React.useEffect(() => {
-    const testId = params.testId;
     if (!firestore || !testId) return;
 
     setLoading(true);
@@ -31,10 +31,9 @@ export default function DiagnosticTestDetailPage({ params }: { params: { testId:
     });
 
     return () => unsubscribe();
-  }, [firestore, params.testId]);
+  }, [firestore, testId]);
 
   const handleStatusToggle = async (checked: boolean) => {
-    const testId = params.testId;
     if (!firestore || !test || !testId) return;
     const newStatus = checked ? '검수완료' : '검수전';
     try {
@@ -95,15 +94,15 @@ export default function DiagnosticTestDetailPage({ params }: { params: { testId:
       </h1>
 
       <div className="flex justify-start gap-2">
-        <QuestionModal testId={params.testId} questionType="유형">
+        <QuestionModal testId={testId} questionType="유형">
             <Button>유형 문제 등록</Button>
         </QuestionModal>
-        <QuestionModal testId={params.testId} questionType="서술형">
+        <QuestionModal testId={testId} questionType="서술형">
             <Button>서술형 문제 등록</Button>
         </QuestionModal>
       </div>
       
-      <QuestionList testId={params.testId} />
+      <QuestionList testId={testId} />
       
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">

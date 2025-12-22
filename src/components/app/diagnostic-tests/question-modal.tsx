@@ -107,6 +107,7 @@ export function QuestionModal({
           viewContent: '',
           solution: '',
           problemSolving: '',
+          answerType: undefined,
           answers: [],
         },
   });
@@ -132,6 +133,7 @@ export function QuestionModal({
         solution: '',
         problemSolving: '',
         isReviewed: false,
+        answerType: undefined,
         answers: [],
         videoUrl: '',
       };
