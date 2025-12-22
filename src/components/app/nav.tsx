@@ -76,7 +76,7 @@ const navConfig: NavItem[] = [
     title: "콘텐츠관리",
     icon: <Library />,
     children: [
-      { title: "진단평가관리", href: "/content/diagnostic-tests" },
+      { title: "진단평가관리(과학)", href: "/content/diagnostic-tests" },
       { title: "학습관리(수학)", href: "/content/math" },
       { title: "학습관리(과학)", href: "/content/science" },
       { title: "커리큘럼관리", href: "/content/curriculum" },
@@ -130,8 +130,10 @@ function NavMenu({ items, level = 0 }: { items: NavItem[], level?: number }) {
         const [isOpen, setIsOpen] = React.useState(isChildActive);
         
         React.useEffect(() => {
-          setIsOpen(isChildActive);
-        }, [isChildActive]);
+          if (isChildActive) {
+            setIsOpen(true);
+          }
+        }, [isChildActive, pathname]);
 
         if (item.children) {
           return (
