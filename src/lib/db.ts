@@ -388,3 +388,148 @@ export function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTe
 
   return unsubscribe;
 }
+
+export function getDiagnosticTest(db: Firestore, testId: string, callback: (test: DiagnosticTest | null) => void) {
+  const docRef = doc(db, "diagnostic-tests", testId);
+  const unsubscribe = onSnapshot(docRef, (docSnap) => {
+    if (docSnap.exists()) {
+      callback({ id: parseInt(docSnap.id), ...docSnap.data() } as DiagnosticTest);
+    } else {
+      callback(null);
+    }
+  }, async (serverError) => {
+    const permissionError = new FirestorePermissionError({
+        path: docRef.path,
+        operation: 'get',
+    } satisfies SecurityRuleContext);
+    errorEmitter.emit('permission-error', permissionError);
+    callback(null);
+  });
+  return unsubscribe;
+}
+
+export async function updateDiagnosticTestStatus(db: Firestore, testId: string, status: '검수전' | '검수완료') {
+    const docRef = doc(db, 'diagnostic-tests', testId);
+    const dataToUpdate = { status, updatedAt: serverTimestamp() };
+    await updateDoc(docRef, dataToUpdate)
+      .catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: docRef.path,
+            operation: 'update',
+            requestResourceData: dataToUpdate,
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+      });
+}
+
+//
+// Questions
+//
+
+export type Question = {
+    id: string;
+    questionNumber: number;
+    questionType: '유형' | '서술형';
+    unit?: string;
+    contentArea?: string;
+    difficulty?: '상' | '중' | '하';
+    prompt: string;
+    solutionCount?: number;
+    isExtended: boolean;
+    isReviewed: boolean;
+    createdAt: Timestamp;
+    updatedAt: Timestamp;
+}
+
+export function getQuestions(db: Firestore, testId: string, callback: (questions: Question[]) => void) {
+  const collRef = collection(db, `diagnostic-tests/${testId}/questions`);
+  const q = query(collRef, orderBy("questionNumber", "asc"));
+
+  const unsubscribe = onSnapshot(q, (querySnapshot) => {
+    const questions: Question[] = [];
+    querySnapshot.forEach((doc) => {
+      questions.push({ id: doc.id, ...doc.data() } as Question);
+    });
+    callback(questions);
+  }, async (serverError) => {
+    const permissionError = new FirestorePermissionError({
+        path: collRef.path,
+        operation: 'list',
+    } satisfies SecurityRuleContext);
+    errorEmitter.emit('permission-error', permissionError);
+    callback([]);
+  });
+
+  return unsubscribe;
+}
+
+export async function getNextQuestionNumber(db: Firestore, testId: string): Promise<number> {
+    const collRef = collection(db, `diagnostic-tests/${testId}/questions`);
+    const q = query(collRef, orderBy("questionNumber", "desc"));
+    const querySnapshot = await getDocs(q);
+    if (querySnapshot.empty) {
+        return 1;
+    }
+    const lastQuestion = querySnapshot.docs[0].data() as Question;
+    return lastQuestion.questionNumber + 1;
+}
+
+export async function createQuestion(db: Firestore, testId: string, questionData: Partial<Omit<Question, 'id'>>) {
+    const collRef = collection(db, `diagnostic-tests/${testId}/questions`);
+    const data = { 
+        ...questionData,
+        isExtended: false,
+        solutionCount: 0,
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp(),
+    };
+    await addDoc(collRef, data)
+     .catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: collRef.path,
+            operation: 'create',
+            requestResourceData: data,
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+    });
+}
+
+export async function updateQuestion(db: Firestore, testId: string, questionId: string, questionData: Partial<Omit<Question, 'id'>>) {
+    const docRef = doc(db, `diagnostic-tests/${testId}/questions`, questionId);
+    const data = { ...questionData, updatedAt: serverTimestamp() };
+    await updateDoc(docRef, data)
+     .catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: docRef.path,
+            operation: 'update',
+            requestResourceData: data,
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+    });
+}
+
+export async function deleteQuestion(db: Firestore, testId: string, questionId: string) {
+    const docRef = doc(db, `diagnostic-tests/${testId}/questions`, questionId);
+    await deleteDoc(docRef)
+     .catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: docRef.path,
+            operation: 'delete',
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+    });
+}
+
+export async function updateQuestionExtended(db: Firestore, testId: string, questionId: string, isExtended: boolean) {
+    const docRef = doc(db, `diagnostic-tests/${testId}/questions`, questionId);
+    const data = { isExtended, updatedAt: serverTimestamp() };
+    await updateDoc(docRef, data)
+     .catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: docRef.path,
+            operation: 'update',
+            requestResourceData: data,
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+    });
+}

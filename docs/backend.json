@@ -71,6 +71,25 @@
         "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp when the test was created." }
       },
       "required": ["id", "semesterName", "totalQuestions", "status", "createdAt"]
+    },
+    "Question": {
+      "title": "Question",
+      "description": "Represents a single question within a diagnostic test.",
+      "type": "object",
+      "properties": {
+        "questionNumber": { "type": "number", "description": "Sequential number of the question within the test." },
+        "questionType": { "type": "string", "enum": ["유형", "서술형"], "description": "Type of the question." },
+        "unit": { "type": "string", "description": "The educational unit this question belongs to." },
+        "contentArea": { "type": "string", "description": "The specific content area of the question." },
+        "difficulty": { "type": "string", "enum": ["상", "중", "하"], "description": "Difficulty level of the question." },
+        "prompt": { "type": "string", "description": "The main text or prompt of the question." },
+        "solutionCount": { "type": "number", "description": "Number of registered solutions for the question." },
+        "isExtended": { "type": "boolean", "description": "Whether this is an extended question." },
+        "isReviewed": { "type": "boolean", "description": "Whether the question has been reviewed." },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["questionNumber", "questionType", "prompt", "isReviewed"]
     }
   },
   "auth": {
@@ -84,8 +103,10 @@
     "/diagnostic-tests/{testId}": {
       "schema": { "$ref": "#/entities/DiagnosticTest" },
       "description": "Stores information about each diagnostic test."
+    },
+    "/diagnostic-tests/{testId}/questions/{questionId}": {
+        "schema": { "$ref": "#/entities/Question" },
+        "description": "Stores all questions for a specific diagnostic test."
     }
   }
 }
-
-    

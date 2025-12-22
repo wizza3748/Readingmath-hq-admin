@@ -59,7 +59,7 @@ const columns: ColumnDef<DiagnosticTest>[] = [
     accessorKey: 'semesterName',
     header: '학기명',
     cell: ({ row }) => (
-      <Link href="#" className="font-medium text-primary hover:underline">
+      <Link href={`/content/diagnostic-tests/${row.original.id}`} className="font-medium text-primary hover:underline">
         {row.getValue('semesterName')}
       </Link>
     ),
@@ -100,9 +100,9 @@ const columns: ColumnDef<DiagnosticTest>[] = [
   {
     id: 'actions',
     header: '편집',
-    cell: () => {
+    cell: ({ row }) => {
       return (
-        <Link href="#">
+        <Link href={`/content/diagnostic-tests/${row.original.id}`}>
             <Button variant="ghost" size="icon">
                 <Edit className="h-4 w-4" />
             </Button>
