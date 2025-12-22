@@ -496,7 +496,10 @@ export async function createQuestion(db: Firestore, testId: string, questionData
 
 export async function updateQuestion(db: Firestore, testId: string, questionId: string, questionData: Partial<Omit<Question, 'id'>>) {
     const docRef = doc(db, `diagnostic-tests/${testId}/questions`, questionId);
-    const data = { ...questionData, updatedAt: serverTimestamp() };
+    const data = { 
+        ...questionData, 
+        updatedAt: serverTimestamp() 
+    };
     await updateDoc(docRef, data)
      .catch(async (serverError) => {
         const permissionError = new FirestorePermissionError({
