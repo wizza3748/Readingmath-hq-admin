@@ -19,7 +19,7 @@ export default function DiagnosticTestDetailPage({ params }: { params: { testId:
   const { firestore } = useFirebase() ?? {};
   const [test, setTest] = React.useState<DiagnosticTest | null>(null);
   const [loading, setLoading] = React.useState(true);
-  const { testId } = params;
+  const testId = params.testId;
 
   React.useEffect(() => {
     if (!firestore || !testId) return;
