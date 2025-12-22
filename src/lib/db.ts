@@ -484,7 +484,7 @@ export async function getNextQuestionNumber(db: Firestore, testId: string): Prom
 
 export async function createQuestion(db: Firestore, testId: string, questionData: Partial<Omit<Question, 'id'>>) {
     const collRef = collection(db, `diagnostic-tests/${testId}/questions`);
-    const data = { 
+    const data = {
         ...questionData,
         isExtended: false,
         solutionCount: 0,
@@ -505,7 +505,7 @@ export async function createQuestion(db: Firestore, testId: string, questionData
 export async function updateQuestion(db: Firestore, testId: string, questionId: string, questionData: Partial<Omit<Question, 'id'>>) {
     const docRef = doc(db, `diagnostic-tests/${testId}/questions`, questionId);
     const data = { 
-        ...questionData, 
+        ...questionData,
         updatedAt: serverTimestamp() 
     };
     await updateDoc(docRef, data)
