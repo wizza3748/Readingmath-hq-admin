@@ -77,14 +77,6 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-const contentAreaMapping: { [key: string]: string } = {};
-initialCurriculumUnits.forEach(unit => {
-    if (!contentAreaMapping[unit.id]) {
-        contentAreaMapping[unit.id] = unit.contentArea;
-    }
-});
-  
-
 const generateCircledNumber = (num: number) => {
     return `①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳`[num-1] || String(num);
 };
@@ -139,9 +131,8 @@ export function QuestionModal({
   React.useEffect(() => {
     if (selectedSubUnitId) {
         const selectedUnit = curriculumUnits.find(unit => unit.id === selectedSubUnitId);
-        const contentArea = selectedUnit ? contentAreaMapping[selectedUnit.id] : '';
-        if (contentArea) {
-            form.setValue('contentArea', contentArea);
+        if (selectedUnit) {
+            form.setValue('contentArea', selectedUnit.contentArea);
         } else {
              form.setValue('contentArea', '');
         }
@@ -167,7 +158,7 @@ export function QuestionModal({
 
         if (question) {
             const selectedUnit = curriculumUnits.find(unit => unit.id === question.subUnitType);
-            const contentArea = question.contentArea || (selectedUnit && contentAreaMapping[selectedUnit.id]) || '';
+            const contentArea = question.contentArea || (selectedUnit && selectedUnit.contentArea) || '';
             
             form.reset({
                 ...defaultValues,
@@ -382,7 +373,7 @@ export function QuestionModal({
                                 <SelectContent>
                                     {curriculumUnits.map(unit => (
                                         <SelectItem key={unit.id} value={unit.id}>
-                                            {`${unit.semester} > ${unit.largeUnit} > ${unit.mediumUnit} > ${unit.subUnit}`}
+                                            {`${unit.semester} > ${unit.largeUnit} > ${unit.mediumUnit}`}
                                         </SelectItem>
                                     ))}
                                 </SelectContent>
@@ -424,10 +415,7 @@ export function QuestionModal({
                         )}
                     />
                 </div>
-
-                <Separator />
                 
-                {/* 문제 입력 영역 */}
                 <div className='space-y-4 p-4 border rounded-md'>
                   {questionType === '서술형' && (
                     <div className='space-y-4'>
@@ -487,23 +475,21 @@ export function QuestionModal({
                          <h3 className="text-lg font-semibold">답안</h3>
                          <div className="p-4 border rounded-md bg-slate-50 space-y-4">
                             <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-4">
-                                    <FormField
-                                        control={form.control}
-                                        name="answerType"
-                                        render={({ field }) => (
-                                        <FormItem className="w-40">
-                                            <Select onValueChange={handleAnswerTypeChange} value={field.value}>
-                                                <FormControl><SelectTrigger><SelectValue placeholder="답안 유형 선택" /></SelectTrigger></FormControl>
-                                                <SelectContent>
-                                                    {answerTypeOptions.map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}
-                                                </SelectContent>
-                                            </Select>
-                                            <FormMessage />
-                                        </FormItem>
-                                        )}
-                                    />
-                                </div>
+                                <FormField
+                                    control={form.control}
+                                    name="answerType"
+                                    render={({ field }) => (
+                                    <FormItem className="w-40">
+                                        <Select onValueChange={handleAnswerTypeChange} value={field.value}>
+                                            <FormControl><SelectTrigger><SelectValue placeholder="답안 유형 선택" /></SelectTrigger></FormControl>
+                                            <SelectContent>
+                                                {answerTypeOptions.map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}
+                                            </SelectContent>
+                                        </Select>
+                                        <FormMessage />
+                                    </FormItem>
+                                    )}
+                                />
                                 <div className="flex items-center gap-2">
                                     {answerType === '선지형' && (
                                       <>
@@ -553,9 +539,6 @@ export function QuestionModal({
                             </div>
                         
                            {answerType === '입력형' && (
-                                <>
-                                
-
                                 <div className="flex flex-wrap gap-4 pt-2">
                                     {fields.map((field, index) => (
                                     <div key={field.id} className="group relative flex items-start gap-2 p-2">
@@ -603,7 +586,6 @@ export function QuestionModal({
                                     </div>
                                     ))}
                                 </div>
-                                </>
                             )}
 
 
