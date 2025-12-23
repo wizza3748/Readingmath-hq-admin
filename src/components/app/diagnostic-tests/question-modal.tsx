@@ -556,9 +556,11 @@ export function QuestionModal({
                                 <div className="flex flex-wrap gap-4 pt-2">
                                     {fields.map((field, index) => (
                                     <div key={field.id} className="group relative flex items-start gap-2 p-2">
-                                        <FormLabel className="pt-2 shrink-0">
-                                            {isSymbolChecked ? generateCircledKorean(index + 1) : `1-${index+1}`}
-                                        </FormLabel>
+                                        {isSymbolChecked && (
+                                          <FormLabel className="pt-2 shrink-0">
+                                              {generateCircledKorean(index + 1)}
+                                          </FormLabel>
+                                        )}
                                         <Controller
                                                 control={form.control}
                                                 name={`answers.${index}.value`}
@@ -584,7 +586,12 @@ export function QuestionModal({
                                                             </div>
                                                         </div>
                                                     }
-                                                    return <Input className="w-32" placeholder="정답 입력" defaultValue={value.val} onChange={(e) => valueField.onChange({val: e.target.value})}/>
+                                                    return <Input 
+                                                      className="w-32" 
+                                                      placeholder={!isSymbolChecked ? `1-${index+1}` : '정답 입력'} 
+                                                      defaultValue={value.val} 
+                                                      onChange={(e) => valueField.onChange({val: e.target.value})}
+                                                    />
                                                 }}
                                             />
                                         <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)} className="absolute -right-2 -top-2 h-6 w-6 opacity-0 group-hover:opacity-100">
