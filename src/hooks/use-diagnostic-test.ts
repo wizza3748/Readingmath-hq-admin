@@ -2,8 +2,8 @@
 'use client';
 
 import * as React from 'react';
-import { type Firestore } from 'firebase/firestore';
-import { getDiagnosticTest, type DiagnosticTest } from '@/lib/db';
+import { type Firestore, onSnapshot } from 'firebase/firestore';
+import { getDiagnosticTestDoc, type DiagnosticTest } from '@/lib/db';
 
 export function useDiagnosticTest(firestore: Firestore | null, testId: string) {
   const [test, setTest] = React.useState<DiagnosticTest | null>(null);
@@ -16,8 +16,16 @@ export function useDiagnosticTest(firestore: Firestore | null, testId: string) {
     }
 
     setLoading(true);
-    const unsubscribe = getDiagnosticTest(firestore, testId, (data) => {
-      setTest(data);
+    const docRef = getDiagnosticTestDoc(firestore, testId);
+    const unsubscribe = onSnapshot(docRef, (docSnap) => {
+      if (docSnap.exists()) {
+        setTest({ id: parseInt(docSnap.id), ...docSnap.data() } as DiagnosticTest);
+      } else {
+        setTest(null);
+      }
+      setLoading(false);
+    }, (error) => {
+      console.error("Error fetching diagnostic test:", error);
       setLoading(false);
     });
 

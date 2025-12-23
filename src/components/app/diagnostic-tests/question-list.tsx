@@ -8,10 +8,11 @@ import {
   getCoreRowModel,
   getSortedRowModel,
   useReactTable,
+  onSnapshot,
 } from '@tanstack/react-table';
 import { Trash2, Edit } from 'lucide-react';
 import { useFirestore } from '@/firebase';
-import { getQuestions, deleteQuestion, updateQuestionExtended, type Question } from '@/lib/db';
+import { getQuestionsQuery, deleteQuestion, updateQuestionExtended, type Question } from '@/lib/db';
 import { Button } from '@/components/ui/button';
 import {
   Table,
@@ -51,9 +52,17 @@ export function QuestionList({ testId }: { testId: string }) {
       return;
     }
     setLoading(true);
-    const unsubscribe = getQuestions(firestore, testId, (data) => {
-      setQuestions(data);
+    const q = getQuestionsQuery(firestore, testId);
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const questions: Question[] = [];
+      querySnapshot.forEach((doc) => {
+        questions.push({ id: doc.id, ...doc.data() } as Question);
+      });
+      setQuestions(questions);
       setLoading(false);
+    }, (error) => {
+        console.error("Error fetching questions:", error);
+        setLoading(false);
     });
     return unsubscribe;
   }, [firestore, testId]);

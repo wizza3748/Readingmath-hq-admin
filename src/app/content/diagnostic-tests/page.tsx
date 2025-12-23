@@ -16,7 +16,8 @@ import {
 } from '@tanstack/react-table';
 import { Edit } from 'lucide-react';
 import { useFirebase, useFirestore } from "@/firebase";
-import { getDiagnosticTests, type DiagnosticTest } from "@/lib/db";
+import { getDiagnosticTestsQuery, type DiagnosticTest, seedDiagnosticTests } from "@/lib/db";
+import { onSnapshot, getDocs } from "firebase/firestore";
 
 import { Button } from '@/components/ui/button';
 import {
@@ -212,12 +213,36 @@ function DiagnosticTestsTable() {
         if (!firestore) return;
     
         setLoading(true);
-        const unsubscribe = getDiagnosticTests(firestore, (tests) => {
+        const q = getDiagnosticTestsQuery(firestore);
+
+        const unsubscribe = onSnapshot(q, async (querySnapshot) => {
+            if (querySnapshot.empty) {
+                console.log('No diagnostic tests found, seeding initial data...');
+                await seedDiagnosticTests(firestore);
+                // The listener will pick up the new data automatically.
+                return;
+            }
+
+            const testsPromises = querySnapshot.docs.map(async (docSnapshot) => {
+                const testData = docSnapshot.data() as DiagnosticTest;
+                // This logic to get totalQuestions count is now client-side for real-time updates.
+                // It can be intensive. A server-side counter would be more performant at scale.
+                const questionsCollRef = collection(firestore, `diagnostic-tests/${docSnapshot.id}/questions`);
+                const questionsSnapshot = await getDocs(questionsCollRef);
+                testData.totalQuestions = questionsSnapshot.size;
+                return testData;
+            });
+
+            const tests = await Promise.all(testsPromises);
             setData(tests);
+            setLoading(false);
+
+        }, (error) => {
+            console.error("Error fetching diagnostic tests:", error);
             setLoading(false);
         });
         
-        return () => unsubscribe();
+        return unsubscribe;
     }, [firestore]);
     
 

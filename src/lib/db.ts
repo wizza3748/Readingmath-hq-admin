@@ -21,6 +21,8 @@ import {
   runTransaction,
   increment,
   setDoc,
+  DocumentReference,
+  Query,
 } from 'firebase/firestore';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError, type SecurityRuleContext } from '@/firebase/errors';
@@ -213,7 +215,7 @@ export async function deleteInstitution(db: Firestore, id: string) {
 
 
 // This function returns a query for all institutions.
-export function getInstitutionsQuery(db: Firestore) {
+export function getInstitutionsQuery(db: Firestore): Query {
   const collRef = collection(db, "institutions");
   return query(collRef, orderBy("createdAt", "desc"));
 }
@@ -226,7 +228,7 @@ export function getInstitution(db: Firestore, id: string, callback: (institution
   }
   const docRef = doc(db, "institutions", id);
 
-  const unsubscribe = onSnapshot(docSnap => {
+  const unsubscribe = onSnapshot(docRef, (docSnap) => {
     if (docSnap.exists()) {
       callback({ id: docSnap.id, ...docSnap.data() } as Institution);
     } else {
@@ -328,7 +330,7 @@ const initialDiagnosticTests: Omit<DiagnosticTest, 'createdAt' | 'totalQuestions
     { id: 28, semesterName: '중등 3학년 2학기', status: '검수전' },
 ];
 
-async function seedDiagnosticTests(db: Firestore) {
+export async function seedDiagnosticTests(db: Firestore) {
     const collRef = collection(db, "diagnostic-tests");
     const batch = writeBatch(db);
 
@@ -347,66 +349,13 @@ async function seedDiagnosticTests(db: Firestore) {
     });
 }
 
-
-export function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTest[]) => void) {
+export function getDiagnosticTestsQuery(db: Firestore): Query {
     const collRef = collection(db, 'diagnostic-tests');
-    const q = query(collRef, orderBy('id', 'asc'));
-
-    const unsubscribe = onSnapshot(q, async (querySnapshot) => {
-        if (querySnapshot.empty) {
-            console.log('No diagnostic tests found, seeding initial data...');
-            await seedDiagnosticTests(db);
-            // The onSnapshot listener will automatically pick up the newly seeded data.
-            return;
-        }
-
-        const testsPromises = querySnapshot.docs.map(async (docSnapshot) => {
-            const testData = docSnapshot.data() as DiagnosticTest;
-            const questionsCollRef = collection(db, `diagnostic-tests/${docSnapshot.id}/questions`);
-            const questionsSnapshot = await getDocs(questionsCollRef);
-            testData.totalQuestions = questionsSnapshot.size;
-            return testData;
-        });
-
-        const tests = await Promise.all(testsPromises);
-        callback(tests);
-
-    }, async (error) => {
-        console.error("Error fetching diagnostic tests:", error);
-        const permissionError = new FirestorePermissionError({
-            path: collRef.path,
-            operation: 'list',
-        } satisfies SecurityRuleContext);
-        errorEmitter.emit('permission-error', permissionError);
-        callback([]);
-    });
-
-    return unsubscribe;
+    return query(collRef, orderBy('id', 'asc'));
 }
 
-
-export function getDiagnosticTest(db: Firestore, testId: string, callback: (test: DiagnosticTest | null) => void) {
-  const docRef = doc(db, "diagnostic-tests", testId);
-  const unsubscribe = onSnapshot(docSnap => {
-    if (docSnap.exists()) {
-      const testData = { id: parseInt(docSnap.id), ...docSnap.data() } as DiagnosticTest;
-      const questionsCollRef = collection(db, `diagnostic-tests/${testId}/questions`);
-      getDocs(questionsCollRef).then(questionsSnapshot => {
-        testData.totalQuestions = questionsSnapshot.size;
-        callback(testData);
-      });
-    } else {
-      callback(null);
-    }
-  }, async (serverError) => {
-    const permissionError = new FirestorePermissionError({
-        path: docRef.path,
-        operation: 'get',
-    } satisfies SecurityRuleContext);
-    errorEmitter.emit('permission-error', permissionError);
-    callback(null);
-  });
-  return unsubscribe;
+export function getDiagnosticTestDoc(db: Firestore, testId: string): DocumentReference {
+  return doc(db, "diagnostic-tests", testId);
 }
 
 export async function updateDiagnosticTestStatus(db: Firestore, testId: string, status: '검수전' | '검수완료') {
@@ -449,26 +398,9 @@ export type Question = {
     updatedAt: Timestamp;
 }
 
-export function getQuestions(db: Firestore, testId: string, callback: (questions: Question[]) => void) {
+export function getQuestionsQuery(db: Firestore, testId: string): Query {
   const collRef = collection(db, `diagnostic-tests/${testId}/questions`);
-  const q = query(collRef, orderBy("questionNumber", "asc"));
-
-  const unsubscribe = onSnapshot(q, (querySnapshot) => {
-    const questions: Question[] = [];
-    querySnapshot.forEach((doc) => {
-      questions.push({ id: doc.id, ...doc.data() } as Question);
-    });
-    callback(questions);
-  }, async (serverError) => {
-    const permissionError = new FirestorePermissionError({
-        path: collRef.path,
-        operation: 'list',
-    } satisfies SecurityRuleContext);
-    errorEmitter.emit('permission-error', permissionError);
-    callback([]);
-  });
-
-  return unsubscribe;
+  return query(collRef, orderBy("questionNumber", "asc"));
 }
 
 export async function getNextQuestionNumber(db: Firestore, testId: string): Promise<number> {
@@ -769,3 +701,4 @@ export const initialCurriculumUnits: CurriculumUnit[] = [
     { id: '147', semester: '중등 3-2', largeUnit: '3. 환경과 에너지', mediumUnit: '생태계와 환경', subUnit: '생태계 평형' },
     { id: '148', semester: '중등 3-2', largeUnit: '3. 환경과 에너지', mediumUnit: '생태계와 환경', subUnit: '환경 보전과 지속 가능한 발전' },
 ].map((unit, index) => ({ ...unit, id: (index + 1).toString() }));
+
