@@ -557,7 +557,7 @@ export function QuestionModal({
                                     {fields.map((field, index) => (
                                     <div key={field.id} className="group relative flex items-start gap-2 p-2">
                                         <FormLabel className="pt-2 shrink-0">
-                                            {isSymbolChecked ? generateCircledKorean(index) : `1-${index+1}`}
+                                            {isSymbolChecked ? generateCircledKorean(index + 1) : `1-${index+1}`}
                                         </FormLabel>
                                         <Controller
                                                 control={form.control}
@@ -661,7 +661,8 @@ export function QuestionModal({
                 </div>
             </div>
             
-            <DialogFooter className="p-6 pt-4 border-t sticky bottom-0 bg-background z-10 flex justify-end items-center w-full">
+            <DialogFooter className="p-6 pt-4 border-t sticky bottom-0 bg-background z-10 flex justify-between items-center w-full">
+                <div/>
                 <div className="flex items-center gap-4">
                     <FormField
                       control={form.control}
@@ -709,4 +710,3 @@ export function QuestionModal({
     </>
   );
 }
-
