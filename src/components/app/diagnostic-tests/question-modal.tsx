@@ -278,22 +278,15 @@ export function QuestionModal({
       return;
     }
     
-    if (fields.length > 0 && type !== 'ox') {
-      newAnswers = fields.map((field, index) => ({
-        ...field,
-        value: type === 'circled' ? `${generateCircledNumber(index + 1)} ` : `${generateCircledKorean(index + 1)} `
-      }));
-    } else {
-      newAnswers = Array.from({ length: 2 }, (_, index) => ({
-        value: type === 'circled' ? `${generateCircledNumber(index + 1)} ` : `${generateCircledKorean(index + 1)} `,
-        isCorrect: false
-      }));
-    }
+    newAnswers = Array.from({ length: 2 }, (_, index) => ({
+      value: type === 'circled' ? `${generateCircledNumber(index + 1)} ` : `${generateCircledKorean(index + 1)} `,
+      isCorrect: false
+    }));
     replace(newAnswers);
   };
 
   const handleOXGenerate = () => {
-    if (fields.some(f => f.value !== '')) {
+    if (fields.some(f => f.value !== '' && f.value !== 'O' && f.value !== 'X')) {
       setShowOXConfirm(true);
     } else {
       generateOptions('ox');
@@ -694,7 +687,7 @@ export function QuestionModal({
                 </div>
             </div>
             
-            <div className="p-6 pt-4 border-t sticky bottom-0 bg-background z-10">
+            <DialogFooter className="p-6 pt-4 border-t sticky bottom-0 bg-background z-10">
               <div className='flex justify-between w-full'>
                   <FormField
                   control={form.control}
@@ -719,7 +712,7 @@ export function QuestionModal({
                       </DialogClose>
                   </div>
               </div>
-            </div>
+            </DialogFooter>
           </form>
         </Form>
       </DialogContent>
@@ -742,5 +735,4 @@ export function QuestionModal({
   );
 }
 
-
-
+    
