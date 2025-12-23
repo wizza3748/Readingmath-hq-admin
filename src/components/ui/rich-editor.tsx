@@ -34,18 +34,18 @@ const RichEditorToolbar = ({ onImageUpload }: { onImageUpload: (file: File) => v
 
   return (
     <div className="flex items-center gap-1 border-b p-2 bg-slate-50 rounded-t-md flex-wrap">
-      <Button variant="ghost" size="icon" className="h-8 w-8"><Pilcrow /></Button>
-      <Button variant="ghost" size="icon" className="h-8 w-8"><Bold /></Button>
-      <Button variant="ghost" size="icon" className="h-8 w-8"><Italic /></Button>
-      <Button variant="ghost" size="icon" className="h-8 w-8">16</Button>
-      <Button variant="ghost" size="icon" className="h-8 w-8"><Undo /></Button>
-      <Button variant="ghost" size="icon" className="h-8 w-8"><Redo /></Button>
-      <Button variant="ghost" size="icon" className="h-8 w-8"><Superscript /></Button>
-      <Button variant="ghost" size="icon" className="h-8 w-8">¶*</Button>
-      <Button variant="ghost" size="icon" className="h-8 w-8"><Table /></Button>
-      <Button variant="ghost" size="icon" className="h-8 w-8">-</Button>
-      <Button variant="ghost" size="icon" className="h-8 w-8"><SquareRoot /></Button>
-      <Button variant="ghost" size="icon" className="h-8 w-8"><Hexagon /></Button>
+      <Button type="button" variant="ghost" size="icon" className="h-8 w-8"><Pilcrow /></Button>
+      <Button type="button" variant="ghost" size="icon" className="h-8 w-8"><Bold /></Button>
+      <Button type="button" variant="ghost" size="icon" className="h-8 w-8"><Italic /></Button>
+      <Button type="button" variant="ghost" size="icon" className="h-8 w-8">16</Button>
+      <Button type="button" variant="ghost" size="icon" className="h-8 w-8"><Undo /></Button>
+      <Button type="button" variant="ghost" size="icon" className="h-8 w-8"><Redo /></Button>
+      <Button type="button" variant="ghost" size="icon" className="h-8 w-8"><Superscript /></Button>
+      <Button type="button" variant="ghost" size="icon" className="h-8 w-8">¶*</Button>
+      <Button type="button" variant="ghost" size="icon" className="h-8 w-8"><Table /></Button>
+      <Button type="button" variant="ghost" size="icon" className="h-8 w-8">-</Button>
+      <Button type="button" variant="ghost" size="icon" className="h-8 w-8"><SquareRoot /></Button>
+      <Button type="button" variant="ghost" size="icon" className="h-8 w-8"><Hexagon /></Button>
       <input
         type="file"
         ref={imageInputRef}
@@ -53,10 +53,10 @@ const RichEditorToolbar = ({ onImageUpload }: { onImageUpload: (file: File) => v
         className="hidden"
         accept="image/*"
       />
-      <Button variant="ghost" size="icon" className="h-8 w-8" onClick={handleImageClick}>
+      <Button type="button" variant="ghost" size="icon" className="h-8 w-8" onClick={handleImageClick}>
         <ImageIcon />
       </Button>
-      <Button variant="ghost" size="icon" className="h-8 w-8"><Code /></Button>
+      <Button type="button" variant="ghost" size="icon" className="h-8 w-8"><Code /></Button>
     </div>
   );
 };
@@ -120,5 +120,3 @@ const RichEditor = React.forwardRef<HTMLTextAreaElement, RichEditorProps>(
 RichEditor.displayName = 'RichEditor';
 
 export { RichEditor };
-
-    
