@@ -787,3 +787,4 @@ export const initialCurriculumUnits: CurriculumUnit[] = [
     { id: '148', semester: '중등 3-2', largeUnit: '3. 환경과 에너지', mediumUnit: '생태계와 환경', subUnit: '환경 보전과 지속 가능한 발전' },
 ].map((unit, index) => ({ ...unit, id: (index + 1).toString() }));
 이 데이터를 삭제해줘
+위 파일로 다시 원복 시켜줘
