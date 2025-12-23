@@ -800,23 +800,24 @@ const initialCurriculumUnits: Omit<CurriculumUnit, 'id' | 'createdAt'>[] = [
 ];
 
 export async function seedCurriculumUnits(db: Firestore) {
-    const collRef = collection(db, "curriculum-units");
-    const batch = writeBatch(db);
+  const collRef = collection(db, "curriculum-units");
+  const batch = writeBatch(db);
 
-    for (const unit of initialCurriculumUnits) {
-        const docRef = doc(collRef);
-        batch.set(docRef, { ...unit, createdAt: serverTimestamp() });
-    }
+  // This will overwrite existing data, ensuring a clean seed.
+  for (const unit of initialCurriculumUnits) {
+      const docRef = doc(collRef); // Create a new document reference each time
+      batch.set(docRef, { ...unit, createdAt: serverTimestamp() });
+  }
 
-    console.log(`Seeding ${initialCurriculumUnits.length} new curriculum units...`);
-    await batch.commit().catch(async (serverError) => {
-        console.error("Error seeding curriculum units:", serverError);
-        const permissionError = new FirestorePermissionError({
-            path: collRef.path,
-            operation: 'create',
-        } satisfies SecurityRuleContext);
-        errorEmitter.emit('permission-error', permissionError);
-    });
+  console.log(`Seeding or overwriting ${initialCurriculumUnits.length} curriculum units...`);
+  await batch.commit().catch(async (serverError) => {
+      console.error("Error seeding curriculum units:", serverError);
+      const permissionError = new FirestorePermissionError({
+          path: collRef.path,
+          operation: 'create',
+      } satisfies SecurityRuleContext);
+      errorEmitter.emit('permission-error', permissionError);
+  });
 }
 
 export function getCurriculumUnits(
@@ -864,4 +865,5 @@ export function getCurriculumUnits(
       callback([]);
     });
 }
+
 
