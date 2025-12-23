@@ -8,10 +8,10 @@ import {
   getCoreRowModel,
   getSortedRowModel,
   useReactTable,
-  onSnapshot,
 } from '@tanstack/react-table';
 import { Trash2, Edit } from 'lucide-react';
 import { useFirestore } from '@/firebase';
+import { onSnapshot } from 'firebase/firestore';
 import { getQuestionsQuery, deleteQuestion, updateQuestionExtended, type Question } from '@/lib/db';
 import { Button } from '@/components/ui/button';
 import {
