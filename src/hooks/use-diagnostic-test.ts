@@ -21,7 +21,7 @@ export function useDiagnosticTest(firestore: Firestore | null, testId: string) {
       setLoading(false);
     });
 
-    return () => unsubscribe();
+    return unsubscribe;
   }, [firestore, testId]);
 
   return { test, setTest, loading };
