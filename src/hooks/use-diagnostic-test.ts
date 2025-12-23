@@ -2,11 +2,10 @@
 'use client';
 
 import * as React from 'react';
-import { useFirestore } from '@/firebase';
+import { type Firestore } from 'firebase/firestore';
 import { getDiagnosticTest, type DiagnosticTest } from '@/lib/db';
 
-export function useDiagnosticTest(testId: string) {
-  const firestore = useFirestore();
+export function useDiagnosticTest(firestore: Firestore | null, testId: string) {
   const [test, setTest] = React.useState<DiagnosticTest | null>(null);
   const [loading, setLoading] = React.useState(true);
 

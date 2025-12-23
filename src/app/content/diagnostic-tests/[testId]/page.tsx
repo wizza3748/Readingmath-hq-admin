@@ -21,7 +21,7 @@ export default function DiagnosticTestDetailPage() {
   const testId = params.testId as string;
   const { toast } = useToast();
   const { firestore } = useFirebase() ?? {};
-  const { test, setTest, loading } = useDiagnosticTest(testId);
+  const { test, setTest, loading } = useDiagnosticTest(firestore, testId);
 
   const handleStatusToggle = async (checked: boolean) => {
     if (!firestore || !test) return;
