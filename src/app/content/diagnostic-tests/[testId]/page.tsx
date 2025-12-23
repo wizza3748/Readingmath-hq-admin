@@ -85,10 +85,10 @@ export default function DiagnosticTestDetailPage() {
 
       <div className="flex justify-start gap-2">
         <QuestionModal testId={testId} questionType="유형">
-            <Button>유형 문제 등록</Button>
+            <Button>+ 유형 문제</Button>
         </QuestionModal>
         <QuestionModal testId={testId} questionType="서술형">
-            <Button>서술형 문제 등록</Button>
+            <Button>+ 서술형 문제</Button>
         </QuestionModal>
       </div>
       
