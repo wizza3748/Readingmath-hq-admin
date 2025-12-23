@@ -302,14 +302,17 @@ function InstitutionsTableContent() {
   const [rowSelection, setRowSelection] = React.useState({});
 
    React.useEffect(() => {
-    if (!firestore) return;
+    if (!firestore) {
+      setLoading(false);
+      return;
+    };
     setLoading(true);
     const unsubscribe = getInstitutions(firestore, (institutions) => {
       setData(institutions);
       setLoading(false);
     });
 
-    return () => unsubscribe();
+    return unsubscribe;
   }, [firestore]);
 
 
@@ -424,7 +427,7 @@ function InstitutionsTableContent() {
 }
 
 export function InstitutionsTable() {
-    const { firestore } = useFirebase();
+    const { firestore } = useFirebase() ?? { firestore: null };
 
     if (!firestore) {
         return (
