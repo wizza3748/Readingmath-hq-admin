@@ -233,7 +233,7 @@ export function QuestionModal({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="max-w-6xl h-[90vh] flex flex-col">
+      <DialogContent className="max-w-full h-full w-full flex flex-col">
         <DialogHeader>
           <DialogTitle>
             문제 상세 ({questionType})
@@ -456,5 +456,3 @@ export function QuestionModal({
     </Dialog>
   );
 }
-
-    
