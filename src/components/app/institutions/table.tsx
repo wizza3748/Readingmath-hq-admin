@@ -17,7 +17,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { ArrowUpDown, Download, Plus } from "lucide-react";
-import { onSnapshot } from "firebase/firestore";
+import { onSnapshot, type Query } from "firebase/firestore";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
