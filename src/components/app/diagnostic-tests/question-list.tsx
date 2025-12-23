@@ -12,7 +12,7 @@ import {
 import { Trash2, Edit } from 'lucide-react';
 import { useFirestore } from '@/firebase';
 import { onSnapshot } from 'firebase/firestore';
-import { getQuestionsQuery, deleteQuestion, updateQuestionExtended, type Question } from '@/lib/db';
+import { getQuestionsQuery, deleteQuestion, updateQuestionExtended, type Question, initialCurriculumUnits } from '@/lib/db';
 import { Button } from '@/components/ui/button';
 import {
   Table,
@@ -45,6 +45,14 @@ export function QuestionList({ testId }: { testId: string }) {
   const { toast } = useToast();
   const [questions, setQuestions] = React.useState<Question[]>([]);
   const [loading, setLoading] = React.useState(true);
+
+  const curriculumUnitMap = React.useMemo(() => {
+    const map = new Map<string, string>();
+    initialCurriculumUnits.forEach(unit => {
+        map.set(unit.id, unit.mediumUnit);
+    });
+    return map;
+  }, []);
 
   React.useEffect(() => {
     if (!firestore || !testId) {
@@ -106,7 +114,15 @@ export function QuestionList({ testId }: { testId: string }) {
   const columns: ColumnDef<Question>[] = [
     { accessorKey: 'questionNumber', header: '번호' },
     { accessorKey: 'questionType', header: '문제 타입' },
-    { accessorKey: 'subUnitType', header: '단원', cell: ({ row }) => <div className='w-40'>{row.original.subUnitType || '-'}</div> },
+    { 
+        accessorKey: 'subUnitType', 
+        header: '단원', 
+        cell: ({ row }) => {
+            const subUnitId = row.original.subUnitType;
+            const mediumUnitName = curriculumUnitMap.get(subUnitId) || subUnitId || '-';
+            return <div className='w-40'>{mediumUnitName}</div>;
+        } 
+    },
     { accessorKey: 'contentArea', header: '내용영역', cell: ({ row }) => row.original.contentArea || '-' },
     { accessorKey: 'difficulty', header: '난이도', cell: ({ row }) => row.original.difficulty || '-' },
     { 
