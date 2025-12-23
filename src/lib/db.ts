@@ -859,12 +859,9 @@ export function getCurriculumUnits(
   callback: (units: CurriculumUnit[]) => void
 ) {
   const collRef = collection(db, 'curriculum-units');
-  let isSubscribed = true;
-
+  
   getDocs(collRef)
     .then((querySnapshot) => {
-      if (!isSubscribed) return;
-      
       let units: CurriculumUnit[] = [];
       querySnapshot.forEach((doc) => {
         units.push({ id: doc.id, ...doc.data() } as CurriculumUnit);
@@ -893,7 +890,6 @@ export function getCurriculumUnits(
       callback(units);
     })
     .catch(async (serverError) => {
-      if (!isSubscribed) return;
       console.error('Error fetching curriculum units:', serverError);
       const permissionError = new FirestorePermissionError({
         path: collRef.path,
@@ -902,9 +898,4 @@ export function getCurriculumUnits(
       errorEmitter.emit('permission-error', permissionError);
       callback([]);
     });
-
-  // Return an unsubscribe function.
-  return () => {
-    isSubscribed = false;
-  };
 }

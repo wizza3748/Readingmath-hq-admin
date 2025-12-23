@@ -130,8 +130,7 @@ export function QuestionModal({
 
   React.useEffect(() => {
     if (firestore) {
-      const unsubscribe = getCurriculumUnits(firestore, setCurriculumUnits);
-      return () => unsubscribe();
+      getCurriculumUnits(firestore, setCurriculumUnits);
     }
   }, [firestore]);
 
