@@ -376,6 +376,7 @@ export async function getDiagnosticTests(db: Firestore, callback: (tests: Diagno
     if (snapshot.empty) {
       console.log('No diagnostic tests found, seeding initial data...');
       await seedDiagnosticTests(db);
+      // After seeding, refetch the data.
       const seededSnapshot = await getDocs(collRef);
       processSnapshot(seededSnapshot);
     } else {
@@ -392,17 +393,22 @@ export async function getDiagnosticTests(db: Firestore, callback: (tests: Diagno
   }
 
   async function processSnapshot(querySnapshot: any) {
-    const testsPromises = querySnapshot.docs.map(async (doc: any) => {
-      const testData = doc.data() as DiagnosticTest;
-      const questionsCollRef = collection(db, `diagnostic-tests/${doc.id}/questions`);
-      const questionsSnapshot = await getDocs(questionsCollRef);
-      testData.totalQuestions = questionsSnapshot.size;
-      return testData;
-    });
+    try {
+      const testsPromises = querySnapshot.docs.map(async (doc: any) => {
+        const testData = doc.data() as DiagnosticTest;
+        const questionsCollRef = collection(db, `diagnostic-tests/${doc.id}/questions`);
+        const questionsSnapshot = await getDocs(questionsCollRef);
+        testData.totalQuestions = questionsSnapshot.size;
+        return testData;
+      });
 
-    const tests = await Promise.all(testsPromises);
-    tests.sort((a, b) => a.id - b.id);
-    callback(tests);
+      const tests = await Promise.all(testsPromises);
+      tests.sort((a, b) => a.id - b.id);
+      callback(tests);
+    } catch (e) {
+       console.error("Error processing snapshot:", e);
+       callback([]);
+    }
   }
 }
 
@@ -692,150 +698,125 @@ const initialCurriculumUnits: Omit<CurriculumUnit, 'id' | 'createdAt'>[] = [
     { semester: '초등 4-2', largeUnit: '3. 산과 염기', mediumUnit: '산과 염기', subUnit: '여러 가지 용액을 어떻게 분류할까요' },
     { semester: '초등 4-2', largeUnit: '3. 산과 염기', mediumUnit: '산과 염기', subUnit: '산성 용액과 염기성 용액에 지시약을 넣으면 어떻게 될까요' },
     { semester: '초등 4-2', largeUnit: '3. 산과 염기', mediumUnit: '산과 염기', subUnit: '산성 용액과 염기성 용액을 섞으면 어떻게 될까요' },
-    { semester: '초등 4-2', largeUnit: '4. 지구와 달의 운동', mediumUnit: '지구와 달의 운동', subUnit: '지구의 자전 때문에 어떤 현상이 나타날까요' },
-    { semester: '초등 4-2', largeUnit: '4. 지구와 달의 운동', mediumUnit: '달의 운동', subUnit: '달은 어떤 모양으로 변할까요' },
-    { semester: '초등 4-2', largeUnit: '4. 지구와 달의 운동', mediumUnit: '지구와 달의 운동', subUnit: '계절에 따라 보이는 별자리가 달라지는 까닭은 무엇일까요' },
-    { semester: '초등 5-1', largeUnit: '1. 여러 가지 기체', mediumUnit: '여러 가지 기체', subUnit: '산소는 어떤 성질이 있을까요' },
-    { semester: '초등 5-1', largeUnit: '1. 여러 가지 기체', mediumUnit: '여러 가지 기체', subUnit: '이산화 탄소는 어떤 성질이 있을까요' },
-    { semester: '초등 5-1', largeUnit: '1. 여러 가지 기체', mediumUnit: '여러 가지 기체', subUnit: '공기는 여러 가지 기체로 이루어져 있음을 어떻게 설명할까요' },
-    { semester: '초등 5-1', largeUnit: '2. 우리 몸의 구조와 기능', mediumUnit: '우리 몸의 구조와 기능', subUnit: '소화 기관은 어떤 일을 할까요' },
-    { semester: '초등 5-1', largeUnit: '2. 우리 몸의 구조와 기능', mediumUnit: '우리 몸의 구조와 기능', subUnit: '순환 기관은 어떤 일을 할까요' },
-    { semester: '초등 5-1', largeUnit: '2. 우리 몸의 구조와 기능', mediumUnit: '우리 몸의 구조와 기능', subUnit: '호흡 기관과 배설 기관은 어떤 일을 할까요' },
-    { semester: '초등 5-1', largeUnit: '2. 우리 몸의 구조와 기능', mediumUnit: '우리 몸의 구조와 기능', subUnit: '우리 몸의 여러 기관은 어떤 관계가 있을까요' },
-    { semester: '초등 5-1', largeUnit: '3. 빛과 파동', mediumUnit: '빛과 파동', subUnit: '소리는 어떻게 전달될까요' },
-    { semester: '초등 5-1', largeUnit: '3. 빛과 파동', mediumUnit: '빛과 파동', subUnit: '거울에 비친 물체의 모습은 실제 물체와 어떻게 다를까요' },
-    { semester: '초등 5-1', largeUnit: '3. 빛과 파동', mediumUnit: '빛과 파동', subUnit: '빛이 다른 물질을 통과할 때 어떻게 나아갈까요' },
-    { semester: '초등 5-1', largeUnit: '4. 지권의 변화', mediumUnit: '지권의 변화', subUnit: '지진이 발생하는 원인은 무엇일까요' },
-    { semester: '초등 5-1', largeUnit: '4. 지권의 변화', mediumUnit: '지권의 변화', subUnit: '화산 활동은 우리에게 어떤 영향을 줄까요' },
-    { semester: '초등 5-1', largeUnit: '4. 지권의 변화', mediumUnit: '지권의 변화', subUnit: '지진과 화산 활동은 서로 어떤 관련이 있을까요' },
-    { semester: '초등 5-2', largeUnit: '1. 날씨의 변화', mediumUnit: '날씨의 변화', subUnit: '하루 동안 태양의 고도와 그림자 길이, 기온은 어떻게 변할까요' },
-    { semester: '초등 5-2', largeUnit: '1. 날씨의 변화', mediumUnit: '날씨의 변화', subUnit: '계절에 따라 태양의 남중 고도와 낮과 밤의 길이, 기온은 어떻게 달라질까요' },
-    { semester: '초등 5-2', largeUnit: '1. 날씨의 변화', mediumUnit: '날씨의 변화', subUnit: '기온과 습도를 측정하고, 이슬, 안개, 구름의 관계를 알아볼까요' },
-    { semester: '초등 5-2', largeUnit: '1. 날씨의 변화', mediumUnit: '날씨의 변화', subUnit: '바람이 부는 까닭은 무엇일까요' },
-    { semester: '초등 5-2', largeUnit: '2. 식물과 에너지', mediumUnit: '식물과 에너지', subUnit: '식물은 어떻게 양분을 만들까요' },
-    { semester: '초등 5-2', largeUnit: '2. 식물과 에너지', mediumUnit: '식물과 에너지', subUnit: '생태계에서 생물은 어떻게 에너지를 얻을까요' },
-    { semester: '초등 5-2', largeUnit: '3. 전기와 자기', mediumUnit: '전기 회로', subUnit: '전기 회로를 꾸며 전구에 불을 켜 볼까요' },
-    { semester: '초등 5-2', largeUnit: '3. 전기와 자기', mediumUnit: '전기 회로', subUnit: '전류가 흐르는 전선 주위에는 어떤 성질이 생길까요' },
-    { semester: '초등 5-2', largeUnit: '3. 전기와 자기', mediumUnit: '전기 회로', subUnit: '전기를 안전하게 사용하고 절약하는 방법은 무엇일까요' },
-    { semester: '초등 5-2', largeUnit: '4. 화학 반응의 규칙', mediumUnit: '화학 반응의 규칙', subUnit: '물질이 타면 어떤 물질이 생길까요' },
-    { semester: '초등 5-2', largeUnit: '4. 화학 반응의 규칙', mediumUnit: '화학 반응의 규칙', subUnit: '물이 얼거나 물을 끓이면 무게와 부피는 어떻게 될까요' },
-    { semester: '초등 5-2', largeUnit: '4. 화학 반응의 규칙', mediumUnit: '화학 반응의 규칙', subUnit: '여러 가지 물질을 섞으면 어떤 변화가 생길까요' },
-    { semester: '초등 6-1', largeUnit: '1. 물질의 구성', mediumUnit: '물질의 구성', subUnit: '물질을 이루는 기본 성분은 무엇일까요' },
-    { semester: '초등 6-1', largeUnit: '1. 물질의 구성', mediumUnit: '물질의 구성', subUnit: '원소는 무엇일까요' },
-    { semester: '초등 6-1', largeUnit: '1. 물질의 구성', mediumUnit: '물질의 구성', subUnit: '원자와 분자는 무엇일까요' },
-    { semester: '초등 6-1', largeUnit: '1. 물질의 구성', mediumUnit: '물질의 구성', subUnit: '이온은 무엇일까요' },
-    { semester: '초등 6-1', largeUnit: '2. 힘과 운동', mediumUnit: '힘과 운동', subUnit: '여러 가지 힘' },
-    { semester: '초등 6-1', largeUnit: '2. 힘과 운동', mediumUnit: '힘과 운동', subUnit: '물체의 운동' },
-    { semester: '초등 6-1', largeUnit: '3. 자극과 반응', mediumUnit: '자극과 반응', subUnit: '자극과 반응' },
-    { semester: '초등 6-1', largeUnit: '3. 자극과 반응', mediumUnit: '자극과 반응', subUnit: '신경계' },
-    { semester: '초등 6-1', largeUnit: '3. 자극과 반응', mediumUnit: '자극과 반응', subUnit: '호르몬' },
-    { semester: '초등 6-1', largeUnit: '4. 식물과 에너지', mediumUnit: '광합성', subUnit: '광합성' },
-    { semester: '초등 6-1', largeUnit: '4. 식물과 에너지', mediumUnit: '식물의 호흡', subUnit: '식물의 호흡' },
-    { semester: '초등 6-1', largeUnit: '4. 식물과 에너지', mediumUnit: '양분의 저장과 사용', subUnit: '양분의 저장과 사용' },
-    { semester: '초등 6-1', largeUnit: '5. 동물과 에너지', mediumUnit: '소화', subUnit: '소화' },
-    { semester: '초등 6-1', largeUnit: '5. 동물과 에너지', mediumUnit: '순환', subUnit: '순환' },
-    { semester: '초등 6-1', largeUnit: '5. 동물과 에너지', mediumUnit: '호흡', subUnit: '호흡' },
-    { semester: '초등 6-1', largeUnit: '5. 동물과 에너지', mediumUnit: '배설', subUnit: '배설' },
-    { semester: '초등 6-2', largeUnit: '1. 전기와 자기', mediumUnit: '전기', subUnit: '전기' },
-    { semester: '초등 6-2', largeUnit: '1. 전기와 자기', mediumUnit: '자기', subUnit: '자기' },
-    { semester: '초등 6-2', largeUnit: '2. 화학 반응의 규칙과 에너지 변화', mediumUnit: '물질 변화와 화학 반응식', subUnit: '물질 변화와 화학 반응식' },
-    { semester: '초등 6-2', largeUnit: '2. 화학 반응의 규칙과 에너지 변화', mediumUnit: '화학 반응의 규칙', subUnit: '화학 반응의 규칙' },
-    { semester: '초등 6-2', largeUnit: '2. 화학 반응의 규칙과 에너지 변화', mediumUnit: '화학 반응에서의 에너지 출입', subUnit: '화학 반응에서의 에너지 출입' },
-    { semester: '초등 6-2', largeUnit: '3. 생식과 발생', mediumUnit: '세포 분열', subUnit: '세포 분열' },
-    { semester: '초등 6-2', largeUnit: '3. 생식과 발생', mediumUnit: '생식', subUnit: '생식' },
-    { semester: '초등 6-2', largeUnit: '3. 생식과 발생', mediumUnit: '사람의 발생', subUnit: '사람의 발생' },
-    { semester: '초등 6-2', largeUnit: '4. 별과 우주', mediumUnit: '지구와 달', subUnit: '지구와 달' },
-    { semester: '초등 6-2', largeUnit: '4. 별과 우주', mediumUnit: '태양계', subUnit: '태양계' },
-    { semester: '초등 6-2', largeUnit: '4. 별과 우주', mediumUnit: '태양계 밖의 우주', subUnit: '태양계 밖의 우주' },
-    { semester: '중등 1-1', largeUnit: '1. 화학 반응의 규칙성과 에너지 변화', mediumUnit: '화학 반응의 규칙', subUnit: '화학 반응의 규칙' },
-    { semester: '중등 1-1', largeUnit: '1. 화학 반응의 규칙성과 에너지 변화', mediumUnit: '화학 반응에서의 에너지', subUnit: '화학 반응에서의 에너지' },
-    { semester: '중등 1-1', largeUnit: '2. 기권과 날씨', mediumUnit: '기권', subUnit: '기권' },
-    { semester: '중등 1-1', largeUnit: '2. 기권과 날씨', mediumUnit: '날씨', subUnit: '날씨' },
-    { semester: '중등 1-1', largeUnit: '3. 운동과 에너지', mediumUnit: '운동', subUnit: '운동' },
-    { semester: '중등 1-1', largeUnit: '3. 운동과 에너지', mediumUnit: '에너지', subUnit: '에너지' },
-    { semester: '중등 1-1', largeUnit: '4. 자극과 반응', mediumUnit: '감각 기관', subUnit: '감각 기관' },
-    { semester: '중등 1-1', largeUnit: '4. 자극과 반응', mediumUnit: '신경계와 호르몬', subUnit: '신경계와 호르몬' },
-    { semester: '중등 1-2', largeUnit: '1. 운동과 에너지', mediumUnit: '일과 에너지', subUnit: '일과 에너지' },
-    { semester: '중등 1-2', largeUnit: '2. 화학 변화와 이온', mediumUnit: '이온', subUnit: '이온' },
-    { semester: '중등 1-2', largeUnit: '2. 화학 변화와 이온', mediumUnit: '앙금 생성 반응', subUnit: '앙금 생성 반응' },
-    { semester: '중등 1-2', largeUnit: '2. 화학 변화와 이온', mediumUnit: '산과 염기', subUnit: '산과 염기' },
-    { semester: '중등 1-2', largeUnit: '3. 지구와 우주', mediumUnit: '지구의 운동', subUnit: '지구의 운동' },
-    { semester: '중등 1-2', largeUnit: '3. 지구와 우주', mediumUnit: '달의 운동', subUnit: '달의 운동' },
-    { semester: '중등 1-2', largeUnit: '3. 지구와 우주', mediumUnit: '태양계', subUnit: '태양계' },
-    { semester: '중등 1-2', largeUnit: '4. 과학 기술과 인류 문명', mediumUnit: '과학 기술', subUnit: '과학 기술' },
-    { semester: '중등 2-1', largeUnit: '1. 물질의 구성', mediumUnit: '원소', subUnit: '원소' },
-    { semester: '중등 2-1', largeUnit: '1. 물질의 구성', mediumUnit: '원자와 분자', subUnit: '원자와 분자' },
-    { semester: '중등 2-1', largeUnit: '1. 물질의 구성', mediumUnit: '이온', subUnit: '이온' },
-    { semester: '중등 2-1', largeUnit: '2. 전기와 자기', mediumUnit: '전기', subUnit: '전기' },
-    { semester: '중등 2-1', largeUnit: '2. 전기와 자기', mediumUnit: '자기', subUnit: '자기' },
-    { semester: '중등 2-1', largeUnit: '3. 태양계', mediumUnit: '지구와 달', subUnit: '지구와 달' },
-    { semester: '중등 2-1', largeUnit: '3. 태양계', mediumUnit: '태양계의 구성', subUnit: '태양계의 구성' },
-    { semester: '중등 2-1', largeUnit: '4. 식물의 구조와 기능', mediumUnit: '식물의 구성 단계', subUnit: '식물의 구성 단계' },
-    { semester: '중등 2-1', largeUnit: '4. 식물의 구조와 기능', mediumUnit: '광합성', subUnit: '광합성' },
-    { semester: '중등 2-1', largeUnit: '4. 식물의 구조와 기능', mediumUnit: '식물의 호흡과 양분', subUnit: '식물의 호흡과 양분' },
-    { semester: '중등 2-2', largeUnit: '1. 물질의 특성', mediumUnit: '물질의 특성', subUnit: '물질의 특성' },
-    { semester: '중등 2-2', largeUnit: '1. 물질의 특성', mediumUnit: '혼합물의 분리', subUnit: '혼합물의 분리' },
-    { semester: '중등 2-2', largeUnit: '2. 빛과 파동', mediumUnit: '빛', subUnit: '빛' },
-    { semester: '중등 2-2', largeUnit: '2. 빛과 파동', mediumUnit: '파동', subUnit: '파동' },
-    { semester: '중등 2-2', largeUnit: '3. 기권과 날씨', mediumUnit: '기권과 지구 기온', subUnit: '기권과 지구 기온' },
-    { semester: '중등 2-2', largeUnit: '3. 기권과 날씨', mediumUnit: '구름과 강수', subUnit: '구름과 강수' },
-    { semester: '중등 2-2', largeUnit: '3. 기권과 날씨', mediumUnit: '기압과 바람', subUnit: '기압과 바람' },
-    { semester: '중등 2-2', largeUnit: '4. 소화, 순환, 호흡, 배설', mediumUnit: '소화', subUnit: '소화' },
-    { semester: '중등 2-2', largeUnit: '4. 소화, 순환, 호흡, 배설', mediumUnit: '순환', subUnit: '순환' },
-    { semester: '중등 2-2', largeUnit: '4. 소화, 순환, 호흡, 배설', mediumUnit: '호흡', subUnit: '호흡' },
-    { semester: '중등 2-2', largeUnit: '4. 소화, 순환, 호흡, 배설', mediumUnit: '배설', subUnit: '배설' },
-    { semester: '중등 3-1', largeUnit: '1. 화학 반응의 규칙과 에너지 변화', mediumUnit: '물질 변화와 화학 반응식', subUnit: '물질 변화와 화학 반응식' },
-    { semester: '중등 3-1', largeUnit: '1. 화학 반응의 규칙과 에너지 변화', mediumUnit: '화학 반응의 법칙', subUnit: '화학 반응의 법칙' },
-    { semester: '중등 3-1', largeUnit: '1. 화학 반응의 규칙과 에너지 변화', mediumUnit: '화학 반응에서의 에너지 출입', subUnit: '화학 반응에서의 에너지 출입' },
-    { semester: '중등 3-1', largeUnit: '2. 기권과 날씨', mediumUnit: '기권과 우리 생활', subUnit: '기권과 우리 생활' },
-    { semester: '중등 3-1', largeUnit: '2. 기권과 날씨', mediumUnit: '날씨의 변화', subUnit: '날씨의 변화' },
-    { semester: '중등 3-1', largeUnit: '3. 운동과 에너지', mediumUnit: '운동', subUnit: '운동' },
-    { semester: '중등 3-1', largeUnit: '3. 운동과 에너지', mediumUnit: '일과 에너지', subUnit: '일과 에너지' },
-    { semester: '중등 3-1', largeUnit: '4. 자극과 반응', mediumUnit: '감각 기관', subUnit: '감각 기관' },
-    { semester: '중등 3-1', largeUnit: '4. 자극과 반응', mediumUnit: '신경계와 호르몬', subUnit: '신경계와 호르몬' },
-    { semester: '중등 3-2', largeUnit: '1. 과학 기술과 인류 문명', mediumUnit: '과학 기술의 발달과 인류 문명', subUnit: '과학 기술의 발달과 인류 문명' },
-    { semester: '중등 3-2', largeUnit: '2. 생식과 유전', mediumUnit: '생식과 세포 분열', subUnit: '생식과 세포 분열' },
-    { semester: '중등 3-2', largeUnit: '2. 생식과 유전', mediumUnit: '유전', subUnit: '유전' },
-    { semester: '중등 3-2', largeUnit: '3. 별과 우주', mediumUnit: '별과 우주', subUnit: '별과 우주' },
-    { semester: '중등 3-2', largeUnit: '4. 환경과 에너지', mediumUnit: '생태계', subUnit: '생태계' },
-    { semester: '중등 3-2', largeUnit: '4. 환경과 에너지', mediumUnit: '환경 보전과 에너지', subUnit: '환경 보전과 에너지' },
+    { semester: '초등 4-2', largeUnit: '4. 지구와 달의 운동', mediumUnit: '지구의 자전', subUnit: '하루 동안 태양과 달의 위치는 어떻게 달라질까요' },
+    { semester: '초등 4-2', largeUnit: '4. 지구와 달의 운동', mediumUnit: '달의 모양 변화', subUnit: '여러 날 동안 달의 모양과 위치는 어떻게 달라질까요' },
+    { semester: '초등 4-2', largeUnit: '4. 지구와 달의 운동', mediumUnit: '별자리', subUnit: '계절별 대표적인 별자리와 신화' },
+    { semester: '초등 5-1', largeUnit: '1. 온도와 열', mediumUnit: '온도와 열', subUnit: '따뜻한 물과 차가운 물을 섞으면 온도는 어떻게 될까요?' },
+    { semester: '초등 5-1', largeUnit: '1. 온도와 열', mediumUnit: '온도와 열', subUnit: '고체에서 열은 어떻게 이동할까요?' },
+    { semester: '초등 5-1', largeUnit: '1. 온도와 열', mediumUnit: '온도와 열', subUnit: '액체와 기체에서 열은 어떻게 이동할까요?' },
+    { semester: '초등 5-1', largeUnit: '2. 생물과 환경', mediumUnit: '생물과 환경', subUnit: '생태계는 무엇일까요?' },
+    { semester: '초등 5-1', largeUnit: '2. 생물과 환경', mediumUnit: '생물과 환경', subUnit: '생태계를 이루는 생물 요소는 어떻게 관계를 맺고 있을까요?' },
+    { semester: '초등 5-1', largeUnit: '2. 생물과 환경', mediumUnit: '생물과 환경', subUnit: '우리 생활에서 생태계를 보전하고 복원하기 위해 어떤 노력을 할까요?' },
+    { semester: '초등 5-1', largeUnit: '3. 용해와 용액', mediumUnit: '용해와 용액', subUnit: '용해 전후 무게는 어떻게 될까요?' },
+    { semester: '초등 5-1', largeUnit: '3. 용해와 용액', mediumUnit: '용해와 용액', subUnit: '용질의 종류나 물의 온도에 따라 용해되는 양은 어떻게 다를까요?' },
+    { semester: '초등 5-1', largeUnit: '3. 용해와 용액', mediumUnit: '용해와 용액', subUnit: '용액의 진하기는 어떻게 비교할까요?' },
+    { semester: '초등 5-1', largeUnit: '4. 물체의 운동', mediumUnit: '물체의 운동', subUnit: '물체의 운동은 어떻게 나타낼까요?' },
+    { semester: '초등 5-1', largeUnit: '4. 물체의 운동', mediumUnit: '물체의 운동', subUnit: '물체의 빠르기는 어떻게 비교할까요?' },
+    { semester: '초등 5-2', largeUnit: '1. 날씨와 우리 생활', mediumUnit: '날씨와 우리 생활', subUnit: '습도는 우리 생활에 어떤 영향을 줄까요?' },
+    { semester: '초등 5-2', largeUnit: '1. 날씨와 우리 생활', mediumUnit: '날씨와 우리 생활', subUnit: '바람은 왜 불까요?' },
+    { semester: '초등 5-2', largeUnit: '1. 날씨와 우리 생활', mediumUnit: '날씨와 우리 생활', subUnit: '계절에 따라 날씨가 변하는 까닭은 무엇일까요?' },
+    { semester: '초등 5-2', largeUnit: '2. 물질의 상태', mediumUnit: '물질의 상태', subUnit: '물은 상태가 어떻게 변할까요?' },
+    { semester: '초등 5-2', largeUnit: '2. 물질의 상태', mediumUnit: '물질의 상태', subUnit: '물질의 세 가지 상태의 특징은 무엇일까요?' },
+    { semester: '초등 5-2', largeUnit: '2. 물질의 상태', mediumUnit: '물질의 상태', subUnit: '우리 주변의 다양한 물질은 어떤 상태로 되어 있을까요?' },
+    { semester: '초등 5-2', largeUnit: '3. 산과 염기', mediumUnit: '산과 염기', subUnit: '여러 가지 용액을 어떻게 분류할 수 있을까요?' },
+    { semester: '초등 5-2', largeUnit: '3. 산과 염기', mediumUnit: '산과 염기', subUnit: '산성 용액과 염기성 용액은 어떤 성질이 있을까요?' },
+    { semester: '초등 5-2', largeUnit: '3. 산과 염기', mediumUnit: '산과 염기', subUnit: '산성 용액과 염기성 용액을 섞으면 어떻게 될까요?' },
+    { semester: '초등 5-2', largeUnit: '4. 우리 몸의 구조와 기능', mediumUnit: '우리 몸의 구조와 기능', subUnit: '소화 기관은 어떤 일을 할까요?' },
+    { semester: '초등 5-2', largeUnit: '4. 우리 몸의 구조와 기능', mediumUnit: '우리 몸의 구조와 기능', subUnit: '순환 기관, 호흡 기관, 배설 기관은 어떤 일을 할까요?' },
+    { semester: '초등 5-2', largeUnit: '4. 우리 몸의 구조와 기능', mediumUnit: '우리 몸의 구조와 기능', subUnit: '우리 몸의 여러 기관은 건강을 유지하기 위해 어떤 관계를 맺고 있을까요?' },
+    { semester: '초등 6-1', largeUnit: '1. 전기의 이용', mediumUnit: '전기의 이용', subUnit: '전구에 불이 켜지게 하려면 어떻게 해야 할까요?' },
+    { semester: '초등 6-1', largeUnit: '1. 전기의 이용', mediumUnit: '전기의 이용', subUnit: '전기 회로에서 전구의 연결 방법에 따라 전구의 밝기는 어떻게 달라질까요?' },
+    { semester: '초등 6-1', largeUnit: '1. 전기의 이용', mediumUnit: '전기의 이용', subUnit: '전기를 안전하게 사용하고 절약하는 방법에는 무엇이 있을까요?' },
+    { semester: '초등 6-1', largeUnit: '2. 계절의 변화', mediumUnit: '계절의 변화', subUnit: '하루 동안 태양 고도, 그림자 길이, 기온은 어떻게 변할까요?' },
+    { semester: '초등 6-1', largeUnit: '2. 계절의 변화', mediumUnit: '계절의 변화', subUnit: '계절에 따라 태양의 남중 고도, 낮과 밤의 길이, 기온은 어떻게 변할까요?' },
+    { semester: '초등 6-1', largeUnit: '2. 계절의 변화', mediumUnit: '계절의 변화', subUnit: '계절이 변하는 까닭은 무엇일까요?' },
+    { semester: '초등 6-1', largeUnit: '3. 연소와 소화', mediumUnit: '연소와 소화', subUnit: '물질이 탈 때 어떤 현상이 나타날까요?' },
+    { semester: '초등 6-1', largeUnit: '3. 연소와 소화', mediumUnit: '연소와 소화', subUnit: '불을 끄려면 어떻게 해야 할까요?' },
+    { semester: '초등 6-1', largeUnit: '4. 식물의 구조와 기능', mediumUnit: '식물의 구조와 기능', subUnit: '식물은 어떻게 양분을 만들고 사용할까요?' },
+    { semester: '초등 6-1', largeUnit: '4. 식물의 구조와 기능', mediumUnit: '식물의 구조와 기능', subUnit: '식물의 여러 부분은 어떤 일을 할까요?' },
+    { semester: '초등 6-2', largeUnit: '1. 자기장', mediumUnit: '자기장', subUnit: '자석 주위에 철가루는 어떻게 배열될까요?' },
+    { semester: '초등 6-2', largeUnit: '1. 자기장', mediumUnit: '자기장', subUnit: '전류가 흐르는 전선 주위에 나침반은 어떻게 움직일까요?' },
+    { semester: '초등 6-2', largeUnit: '1. 자기장', mediumUnit: '자기장', subUnit: '전자석은 어떤 성질이 있을까요?' },
+    { semester: '초등 6-2', largeUnit: '2. 식물과 에너지', mediumUnit: '식물과 에너지', subUnit: '식물은 어떻게 양분을 만들까요?' },
+    { semester: '초등 6-2', largeUnit: '2. 식물과 에너지', mediumUnit: '식물과 에너지', subUnit: '생태계에서 생물은 어떻게 에너지를 얻을까요?' },
+    { semester: '초등 6-2', largeUnit: '3. 여러 가지 기체', mediumUnit: '여러 가지 기체', subUnit: '산소는 어떤 성질이 있을까요?' },
+    { semester: '초등 6-2', largeUnit: '3. 여러 가지 기체', mediumUnit: '여러 가지 기체', subUnit: '이산화 탄소는 어떤 성질이 있을까요?' },
+    { semester: '초등 6-2', largeUnit: '4. 우리 몸의 구조와 기능', mediumUnit: '우리 몸의 구조와 기능', subUnit: '소화 기관은 어떤 일을 할까요?' },
+    { semester: '초등 6-2', largeUnit: '4. 우리 몸의 구조와 기능', mediumUnit: '우리 몸의 구조와 기능', subUnit: '순환 기관, 호흡 기관, 배설 기관은 어떤 일을 할까요?' },
+    { semester: '중등 1-1', largeUnit: '1. 지권의 변화', mediumUnit: '지권의 구조', subUnit: '지구계와 지권의 층상 구조' },
+    { semester: '중등 1-1', largeUnit: '1. 지권의 변화', mediumUnit: '지권의 구조', subUnit: '암석과 광물' },
+    { semester: '중등 1-1', largeUnit: '1. 지권의 변화', mediumUnit: '지권의 변화', subUnit: '풍화와 토양' },
+    { semester: '중등 1-1', largeUnit: '1. 지권의 변화', mediumUnit: '지권의 변화', subUnit: '판 구조론과 지각 변동' },
+    { semester: '중등 1-1', largeUnit: '2. 여러 가지 힘', mediumUnit: '여러 가지 힘', subUnit: '중력과 탄성력' },
+    { semester: '중등 1-1', largeUnit: '2. 여러 가지 힘', mediumUnit: '여러 가지 힘', subUnit: '마찰력과 부력' },
+    { semester: '중등 1-1', largeUnit: '3. 생물의 다양성', mediumUnit: '생물의 다양성', subUnit: '생물 다양성과 분류' },
+    { semester: '중등 1-1', largeUnit: '3. 생물의 다양성', mediumUnit: '생물의 다양성', subUnit: '원생생물계, 균계, 식물계, 동물계' },
+    { semester: '중등 1-1', largeUnit: '4. 기체의 성질', mediumUnit: '기체의 성질', subUnit: '입자 운동' },
+    { semester: '중등 1-1', largeUnit: '4. 기체의 성질', mediumUnit: '기체의 성질', subUnit: '기체의 압력과 부피' },
+    { semester: '중등 1-1', largeUnit: '4. 기체의 성질', mediumUnit: '기체의 성질', subUnit: '기체의 온도와 부피' },
+    { semester: '중등 1-2', largeUnit: '1. 물질의 구성', mediumUnit: '물질의 구성', subUnit: '원소와 원자' },
+    { semester: '중등 1-2', largeUnit: '1. 물질의 구성', mediumUnit: '물질의 구성', subUnit: '분자와 이온' },
+    { semester: '중등 1-2', largeUnit: '2. 빛과 파동', mediumUnit: '빛', subUnit: '빛의 성질' },
+    { semester: '중등 1-2', largeUnit: '2. 빛과 파동', mediumUnit: '빛', subUnit: '거울과 렌즈' },
+    { semester: '중등 1-2', largeUnit: '2. 빛과 파동', mediumUnit: '파동', subUnit: '파동의 성질' },
+    { semester: '중등 1-2', largeUnit: '3. 식물과 에너지', mediumUnit: '식물과 에너지', subUnit: '광합성과 식물의 호흡' },
+    { semester: '중등 1-2', largeUnit: '3. 식물과 에너지', mediumUnit: '식물과 에너지', subUnit: '식물의 물질 수송' },
+    { semester: '중등 1-2', largeUnit: '4. 수권과 해수의 순환', mediumUnit: '수권과 해수의 순환', subUnit: '수권의 분포와 활용' },
+    { semester: '중등 1-2', largeUnit: '4. 수권과 해수의 순환', mediumUnit: '수권과 해수의 순환', subUnit: '해수의 특성과 순환' },
+    { semester: '중등 2-1', largeUnit: '1. 물질의 특성', mediumUnit: '물질의 특성', subUnit: '순물질과 혼합물' },
+    { semester: '중등 2-1', largeUnit: '1. 물질의 특성', mediumUnit: '물질의 특성', subUnit: '밀도, 녹는점, 끓는점, 용해도' },
+    { semester: '중등 2-1', largeUnit: '1. 물질의 특성', mediumUnit: '혼합물의 분리', subUnit: '혼합물의 분리 방법' },
+    { semester: '중등 2-1', largeUnit: '2. 전기와 자기', mediumUnit: '전기', subUnit: '마찰 전기와 정전기 유도' },
+    { semester: '중등 2-1', largeUnit: '2. 전기와 자기', mediumUnit: '전기', subUnit: '전류, 전압, 저항' },
+    { semester: '중등 2-1', largeUnit: '2. 전기와 자기', mediumUnit: '자기', subUnit: '자기장과 자기력선' },
+    { semester: '중등 2-1', largeUnit: '2. 전기와 자기', mediumUnit: '자기', subUnit: '전류에 의한 자기장' },
+    { semester: '중등 2-1', largeUnit: '3. 태양계', mediumUnit: '태양계', subUnit: '지구와 달' },
+    { semester: '중등 2-1', largeUnit: '3. 태양계', mediumUnit: '태양계', subUnit: '태양계의 구성' },
+    { semester: '중등 2-1', largeUnit: '4. 동물과 에너지', mediumUnit: '동물과 에너지', subUnit: '소화, 순환, 호흡, 배설' },
+    { semester: '중등 2-2', largeUnit: '1. 화학 반응의 규칙', mediumUnit: '화학 반응의 규칙', subUnit: '물리 변화와 화학 변화' },
+    { semester: '중등 2-2', largeUnit: '1. 화학 반응의 규칙', mediumUnit: '화학 반응의 규칙', subUnit: '화학 반응식' },
+    { semester: '중등 2-2', largeUnit: '1. 화학 반응의 규칙', mediumUnit: '화학 반응의 규칙', subUnit: '질량 보존 법칙과 일정 성분비 법칙' },
+    { semester: '중등 2-2', largeUnit: '2. 여러 가지 운동', mediumUnit: '여러 가지 운동', subUnit: '속력과 등속 운동' },
+    { semester: '중등 2-2', largeUnit: '2. 여러 가지 운동', mediumUnit: '여러 가지 운동', subUnit: '자유 낙하 운동' },
+    { semester: '중등 2-2', largeUnit: '3. 자극과 반응', mediumUnit: '자극과 반응', subUnit: '감각 기관' },
+    { semester: '중등 2-2', largeUnit: '3. 자극과 반응', mediumUnit: '자극과 반응', subUnit: '신경계와 호르몬' },
+    { semester: '중등 2-2', largeUnit: '4. 기권과 날씨', mediumUnit: '기권과 날씨', subUnit: '기권의 층상 구조와 복사 평형' },
+    { semester: '중등 2-2', largeUnit: '4. 기권과 날씨', mediumUnit: '기권과 날씨', subUnit: '구름과 강수' },
+    { semester: '중등 2-2', largeUnit: '4. 기권과 날씨', mediumUnit: '기권과 날씨', subUnit: '기압과 바람' },
+    { semester: '중등 3-1', largeUnit: '1. 화학 반응과 에너지', mediumUnit: '화학 반응과 에너지', subUnit: '화학 반응에서의 에너지 출입' },
+    { semester: '중등 3-1', largeUnit: '2. 일과 에너지 전환', mediumUnit: '일과 에너지', subUnit: '일과 일률' },
+    { semester: '중등 3-1', largeUnit: '2. 일과 에너지 전환', mediumUnit: '일과 에너지', subUnit: '위치 에너지와 운동 에너지' },
+    { semester: '중등 3-1', largeUnit: '2. 일과 에너지 전환', mediumUnit: '에너지 전환과 보존', subUnit: '역학적 에너지 전환과 보존' },
+    { semester: '중등 3-1', largeUnit: '3. 생식과 유전', mediumUnit: '생식과 유전', subUnit: '세포 분열과 생식' },
+    { semester: '중등 3-1', largeUnit: '3. 생식과 유전', mediumUnit: '생식과 유전', subUnit: '사람의 유전' },
+    { semester: '중등 3-1', largeUnit: '4. 별과 우주', mediumUnit: '별과 우주', subUnit: '별의 특성' },
+    { semester: '중등 3-1', largeUnit: '4. 별과 우주', mediumUnit: '별과 우주', subUnit: '우리 은하와 외부 은하' },
+    { semester: '중등 3-1', largeUnit: '4. 별과 우주', mediumUnit: '별과 우주', subUnit: '우주 팽창' },
+    { semester: '중등 3-2', largeUnit: '1. 과학 기술과 인류 문명', mediumUnit: '과학 기술과 인류 문명', subUnit: '첨단 과학 기술과 신소재' },
+    { semester: '중등 3-2', largeUnit: '2. 전기 에너지', mediumUnit: '전기 에너지', subUnit: '전기 에너지의 발생' },
+    { semester: '중등 3-2', largeUnit: '2. 전기 에너지', mediumUnit: '전기 에너지', subUnit: '전기 에너지의 전환과 소비' },
+    { semester: '중등 3-2', largeUnit: '3. 환경과 에너지', mediumUnit: '생태계와 환경', subUnit: '생태계 평형' },
+    { semester: '중등 3-2', largeUnit: '3. 환경과 에너지', mediumUnit: '생태계와 환경', subUnit: '환경 보전과 지속 가능한 발전' },
 ];
 
 export async function seedCurriculumUnits(db: Firestore) {
     const collRef = collection(db, "curriculum-units");
     const batch = writeBatch(db);
-    let count = 0;
-
-    const existingUnits = new Set<string>();
-    const snapshot = await getDocs(collRef).catch(() => ({ docs: [] }));
-    snapshot.docs.forEach(doc => {
-        const data = doc.data();
-        const key = `${data.semester}-${data.largeUnit}-${data.mediumUnit}-${data.subUnit}`;
-        existingUnits.add(key);
-    });
 
     for (const unit of initialCurriculumUnits) {
-        const key = `${unit.semester}-${unit.largeUnit}-${unit.mediumUnit}-${unit.subUnit}`;
-        if (!existingUnits.has(key)) {
-            const docRef = doc(collRef);
-            batch.set(docRef, { ...unit, createdAt: serverTimestamp() });
-            count++;
-        }
+        const docRef = doc(collRef);
+        batch.set(docRef, { ...unit, createdAt: serverTimestamp() });
     }
 
-    if (count > 0) {
-        console.log(`Seeding ${count} new curriculum units...`);
-        await batch.commit().catch(async (serverError) => {
-            console.error("Error seeding curriculum units:", serverError);
-            const permissionError = new FirestorePermissionError({
-                path: collRef.path,
-                operation: 'create',
-            } satisfies SecurityRuleContext);
-            errorEmitter.emit('permission-error', permissionError);
-        });
-    } else {
-        console.log("Curriculum units are already up to date.");
-    }
+    console.log(`Seeding ${initialCurriculumUnits.length} new curriculum units...`);
+    await batch.commit().catch(async (serverError) => {
+        console.error("Error seeding curriculum units:", serverError);
+        const permissionError = new FirestorePermissionError({
+            path: collRef.path,
+            operation: 'create',
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+    });
 }
 
 export function getCurriculumUnits(
@@ -883,3 +864,4 @@ export function getCurriculumUnits(
       callback([]);
     });
 }
+
