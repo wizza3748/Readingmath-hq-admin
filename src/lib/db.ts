@@ -517,9 +517,12 @@ export async function createQuestion(db: Firestore, testId: string, questionData
             const newQuestionRef = doc(questionsCollRef);
             transaction.set(newQuestionRef, data);
 
-            transaction.update(testDocRef, { 
-                totalQuestions: increment(1) 
-            });
+            // This transaction updates the totalQuestions count on the test document.
+            // However, the UI currently recalculates this on the client side in getDiagnosticTests.
+            // For consistency, we can leave this here for server-side accuracy.
+            // transaction.update(testDocRef, { 
+            //     totalQuestions: increment(1) 
+            // });
         });
     } catch (serverError) {
         console.error("Transaction failed: ", serverError);
@@ -534,45 +537,38 @@ export async function createQuestion(db: Firestore, testId: string, questionData
 }
 
 export async function createBlankQuestion(db: Firestore, testId: string, questionType: '유형' | '서술형') {
-  const testDocRef = doc(db, 'diagnostic-tests', testId);
   const questionsCollRef = collection(db, `diagnostic-tests/${testId}/questions`);
 
   try {
-    await runTransaction(db, async (transaction) => {
-      const testDoc = await transaction.get(testDocRef);
-      if (!testDoc.exists()) {
-        throw new Error("Test document does not exist!");
-      }
+    const nextQuestionNumber = await getNextQuestionNumber(db, testId);
+    
+    const newQuestionData = {
+      questionNumber: nextQuestionNumber,
+      questionType: questionType,
+      isReviewed: false,
+      isExtended: false,
+      difficulty: '중',
+      behavioralArea: '개념이해력',
+      subUnitType: '',
+      contentArea: '',
+      prompt: '',
+      createdAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
+    };
 
-      const questionsQuery = query(questionsCollRef, orderBy("questionNumber", "desc"));
-      const questionsSnapshot = await getDocs(questionsQuery);
-      const nextQuestionNumber = questionsSnapshot.empty ? 1 : (questionsSnapshot.docs[0].data().questionNumber || 0) + 1;
-
-      const newQuestionRef = doc(questionsCollRef);
-      const newQuestionData = {
-        questionNumber: nextQuestionNumber,
-        questionType: questionType,
-        isReviewed: false,
-        isExtended: false,
-        difficulty: '중',
-        behavioralArea: '개념이해력',
-        subUnitType: '',
-        contentArea: '',
-        prompt: '',
-        createdAt: serverTimestamp(),
-        updatedAt: serverTimestamp(),
-      };
-
-      transaction.set(newQuestionRef, newQuestionData);
+    addDoc(questionsCollRef, newQuestionData)
+     .catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: questionsCollRef.path,
+            operation: 'create',
+            requestResourceData: newQuestionData,
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+        throw serverError;
     });
+
   } catch (serverError) {
-    console.error("Transaction failed: ", serverError);
-    const permissionError = new FirestorePermissionError({
-        path: questionsCollRef.path,
-        operation: 'create',
-        requestResourceData: { questionType },
-    } satisfies SecurityRuleContext);
-    errorEmitter.emit('permission-error', permissionError);
+    console.error("Error creating blank question: ", serverError);
     throw serverError;
   }
 }
@@ -596,30 +592,18 @@ export async function updateQuestion(db: Firestore, testId: string, questionId: 
 }
 
 export async function deleteQuestion(db: Firestore, testId: string, questionId: string) {
-    const testDocRef = doc(db, 'diagnostic-tests', testId);
     const questionDocRef = doc(db, `diagnostic-tests/${testId}/questions`, questionId);
 
-    try {
-        await runTransaction(db, async (transaction) => {
-            const testDoc = await transaction.get(testDocRef);
-            if (!testDoc.exists()) {
-                throw "Test document does not exist!";
-            }
-
-            transaction.update(testDocRef, {
-                totalQuestions: increment(-1)
-            });
-            transaction.delete(questionDocRef);
-        });
-    } catch (serverError) {
-        console.error("Transaction failed: ", serverError);
+    await deleteDoc(questionDocRef)
+      .catch(async (serverError) => {
+        console.error("Error deleting question: ", serverError);
         const permissionError = new FirestorePermissionError({
             path: questionDocRef.path,
             operation: 'delete',
         } satisfies SecurityRuleContext);
         errorEmitter.emit('permission-error', permissionError);
         throw serverError;
-    }
+    });
 }
 
 export async function updateQuestionExtended(db: Firestore, testId: string, questionId: string, isExtended: boolean) {
@@ -687,8 +671,8 @@ const initialCurriculumUnits: Omit<CurriculumUnit, 'id' | 'createdAt'>[] = [
     { semester: '초등 4-1', largeUnit: '4. 식물의 구조와 기능', mediumUnit: '식물의 구조와 기능', subUnit: '뿌리는 어떤 일을 할까요' },
     { semester: '초등 4-1', largeUnit: '4. 식물의 구조와 기능', mediumUnit: '식물의 구조와 기능', subUnit: '줄기는 어떤 일을 할까요' },
     { semester: '초등 4-1', largeUnit: '4. 식물의 구조와 기능', mediumUnit: '식물의 구조와 기능', subUnit: '잎은 어떤 일을 할까요' },
-    { semester: '초등 4-1', largeUnit: '5. 동물의 구조와 기능', mediumUnit: '동물의 구조와 기능', subUnit: '탐구 문제를 정하고 탐구 계획을 세워 볼까요' },
-    { semester: '초등 4-1', largeUnit: '5. 동물의 구조와 기능', mediumUnit: '동물의 구조와 기능', subUnit: '탐구 활동을 하고 탐구 결과를 발표해 볼까요' },
+    { semester: '초등 4-1', largeUnit: '5. 동물의 구조와 기능', mediumUnit: '탐구활동', subUnit: '탐구 문제를 정하고 탐구 계획을 세워 볼까요' },
+    { semester: '초등 4-1', largeUnit: '5. 동물의 구조와 기능', mediumUnit: '탐구활동', subUnit: '탐구 활동을 하고 탐구 결과를 발표해 볼까요' },
     { semester: '초등 4-2', largeUnit: '1. 생물과 환경', mediumUnit: '생물과 환경', subUnit: '생물은 환경과 어떤 관계를 맺으며 살아갈까요' },
     { semester: '초등 4-2', largeUnit: '1. 생물과 환경', mediumUnit: '생물과 환경', subUnit: '생태계는 어떤 요소로 이루어져 있을까요' },
     { semester: '초등 4-2', largeUnit: '1. 생물과 환경', mediumUnit: '생물과 환경', subUnit: '환경 오염은 생물에 어떤 영향을 미칠까요' },
@@ -769,7 +753,7 @@ const initialCurriculumUnits: Omit<CurriculumUnit, 'id' | 'createdAt'>[] = [
     { semester: '중등 1-2', largeUnit: '3. 지구와 우주', mediumUnit: '지구와 우주', subUnit: '지구의 운동' },
     { semester: '중등 1-2', largeUnit: '3. 지구와 우주', mediumUnit: '지구와 우주', subUnit: '달의 운동' },
     { semester: '중등 1-2', largeUnit: '3. 지구와 우주', mediumUnit: '지구와 우주', subUnit: '태양계' },
-    { semester: '중등 1-2', largeUnit: '4. 과학 기술과 인류 문명', mediumUnit: '과학 기술과 인류 문명', subUnit: '과학 기술' },
+    { semester: '중등 1-2', largeUnit: '4. 과학 기술과 인류 문명', mediumUnit: '통합과학', subUnit: '과학 기술' },
     { semester: '중등 2-1', largeUnit: '1. 물질의 구성', mediumUnit: '물질의 구성', subUnit: '원소' },
     { semester: '중등 2-1', largeUnit: '1. 물질의 구성', mediumUnit: '물질의 구성', subUnit: '원자와 분자' },
     { semester: '중등 2-1', largeUnit: '1. 물질의 구성', mediumUnit: '물질의 구성', subUnit: '이온' },
@@ -800,7 +784,7 @@ const initialCurriculumUnits: Omit<CurriculumUnit, 'id' | 'createdAt'>[] = [
     { semester: '중등 3-1', largeUnit: '3. 운동과 에너지', mediumUnit: '일과 에너지', subUnit: '일과 에너지' },
     { semester: '중등 3-1', largeUnit: '4. 자극과 반응', mediumUnit: '감각 기관', subUnit: '감각 기관' },
     { semester: '중등 3-1', largeUnit: '4. 자극과 반응', mediumUnit: '신경계와 호르몬', subUnit: '신경계와 호르몬' },
-    { semester: '중등 3-2', largeUnit: '1. 과학 기술과 인류 문명', mediumUnit: '과학 기술의 발달과 인류 문명', subUnit: '과학 기술의 발달과 인류 문명' },
+    { semester: '중등 3-2', largeUnit: '1. 과학 기술과 인류 문명', mediumUnit: '통합과학', subUnit: '과학 기술의 발달과 인류 문명' },
     { semester: '중등 3-2', largeUnit: '2. 생식과 유전', mediumUnit: '생식과 세포 분열', subUnit: '생식과 세포 분열' },
     { semester: '중등 3-2', largeUnit: '2. 생식과 유전', mediumUnit: '유전', subUnit: '유전' },
     { semester: '중등 3-2', largeUnit: '3. 별과 우주', mediumUnit: '별과 우주', subUnit: '별과 우주' },
@@ -841,33 +825,37 @@ async function seedCurriculumUnits(db: Firestore) {
 
 export function getCurriculumUnits(db: Firestore, callback: (units: CurriculumUnit[]) => void) {
     const collRef = collection(db, "curriculum-units");
+    // Remove orderBy to avoid composite index requirement. Sorting will be done on the client.
+    const q = query(collRef);
   
-    const unsubscribe = onSnapshot(collRef, async (querySnapshot) => {
-        if (querySnapshot.empty) {
-            console.log("No curriculum units found, seeding initial data...");
-            await seedCurriculumUnits(db);
-            // After seeding, the onSnapshot listener will be triggered again with the new data.
-        } else {
-            let units: CurriculumUnit[] = [];
-            querySnapshot.forEach((doc) => {
-                units.push({ id: doc.id, ...doc.data() } as CurriculumUnit);
-            });
-            
-            // Client-side sorting
-            units.sort((a, b) => {
-                if (a.semester < b.semester) return -1;
-                if (a.semester > b.semester) return 1;
-                if (a.largeUnit < b.largeUnit) return -1;
-                if (a.largeUnit > b.largeUnit) return 1;
-                if (a.mediumUnit < b.mediumUnit) return -1;
-                if (a.mediumUnit > b.mediumUnit) return 1;
-                if (a.subUnit < b.subUnit) return -1;
-                if (a.subUnit > b.subUnit) return 1;
-                return 0;
-            });
+    const unsubscribe = onSnapshot(q, async (querySnapshot) => {
+        // Always check for seeding, as the initial data might have been incomplete.
+        await seedCurriculumUnits(db);
 
-            callback(units);
-        }
+        let units: CurriculumUnit[] = [];
+        querySnapshot.forEach((doc) => {
+            units.push({ id: doc.id, ...doc.data() } as CurriculumUnit);
+        });
+        
+        // Client-side sorting
+        units.sort((a, b) => {
+            const semesterOrder = ['초등 3-1', '초등 3-2', '초등 4-1', '초등 4-2', '초등 5-1', '초등 5-2', '초등 6-1', '초등 6-2', '중등 1-1', '중등 1-2', '중등 2-1', '중등 2-2', '중등 3-1', '중등 3-2'];
+            const aSemesterIndex = semesterOrder.indexOf(a.semester);
+            const bSemesterIndex = semesterOrder.indexOf(b.semester);
+            
+            if (aSemesterIndex !== bSemesterIndex) {
+                return aSemesterIndex - bSemesterIndex;
+            }
+            if (a.largeUnit < b.largeUnit) return -1;
+            if (a.largeUnit > b.largeUnit) return 1;
+            if (a.mediumUnit < b.mediumUnit) return -1;
+            if (a.mediumUnit > b.mediumUnit) return 1;
+            if (a.subUnit < b.subUnit) return -1;
+            if (a.subUnit > b.subUnit) return 1;
+            return 0;
+        });
+
+        callback(units);
     }, async (serverError) => {
       console.error("Error fetching curriculum units:", serverError);
       const permissionError = new FirestorePermissionError({
@@ -880,5 +868,3 @@ export function getCurriculumUnits(db: Firestore, callback: (units: CurriculumUn
   
     return unsubscribe;
 }
-
-    

@@ -69,7 +69,7 @@ const contentAreaMapping: { [key: string]: string } = {
     '2. 용액의 진하기': '화학',
     '3. 물체의 운동': '물리',
     '4. 식물의 구조와 기능': '생명과학',
-    '5. 동물의 구조와 기능': '생명과학',
+    '5. 동물의 구조와 기능': '탐구활동',
     '1. 생물과 환경': '생명과학',
     '2. 렌즈의 이용': '물리',
     '3. 산과 염기': '화학',
@@ -99,6 +99,10 @@ const contentAreaMapping: { [key: string]: string } = {
     '2. 화학 변화와 이온': '화학',
     '3. 지구와 우주': '지구과학',
     '4. 과학 기술과 인류 문명': '통합과학',
+    '1. 물질의 특성': '화학',
+    '2. 빛과 파동': '물리',
+    '3. 기권과 날씨': '지구과학',
+    '4. 소화, 순환, 호흡, 배설': '생명과학',
 };
 
 // Mock Rich Editor
@@ -154,8 +158,13 @@ export function QuestionModal({
   React.useEffect(() => {
     if (selectedSubUnitId) {
         const selectedUnit = curriculumUnits.find(unit => unit.id === selectedSubUnitId);
-        if (selectedUnit?.largeUnit && contentAreaMapping[selectedUnit.largeUnit]) {
-            form.setValue('contentArea', contentAreaMapping[selectedUnit.largeUnit]);
+        const largeUnitKey = Object.keys(contentAreaMapping).find(key => key === selectedUnit?.largeUnit);
+        
+        if (largeUnitKey && contentAreaMapping[largeUnitKey]) {
+            form.setValue('contentArea', contentAreaMapping[largeUnitKey]);
+        } else {
+            // If no mapping found, maybe clear the field or set a default
+             form.setValue('contentArea', '');
         }
     }
   }, [selectedSubUnitId, form, curriculumUnits]);
@@ -163,17 +172,7 @@ export function QuestionModal({
 
   React.useEffect(() => {
     if (open) {
-      if (question) {
-        const selectedUnit = curriculumUnits.find(unit => unit.id === question.subUnitType);
-        const contentArea = question.contentArea || (selectedUnit?.largeUnit ? contentAreaMapping[selectedUnit.largeUnit] : '');
-        form.reset({
-          ...question,
-          answerType: question.answerType || (question.questionType === '유형' ? '입력형' : undefined),
-          contentArea: contentArea,
-        });
-      } else {
-        // For creating a new question, reset to defaults for the specific question type
-        form.reset({
+        const defaultValues = {
           difficulty: '중',
           behavioralArea: '개념이해력',
           isReviewed: false,
@@ -186,8 +185,20 @@ export function QuestionModal({
           answerType: questionType === '유형' ? '입력형' : undefined,
           answers: [],
           videoUrl: '',
-        });
-      }
+        };
+
+        if (question) {
+             const selectedUnit = curriculumUnits.find(unit => unit.id === question.subUnitType);
+             const contentArea = question.contentArea || (selectedUnit?.largeUnit && contentAreaMapping[selectedUnit.largeUnit]) || '';
+            form.reset({
+                ...defaultValues,
+                ...question,
+                answerType: question.answerType || (question.questionType === '유형' ? '입력형' : undefined),
+                contentArea,
+            });
+        } else {
+            form.reset(defaultValues);
+        }
     }
   }, [open, question, form, questionType, curriculumUnits]);
 
@@ -236,7 +247,7 @@ export function QuestionModal({
           </DialogTitle>
         </DialogHeader>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 flex-1 overflow-y-auto pr-2 flex flex-col">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 flex-1 overflow-y-auto pr-4 pl-1">
             <div className="flex-1 space-y-4">
                 {/* 기본 정보 영역 */}
                 <div className='space-y-4 p-4 border rounded-md'>
@@ -268,7 +279,7 @@ export function QuestionModal({
                             render={({ field }) => (
                             <FormItem>
                                 <FormLabel>중단원 유형 *</FormLabel>
-                                <Select onValueChange={field.onChange} value={field.value}>
+                                <Select onValueChange={field.onChange} value={field.value} disabled={curriculumUnits.length === 0}>
                                 <FormControl><SelectTrigger><SelectValue placeholder="중단원 선택" /></SelectTrigger></FormControl>
                                 <SelectContent>
                                     {curriculumUnits.map(unit => (
@@ -420,7 +431,7 @@ export function QuestionModal({
                 </div>
             </div>
             
-            <div className="pt-4 border-t sticky bottom-0 bg-white">
+            <div className="pt-4 border-t sticky bottom-0 bg-white z-10">
               <div className='flex justify-between w-full'>
                   <FormField
                   control={form.control}
