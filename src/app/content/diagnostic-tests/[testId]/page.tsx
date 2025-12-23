@@ -4,14 +4,13 @@
 import * as React from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { useFirebase } from '@/firebase';
-import { updateDiagnosticTestStatus, type DiagnosticTest } from '@/lib/db';
+import { updateDiagnosticTestStatus, type DiagnosticTest, createBlankQuestion } from '@/lib/db';
 import { useDiagnosticTest } from '@/hooks/use-diagnostic-test';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { Skeleton } from '@/components/ui/skeleton';
 import { QuestionList } from '@/components/app/diagnostic-tests/question-list';
-import { QuestionModal } from '@/components/app/diagnostic-tests/question-modal';
 import { useToast } from '@/hooks/use-toast';
 
 
@@ -38,6 +37,23 @@ export default function DiagnosticTestDetailPage() {
       toast({
         variant: 'destructive',
         title: '상태 변경 실패',
+        description: '오류가 발생했습니다.',
+      });
+    }
+  };
+
+  const handleAddQuestion = async (questionType: '유형' | '서술형') => {
+    if (!firestore) return;
+    try {
+      await createBlankQuestion(firestore, testId, questionType);
+      toast({
+        title: '신규 문제가 등록되었습니다.',
+      });
+    } catch (error) {
+      console.error('Error creating blank question:', error);
+      toast({
+        variant: 'destructive',
+        title: '문제 등록 실패',
         description: '오류가 발생했습니다.',
       });
     }
@@ -84,12 +100,8 @@ export default function DiagnosticTestDetailPage() {
       </h1>
 
       <div className="flex justify-start gap-2">
-        <QuestionModal testId={testId} questionType="유형">
-            <Button>+ 유형 문제</Button>
-        </QuestionModal>
-        <QuestionModal testId={testId} questionType="서술형">
-            <Button>+ 서술형 문제</Button>
-        </QuestionModal>
+        <Button onClick={() => handleAddQuestion('유형')}>+ 유형 문제</Button>
+        <Button onClick={() => handleAddQuestion('서술형')}>+ 서술형 문제</Button>
       </div>
       
       <QuestionList testId={testId} />

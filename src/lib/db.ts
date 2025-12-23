@@ -498,8 +498,7 @@ export async function getNextQuestionNumber(db: Firestore, testId: string): Prom
 export async function createQuestion(db: Firestore, testId: string, questionData: Partial<Omit<Question, 'id'>>) {
     const testDocRef = doc(db, 'diagnostic-tests', testId);
     const questionsCollRef = collection(db, `diagnostic-tests/${testId}/questions`);
-    const newQuestionRef = doc(questionsCollRef); // Create a new doc ref with a unique ID
-
+    
     const data = {
         ...questionData,
         isExtended: false,
@@ -515,24 +514,71 @@ export async function createQuestion(db: Firestore, testId: string, questionData
                 throw "Test document does not exist!";
             }
 
-            // Atomically update the totalQuestions count
+            const newQuestionRef = doc(questionsCollRef);
+            transaction.set(newQuestionRef, data);
+
             transaction.update(testDocRef, { 
                 totalQuestions: increment(1) 
             });
-
-            // Atomically create the new question document
-            transaction.set(newQuestionRef, data);
         });
     } catch (serverError) {
         console.error("Transaction failed: ", serverError);
         const permissionError = new FirestorePermissionError({
-            path: newQuestionRef.path, // Use the new question ref path
+            path: questionsCollRef.path,
             operation: 'create',
             requestResourceData: data,
         } satisfies SecurityRuleContext);
         errorEmitter.emit('permission-error', permissionError);
         throw serverError; // Re-throw the error after logging
     }
+}
+
+export async function createBlankQuestion(db: Firestore, testId: string, questionType: '유형' | '서술형') {
+  const testDocRef = doc(db, 'diagnostic-tests', testId);
+  const questionsCollRef = collection(db, `diagnostic-tests/${testId}/questions`);
+
+  try {
+    await runTransaction(db, async (transaction) => {
+      const testDoc = await transaction.get(testDocRef);
+      if (!testDoc.exists()) {
+        throw new Error("Test document does not exist!");
+      }
+
+      // Get next question number
+      const questionsQuery = query(questionsCollRef, orderBy("questionNumber", "desc"));
+      const questionsSnapshot = await getDocs(questionsQuery); // This should be getDocs, not transaction.get
+      const nextQuestionNumber = questionsSnapshot.empty ? 1 : (questionsSnapshot.docs[0].data().questionNumber || 0) + 1;
+
+      // Define new blank question
+      const newQuestionRef = doc(questionsCollRef);
+      const newQuestionData = {
+        questionNumber: nextQuestionNumber,
+        questionType: questionType,
+        isReviewed: false,
+        isExtended: false,
+        difficulty: '중',
+        behavioralArea: '개념이해력',
+        subUnitType: '',
+        contentArea: '',
+        prompt: '',
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp(),
+      };
+
+      // Set new question and update totalQuestions
+      transaction.set(newQuestionRef, newQuestionData);
+      transaction.update(testDocRef, { totalQuestions: increment(1) });
+    });
+  } catch (serverError) {
+    console.error("Transaction failed: ", serverError);
+    const permissionError = new FirestorePermissionError({
+        path: questionsCollRef.path,
+        operation: 'create',
+        requestResourceData: { questionType },
+    } satisfies SecurityRuleContext);
+    errorEmitter.emit('permission-error', permissionError);
+    throw serverError;
+  }
 }
 
 
