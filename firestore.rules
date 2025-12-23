@@ -12,10 +12,9 @@ service cloud.firestore {
           allow read, write: if true;
         }
     }
-    match /curriculum-units/{unitId} {
+    match /curriculum-units/{document=**} {
       allow read, write: if true;
     }
   }
 }
-
     
