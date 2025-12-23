@@ -218,9 +218,12 @@ export function QuestionModal({
             });
         } else {
             form.reset(defaultValues);
+            if (questionType === '유형') {
+              replace([{ value: '', isCorrect: false }, { value: '', isCorrect: false }]);
+            }
         }
     }
-  }, [open, question, form, questionType, curriculumUnits]);
+  }, [open, question, form, questionType, curriculumUnits, replace]);
 
   const onSubmit = async (data: FormValues) => {
     if (!firestore) return;
@@ -255,10 +258,14 @@ export function QuestionModal({
 
   const handleAnswerTypeChange = (value: string) => {
     form.setValue('answerType', value as '입력형' | '선지형' | '순서맞추기');
-    // Changing the type should reset the answers
     replace([]); 
     if (value === '입력형') {
         append({ value: { val: '' }, type: '기본', symbol: false });
+    } else if (value === '선지형') {
+        append({ value: '', isCorrect: false });
+        append({ value: '', isCorrect: false });
+    } else if (value === '순서맞추기') {
+        append({ value: ''});
     }
   }
 
@@ -282,6 +289,18 @@ export function QuestionModal({
       generateOptions('ox');
     }
   }
+
+  const handleCorrectAnswerChange = (changedIndex: number, isChecked: boolean) => {
+    const currentAnswers = form.getValues('answers') || [];
+    const newAnswers = currentAnswers.map((answer, index) => {
+      if (index === changedIndex) {
+        return { ...answer, isCorrect: isChecked };
+      }
+      return answer;
+    });
+    form.setValue('answers', newAnswers, { shouldDirty: true });
+  };
+
 
   const difficultyOptions: ('하' | '중하' | '중' | '중상' | '상')[] = ['하', '중하', '중', '중상', '상'];
   const behavioralAreaOptions: ('개념이해력' | '문제해결력' | '문해력' | '추론력')[] = ['개념이해력', '문제해결력', '문해력', '추론력'];
@@ -434,13 +453,11 @@ export function QuestionModal({
 
                   {questionType === '유형' && (
                     <div className="p-4 border rounded-md bg-slate-50 space-y-4">
-                        <h4 className="font-semibold">답안</h4>
                          <FormField
                             control={form.control}
                             name="answerType"
                             render={({ field }) => (
                             <FormItem>
-                                <FormLabel>답안 유형 *</FormLabel>
                                 <Select onValueChange={handleAnswerTypeChange} value={field.value}>
                                     <FormControl><SelectTrigger><SelectValue placeholder="답안 유형 선택" /></SelectTrigger></FormControl>
                                     <SelectContent>
@@ -518,29 +535,43 @@ export function QuestionModal({
 
                         {answerType === '선지형' && (
                           <div className="space-y-2">
-                            <div className="flex gap-2 justify-end">
-                                <Button type="button" variant="outline" size="sm" onClick={() => generateOptions('circled')}>①② 자동생성</Button>
-                                <Button type="button" variant="outline" size="sm" onClick={() => generateOptions('korean')}>㉠㉡ 자동생성</Button>
-                                <Button type="button" variant="outline" size="sm" onClick={handleOXGenerate}>OX 자동생성</Button>
-                                <Button type="button" variant="default" size="sm" onClick={() => append({ value: '', isCorrect: false })}><Plus className="mr-2 h-4 w-4" />선지 추가</Button>
+                             <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-4">
+                                  <FormLabel className="shrink-0">정답</FormLabel>
+                                  {fields.map((field, index) => (
+                                    <FormField
+                                      key={field.id}
+                                      control={form.control}
+                                      name={`answers.${index}.isCorrect`}
+                                      render={({ field: checkField }) => (
+                                        <FormItem className="flex items-center space-x-2 space-y-0">
+                                          <FormControl>
+                                            <Checkbox
+                                              checked={checkField.value}
+                                              onCheckedChange={(checked) => handleCorrectAnswerChange(index, !!checked)}
+                                            />
+                                          </FormControl>
+                                          <FormLabel className="font-normal">{index + 1}</FormLabel>
+                                        </FormItem>
+                                      )}
+                                    />
+                                  ))}
+                                </div>
+                                <div className="flex gap-2">
+                                    <Button type="button" variant="outline" size="sm" onClick={() => generateOptions('korean')}>㉠㉡ 생성</Button>
+                                    <Button type="button" variant="outline" size="sm" onClick={() => generateOptions('circled')}>①② 생성</Button>
+                                    <Button type="button" variant="outline" size="sm" onClick={handleOXGenerate}>OX 생성</Button>
+                                    <Button type="button" variant="default" size="sm" onClick={() => append({ value: '', isCorrect: false })}><Plus className="mr-2 h-4 w-4" />선지 추가</Button>
+                                </div>
                             </div>
                             {fields.map((field, index) => (
-                               <div key={field.id} className="flex items-start gap-2 p-2 border rounded-md bg-white">
-                                  <FormField
-                                    control={form.control}
-                                    name={`answers.${index}.isCorrect`}
-                                    render={({ field: checkField }) => (
-                                      <FormItem className="flex flex-col items-center justify-center pt-2">
-                                        <FormLabel className="text-xs">정답</FormLabel>
-                                        <FormControl>
-                                            <Checkbox
-                                                checked={checkField.value}
-                                                onCheckedChange={checkField.onChange}
-                                            />
-                                        </FormControl>
-                                      </FormItem>
-                                    )}
-                                  />
+                               <div key={field.id} className="flex items-start gap-2">
+                                  <div className="flex flex-col items-center gap-1 pt-1">
+                                    <FormLabel>선지{index + 1}</FormLabel>
+                                    <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)} className="h-8 w-8 text-red-500 hover:bg-red-50 hover:text-red-600">
+                                        <Trash2 className="h-4 w-4" />
+                                    </Button>
+                                  </div>
                                    <Controller
                                       control={form.control}
                                       name={`answers.${index}.value`}
@@ -550,7 +581,6 @@ export function QuestionModal({
                                         </div>
                                       )}
                                     />
-                                    <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)}><Trash2 className="h-4 w-4 text-red-500" /></Button>
                                </div>
                             ))}
                           </div>
@@ -657,4 +687,4 @@ export function QuestionModal({
   );
 }
 
-    
+
