@@ -330,7 +330,7 @@ export function QuestionModal({
       toast({ variant: 'destructive', title: '마크업이 입력되지 않았습니다' });
       return;
     }
-
+    
     const markupRegex = /\$\{.*?\}|#\{.*?\}/g;
     const matches = problemSolvingText.match(markupRegex);
 
@@ -339,14 +339,61 @@ export function QuestionModal({
       return;
     }
 
-    const newAnswers = matches.map((match, index) => ({
+    const newAnswers = matches.map(() => ({
       value: '', 
-      isCorrect: index === 0, 
-      type: '선지형'
+      isCorrect: true, 
+      answers: [
+        { value: '', isCorrect: true },
+        { value: '', isCorrect: false },
+      ],
+      answerType: '선지형'
     }));
 
-    replace(newAnswers);
+    replace(newAnswers.flatMap(answer => ([
+        { value: '', isCorrect: true },
+        { value: '', isCorrect: false },
+    ])));
     
+    const generatedAnswers = matches.map(() => ({
+        // This will be a group of answers, so let's set a default for 선지형
+        answerType: '선지형',
+        answers: [
+            { value: '', isCorrect: true },
+            { value: '', isCorrect: false },
+        ]
+    }));
+
+    // `react-hook-form`'s `replace` is for the entire array. 
+    // We are creating multiple answer cards, so we need to structure this differently.
+    // The current `answers` field is a single array. We need to handle groups of answers.
+    // For now, let's just generate the correct number of empty '선지형' sets.
+    
+    const generatedAnswerSets = matches.map((_, index) => ({
+      // Each match is an answer set
+      id: `set-${index}`, // A temporary ID
+      answerType: '선지형',
+      answers: [
+        { value: '', isCorrect: true },
+        { value: '', isCorrect: false },
+      ],
+    }));
+
+    // The current form structure does not support multiple answer sets easily.
+    // Let's adapt by just creating the correct number of fields in the `answers` array.
+    // Since each answer card has its own fields, we'll flatten this for now.
+    
+    const newFields = matches.map(() => ({
+      value: '', // This will represent the answer card, we can enhance later
+      isCorrect: false, // Default
+      type: '선지형', // Default type
+    }));
+    
+    form.setValue('answerType', '선지형');
+    replace(matches.map((_, i) => ({
+        value: '',
+        isCorrect: i === 0,
+    })));
+
     toast({ title: `${matches.length}개의 답안 카드가 생성되었습니다.`});
   };
 
@@ -494,7 +541,7 @@ export function QuestionModal({
             <div className="space-y-4 p-4 border rounded-md">
                 <h3 className="text-lg font-semibold">답안</h3>
                 <div className="p-4 border rounded-md bg-slate-50 space-y-4">
-                     <div className="flex items-center justify-between">
+                     <div className="flex items-start justify-between">
                         <FormField
                             control={form.control}
                             name="answerType"
@@ -789,7 +836,7 @@ export function QuestionModal({
         <div className="space-y-4 p-4 border rounded-md">
             <h3 className="text-lg font-semibold">답안</h3>
             <div className="p-4 border rounded-md bg-slate-50 space-y-4">
-                <div className="flex items-center justify-between">
+                <div className="flex items-start justify-between">
                     <FormField
                         control={form.control}
                         name="answerType"
