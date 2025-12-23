@@ -35,7 +35,7 @@ export default function DiagnosticTestDetailPage({ params }: { params: { testId:
     });
 
     return () => unsubscribe();
-  }, [firestore, params]);
+  }, [firestore, params.testId]);
 
   const handleStatusToggle = async (checked: boolean) => {
     if (!firestore || !test) return;
