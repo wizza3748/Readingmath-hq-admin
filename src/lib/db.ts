@@ -243,7 +243,7 @@ export function getInstitution(db: Firestore, id: string, callback: (institution
   }
   const docRef = doc(db, "institutions", id);
 
-  const unsubscribe = onSnapshot(docRef, (docSnap) => {
+  const unsubscribe = onSnapshot(docSnap => {
     if (docSnap.exists()) {
       callback({ id: docSnap.id, ...docSnap.data() } as Institution);
     } else {
@@ -422,13 +422,14 @@ export function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTe
 
 export function getDiagnosticTest(db: Firestore, testId: string, callback: (test: DiagnosticTest | null) => void) {
   const docRef = doc(db, "diagnostic-tests", testId);
-  const unsubscribe = onSnapshot(docRef, async (docSnap) => {
+  const unsubscribe = onSnapshot(docSnap => {
     if (docSnap.exists()) {
       const testData = { id: parseInt(docSnap.id), ...docSnap.data() } as DiagnosticTest;
       const questionsCollRef = collection(db, `diagnostic-tests/${testId}/questions`);
-      const questionsSnapshot = await getDocs(questionsCollRef);
-      testData.totalQuestions = questionsSnapshot.size;
-      callback(testData);
+      getDocs(questionsCollRef).then(questionsSnapshot => {
+        testData.totalQuestions = questionsSnapshot.size;
+        callback(testData);
+      });
     } else {
       callback(null);
     }
@@ -847,52 +848,37 @@ async function seedCurriculumUnits(db: Firestore) {
 export function getCurriculumUnits(db: Firestore, callback: (units: CurriculumUnit[]) => void) {
   const collRef = collection(db, "curriculum-units");
 
-  const setupListener = () => {
-      const unsubscribe = onSnapshot(collRef, (querySnapshot) => {
-          let units: CurriculumUnit[] = [];
-          querySnapshot.forEach((doc) => {
-              units.push({ id: doc.id, ...doc.data() } as CurriculumUnit);
-          });
-
-          // Client-side sorting
-          units.sort((a, b) => {
-              const semesterOrder = ['초등 3-1', '초등 3-2', '초등 4-1', '초등 4-2', '초등 5-1', '초등 5-2', '초등 6-1', '초등 6-2', '중등 1-1', '중등 1-2', '중등 2-1', '중등 2-2', '중등 3-1', '중등 3-2'];
-              const aSemesterIndex = semesterOrder.indexOf(a.semester);
-              const bSemesterIndex = semesterOrder.indexOf(b.semester);
-              
-              if (aSemesterIndex !== bSemesterIndex) return aSemesterIndex - bSemesterIndex;
-              if (a.largeUnit < b.largeUnit) return -1;
-              if (a.largeUnit > b.largeUnit) return 1;
-              if (a.mediumUnit < b.mediumUnit) return -1;
-              if (a.mediumUnit > b.mediumUnit) return 1;
-              if (a.subUnit < b.subUnit) return -1;
-              if (a.subUnit > b.subUnit) return 1;
-              return 0;
-          });
-
-          callback(units);
-      }, async (serverError) => {
-          console.error("Error fetching curriculum units:", serverError);
-          const permissionError = new FirestorePermissionError({
-              path: collRef.path,
-              operation: 'list',
-          } satisfies SecurityRuleContext);
-          errorEmitter.emit('permission-error', permissionError);
-          callback([]);
+  const unsubscribe = onSnapshot(collRef, (querySnapshot) => {
+      let units: CurriculumUnit[] = [];
+      querySnapshot.forEach((doc) => {
+          units.push({ id: doc.id, ...doc.data() } as CurriculumUnit);
       });
-      return unsubscribe;
-  };
 
-  // Check if initial data exists, seed if not, then set up the listener.
-  seedCurriculumUnits(db).then(() => {
-    // After attempting to seed, set up the listener regardless.
-    // If seeding failed, the listener will at least return existing data.
+      // Client-side sorting
+      units.sort((a, b) => {
+          const semesterOrder = ['초등 3-1', '초등 3-2', '초등 4-1', '초등 4-2', '초등 5-1', '초등 5-2', '초등 6-1', '초등 6-2', '중등 1-1', '중등 1-2', '중등 2-1', '중등 2-2', '중등 3-1', '중등 3-2'];
+          const aSemesterIndex = semesterOrder.indexOf(a.semester);
+          const bSemesterIndex = semesterOrder.indexOf(b.semester);
+          
+          if (aSemesterIndex !== bSemesterIndex) return aSemesterIndex - bSemesterIndex;
+          if (a.largeUnit < b.largeUnit) return -1;
+          if (a.largeUnit > b.largeUnit) return 1;
+          if (a.mediumUnit < b.mediumUnit) return -1;
+          if (a.mediumUnit > b.mediumUnit) return 1;
+          if (a.subUnit < b.subUnit) return -1;
+          if (a.subUnit > b.subUnit) return 1;
+          return 0;
+      });
+
+      callback(units);
+  }, async (serverError) => {
+      console.error("Error fetching curriculum units:", serverError);
+      const permissionError = new FirestorePermissionError({
+          path: collRef.path,
+          operation: 'list',
+      } satisfies SecurityRuleContext);
+      errorEmitter.emit('permission-error', permissionError);
+      callback([]);
   });
-  
-  // Immediately set up listener.
-  const unsubscribe = setupListener();
-  
   return unsubscribe;
 }
-
-    
