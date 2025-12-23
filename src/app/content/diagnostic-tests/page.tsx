@@ -210,11 +210,17 @@ function DiagnosticTestsTable() {
 
     React.useEffect(() => {
         if (!firestore) return;
-        setLoading(true);
-        getDiagnosticTests(firestore, (tests) => {
-          setData(tests);
-          setLoading(false);
-        });
+    
+        const fetchData = async () => {
+          setLoading(true);
+          await getDiagnosticTests(firestore, (tests) => {
+            setData(tests);
+            setLoading(false);
+          });
+        };
+    
+        fetchData();
+        
     }, [firestore]);
     
 
