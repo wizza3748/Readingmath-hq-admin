@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import * as React from 'react';
@@ -74,8 +73,12 @@ const formSchema = z.object({
   problemSolving: z.string().optional(),
   isReviewed: z.boolean().default(false),
 }).superRefine((data, ctx) => {
-    if (data.questionType === '서술형' && (data.problemSolving === undefined || data.problemSolving.trim() === '')) {
-        // Validation for problemSolving is now triggered on button click
+    if ((data as any).questionType === '서술형' && (!data.problemSolving || data.problemSolving.trim() === '')) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: '문제풀이 내용을 입력해 주세요.',
+        path: ['problemSolving'],
+      });
     }
 });
 
@@ -343,35 +346,16 @@ export function QuestionModal({
     }
 
     const newAnswerSets = matches.map(() => ({
-      value: '', // This will represent the answer card, we can enhance later
-      isCorrect: false, // Default
       answerType: '선지형',
+      isCorrect: false, // Default
+      value: '', // This will represent the answer card, we can enhance later
       answers: [
         { value: '', isCorrect: true },
         { value: '', isCorrect: false },
       ]
     }));
-
-    // This uses `replace` on the field array.
-    // It will replace the entire `answers` array with the new set.
-    const newFields = matches.map((_, i) => ({
-      value: '',
-      isCorrect: i === 0, // Set first as correct by default
-    }));
-
-    // For 서술형, each markup should create a new answer block, which is handled here
-    // Let's create multiple answer cards for each match
-    const generatedAnswers = matches.map(() => ({
-      // This will be a group of answers, so let's set a default for 선지형
-      answerType: '선지형',
-      answers: [
-        { value: '', isCorrect: true },
-        { value: '', isCorrect: false },
-      ],
-    }));
     
-    // We'll replace the existing 'answers' field with these generated structures.
-    replace(generatedAnswers.flatMap(answer => answer.answers));
+    replace(newAnswerSets);
 
     toast({ title: `${matches.length}개의 답안 카드가 생성되었습니다.`});
   };
@@ -519,14 +503,15 @@ export function QuestionModal({
 
             <div className="space-y-4 p-4 border rounded-md">
                 <h3 className="text-lg font-semibold">답안</h3>
-                <div className="p-4 border rounded-md bg-slate-50 space-y-4">
+                {questionType === '서술형' && fields.map((field, index) => (
+                <div key={field.id} className="p-4 border rounded-md bg-slate-50 space-y-4">
                      <div className="flex items-start justify-between">
                         <FormField
                             control={form.control}
-                            name="answerType"
-                            render={({ field }) => (
+                            name={`answers.${index}.answerType` as any}
+                            render={({ field: answerTypeField }) => (
                             <FormItem className="w-40">
-                                <Select onValueChange={handleAnswerTypeChange} value={field.value}>
+                                <Select onValueChange={handleAnswerTypeChange} value={answerTypeField.value}>
                                     <FormControl><SelectTrigger><SelectValue placeholder="답안 유형 선택" /></SelectTrigger></FormControl>
                                     <SelectContent>
                                         {answerTypeOptions.map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}
@@ -540,22 +525,22 @@ export function QuestionModal({
                             {answerType === '선지형' && (
                             <>
                                 <Controller
-                                    name="answers"
+                                    name={`answers.${index}.answers` as any}
                                     control={form.control}
-                                    render={({ field }) => (
+                                    render={({ field: subField }) => (
                                     <FormItem className="flex items-center space-x-4">
                                         <FormLabel className="shrink-0">정답</FormLabel>
                                         <RadioGroup
                                         onValueChange={(value) => handleCorrectAnswerChange(parseInt(value))}
-                                        value={field.value?.findIndex(v => v.isCorrect).toString()}
+                                        value={subField.value?.findIndex((v:any) => v.isCorrect).toString()}
                                         className="flex items-center space-x-2"
                                         >
-                                        {fields.map((item, index) => (
+                                        {(subField.value || []).map((item:any, subIndex:number) => (
                                             <FormItem key={item.id} className="flex items-center space-x-1">
                                             <FormControl>
-                                                <RadioGroupItem value={index.toString()} id={`correct-opt-${index}`} />
+                                                <RadioGroupItem value={subIndex.toString()} id={`correct-opt-${subIndex}`} />
                                             </FormControl>
-                                            <FormLabel htmlFor={`correct-opt-${index}`} className="font-normal">{index + 1}</FormLabel>
+                                            <FormLabel htmlFor={`correct-opt-${subIndex}`} className="font-normal">{subIndex + 1}</FormLabel>
                                             </FormItem>
                                         ))}
                                         </RadioGroup>
@@ -682,6 +667,7 @@ export function QuestionModal({
                     )}
 
                 </div>
+                ))}
             </div>
             
             <div className="space-y-2 p-4 border rounded-md">
@@ -1058,3 +1044,5 @@ export function QuestionModal({
     </>
   );
 }
+
+    
