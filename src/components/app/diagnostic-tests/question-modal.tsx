@@ -80,8 +80,8 @@ type FormValues = z.infer<typeof formSchema>;
 const contentAreaMapping: { [key: string]: string } = {};
 initialCurriculumUnits.forEach(unit => {
     // A single largeUnit can have multiple mediumUnits, but we assume the contentArea is consistent per largeUnit.
-    if (!contentAreaMapping[unit.largeUnit]) {
-        contentAreaMapping[unit.largeUnit] = unit.contentArea;
+    if (!contentAreaMapping[unit.id]) {
+        contentAreaMapping[unit.id] = unit.contentArea;
     }
 });
   
@@ -140,10 +140,9 @@ export function QuestionModal({
   React.useEffect(() => {
     if (selectedSubUnitId) {
         const selectedUnit = curriculumUnits.find(unit => unit.id === selectedSubUnitId);
-        const largeUnitKey = selectedUnit?.largeUnit;
-        
-        if (largeUnitKey && contentAreaMapping[largeUnitKey]) {
-            form.setValue('contentArea', contentAreaMapping[largeUnitKey]);
+        const contentArea = selectedUnit ? contentAreaMapping[selectedUnit.id] : '';
+        if (contentArea) {
+            form.setValue('contentArea', contentArea);
         } else {
              form.setValue('contentArea', '');
         }
@@ -169,7 +168,7 @@ export function QuestionModal({
 
         if (question) {
             const selectedUnit = curriculumUnits.find(unit => unit.id === question.subUnitType);
-            const contentArea = question.contentArea || (selectedUnit?.largeUnit && contentAreaMapping[selectedUnit.largeUnit]) || '';
+            const contentArea = question.contentArea || (selectedUnit && contentAreaMapping[selectedUnit.id]) || '';
             
             form.reset({
                 ...defaultValues,
@@ -570,25 +569,25 @@ export function QuestionModal({
                                                     if (currentAnswerType === '분수') {
                                                         return <div className="flex items-center gap-1">
                                                             <div className="flex flex-col w-20">
-                                                                <Input placeholder="분자" className="text-center h-8 rounded-b-none border-b-0" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/>
+                                                                <Input placeholder={`1-${index + 1}`} className="text-center h-8 rounded-b-none border-b-0" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/>
                                                                 <div className="border-t border-black"></div>
-                                                                <Input placeholder="분모" className="text-center h-8 rounded-t-none" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
+                                                                <Input placeholder={`1-${index + 1}`} className="text-center h-8 rounded-t-none" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
                                                             </div>
                                                         </div>
                                                     }
                                                     if (currentAnswerType === '대분수') {
                                                         return <div className="flex items-center gap-1">
-                                                            <Input className="w-16 h-10 text-center" placeholder="자연수" defaultValue={value.int} onChange={(e) => valueField.onChange({...value, int: e.target.value })}/>
+                                                            <Input className="w-16 h-10 text-center" placeholder={`1-${index + 1}`} defaultValue={value.int} onChange={(e) => valueField.onChange({...value, int: e.target.value })}/>
                                                             <div className="flex flex-col w-20">
-                                                                <Input placeholder="분자" className="text-center h-8 rounded-b-none border-b-0" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/>
+                                                                <Input placeholder={`1-${index + 1}`} className="text-center h-8 rounded-b-none border-b-0" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/>
                                                                 <div className="border-t border-black"></div>
-                                                                <Input placeholder="분모" className="text-center h-8 rounded-t-none" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
+                                                                <Input placeholder={`1-${index + 1}`} className="text-center h-8 rounded-t-none" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
                                                             </div>
                                                         </div>
                                                     }
                                                     return <Input 
                                                       className="w-32" 
-                                                      placeholder={`1-${index+1}`} 
+                                                      placeholder={`1-${index+1}`}
                                                       defaultValue={value.val} 
                                                       onChange={(e) => valueField.onChange({val: e.target.value})}
                                                     />
