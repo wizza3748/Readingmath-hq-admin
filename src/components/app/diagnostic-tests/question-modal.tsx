@@ -190,10 +190,10 @@ export function QuestionModal({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="max-w-4xl h-[90vh] flex flex-col">
+      <DialogContent className="max-w-6xl h-[90vh] flex flex-col">
         <DialogHeader>
           <DialogTitle>
-            {question ? '문제 수정' : '문제 등록'} ({questionType})
+            {question ? '문제 상세' : '문제 등록'} ({questionType})
           </DialogTitle>
         </DialogHeader>
         <Form {...form}>
