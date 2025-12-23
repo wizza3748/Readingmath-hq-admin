@@ -529,174 +529,172 @@ export function QuestionModal({
                     />
                 </div>
 
-                {(questionType === '유형' || (questionType === '서술형' && fields.length > 0)) && (
-                    <div className="space-y-4 p-4 border rounded-md">
-                        <h3 className="text-lg font-semibold">답안</h3>
-                        <div className="p-4 border rounded-md bg-slate-50 space-y-4">
-                          <div className="flex items-center justify-between">
-                              <FormField
-                                  control={form.control}
-                                  name="answerType"
-                                  render={({ field }) => (
-                                  <FormItem className="w-40">
-                                      <Select onValueChange={handleAnswerTypeChange} value={field.value}>
-                                          <FormControl><SelectTrigger><SelectValue placeholder="답안 유형 선택" /></SelectTrigger></FormControl>
-                                          <SelectContent>
-                                              {answerTypeOptions.map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}
-                                          </SelectContent>
-                                      </Select>
-                                      <FormMessage />
-                                  </FormItem>
-                                  )}
-                              />
-                              <div className="flex items-center gap-2">
-                                  {answerType === '선지형' && (
-                                    <>
-                                        <Controller
-                                          name="answers"
-                                          control={form.control}
-                                          render={({ field }) => (
-                                            <FormItem className="flex items-center space-x-4">
-                                              <FormLabel className="shrink-0">정답</FormLabel>
-                                              <RadioGroup
-                                                onValueChange={(value) => handleCorrectAnswerChange(parseInt(value))}
-                                                value={field.value?.findIndex(v => v.isCorrect).toString()}
-                                                className="flex items-center space-x-2"
-                                              >
-                                                {fields.map((item, index) => (
-                                                  <FormItem key={item.id} className="flex items-center space-x-1">
-                                                    <FormControl>
-                                                      <RadioGroupItem value={index.toString()} id={`correct-opt-${index}`} />
-                                                    </FormControl>
-                                                    <FormLabel htmlFor={`correct-opt-${index}`} className="font-normal">{index + 1}</FormLabel>
-                                                  </FormItem>
-                                                ))}
-                                              </RadioGroup>
-                                            </FormItem>
-                                          )}
+                <div className="space-y-4 p-4 border rounded-md">
+                    <h3 className="text-lg font-semibold">답안</h3>
+                    <div className="p-4 border rounded-md bg-slate-50 space-y-4">
+                        <div className="flex items-center justify-between">
+                            <FormField
+                                control={form.control}
+                                name="answerType"
+                                render={({ field }) => (
+                                <FormItem className="w-40">
+                                    <Select onValueChange={handleAnswerTypeChange} value={field.value}>
+                                        <FormControl><SelectTrigger><SelectValue placeholder="답안 유형 선택" /></SelectTrigger></FormControl>
+                                        <SelectContent>
+                                            {answerTypeOptions.map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}
+                                        </SelectContent>
+                                    </Select>
+                                    <FormMessage />
+                                </FormItem>
+                                )}
+                            />
+                            <div className="flex items-center gap-2">
+                                {answerType === '선지형' && (
+                                <>
+                                    <Controller
+                                        name="answers"
+                                        control={form.control}
+                                        render={({ field }) => (
+                                        <FormItem className="flex items-center space-x-4">
+                                            <FormLabel className="shrink-0">정답</FormLabel>
+                                            <RadioGroup
+                                            onValueChange={(value) => handleCorrectAnswerChange(parseInt(value))}
+                                            value={field.value?.findIndex(v => v.isCorrect).toString()}
+                                            className="flex items-center space-x-2"
+                                            >
+                                            {fields.map((item, index) => (
+                                                <FormItem key={item.id} className="flex items-center space-x-1">
+                                                <FormControl>
+                                                    <RadioGroupItem value={index.toString()} id={`correct-opt-${index}`} />
+                                                </FormControl>
+                                                <FormLabel htmlFor={`correct-opt-${index}`} className="font-normal">{index + 1}</FormLabel>
+                                                </FormItem>
+                                            ))}
+                                            </RadioGroup>
+                                        </FormItem>
+                                        )}
+                                    />
+                                    <Button type="button" variant="outline" size="sm" onClick={() => generateOptions('korean')}>㉠㉡ 생성</Button>
+                                    <Button type="button" variant="outline" size="sm" onClick={() => generateOptions('circled')}>①② 생성</Button>
+                                    <Button type="button" variant="outline" size="sm" onClick={handleOXGenerate}>OX 생성</Button>
+                                    <Button type="button" variant="default" size="sm" onClick={handleAddChoice}><Plus className="mr-2 h-4 w-4" />선지 추가</Button>
+                                </>
+                                )}
+                                {answerType === '입력형' && (
+                                    <div className="flex items-center gap-2">
+                                        <FormItem className="flex items-center space-x-2">
+                                            <Checkbox id="symbol-check" checked={isSymbolChecked} onCheckedChange={(checked) => setIsSymbolChecked(!!checked)} />
+                                            <label htmlFor="symbol-check" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">㉠㉡㉢</label>
+                                        </FormItem>
+                                        <Select value={currentInputAnswerType} onValueChange={setCurrentInputAnswerType}>
+                                            <SelectTrigger className="w-[120px]"><SelectValue /></SelectTrigger>
+                                            <SelectContent>{inputTypeOptions.map(o => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
+                                        </Select>
+                                        <Button type="button" variant="outline" onClick={handleAddInputAnswer}><Plus className="mr-2 h-4 w-4" />추가</Button>
+                                    </div>
+                                )}
+                                {answerType === '순서맞추기' && (
+                                    <Button type="button" variant="outline" onClick={() => append({ value: ''})}><Plus className="mr-2 h-4 w-4" />항목 추가</Button>
+                                )}
+                            </div>
+                        </div>
+                    
+                        {answerType === '입력형' && (
+                            <div className="flex flex-wrap gap-4 pt-2">
+                                {fields.map((field, index) => (
+                                <div key={field.id} className="group relative flex items-start gap-2 p-2">
+                                    {isSymbolChecked ? (
+                                    <FormLabel className="pt-2 shrink-0">
+                                        {generateCircledKorean(index + 1)}
+                                    </FormLabel>
+                                    ) : null}
+                                    <Controller
+                                            control={form.control}
+                                            name={`answers.${index}.value`}
+                                            render={({ field: valueField }) => {
+                                                const currentAnswerType = form.getValues(`answers.${index}.type`);
+                                                const value = valueField.value || {};
+                                                if (currentAnswerType === '분수') {
+                                                    return <div className="flex items-center gap-1">
+                                                        <div className="flex flex-col w-20">
+                                                            <Input placeholder={`1-${index + 1}`} className="text-center h-8 rounded-b-none border-b-0" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/>
+                                                            <div className="border-t border-black"></div>
+                                                            <Input placeholder={`1-${index + 1}`} className="text-center h-8 rounded-t-none" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
+                                                        </div>
+                                                    </div>
+                                                }
+                                                if (currentAnswerType === '대분수') {
+                                                    return <div className="flex items-center gap-1">
+                                                        <Input className="w-16 h-10 text-center" placeholder={`1-${index + 1}`} defaultValue={value.int} onChange={(e) => valueField.onChange({...value, int: e.target.value })}/>
+                                                        <div className="flex flex-col w-20">
+                                                            <Input placeholder={`1-${index + 1}`} className="text-center h-8 rounded-b-none border-b-0" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/>
+                                                            <div className="border-t border-black"></div>
+                                                            <Input placeholder={`1-${index + 1}`} className="text-center h-8 rounded-t-none" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
+                                                        </div>
+                                                    </div>
+                                                }
+                                                return <Input 
+                                                className="w-32" 
+                                                placeholder={`1-${index+1}`}
+                                                defaultValue={value.val} 
+                                                onChange={(e) => valueField.onChange({val: e.target.value})}
+                                                />
+                                            }}
                                         />
-                                        <Button type="button" variant="outline" size="sm" onClick={() => generateOptions('korean')}>㉠㉡ 생성</Button>
-                                        <Button type="button" variant="outline" size="sm" onClick={() => generateOptions('circled')}>①② 생성</Button>
-                                        <Button type="button" variant="outline" size="sm" onClick={handleOXGenerate}>OX 생성</Button>
-                                        <Button type="button" variant="default" size="sm" onClick={handleAddChoice}><Plus className="mr-2 h-4 w-4" />선지 추가</Button>
-                                    </>
-                                  )}
-                                  {answerType === '입력형' && (
-                                     <div className="flex items-center gap-2">
-                                          <FormItem className="flex items-center space-x-2">
-                                              <Checkbox id="symbol-check" checked={isSymbolChecked} onCheckedChange={(checked) => setIsSymbolChecked(!!checked)} />
-                                              <label htmlFor="symbol-check" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">㉠㉡㉢</label>
-                                          </FormItem>
-                                          <Select value={currentInputAnswerType} onValueChange={setCurrentInputAnswerType}>
-                                              <SelectTrigger className="w-[120px]"><SelectValue /></SelectTrigger>
-                                              <SelectContent>{inputTypeOptions.map(o => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
-                                          </Select>
-                                          <Button type="button" variant="outline" onClick={handleAddInputAnswer}><Plus className="mr-2 h-4 w-4" />추가</Button>
-                                      </div>
-                                  )}
-                                  {answerType === '순서맞추기' && (
-                                      <Button type="button" variant="outline" onClick={() => append({ value: ''})}><Plus className="mr-2 h-4 w-4" />항목 추가</Button>
-                                  )}
-                              </div>
-                          </div>
-                      
-                         {answerType === '입력형' && (
-                              <div className="flex flex-wrap gap-4 pt-2">
-                                  {fields.map((field, index) => (
-                                  <div key={field.id} className="group relative flex items-start gap-2 p-2">
-                                      {isSymbolChecked ? (
-                                        <FormLabel className="pt-2 shrink-0">
-                                            {generateCircledKorean(index + 1)}
-                                        </FormLabel>
-                                      ) : null}
-                                      <Controller
-                                              control={form.control}
-                                              name={`answers.${index}.value`}
-                                              render={({ field: valueField }) => {
-                                                  const currentAnswerType = form.getValues(`answers.${index}.type`);
-                                                  const value = valueField.value || {};
-                                                  if (currentAnswerType === '분수') {
-                                                      return <div className="flex items-center gap-1">
-                                                          <div className="flex flex-col w-20">
-                                                              <Input placeholder={`1-${index + 1}`} className="text-center h-8 rounded-b-none border-b-0" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/>
-                                                              <div className="border-t border-black"></div>
-                                                              <Input placeholder={`1-${index + 1}`} className="text-center h-8 rounded-t-none" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
-                                                          </div>
-                                                      </div>
-                                                  }
-                                                  if (currentAnswerType === '대분수') {
-                                                      return <div className="flex items-center gap-1">
-                                                          <Input className="w-16 h-10 text-center" placeholder={`1-${index + 1}`} defaultValue={value.int} onChange={(e) => valueField.onChange({...value, int: e.target.value })}/>
-                                                          <div className="flex flex-col w-20">
-                                                              <Input placeholder={`1-${index + 1}`} className="text-center h-8 rounded-b-none border-b-0" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/>
-                                                              <div className="border-t border-black"></div>
-                                                              <Input placeholder={`1-${index + 1}`} className="text-center h-8 rounded-t-none" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
-                                                          </div>
-                                                      </div>
-                                                  }
-                                                  return <Input 
-                                                    className="w-32" 
-                                                    placeholder={`1-${index+1}`}
-                                                    defaultValue={value.val} 
-                                                    onChange={(e) => valueField.onChange({val: e.target.value})}
-                                                  />
-                                              }}
-                                          />
-                                      <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)} className="absolute -right-2 -top-2 h-6 w-6 opacity-0 group-hover:opacity-100">
-                                          <Trash2 className="h-4 w-4 text-red-500" />
-                                      </Button>
-                                  </div>
-                                  ))}
-                              </div>
-                          )}
+                                    <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)} className="absolute -right-2 -top-2 h-6 w-6 opacity-0 group-hover:opacity-100">
+                                        <Trash2 className="h-4 w-4 text-red-500" />
+                                    </Button>
+                                </div>
+                                ))}
+                            </div>
+                        )}
 
 
-                          {answerType === '선지형' && (
-                          <div className="space-y-2">
-                              {fields.map((field, index) => (
-                              <div key={field.id} className="flex items-start gap-2 group">
-                                   <div className="flex flex-col items-center gap-1 pt-1">
-                                      <FormLabel>선지{index + 1}</FormLabel>
-                                      <Button type="button" variant="ghost" size="icon" onClick={() => handleRemoveChoice(index)} className="h-8 w-8 text-red-500 hover:bg-red-50 hover:text-red-600 opacity-0 group-hover:opacity-100">
-                                          <Trash2 className="h-4 w-4" />
-                                      </Button>
-                                  </div>
-                                  <Controller
-                                      control={form.control}
-                                      name={`answers.${index}.value`}
-                                      render={({ field: valueField }) => (
-                                          <div className="flex-1">
-                                          <RichEditor {...valueField} />
-                                          </div>
-                                      )}
-                                      />
-                              </div>
-                              ))}
-                          </div>
-                          )}
+                        {answerType === '선지형' && (
+                        <div className="space-y-2">
+                            {fields.map((field, index) => (
+                            <div key={field.id} className="flex items-start gap-2 group">
+                                    <div className="flex flex-col items-center gap-1 pt-1">
+                                    <FormLabel>선지{index + 1}</FormLabel>
+                                    <Button type="button" variant="ghost" size="icon" onClick={() => handleRemoveChoice(index)} className="h-8 w-8 text-red-500 hover:bg-red-50 hover:text-red-600 opacity-0 group-hover:opacity-100">
+                                        <Trash2 className="h-4 w-4" />
+                                    </Button>
+                                </div>
+                                <Controller
+                                    control={form.control}
+                                    name={`answers.${index}.value`}
+                                    render={({ field: valueField }) => (
+                                        <div className="flex-1">
+                                        <RichEditor {...valueField} />
+                                        </div>
+                                    )}
+                                    />
+                            </div>
+                            ))}
+                        </div>
+                        )}
 
-                          {answerType === '순서맞추기' && (
-                          <div className="space-y-2">
-                              {fields.map((field, index) => (
-                                  <div key={field.id} className="flex items-center gap-2 p-2 border rounded-md bg-white group">
-                                      <Controller
-                                      control={form.control}
-                                      name={`answers.${index}.value`}
-                                      render={({ field: valueField }) => (
-                                          <div className="flex-1">
-                                          <RichEditor {...valueField} />
-                                          </div>
-                                      )}
-                                      />
-                                  <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)} className="opacity-0 group-hover:opacity-100"><Trash2 className="h-4 w-4 text-red-500" /></Button>
-                                  </div>
-                              ))}
-                          </div>
-                          )}
+                        {answerType === '순서맞추기' && (
+                        <div className="space-y-2">
+                            {fields.map((field, index) => (
+                                <div key={field.id} className="flex items-center gap-2 p-2 border rounded-md bg-white group">
+                                    <Controller
+                                    control={form.control}
+                                    name={`answers.${index}.value`}
+                                    render={({ field: valueField }) => (
+                                        <div className="flex-1">
+                                        <RichEditor {...valueField} />
+                                        </div>
+                                    )}
+                                    />
+                                <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)} className="opacity-0 group-hover:opacity-100"><Trash2 className="h-4 w-4 text-red-500" /></Button>
+                                </div>
+                            ))}
+                        </div>
+                        )}
 
-                      </div>
                     </div>
-                )}
+                </div>
                 
                 <div className="space-y-2 p-4 border rounded-md">
                     <h3 className="text-lg font-semibold">해설</h3>
