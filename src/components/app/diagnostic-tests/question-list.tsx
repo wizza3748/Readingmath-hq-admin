@@ -136,10 +136,12 @@ export function QuestionList({ testId }: { testId: string }) {
       cell: ({ row }) => {
         const question = row.original;
         let count = 0;
-        if (question.questionType === '입력형') {
-            count = question.answers?.length || 0;
-        } else if (question.questionType === '선지형' || question.questionType === '순서맞추기') {
-            count = (question.answers && question.answers.length > 0) ? 1 : 0;
+        if (question.questionType === '유형') {
+            if (question.answerType === '입력형') {
+                count = question.answers?.length || 0;
+            } else if (question.answerType === '선지형' || question.answerType === '순서맞추기') {
+                count = (question.answers && question.answers.length > 0) ? 1 : 0;
+            }
         } else if (question.questionType === '서술형') {
             const hasAnswers = question.answers && question.answers.length > 0;
             const hasProblemSolving = !!question.problemSolving;
