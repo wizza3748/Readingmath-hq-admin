@@ -161,7 +161,7 @@ export function QuestionModal({
       viewContent: '',
       solution: '',
       problemSolving: '',
-      answerType: questionType === '유형' ? '입력형' : undefined,
+      answerType: questionType === '유형' ? '선지형' : undefined,
       answers: [],
       videoUrl: '',
     },
@@ -201,7 +201,7 @@ export function QuestionModal({
           viewContent: '',
           solution: '',
           problemSolving: '',
-          answerType: questionType === '유형' ? '입력형' : undefined,
+          answerType: questionType === '유형' ? '선지형' : undefined,
           answers: [],
           videoUrl: '',
         };
@@ -212,7 +212,7 @@ export function QuestionModal({
             form.reset({
                 ...defaultValues,
                 ...question,
-                answerType: question.answerType || (question.questionType === '유형' ? '입력형' : undefined),
+                answerType: question.answerType || (question.questionType === '유형' ? '선지형' : undefined),
                 answers: question.answers || [],
                 contentArea,
             });
@@ -255,7 +255,8 @@ export function QuestionModal({
 
   const handleAnswerTypeChange = (value: string) => {
     form.setValue('answerType', value as '입력형' | '선지형' | '순서맞추기');
-    form.setValue('answers', []);
+    // Changing the type should reset the answers
+    replace([]); 
     if (value === '입력형') {
         append({ value: { val: '' }, type: '기본', symbol: false });
     }
@@ -267,9 +268,9 @@ export function QuestionModal({
       setShowOXConfirm(false);
       return;
     }
-    const newAnswers = fields.map((field, index) => ({
-      ...field,
+    const newAnswers = Array.from({ length: 2 }, (_, index) => ({
       value: type === 'circled' ? `${generateCircledNumber(index + 1)} ` : `${generateCircledKorean(index + 1)} `,
+      isCorrect: false
     }));
     replace(newAnswers);
   };
@@ -291,15 +292,15 @@ export function QuestionModal({
     <>
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="max-w-full h-full w-full flex flex-col">
-        <DialogHeader>
+      <DialogContent className="max-w-full w-full h-full flex flex-col p-0">
+        <DialogHeader className="p-6 pb-0">
           <DialogTitle>
             문제 상세 ({questionType})
           </DialogTitle>
         </DialogHeader>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 flex-1 overflow-y-auto pr-4 pl-1">
-            <div className="flex-1 space-y-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col flex-1 overflow-y-hidden">
+            <div className="flex-1 space-y-4 px-6 overflow-y-auto">
                 {/* 기본 정보 영역 */}
                 <div className='space-y-4 p-4 border rounded-md'>
                     <h3 className="text-lg font-semibold">기본 정보</h3>
@@ -454,55 +455,61 @@ export function QuestionModal({
                         {answerType === '입력형' && (
                           <div className="space-y-4">
                             {fields.map((field, index) => (
-                              <div key={field.id} className="flex items-start gap-2">
-                                <FormField
-                                  control={form.control}
-                                  name={`answers.${index}.type`}
-                                  render={({ field: typeField }) => (
-                                    <FormItem>
-                                      <Select onValueChange={typeField.onChange} value={typeField.value}>
-                                        <FormControl><SelectTrigger className="w-[100px]"><SelectValue /></SelectTrigger></FormControl>
-                                        <SelectContent>{inputTypeOptions.map(o => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
-                                      </Select>
-                                    </FormItem>
-                                  )}
-                                />
-                                <FormField
-                                  control={form.control}
-                                  name={`answers.${index}.symbol`}
-                                  render={({ field: symbolField }) => (
-                                    <FormItem className="flex items-center space-x-2 pt-2">
-                                      <Checkbox checked={symbolField.value} onCheckedChange={symbolField.onChange} />
-                                      <FormLabel>기호</FormLabel>
-                                    </FormItem>
-                                  )}
-                                />
-                                <div className="flex-1">
-                                <Controller
-                                    control={form.control}
-                                    name={`answers.${index}.value.val`}
-                                    render={({ field: valueField }) => {
-                                        const answerType = form.getValues(`answers.${index}.type`);
-                                        if (answerType === '분수') {
-                                            return <div className="flex items-center gap-1">
-                                                <Input placeholder="분자" className="text-center" /> / <Input placeholder="분모" className="text-center" />
-                                            </div>
-                                        }
-                                        if (answerType === '대분수') {
-                                            return <div className="flex items-center gap-1">
-                                                <Input className="w-16 text-center" />
-                                                <div className="flex flex-col">
-                                                    <Input placeholder="분자" className="text-center h-8" />
-                                                    <div className="border-t border-black my-1"></div>
-                                                    <Input placeholder="분모" className="text-center h-8" />
+                              <div key={field.id} className="flex items-start gap-2 p-2 border rounded-md bg-white">
+                                <div className="flex flex-col gap-2">
+                                    <div className="flex items-center gap-2">
+                                        <FormField
+                                            control={form.control}
+                                            name={`answers.${index}.type`}
+                                            render={({ field: typeField }) => (
+                                                <FormItem>
+                                                <Select onValueChange={typeField.onChange} value={typeField.value}>
+                                                    <FormControl><SelectTrigger className="w-[100px]"><SelectValue /></SelectTrigger></FormControl>
+                                                    <SelectContent>{inputTypeOptions.map(o => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
+                                                </Select>
+                                                </FormItem>
+                                            )}
+                                        />
+                                        <FormField
+                                            control={form.control}
+                                            name={`answers.${index}.symbol`}
+                                            render={({ field: symbolField }) => (
+                                                <FormItem className="flex items-center space-x-2 pt-2">
+                                                <Checkbox checked={symbolField.value} onCheckedChange={symbolField.onChange} />
+                                                <FormLabel>기호</FormLabel>
+                                                </FormItem>
+                                            )}
+                                        />
+                                    </div>
+                                    <Controller
+                                        control={form.control}
+                                        name={`answers.${index}.value`}
+                                        render={({ field: valueField }) => {
+                                            const currentAnswerType = form.getValues(`answers.${index}.type`);
+                                            const value = valueField.value || {};
+                                            if (currentAnswerType === '분수') {
+                                                return <div className="flex items-center gap-1">
+                                                    <Input placeholder="분자" className="text-center" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/> / 
+                                                    <Input placeholder="분모" className="text-center" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
                                                 </div>
-                                            </div>
-                                        }
-                                        return <Input {...valueField} placeholder="정답 입력" />
-                                    }}
-                                />
+                                            }
+                                            if (currentAnswerType === '대분수') {
+                                                return <div className="flex items-center gap-1">
+                                                    <Input className="w-16 text-center" placeholder="자연수" defaultValue={value.int} onChange={(e) => valueField.onChange({...value, int: e.target.value })}/>
+                                                    <div className="flex flex-col">
+                                                        <Input placeholder="분자" className="text-center h-8" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/>
+                                                        <div className="border-t border-black my-1"></div>
+                                                        <Input placeholder="분모" className="text-center h-8" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
+                                                    </div>
+                                                </div>
+                                            }
+                                            return <Input {...valueField} placeholder="정답 입력" defaultValue={value.val} onChange={(e) => valueField.onChange({val: e.target.value})}/>
+                                        }}
+                                    />
                                 </div>
-                                <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)}><Trash2 className="h-4 w-4 text-red-500" /></Button>
+                                <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)} className="ml-auto shrink-0">
+                                    <Trash2 className="h-4 w-4 text-red-500" />
+                                </Button>
                               </div>
                             ))}
                             <Button type="button" variant="outline" size="sm" onClick={() => append({ value: { val: '' }, type: '기본', symbol: false })}><Plus className="mr-2 h-4 w-4" /> 정답 추가</Button>
@@ -518,7 +525,7 @@ export function QuestionModal({
                                 <Button type="button" variant="default" size="sm" onClick={() => append({ value: '', isCorrect: false })}><Plus className="mr-2 h-4 w-4" />선지 추가</Button>
                             </div>
                             {fields.map((field, index) => (
-                               <div key={field.id} className="flex items-start gap-2 p-2 border rounded-md">
+                               <div key={field.id} className="flex items-start gap-2 p-2 border rounded-md bg-white">
                                   <FormField
                                     control={form.control}
                                     name={`answers.${index}.isCorrect`}
@@ -552,7 +559,7 @@ export function QuestionModal({
                         {answerType === '순서맞추기' && (
                            <div className="space-y-2">
                              {fields.map((field, index) => (
-                                <div key={field.id} className="flex items-center gap-2 p-2 border rounded-md">
+                                <div key={field.id} className="flex items-center gap-2 p-2 border rounded-md bg-white">
                                   <div className="font-bold text-lg">{generateCircledKorean(index+1)}</div>
                                     <Controller
                                       control={form.control}
@@ -602,7 +609,7 @@ export function QuestionModal({
                 </div>
             </div>
             
-            <div className="pt-4 border-t sticky bottom-0 bg-white z-10">
+            <div className="p-6 pt-4 border-t sticky bottom-0 bg-background z-10">
               <div className='flex justify-between w-full'>
                   <FormField
                   control={form.control}
