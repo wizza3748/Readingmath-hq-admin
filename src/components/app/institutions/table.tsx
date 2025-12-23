@@ -306,6 +306,7 @@ function InstitutionsTableContent() {
       setLoading(false);
       return;
     };
+    
     setLoading(true);
     const unsubscribe = getInstitutions(firestore, (institutions) => {
       setData(institutions);
@@ -448,5 +449,3 @@ export function InstitutionsTable() {
 
     return <InstitutionsTableContent />;
 }
-
-    
