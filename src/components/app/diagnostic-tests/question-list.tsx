@@ -33,6 +33,7 @@ import {
     AlertDialogFooter,
     AlertDialogHeader,
     AlertDialogTitle,
+    AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { QuestionModal } from './question-modal';
 import { Switch } from '@/components/ui/switch';
