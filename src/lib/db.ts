@@ -771,6 +771,42 @@ const initialCurriculumUnits: Omit<CurriculumUnit, 'id' | 'createdAt'>[] = [
     { semester: '중등 1-2', largeUnit: '3. 지구와 우주', mediumUnit: '지구와 우주', subUnit: '달의 운동' },
     { semester: '중등 1-2', largeUnit: '3. 지구와 우주', mediumUnit: '지구와 우주', subUnit: '태양계' },
     { semester: '중등 1-2', largeUnit: '4. 과학 기술과 인류 문명', mediumUnit: '과학 기술과 인류 문명', subUnit: '과학 기술' },
+    { semester: '중등 2-1', largeUnit: '1. 물질의 구성', mediumUnit: '물질의 구성', subUnit: '원소' },
+    { semester: '중등 2-1', largeUnit: '1. 물질의 구성', mediumUnit: '물질의 구성', subUnit: '원자와 분자' },
+    { semester: '중등 2-1', largeUnit: '1. 물질의 구성', mediumUnit: '물질의 구성', subUnit: '이온' },
+    { semester: '중등 2-1', largeUnit: '2. 전기와 자기', mediumUnit: '전기와 자기', subUnit: '전기' },
+    { semester: '중등 2-1', largeUnit: '2. 전기와 자기', mediumUnit: '전기와 자기', subUnit: '자기' },
+    { semester: '중등 2-1', largeUnit: '3. 태양계', mediumUnit: '태양계', subUnit: '지구와 달' },
+    { semester: '중등 2-1', largeUnit: '3. 태양계', mediumUnit: '태양계', subUnit: '태양계의 구성' },
+    { semester: '중등 2-1', largeUnit: '4. 식물의 구조와 기능', mediumUnit: '식물의 구조와 기능', subUnit: '식물의 구성 단계' },
+    { semester: '중등 2-1', largeUnit: '4. 식물의 구조와 기능', mediumUnit: '식물의 구조와 기능', subUnit: '광합성' },
+    { semester: '중등 2-1', largeUnit: '4. 식물의 구조와 기능', mediumUnit: '식물의 구조와 기능', subUnit: '식물의 호흡과 양분' },
+    { semester: '중등 2-2', largeUnit: '1. 물질의 특성', mediumUnit: '물질의 특성', subUnit: '물질의 특성' },
+    { semester: '중등 2-2', largeUnit: '1. 물질의 특성', mediumUnit: '혼합물의 분리', subUnit: '혼합물의 분리' },
+    { semester: '중등 2-2', largeUnit: '2. 빛과 파동', mediumUnit: '빛', subUnit: '빛' },
+    { semester: '중등 2-2', largeUnit: '2. 빛과 파동', mediumUnit: '파동', subUnit: '파동' },
+    { semester: '중등 2-2', largeUnit: '3. 기권과 날씨', mediumUnit: '기권과 지구 기온', subUnit: '기권과 지구 기온' },
+    { semester: '중등 2-2', largeUnit: '3. 기권과 날씨', mediumUnit: '구름과 강수', subUnit: '구름과 강수' },
+    { semester: '중등 2-2', largeUnit: '3. 기권과 날씨', mediumUnit: '기압과 바람', subUnit: '기압과 바람' },
+    { semester: '중등 2-2', largeUnit: '4. 소화, 순환, 호흡, 배설', mediumUnit: '소화', subUnit: '소화' },
+    { semester: '중등 2-2', largeUnit: '4. 소화, 순환, 호흡, 배설', mediumUnit: '순환', subUnit: '순환' },
+    { semester: '중등 2-2', largeUnit: '4. 소화, 순환, 호흡, 배설', mediumUnit: '호흡', subUnit: '호흡' },
+    { semester: '중등 2-2', largeUnit: '4. 소화, 순환, 호흡, 배설', mediumUnit: '배설', subUnit: '배설' },
+    { semester: '중등 3-1', largeUnit: '1. 화학 반응의 규칙과 에너지 변화', mediumUnit: '물질 변화와 화학 반응식', subUnit: '물질 변화와 화학 반응식' },
+    { semester: '중등 3-1', largeUnit: '1. 화학 반응의 규칙과 에너지 변화', mediumUnit: '화학 반응의 법칙', subUnit: '화학 반응의 법칙' },
+    { semester: '중등 3-1', largeUnit: '1. 화학 반응의 규칙과 에너지 변화', mediumUnit: '화학 반응에서의 에너지 출입', subUnit: '화학 반응에서의 에너지 출입' },
+    { semester: '중등 3-1', largeUnit: '2. 기권과 날씨', mediumUnit: '기권과 우리 생활', subUnit: '기권과 우리 생활' },
+    { semester: '중등 3-1', largeUnit: '2. 기권과 날씨', mediumUnit: '날씨의 변화', subUnit: '날씨의 변화' },
+    { semester: '중등 3-1', largeUnit: '3. 운동과 에너지', mediumUnit: '운동', subUnit: '운동' },
+    { semester: '중등 3-1', largeUnit: '3. 운동과 에너지', mediumUnit: '일과 에너지', subUnit: '일과 에너지' },
+    { semester: '중등 3-1', largeUnit: '4. 자극과 반응', mediumUnit: '감각 기관', subUnit: '감각 기관' },
+    { semester: '중등 3-1', largeUnit: '4. 자극과 반응', mediumUnit: '신경계와 호르몬', subUnit: '신경계와 호르몬' },
+    { semester: '중등 3-2', largeUnit: '1. 과학 기술과 인류 문명', mediumUnit: '과학 기술의 발달과 인류 문명', subUnit: '과학 기술의 발달과 인류 문명' },
+    { semester: '중등 3-2', largeUnit: '2. 생식과 유전', mediumUnit: '생식과 세포 분열', subUnit: '생식과 세포 분열' },
+    { semester: '중등 3-2', largeUnit: '2. 생식과 유전', mediumUnit: '유전', subUnit: '유전' },
+    { semester: '중등 3-2', largeUnit: '3. 별과 우주', mediumUnit: '별과 우주', subUnit: '별과 우주' },
+    { semester: '중등 3-2', largeUnit: '4. 환경과 에너지', mediumUnit: '생태계', subUnit: '생태계' },
+    { semester: '중등 3-2', largeUnit: '4. 환경과 에너지', mediumUnit: '환경 보전과 에너지', subUnit: '환경 보전과 에너지' },
 ];
 
 async function seedCurriculumUnits(db: Firestore) {
@@ -794,17 +830,30 @@ async function seedCurriculumUnits(db: Firestore) {
 
 export function getCurriculumUnits(db: Firestore, callback: (units: CurriculumUnit[]) => void) {
     const collRef = collection(db, "curriculum-units");
-    const q = query(collRef, orderBy("semester"), orderBy("largeUnit"), orderBy("mediumUnit"), orderBy("subUnit"));
+    const q = query(collRef, orderBy("createdAt", "asc"));
   
     const unsubscribe = onSnapshot(q, async (querySnapshot) => {
       if (querySnapshot.empty) {
           console.log("No curriculum units found, seeding initial data...");
           await seedCurriculumUnits(db);
       } else {
-          const units: CurriculumUnit[] = [];
+          let units: CurriculumUnit[] = [];
           querySnapshot.forEach((doc) => {
             units.push({ id: doc.id, ...doc.data() } as CurriculumUnit);
           });
+          
+          units.sort((a, b) => {
+            if (a.semester < b.semester) return -1;
+            if (a.semester > b.semester) return 1;
+            if (a.largeUnit < b.largeUnit) return -1;
+            if (a.largeUnit > b.largeUnit) return 1;
+            if (a.mediumUnit < b.mediumUnit) return -1;
+            if (a.mediumUnit > b.mediumUnit) return 1;
+            if (a.subUnit < b.subUnit) return -1;
+            if (a.subUnit > b.subUnit) return 1;
+            return 0;
+          });
+
           callback(units);
       }
     }, async (serverError) => {
@@ -819,5 +868,3 @@ export function getCurriculumUnits(db: Firestore, callback: (units: CurriculumUn
   
     return unsubscribe;
 }
-
-    
