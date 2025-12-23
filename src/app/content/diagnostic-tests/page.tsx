@@ -211,11 +211,10 @@ function DiagnosticTestsTable() {
     React.useEffect(() => {
         if (!firestore) return;
         setLoading(true);
-        const unsubscribe = getDiagnosticTests(firestore, (tests) => {
+        getDiagnosticTests(firestore, (tests) => {
           setData(tests);
           setLoading(false);
         });
-        return () => unsubscribe();
     }, [firestore]);
     
 

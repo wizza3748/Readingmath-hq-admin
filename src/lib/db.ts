@@ -368,58 +368,42 @@ async function seedDiagnosticTests(db: Firestore) {
 }
 
 
-export function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTest[]) => void) {
+export async function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTest[]) => void) {
   const collRef = collection(db, 'diagnostic-tests');
-  let unsubscribe: (() => void) | null = null;
-
-  const setupListener = () => {
-    const q = query(collRef, orderBy('id', 'asc'));
-    return onSnapshot(
-      q,
-      async (querySnapshot) => {
-        const tests: DiagnosticTest[] = [];
-        for (const doc of querySnapshot.docs) {
-          const testData = doc.data() as DiagnosticTest;
-          const questionsCollRef = collection(
-            db,
-            `diagnostic-tests/${doc.id}/questions`
-          );
-          const questionsSnapshot = await getDocs(questionsCollRef);
-          testData.totalQuestions = questionsSnapshot.size;
-          tests.push(testData);
-        }
-        callback(tests);
-      },
-      async (serverError) => {
-        console.error('Error fetching diagnostic tests:', serverError);
-        const permissionError = new FirestorePermissionError({
-          path: collRef.path,
-          operation: 'list',
-        } satisfies SecurityRuleContext);
-        errorEmitter.emit('permission-error', permissionError);
-        callback([]);
-      }
-    );
-  };
   
-  const checkAndSeed = async () => {
-    try {
-      const snapshot = await getDocs(collRef);
-      if (snapshot.empty) {
-        console.log('No diagnostic tests found, seeding initial data...');
-        await seedDiagnosticTests(db);
-      }
-    } catch (e) {
-      console.error("Error checking/seeding diagnostic tests", e);
+  try {
+    const snapshot = await getDocs(collRef);
+    if (snapshot.empty) {
+      console.log('No diagnostic tests found, seeding initial data...');
+      await seedDiagnosticTests(db);
+      const seededSnapshot = await getDocs(collRef);
+      processSnapshot(seededSnapshot);
+    } else {
+      processSnapshot(snapshot);
     }
-    unsubscribe = setupListener();
-  };
+  } catch (e) {
+      console.error("Error fetching/seeding diagnostic tests", e);
+      const permissionError = new FirestorePermissionError({
+        path: collRef.path,
+        operation: 'list',
+      } satisfies SecurityRuleContext);
+      errorEmitter.emit('permission-error', permissionError);
+      callback([]);
+  }
 
-  checkAndSeed();
+  async function processSnapshot(querySnapshot: any) {
+    const testsPromises = querySnapshot.docs.map(async (doc: any) => {
+      const testData = doc.data() as DiagnosticTest;
+      const questionsCollRef = collection(db, `diagnostic-tests/${doc.id}/questions`);
+      const questionsSnapshot = await getDocs(questionsCollRef);
+      testData.totalQuestions = questionsSnapshot.size;
+      return testData;
+    });
 
-  return () => {
-    unsubscribe?.();
-  };
+    const tests = await Promise.all(testsPromises);
+    tests.sort((a, b) => a.id - b.id);
+    callback(tests);
+  }
 }
 
 
@@ -899,5 +883,3 @@ export function getCurriculumUnits(
       callback([]);
     });
 }
-
-    
