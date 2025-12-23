@@ -498,6 +498,15 @@ export async function getNextQuestionNumber(db: Firestore, testId: string): Prom
 export async function createQuestion(db: Firestore, testId: string, questionData: Partial<Omit<Question, 'id'>>) {
     const testDocRef = doc(db, 'diagnostic-tests', testId);
     const questionsCollRef = collection(db, `diagnostic-tests/${testId}/questions`);
+    const newQuestionRef = doc(questionsCollRef); // Create a new doc ref with a unique ID
+
+    const data = {
+        ...questionData,
+        isExtended: false,
+        solutionCount: 0,
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp(),
+    };
 
     try {
         await runTransaction(db, async (transaction) => {
@@ -506,31 +515,26 @@ export async function createQuestion(db: Firestore, testId: string, questionData
                 throw "Test document does not exist!";
             }
 
+            // Atomically update the totalQuestions count
             transaction.update(testDocRef, { 
                 totalQuestions: increment(1) 
             });
 
-            const newQuestionRef = doc(questionsCollRef);
-            const data = {
-                ...questionData,
-                isExtended: false,
-                solutionCount: 0,
-                createdAt: serverTimestamp(),
-                updatedAt: serverTimestamp(),
-            };
+            // Atomically create the new question document
             transaction.set(newQuestionRef, data);
         });
     } catch (serverError) {
         console.error("Transaction failed: ", serverError);
         const permissionError = new FirestorePermissionError({
-            path: questionsCollRef.path,
+            path: newQuestionRef.path, // Use the new question ref path
             operation: 'create',
-            requestResourceData: questionData,
+            requestResourceData: data,
         } satisfies SecurityRuleContext);
         errorEmitter.emit('permission-error', permissionError);
-        throw serverError;
+        throw serverError; // Re-throw the error after logging
     }
 }
+
 
 export async function updateQuestion(db: Firestore, testId: string, questionId: string, questionData: Partial<Omit<Question, 'id'>>) {
     const docRef = doc(db, `diagnostic-tests/${testId}/questions`, questionId);
