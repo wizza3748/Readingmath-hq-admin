@@ -212,27 +212,10 @@ export async function deleteInstitution(db: Firestore, id: string) {
 }
 
 
-// This function fetches all institutions from Firestore in real-time.
-export function getInstitutions(db: Firestore, callback: (institutions: Institution[]) => void) {
+// This function returns a query for all institutions.
+export function getInstitutionsQuery(db: Firestore) {
   const collRef = collection(db, "institutions");
-  const q = query(collRef, orderBy("createdAt", "desc"));
-
-  const unsubscribe = onSnapshot(q, (querySnapshot) => {
-    const institutions: Institution[] = [];
-    querySnapshot.forEach((doc) => {
-      institutions.push({ id: doc.id, ...doc.data() } as Institution);
-    });
-    callback(institutions);
-  }, async (serverError) => {
-    const permissionError = new FirestorePermissionError({
-        path: collRef.path,
-        operation: 'list',
-    } satisfies SecurityRuleContext);
-    errorEmitter.emit('permission-error', permissionError);
-    callback([]);
-  });
-
-  return unsubscribe; // Return the unsubscribe function to clean up the listener
+  return query(collRef, orderBy("createdAt", "desc"));
 }
 
 // This function fetches a single institution from Firestore in real-time.
@@ -786,3 +769,5 @@ export const initialCurriculumUnits: CurriculumUnit[] = [
     { id: '147', semester: '중등 3-2', largeUnit: '3. 환경과 에너지', mediumUnit: '생태계와 환경', subUnit: '생태계 평형' },
     { id: '148', semester: '중등 3-2', largeUnit: '3. 환경과 에너지', mediumUnit: '생태계와 환경', subUnit: '환경 보전과 지속 가능한 발전' },
 ].map((unit, index) => ({ ...unit, id: (index + 1).toString() }));
+이 데이터를 삭제해줘
+위 파일로 다시 원복 시켜줘

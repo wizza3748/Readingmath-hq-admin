@@ -17,6 +17,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { ArrowUpDown, Download, Plus } from "lucide-react";
+import { onSnapshot } from "firebase/firestore";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -39,7 +40,7 @@ import {
 } from "@/components/ui/select";
 import { MultiSelect, type MultiSelectOption } from "@/components/ui/multi-select";
 import { useFirebase, useFirestore } from "@/firebase";
-import { getInstitutions, type Institution } from "@/lib/db";
+import { getInstitutionsQuery, type Institution } from "@/lib/db";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -301,16 +302,21 @@ function InstitutionsTableContent() {
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
 
-   React.useEffect(() => {
+  React.useEffect(() => {
     if (!firestore) {
       setLoading(false);
       return;
-    };
+    }
     
     setLoading(true);
-    const unsubscribe = getInstitutions(firestore, (institutions) => {
-      setData(institutions);
-      setLoading(false);
+    const q = getInstitutionsQuery(firestore);
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const institutions: Institution[] = [];
+        querySnapshot.forEach((doc) => {
+            institutions.push({ id: doc.id, ...doc.data() } as Institution);
+        });
+        setData(institutions);
+        setLoading(false);
     });
 
     return unsubscribe;
