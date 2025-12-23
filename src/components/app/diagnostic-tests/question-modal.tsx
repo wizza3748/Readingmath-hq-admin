@@ -50,6 +50,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { cn } from '@/lib/utils';
 import { RichEditor } from '@/components/ui/rich-editor';
+import { Switch } from '@/components/ui/switch';
 
 const answerSchema = z.object({
     id: z.string().optional(),
@@ -174,6 +175,7 @@ export function QuestionModal({
 
   const selectedSubUnitId = form.watch('subUnitType');
   const answerType = form.watch('answerType');
+  const isReviewed = form.watch('isReviewed');
 
   React.useEffect(() => {
     if (selectedSubUnitId) {
@@ -690,19 +692,22 @@ export function QuestionModal({
             <DialogFooter className="p-6 pt-4 border-t sticky bottom-0 bg-background z-10">
               <div className='flex justify-between w-full'>
                   <FormField
-                  control={form.control}
-                  name="isReviewed"
-                  render={({ field }) => (
-                      <FormItem className="flex flex-row items-center space-x-2">
-                      <FormControl>
-                          <Checkbox
-                          checked={field.value}
-                          onCheckedChange={field.onChange}
-                          />
-                      </FormControl>
-                      <FormLabel className="!mt-0">검수완료</FormLabel>
-                      </FormItem>
-                  )}
+                    control={form.control}
+                    name="isReviewed"
+                    render={({ field }) => (
+                        <FormItem className="flex flex-row items-center space-x-3 space-y-0">
+                            <FormLabel>검수 여부</FormLabel>
+                            <FormControl>
+                                <Switch
+                                    checked={field.value}
+                                    onCheckedChange={field.onChange}
+                                />
+                            </FormControl>
+                            <span className="text-sm text-muted-foreground">
+                                {isReviewed ? '검수완료' : '검수전'}
+                            </span>
+                        </FormItem>
+                    )}
                   />
                   <div>
                       <Button type="button" variant="outline" className='mr-2'>미리보기</Button>
@@ -735,4 +740,3 @@ export function QuestionModal({
   );
 }
 
-    
