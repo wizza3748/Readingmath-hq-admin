@@ -544,7 +544,7 @@ export function QuestionModal({
                                 <div className="flex items-center gap-2 p-2 border rounded-md bg-white">
                                     <FormItem className="flex items-center space-x-2">
                                         <Checkbox id="symbol-check" checked={isSymbolChecked} onCheckedChange={(checked) => setIsSymbolChecked(!!checked)} />
-                                        <label htmlFor="symbol-check" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">기호</label>
+                                        <label htmlFor="symbol-check" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">㉠㉡㉢</label>
                                     </FormItem>
                                     <Select value={currentInputAnswerType} onValueChange={setCurrentInputAnswerType}>
                                         <SelectTrigger className="w-[120px]"><SelectValue /></SelectTrigger>
@@ -556,7 +556,9 @@ export function QuestionModal({
                                 <div className="flex flex-wrap gap-4 pt-2">
                                     {fields.map((field, index) => (
                                     <div key={field.id} className="group relative flex items-start gap-2 p-2">
-                                        <FormLabel className="pt-2 shrink-0">{form.getValues(`answers.${index}.symbol`) ? generateCircledKorean(index) : `1-${index+1}`}</FormLabel>
+                                        <FormLabel className="pt-2 shrink-0">
+                                            {isSymbolChecked ? generateCircledKorean(index) : `1-${index+1}`}
+                                        </FormLabel>
                                         <Controller
                                                 control={form.control}
                                                 name={`answers.${index}.value`}
@@ -582,7 +584,7 @@ export function QuestionModal({
                                                             </div>
                                                         </div>
                                                     }
-                                                    return <Input className="w-32" {...valueField} placeholder="정답 입력" defaultValue={value.val} onChange={(e) => valueField.onChange({val: e.target.value})}/>
+                                                    return <Input className="w-32" placeholder="정답 입력" defaultValue={value.val} onChange={(e) => valueField.onChange({val: e.target.value})}/>
                                                 }}
                                             />
                                         <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)} className="absolute -right-2 -top-2 h-6 w-6 opacity-0 group-hover:opacity-100">
@@ -707,3 +709,4 @@ export function QuestionModal({
     </>
   );
 }
+
