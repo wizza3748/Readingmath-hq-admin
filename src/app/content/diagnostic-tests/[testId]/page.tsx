@@ -2,9 +2,10 @@
 'use client';
 
 import * as React from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { useFirebase } from '@/firebase';
-import { getDiagnosticTest, updateDiagnosticTestStatus, type DiagnosticTest } from '@/lib/db';
+import { updateDiagnosticTestStatus, type DiagnosticTest } from '@/lib/db';
+import { useDiagnosticTest } from '@/hooks/use-diagnostic-test';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
@@ -13,35 +14,20 @@ import { QuestionList } from '@/components/app/diagnostic-tests/question-list';
 import { QuestionModal } from '@/components/app/diagnostic-tests/question-modal';
 import { useToast } from '@/hooks/use-toast';
 
-export default function DiagnosticTestDetailPage({ params }: { params: { testId: string } }) {
+
+export default function DiagnosticTestDetailPage() {
   const router = useRouter();
+  const params = useParams();
+  const testId = params.testId as string;
   const { toast } = useToast();
   const { firestore } = useFirebase() ?? {};
-  const [test, setTest] = React.useState<DiagnosticTest | null>(null);
-  const [loading, setLoading] = React.useState(true);
-  
-  React.useEffect(() => {
-    if (!firestore) return;
-    
-    if (!params.testId) {
-      setLoading(false);
-      return;
-    }
-
-    setLoading(true);
-    const unsubscribe = getDiagnosticTest(firestore, params.testId, (data) => {
-      setTest(data);
-      setLoading(false);
-    });
-
-    return () => unsubscribe();
-  }, [firestore, params.testId]);
+  const { test, setTest, loading } = useDiagnosticTest(testId);
 
   const handleStatusToggle = async (checked: boolean) => {
     if (!firestore || !test) return;
     const newStatus = checked ? '검수완료' : '검수전';
     try {
-      await updateDiagnosticTestStatus(firestore, params.testId, newStatus);
+      await updateDiagnosticTestStatus(firestore, testId, newStatus);
       setTest(prev => prev ? { ...prev, status: newStatus } : null);
       toast({
         title: '상태 변경 완료',
@@ -98,15 +84,15 @@ export default function DiagnosticTestDetailPage({ params }: { params: { testId:
       </h1>
 
       <div className="flex justify-start gap-2">
-        <QuestionModal testId={params.testId} questionType="유형">
+        <QuestionModal testId={testId} questionType="유형">
             <Button>유형 문제 등록</Button>
         </QuestionModal>
-        <QuestionModal testId={params.testId} questionType="서술형">
+        <QuestionModal testId={testId} questionType="서술형">
             <Button>서술형 문제 등록</Button>
         </QuestionModal>
       </div>
       
-      <QuestionList testId={params.testId} />
+      <QuestionList testId={testId} />
       
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">
