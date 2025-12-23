@@ -5,7 +5,19 @@ service cloud.firestore {
   match /databases/{database}/documents {
     // These rules are wide open for prototyping.
     // Make sure to secure these rules before deploying to production.
-    match /{document=**} {
+    
+    // Allow access to institutions
+    match /institutions/{institutionId} {
+      allow read, write: if true;
+    }
+
+    // Allow access to diagnostic-tests and its subcollections (like questions)
+    match /diagnostic-tests/{testId}/{document=**} {
+      allow read, write: if true;
+    }
+
+    // Allow access to curriculum-units
+    match /curriculum-units/{unitId} {
       allow read, write: if true;
     }
   }
