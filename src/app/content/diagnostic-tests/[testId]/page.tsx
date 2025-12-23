@@ -22,15 +22,17 @@ export default function DiagnosticTestDetailPage({ params }: { params: { testId:
   
   React.useEffect(() => {
     if (!firestore) return;
+    const testId = params.testId;
+    if (!testId) return;
 
     setLoading(true);
-    const unsubscribe = getDiagnosticTest(firestore, params.testId, (data) => {
+    const unsubscribe = getDiagnosticTest(firestore, testId, (data) => {
       setTest(data);
       setLoading(false);
     });
 
     return () => unsubscribe();
-  }, [firestore, params.testId]);
+  }, [firestore, params]);
 
   const handleStatusToggle = async (checked: boolean) => {
     if (!firestore || !test) return;
