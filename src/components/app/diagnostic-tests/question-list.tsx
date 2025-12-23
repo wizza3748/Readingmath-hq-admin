@@ -46,13 +46,16 @@ export function QuestionList({ testId }: { testId: string }) {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    if (!firestore || !testId) return;
+    if (!firestore || !testId) {
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     const unsubscribe = getQuestions(firestore, testId, (data) => {
       setQuestions(data);
       setLoading(false);
     });
-    return () => unsubscribe();
+    return unsubscribe;
   }, [firestore, testId]);
 
   const handleDelete = async (questionId: string) => {
