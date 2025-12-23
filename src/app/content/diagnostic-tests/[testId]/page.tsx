@@ -21,24 +21,22 @@ export default function DiagnosticTestDetailPage({ params }: { params: { testId:
   const [loading, setLoading] = React.useState(true);
   
   React.useEffect(() => {
-    const testId = params.testId;
-    if (!firestore || !testId) return;
+    if (!firestore) return;
 
     setLoading(true);
-    const unsubscribe = getDiagnosticTest(firestore, testId, (data) => {
+    const unsubscribe = getDiagnosticTest(firestore, params.testId, (data) => {
       setTest(data);
       setLoading(false);
     });
 
     return () => unsubscribe();
-  }, [firestore, params]);
+  }, [firestore, params.testId]);
 
   const handleStatusToggle = async (checked: boolean) => {
-    const testId = params.testId;
-    if (!firestore || !test || !testId) return;
+    if (!firestore || !test) return;
     const newStatus = checked ? '검수완료' : '검수전';
     try {
-      await updateDiagnosticTestStatus(firestore, testId, newStatus);
+      await updateDiagnosticTestStatus(firestore, params.testId, newStatus);
       setTest(prev => prev ? { ...prev, status: newStatus } : null);
       toast({
         title: '상태 변경 완료',
@@ -123,5 +121,3 @@ export default function DiagnosticTestDetailPage({ params }: { params: { testId:
     </div>
   );
 }
-
-    

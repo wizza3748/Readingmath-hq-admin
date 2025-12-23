@@ -501,6 +501,11 @@ export async function createQuestion(db: Firestore, testId: string, questionData
 
     try {
         await runTransaction(db, async (transaction) => {
+            const testDoc = await transaction.get(testDocRef);
+            if (!testDoc.exists()) {
+                throw "Test document does not exist!";
+            }
+
             transaction.update(testDocRef, { 
                 totalQuestions: increment(1) 
             });
@@ -550,6 +555,11 @@ export async function deleteQuestion(db: Firestore, testId: string, questionId: 
 
     try {
         await runTransaction(db, async (transaction) => {
+            const testDoc = await transaction.get(testDocRef);
+            if (!testDoc.exists()) {
+                throw "Test document does not exist!";
+            }
+
             transaction.update(testDocRef, {
                 totalQuestions: increment(-1)
             });
@@ -579,7 +589,3 @@ export async function updateQuestionExtended(db: Firestore, testId: string, ques
         errorEmitter.emit('permission-error', permissionError);
     });
 }
-
-
-
-    
