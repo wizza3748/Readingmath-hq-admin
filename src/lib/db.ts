@@ -348,10 +348,13 @@ async function seedDiagnosticTests(db: Firestore) {
     const collRef = collection(db, "diagnostic-tests");
     const batch = writeBatch(db);
 
-    initialDiagnosticTests.forEach(test => {
+    for (const test of initialDiagnosticTests) {
         const docRef = doc(collRef, String(test.id));
-        batch.set(docRef, { ...test, totalQuestions: 0, createdAt: serverTimestamp() });
-    });
+        const docSnap = await getDoc(docRef);
+        if (!docSnap.exists()) {
+             batch.set(docRef, { ...test, totalQuestions: 0, createdAt: serverTimestamp() });
+        }
+    }
 
     await batch.commit().catch(async (serverError) => {
         const permissionError = new FirestorePermissionError({
@@ -372,15 +375,19 @@ export function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTe
     if (querySnapshot.empty) {
         console.log("No diagnostic tests found, seeding initial data...");
         await seedDiagnosticTests(db);
-        // After seeding, the onSnapshot listener will be triggered again with the new data.
     } else {
         const tests: DiagnosticTest[] = [];
-        querySnapshot.forEach((doc) => {
-            tests.push({ ...doc.data() } as DiagnosticTest);
-        });
+        for (const doc of querySnapshot.docs) {
+            const testData = doc.data() as DiagnosticTest;
+            const questionsCollRef = collection(db, `diagnostic-tests/${doc.id}/questions`);
+            const questionsSnapshot = await getDocs(questionsCollRef);
+            testData.totalQuestions = questionsSnapshot.size;
+            tests.push(testData);
+        }
         callback(tests);
     }
   }, async (serverError) => {
+    console.error("Error fetching diagnostic tests:", serverError);
     const permissionError = new FirestorePermissionError({
         path: collRef.path,
         operation: 'list',
@@ -394,9 +401,13 @@ export function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTe
 
 export function getDiagnosticTest(db: Firestore, testId: string, callback: (test: DiagnosticTest | null) => void) {
   const docRef = doc(db, "diagnostic-tests", testId);
-  const unsubscribe = onSnapshot(docRef, (docSnap) => {
+  const unsubscribe = onSnapshot(docRef, async (docSnap) => {
     if (docSnap.exists()) {
-      callback({ id: parseInt(docSnap.id), ...docSnap.data() } as DiagnosticTest);
+      const testData = { id: parseInt(docSnap.id), ...docSnap.data() } as DiagnosticTest;
+      const questionsCollRef = collection(db, `diagnostic-tests/${testId}/questions`);
+      const questionsSnapshot = await getDocs(questionsCollRef);
+      testData.totalQuestions = questionsSnapshot.size;
+      callback(testData);
     } else {
       callback(null);
     }
@@ -490,12 +501,10 @@ export async function createQuestion(db: Firestore, testId: string, questionData
 
     try {
         await runTransaction(db, async (transaction) => {
-            // 1. Increment the totalQuestions count on the parent test document.
             transaction.update(testDocRef, { 
                 totalQuestions: increment(1) 
             });
 
-            // 2. Add the new question document.
             const newQuestionRef = doc(questionsCollRef);
             const data = {
                 ...questionData,
@@ -507,13 +516,14 @@ export async function createQuestion(db: Firestore, testId: string, questionData
             transaction.set(newQuestionRef, data);
         });
     } catch (serverError) {
+        console.error("Transaction failed: ", serverError);
         const permissionError = new FirestorePermissionError({
             path: questionsCollRef.path,
             operation: 'create',
             requestResourceData: questionData,
         } satisfies SecurityRuleContext);
         errorEmitter.emit('permission-error', permissionError);
-        throw serverError; // Re-throw the error to be caught by the calling function
+        throw serverError;
     }
 }
 
@@ -540,21 +550,19 @@ export async function deleteQuestion(db: Firestore, testId: string, questionId: 
 
     try {
         await runTransaction(db, async (transaction) => {
-            // 1. Decrement the totalQuestions count on the parent test document.
             transaction.update(testDocRef, {
                 totalQuestions: increment(-1)
             });
-
-            // 2. Delete the question document.
             transaction.delete(questionDocRef);
         });
     } catch (serverError) {
+        console.error("Transaction failed: ", serverError);
         const permissionError = new FirestorePermissionError({
             path: questionDocRef.path,
             operation: 'delete',
         } satisfies SecurityRuleContext);
         errorEmitter.emit('permission-error', permissionError);
-        throw serverError; // Re-throw the error to be caught by the calling function
+        throw serverError;
     }
 }
 
@@ -572,3 +580,6 @@ export async function updateQuestionExtended(db: Firestore, testId: string, ques
     });
 }
 
+
+
+    
