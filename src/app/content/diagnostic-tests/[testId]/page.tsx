@@ -22,15 +22,14 @@ export default function DiagnosticTestDetailPage({ params }: { params: { testId:
   
   React.useEffect(() => {
     if (!firestore) return;
-    const { testId } = params;
     
-    if (!testId) {
+    if (!params.testId) {
       setLoading(false);
       return;
     }
 
     setLoading(true);
-    const unsubscribe = getDiagnosticTest(firestore, testId, (data) => {
+    const unsubscribe = getDiagnosticTest(firestore, params.testId, (data) => {
       setTest(data);
       setLoading(false);
     });
