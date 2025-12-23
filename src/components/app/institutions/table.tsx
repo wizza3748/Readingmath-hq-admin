@@ -449,5 +449,3 @@ export function InstitutionsTable() {
 
     return <InstitutionsTableContent />;
 }
-
-    
