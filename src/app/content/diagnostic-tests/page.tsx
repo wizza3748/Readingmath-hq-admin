@@ -17,7 +17,7 @@ import {
 import { Edit } from 'lucide-react';
 import { useFirebase, useFirestore } from "@/firebase";
 import { getDiagnosticTestsQuery, type DiagnosticTest, seedDiagnosticTests } from "@/lib/db";
-import { onSnapshot, getDocs } from "firebase/firestore";
+import { onSnapshot, getDocs, collection } from "firebase/firestore";
 
 import { Button } from '@/components/ui/button';
 import {
