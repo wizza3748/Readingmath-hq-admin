@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useFirestore } from '@/firebase';
-import { createQuestion, updateQuestion, type Question, getNextQuestionNumber, getCurriculumUnits, type CurriculumUnit } from '@/lib/db';
+import { createQuestion, updateQuestion, type Question, getNextQuestionNumber, initialCurriculumUnits, type CurriculumUnit } from '@/lib/db';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -126,13 +126,7 @@ export function QuestionModal({
   const [open, setOpen] = React.useState(false);
   const firestore = useFirestore();
   const { toast } = useToast();
-  const [curriculumUnits, setCurriculumUnits] = React.useState<CurriculumUnit[]>([]);
-
-  React.useEffect(() => {
-    if (firestore) {
-      getCurriculumUnits(firestore, setCurriculumUnits);
-    }
-  }, [firestore]);
+  const [curriculumUnits, setCurriculumUnits] = React.useState<CurriculumUnit[]>(initialCurriculumUnits);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -462,3 +456,5 @@ export function QuestionModal({
     </Dialog>
   );
 }
+
+    
