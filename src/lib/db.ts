@@ -795,76 +795,65 @@ const initialCurriculumUnits: Omit<CurriculumUnit, 'id' | 'createdAt'>[] = [
 async function seedCurriculumUnits(db: Firestore) {
     const collRef = collection(db, "curriculum-units");
     const snapshot = await getDocs(collRef);
-    const existingUnits = new Set(snapshot.docs.map(doc => doc.data().subUnit));
-    
-    const batch = writeBatch(db);
-    let newUnitsAdded = false;
-
-    for (const unit of initialCurriculumUnits) {
-        if (!existingUnits.has(unit.subUnit)) {
+    if (snapshot.empty) {
+        console.log("Seeding curriculum units...");
+        const batch = writeBatch(db);
+        initialCurriculumUnits.forEach((unit) => {
             const docRef = doc(collRef);
             batch.set(docRef, { ...unit, createdAt: serverTimestamp() });
-            newUnitsAdded = true;
-        }
-    }
-
-    if (newUnitsAdded) {
-        console.log("Seeding new curriculum units...");
+        });
         await batch.commit().catch(async (serverError) => {
             const permissionError = new FirestorePermissionError({
                 path: collRef.path,
                 operation: 'create',
-                requestResourceData: initialCurriculumUnits.filter(unit => !existingUnits.has(unit.subUnit)),
+                requestResourceData: initialCurriculumUnits,
             } satisfies SecurityRuleContext);
             errorEmitter.emit('permission-error', permissionError);
         });
-    } else {
-        console.log("Curriculum units are already up to date.");
     }
 }
 
 export function getCurriculumUnits(db: Firestore, callback: (units: CurriculumUnit[]) => void) {
-    const collRef = collection(db, "curriculum-units");
-    // Remove orderBy to avoid composite index requirement. Sorting will be done on the client.
-    const q = query(collRef);
-  
-    const unsubscribe = onSnapshot(q, async (querySnapshot) => {
-        // Always check for seeding, as the initial data might have been incomplete.
+  const collRef = collection(db, "curriculum-units");
+  const q = query(collRef);
+
+  const unsubscribe = onSnapshot(q, async (querySnapshot) => {
+    if (querySnapshot.empty) {
         await seedCurriculumUnits(db);
+    }
 
-        let units: CurriculumUnit[] = [];
-        querySnapshot.forEach((doc) => {
-            units.push({ id: doc.id, ...doc.data() } as CurriculumUnit);
-        });
-        
-        // Client-side sorting
-        units.sort((a, b) => {
-            const semesterOrder = ['초등 3-1', '초등 3-2', '초등 4-1', '초등 4-2', '초등 5-1', '초등 5-2', '초등 6-1', '초등 6-2', '중등 1-1', '중등 1-2', '중등 2-1', '중등 2-2', '중등 3-1', '중등 3-2'];
-            const aSemesterIndex = semesterOrder.indexOf(a.semester);
-            const bSemesterIndex = semesterOrder.indexOf(b.semester);
-            
-            if (aSemesterIndex !== bSemesterIndex) {
-                return aSemesterIndex - bSemesterIndex;
-            }
-            if (a.largeUnit < b.largeUnit) return -1;
-            if (a.largeUnit > b.largeUnit) return 1;
-            if (a.mediumUnit < b.mediumUnit) return -1;
-            if (a.mediumUnit > b.mediumUnit) return 1;
-            if (a.subUnit < b.subUnit) return -1;
-            if (a.subUnit > b.subUnit) return 1;
-            return 0;
-        });
-
-        callback(units);
-    }, async (serverError) => {
-      console.error("Error fetching curriculum units:", serverError);
-      const permissionError = new FirestorePermissionError({
-          path: collRef.path,
-          operation: 'list',
-      } satisfies SecurityRuleContext);
-      errorEmitter.emit('permission-error', permissionError);
-      callback([]);
+    let units: CurriculumUnit[] = [];
+    querySnapshot.forEach((doc) => {
+        units.push({ id: doc.id, ...doc.data() } as CurriculumUnit);
     });
-  
-    return unsubscribe;
+    
+    units.sort((a, b) => {
+        const semesterOrder = ['초등 3-1', '초등 3-2', '초등 4-1', '초등 4-2', '초등 5-1', '초등 5-2', '초등 6-1', '초등 6-2', '중등 1-1', '중등 1-2', '중등 2-1', '중등 2-2', '중등 3-1', '중등 3-2'];
+        const aSemesterIndex = semesterOrder.indexOf(a.semester);
+        const bSemesterIndex = semesterOrder.indexOf(b.semester);
+        
+        if (aSemesterIndex !== bSemesterIndex) {
+            return aSemesterIndex - bSemesterIndex;
+        }
+        if (a.largeUnit < b.largeUnit) return -1;
+        if (a.largeUnit > b.largeUnit) return 1;
+        if (a.mediumUnit < b.mediumUnit) return -1;
+        if (a.mediumUnit > b.mediumUnit) return 1;
+        if (a.subUnit < b.subUnit) return -1;
+        if (a.subUnit > b.subUnit) return 1;
+        return 0;
+    });
+
+    callback(units);
+  }, async (serverError) => {
+    console.error("Error fetching curriculum units:", serverError);
+    const permissionError = new FirestorePermissionError({
+        path: collRef.path,
+        operation: 'list',
+    } satisfies SecurityRuleContext);
+    errorEmitter.emit('permission-error', permissionError);
+    callback([]);
+  });
+
+  return unsubscribe;
 }
