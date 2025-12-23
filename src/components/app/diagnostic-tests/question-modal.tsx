@@ -98,18 +98,19 @@ export function QuestionModal({
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-          difficulty: '중',
-          behavioralArea: '개념이해력',
-          isReviewed: false,
-          subUnitType: '',
-          contentArea: '',
-          prompt: '',
-          viewContent: '',
-          solution: '',
-          problemSolving: '',
-          answerType: undefined,
-          answers: [],
-        },
+      difficulty: '중',
+      behavioralArea: '개념이해력',
+      isReviewed: false,
+      subUnitType: '',
+      contentArea: '',
+      prompt: '',
+      viewContent: '',
+      solution: '',
+      problemSolving: '',
+      answerType: questionType === '유형' ? '입력형' : undefined,
+      answers: [],
+      videoUrl: '',
+    },
   });
   
   const selectedSubUnit = form.watch('subUnitType');
@@ -123,40 +124,43 @@ export function QuestionModal({
 
   React.useEffect(() => {
     if (open) {
-      const defaultValues = {
-        difficulty: '중',
-        subUnitType: '',
-        contentArea: '',
-        behavioralArea: '개념이해력',
-        prompt: '',
-        viewContent: '',
-        solution: '',
-        problemSolving: '',
-        isReviewed: false,
-        answerType: undefined,
-        answers: [],
-        videoUrl: '',
-      };
-      
       if (question) {
+        // For editing an existing question
         const contentArea = question.contentArea || (question.subUnitType ? contentAreaMapping[question.subUnitType] : '');
         form.reset({
-          ...defaultValues,
           ...question,
+          answerType: question.answerType || (question.questionType === '유형' ? '입력형' : undefined),
           contentArea: contentArea,
         });
       } else {
-        form.reset(defaultValues);
+        // For creating a new question
+        form.reset({
+          difficulty: '중',
+          behavioralArea: '개념이해력',
+          isReviewed: false,
+          subUnitType: '',
+          contentArea: '',
+          prompt: '',
+          viewContent: '',
+          solution: '',
+          problemSolving: '',
+          answerType: questionType === '유형' ? '입력형' : undefined,
+          answers: [],
+          videoUrl: '',
+        });
       }
     }
-  }, [open, question, form]);
+  }, [open, question, form, questionType]);
 
   const onSubmit = async (data: FormValues) => {
     if (!firestore) return;
     try {
       if (question) {
         // Update existing question
-        await updateQuestion(firestore, testId, question.id, data);
+        await updateQuestion(firestore, testId, question.id, {
+            ...data,
+            questionType,
+        });
         toast({ title: '문제가 수정되었습니다.' });
       } else {
         // Create new question
@@ -404,3 +408,5 @@ export function QuestionModal({
     </Dialog>
   );
 }
+
+    
