@@ -161,7 +161,7 @@ export default function InstitutionDetailLayout({
       setLoading(false);
     });
 
-    return () => unsubscribe();
+    return unsubscribe;
   }, [firestore, institutionId]);
 
   return (
@@ -189,5 +189,3 @@ export default function InstitutionDetailLayout({
     </div>
   );
 }
-
-    

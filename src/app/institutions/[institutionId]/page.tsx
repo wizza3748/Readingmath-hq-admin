@@ -26,7 +26,7 @@ export default function InstitutionInfoPage() {
       setLoading(false);
     });
 
-    return () => unsubscribe();
+    return unsubscribe;
   }, [firestore, institutionId]);
 
   
@@ -51,5 +51,3 @@ export default function InstitutionInfoPage() {
     <InstitutionEditForm institution={institution} loading={false} />
   );
 }
-
-    
