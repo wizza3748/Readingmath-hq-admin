@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import * as React from 'react';
@@ -77,53 +78,36 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 const contentAreaMapping: { [key: string]: string } = {
-    '1. 물질의 성질': '화학',
-    '2. 자석의 이용': '물리',
-    '3. 동물의 한살이': '생명과학',
-    '4. 지표의 변화': '지구과학',
-    '1. 무게와 수평': '물리',
-    '2. 식물의 한살이': '생명과학',
-    '3. 액체와 기체': '화학',
-    '4. 화산과 암석': '지구과학',
-    '1. 혼합물의 분리': '화학',
-    '2. 용액의 진하기': '화학',
-    '3. 물체의 운동': '물리',
-    '4. 식물의 구조와 기능': '생명과학',
-    '5. 동물의 구조와 기능': '탐구활동',
-    '1. 생물과 환경': '생명과학',
-    '2. 렌즈의 이용': '물리',
-    '3. 산과 염기': '화학',
-    '4. 지구와 달의 운동': '지구과학',
-    '1. 여러 가지 기체': '화학',
-    '2. 우리 몸의 구조와 기능': '생명과학',
-    '3. 빛과 파동': '물리',
-    '4. 지권의 변화': '지구과학',
-    '1. 날씨의 변화': '지구과학',
-    '2. 식물과 에너지': '생명과학',
-    '3. 전기와 자기': '물리',
-    '4. 화학 반응의 규칙': '화학',
-    '1. 물질의 구성': '화학',
-    '2. 힘과 운동': '물리',
-    '3. 자극과 반응': '생명과학',
-    '4. 식물과 에너지': '생명과학',
-    '5. 동물과 에너지': '생명과학',
-    '1. 전기와 자기': '물리',
-    '2. 화학 반응의 규칙과 에너지 변화': '화학',
-    '3. 생식과 발생': '생명과학',
-    '4. 별과 우주': '지구과학',
-    '1. 화학 반응의 규칙성과 에너지 변화': '화학',
-    '2. 기권과 날씨': '지구과학',
-    '3. 운동과 에너지': '물리',
-    '4. 자극과 반응': '생명과학',
-    '1. 운동과 에너지': '물리',
-    '2. 화학 변화와 이온': '화학',
-    '3. 지구와 우주': '지구과학',
-    '4. 과학 기술과 인류 문명': '통합과학',
-    '1. 물질의 특성': '화학',
-    '2. 빛과 파동': '물리',
-    '3. 기권과 날씨': '지구과학',
-    '4. 소화, 순환, 호흡, 배설': '생명과학',
-};
+    '1단원-힘과 우리 생활': '물리',
+    '2단원-동물의 생활': '생명과학',
+    '3단원-식물의 생활': '생명과학',
+    '4단원-생물의 한살이': '생명과학',
+    '1단원-자석의 이용': '물리',
+    '2단원-물의 상태 변화': '화학',
+    '3단원-땅의 변화': '지구과학',
+    '4단원-다양한 생물과 우리 생활': '생명과학',
+    '1단원-지층과 화석': '지구과학',
+    '2단원-빛의 성질': '물리',
+    '3단원-용해와 용액': '화학',
+    '4단원-우리 몸의 구조와 기능': '생명과학',
+    '1단원-산과 염기': '화학',
+    '2단원-물체의 운동': '물리',
+    '3단원-식물의 구조와 기능': '생명과학',
+    '4단원-지구의 운동': '지구과학',
+    '1단원-과학과 인류의 지속 가능한 삶': '물리', 
+    '2단원-생물의 구성과 다양성': '생명과학',
+    '3단원-열': '물리',
+    '4단원-물질의 상태 변화': '화학',
+    '1단원-물질의 특성': '화학',
+    '2단원-지권의 변화': '지구과학',
+    '3단원-빛과 파동': '물리',
+    '4단원-물질의 구성': '화학',
+    '1단원-화학 반응의 규칙과 에너지 변화': '물리', 
+    '2단원-기권과 날씨': '생명과학', 
+    '3단원-운동과 에너지': '물리',
+    '4단원-자극과 반응': '화학', 
+  };
+  
 
 const generateCircledNumber = (num: number) => {
     return `①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳`[num-1] || String(num);
@@ -178,7 +162,7 @@ export function QuestionModal({
   React.useEffect(() => {
     if (selectedSubUnitId) {
         const selectedUnit = curriculumUnits.find(unit => unit.id === selectedSubUnitId);
-        const largeUnitKey = Object.keys(contentAreaMapping).find(key => key === selectedUnit?.largeUnit);
+        const largeUnitKey = selectedUnit?.largeUnit;
         
         if (largeUnitKey && contentAreaMapping[largeUnitKey]) {
             form.setValue('contentArea', contentAreaMapping[largeUnitKey]);
@@ -206,15 +190,15 @@ export function QuestionModal({
         };
 
         if (question) {
-             const selectedUnit = curriculumUnits.find(unit => unit.id === question.subUnitType);
-             const contentArea = question.contentArea || (selectedUnit?.largeUnit && contentAreaMapping[selectedUnit.largeUnit]) || '';
+            const selectedUnit = curriculumUnits.find(unit => unit.id === question.subUnitType);
+            const contentArea = question.contentArea || (selectedUnit?.largeUnit && contentAreaMapping[selectedUnit.largeUnit]) || '';
             form.reset({
                 ...defaultValues,
                 ...question,
                 isReviewed: question.isReviewed || false,
+                contentArea,
                 answerType: question.answerType || (question.questionType === '유형' ? '선지형' : undefined),
                 answers: question.answers || [],
-                contentArea,
             });
         } else {
             form.reset(defaultValues);
@@ -402,7 +386,7 @@ export function QuestionModal({
                                 <SelectContent>
                                     {curriculumUnits.map(unit => (
                                         <SelectItem key={unit.id} value={unit.id}>
-                                            {`${unit.semester} > ${unit.largeUnit} > ${unit.mediumUnit} > ${unit.subUnit}`}
+                                            {`${unit.semester} > ${unit.largeUnit} > ${unit.mediumUnit}`}
                                         </SelectItem>
                                     ))}
                                 </SelectContent>
@@ -675,27 +659,29 @@ export function QuestionModal({
             </div>
             
             <DialogFooter className="p-6 pt-4 border-t sticky bottom-0 bg-background z-10 flex justify-between items-center">
-                <FormField
-                  control={form.control}
-                  name="isReviewed"
-                  render={({ field }) => (
-                      <FormItem className="flex flex-row items-center space-x-3 space-y-0">
-                          <FormLabel>검수 여부</FormLabel>
-                          <FormControl>
-                              <Switch
-                                  checked={field.value}
-                                  onCheckedChange={field.onChange}
-                              />
-                          </FormControl>
-                          <span className="text-sm text-muted-foreground">
-                              {isReviewed ? '검수완료' : '검수전'}
-                          </span>
-                      </FormItem>
-                  )}
-                />
+                <div className="flex items-center gap-4">
+                    <FormField
+                      control={form.control}
+                      name="isReviewed"
+                      render={({ field }) => (
+                          <FormItem className="flex flex-row items-center space-x-3 space-y-0">
+                              <FormLabel>검수 여부</FormLabel>
+                              <FormControl>
+                                  <Switch
+                                      checked={field.value}
+                                      onCheckedChange={field.onChange}
+                                  />
+                              </FormControl>
+                              <span className="text-sm text-muted-foreground">
+                                  {isReviewed ? '검수완료' : '검수전'}
+                              </span>
+                          </FormItem>
+                      )}
+                    />
+                </div>
                 <div className="flex gap-2">
-                    <Button type="button" variant="outline" className='mr-2'>미리보기</Button>
-                    <Button type="submit" className='mr-2'>문제 저장</Button>
+                    <Button type="button" variant="outline">미리보기</Button>
+                    <Button type="submit">문제 저장</Button>
                     <DialogClose asChild>
                         <Button type="button" variant="secondary">닫기</Button>
                     </DialogClose>
