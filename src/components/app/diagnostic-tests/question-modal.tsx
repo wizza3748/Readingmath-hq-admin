@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useFirestore } from '@/firebase';
-import { createQuestion, updateQuestion, type Question, getNextQuestionNumber } from '@/lib/db';
+import { createQuestion, updateQuestion, type Question, getNextQuestionNumber, getCurriculumUnits, type CurriculumUnit } from '@/lib/db';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -56,12 +56,6 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-const subUnitOptions = [
-    "1-1. 물질의 규칙성과 결합", "1-2. 자연의 구성 물질",
-    "2-1. 역학적 시스템", "2-2. 지구 시스템",
-    "3-1. 생명 시스템", "3-2. 화학 변화",
-    "4-1. 변화와 다양성", "4-2. 환경과 에너지"
-];
 const contentAreaMapping: { [key: string]: string } = {
     "1-1. 물질의 규칙성과 결합": "화학",
     "1-2. 자연의 구성 물질": "화학",
@@ -94,6 +88,14 @@ export function QuestionModal({
   const [open, setOpen] = React.useState(false);
   const firestore = useFirestore();
   const { toast } = useToast();
+  const [curriculumUnits, setCurriculumUnits] = React.useState<CurriculumUnit[]>([]);
+
+  React.useEffect(() => {
+    if (firestore) {
+      const unsubscribe = getCurriculumUnits(firestore, setCurriculumUnits);
+      return () => unsubscribe();
+    }
+  }, [firestore]);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -113,20 +115,29 @@ export function QuestionModal({
     },
   });
   
-  const selectedSubUnit = form.watch('subUnitType');
+  const selectedSubUnitId = form.watch('subUnitType');
 
   React.useEffect(() => {
-    if (selectedSubUnit && contentAreaMapping[selectedSubUnit]) {
-        form.setValue('contentArea', contentAreaMapping[selectedSubUnit]);
+    if (selectedSubUnitId) {
+        const selectedUnit = curriculumUnits.find(unit => unit.id === selectedSubUnitId);
+        if (selectedUnit?.largeUnit && contentAreaMapping[selectedUnit.largeUnit]) {
+            form.setValue('contentArea', contentAreaMapping[selectedUnit.largeUnit]);
+        } else {
+             // Find a match in the new data structure logic if needed, for now this is a fallback.
+            const subUnitString = curriculumUnits.find(u => u.id === selectedSubUnitId)?.subUnit;
+            if(subUnitString && contentAreaMapping[subUnitString]) {
+                form.setValue('contentArea', contentAreaMapping[subUnitString]);
+            }
+        }
     }
-  }, [selectedSubUnit, form]);
+  }, [selectedSubUnitId, form, curriculumUnits]);
 
 
   React.useEffect(() => {
     if (open) {
       if (question) {
-        // For editing an existing question
-        const contentArea = question.contentArea || (question.subUnitType ? contentAreaMapping[question.subUnitType] : '');
+        const selectedUnit = curriculumUnits.find(unit => unit.id === question.subUnitType);
+        const contentArea = question.contentArea || (selectedUnit?.largeUnit ? contentAreaMapping[selectedUnit.largeUnit] : '');
         form.reset({
           ...question,
           answerType: question.answerType || (question.questionType === '유형' ? '입력형' : undefined),
@@ -150,7 +161,7 @@ export function QuestionModal({
         });
       }
     }
-  }, [open, question, form, questionType]);
+  }, [open, question, form, questionType, curriculumUnits]);
 
   const onSubmit = async (data: FormValues) => {
     if (!firestore) return;
@@ -232,7 +243,11 @@ export function QuestionModal({
                                 <Select onValueChange={field.onChange} value={field.value}>
                                 <FormControl><SelectTrigger><SelectValue placeholder="중단원 선택" /></SelectTrigger></FormControl>
                                 <SelectContent>
-                                    {subUnitOptions.map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}
+                                    {curriculumUnits.map(unit => (
+                                        <SelectItem key={unit.id} value={unit.id}>
+                                            {`${unit.semester} > ${unit.largeUnit} > ${unit.mediumUnit} > ${unit.subUnit}`}
+                                        </SelectItem>
+                                    ))}
                                 </SelectContent>
                                 </Select>
                                 <FormMessage />

@@ -80,7 +80,7 @@
         "questionNumber": { "type": "number", "description": "Sequential number of the question within the test." },
         "questionType": { "type": "string", "enum": ["유형", "서술형"], "description": "Type of the question." },
         "difficulty": { "type": "string", "enum": ["하", "중하", "중", "중상", "상"], "description": "Difficulty level of the question." },
-        "subUnitType": { "type": "string", "description": "The sub-unit type based on the curriculum." },
+        "subUnitType": { "type": "string", "description": "The sub-unit type based on the curriculum. Stores the ID from curriculum-units." },
         "contentArea": { "type": "string", "enum": ["물리", "생명과학", "지구과학", "화학", "탐구활동", "통합과학"], "description": "The specific content area of the question." },
         "behavioralArea": { "type": "string", "enum": ["개념이해력", "문제해결력", "문해력", "추론력"], "description": "The behavioral area the question assesses." },
         "prompt": { "type": "string", "description": "The main text or prompt of the question (can be rich text)." },
@@ -101,6 +101,19 @@
         "updatedAt": { "type": "string", "format": "date-time" }
       },
       "required": ["questionNumber", "questionType", "difficulty", "subUnitType", "behavioralArea", "prompt", "isReviewed"]
+    },
+    "CurriculumUnit": {
+      "title": "Curriculum Unit",
+      "description": "Represents a hierarchical unit in the curriculum.",
+      "type": "object",
+      "properties": {
+        "semester": { "type": "string", "description": "e.g., '초등 3-1'" },
+        "largeUnit": { "type": "string", "description": "e.g., '1단원-덧셈과 뺄셈'" },
+        "mediumUnit": { "type": "string", "description": "e.g., '덧셈'" },
+        "subUnit": { "type": "string", "description": "e.g., '(1) 받아올림이 없는 세 자리 수의 덧셈'" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["semester", "largeUnit", "mediumUnit", "subUnit"]
     }
   },
   "auth": {
@@ -118,6 +131,12 @@
     "/diagnostic-tests/{testId}/questions/{questionId}": {
         "schema": { "$ref": "#/entities/Question" },
         "description": "Stores all questions for a specific diagnostic test."
+    },
+    "/curriculum-units/{unitId}": {
+        "schema": { "$ref": "#/entities/CurriculumUnit" },
+        "description": "Stores the hierarchical curriculum structure."
     }
   }
 }
+
+    

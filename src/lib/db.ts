@@ -20,6 +20,7 @@ import {
   writeBatch,
   runTransaction,
   increment,
+  setDoc,
 } from 'firebase/firestore';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError, type SecurityRuleContext } from '@/firebase/errors';
@@ -544,12 +545,10 @@ export async function createBlankQuestion(db: Firestore, testId: string, questio
         throw new Error("Test document does not exist!");
       }
 
-      // Get next question number
       const questionsQuery = query(questionsCollRef, orderBy("questionNumber", "desc"));
-      const questionsSnapshot = await getDocs(questionsQuery); // This should be getDocs, not transaction.get
+      const questionsSnapshot = await getDocs(questionsQuery);
       const nextQuestionNumber = questionsSnapshot.empty ? 1 : (questionsSnapshot.docs[0].data().questionNumber || 0) + 1;
 
-      // Define new blank question
       const newQuestionRef = doc(questionsCollRef);
       const newQuestionData = {
         questionNumber: nextQuestionNumber,
@@ -565,9 +564,7 @@ export async function createBlankQuestion(db: Firestore, testId: string, questio
         updatedAt: serverTimestamp(),
       };
 
-      // Set new question and update totalQuestions
       transaction.set(newQuestionRef, newQuestionData);
-      transaction.update(testDocRef, { totalQuestions: increment(1) });
     });
   } catch (serverError) {
     console.error("Transaction failed: ", serverError);
@@ -639,3 +636,75 @@ export async function updateQuestionExtended(db: Firestore, testId: string, ques
         errorEmitter.emit('permission-error', permissionError);
     });
 }
+
+//
+// Curriculum
+//
+export type CurriculumUnit = {
+    id: string;
+    semester: string;
+    largeUnit: string;
+    mediumUnit: string;
+    subUnit: string;
+    createdAt: Timestamp;
+};
+
+const initialCurriculumUnits: Omit<CurriculumUnit, 'id' | 'createdAt'>[] = [
+    { semester: '초등 3-1', largeUnit: '1단원-덧셈과 뺄셈', mediumUnit: '덧셈', subUnit: '(1) 받아올림이 없는 세 자리 수의 덧셈' },
+    { semester: '초등 3-1', largeUnit: '1단원-덧셈과 뺄셈', mediumUnit: '덧셈', subUnit: '(2) 받아올림이 있는 세 자리 수의 덧셈' },
+    { semester: '초등 3-1', largeUnit: '1단원-덧셈과 뺄셈', mediumUnit: '뺄셈', subUnit: '(3) 받아내림이 없는 세 자리수의 뺄셈' },
+    { semester: '초등 3-1', largeUnit: '1단원-덧셈과 뺄셈', mediumUnit: '뺄셈', subUnit: '(4) 받아내림이 있는 세 자리수의 뺄셈' },
+    { semester: '초등 3-1', largeUnit: '2단원-평면도형', mediumUnit: '도형', subUnit: '(1) 선분, 반직선, 직선' },
+    { semester: '초등 3-1', largeUnit: '2단원-평면도형', mediumUnit: '도형', subUnit: '(2) 각, 직각' },
+    { semester: '초등 3-1', largeUnit: '2단원-평면도형', mediumUnit: '도형', subUnit: '(3) 직각삼각형, 직사각형, 정사각형' },
+    { semester: '초등 3-1', largeUnit: '3단원-나눗셈', mediumUnit: '나눗셈', subUnit: '(1) 똑같이 나누기' },
+];
+
+async function seedCurriculumUnits(db: Firestore) {
+    const collRef = collection(db, "curriculum-units");
+    const batch = writeBatch(db);
+
+    for (const unit of initialCurriculumUnits) {
+        const docRef = doc(collRef);
+        batch.set(docRef, { ...unit, createdAt: serverTimestamp() });
+    }
+
+    await batch.commit().catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: collRef.path,
+            operation: 'create',
+            requestResourceData: initialCurriculumUnits,
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+    });
+}
+
+export function getCurriculumUnits(db: Firestore, callback: (units: CurriculumUnit[]) => void) {
+    const collRef = collection(db, "curriculum-units");
+    const q = query(collRef, orderBy("semester"), orderBy("largeUnit"), orderBy("mediumUnit"), orderBy("subUnit"));
+  
+    const unsubscribe = onSnapshot(q, async (querySnapshot) => {
+      if (querySnapshot.empty) {
+          console.log("No curriculum units found, seeding initial data...");
+          await seedCurriculumUnits(db);
+      } else {
+          const units: CurriculumUnit[] = [];
+          querySnapshot.forEach((doc) => {
+            units.push({ id: doc.id, ...doc.data() } as CurriculumUnit);
+          });
+          callback(units);
+      }
+    }, async (serverError) => {
+      console.error("Error fetching curriculum units:", serverError);
+      const permissionError = new FirestorePermissionError({
+          path: collRef.path,
+          operation: 'list',
+      } satisfies SecurityRuleContext);
+      errorEmitter.emit('permission-error', permissionError);
+      callback([]);
+    });
+  
+    return unsubscribe;
+}
+
+    
