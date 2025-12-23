@@ -401,19 +401,21 @@ export function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTe
       }
     );
   };
-
-  getDocs(collRef)
-    .then(async (snapshot) => {
+  
+  const checkAndSeed = async () => {
+    try {
+      const snapshot = await getDocs(collRef);
       if (snapshot.empty) {
         console.log('No diagnostic tests found, seeding initial data...');
         await seedDiagnosticTests(db);
       }
-      unsubscribe = setupListener();
-    })
-    .catch((err) => {
-      console.error('Error checking for initial data:', err);
-      unsubscribe = setupListener();
-    });
+    } catch (e) {
+      console.error("Error checking/seeding diagnostic tests", e);
+    }
+    unsubscribe = setupListener();
+  };
+
+  checkAndSeed();
 
   return () => {
     unsubscribe?.();
@@ -899,3 +901,5 @@ export function getCurriculumUnits(db: Firestore, callback: (units: CurriculumUn
   
   return unsubscribe;
 }
+
+    
