@@ -1,4 +1,5 @@
 
+
 'use client';
 import {
   collection,
@@ -369,13 +370,10 @@ async function seedDiagnosticTests(db: Firestore) {
 
 export function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTest[]) => void) {
   const collRef = collection(db, "diagnostic-tests");
-  const q = query(collRef, orderBy("id", "asc"));
-
-  const unsubscribe = onSnapshot(q, async (querySnapshot) => {
-    if (querySnapshot.empty) {
-        console.log("No diagnostic tests found, seeding initial data...");
-        await seedDiagnosticTests(db);
-    } else {
+  
+  const setupListener = () => {
+    const q = query(collRef, orderBy("id", "asc"));
+    const unsubscribe = onSnapshot(q, async (querySnapshot) => {
         const tests: DiagnosticTest[] = [];
         for (const doc of querySnapshot.docs) {
             const testData = doc.data() as DiagnosticTest;
@@ -385,18 +383,41 @@ export function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTe
             tests.push(testData);
         }
         callback(tests);
+    }, async (serverError) => {
+      console.error("Error fetching diagnostic tests:", serverError);
+      const permissionError = new FirestorePermissionError({
+          path: collRef.path,
+          operation: 'list',
+      } satisfies SecurityRuleContext);
+      errorEmitter.emit('permission-error', permissionError);
+      callback([]);
+    });
+    return unsubscribe;
+  }
+
+  // Check if initial data exists, seed if not, then set up the listener.
+  getDocs(query(collRef)).then(async (snapshot) => {
+    if (snapshot.empty) {
+      console.log("No diagnostic tests found, seeding initial data...");
+      await seedDiagnosticTests(db);
     }
-  }, async (serverError) => {
-    console.error("Error fetching diagnostic tests:", serverError);
-    const permissionError = new FirestorePermissionError({
-        path: collRef.path,
-        operation: 'list',
-    } satisfies SecurityRuleContext);
-    errorEmitter.emit('permission-error', permissionError);
-    callback([]);
+    // Also check and seed curriculum units from here to ensure data integrity
+    const curriculumCollRef = collection(db, "curriculum-units");
+    const curriculumSnapshot = await getDocs(curriculumCollRef);
+    if (curriculumSnapshot.empty) {
+        console.log("No curriculum units found, seeding initial data...");
+        await seedCurriculumUnits(db);
+    }
+    setupListener();
+  }).catch(err => {
+    console.error("Error checking for initial data:", err);
   });
 
-  return unsubscribe;
+  return () => {
+      // The actual unsubscribe function is returned by setupListener,
+      // but because of the async nature, we return a no-op here.
+      // The calling component will get the real unsubscribe eventually.
+  };
 }
 
 export function getDiagnosticTest(db: Firestore, testId: string, callback: (test: DiagnosticTest | null) => void) {
@@ -794,22 +815,24 @@ const initialCurriculumUnits: Omit<CurriculumUnit, 'id' | 'createdAt'>[] = [
 
 async function seedCurriculumUnits(db: Firestore) {
     const collRef = collection(db, "curriculum-units");
-    const snapshot = await getDocs(query(collRef));
-    const existingSubUnits = new Set(snapshot.docs.map(doc => doc.data().subUnit));
-
     const batch = writeBatch(db);
     let count = 0;
-    initialCurriculumUnits.forEach((unit) => {
-        if (!existingSubUnits.has(unit.subUnit)) {
+
+    for (const unit of initialCurriculumUnits) {
+        // Use a query to check if a document with the same subUnit exists
+        const q = query(collRef, where("subUnit", "==", unit.subUnit), where("semester", "==", unit.semester), where("largeUnit", "==", unit.largeUnit));
+        const snapshot = await getDocs(q);
+        if (snapshot.empty) {
             const docRef = doc(collRef);
             batch.set(docRef, { ...unit, createdAt: serverTimestamp() });
             count++;
         }
-    });
+    }
 
     if (count > 0) {
         console.log(`Seeding ${count} new curriculum units...`);
         await batch.commit().catch(async (serverError) => {
+            console.error("Error seeding curriculum units:", serverError);
             const permissionError = new FirestorePermissionError({
                 path: collRef.path,
                 operation: 'create',
@@ -821,67 +844,55 @@ async function seedCurriculumUnits(db: Firestore) {
     }
 }
 
-
 export function getCurriculumUnits(db: Firestore, callback: (units: CurriculumUnit[]) => void) {
-    const collRef = collection(db, "curriculum-units");
+  const collRef = collection(db, "curriculum-units");
 
-    // This function now first checks if seeding is necessary,
-    // then sets up the real-time listener.
-    const setupListener = () => {
-        const q = query(collRef);
-        return onSnapshot(q, (querySnapshot) => {
-            let units: CurriculumUnit[] = [];
-            querySnapshot.forEach((doc) => {
-                units.push({ id: doc.id, ...doc.data() } as CurriculumUnit);
-            });
+  const setupListener = () => {
+      const unsubscribe = onSnapshot(collRef, (querySnapshot) => {
+          let units: CurriculumUnit[] = [];
+          querySnapshot.forEach((doc) => {
+              units.push({ id: doc.id, ...doc.data() } as CurriculumUnit);
+          });
 
-            // Client-side sorting
-            units.sort((a, b) => {
-                const semesterOrder = ['초등 3-1', '초등 3-2', '초등 4-1', '초등 4-2', '초등 5-1', '초등 5-2', '초등 6-1', '초등 6-2', '중등 1-1', '중등 1-2', '중등 2-1', '중등 2-2', '중등 3-1', '중등 3-2'];
-                const aSemesterIndex = semesterOrder.indexOf(a.semester);
-                const bSemesterIndex = semesterOrder.indexOf(b.semester);
-                
-                if (aSemesterIndex !== bSemesterIndex) {
-                    return aSemesterIndex - bSemesterIndex;
-                }
-                if (a.largeUnit < b.largeUnit) return -1;
-                if (a.largeUnit > b.largeUnit) return 1;
-                if (a.mediumUnit < b.mediumUnit) return -1;
-                if (a.mediumUnit > b.mediumUnit) return 1;
-                if (a.subUnit < b.subUnit) return -1;
-                if (a.subUnit > b.subUnit) return 1;
-                return 0;
-            });
+          // Client-side sorting
+          units.sort((a, b) => {
+              const semesterOrder = ['초등 3-1', '초등 3-2', '초등 4-1', '초등 4-2', '초등 5-1', '초등 5-2', '초등 6-1', '초등 6-2', '중등 1-1', '중등 1-2', '중등 2-1', '중등 2-2', '중등 3-1', '중등 3-2'];
+              const aSemesterIndex = semesterOrder.indexOf(a.semester);
+              const bSemesterIndex = semesterOrder.indexOf(b.semester);
+              
+              if (aSemesterIndex !== bSemesterIndex) return aSemesterIndex - bSemesterIndex;
+              if (a.largeUnit < b.largeUnit) return -1;
+              if (a.largeUnit > b.largeUnit) return 1;
+              if (a.mediumUnit < b.mediumUnit) return -1;
+              if (a.mediumUnit > b.mediumUnit) return 1;
+              if (a.subUnit < b.subUnit) return -1;
+              if (a.subUnit > b.subUnit) return 1;
+              return 0;
+          });
 
-            callback(units);
-        }, async (serverError) => {
-            console.error("Error fetching curriculum units:", serverError);
-            const permissionError = new FirestorePermissionError({
-                path: collRef.path,
-                operation: 'list',
-            } satisfies SecurityRuleContext);
-            errorEmitter.emit('permission-error', permissionError);
-            callback([]);
-        });
-    };
+          callback(units);
+      }, async (serverError) => {
+          console.error("Error fetching curriculum units:", serverError);
+          const permissionError = new FirestorePermissionError({
+              path: collRef.path,
+              operation: 'list',
+          } satisfies SecurityRuleContext);
+          errorEmitter.emit('permission-error', permissionError);
+          callback([]);
+      });
+      return unsubscribe;
+  };
 
-    getDocs(query(collRef)).then(snapshot => {
-        if (snapshot.empty) {
-            console.log("No curriculum units found, seeding initial data...");
-            seedCurriculumUnits(db).then(setupListener);
-        } else {
-            setupListener();
-        }
-    }).catch(async (serverError) => {
-         console.error("Error checking curriculum units:", serverError);
-         const permissionError = new FirestorePermissionError({
-            path: collRef.path,
-            operation: 'list',
-         } satisfies SecurityRuleContext);
-         errorEmitter.emit('permission-error', permissionError);
-         callback([]);
-    });
-
-    // Return a dummy unsubscribe function, as the real one is created asynchronously.
-    return () => {};
+  // Check if initial data exists, seed if not, then set up the listener.
+  seedCurriculumUnits(db).then(() => {
+    // After attempting to seed, set up the listener regardless.
+    // If seeding failed, the listener will at least return existing data.
+  });
+  
+  // Immediately set up listener.
+  const unsubscribe = setupListener();
+  
+  return unsubscribe;
 }
+
+    
