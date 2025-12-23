@@ -124,6 +124,7 @@ export function QuestionList({ testId }: { testId: string }) {
         } 
     },
     { accessorKey: 'contentArea', header: '내용영역', cell: ({ row }) => row.original.contentArea || '-' },
+    { accessorKey: 'behavioralArea', header: '행동영역', cell: ({ row }) => row.original.behavioralArea || '-' },
     { accessorKey: 'difficulty', header: '난이도', cell: ({ row }) => row.original.difficulty || '-' },
     { 
         accessorKey: 'prompt', 
