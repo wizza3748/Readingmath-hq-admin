@@ -270,25 +270,79 @@ export function QuestionModal({
   }
 
   const generateOptions = (type: 'circled' | 'korean' | 'ox') => {
+    let newAnswers: any[];
+
     if (type === 'ox') {
       replace([{ value: 'O', isCorrect: false }, { value: 'X', isCorrect: false }]);
       setShowOXConfirm(false);
       return;
     }
-    const newAnswers = Array.from({ length: 2 }, (_, index) => ({
-      value: type === 'circled' ? `${generateCircledNumber(index + 1)} ` : `${generateCircledKorean(index + 1)} `,
-      isCorrect: false
-    }));
+    
+    if (fields.length > 0 && type !== 'ox') {
+      newAnswers = fields.map((field, index) => ({
+        ...field,
+        value: type === 'circled' ? `${generateCircledNumber(index + 1)} ` : `${generateCircledKorean(index + 1)} `
+      }));
+    } else {
+      newAnswers = Array.from({ length: 2 }, (_, index) => ({
+        value: type === 'circled' ? `${generateCircledNumber(index + 1)} ` : `${generateCircledKorean(index + 1)} `,
+        isCorrect: false
+      }));
+    }
     replace(newAnswers);
   };
 
   const handleOXGenerate = () => {
-    if (fields.length > 0) {
+    if (fields.some(f => f.value !== '')) {
       setShowOXConfirm(true);
     } else {
       generateOptions('ox');
     }
   }
+  
+  const handleAddChoice = () => {
+    const nextNum = fields.length + 1;
+    let newValue = '';
+    
+    // Check if the current choices are numbered or lettered
+    const firstChoice = fields[0]?.value as string || '';
+    if (firstChoice.startsWith('①')) {
+      newValue = `${generateCircledNumber(nextNum)} `;
+    } else if (firstChoice.startsWith('㉠')) {
+      newValue = `${generateCircledKorean(nextNum)} `;
+    }
+    
+    append({ value: newValue, isCorrect: false });
+  };
+  
+  const handleRemoveChoice = (index: number) => {
+    remove(index);
+    // After removing, re-number/re-letter the remaining choices
+    const currentValues = form.getValues('answers') || [];
+    const firstChoice = currentValues[0]?.value as string || '';
+    
+    let needsReordering = false;
+    if (firstChoice.startsWith('①') || firstChoice.startsWith('㉠')) {
+        needsReordering = true;
+    }
+
+    if(needsReordering && currentValues.length > 1) {
+        const newAnswers = currentValues.filter((_, i) => i !== index).map((answer, i) => {
+            let newPrefix = '';
+            if (firstChoice.startsWith('①')) {
+                newPrefix = `${generateCircledNumber(i + 1)} `;
+            } else if (firstChoice.startsWith('㉠')) {
+                newPrefix = `${generateCircledKorean(i + 1)} `;
+            }
+            const existingValue = (answer.value as string).replace(/^[①-⑳㉠-㉭]\s/, '');
+            return {
+                ...answer,
+                value: `${newPrefix}${existingValue}`
+            }
+        });
+        replace(newAnswers);
+    }
+};
 
   const handleCorrectAnswerChange = (changedIndex: number, isChecked: boolean) => {
     const currentAnswers = form.getValues('answers') || [];
@@ -453,6 +507,7 @@ export function QuestionModal({
 
                   {questionType === '유형' && (
                     <div className="p-4 border rounded-md bg-slate-50 space-y-4">
+                         <h3 className="text-lg font-semibold">답안</h3>
                          <FormField
                             control={form.control}
                             name="answerType"
@@ -561,14 +616,14 @@ export function QuestionModal({
                                     <Button type="button" variant="outline" size="sm" onClick={() => generateOptions('korean')}>㉠㉡ 생성</Button>
                                     <Button type="button" variant="outline" size="sm" onClick={() => generateOptions('circled')}>①② 생성</Button>
                                     <Button type="button" variant="outline" size="sm" onClick={handleOXGenerate}>OX 생성</Button>
-                                    <Button type="button" variant="default" size="sm" onClick={() => append({ value: '', isCorrect: false })}><Plus className="mr-2 h-4 w-4" />선지 추가</Button>
+                                    <Button type="button" variant="default" size="sm" onClick={handleAddChoice}><Plus className="mr-2 h-4 w-4" />선지 추가</Button>
                                 </div>
                             </div>
                             {fields.map((field, index) => (
                                <div key={field.id} className="flex items-start gap-2">
                                   <div className="flex flex-col items-center gap-1 pt-1">
                                     <FormLabel>선지{index + 1}</FormLabel>
-                                    <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)} className="h-8 w-8 text-red-500 hover:bg-red-50 hover:text-red-600">
+                                    <Button type="button" variant="ghost" size="icon" onClick={() => handleRemoveChoice(index)} className="h-8 w-8 text-red-500 hover:bg-red-50 hover:text-red-600">
                                         <Trash2 className="h-4 w-4" />
                                     </Button>
                                   </div>
@@ -686,5 +741,6 @@ export function QuestionModal({
     </>
   );
 }
+
 
 
