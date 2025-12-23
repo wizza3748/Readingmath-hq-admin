@@ -18,6 +18,8 @@ import {
   deleteDoc,
   FieldValue,
   writeBatch,
+  runTransaction,
+  increment,
 } from 'firebase/firestore';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError, type SecurityRuleContext } from '@/firebase/errors';
@@ -325,21 +327,21 @@ export type DiagnosticTest = {
   status: '검수전' | '검수완료';
 };
 
-const initialDiagnosticTests: Omit<DiagnosticTest, 'createdAt'>[] = [
-    { id: 15, semesterName: '초등 3학년 1학기', totalQuestions: 25, status: '검수전' },
-    { id: 16, semesterName: '초등 3학년 2학기', totalQuestions: 25, status: '검수전' },
-    { id: 17, semesterName: '초등 4학년 1학기', totalQuestions: 25, status: '검수전' },
-    { id: 18, semesterName: '초등 4학년 2학기', totalQuestions: 25, status: '검수전' },
-    { id: 19, semesterName: '초등 5학년 1학기', totalQuestions: 25, status: '검수전' },
-    { id: 20, semesterName: '초등 5학년 2학기', totalQuestions: 25, status: '검수전' },
-    { id: 21, semesterName: '초등 6학년 1학기', totalQuestions: 25, status: '검수전' },
-    { id: 22, semesterName: '초등 6학년 2학기', totalQuestions: 25, status: '검수전' },
-    { id: 23, semesterName: '중등 1학년 1학기', totalQuestions: 30, status: '검수전' },
-    { id: 24, semesterName: '중등 1학년 2학기', totalQuestions: 30, status: '검수전' },
-    { id: 25, semesterName: '중등 2학년 1학기', totalQuestions: 30, status: '검수전' },
-    { id: 26, semesterName: '중등 2학년 2학기', totalQuestions: 30, status: '검수전' },
-    { id: 27, semesterName: '중등 3학년 1학기', totalQuestions: 30, status: '검수전' },
-    { id: 28, semesterName: '중등 3학년 2학기', totalQuestions: 30, status: '검수전' },
+const initialDiagnosticTests: Omit<DiagnosticTest, 'createdAt' | 'totalQuestions'>[] = [
+    { id: 15, semesterName: '초등 3학년 1학기', status: '검수전' },
+    { id: 16, semesterName: '초등 3학년 2학기', status: '검수전' },
+    { id: 17, semesterName: '초등 4학년 1학기', status: '검수전' },
+    { id: 18, semesterName: '초등 4학년 2학기', status: '검수전' },
+    { id: 19, semesterName: '초등 5학년 1학기', status: '검수전' },
+    { id: 20, semesterName: '초등 5학년 2학기', status: '검수전' },
+    { id: 21, semesterName: '초등 6학년 1학기', status: '검수전' },
+    { id: 22, semesterName: '초등 6학년 2학기', status: '검수전' },
+    { id: 23, semesterName: '중등 1학년 1학기', status: '검수전' },
+    { id: 24, semesterName: '중등 1학년 2학기', status: '검수전' },
+    { id: 25, semesterName: '중등 2학년 1학기', status: '검수전' },
+    { id: 26, semesterName: '중등 2학년 2학기', status: '검수전' },
+    { id: 27, semesterName: '중등 3학년 1학기', status: '검수전' },
+    { id: 28, semesterName: '중등 3학년 2학기', status: '검수전' },
 ];
 
 async function seedDiagnosticTests(db: Firestore) {
@@ -348,7 +350,7 @@ async function seedDiagnosticTests(db: Firestore) {
 
     initialDiagnosticTests.forEach(test => {
         const docRef = doc(collRef, String(test.id));
-        batch.set(docRef, { ...test, createdAt: serverTimestamp() });
+        batch.set(docRef, { ...test, totalQuestions: 0, createdAt: serverTimestamp() });
     });
 
     await batch.commit().catch(async (serverError) => {
@@ -483,23 +485,36 @@ export async function getNextQuestionNumber(db: Firestore, testId: string): Prom
 }
 
 export async function createQuestion(db: Firestore, testId: string, questionData: Partial<Omit<Question, 'id'>>) {
-    const collRef = collection(db, `diagnostic-tests/${testId}/questions`);
-    const data = {
-        ...questionData,
-        isExtended: false,
-        solutionCount: 0,
-        createdAt: serverTimestamp(),
-        updatedAt: serverTimestamp(),
-    };
-    await addDoc(collRef, data)
-     .catch(async (serverError) => {
+    const testDocRef = doc(db, 'diagnostic-tests', testId);
+    const questionsCollRef = collection(db, `diagnostic-tests/${testId}/questions`);
+
+    try {
+        await runTransaction(db, async (transaction) => {
+            // 1. Increment the totalQuestions count on the parent test document.
+            transaction.update(testDocRef, { 
+                totalQuestions: increment(1) 
+            });
+
+            // 2. Add the new question document.
+            const newQuestionRef = doc(questionsCollRef);
+            const data = {
+                ...questionData,
+                isExtended: false,
+                solutionCount: 0,
+                createdAt: serverTimestamp(),
+                updatedAt: serverTimestamp(),
+            };
+            transaction.set(newQuestionRef, data);
+        });
+    } catch (serverError) {
         const permissionError = new FirestorePermissionError({
-            path: collRef.path,
+            path: questionsCollRef.path,
             operation: 'create',
-            requestResourceData: data,
+            requestResourceData: questionData,
         } satisfies SecurityRuleContext);
         errorEmitter.emit('permission-error', permissionError);
-    });
+        throw serverError; // Re-throw the error to be caught by the calling function
+    }
 }
 
 export async function updateQuestion(db: Firestore, testId: string, questionId: string, questionData: Partial<Omit<Question, 'id'>>) {
@@ -520,15 +535,27 @@ export async function updateQuestion(db: Firestore, testId: string, questionId: 
 }
 
 export async function deleteQuestion(db: Firestore, testId: string, questionId: string) {
-    const docRef = doc(db, `diagnostic-tests/${testId}/questions`, questionId);
-    await deleteDoc(docRef)
-     .catch(async (serverError) => {
+    const testDocRef = doc(db, 'diagnostic-tests', testId);
+    const questionDocRef = doc(db, `diagnostic-tests/${testId}/questions`, questionId);
+
+    try {
+        await runTransaction(db, async (transaction) => {
+            // 1. Decrement the totalQuestions count on the parent test document.
+            transaction.update(testDocRef, {
+                totalQuestions: increment(-1)
+            });
+
+            // 2. Delete the question document.
+            transaction.delete(questionDocRef);
+        });
+    } catch (serverError) {
         const permissionError = new FirestorePermissionError({
-            path: docRef.path,
+            path: questionDocRef.path,
             operation: 'delete',
         } satisfies SecurityRuleContext);
         errorEmitter.emit('permission-error', permissionError);
-    });
+        throw serverError; // Re-throw the error to be caught by the calling function
+    }
 }
 
 export async function updateQuestionExtended(db: Firestore, testId: string, questionId: string, isExtended: boolean) {
@@ -544,3 +571,4 @@ export async function updateQuestionExtended(db: Firestore, testId: string, ques
         errorEmitter.emit('permission-error', permissionError);
     });
 }
+

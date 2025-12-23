@@ -133,7 +133,7 @@ export function QuestionModal({
           contentArea: contentArea,
         });
       } else {
-        // For creating a new question
+        // For creating a new question, reset to defaults for the specific question type
         form.reset({
           difficulty: '중',
           behavioralArea: '개념이해력',
