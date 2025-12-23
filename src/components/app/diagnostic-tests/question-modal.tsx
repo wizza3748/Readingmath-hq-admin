@@ -33,7 +33,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
@@ -50,6 +49,7 @@ import {
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { cn } from '@/lib/utils';
+import { RichEditor } from '@/components/ui/rich-editor';
 
 const answerSchema = z.object({
     id: z.string().optional(),
@@ -124,12 +124,6 @@ const contentAreaMapping: { [key: string]: string } = {
     '3. 기권과 날씨': '지구과학',
     '4. 소화, 순환, 호흡, 배설': '생명과학',
 };
-
-// Mock Rich Editor
-const RichEditor = React.forwardRef<HTMLTextAreaElement, React.ComponentProps<'textarea'>>(({ ...props }, ref) => (
-    <Textarea {...props} ref={ref} rows={5} className="bg-gray-50" />
-));
-RichEditor.displayName = 'RichEditor';
 
 const generateCircledNumber = (num: number) => {
     return `①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳`[num-1] || String(num);
@@ -655,6 +649,5 @@ export function QuestionModal({
     </>
   );
 }
-
 
     
