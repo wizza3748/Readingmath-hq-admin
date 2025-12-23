@@ -408,16 +408,13 @@ export function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTe
         console.log('No diagnostic tests found, seeding initial data...');
         await seedDiagnosticTests(db);
       }
-      const curriculumCollRef = collection(db, 'curriculum-units');
-      const curriculumSnapshot = await getDocs(curriculumCollRef);
-      if (curriculumSnapshot.empty) {
-        console.log('No curriculum units found, seeding initial data...');
-        await seedCurriculumUnits(db);
-      }
       unsubscribe = setupListener();
     })
     .catch((err) => {
       console.error('Error checking for initial data:', err);
+      // Even if checking fails (e.g., permissions), try to set up the listener.
+      // The listener's own error handling will catch subsequent permission errors.
+      unsubscribe = setupListener();
     });
 
   return () => {
@@ -853,46 +850,68 @@ async function seedCurriculumUnits(db: Firestore) {
 
 export function getCurriculumUnits(db: Firestore, callback: (units: CurriculumUnit[]) => void) {
   const collRef = collection(db, 'curriculum-units');
-  const unsubscribe = onSnapshot(
-    collRef,
-    (querySnapshot) => {
-      let units: CurriculumUnit[] = [];
-      querySnapshot.forEach((doc) => {
-        units.push({ id: doc.id, ...doc.data() } as CurriculumUnit);
-      });
+  let unsubscribe: (() => void) | null = null;
 
-      // Client-side sorting
-      units.sort((a, b) => {
-        const semesterOrder = [
-          '초등 3-1', '초등 3-2', '초등 4-1', '초등 4-2', '초등 5-1', '초등 5-2',
-          '초등 6-1', '초등 6-2', '중등 1-1', '중등 1-2', '중등 2-1', '중등 2-2',
-          '중등 3-1', '중등 3-2',
-        ];
-        const aSemesterIndex = semesterOrder.indexOf(a.semester);
-        const bSemesterIndex = semesterOrder.indexOf(b.semester);
+  const setupListener = () => {
+    return onSnapshot(
+      collRef,
+      (querySnapshot) => {
+        let units: CurriculumUnit[] = [];
+        querySnapshot.forEach((doc) => {
+          units.push({ id: doc.id, ...doc.data() } as CurriculumUnit);
+        });
 
-        if (aSemesterIndex !== bSemesterIndex)
-          return aSemesterIndex - bSemesterIndex;
-        if (a.largeUnit < b.largeUnit) return -1;
-        if (a.largeUnit > b.largeUnit) return 1;
-        if (a.mediumUnit < b.mediumUnit) return -1;
-        if (a.mediumUnit > b.mediumUnit) return 1;
-        if (a.subUnit < b.subUnit) return -1;
-        if (a.subUnit > b.subUnit) return 1;
-        return 0;
-      });
+        // Client-side sorting
+        units.sort((a, b) => {
+          const semesterOrder = [
+            '초등 3-1', '초등 3-2', '초등 4-1', '초등 4-2', '초등 5-1', '초등 5-2',
+            '초등 6-1', '초등 6-2', '중등 1-1', '중등 1-2', '중등 2-1', '중등 2-2',
+            '중등 3-1', '중등 3-2',
+          ];
+          const aSemesterIndex = semesterOrder.indexOf(a.semester);
+          const bSemesterIndex = semesterOrder.indexOf(b.semester);
 
-      callback(units);
-    },
-    async (serverError) => {
-      console.error('Error fetching curriculum units:', serverError);
-      const permissionError = new FirestorePermissionError({
-        path: collRef.path,
-        operation: 'list',
-      } satisfies SecurityRuleContext);
-      errorEmitter.emit('permission-error', permissionError);
-      callback([]);
-    }
-  );
-  return unsubscribe;
+          if (aSemesterIndex !== bSemesterIndex)
+            return aSemesterIndex - bSemesterIndex;
+          if (a.largeUnit < b.largeUnit) return -1;
+          if (a.largeUnit > b.largeUnit) return 1;
+          if (a.mediumUnit < b.mediumUnit) return -1;
+          if (a.mediumUnit > b.mediumUnit) return 1;
+          if (a.subUnit < b.subUnit) return -1;
+          if (a.subUnit > b.subUnit) return 1;
+          return 0;
+        });
+
+        callback(units);
+      },
+      async (serverError) => {
+        console.error('Error fetching curriculum units:', serverError);
+        const permissionError = new FirestorePermissionError({
+          path: collRef.path,
+          operation: 'list',
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+        callback([]);
+      }
+    );
+  };
+
+  getDocs(collRef)
+    .then(async (snapshot) => {
+      if (snapshot.empty) {
+        console.log('No curriculum units found, seeding initial data...');
+        await seedCurriculumUnits(db);
+      }
+      unsubscribe = setupListener();
+    })
+    .catch((err) => {
+      console.error('Error checking for initial data:', err);
+      // Even if checking fails (e.g., permissions), try to set up the listener.
+      // The listener's own error handling will catch subsequent permission errors.
+      unsubscribe = setupListener();
+    });
+
+  return () => {
+    unsubscribe?.();
+  };
 }
