@@ -382,7 +382,7 @@ export function QuestionModal({
                                 <SelectContent>
                                     {curriculumUnits.map(unit => (
                                         <SelectItem key={unit.id} value={unit.id}>
-                                            {`${unit.semester} > ${unit.largeUnit} > ${unit.mediumUnit}`}
+                                            {`${unit.semester} > ${unit.largeUnit} > ${unit.mediumUnit} > ${unit.subUnit}`}
                                         </SelectItem>
                                     ))}
                                 </SelectContent>
@@ -429,9 +429,9 @@ export function QuestionModal({
                 
                 {/* 문제 입력 영역 */}
                 <div className='space-y-4 p-4 border rounded-md'>
-                  <h3 className="text-lg font-semibold">문제 입력</h3>
                   {questionType === '서술형' && (
-                    <>
+                    <div className='space-y-4'>
+                        <h3 className="text-lg font-semibold">문제풀이</h3>
                         <div className='bg-gray-100 p-2 text-xs text-muted-foreground rounded-md'>
                         ${'[n]'}빈칸길이 기본 (alt + 1) &nbsp; ${'[n-]'}빈칸길이 2배 (alt + 2) &nbsp; ${'[n--]'}빈칸길이 3배 (alt + 3) &nbsp; ${'[n---]'}빈칸길이 4배 (alt + 4) &nbsp; ${'[n----]'}빈칸길이 5배 (alt + 5) &nbsp; ${'[n-----]'}빈칸길이 6배 (alt + 6) &nbsp; ${'[n]/[n]'}진분수 (alt + 7) &nbsp; ${'[n]/[n]/[n]'}대분수 (alt + 8) &nbsp; #{'[n-n]'}빈칸 문제 복사 (alt + 9) &nbsp; //끊어 읽기
                         </div>
@@ -440,7 +440,6 @@ export function QuestionModal({
                             name="problemSolving"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>문제풀이 *</FormLabel>
                                     <FormControl>
                                         <RichEditor {...field} placeholder="전체 문항 설명 및 풀이를 입력하세요." />
                                     </FormControl>
@@ -449,34 +448,39 @@ export function QuestionModal({
                             )}
                         />
                         <Button type="button">풀이 답안 생성</Button>
-                    </>
+                    </div>
                   )}
 
-                  <FormField
-                    control={form.control}
-                    name="prompt"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>발문 *</FormLabel>
-                        <FormControl>
-                            <RichEditor {...field} placeholder="문제 질문 문장을 입력하세요."/>
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="viewContent"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>보기</FormLabel>
-                        <FormControl>
-                            <RichEditor {...field} placeholder="보조 자료를 입력하세요."/>
-                        </FormControl>
-                      </FormItem>
-                    )}
-                  />
+                  <div className='space-y-2'>
+                    <h3 className="text-lg font-semibold">발문</h3>
+                    <FormField
+                        control={form.control}
+                        name="prompt"
+                        render={({ field }) => (
+                        <FormItem>
+                            <FormControl>
+                                <RichEditor {...field} placeholder="문제 질문 문장을 입력하세요."/>
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                        )}
+                    />
+                  </div>
+                  
+                  <div className='space-y-2'>
+                    <h3 className="text-lg font-semibold">보기</h3>
+                    <FormField
+                        control={form.control}
+                        name="viewContent"
+                        render={({ field }) => (
+                        <FormItem>
+                            <FormControl>
+                                <RichEditor {...field} placeholder="보조 자료를 입력하세요."/>
+                            </FormControl>
+                        </FormItem>
+                        )}
+                    />
+                  </div>
 
                   {questionType === '유형' && (
                     <div className="space-y-4">
@@ -652,18 +656,20 @@ export function QuestionModal({
                     </div>
                   )}
 
-                  <FormField
-                    control={form.control}
-                    name="solution"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>해설</FormLabel>
-                        <FormControl>
-                            <RichEditor {...field} placeholder="해설 자료를 입력하세요."/>
-                        </FormControl>
-                      </FormItem>
-                    )}
-                  />
+                  <div className='space-y-2'>
+                    <h3 className="text-lg font-semibold">해설</h3>
+                    <FormField
+                        control={form.control}
+                        name="solution"
+                        render={({ field }) => (
+                        <FormItem>
+                            <FormControl>
+                                <RichEditor {...field} placeholder="해설 자료를 입력하세요."/>
+                            </FormControl>
+                        </FormItem>
+                        )}
+                    />
+                  </div>
                 </div>
             </div>
             
