@@ -131,7 +131,7 @@ export function QuestionList({ testId }: { testId: string }) {
         header: '발문', 
         cell: ({ row }) => <div className="truncate w-60">{row.original.prompt}</div> 
     },
-    { accessorKey: 'solutionCount', header: '풀이답안수', cell: ({ row }) => <div className="text-center">{row.original.solutionCount || 0}</div> },
+    { accessorKey: 'solutionCount', header: '풀이답안수', cell: ({ row }) => <div className="text-center">{row.original.answers?.length || 0}</div> },
     { 
         accessorKey: 'isExtended', 
         header: '확장문제', 
