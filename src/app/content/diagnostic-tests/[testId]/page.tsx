@@ -21,9 +21,8 @@ export default function DiagnosticTestDetailPage({ params }: { params: { testId:
   const [loading, setLoading] = React.useState(true);
   
   React.useEffect(() => {
-    if (!firestore) return;
     const testId = params.testId;
-    if (!testId) return;
+    if (!firestore || !testId) return;
 
     setLoading(true);
     const unsubscribe = getDiagnosticTest(firestore, testId, (data) => {
