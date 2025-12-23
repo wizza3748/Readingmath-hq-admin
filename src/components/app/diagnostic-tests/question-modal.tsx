@@ -70,7 +70,6 @@ const formSchema = z.object({
   answerType: z.enum(['입력형', '선지형', '순서맞추기']).optional(),
   answers: z.array(answerSchema).optional(),
   solution: z.string().optional(),
-  videoUrl: z.string().url().optional().or(z.literal('')),
   problemSolving: z.string().optional(),
   isReviewed: z.boolean().default(false),
 });
@@ -164,7 +163,6 @@ export function QuestionModal({
       problemSolving: '',
       answerType: questionType === '유형' ? '선지형' : undefined,
       answers: [],
-      videoUrl: '',
     },
   });
   
@@ -205,7 +203,6 @@ export function QuestionModal({
           problemSolving: '',
           answerType: questionType === '유형' ? '선지형' : undefined,
           answers: [],
-          videoUrl: '',
         };
 
         if (question) {
@@ -674,19 +671,6 @@ export function QuestionModal({
                       </FormItem>
                     )}
                   />
-                  <FormField
-                    control={form.control}
-                    name="videoUrl"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>풀이 동영상 URL</FormLabel>
-                        <FormControl>
-                          <Input {...field} placeholder="https://www.youtube.com/watch?v=..." />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
                 </div>
             </div>
             
@@ -695,7 +679,7 @@ export function QuestionModal({
                   control={form.control}
                   name="isReviewed"
                   render={({ field }) => (
-                      <FormItem className="flex flex-row items-center space-x-3 space-y-0 mr-4">
+                      <FormItem className="flex flex-row items-center space-x-3 space-y-0 mr-auto">
                           <FormLabel>검수 여부</FormLabel>
                           <FormControl>
                               <Switch
@@ -736,3 +720,5 @@ export function QuestionModal({
     </>
   );
 }
+
+    
