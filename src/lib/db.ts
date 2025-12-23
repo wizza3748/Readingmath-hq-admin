@@ -351,10 +351,7 @@ async function seedDiagnosticTests(db: Firestore) {
 
     for (const test of initialDiagnosticTests) {
         const docRef = doc(collRef, String(test.id));
-        const docSnap = await getDoc(docRef);
-        if (!docSnap.exists()) {
-             batch.set(docRef, { ...test, totalQuestions: 0, createdAt: serverTimestamp() });
-        }
+        batch.set(docRef, { ...test, totalQuestions: 0, createdAt: serverTimestamp() });
     }
 
     await batch.commit().catch(async (serverError) => {
@@ -368,48 +365,40 @@ async function seedDiagnosticTests(db: Firestore) {
 }
 
 
-export async function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTest[]) => void) {
-  const collRef = collection(db, 'diagnostic-tests');
-  
-  try {
-    const snapshot = await getDocs(collRef);
-    if (snapshot.empty) {
-      console.log('No diagnostic tests found, seeding initial data...');
-      await seedDiagnosticTests(db);
-      // After seeding, refetch the data.
-      const seededSnapshot = await getDocs(collRef);
-      processSnapshot(seededSnapshot);
-    } else {
-      processSnapshot(snapshot);
-    }
-  } catch (e) {
-      console.error("Error fetching/seeding diagnostic tests", e);
-      const permissionError = new FirestorePermissionError({
-        path: collRef.path,
-        operation: 'list',
-      } satisfies SecurityRuleContext);
-      errorEmitter.emit('permission-error', permissionError);
-      callback([]);
-  }
+export function getDiagnosticTests(db: Firestore, callback: (tests: DiagnosticTest[]) => void) {
+    const collRef = collection(db, 'diagnostic-tests');
+    const q = query(collRef, orderBy('id', 'asc'));
 
-  async function processSnapshot(querySnapshot: any) {
-    try {
-      const testsPromises = querySnapshot.docs.map(async (doc: any) => {
-        const testData = doc.data() as DiagnosticTest;
-        const questionsCollRef = collection(db, `diagnostic-tests/${doc.id}/questions`);
-        const questionsSnapshot = await getDocs(questionsCollRef);
-        testData.totalQuestions = questionsSnapshot.size;
-        return testData;
-      });
+    const unsubscribe = onSnapshot(q, async (querySnapshot) => {
+        if (querySnapshot.empty) {
+            console.log('No diagnostic tests found, seeding initial data...');
+            await seedDiagnosticTests(db);
+            // The onSnapshot listener will automatically pick up the newly seeded data.
+            return;
+        }
 
-      const tests = await Promise.all(testsPromises);
-      tests.sort((a, b) => a.id - b.id);
-      callback(tests);
-    } catch (e) {
-       console.error("Error processing snapshot:", e);
-       callback([]);
-    }
-  }
+        const testsPromises = querySnapshot.docs.map(async (docSnapshot) => {
+            const testData = docSnapshot.data() as DiagnosticTest;
+            const questionsCollRef = collection(db, `diagnostic-tests/${docSnapshot.id}/questions`);
+            const questionsSnapshot = await getDocs(questionsCollRef);
+            testData.totalQuestions = questionsSnapshot.size;
+            return testData;
+        });
+
+        const tests = await Promise.all(testsPromises);
+        callback(tests);
+
+    }, async (error) => {
+        console.error("Error fetching diagnostic tests:", error);
+        const permissionError = new FirestorePermissionError({
+            path: collRef.path,
+            operation: 'list',
+        } satisfies SecurityRuleContext);
+        errorEmitter.emit('permission-error', permissionError);
+        callback([]);
+    });
+
+    return unsubscribe;
 }
 
 
@@ -865,5 +854,6 @@ export function getCurriculumUnits(
       callback([]);
     });
 }
+
 
 
