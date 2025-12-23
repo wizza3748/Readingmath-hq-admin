@@ -131,7 +131,21 @@ export function QuestionList({ testId }: { testId: string }) {
         header: '발문', 
         cell: ({ row }) => <div className="truncate w-60">{row.original.prompt}</div> 
     },
-    { accessorKey: 'solutionCount', header: '풀이답안수', cell: ({ row }) => <div className="text-center">{row.original.answers?.length || 0}</div> },
+    { accessorKey: 'solutionCount', 
+      header: '풀이답안수', 
+      cell: ({ row }) => {
+        const question = row.original;
+        let count = 0;
+        if (question.questionType === '선지형' || question.questionType === '서술형') {
+            count = (question.answers && question.answers.length > 0) || question.problemSolving ? 1 : 0;
+        } else if (question.questionType === '입력형') {
+            count = question.answers?.length || 0;
+        } else if (question.questionType === '순서맞추기') {
+            count = (question.answers && question.answers.length > 0) ? 1 : 0;
+        }
+        return <div className="text-center">{count}</div>
+      } 
+    },
     { 
         accessorKey: 'isExtended', 
         header: '확장문제', 
