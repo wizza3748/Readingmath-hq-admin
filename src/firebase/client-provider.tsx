@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, {createContext, useContext, useEffect, useMemo} from 'react';
@@ -7,6 +8,7 @@ import {Firestore} from 'firebase/firestore';
 
 import {FirebaseProvider, type FirebaseProviderProps} from '@/firebase/provider';
 import {initializeFirebase} from '@/firebase';
+import { seedCurriculumUnits } from '@/lib/db';
 
 const FirebaseClientContext = createContext<FirebaseProviderProps | null>(null);
 
@@ -30,6 +32,10 @@ export function FirebaseClientProvider({children}: {children: React.ReactNode}) 
     setFirebaseApp(firebaseApp);
     setFirestore(firestore);
     setAuth(auth);
+
+    // Seed data on initial load
+    seedCurriculumUnits(firestore).catch(console.error);
+
   }, []);
 
   const value = useMemo(

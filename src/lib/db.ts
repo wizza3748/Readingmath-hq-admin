@@ -746,23 +746,23 @@ const initialCurriculumUnits: Omit<CurriculumUnit, 'id' | 'createdAt'>[] = [
     { semester: '초등 6-1', largeUnit: '3. 자극과 반응', mediumUnit: '자극과 반응', subUnit: '신경계' },
     { semester: '초등 6-1', largeUnit: '3. 자극과 반응', mediumUnit: '자극과 반응', subUnit: '호르몬' },
     { semester: '초등 6-1', largeUnit: '4. 식물과 에너지', mediumUnit: '식물과 에너지', subUnit: '광합성' },
-    { semester: '초등 6-1', largeUnit: '4. 식물과 에너지', mediumUnit: '식물과 에너지', subUnit: '식물의 호흡' },
-    { semester: '초등 6-1', largeUnit: '4. 식물과 에너지', mediumUnit: '식물과 에너지', subUnit: '양분의 저장과 사용' },
-    { semester: '초등 6-1', largeUnit: '5. 동물과 에너지', mediumUnit: '동물과 에너지', subUnit: '소화' },
-    { semester: '초등 6-1', largeUnit: '5. 동물과 에너지', mediumUnit: '동물과 에너지', subUnit: '순환' },
-    { semester: '초등 6-1', largeUnit: '5. 동물과 에너지', mediumUnit: '동물과 에너지', subUnit: '호흡' },
-    { semester: '초등 6-1', largeUnit: '5. 동물과 에너지', mediumUnit: '동물과 에너지', subUnit: '배설' },
+    { semester: '초등 6-1', largeUnit: '4. 식물과 에너지', mediumUnit: '식물의 호흡', subUnit: '식물의 호흡' },
+    { semester: '초등 6-1', largeUnit: '4. 식물과 에너지', mediumUnit: '양분의 저장과 사용', subUnit: '양분의 저장과 사용' },
+    { semester: '초등 6-1', largeUnit: '5. 동물과 에너지', mediumUnit: '소화', subUnit: '소화' },
+    { semester: '초등 6-1', largeUnit: '5. 동물과 에너지', mediumUnit: '순환', subUnit: '순환' },
+    { semester: '초등 6-1', largeUnit: '5. 동물과 에너지', mediumUnit: '호흡', subUnit: '호흡' },
+    { semester: '초등 6-1', largeUnit: '5. 동물과 에너지', mediumUnit: '배설', subUnit: '배설' },
     { semester: '초등 6-2', largeUnit: '1. 전기와 자기', mediumUnit: '전기와 자기', subUnit: '전기' },
     { semester: '초등 6-2', largeUnit: '1. 전기와 자기', mediumUnit: '전기와 자기', subUnit: '자기' },
     { semester: '초등 6-2', largeUnit: '2. 화학 반응의 규칙과 에너지 변화', mediumUnit: '화학 반응의 규칙과 에너지 변화', subUnit: '물질 변화와 화학 반응식' },
-    { semester: '초등 6-2', largeUnit: '2. 화학 반응의 규칙과 에너지 변화', mediumUnit: '화학 반응의 규칙과 에너지 변화', subUnit: '화학 반응의 규칙' },
-    { semester: '초등 6-2', largeUnit: '2. 화학 반응의 규칙과 에너지 변화', mediumUnit: '화학 반응의 규칙과 에너지 변화', subUnit: '화학 반응에서의 에너지 출입' },
+    { semester: '초등 6-2', largeUnit: '2. 화학 반응의 규칙과 에너지 변화', mediumUnit: '화학 반응의 규칙', subUnit: '화학 반응의 규칙' },
+    { semester: '초등 6-2', largeUnit: '2. 화학 반응의 규칙과 에너지 변화', mediumUnit: '화학 반응에서의 에너지 출입', subUnit: '화학 반응에서의 에너지 출입' },
     { semester: '초등 6-2', largeUnit: '3. 생식과 발생', mediumUnit: '생식과 발생', subUnit: '세포 분열' },
-    { semester: '초등 6-2', largeUnit: '3. 생식과 발생', mediumUnit: '생식과 발생', subUnit: '생식' },
-    { semester: '초등 6-2', largeUnit: '3. 생식과 발생', mediumUnit: '생식과 발생', subUnit: '사람의 발생' },
+    { semester: '초등 6-2', largeUnit: '3. 생식과 발생', mediumUnit: '생식', subUnit: '생식' },
+    { semester: '초등 6-2', largeUnit: '3. 생식과 발생', mediumUnit: '사람의 발생', subUnit: '사람의 발생' },
     { semester: '초등 6-2', largeUnit: '4. 별과 우주', mediumUnit: '별과 우주', subUnit: '지구와 달' },
-    { semester: '초등 6-2', largeUnit: '4. 별과 우주', mediumUnit: '별과 우주', subUnit: '태양계' },
-    { semester: '초등 6-2', largeUnit: '4. 별과 우주', mediumUnit: '별과 우주', subUnit: '태양계 밖의 우주' },
+    { semester: '초등 6-2', largeUnit: '4. 별과 우주', mediumUnit: '태양계', subUnit: '태양계' },
+    { semester: '초등 6-2', largeUnit: '4. 별과 우주', mediumUnit: '태양계 밖의 우주', subUnit: '태양계 밖의 우주' },
     { semester: '중등 1-1', largeUnit: '1. 화학 반응의 규칙성과 에너지 변화', mediumUnit: '화학 반응의 규칙성과 에너지 변화', subUnit: '화학 반응의 규칙' },
     { semester: '중등 1-1', largeUnit: '1. 화학 반응의 규칙성과 에너지 변화', mediumUnit: '화학 반응의 규칙성과 에너지 변화', subUnit: '화학 반응에서의 에너지' },
     { semester: '중등 1-1', largeUnit: '2. 기권과 날씨', mediumUnit: '기권과 날씨', subUnit: '기권' },
@@ -777,7 +777,7 @@ const initialCurriculumUnits: Omit<CurriculumUnit, 'id' | 'createdAt'>[] = [
     { semester: '중등 1-2', largeUnit: '2. 화학 변화와 이온', mediumUnit: '화학 변화와 이온', subUnit: '산과 염기' },
     { semester: '중등 1-2', largeUnit: '3. 지구와 우주', mediumUnit: '지구와 우주', subUnit: '지구의 운동' },
     { semester: '중등 1-2', largeUnit: '3. 지구와 우주', mediumUnit: '지구와 우주', subUnit: '달의 운동' },
-    { semester: '중등 1-2', largeUnit: '3. 지구와 우주', mediumUnit: '지구와 우주', subUnit: '태양계' },
+    { semester: '중등 1-2', largeUnit: '3. 지구와 우주', mediumUnit: '태양계', subUnit: '태양계' },
     { semester: '중등 1-2', largeUnit: '4. 과학 기술과 인류 문명', mediumUnit: '통합과학', subUnit: '과학 기술' },
     { semester: '중등 2-1', largeUnit: '1. 물질의 구성', mediumUnit: '물질의 구성', subUnit: '원소' },
     { semester: '중등 2-1', largeUnit: '1. 물질의 구성', mediumUnit: '물질의 구성', subUnit: '원자와 분자' },
@@ -817,16 +817,22 @@ const initialCurriculumUnits: Omit<CurriculumUnit, 'id' | 'createdAt'>[] = [
     { semester: '중등 3-2', largeUnit: '4. 환경과 에너지', mediumUnit: '환경 보전과 에너지', subUnit: '환경 보전과 에너지' },
 ];
 
-async function seedCurriculumUnits(db: Firestore) {
+export async function seedCurriculumUnits(db: Firestore) {
     const collRef = collection(db, "curriculum-units");
     const batch = writeBatch(db);
     let count = 0;
 
+    const existingUnits = new Set<string>();
+    const snapshot = await getDocs(collRef).catch(() => ({ docs: [] }));
+    snapshot.docs.forEach(doc => {
+        const data = doc.data();
+        const key = `${data.semester}-${data.largeUnit}-${data.mediumUnit}-${data.subUnit}`;
+        existingUnits.add(key);
+    });
+
     for (const unit of initialCurriculumUnits) {
-        // Use a query to check if a document with the same subUnit exists
-        const q = query(collRef, where("subUnit", "==", unit.subUnit), where("semester", "==", unit.semester), where("largeUnit", "==", unit.largeUnit));
-        const snapshot = await getDocs(q);
-        if (snapshot.empty) {
+        const key = `${unit.semester}-${unit.largeUnit}-${unit.mediumUnit}-${unit.subUnit}`;
+        if (!existingUnits.has(key)) {
             const docRef = doc(collRef);
             batch.set(docRef, { ...unit, createdAt: serverTimestamp() });
             count++;
@@ -850,68 +856,47 @@ async function seedCurriculumUnits(db: Firestore) {
 
 export function getCurriculumUnits(db: Firestore, callback: (units: CurriculumUnit[]) => void) {
   const collRef = collection(db, 'curriculum-units');
-  let unsubscribe: (() => void) | null = null;
+  const unsubscribe = onSnapshot(
+    collRef,
+    (querySnapshot) => {
+      let units: CurriculumUnit[] = [];
+      querySnapshot.forEach((doc) => {
+        units.push({ id: doc.id, ...doc.data() } as CurriculumUnit);
+      });
 
-  const setupListener = () => {
-    return onSnapshot(
-      collRef,
-      (querySnapshot) => {
-        let units: CurriculumUnit[] = [];
-        querySnapshot.forEach((doc) => {
-          units.push({ id: doc.id, ...doc.data() } as CurriculumUnit);
-        });
+      // Client-side sorting
+      units.sort((a, b) => {
+        const semesterOrder = [
+          '초등 3-1', '초등 3-2', '초등 4-1', '초등 4-2', '초등 5-1', '초등 5-2',
+          '초등 6-1', '초등 6-2', '중등 1-1', '중등 1-2', '중등 2-1', '중등 2-2',
+          '중등 3-1', '중등 3-2',
+        ];
+        const aSemesterIndex = semesterOrder.indexOf(a.semester);
+        const bSemesterIndex = semesterOrder.indexOf(b.semester);
 
-        // Client-side sorting
-        units.sort((a, b) => {
-          const semesterOrder = [
-            '초등 3-1', '초등 3-2', '초등 4-1', '초등 4-2', '초등 5-1', '초등 5-2',
-            '초등 6-1', '초등 6-2', '중등 1-1', '중등 1-2', '중등 2-1', '중등 2-2',
-            '중등 3-1', '중등 3-2',
-          ];
-          const aSemesterIndex = semesterOrder.indexOf(a.semester);
-          const bSemesterIndex = semesterOrder.indexOf(b.semester);
+        if (aSemesterIndex !== bSemesterIndex)
+          return aSemesterIndex - bSemesterIndex;
+        if (a.largeUnit < b.largeUnit) return -1;
+        if (a.largeUnit > b.largeUnit) return 1;
+        if (a.mediumUnit < b.mediumUnit) return -1;
+        if (a.mediumUnit > b.mediumUnit) return 1;
+        if (a.subUnit < b.subUnit) return -1;
+        if (a.subUnit > b.subUnit) return 1;
+        return 0;
+      });
 
-          if (aSemesterIndex !== bSemesterIndex)
-            return aSemesterIndex - bSemesterIndex;
-          if (a.largeUnit < b.largeUnit) return -1;
-          if (a.largeUnit > b.largeUnit) return 1;
-          if (a.mediumUnit < b.mediumUnit) return -1;
-          if (a.mediumUnit > b.mediumUnit) return 1;
-          if (a.subUnit < b.subUnit) return -1;
-          if (a.subUnit > b.subUnit) return 1;
-          return 0;
-        });
-
-        callback(units);
-      },
-      async (serverError) => {
-        console.error('Error fetching curriculum units:', serverError);
-        const permissionError = new FirestorePermissionError({
-          path: collRef.path,
-          operation: 'list',
-        } satisfies SecurityRuleContext);
-        errorEmitter.emit('permission-error', permissionError);
-        callback([]);
-      }
-    );
-  };
-
-  getDocs(collRef)
-    .then(async (snapshot) => {
-      if (snapshot.empty) {
-        console.log('No curriculum units found, seeding initial data...');
-        await seedCurriculumUnits(db);
-      }
-      unsubscribe = setupListener();
-    })
-    .catch((err) => {
-      console.error('Error checking for initial data:', err);
-      // Even if checking fails (e.g., permissions), try to set up the listener.
-      // The listener's own error handling will catch subsequent permission errors.
-      unsubscribe = setupListener();
-    });
-
-  return () => {
-    unsubscribe?.();
-  };
+      callback(units);
+    },
+    async (serverError) => {
+      console.error('Error fetching curriculum units:', serverError);
+      const permissionError = new FirestorePermissionError({
+        path: collRef.path,
+        operation: 'list',
+      } satisfies SecurityRuleContext);
+      errorEmitter.emit('permission-error', permissionError);
+      callback([]);
+    }
+  );
+  
+  return unsubscribe;
 }
