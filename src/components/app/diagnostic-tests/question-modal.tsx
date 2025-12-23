@@ -214,6 +214,7 @@ export function QuestionModal({
             form.reset({
                 ...defaultValues,
                 ...question,
+                isReviewed: question.isReviewed || false,
                 answerType: question.answerType || (question.questionType === '유형' ? '선지형' : undefined),
                 answers: question.answers || [],
                 contentArea,
@@ -689,34 +690,30 @@ export function QuestionModal({
                 </div>
             </div>
             
-            <DialogFooter className="p-6 pt-4 border-t sticky bottom-0 bg-background z-10">
-              <div className='flex justify-between w-full'>
-                  <FormField
-                    control={form.control}
-                    name="isReviewed"
-                    render={({ field }) => (
-                        <FormItem className="flex flex-row items-center space-x-3 space-y-0">
-                            <FormLabel>검수 여부</FormLabel>
-                            <FormControl>
-                                <Switch
-                                    checked={field.value}
-                                    onCheckedChange={field.onChange}
-                                />
-                            </FormControl>
-                            <span className="text-sm text-muted-foreground">
-                                {isReviewed ? '검수완료' : '검수전'}
-                            </span>
-                        </FormItem>
-                    )}
-                  />
-                  <div>
-                      <Button type="button" variant="outline" className='mr-2'>미리보기</Button>
-                      <Button type="submit" className='mr-2'>문제 저장</Button>
-                      <DialogClose asChild>
-                          <Button type="button" variant="secondary">닫기</Button>
-                      </DialogClose>
-                  </div>
-              </div>
+            <DialogFooter className="p-6 pt-4 border-t sticky bottom-0 bg-background z-10 flex justify-end items-center">
+                <FormField
+                  control={form.control}
+                  name="isReviewed"
+                  render={({ field }) => (
+                      <FormItem className="flex flex-row items-center space-x-3 space-y-0 mr-4">
+                          <FormLabel>검수 여부</FormLabel>
+                          <FormControl>
+                              <Switch
+                                  checked={field.value}
+                                  onCheckedChange={field.onChange}
+                              />
+                          </FormControl>
+                          <span className="text-sm text-muted-foreground">
+                              {isReviewed ? '검수완료' : '검수전'}
+                          </span>
+                      </FormItem>
+                  )}
+                />
+                <Button type="button" variant="outline" className='mr-2'>미리보기</Button>
+                <Button type="submit" className='mr-2'>문제 저장</Button>
+                <DialogClose asChild>
+                    <Button type="button" variant="secondary">닫기</Button>
+                </DialogClose>
             </DialogFooter>
           </form>
         </Form>
@@ -739,4 +736,3 @@ export function QuestionModal({
     </>
   );
 }
-
