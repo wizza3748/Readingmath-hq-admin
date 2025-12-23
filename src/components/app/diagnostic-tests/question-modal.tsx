@@ -74,12 +74,12 @@ const formSchema = z.object({
   problemSolving: z.string().optional(),
   isReviewed: z.boolean().default(false),
 }).superRefine((data, ctx) => {
-    if (data.problemSolving === undefined || data.problemSolving.trim() === '') {
-        // This validation is now handled by the button click, but keeping it here is a good fallback.
+    if (data.questionType === '서술형' && (data.problemSolving === undefined || data.problemSolving.trim() === '')) {
+        // Validation for problemSolving is now triggered on button click
     }
 });
 
-type FormValues = z.infer<typeof formSchema>;
+type FormValues = z.infer<typeof formSchema> & { questionType: '유형' | '서술형' };
 
 const generateCircledNumber = (num: number) => {
     return `①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳`[num-1] || String(num);
@@ -119,6 +119,7 @@ export function QuestionModal({
       viewContent: '',
       solution: '',
       problemSolving: '',
+      questionType: questionType,
       answerType: questionType === '유형' ? '선지형' : undefined,
       answers: [],
     },
@@ -156,6 +157,7 @@ export function QuestionModal({
           viewContent: '',
           solution: '',
           problemSolving: '',
+          questionType: questionType,
           answerType: questionType === '유형' ? '선지형' as const : undefined,
           answers: [],
         };
@@ -167,6 +169,7 @@ export function QuestionModal({
             form.reset({
                 ...defaultValues,
                 ...question,
+                questionType: questionType,
                 isReviewed: question.isReviewed || false,
                 subUnitType: question.subUnitType || '',
                 contentArea,
@@ -339,60 +342,36 @@ export function QuestionModal({
       return;
     }
 
-    const newAnswers = matches.map(() => ({
-      value: '', 
-      isCorrect: true, 
+    const newAnswerSets = matches.map(() => ({
+      value: '', // This will represent the answer card, we can enhance later
+      isCorrect: false, // Default
+      answerType: '선지형',
       answers: [
         { value: '', isCorrect: true },
         { value: '', isCorrect: false },
-      ],
-      answerType: '선지형'
+      ]
     }));
 
-    replace(newAnswers.flatMap(answer => ([
-        { value: '', isCorrect: true },
-        { value: '', isCorrect: false },
-    ])));
-    
+    // This uses `replace` on the field array.
+    // It will replace the entire `answers` array with the new set.
+    const newFields = matches.map((_, i) => ({
+      value: '',
+      isCorrect: i === 0, // Set first as correct by default
+    }));
+
+    // For 서술형, each markup should create a new answer block, which is handled here
+    // Let's create multiple answer cards for each match
     const generatedAnswers = matches.map(() => ({
-        // This will be a group of answers, so let's set a default for 선지형
-        answerType: '선지형',
-        answers: [
-            { value: '', isCorrect: true },
-            { value: '', isCorrect: false },
-        ]
-    }));
-
-    // `react-hook-form`'s `replace` is for the entire array. 
-    // We are creating multiple answer cards, so we need to structure this differently.
-    // The current `answers` field is a single array. We need to handle groups of answers.
-    // For now, let's just generate the correct number of empty '선지형' sets.
-    
-    const generatedAnswerSets = matches.map((_, index) => ({
-      // Each match is an answer set
-      id: `set-${index}`, // A temporary ID
+      // This will be a group of answers, so let's set a default for 선지형
       answerType: '선지형',
       answers: [
         { value: '', isCorrect: true },
         { value: '', isCorrect: false },
       ],
     }));
-
-    // The current form structure does not support multiple answer sets easily.
-    // Let's adapt by just creating the correct number of fields in the `answers` array.
-    // Since each answer card has its own fields, we'll flatten this for now.
     
-    const newFields = matches.map(() => ({
-      value: '', // This will represent the answer card, we can enhance later
-      isCorrect: false, // Default
-      type: '선지형', // Default type
-    }));
-    
-    form.setValue('answerType', '선지형');
-    replace(matches.map((_, i) => ({
-        value: '',
-        isCorrect: i === 0,
-    })));
+    // We'll replace the existing 'answers' field with these generated structures.
+    replace(generatedAnswers.flatMap(answer => answer.answers));
 
     toast({ title: `${matches.length}개의 답안 카드가 생성되었습니다.`});
   };
@@ -499,7 +478,7 @@ export function QuestionModal({
                             <FormControl>
                                 <RichEditor {...field} placeholder="전체 문항 설명 및 풀이를 입력하세요." />
                             </FormControl>
-                            <FormMessage />
+                             {form.formState.errors.problemSolving && <FormMessage />}
                         </FormItem>
                     )}
                 />
