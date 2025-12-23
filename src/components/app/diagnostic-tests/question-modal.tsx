@@ -2,7 +2,7 @@
 'use client';
 
 import * as React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useFieldArray, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useFirestore } from '@/firebase';
@@ -38,6 +38,26 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Separator } from '@/components/ui/separator';
+import { Plus, Trash2, Minus } from 'lucide-react';
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+import { cn } from '@/lib/utils';
+
+const answerSchema = z.object({
+    id: z.string().optional(),
+    isCorrect: z.boolean().optional(),
+    value: z.any(),
+    type: z.string().optional(), // for 입력형
+    symbol: z.boolean().optional(), // for 입력형
+});
 
 const formSchema = z.object({
   difficulty: z.enum(['하', '중하', '중', '중상', '상']),
@@ -47,7 +67,7 @@ const formSchema = z.object({
   prompt: z.string().min(1, '발문을 입력해주세요.'),
   viewContent: z.string().optional(),
   answerType: z.enum(['입력형', '선지형', '순서맞추기']).optional(),
-  answers: z.array(z.any()).optional(),
+  answers: z.array(answerSchema).optional(),
   solution: z.string().optional(),
   videoUrl: z.string().url().optional().or(z.literal('')),
   problemSolving: z.string().optional(),
@@ -111,6 +131,12 @@ const RichEditor = React.forwardRef<HTMLTextAreaElement, React.ComponentProps<'t
 ));
 RichEditor.displayName = 'RichEditor';
 
+const generateCircledNumber = (num: number) => {
+    return `①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳`[num-1] || String(num);
+};
+const generateCircledKorean = (num: number) => {
+    return `㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉪㉫㉬㉭`[num-1] || String(num);
+};
 
 export function QuestionModal({
   children,
@@ -127,6 +153,7 @@ export function QuestionModal({
   const firestore = useFirestore();
   const { toast } = useToast();
   const [curriculumUnits, setCurriculumUnits] = React.useState<CurriculumUnit[]>(initialCurriculumUnits);
+  const [showOXConfirm, setShowOXConfirm] = React.useState(false);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -146,7 +173,13 @@ export function QuestionModal({
     },
   });
   
+  const { fields, append, remove, replace } = useFieldArray({
+    control: form.control,
+    name: "answers"
+  });
+
   const selectedSubUnitId = form.watch('subUnitType');
+  const answerType = form.watch('answerType');
 
   React.useEffect(() => {
     if (selectedSubUnitId) {
@@ -156,7 +189,6 @@ export function QuestionModal({
         if (largeUnitKey && contentAreaMapping[largeUnitKey]) {
             form.setValue('contentArea', contentAreaMapping[largeUnitKey]);
         } else {
-            // If no mapping found, maybe clear the field or set a default
              form.setValue('contentArea', '');
         }
     }
@@ -187,6 +219,7 @@ export function QuestionModal({
                 ...defaultValues,
                 ...question,
                 answerType: question.answerType || (question.questionType === '유형' ? '입력형' : undefined),
+                answers: question.answers || [],
                 contentArea,
             });
         } else {
@@ -226,11 +259,42 @@ export function QuestionModal({
     }
   };
 
+  const handleAnswerTypeChange = (value: string) => {
+    form.setValue('answerType', value as '입력형' | '선지형' | '순서맞추기');
+    form.setValue('answers', []);
+    if (value === '입력형') {
+        append({ value: { val: '' }, type: '기본', symbol: false });
+    }
+  }
+
+  const generateOptions = (type: 'circled' | 'korean' | 'ox') => {
+    if (type === 'ox') {
+      replace([{ value: 'O', isCorrect: false }, { value: 'X', isCorrect: false }]);
+      setShowOXConfirm(false);
+      return;
+    }
+    const newAnswers = fields.map((field, index) => ({
+      ...field,
+      value: type === 'circled' ? `${generateCircledNumber(index + 1)} ` : `${generateCircledKorean(index + 1)} `,
+    }));
+    replace(newAnswers);
+  };
+
+  const handleOXGenerate = () => {
+    if (fields.length > 0) {
+      setShowOXConfirm(true);
+    } else {
+      generateOptions('ox');
+    }
+  }
+
   const difficultyOptions: ('하' | '중하' | '중' | '중상' | '상')[] = ['하', '중하', '중', '중상', '상'];
   const behavioralAreaOptions: ('개념이해력' | '문제해결력' | '문해력' | '추론력')[] = ['개념이해력', '문제해결력', '문해력', '추론력'];
   const answerTypeOptions: ('입력형' | '선지형' | '순서맞추기')[] = ['입력형', '선지형', '순서맞추기'];
+  const inputTypeOptions = ['기본', '분수', '대분수'];
 
   return (
+    <>
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="max-w-full h-full w-full flex flex-col">
@@ -382,7 +446,7 @@ export function QuestionModal({
                             render={({ field }) => (
                             <FormItem>
                                 <FormLabel>답안 유형 *</FormLabel>
-                                <Select onValueChange={field.onChange} value={field.value}>
+                                <Select onValueChange={handleAnswerTypeChange} value={field.value}>
                                     <FormControl><SelectTrigger><SelectValue placeholder="답안 유형 선택" /></SelectTrigger></FormControl>
                                     <SelectContent>
                                         {answerTypeOptions.map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}
@@ -392,7 +456,127 @@ export function QuestionModal({
                             </FormItem>
                             )}
                         />
-                        {/* 답안 유형별 상세 구현은 여기에 추가 */}
+                        
+                        {answerType === '입력형' && (
+                          <div className="space-y-4">
+                            {fields.map((field, index) => (
+                              <div key={field.id} className="flex items-start gap-2">
+                                <FormField
+                                  control={form.control}
+                                  name={`answers.${index}.type`}
+                                  render={({ field: typeField }) => (
+                                    <FormItem>
+                                      <Select onValueChange={typeField.onChange} value={typeField.value}>
+                                        <FormControl><SelectTrigger className="w-[100px]"><SelectValue /></SelectTrigger></FormControl>
+                                        <SelectContent>{inputTypeOptions.map(o => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
+                                      </Select>
+                                    </FormItem>
+                                  )}
+                                />
+                                <FormField
+                                  control={form.control}
+                                  name={`answers.${index}.symbol`}
+                                  render={({ field: symbolField }) => (
+                                    <FormItem className="flex items-center space-x-2 pt-2">
+                                      <Checkbox checked={symbolField.value} onCheckedChange={symbolField.onChange} />
+                                      <FormLabel>기호</FormLabel>
+                                    </FormItem>
+                                  )}
+                                />
+                                <div className="flex-1">
+                                <Controller
+                                    control={form.control}
+                                    name={`answers.${index}.value.val`}
+                                    render={({ field: valueField }) => {
+                                        const answerType = form.getValues(`answers.${index}.type`);
+                                        if (answerType === '분수') {
+                                            return <div className="flex items-center gap-1">
+                                                <Input placeholder="분자" className="text-center" /> / <Input placeholder="분모" className="text-center" />
+                                            </div>
+                                        }
+                                        if (answerType === '대분수') {
+                                            return <div className="flex items-center gap-1">
+                                                <Input className="w-16 text-center" />
+                                                <div className="flex flex-col">
+                                                    <Input placeholder="분자" className="text-center h-8" />
+                                                    <div className="border-t border-black my-1"></div>
+                                                    <Input placeholder="분모" className="text-center h-8" />
+                                                </div>
+                                            </div>
+                                        }
+                                        return <Input {...valueField} placeholder="정답 입력" />
+                                    }}
+                                />
+                                </div>
+                                <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)}><Trash2 className="h-4 w-4 text-red-500" /></Button>
+                              </div>
+                            ))}
+                            <Button type="button" variant="outline" size="sm" onClick={() => append({ value: { val: '' }, type: '기본', symbol: false })}><Plus className="mr-2 h-4 w-4" /> 정답 추가</Button>
+                          </div>
+                        )}
+
+                        {answerType === '선지형' && (
+                          <div className="space-y-2">
+                            <div className="flex gap-2 justify-end">
+                                <Button type="button" variant="outline" size="sm" onClick={() => generateOptions('circled')}>①② 자동생성</Button>
+                                <Button type="button" variant="outline" size="sm" onClick={() => generateOptions('korean')}>㉠㉡ 자동생성</Button>
+                                <Button type="button" variant="outline" size="sm" onClick={handleOXGenerate}>OX 자동생성</Button>
+                                <Button type="button" variant="default" size="sm" onClick={() => append({ value: '', isCorrect: false })}><Plus className="mr-2 h-4 w-4" />선지 추가</Button>
+                            </div>
+                            {fields.map((field, index) => (
+                               <div key={field.id} className="flex items-start gap-2 p-2 border rounded-md">
+                                  <FormField
+                                    control={form.control}
+                                    name={`answers.${index}.isCorrect`}
+                                    render={({ field: checkField }) => (
+                                      <FormItem className="flex flex-col items-center justify-center pt-2">
+                                        <FormLabel className="text-xs">정답</FormLabel>
+                                        <FormControl>
+                                            <Checkbox
+                                                checked={checkField.value}
+                                                onCheckedChange={checkField.onChange}
+                                            />
+                                        </FormControl>
+                                      </FormItem>
+                                    )}
+                                  />
+                                   <Controller
+                                      control={form.control}
+                                      name={`answers.${index}.value`}
+                                      render={({ field: valueField }) => (
+                                        <div className="flex-1">
+                                          <RichEditor {...valueField} />
+                                        </div>
+                                      )}
+                                    />
+                                    <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)}><Trash2 className="h-4 w-4 text-red-500" /></Button>
+                               </div>
+                            ))}
+                          </div>
+                        )}
+
+                        {answerType === '순서맞추기' && (
+                           <div className="space-y-2">
+                             {fields.map((field, index) => (
+                                <div key={field.id} className="flex items-center gap-2 p-2 border rounded-md">
+                                  <div className="font-bold text-lg">{generateCircledKorean(index+1)}</div>
+                                    <Controller
+                                      control={form.control}
+                                      name={`answers.${index}.value`}
+                                      render={({ field: valueField }) => (
+                                        <div className="flex-1">
+                                          <RichEditor {...valueField} />
+                                        </div>
+                                      )}
+                                    />
+                                  <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)}><Minus className="h-4 w-4" /></Button>
+                                  <Button type="button" variant="ghost" size="icon" onClick={() => append({ value: ''})}><Plus className="h-4 w-4" /></Button>
+                                </div>
+                             ))}
+                              {fields.length === 0 && <Button type="button" variant="outline" size="sm" onClick={() => append({ value: ''})}><Plus className="mr-2 h-4 w-4" /> 항목 추가</Button>}
+                           </div>
+                        )}
+
                     </div>
                   )}
 
@@ -454,5 +638,23 @@ export function QuestionModal({
         </Form>
       </DialogContent>
     </Dialog>
+     <AlertDialog open={showOXConfirm} onOpenChange={setShowOXConfirm}>
+        <AlertDialogContent>
+            <AlertDialogHeader>
+                <AlertDialogTitle>기존 선지를 삭제하고 OX 선지를 생성하시겠습니까?</AlertDialogTitle>
+                <AlertDialogDescription>
+                    이 작업은 되돌릴 수 없습니다. 기존에 입력된 선지 내용은 모두 사라집니다.
+                </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+                <AlertDialogCancel>취소</AlertDialogCancel>
+                <AlertDialogAction onClick={() => generateOptions('ox')}>확인</AlertDialogAction>
+            </AlertDialogFooter>
+        </AlertDialogContent>
+    </AlertDialog>
+    </>
   );
 }
+
+
+    
