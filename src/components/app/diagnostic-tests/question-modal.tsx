@@ -588,7 +588,7 @@ export function QuestionModal({
                                                     }
                                                     return <Input 
                                                       className="w-32" 
-                                                      placeholder={!isSymbolChecked ? `1-${index+1}` : '정답 입력'} 
+                                                      placeholder={`1-${index+1}`} 
                                                       defaultValue={value.val} 
                                                       onChange={(e) => valueField.onChange({val: e.target.value})}
                                                     />
@@ -668,8 +668,7 @@ export function QuestionModal({
                 </div>
             </div>
             
-            <DialogFooter className="p-6 pt-4 border-t sticky bottom-0 bg-background z-10 flex justify-between items-center w-full">
-                <div/>
+            <DialogFooter className="p-6 pt-4 border-t sticky bottom-0 bg-background z-10 flex justify-end items-center w-full">
                 <div className="flex items-center gap-4">
                     <FormField
                       control={form.control}
