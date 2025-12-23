@@ -223,6 +223,8 @@ export function QuestionModal({
         append({ value: '', isCorrect: false });
     } else if (value === '순서맞추기') {
         append({ value: ''});
+        append({ value: ''});
+        append({ value: ''});
     }
   }
 
@@ -535,6 +537,9 @@ export function QuestionModal({
                                             <Button type="button" variant="outline" onClick={handleAddInputAnswer}><Plus className="mr-2 h-4 w-4" />추가</Button>
                                         </div>
                                     )}
+                                    {answerType === '순서맞추기' && (
+                                        <Button type="button" variant="outline" onClick={() => append({ value: ''})}><Plus className="mr-2 h-4 w-4" />항목 추가</Button>
+                                    )}
                                 </div>
                             </div>
                         
@@ -617,7 +622,6 @@ export function QuestionModal({
                             <div className="space-y-2">
                                 {fields.map((field, index) => (
                                     <div key={field.id} className="flex items-center gap-2 p-2 border rounded-md bg-white group">
-                                    <div className="font-bold text-lg">{generateCircledKorean(index+1)}</div>
                                         <Controller
                                         control={form.control}
                                         name={`answers.${index}.value`}
@@ -630,7 +634,6 @@ export function QuestionModal({
                                     <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)} className="opacity-0 group-hover:opacity-100"><Trash2 className="h-4 w-4 text-red-500" /></Button>
                                     </div>
                                 ))}
-                                 <Button type="button" variant="outline" size="sm" onClick={() => append({ value: ''})}><Plus className="mr-2 h-4 w-4" /> 항목 추가</Button>
                             </div>
                             )}
 
