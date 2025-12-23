@@ -35,7 +35,9 @@ export function FirebaseClientProvider({children}: {children: React.ReactNode}) 
     setAuth(auth);
 
     // Seed data on initial load
-    seedCurriculumUnits(firestore).catch(console.error);
+    if (firestore) {
+      seedCurriculumUnits(firestore).catch(console.error);
+    }
 
   }, []);
 

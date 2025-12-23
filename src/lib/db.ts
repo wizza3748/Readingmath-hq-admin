@@ -856,6 +856,7 @@ export async function seedCurriculumUnits(db: Firestore) {
 
 export function getCurriculumUnits(db: Firestore, callback: (units: CurriculumUnit[]) => void) {
   const collRef = collection(db, 'curriculum-units');
+  
   const unsubscribe = onSnapshot(
     collRef,
     (querySnapshot) => {
@@ -900,5 +901,3 @@ export function getCurriculumUnits(db: Firestore, callback: (units: CurriculumUn
   
   return unsubscribe;
 }
-
-    
