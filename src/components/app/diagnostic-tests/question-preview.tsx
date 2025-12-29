@@ -5,16 +5,12 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Question } from '@/lib/db';
 
-interface QuestionData {
-  prompt?: string;
-  viewContent?: string;
-  solution?: string;
-  answerType?: '선지형' | '입력형' | '순서맞추기';
-  answers?: any[];
-  questionType?: '유형' | '서술형';
-  problemSolving?: string;
-}
+type QuestionData = Partial<Question> & {
+    questionType?: '유형' | '서술형';
+};
+
 
 const generateCircledNumber = (num: number) => {
     return `①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳`[num-1] || String(num);
@@ -49,6 +45,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                 {ans.answers?.map((choice: any, choiceIndex: number) => (
                                     <Button key={choiceIndex} variant="outline" className="w-full justify-start text-lg p-6">
                                         <span className='font-bold mr-4'>{choiceIndex + 1}</span>
+                                        <div dangerouslySetInnerHTML={{ __html: choice.value }} />
                                     </Button>
                                 ))}
                             </div>
@@ -88,6 +85,18 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                 })}
                             </div>
                     }
+                     if (ans.answerType === '순서맞추기') {
+                        return (
+                            <div key={index} className="space-y-2">
+                                <p className="font-semibold">{index + 1}번 답안</p>
+                                {ans.answers?.map((item: any, itemIndex: number) => (
+                                     <div key={itemIndex} className="border p-4 rounded-md bg-gray-100">
+                                        <div dangerouslySetInnerHTML={{ __html: item.value }} />
+                                    </div>
+                                ))}
+                            </div>
+                        )
+                    }
                     return null;
                 })}
             </div>
@@ -99,8 +108,8 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
         return (
           <div className="space-y-2">
             {answers?.map((_, index) => (
-              <Button key={index} variant="outline" className="w-full justify-start text-lg p-6">
-                <span className='font-bold mr-4'>{index + 1}</span>
+              <Button key={index} variant="outline" className="w-full justify-start text-left text-lg p-6 h-auto min-h-[4rem]">
+                 <span className='font-bold mr-4'>{index + 1}</span>
               </Button>
             ))}
           </div>
@@ -139,43 +148,39 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
             })}
           </div>
         );
+      case '순서맞추기':
+        return (
+          <div className="space-y-2">
+            <p className="text-sm text-muted-foreground">순서에 맞게 항목을 드래그하세요.</p>
+            {answers?.map((ans, index) => (
+              <div key={index} className="border p-4 rounded-md bg-gray-100 cursor-grab">
+                <div dangerouslySetInnerHTML={{ __html: ans.value }} />
+              </div>
+            ))}
+          </div>
+        );
       default:
         return null;
     }
   };
 
-  const mainContent = () => {
-    if (questionType === '서술형') {
-        return (
-            <Card>
-                <CardContent className="p-6">
-                    <div className="prose max-w-none prose-lg">
-                        {renderHTML(problemSolving)}
-                    </div>
-                </CardContent>
-            </Card>
-        )
-    }
-    return (
-        <Card>
-            <CardContent className="p-6">
-                <div className="prose max-w-none prose-lg">
-                    {renderHTML(prompt)}
-                    {viewContent && renderHTML(viewContent)}
-                </div>
-            </CardContent>
-        </Card>
-    );
-  }
 
   return (
     <div className="bg-gray-50 min-h-full p-4 sm:p-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
         {/* Left Column */}
         <div className="lg:col-span-2 space-y-6">
-          {mainContent()}
+          <Card>
+            <CardContent className="p-6">
+              <div className="prose max-w-none prose-lg">
+                {questionType === '서술형' ? renderHTML(problemSolving) : renderHTML(prompt)}
+                {questionType !== '서술형' && viewContent && renderHTML(viewContent)}
+              </div>
+            </CardContent>
+          </Card>
 
-          {answerType === '선지형' && answers && (
+          {questionType === '유형' && answerType === '선지형' && answers && answers.length > 0 && (
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-semibold text-xl mb-4">≡ 보기</h3>
@@ -210,7 +215,9 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
             </CardContent>
           </Card>
         </div>
+
       </div>
     </div>
   );
 }
+
