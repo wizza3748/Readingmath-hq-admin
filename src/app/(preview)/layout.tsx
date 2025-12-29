@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import "@/app/globals.css";
 
@@ -12,7 +13,7 @@ export default function PreviewLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );
