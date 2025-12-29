@@ -183,7 +183,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                     </CardHeader>
                     <CardContent>
                         <div className="prose max-w-none prose-xl font-semibold">
-                            {renderHTML(questionType === '서술형' ? problemSolving : prompt)}
+                            {renderHTML(questionType === '서술형' ? prompt : prompt)}
                         </div>
                     </CardContent>
                 </Card>
@@ -238,5 +238,3 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
     </div>
   );
 }
-
-    
