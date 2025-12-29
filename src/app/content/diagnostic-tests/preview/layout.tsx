@@ -12,7 +12,7 @@ export default function PreviewLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <body>
         {children}
       </body>
