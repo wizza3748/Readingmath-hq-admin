@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Question } from '@/lib/db';
@@ -107,9 +107,11 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
       case '선지형':
         return (
           <div className="space-y-2">
-            {answers?.map((_, index) => (
+            {answers?.map((ans, index) => (
               <Button key={index} variant="outline" className="w-full justify-start text-left text-lg p-6 h-auto min-h-[4rem]">
-                 <span className='font-bold mr-4'>{index + 1}</span>
+                 <div className="flex gap-4 items-start">
+                    <div>{renderHTML(ans.value)}</div>
+                 </div>
               </Button>
             ))}
           </div>
@@ -164,60 +166,73 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
     }
   };
 
-
   return (
     <div className="bg-gray-50 min-h-full p-4 sm:p-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
-        {/* Left Column */}
-        <div className="lg:col-span-2 space-y-6">
-          <Card>
-            <CardContent className="p-6">
-              <div className="prose max-w-none prose-lg">
-                {questionType === '서술형' ? renderHTML(problemSolving) : renderHTML(prompt)}
-                {questionType !== '서술형' && viewContent && renderHTML(viewContent)}
-              </div>
-            </CardContent>
-          </Card>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="space-y-6">
+                <Card>
+                    <CardContent className="p-6">
+                        <div className="prose max-w-none prose-lg">
+                            {questionType === '서술형' ? renderHTML(problemSolving) : renderHTML(prompt)}
+                        </div>
+                    </CardContent>
+                </Card>
 
-          {questionType === '유형' && answerType === '선지형' && answers && answers.length > 0 && (
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="font-semibold text-xl mb-4">≡ 보기</h3>
-                <div className="prose max-w-none prose-lg space-y-4">
-                  {answers.map((ans, index) => (
-                    <div key={index} className="flex gap-4 items-start">
-                      <span className="font-bold">{generateCircledNumber(index + 1)}</span>
-                      <div>{renderHTML(ans.value)}</div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          )}
+                {questionType === '유형' && viewContent && (
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="text-xl">≡ 보기</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                             <div className="prose max-w-none prose-lg">
+                                {renderHTML(viewContent)}
+                             </div>
+                        </CardContent>
+                    </Card>
+                )}
+                
+                {questionType === '유형' && answerType === '선지형' && (
+                    <Card>
+                        <CardHeader>
+                             <CardTitle className="text-xl">≡ 보기</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="prose max-w-none prose-lg space-y-2">
+                                {answers?.map((ans, index) => (
+                                    <div key={index} className="flex gap-4 items-start">
+                                        <span className="font-bold mt-1">{generateCircledNumber(index + 1)}</span>
+                                        <div>{renderHTML(ans.value)}</div>
+                                    </div>
+                                ))}
+                            </div>
+                        </CardContent>
+                    </Card>
+                )}
 
-          {solution && (
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="font-semibold text-xl mb-4">Ω 오답 해설</h3>
-                <div className="prose max-w-none prose-lg">{renderHTML(solution)}</div>
-              </CardContent>
-            </Card>
-          )}
+
+                {solution && (
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="text-xl">Ω 오답 해설</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="prose max-w-none prose-lg">{renderHTML(solution)}</div>
+                        </CardContent>
+                    </Card>
+                )}
+            </div>
+
+            <div className="space-y-6">
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="text-xl">답안</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        {renderAnswerSection()}
+                    </CardContent>
+                </Card>
+            </div>
         </div>
-
-        {/* Right Column */}
-        <div className="space-y-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="font-semibold text-xl mb-4">답안</h3>
-              {renderAnswerSection()}
-            </CardContent>
-          </Card>
-        </div>
-
-      </div>
     </div>
   );
 }
-
