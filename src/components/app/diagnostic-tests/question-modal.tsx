@@ -271,6 +271,9 @@ const DescriptiveAnswerCard = ({ control, index, form, remove: removeAnswerCard 
                     {answerTypeValue === '순서맞추기' && (
                         <Button type="button" variant="outline" onClick={() => subAppend({ value: ''})}><Plus className="mr-2 h-4 w-4" />항목 추가</Button>
                     )}
+                    <Button type="button" variant="ghost" size="icon" onClick={() => removeAnswerCard(index)} className="h-9 w-9 text-red-500 hover:bg-red-50 hover:text-red-600">
+                        <Trash2 className="h-4 w-4" />
+                    </Button>
                 </div>
             </div>
              {answerTypeValue === '선지형' && (
@@ -493,7 +496,7 @@ export function QuestionModal({
             ...data,
             questionType,
         });
-        toast({ title: '문제가 수정되었습니다.' });
+        toast({ title: '문제가 수정되었습니다.', duration: 1000 });
       } else {
         // Create new question
         const questionNumber = await getNextQuestionNumber(firestore, testId);
@@ -502,7 +505,7 @@ export function QuestionModal({
           questionType,
           questionNumber,
         });
-        toast({ title: '신규 문제가 등록되었습니다.' });
+        toast({ title: '신규 문제가 등록되었습니다.', duration: 1000 });
       }
       onOpenChange(false);
       onClose();
@@ -512,6 +515,7 @@ export function QuestionModal({
         variant: 'destructive',
         title: '저장 실패',
         description: '오류가 발생했습니다.',
+        duration: 1000
       });
     }
   };
@@ -572,7 +576,7 @@ export function QuestionModal({
   const handleRemoveChoice = (index: number) => {
     const currentValues = form.getValues('answers') || [];
     if (currentValues.length <= 1) {
-        toast({ variant: 'destructive', title: '최소 1개의 선지가 필요합니다.' });
+        toast({ variant: 'destructive', title: '최소 1개의 선지가 필요합니다.', duration: 1000 });
         return;
     }
     const isCorrectRemoved = currentValues[index].isCorrect;
@@ -627,7 +631,7 @@ export function QuestionModal({
   const handleGenerateAnswersFromMarkup = () => {
     const problemSolvingText = form.getValues('problemSolving');
     if (!problemSolvingText) {
-        toast({ variant: 'destructive', title: '마크업이 입력되지 않았습니다' });
+        toast({ variant: 'destructive', title: '마크업이 입력되지 않았습니다', duration: 1000 });
         return;
     }
 
@@ -635,24 +639,22 @@ export function QuestionModal({
     const matches = problemSolvingText.match(markupRegex);
 
     if (!matches || matches.length === 0) {
-        toast({ variant: 'destructive', title: '마크업이 입력되지 않았습니다' });
+        toast({ variant: 'destructive', title: '마크업을 찾을 수 없습니다.', duration: 1000 });
         return;
     }
 
     const newAnswerSets = matches.map(() => ({
-        answerType: '선지형',
-        answers: [
-            { value: '', isCorrect: true },
-            { value: '', isCorrect: false },
-        ],
-        value: ''
+      answerType: '선지형',
+      answers: [
+        { value: '', isCorrect: true },
+        { value: '', isCorrect: false },
+      ],
+      value: '', // This seems to be required by the shape, might need review
     }));
 
-    newAnswerSets.forEach(newSet => {
-        append(newSet as any);
-    })
+    replace(newAnswerSets);
 
-    toast({ title: `${matches.length}개의 답안 카드가 생성되었습니다.` });
+    toast({ title: `${matches.length}개의 답안 카드가 생성되었습니다.`, duration: 1000 });
 };
 
 const handleAddAnswerCard = () => {
