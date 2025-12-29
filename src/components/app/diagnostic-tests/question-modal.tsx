@@ -361,7 +361,7 @@ export function QuestionModal({
       value: ''
     }));
   
-    append(newAnswerSets as any);
+    replace(newAnswerSets as any);
   
     toast({ title: `${matches.length}개의 답안 카드가 생성되었습니다.` });
   };
@@ -510,7 +510,7 @@ export function QuestionModal({
             <div className="space-y-4 p-4 border rounded-md">
                 <h3 className="text-lg font-semibold">답안</h3>
                 {fields.map((field, index) => {
-                    const answerTypeValue = form.watch(`answers.${index}.answerType` as any) || '입력형';
+                    const answerTypeValue = form.watch(`answers.${index}.answerType` as any) || '선지형';
                     return(
                 <div key={field.id} className="p-4 border rounded-md bg-slate-50 space-y-4">
                      <div className="flex items-start justify-between">
@@ -626,8 +626,26 @@ export function QuestionModal({
 
 
                     {answerTypeValue === '선지형' && (
-                    <div className="space-y-2">
-                        {/* ... (선지형 렌더링 로직) */}
+                        <div className="space-y-2">
+                        {fields.map((field, index) => (
+                        <div key={field.id} className="flex items-start gap-2 group">
+                                <div className="flex flex-col items-center gap-1 pt-1">
+                                <FormLabel>선지{index + 1}</FormLabel>
+                                <Button type="button" variant="ghost" size="icon" onClick={() => handleRemoveChoice(index)} className="h-8 w-8 text-red-500 hover:bg-red-50 hover:text-red-600 opacity-0 group-hover:opacity-100">
+                                    <Trash2 className="h-4 w-4" />
+                                </Button>
+                            </div>
+                            <Controller
+                                control={form.control}
+                                name={`answers.${index}.value`}
+                                render={({ field: valueField }) => (
+                                    <div className="flex-1">
+                                    <RichEditor {...valueField} />
+                                    </div>
+                                )}
+                                />
+                        </div>
+                        ))}
                     </div>
                     )}
 
