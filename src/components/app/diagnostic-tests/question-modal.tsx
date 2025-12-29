@@ -353,14 +353,13 @@ export function QuestionModal({
     }
   
     const newAnswerSets = matches.map(() => ({
-      answerType: '선지형',
-      answers: [
-        { value: '', isCorrect: true },
-        { value: '', isCorrect: false },
-      ],
+      answerType: '입력형',
+      type: '기본',
+      answers: [],
+      value: ''
     }));
   
-    replace(newAnswerSets as any);
+    append(newAnswerSets as any);
   
     toast({ title: `${matches.length}개의 답안 카드가 생성되었습니다.` });
   };
@@ -508,7 +507,9 @@ export function QuestionModal({
 
             <div className="space-y-4 p-4 border rounded-md">
                 <h3 className="text-lg font-semibold">답안</h3>
-                {fields.map((field, index) => (
+                {fields.map((field, index) => {
+                    const answerTypeValue = form.watch(`answers.${index}.answerType` as any) || '입력형';
+                    return(
                 <div key={field.id} className="p-4 border rounded-md bg-slate-50 space-y-4">
                      <div className="flex items-start justify-between">
                         <FormField
@@ -521,7 +522,7 @@ export function QuestionModal({
                                   currentAnswers[index].answerType = value;
                                   form.setValue('answers', currentAnswers);
                                 }} 
-                                value={answerTypeField.value || '선지형'}>
+                                value={answerTypeValue}>
                                     <FormControl><SelectTrigger><SelectValue placeholder="답안 유형 선택" /></SelectTrigger></FormControl>
                                     <SelectContent>
                                         {answerTypeOptions.map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}
@@ -532,7 +533,7 @@ export function QuestionModal({
                             )}
                         />
                         <div className="flex items-center gap-2">
-                            {form.getValues(`answers.${index}.answerType`) === '선지형' && (
+                            {answerTypeValue === '선지형' && (
                             <>
                                 <Controller
                                     name={`answers.${index}.answers` as any}
@@ -563,46 +564,79 @@ export function QuestionModal({
                                 <Button type="button" variant="default" size="sm" onClick={handleAddChoice}><Plus className="mr-2 h-4 w-4" />선지 추가</Button>
                             </>
                             )}
-                            {form.getValues(`answers.${index}.answerType`) === '입력형' && (
+                            {answerTypeValue === '입력형' && (
                                 <div className="flex items-center gap-2">
-                                    <FormItem className="flex items-center space-x-2">
-                                        <Checkbox id="symbol-check" checked={isSymbolChecked} onCheckedChange={(checked) => setIsSymbolChecked(!!checked)} />
-                                        <label htmlFor="symbol-check" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">㉠㉡㉢</label>
-                                    </FormItem>
-                                    <Select value={currentInputAnswerType} onValueChange={setCurrentInputAnswerType}>
-                                        <SelectTrigger className="w-[120px]"><SelectValue /></SelectTrigger>
-                                        <SelectContent>{inputTypeOptions.map(o => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
-                                    </Select>
-                                    <Button type="button" variant="outline" onClick={handleAddInputAnswer}><Plus className="mr-2 h-4 w-4" />추가</Button>
+                                     <Controller
+                                        name={`answers.${index}.type` as any}
+                                        render={({ field: typeField }) => (
+                                            <Select value={typeField.value || '기본'} onValueChange={typeField.onChange}>
+                                                <SelectTrigger className="w-[120px]"><SelectValue /></SelectTrigger>
+                                                <SelectContent>{inputTypeOptions.map(o => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
+                                            </Select>
+                                        )}
+                                    />
+                                    <Button type="button" variant="outline" onClick={() => append({ value: '', type: '기본'})}><Plus className="mr-2 h-4 w-4" />추가</Button>
                                 </div>
                             )}
-                             {form.getValues(`answers.${index}.answerType`) === '순서맞추기' && (
+                             {answerTypeValue === '순서맞추기' && (
                                 <Button type="button" variant="outline" onClick={() => append({ value: ''})}><Plus className="mr-2 h-4 w-4" />항목 추가</Button>
                             )}
                         </div>
                     </div>
                 
-                    {form.getValues(`answers.${index}.answerType`) === '입력형' && (
+                    {answerTypeValue === '입력형' && (
                         <div className="flex flex-wrap gap-4 pt-2">
-                            {/* ... (입력형 렌더링 로직) */}
+                            <Controller
+                                control={form.control}
+                                name={`answers.${index}.value`}
+                                render={({ field: valueField }) => {
+                                    const currentAnswerType = form.getValues(`answers.${index}.type`);
+                                    const value = valueField.value || {};
+                                    if (currentAnswerType === '분수') {
+                                        return <div className="flex items-center gap-1">
+                                            <div className="flex flex-col w-20">
+                                                <Input placeholder={`분자`} className="text-center h-8 rounded-b-none border-b-0" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/>
+                                                <div className="border-t border-black"></div>
+                                                <Input placeholder={`분모`} className="text-center h-8 rounded-t-none" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
+                                            </div>
+                                        </div>
+                                    }
+                                    if (currentAnswerType === '대분수') {
+                                        return <div className="flex items-center gap-1">
+                                            <Input className="w-16 h-10 text-center" placeholder={`정수`} defaultValue={value.int} onChange={(e) => valueField.onChange({...value, int: e.target.value })}/>
+                                            <div className="flex flex-col w-20">
+                                                <Input placeholder={`분자`} className="text-center h-8 rounded-b-none border-b-0" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/>
+                                                <div className="border-t border-black"></div>
+                                                <Input placeholder={`분모`} className="text-center h-8 rounded-t-none" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
+                                            </div>
+                                        </div>
+                                    }
+                                    return <Input 
+                                    className="w-32" 
+                                    placeholder={`1-1`}
+                                    defaultValue={value.val} 
+                                    onChange={(e) => valueField.onChange({val: e.target.value})}
+                                    />
+                                }}
+                            />
                         </div>
                     )}
 
 
-                    {form.getValues(`answers.${index}.answerType`) === '선지형' && (
+                    {answerTypeValue === '선지형' && (
                     <div className="space-y-2">
                         {/* ... (선지형 렌더링 로직) */}
                     </div>
                     )}
 
-                    {form.getValues(`answers.${index}.answerType`) === '순서맞추기' && (
+                    {answerTypeValue === '순서맞추기' && (
                     <div className="space-y-2">
                         {/* ... (순서맞추기 렌더링 로직) */}
                     </div>
                     )}
 
                 </div>
-                ))}
+                )})}
             </div>
             
             <div className="space-y-2 p-4 border rounded-md">
