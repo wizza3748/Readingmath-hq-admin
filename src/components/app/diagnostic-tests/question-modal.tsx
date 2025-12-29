@@ -514,26 +514,29 @@ export function QuestionModal({
                     return(
                 <div key={field.id} className="p-4 border rounded-md bg-slate-50 space-y-4">
                      <div className="flex items-start justify-between">
-                        <FormField
-                            control={form.control}
-                            name={`answers.${index}.answerType` as any}
-                            render={({ field: answerTypeField }) => (
-                            <FormItem className="w-40">
-                                <Select onValueChange={(value) => {
-                                  const currentAnswers = form.getValues('answers') || [];
-                                  currentAnswers[index].answerType = value;
-                                  form.setValue('answers', currentAnswers);
-                                }} 
-                                value={answerTypeValue}>
-                                    <FormControl><SelectTrigger><SelectValue placeholder="답안 유형 선택" /></SelectTrigger></FormControl>
-                                    <SelectContent>
-                                        {answerTypeOptions.map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}
-                                    </SelectContent>
-                                </Select>
-                                <FormMessage />
-                            </FormItem>
-                            )}
-                        />
+                        <div className="flex items-center gap-2">
+                            <span className="font-semibold">{index + 1}.</span>
+                            <FormField
+                                control={form.control}
+                                name={`answers.${index}.answerType` as any}
+                                render={({ field: answerTypeField }) => (
+                                <FormItem className="w-40">
+                                    <Select onValueChange={(value) => {
+                                      const currentAnswers = form.getValues('answers') || [];
+                                      currentAnswers[index].answerType = value;
+                                      form.setValue('answers', currentAnswers);
+                                    }} 
+                                    value={answerTypeValue}>
+                                        <FormControl><SelectTrigger><SelectValue placeholder="답안 유형 선택" /></SelectTrigger></FormControl>
+                                        <SelectContent>
+                                            {answerTypeOptions.map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}
+                                        </SelectContent>
+                                    </Select>
+                                    <FormMessage />
+                                </FormItem>
+                                )}
+                            />
+                        </div>
                         <div className="flex items-center gap-2">
                             {answerTypeValue === '선지형' && (
                             <>
@@ -1032,3 +1035,5 @@ export function QuestionModal({
     </>
   );
 }
+
+    
