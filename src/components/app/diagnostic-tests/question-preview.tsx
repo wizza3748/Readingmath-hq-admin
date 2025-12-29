@@ -168,8 +168,8 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
 
   return (
     <div className="bg-gray-50 min-h-full p-4 sm:p-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="space-y-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-10 gap-8">
+            <div className="space-y-6 lg:col-span-7">
                 <Card>
                     <CardContent className="p-6">
                         <div className="prose max-w-none prose-lg">
@@ -178,7 +178,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                     </CardContent>
                 </Card>
 
-                {questionType === '유형' && viewContent && (
+                {questionType === '유형' && viewContent && answerType !== '선지형' && (
                     <Card>
                         <CardHeader>
                             <CardTitle className="text-xl">≡ 보기</CardTitle>
@@ -222,7 +222,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                 )}
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 lg:col-span-3">
                 <Card>
                     <CardHeader>
                         <CardTitle className="text-xl">답안</CardTitle>
