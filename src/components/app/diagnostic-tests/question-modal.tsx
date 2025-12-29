@@ -2,7 +2,7 @@
 'use client';
 
 import * as React from 'react';
-import { useForm, useFieldArray, Controller } from 'react-hook-form';
+import { useForm, useFieldArray, Controller, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useFirestore } from '@/firebase';
@@ -92,6 +92,203 @@ const generateCircledNumber = (num: number) => {
 };
 const generateCircledKorean = (num: number) => {
     return `㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉪㉫㉬㉭`[num-1] || String(num);
+};
+
+const DescriptiveAnswerCard = ({ control, index, form }: { control: any, index: number, form: any }) => {
+    const { fields: subFields, append: subAppend, remove: subRemove, replace: subReplace } = useFieldArray({
+        control,
+        name: `answers.${index}.answers`
+    });
+
+    const answerTypeValue = useWatch({
+        control,
+        name: `answers.${index}.answerType`,
+        defaultValue: '선지형'
+    });
+
+    const [showOXConfirm, setShowOXConfirm] = React.useState(false);
+
+    const handleSubAnswerTypeChange = (value: string) => {
+        const currentAnswers = form.getValues('answers') || [];
+        const targetAnswer = currentAnswers[index];
+        targetAnswer.answerType = value;
+        targetAnswer.answers = []; // Reset sub-answers when type changes
+        
+        if (value === '선지형') {
+            targetAnswer.answers = [
+                { value: '', isCorrect: true },
+                { value: '', isCorrect: false },
+            ];
+        } else if (value === '입력형') {
+            targetAnswer.answers = [{ value: { val: '' }, type: '기본', symbol: false }];
+        } else if (value === '순서맞추기') {
+             targetAnswer.answers = [ { value: ''}, { value: ''}, { value: ''} ];
+        }
+        form.setValue(`answers.${index}`, targetAnswer);
+    };
+
+    const handleAddSubChoice = () => {
+        const currentAnswers = form.getValues('answers') || [];
+        const subAnswers = currentAnswers[index].answers || [];
+        const nextNum = subAnswers.length + 1;
+        let newValue = '';
+        
+        const firstChoice = subAnswers[0]?.value as string || '';
+        if (firstChoice.startsWith('①')) {
+          newValue = `${generateCircledNumber(nextNum)} `;
+        } else if (firstChoice.startsWith('㉠')) {
+          newValue = `${generateCircledKorean(nextNum)} `;
+        }
+        
+        subAppend({ value: newValue, isCorrect: false });
+    };
+
+    const handleRemoveSubChoice = (subIndex: number) => {
+        const currentAnswers = form.getValues('answers') || [];
+        const subAnswers = currentAnswers[index].answers || [];
+        if (subAnswers.length <= 1) {
+            form.control.setError(`answers.${index}.answers`, { type: "manual", message: "최소 1개의 선지가 필요합니다."});
+            return;
+        }
+        
+        const isCorrectRemoved = subAnswers[subIndex].isCorrect;
+        subRemove(subIndex);
+        const newSubAnswers = form.getValues(`answers.${index}.answers`);
+
+        // Re-assign correctness if the correct answer was removed
+        if (isCorrectRemoved && newSubAnswers.length > 0 && !newSubAnswers.some((a: any) => a.isCorrect)) {
+            newSubAnswers[0].isCorrect = true;
+            form.setValue(`answers.${index}.answers`, newSubAnswers);
+        }
+    };
+    
+    const handleCorrectSubAnswerChange = (changedSubIndex: number) => {
+        const currentAnswers = form.getValues(`answers.${index}.answers`) || [];
+        const newAnswers = currentAnswers.map((answer: any, subIdx: number) => ({
+            ...answer,
+            isCorrect: subIdx === changedSubIndex
+        }));
+        form.setValue(`answers.${index}.answers`, newAnswers, { shouldDirty: true });
+    };
+
+     const generateSubOptions = (type: 'circled' | 'korean' | 'ox') => {
+        let newAnswers: any[];
+        if (type === 'ox') {
+            subReplace([{ value: 'O', isCorrect: true }, { value: 'X', isCorrect: false }]);
+            setShowOXConfirm(false);
+            return;
+        }
+        newAnswers = Array.from({ length: 2 }, (_, i) => ({
+            value: type === 'circled' ? `${generateCircledNumber(i + 1)} ` : `${generateCircledKorean(i + 1)} `,
+            isCorrect: i === 0
+        }));
+        subReplace(newAnswers);
+    };
+
+    const handleOXGenerate = () => {
+        const currentSubAnswers = form.getValues(`answers.${index}.answers`) || [];
+        if (currentSubAnswers.some((f:any) => f.value && !['O', 'X'].includes(f.value as string))) {
+          setShowOXConfirm(true);
+        } else {
+          generateSubOptions('ox');
+        }
+    };
+
+
+    return (
+        <div key={subFields.length} className="p-4 border rounded-md bg-slate-50 space-y-4">
+            <div className="flex items-start justify-between">
+                <div className="flex items-center gap-2">
+                    <span className="font-semibold">{index + 1}.</span>
+                    <FormField
+                        control={control}
+                        name={`answers.${index}.answerType` as any}
+                        render={({ field }) => (
+                            <FormItem className="w-40">
+                                <Select onValueChange={handleSubAnswerTypeChange} value={answerTypeValue}>
+                                    <FormControl><SelectTrigger><SelectValue placeholder="답안 유형 선택" /></SelectTrigger></FormControl>
+                                    <SelectContent>
+                                        {['입력형', '선지형', '순서맞추기'].map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}
+                                    </SelectContent>
+                                </Select>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                </div>
+                <div className="flex items-center gap-2">
+                    {answerTypeValue === '선지형' && (
+                        <>
+                            <Controller
+                                name={`answers.${index}.answers`}
+                                control={control}
+                                render={({ field: subField }) => (
+                                <FormItem className="flex items-center space-x-4">
+                                    <FormLabel className="shrink-0">정답</FormLabel>
+                                    <RadioGroup
+                                        onValueChange={(value) => handleCorrectSubAnswerChange(parseInt(value))}
+                                        value={subField.value?.findIndex((v:any) => v.isCorrect)?.toString() ?? '0'}
+                                        className="flex items-center space-x-2"
+                                    >
+                                    {(subField.value || []).map((item: any, subIndex: number) => (
+                                        <FormItem key={item.id || subIndex} className="flex items-center space-x-1">
+                                            <FormControl>
+                                                <RadioGroupItem value={subIndex.toString()} id={`correct-opt-${index}-${subIndex}`} />
+                                            </FormControl>
+                                            <FormLabel htmlFor={`correct-opt-${index}-${subIndex}`} className="font-normal">{subIndex + 1}</FormLabel>
+                                        </FormItem>
+                                    ))}
+                                    </RadioGroup>
+                                </FormItem>
+                                )}
+                            />
+                            <Button type="button" variant="outline" size="sm" onClick={() => generateSubOptions('korean')}>㉠㉡ 생성</Button>
+                            <Button type="button" variant="outline" size="sm" onClick={() => generateSubOptions('circled')}>①② 생성</Button>
+                            <Button type="button" variant="outline" size="sm" onClick={handleOXGenerate}>OX 생성</Button>
+                            <Button type="button" variant="default" size="sm" onClick={handleAddSubChoice}><Plus className="mr-2 h-4 w-4" />선지 추가</Button>
+                        </>
+                    )}
+                </div>
+            </div>
+             {answerTypeValue === '선지형' && (
+                <div className="space-y-2">
+                    {subFields.map((subField, subIndex) => (
+                        <div key={subField.id} className="flex items-start gap-2 group">
+                            <div className="flex flex-col items-center gap-1 pt-1">
+                                <FormLabel>선지{subIndex + 1}</FormLabel>
+                                <Button type="button" variant="ghost" size="icon" onClick={() => handleRemoveSubChoice(subIndex)} className="h-8 w-8 text-red-500 hover:bg-red-50 hover:text-red-600 opacity-0 group-hover:opacity-100">
+                                    <Trash2 className="h-4 w-4" />
+                                </Button>
+                            </div>
+                            <Controller
+                                control={control}
+                                name={`answers.${index}.answers.${subIndex}.value`}
+                                render={({ field: valueField }) => (
+                                    <div className="flex-1">
+                                        <RichEditor {...valueField} />
+                                    </div>
+                                )}
+                            />
+                        </div>
+                    ))}
+                </div>
+            )}
+             <AlertDialog open={showOXConfirm} onOpenChange={setShowOXConfirm}>
+                <AlertDialogContent>
+                    <AlertDialogHeader>
+                        <AlertDialogTitle>기존 선지를 삭제하고 OX 선지를 생성하시겠습니까?</AlertDialogTitle>
+                        <AlertDialogDescription>
+                            이 작업은 되돌릴 수 없습니다. 기존에 입력된 선지 내용은 모두 사라집니다.
+                        </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                        <AlertDialogCancel>취소</AlertDialogCancel>
+                        <AlertDialogAction onClick={() => generateSubOptions('ox')}>확인</AlertDialogAction>
+                    </AlertDialogFooter>
+                </AlertDialogContent>
+            </AlertDialog>
+        </div>
+    );
 };
 
 export function QuestionModal({
@@ -340,31 +537,34 @@ export function QuestionModal({
   const handleGenerateAnswersFromMarkup = () => {
     const problemSolvingText = form.getValues('problemSolving');
     if (!problemSolvingText) {
-      toast({ variant: 'destructive', title: '마크업이 입력되지 않았습니다' });
-      return;
+        toast({ variant: 'destructive', title: '마크업이 입력되지 않았습니다' });
+        return;
     }
-  
+
     const markupRegex = /(\${[^}]+})|(#{[^}]+})/g;
     const matches = problemSolvingText.match(markupRegex);
-  
+
     if (!matches || matches.length === 0) {
-      toast({ variant: 'destructive', title: '마크업이 입력되지 않았습니다' });
-      return;
+        toast({ variant: 'destructive', title: '마크업이 입력되지 않았습니다' });
+        return;
     }
-  
+
     const newAnswerSets = matches.map(() => ({
-      answerType: '선지형',
-      answers: [
-        { value: '', isCorrect: true },
-        { value: '', isCorrect: false },
-      ],
-      value: ''
+        answerType: '선지형',
+        answers: [
+            { value: '', isCorrect: true },
+            { value: '', isCorrect: false },
+        ],
+        value: ''
     }));
-  
-    replace(newAnswerSets as any);
-  
+
+    // This uses append instead of replace to avoid removing existing answers
+    newAnswerSets.forEach(newSet => {
+        append(newSet as any);
+    })
+
     toast({ title: `${matches.length}개의 답안 카드가 생성되었습니다.` });
-  };
+};
 
   const difficultyOptions: ('하' | '중하' | '중' | '중상' | '상')[] = ['하', '중하', '중', '중상', '상'];
   const behavioralAreaOptions: ('개념이해력' | '문제해결력' | '문해력' | '추론력')[] = ['개념이해력', '문제해결력', '문해력', '추론력'];
@@ -509,157 +709,9 @@ export function QuestionModal({
 
             <div className="space-y-4 p-4 border rounded-md">
                 <h3 className="text-lg font-semibold">답안</h3>
-                {fields.map((field, index) => {
-                    const answerTypeValue = form.watch(`answers.${index}.answerType` as any) || '선지형';
-                    return(
-                <div key={field.id} className="p-4 border rounded-md bg-slate-50 space-y-4">
-                     <div className="flex items-start justify-between">
-                        <div className="flex items-center gap-2">
-                            <span className="font-semibold">{index + 1}.</span>
-                            <FormField
-                                control={form.control}
-                                name={`answers.${index}.answerType` as any}
-                                render={({ field: answerTypeField }) => (
-                                <FormItem className="w-40">
-                                    <Select onValueChange={(value) => {
-                                      const currentAnswers = form.getValues('answers') || [];
-                                      currentAnswers[index].answerType = value;
-                                      form.setValue('answers', currentAnswers);
-                                    }} 
-                                    value={answerTypeValue}>
-                                        <FormControl><SelectTrigger><SelectValue placeholder="답안 유형 선택" /></SelectTrigger></FormControl>
-                                        <SelectContent>
-                                            {answerTypeOptions.map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}
-                                        </SelectContent>
-                                    </Select>
-                                    <FormMessage />
-                                </FormItem>
-                                )}
-                            />
-                        </div>
-                        <div className="flex items-center gap-2">
-                            {answerTypeValue === '선지형' && (
-                            <>
-                                <Controller
-                                    name={`answers.${index}.answers` as any}
-                                    control={form.control}
-                                    render={({ field: subField }) => (
-                                    <FormItem className="flex items-center space-x-4">
-                                        <FormLabel className="shrink-0">정답</FormLabel>
-                                        <RadioGroup
-                                        onValueChange={(value) => handleCorrectAnswerChange(parseInt(value))}
-                                        value={subField.value?.findIndex((v:any) => v.isCorrect).toString()}
-                                        className="flex items-center space-x-2"
-                                        >
-                                        {(subField.value || []).map((item:any, subIndex:number) => (
-                                            <FormItem key={item.id || subIndex} className="flex items-center space-x-1">
-                                            <FormControl>
-                                                <RadioGroupItem value={subIndex.toString()} id={`correct-opt-${index}-${subIndex}`} />
-                                            </FormControl>
-                                            <FormLabel htmlFor={`correct-opt-${index}-${subIndex}`} className="font-normal">{subIndex + 1}</FormLabel>
-                                            </FormItem>
-                                        ))}
-                                        </RadioGroup>
-                                    </FormItem>
-                                    )}
-                                />
-                                <Button type="button" variant="outline" size="sm" onClick={() => generateOptions('korean')}>㉠㉡ 생성</Button>
-                                <Button type="button" variant="outline" size="sm" onClick={() => generateOptions('circled')}>①② 생성</Button>
-                                <Button type="button" variant="outline" size="sm" onClick={handleOXGenerate}>OX 생성</Button>
-                                <Button type="button" variant="default" size="sm" onClick={handleAddChoice}><Plus className="mr-2 h-4 w-4" />선지 추가</Button>
-                            </>
-                            )}
-                            {answerTypeValue === '입력형' && (
-                                <div className="flex items-center gap-2">
-                                     <Controller
-                                        name={`answers.${index}.type` as any}
-                                        render={({ field: typeField }) => (
-                                            <Select value={typeField.value || '기본'} onValueChange={typeField.onChange}>
-                                                <SelectTrigger className="w-[120px]"><SelectValue /></SelectTrigger>
-                                                <SelectContent>{inputTypeOptions.map(o => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
-                                            </Select>
-                                        )}
-                                    />
-                                    <Button type="button" variant="outline" onClick={() => append({ value: '', type: '기본'})}><Plus className="mr-2 h-4 w-4" />추가</Button>
-                                </div>
-                            )}
-                             {answerTypeValue === '순서맞추기' && (
-                                <Button type="button" variant="outline" onClick={() => append({ value: ''})}><Plus className="mr-2 h-4 w-4" />항목 추가</Button>
-                            )}
-                        </div>
-                    </div>
-                
-                    {answerTypeValue === '입력형' && (
-                        <div className="flex flex-wrap gap-4 pt-2">
-                            <Controller
-                                control={form.control}
-                                name={`answers.${index}.value`}
-                                render={({ field: valueField }) => {
-                                    const currentAnswerType = form.getValues(`answers.${index}.type`);
-                                    const value = valueField.value || {};
-                                    if (currentAnswerType === '분수') {
-                                        return <div className="flex items-center gap-1">
-                                            <div className="flex flex-col w-20">
-                                                <Input placeholder={`분자`} className="text-center h-8 rounded-b-none border-b-0" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/>
-                                                <div className="border-t border-black"></div>
-                                                <Input placeholder={`분모`} className="text-center h-8 rounded-t-none" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
-                                            </div>
-                                        </div>
-                                    }
-                                    if (currentAnswerType === '대분수') {
-                                        return <div className="flex items-center gap-1">
-                                            <Input className="w-16 h-10 text-center" placeholder={`정수`} defaultValue={value.int} onChange={(e) => valueField.onChange({...value, int: e.target.value })}/>
-                                            <div className="flex flex-col w-20">
-                                                <Input placeholder={`분자`} className="text-center h-8 rounded-b-none border-b-0" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/>
-                                                <div className="border-t border-black"></div>
-                                                <Input placeholder={`분모`} className="text-center h-8 rounded-t-none" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
-                                            </div>
-                                        </div>
-                                    }
-                                    return <Input 
-                                    className="w-32" 
-                                    placeholder={`1-1`}
-                                    defaultValue={value.val} 
-                                    onChange={(e) => valueField.onChange({val: e.target.value})}
-                                    />
-                                }}
-                            />
-                        </div>
-                    )}
-
-
-                    {answerTypeValue === '선지형' && (
-                        <div className="space-y-2">
-                        {fields.map((field, index) => (
-                        <div key={field.id} className="flex items-start gap-2 group">
-                                <div className="flex flex-col items-center gap-1 pt-1">
-                                <FormLabel>선지{index + 1}</FormLabel>
-                                <Button type="button" variant="ghost" size="icon" onClick={() => handleRemoveChoice(index)} className="h-8 w-8 text-red-500 hover:bg-red-50 hover:text-red-600 opacity-0 group-hover:opacity-100">
-                                    <Trash2 className="h-4 w-4" />
-                                </Button>
-                            </div>
-                            <Controller
-                                control={form.control}
-                                name={`answers.${index}.value`}
-                                render={({ field: valueField }) => (
-                                    <div className="flex-1">
-                                    <RichEditor {...valueField} />
-                                    </div>
-                                )}
-                                />
-                        </div>
-                        ))}
-                    </div>
-                    )}
-
-                    {answerTypeValue === '순서맞추기' && (
-                    <div className="space-y-2">
-                        {/* ... (순서맞추기 렌더링 로직) */}
-                    </div>
-                    )}
-
-                </div>
-                )})}
+                {fields.map((field, index) => (
+                    <DescriptiveAnswerCard key={field.id} control={form.control} index={index} form={form} />
+                ))}
             </div>
             
             <div className="space-y-2 p-4 border rounded-md">
@@ -976,7 +1028,12 @@ export function QuestionModal({
 
   return (
     <>
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={(isOpen) => {
+        if (!isOpen) {
+            onClose();
+        }
+        onOpenChange(isOpen);
+    }}>
       <DialogContent className="max-w-full w-full h-full flex flex-col p-0">
         <DialogHeader className="p-6 pb-0">
           <DialogTitle>
@@ -1035,5 +1092,3 @@ export function QuestionModal({
     </>
   );
 }
-
-    
