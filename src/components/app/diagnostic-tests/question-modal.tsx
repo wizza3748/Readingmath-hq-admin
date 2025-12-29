@@ -342,7 +342,7 @@ export function QuestionModal({
       return;
     }
     
-    const markupRegex = /\$\{.*?\}|#\{.*?\}/g;
+    const markupRegex = /\$\{.*?\}|\#\{.*?\}/g;
     const matches = problemSolvingText.match(markupRegex);
 
     if (!matches || matches.length === 0) {
