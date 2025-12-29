@@ -124,7 +124,15 @@ export function QuestionList({ testId }: { testId: string }) {
   };
 
   const columns: ColumnDef<Question>[] = [
-    { accessorKey: 'questionNumber', header: '번호' },
+    { 
+      accessorKey: 'questionNumber', 
+      header: '번호',
+      cell: ({ row, table }) => {
+        const sortedRows = table.getSortedRowModel().rows;
+        const rowIndex = sortedRows.findIndex(sortedRow => sortedRow.id === row.id);
+        return rowIndex + 1;
+      }
+    },
     { accessorKey: 'questionType', header: '문제 타입' },
     { 
         accessorKey: 'subUnitType', 
@@ -281,3 +289,5 @@ export function QuestionList({ testId }: { testId: string }) {
     </>
   );
 }
+
+    

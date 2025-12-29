@@ -1,5 +1,4 @@
 
-
 'use client';
 import {
   collection,
@@ -539,17 +538,41 @@ export async function updateQuestion(db: Firestore, testId: string, questionId: 
 
 export async function deleteQuestion(db: Firestore, testId: string, questionId: string) {
     const questionDocRef = doc(db, `diagnostic-tests/${testId}/questions`, questionId);
+    const questionsCollRef = collection(db, `diagnostic-tests/${testId}/questions`);
 
-    await deleteDoc(questionDocRef)
-      .catch(async (serverError) => {
-        console.error("Error deleting question: ", serverError);
+    try {
+        await runTransaction(db, async (transaction) => {
+            // 1. Delete the specified question
+            transaction.delete(questionDocRef);
+
+            // 2. Get all remaining questions, ordered by their current questionNumber
+            const allQuestionsQuery = query(questionsCollRef, orderBy("questionNumber", "asc"));
+            const allQuestionsSnap = await getDocs(allQuestionsQuery);
+            
+            const batch = writeBatch(db);
+            let currentNumber = 1;
+
+            // 3. Iterate and re-number remaining questions
+            allQuestionsSnap.forEach((docSnap) => {
+                // Don't re-number the one we are deleting in this transaction
+                if (docSnap.id !== questionId) {
+                    const docRef = doc(db, `diagnostic-tests/${testId}/questions`, docSnap.id);
+                    batch.update(docRef, { questionNumber: currentNumber });
+                    currentNumber++;
+                }
+            });
+            
+            await batch.commit();
+        });
+    } catch (serverError: any) {
+        console.error("Error deleting or re-numbering questions:", serverError);
         const permissionError = new FirestorePermissionError({
             path: questionDocRef.path,
             operation: 'delete',
         } satisfies SecurityRuleContext);
         errorEmitter.emit('permission-error', permissionError);
-        throw serverError;
-    });
+        throw serverError; // Re-throw the error
+    }
 }
 
 export async function updateQuestionExtended(db: Firestore, testId: string, questionId: string, isExtended: boolean) {
@@ -780,3 +803,6 @@ export const initialCurriculumUnits: CurriculumUnit[] = [
 
 
 
+
+
+    
