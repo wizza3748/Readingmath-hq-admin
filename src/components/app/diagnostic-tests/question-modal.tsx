@@ -94,7 +94,7 @@ const generateCircledKorean = (num: number) => {
     return `㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉪㉫㉬㉭`[num-1] || String(num);
 };
 
-const DescriptiveAnswerCard = ({ control, index, form }: { control: any, index: number, form: any }) => {
+const DescriptiveAnswerCard = ({ control, index, form, remove: removeAnswerCard }: { control: any, index: number, form: any, remove: (index: number) => void }) => {
     const { fields: subFields, append: subAppend, remove: subRemove, replace: subReplace } = useFieldArray({
         control,
         name: `answers.${index}.answers`
@@ -107,6 +107,9 @@ const DescriptiveAnswerCard = ({ control, index, form }: { control: any, index: 
     });
 
     const [showOXConfirm, setShowOXConfirm] = React.useState(false);
+    const [isSymbolChecked, setIsSymbolChecked] = React.useState(false);
+    const [currentInputAnswerType, setCurrentInputAnswerType] = React.useState('기본');
+    const inputTypeOptions = ['기본', '분수', '대분수'];
 
     const handleSubAnswerTypeChange = (value: string) => {
         const currentAnswers = form.getValues('answers') || [];
@@ -194,6 +197,9 @@ const DescriptiveAnswerCard = ({ control, index, form }: { control: any, index: 
         }
     };
 
+    const handleAddInputAnswer = () => {
+        subAppend({ value: { val: '' }, type: currentInputAnswerType, symbol: isSymbolChecked });
+    };
 
     return (
         <div key={subFields.length} className="p-4 border rounded-md bg-slate-50 space-y-4">
@@ -216,7 +222,7 @@ const DescriptiveAnswerCard = ({ control, index, form }: { control: any, index: 
                         )}
                     />
                 </div>
-                <div className="flex items-center gap-2">
+                 <div className="flex items-center gap-2">
                     {answerTypeValue === '선지형' && (
                         <>
                             <Controller
@@ -248,6 +254,22 @@ const DescriptiveAnswerCard = ({ control, index, form }: { control: any, index: 
                             <Button type="button" variant="default" size="sm" onClick={handleAddSubChoice}><Plus className="mr-2 h-4 w-4" />선지 추가</Button>
                         </>
                     )}
+                    {answerTypeValue === '입력형' && (
+                        <div className="flex items-center gap-2">
+                            <FormItem className="flex items-center space-x-2">
+                                <Checkbox id={`symbol-check-${index}`} checked={isSymbolChecked} onCheckedChange={(checked) => setIsSymbolChecked(!!checked)} />
+                                <label htmlFor={`symbol-check-${index}`} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">㉠㉡㉢</label>
+                            </FormItem>
+                            <Select value={currentInputAnswerType} onValueChange={setCurrentInputAnswerType}>
+                                <SelectTrigger className="w-[120px]"><SelectValue /></SelectTrigger>
+                                <SelectContent>{inputTypeOptions.map(o => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
+                            </Select>
+                            <Button type="button" variant="outline" onClick={handleAddInputAnswer}><Plus className="mr-2 h-4 w-4" />추가</Button>
+                        </div>
+                    )}
+                    {answerTypeValue === '순서맞추기' && (
+                        <Button type="button" variant="outline" onClick={() => subAppend({ value: ''})}><Plus className="mr-2 h-4 w-4" />항목 추가</Button>
+                    )}
                 </div>
             </div>
              {answerTypeValue === '선지형' && (
@@ -269,6 +291,73 @@ const DescriptiveAnswerCard = ({ control, index, form }: { control: any, index: 
                                     </div>
                                 )}
                             />
+                        </div>
+                    ))}
+                </div>
+            )}
+            {answerTypeValue === '입력형' && (
+                <div className="flex flex-wrap gap-4 pt-2">
+                    {subFields.map((subField, subIndex) => (
+                    <div key={subField.id} className="group relative flex items-start gap-2 p-2">
+                        {isSymbolChecked ? (
+                        <FormLabel className="pt-2 shrink-0">
+                            {generateCircledKorean(subIndex + 1)}
+                        </FormLabel>
+                        ) : null}
+                        <Controller
+                                control={control}
+                                name={`answers.${index}.answers.${subIndex}.value`}
+                                render={({ field: valueField }) => {
+                                    const currentAnswerType = form.getValues(`answers.${index}.answers.${subIndex}.type`);
+                                    const value = valueField.value || {};
+                                    if (currentAnswerType === '분수') {
+                                        return <div className="flex items-center gap-1">
+                                            <div className="flex flex-col w-20">
+                                                <Input placeholder={`1-${subIndex + 1}`} className="text-center h-8 rounded-b-none border-b-0" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/>
+                                                <div className="border-t border-black"></div>
+                                                <Input placeholder={`1-${subIndex + 1}`} className="text-center h-8 rounded-t-none" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
+                                            </div>
+                                        </div>
+                                    }
+                                    if (currentAnswerType === '대분수') {
+                                        return <div className="flex items-center gap-1">
+                                            <Input className="w-16 h-10 text-center" placeholder={`1-${subIndex + 1}`} defaultValue={value.int} onChange={(e) => valueField.onChange({...value, int: e.target.value })}/>
+                                            <div className="flex flex-col w-20">
+                                                <Input placeholder={`1-${subIndex + 1}`} className="text-center h-8 rounded-b-none border-b-0" defaultValue={value.num} onChange={(e) => valueField.onChange({...value, num: e.target.value })}/>
+                                                <div className="border-t border-black"></div>
+                                                <Input placeholder={`1-${subIndex + 1}`} className="text-center h-8 rounded-t-none" defaultValue={value.den} onChange={(e) => valueField.onChange({...value, den: e.target.value })}/>
+                                            </div>
+                                        </div>
+                                    }
+                                    return <Input 
+                                    className="w-32" 
+                                    placeholder={`1-${subIndex+1}`}
+                                    defaultValue={value.val} 
+                                    onChange={(e) => valueField.onChange({val: e.target.value})}
+                                    />
+                                }}
+                            />
+                        <Button type="button" variant="ghost" size="icon" onClick={() => subRemove(subIndex)} className="absolute -right-2 -top-2 h-6 w-6 opacity-0 group-hover:opacity-100">
+                            <Trash2 className="h-4 w-4 text-red-500" />
+                        </Button>
+                    </div>
+                    ))}
+                </div>
+            )}
+             {answerTypeValue === '순서맞추기' && (
+                <div className="space-y-2">
+                    {subFields.map((subField, subIndex) => (
+                        <div key={subField.id} className="flex items-center gap-2 p-2 border rounded-md bg-white group">
+                            <Controller
+                            control={control}
+                            name={`answers.${index}.answers.${subIndex}.value`}
+                            render={({ field: valueField }) => (
+                                <div className="flex-1">
+                                <RichEditor {...valueField} />
+                                </div>
+                            )}
+                            />
+                        <Button type="button" variant="ghost" size="icon" onClick={() => subRemove(subIndex)} className="opacity-0 group-hover:opacity-100"><Trash2 className="h-4 w-4 text-red-500" /></Button>
                         </div>
                     ))}
                 </div>
@@ -710,7 +799,7 @@ export function QuestionModal({
             <div className="space-y-4 p-4 border rounded-md">
                 <h3 className="text-lg font-semibold">답안</h3>
                 {fields.map((field, index) => (
-                    <DescriptiveAnswerCard key={field.id} control={form.control} index={index} form={form} />
+                    <DescriptiveAnswerCard key={field.id} control={form.control} index={index} form={form} remove={remove} />
                 ))}
             </div>
             
