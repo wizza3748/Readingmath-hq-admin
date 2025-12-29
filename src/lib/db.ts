@@ -492,15 +492,41 @@ export async function createBlankQuestion(db: Firestore, testId: string, questio
   }
 }
 
+const cleanupObject = (obj: any): any => {
+    if (obj === null || typeof obj !== 'object') {
+        return obj;
+    }
+
+    if (Array.isArray(obj)) {
+        return obj.map(cleanupObject);
+    }
+
+    const newObj: { [key: string]: any } = {};
+    for (const key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+            const value = obj[key];
+            if (value !== undefined) {
+                newObj[key] = cleanupObject(value);
+            }
+        }
+    }
+    return newObj;
+};
 
 export async function updateQuestion(db: Firestore, testId: string, questionId: string, questionData: Partial<Omit<Question, 'id'>>) {
     const docRef = doc(db, `diagnostic-tests/${testId}/questions`, questionId);
+    
+    const cleanedData = cleanupObject(questionData);
+
     const data = { 
-        ...questionData,
+        ...cleanedData,
         updatedAt: serverTimestamp() 
     };
+
     await updateDoc(docRef, data)
      .catch(async (serverError) => {
+        console.error("Error updating document:", serverError);
+        console.error("Data sent:", data);
         const permissionError = new FirestorePermissionError({
             path: docRef.path,
             operation: 'update',
@@ -509,6 +535,7 @@ export async function updateQuestion(db: Firestore, testId: string, questionId: 
         errorEmitter.emit('permission-error', permissionError);
     });
 }
+
 
 export async function deleteQuestion(db: Firestore, testId: string, questionId: string) {
     const questionDocRef = doc(db, `diagnostic-tests/${testId}/questions`, questionId);
@@ -564,7 +591,7 @@ export const initialCurriculumUnits: CurriculumUnit[] = [
     { id: '10', semester: '초등 3학년 1학기', largeUnit: '2단원-동물의 생활', mediumUnit: '(2) 동물의 사는 곳에 따른 특징(땅에 사는 동물)', subUnit: '', contentArea: '생명과학' },
     { id: '11', semester: '초등 3학년 1학기', largeUnit: '2단원-동물의 생활', mediumUnit: '(2) 동물의 사는 곳에 따른 특징(사막, 극지방, 높은 산에 사는 동물)', subUnit: '', contentArea: '생명과학' },
     { id: '12', semester: '초등 3학년 1학기', largeUnit: '2단원-동물의 생활', mediumUnit: '(1) 우리 주변의 동물(특징에 따른 동물의 분류)', subUnit: '', contentArea: '생명과학' },
-    { id: '13', semester: '초등 3학년 1학기', largeUnit: '2단원-동물의 생활', mediumUnit: '(1) 우리 주변의 동물(우리 주변에 사는 동물)', subUnit: '', contentArea: '생명과학' },
+    { id: '13', semester: '초등 3학년 1학기', largeUnit: '2단원-동물의 생활', mediumUnit: '(1) 우리 주변에 사는 동물(우리 주변에 사는 동물)', subUnit: '', contentArea: '생명과학' },
     { id: '14', semester: '초등 3학년 1학기', largeUnit: '2단원-동물의 생활', mediumUnit: '(2) 동물의 사는 곳에 따른 특징(동물의 특징을 이용한 생활용품)', subUnit: '', contentArea: '생명과학' },
     { id: '15', semester: '초등 3학년 1학기', largeUnit: '3단원-식물의 생활', mediumUnit: '(1) 우리 주변의 식물(잎의 특징에 따른 식물 분류)', subUnit: '', contentArea: '생명과학' },
     { id: '16', semester: '초등 3학년 1학기', largeUnit: '3단원-식물의 생활', mediumUnit: '(2) 식물의 사는 곳에 따른 특징(식물의 특징을 이용한 생활용품)', subUnit: '', contentArea: '생명과학' },
@@ -749,6 +776,7 @@ export const initialCurriculumUnits: CurriculumUnit[] = [
     { id: '195', semester: '중등 3학년 1학기', largeUnit: '4단원-자극과 반응', mediumUnit: '(2) 신경계와 호르몬(자극에 따른 반응의 경로)', subUnit: '', contentArea: '화학' },
     { id: '196', semester: '중등 3학년 1학기', largeUnit: '4단원-자극과 반응', mediumUnit: '(2) 신경계와 호르몬(항상성 유지)', subUnit: '', contentArea: '화학' },
 ].map((unit, index) => ({ ...unit, id: (index + 1).toString() }));
+
 
 
 
