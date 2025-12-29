@@ -157,33 +157,15 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
         )
     }
     return (
-        <>
-            <Card>
-                <CardContent className="p-6">
+        <Card>
+            <CardContent className="p-6">
                 <div className="prose max-w-none prose-lg">
                     {renderHTML(prompt)}
                     {viewContent && renderHTML(viewContent)}
                 </div>
-                </CardContent>
-            </Card>
-
-            {answerType === '선지형' && answers && (
-                <Card>
-                <CardContent className="p-6">
-                    <h3 className="font-semibold text-xl mb-4">≡ 보기</h3>
-                    <div className="prose max-w-none prose-lg space-y-4">
-                    {answers.map((ans, index) => (
-                        <div key={index} className="flex gap-4 items-start">
-                        <span className="font-bold">{generateCircledNumber(index + 1)}</span>
-                        <div>{renderHTML(ans.value)}</div>
-                        </div>
-                    ))}
-                    </div>
-                </CardContent>
-                </Card>
-            )}
-        </>
-    )
+            </CardContent>
+        </Card>
+    );
   }
 
   return (
@@ -192,6 +174,22 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
         {/* Left Column */}
         <div className="lg:col-span-2 space-y-6">
           {mainContent()}
+
+          {answerType === '선지형' && answers && (
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-semibold text-xl mb-4">≡ 보기</h3>
+                <div className="prose max-w-none prose-lg space-y-4">
+                  {answers.map((ans, index) => (
+                    <div key={index} className="flex gap-4 items-start">
+                      <span className="font-bold">{generateCircledNumber(index + 1)}</span>
+                      <div>{renderHTML(ans.value)}</div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
 
           {solution && (
             <Card>
