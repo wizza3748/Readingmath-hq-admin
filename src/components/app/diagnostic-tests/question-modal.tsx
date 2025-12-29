@@ -13,7 +13,6 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
   DialogFooter,
   DialogClose,
 } from '@/components/ui/dialog';
@@ -96,17 +95,20 @@ const generateCircledKorean = (num: number) => {
 };
 
 export function QuestionModal({
-  children,
+  open,
+  onOpenChange,
   testId,
   question,
   questionType,
+  onClose,
 }: {
-  children: React.ReactNode;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
   testId: string;
   question?: Question;
   questionType: '유형' | '서술형';
+  onClose: () => void;
 }) {
-  const [open, setOpen] = React.useState(false);
   const firestore = useFirestore();
   const { toast } = useToast();
   const [curriculumUnits, setCurriculumUnits] = React.useState<CurriculumUnit[]>(initialCurriculumUnits);
@@ -215,7 +217,8 @@ export function QuestionModal({
         });
         toast({ title: '신규 문제가 등록되었습니다.' });
       }
-      setOpen(false);
+      onOpenChange(false);
+      onClose();
     } catch (error) {
       console.error('Error saving question:', error);
       toast({
@@ -340,15 +343,15 @@ export function QuestionModal({
       toast({ variant: 'destructive', title: '마크업이 입력되지 않았습니다' });
       return;
     }
-
+  
     const markupRegex = /(\${[^}]+})|(#{[^}]+})/g;
     const matches = problemSolvingText.match(markupRegex);
-
+  
     if (!matches || matches.length === 0) {
       toast({ variant: 'destructive', title: '마크업이 입력되지 않았습니다' });
       return;
     }
-
+  
     const newAnswerSets = matches.map(() => ({
       answerType: '선지형',
       answers: [
@@ -356,9 +359,9 @@ export function QuestionModal({
         { value: '', isCorrect: false },
       ],
     }));
-
+  
     replace(newAnswerSets as any);
-
+  
     toast({ title: `${matches.length}개의 답안 카드가 생성되었습니다.` });
   };
 
@@ -916,8 +919,7 @@ export function QuestionModal({
 
   return (
     <>
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>{children}</DialogTrigger>
+    <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-full w-full h-full flex flex-col p-0">
         <DialogHeader className="p-6 pb-0">
           <DialogTitle>

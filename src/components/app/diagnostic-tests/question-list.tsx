@@ -45,6 +45,8 @@ export function QuestionList({ testId }: { testId: string }) {
   const { toast } = useToast();
   const [questions, setQuestions] = React.useState<Question[]>([]);
   const [loading, setLoading] = React.useState(true);
+  const [editingQuestion, setEditingQuestion] = React.useState<Question | null>(null);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   const curriculumUnitMap = React.useMemo(() => {
     const map = new Map<string, string>();
@@ -110,6 +112,16 @@ export function QuestionList({ testId }: { testId: string }) {
         });
     }
   };
+  
+  const handleOpenModal = (question: Question) => {
+    setEditingQuestion(question);
+    setIsModalOpen(true);
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setEditingQuestion(null);
+  };
 
   const columns: ColumnDef<Question>[] = [
     { accessorKey: 'questionNumber', header: '번호' },
@@ -172,11 +184,9 @@ export function QuestionList({ testId }: { testId: string }) {
         const question = row.original;
         return (
           <div className="flex gap-1">
-            <QuestionModal testId={testId} question={question} questionType={question.questionType}>
-                <Button variant="ghost" size="icon" className="h-8 w-8 text-blue-500 hover:text-blue-600">
-                    <Edit className="h-4 w-4" />
-                </Button>
-            </QuestionModal>
+             <Button variant="ghost" size="icon" className="h-8 w-8 text-blue-500 hover:text-blue-600" onClick={() => handleOpenModal(question)}>
+                <Edit className="h-4 w-4" />
+            </Button>
             <AlertDialog>
                 <AlertDialogTrigger asChild>
                     <Button variant="ghost" size="icon" className="h-8 w-8 text-red-500 hover:text-red-600">
@@ -217,46 +227,59 @@ export function QuestionList({ testId }: { testId: string }) {
   }
 
   return (
-    <div className="rounded-md border bg-white">
-      <Table>
-        <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                return (
-                  <TableHead key={header.id} className="text-center">
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </TableHead>
-                );
-              })}
-            </TableRow>
-          ))}
-        </TableHeader>
-        <TableBody>
-          {table.getRowModel().rows?.length ? (
-            table.getRowModel().rows.map((row) => (
-              <TableRow key={row.id}>
-                {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="text-center">
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))
-          ) : (
-            <TableRow>
-              <TableCell colSpan={columns.length} className="h-24 text-center">
-                등록된 문제가 없습니다.
-              </TableCell>
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
-    </div>
+    <>
+        <div className="rounded-md border bg-white">
+        <Table>
+            <TableHeader>
+            {table.getHeaderGroups().map((headerGroup) => (
+                <TableRow key={headerGroup.id}>
+                {headerGroup.headers.map((header) => {
+                    return (
+                    <TableHead key={header.id} className="text-center">
+                        {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                            )}
+                    </TableHead>
+                    );
+                })}
+                </TableRow>
+            ))}
+            </TableHeader>
+            <TableBody>
+            {table.getRowModel().rows?.length ? (
+                table.getRowModel().rows.map((row) => (
+                <TableRow key={row.id}>
+                    {row.getVisibleCells().map((cell) => (
+                    <TableCell key={cell.id} className="text-center">
+                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </TableCell>
+                    ))}
+                </TableRow>
+                ))
+            ) : (
+                <TableRow>
+                <TableCell colSpan={columns.length} className="h-24 text-center">
+                    등록된 문제가 없습니다.
+                </TableCell>
+                </TableRow>
+            )}
+            </TableBody>
+        </Table>
+        </div>
+        {editingQuestion && (
+            <QuestionModal
+                key={editingQuestion.id}
+                open={isModalOpen}
+                onOpenChange={setIsModalOpen}
+                testId={testId}
+                question={editingQuestion}
+                questionType={editingQuestion.questionType}
+                onClose={handleCloseModal}
+            />
+        )}
+    </>
   );
 }
