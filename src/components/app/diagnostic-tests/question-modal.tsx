@@ -76,11 +76,14 @@ const formSchema = z.object({
   isReviewed: z.boolean().default(false),
 }).superRefine((data, ctx) => {
     if ((data as any).questionType === '서술형' && (!data.problemSolving || data.problemSolving.trim() === '')) {
+      // Temporarily disable this validation to allow saving without problemSolving
+      /*
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: '문제풀이 내용을 입력해 주세요.',
         path: ['problemSolving'],
       });
+      */
     }
 });
 
