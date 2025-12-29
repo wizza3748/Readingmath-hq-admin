@@ -49,42 +49,41 @@ export default function QuestionPreviewPage() {
         return (
           <div className="space-y-2">
             {answers?.map((_, index) => (
-              <Button key={index} variant="outline" className="w-full justify-between">
-                <span>{index + 1}</span>
-                <span>{generateCircledNumber(index + 1)}</span>
+              <Button key={index} variant="outline" className="w-full justify-start text-lg p-6">
+                <span className='font-bold mr-4'>{index + 1}</span>
               </Button>
             ))}
           </div>
         );
       case '입력형':
         return (
-          <div className="space-y-2">
+          <div className="space-y-4">
             {answers?.map((ans, index) => {
                 if (ans.type === '분수') {
                     return <div key={index} className="flex items-center gap-2">
-                                <span className="font-bold">{ans.symbol ? `${generateCircledNumber(index)}` : `${index+1}.`}</span>
-                                <div className="flex flex-col w-20">
-                                    <Input className="text-center h-8 rounded-b-none border-b-0"/>
-                                    <div className="border-t border-black"></div>
-                                    <Input className="text-center h-8 rounded-t-none"/>
+                                <span className="font-bold text-lg">{ans.symbol ? `${generateCircledNumber(index + 1)}` : `${index+1}.`}</span>
+                                <div className="flex flex-col w-24">
+                                    <Input className="text-center h-10 rounded-b-none border-b-0 text-lg"/>
+                                    <div className="border-t-2 border-black"></div>
+                                    <Input className="text-center h-10 rounded-t-none text-lg"/>
                                 </div>
                            </div>
                 }
                 if (ans.type === '대분수') {
                     return <div key={index} className="flex items-center gap-2">
-                                <span className="font-bold">{ans.symbol ? `${generateCircledNumber(index)}` : `${index+1}.`}</span>
-                                <Input className="w-16 h-10 text-center" />
-                                <div className="flex flex-col w-20">
-                                    <Input className="text-center h-8 rounded-b-none border-b-0"/>
-                                    <div className="border-t border-black"></div>
-                                    <Input className="text-center h-8 rounded-t-none"/>
+                                <span className="font-bold text-lg">{ans.symbol ? `${generateCircledNumber(index + 1)}` : `${index+1}.`}</span>
+                                <Input className="w-20 h-12 text-center text-lg" />
+                                <div className="flex flex-col w-24">
+                                    <Input className="text-center h-10 rounded-b-none border-b-0 text-lg"/>
+                                    <div className="border-t-2 border-black"></div>
+                                    <Input className="text-center h-10 rounded-t-none text-lg"/>
                                 </div>
                            </div>
                 }
                 return (
                     <div key={index} className="flex items-center gap-2">
-                        <span className="font-bold">{ans.symbol ? `${generateCircledNumber(index)}` : `${index+1}.`}</span>
-                        <Input className="w-32" />
+                        <span className="font-bold text-lg">{ans.symbol ? `${generateCircledNumber(index + 1)}` : `${index+1}.`}</span>
+                        <Input className="w-48 h-12 text-lg" />
                     </div>
                 )
             })}
@@ -102,7 +101,7 @@ export default function QuestionPreviewPage() {
         <div className="lg:col-span-2 space-y-6">
           <Card>
             <CardContent className="p-6">
-              <div className="prose max-w-none">
+              <div className="prose max-w-none prose-lg">
                 {renderHTML(prompt)}
                 {renderHTML(viewContent)}
               </div>
@@ -112,11 +111,11 @@ export default function QuestionPreviewPage() {
           {answerType === '선지형' && answers && (
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-4">≡ 보기</h3>
-                <div className="prose max-w-none space-y-2">
+                <h3 className="font-semibold text-xl mb-4">≡ 보기</h3>
+                <div className="prose max-w-none prose-lg space-y-4">
                   {answers.map((ans, index) => (
-                    <div key={index} className="flex gap-2 items-start">
-                      <span>{generateCircledNumber(index + 1)}</span>
+                    <div key={index} className="flex gap-4 items-start">
+                      <span className="font-bold">{generateCircledNumber(index + 1)}</span>
                       <div>{renderHTML(ans.value)}</div>
                     </div>
                   ))}
@@ -128,8 +127,8 @@ export default function QuestionPreviewPage() {
           {solution && (
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-4">Ω 오답 해설</h3>
-                <div className="prose max-w-none">{renderHTML(solution)}</div>
+                <h3 className="font-semibold text-xl mb-4">Ω 오답 해설</h3>
+                <div className="prose max-w-none prose-lg">{renderHTML(solution)}</div>
               </CardContent>
             </Card>
           )}
@@ -139,7 +138,7 @@ export default function QuestionPreviewPage() {
         <div className="space-y-6">
           <Card>
             <CardContent className="p-6">
-              <h3 className="font-semibold mb-4">답안</h3>
+              <h3 className="font-semibold text-xl mb-4">답안</h3>
               {renderAnswerSection()}
             </CardContent>
           </Card>
