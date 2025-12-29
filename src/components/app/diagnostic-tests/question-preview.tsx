@@ -20,7 +20,12 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
 
   const renderHTML = (htmlString: string | undefined) => {
     if (!htmlString) return null;
-    return <div dangerouslySetInnerHTML={{ __html: htmlString }} />;
+    // URL-like strings into actual image tags
+    const processedHtml = htmlString.replace(
+      /(https?:\/\/[^\s]+?\.(?:png|jpg|jpeg|gif|webp|svg))/g,
+      '<img src="$1" alt="image" style="max-width: 100%; height: auto; border-radius: 0.5rem; margin-top: 1rem; margin-bottom: 1rem;" />'
+    );
+    return <div dangerouslySetInnerHTML={{ __html: processedHtml }} />;
   };
 
   if (!questionData) {
@@ -43,9 +48,11 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                              <div key={index} className="space-y-2">
                                 <p className="font-semibold">{index + 1}번 답안</p>
                                 {ans.answers?.map((choice: any, choiceIndex: number) => (
-                                    <Button key={choiceIndex} variant="outline" className="w-full justify-start text-lg p-6">
-                                        <span className='font-bold mr-4'>{choiceIndex + 1}</span>
-                                        <div dangerouslySetInnerHTML={{ __html: choice.value }} />
+                                    <Button key={choiceIndex} variant="outline" className="w-full justify-start text-left text-lg p-6 h-auto min-h-[4rem]">
+                                        <div className="flex gap-4 items-start">
+                                            <span className='font-bold mr-4'>{choiceIndex + 1}</span>
+                                            <div dangerouslySetInnerHTML={{ __html: choice.value }} />
+                                        </div>
                                     </Button>
                                 ))}
                             </div>
@@ -110,6 +117,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
             {answers?.map((ans, index) => (
               <Button key={index} variant="outline" className="w-full justify-start text-left text-lg p-6 h-auto min-h-[4rem]">
                  <div className="flex gap-4 items-start">
+                    <span className="font-bold mt-1">{generateCircledNumber(index + 1)}</span>
                     <div>{renderHTML(ans.value)}</div>
                  </div>
               </Button>
@@ -172,16 +180,16 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
             <div className="space-y-6 lg:col-span-7">
                 <Card>
                     <CardContent className="p-6">
-                        <div className="prose max-w-none prose-lg">
-                            {questionType === '서술형' ? renderHTML(problemSolving) : renderHTML(prompt)}
+                        <div className="prose max-w-none prose-xl font-semibold">
+                            {renderHTML(questionType === '서술형' ? problemSolving : prompt)}
                         </div>
                     </CardContent>
                 </Card>
 
-                {questionType === '유형' && viewContent && answerType !== '선지형' && (
+                {questionType === '유형' && viewContent && (
                     <Card>
                         <CardHeader>
-                            <CardTitle className="text-xl">≡ 보기</CardTitle>
+                            <CardTitle className="text-xl">보기</CardTitle>
                         </CardHeader>
                         <CardContent>
                              <div className="prose max-w-none prose-lg">
@@ -192,9 +200,9 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                 )}
                 
                 {questionType === '유형' && answerType === '선지형' && (
-                    <Card>
+                     <Card>
                         <CardHeader>
-                             <CardTitle className="text-xl">≡ 보기</CardTitle>
+                            <CardTitle className="text-xl">보기</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <div className="prose max-w-none prose-lg space-y-2">
@@ -213,7 +221,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                 {solution && (
                     <Card>
                         <CardHeader>
-                            <CardTitle className="text-xl">Ω 오답 해설</CardTitle>
+                            <CardTitle className="text-xl">오답 해설</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <div className="prose max-w-none prose-lg">{renderHTML(solution)}</div>
