@@ -55,6 +55,7 @@ import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, us
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy, useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { restrictToVerticalAxis, restrictToWindowEdges } from '@dnd-kit/modifiers';
+import QuestionPreview from './question-preview';
 
 
 const answerSchema = z.object({
@@ -434,6 +435,9 @@ export function QuestionModal({
   const [currentInputAnswerType, setCurrentInputAnswerType] = React.useState('기본');
   const [isReordering, setIsReordering] = React.useState(false);
 
+  const [previewOpen, setPreviewOpen] = React.useState(false);
+  const [previewData, setPreviewData] = React.useState<any>(null);
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -716,8 +720,8 @@ const handleAddAnswerCard = () => {
   
   const handlePreview = () => {
     const data = form.getValues();
-    localStorage.setItem('questionPreviewData', JSON.stringify({ ...data, questionType }));
-    window.open('/content/diagnostic-tests/preview', '_blank');
+    setPreviewData({ ...data, questionType });
+    setPreviewOpen(true);
   };
 
   const difficultyOptions: ('하' | '중하' | '중' | '중상' | '상')[] = ['하', '중하', '중', '중상', '상'];
@@ -1277,6 +1281,19 @@ const handleAddAnswerCard = () => {
             </AlertDialogFooter>
         </AlertDialogContent>
     </AlertDialog>
+    <Dialog open={previewOpen} onOpenChange={setPreviewOpen}>
+        <DialogContent className="max-w-7xl w-full h-[90vh] flex flex-col">
+            <DialogHeader>
+                <DialogTitle>문제 미리보기</DialogTitle>
+            </DialogHeader>
+            <div className="flex-1 overflow-auto">
+                {previewData && <QuestionPreview questionData={previewData} />}
+            </div>
+             <DialogFooter>
+                <Button onClick={() => setPreviewOpen(false)}>닫기</Button>
+            </DialogFooter>
+        </DialogContent>
+    </Dialog>
     </>
   );
 }

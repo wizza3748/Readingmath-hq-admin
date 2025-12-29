@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -20,15 +20,7 @@ const generateCircledNumber = (num: number) => {
     return `①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳`[num-1] || String(num);
 };
 
-export default function QuestionPreview() {
-  const [questionData, setQuestionData] = useState<QuestionData | null>(null);
-
-  useEffect(() => {
-    const data = localStorage.getItem('questionPreviewData');
-    if (data) {
-      setQuestionData(JSON.parse(data));
-    }
-  }, []);
+export default function QuestionPreview({ questionData }: { questionData: QuestionData | null }) {
 
   const renderHTML = (htmlString: string | undefined) => {
     if (!htmlString) return null;
@@ -37,7 +29,7 @@ export default function QuestionPreview() {
 
   if (!questionData) {
     return (
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center justify-center h-full">
         <p>미리보기 데이터를 불러오는 중입니다...</p>
       </div>
     );
@@ -170,7 +162,7 @@ export default function QuestionPreview() {
                 <CardContent className="p-6">
                 <div className="prose max-w-none prose-lg">
                     {renderHTML(prompt)}
-                    {renderHTML(viewContent)}
+                    {viewContent && renderHTML(viewContent)}
                 </div>
                 </CardContent>
             </Card>
@@ -195,7 +187,7 @@ export default function QuestionPreview() {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen p-4 sm:p-8">
+    <div className="bg-gray-50 min-h-full p-4 sm:p-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Column */}
         <div className="lg:col-span-2 space-y-6">
