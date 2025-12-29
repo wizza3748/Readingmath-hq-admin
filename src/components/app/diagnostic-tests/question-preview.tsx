@@ -16,10 +16,8 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
   const renderHTML = (htmlString: string | undefined) => {
     if (!htmlString) return null;
     
-    // First, convert newlines to <br> tags
     let processedHtml = htmlString.replace(/\n/g, '<br />');
 
-    // Then, convert URL-like strings into actual image tags
     processedHtml = processedHtml.replace(
       /(https?:\/\/[^\s]+?\.(?:png|jpg|jpeg|gif|webp|svg))/g,
       '<img src="$1" alt="image" style="max-width: 100%; height: auto; border-radius: 0.5rem; margin-top: 1rem; margin-bottom: 1rem;" />'
@@ -115,7 +113,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
         return (
           <div className="space-y-2">
             {answers?.map((ans, index) => (
-              <Button key={index} variant="outline" className="w-full justify-start text-left text-lg p-6 h-auto min-h-[4rem]">
+              <Button key={index} variant="outline" className="w-full justify-start text-left text-lg p-6 h-auto min-h-[4rem]" data-correct={ans.isCorrect ? 'true' : 'false'}>
                  <div className="flex gap-4 items-start">
                     <span className="font-bold mt-1">{index + 1}</span>
                     <div>{renderHTML(ans.value)}</div>
@@ -165,7 +163,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
             <p className="text-sm text-muted-foreground">순서에 맞게 항목을 드래그하세요.</p>
             {answers?.map((ans, index) => (
               <div key={index} className="border p-4 rounded-md bg-gray-100 cursor-grab">
-                <div dangerouslySetInnerHTML={{ __html: ans.value }} />
+                {renderHTML(ans.value)}
               </div>
             ))}
           </div>
@@ -202,18 +200,6 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                         </CardContent>
                     </Card>
                 )}
-                
-                {questionType === '유형' && answerType === '선지형' && answers && answers.length > 0 && (
-                     <Card>
-                        <CardHeader>
-                            <CardTitle className="text-xl">선지</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            {renderAnswerSection()}
-                        </CardContent>
-                    </Card>
-                )}
-
 
                 {solution && (
                     <Card>
@@ -252,3 +238,5 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
     </div>
   );
 }
+
+    
