@@ -355,12 +355,12 @@ export function QuestionModal({
       ]
     }));
     
-    replace(newAnswerSets);
+    replace(newAnswerSets as any);
 
     toast({ title: `${matches.length}개의 답안 카드가 생성되었습니다.`});
   };
 
-  const difficultyOptions: ('하' | '중하' | '중' | '중상', '상')[] = ['하', '중하', '중', '중상', '상'];
+  const difficultyOptions: ('하' | '중하' | '중' | '중상' | '상')[] = ['하', '중하', '중', '중상', '상'];
   const behavioralAreaOptions: ('개념이해력' | '문제해결력' | '문해력' | '추론력')[] = ['개념이해력', '문제해결력', '문해력', '추론력'];
   const answerTypeOptions: ('입력형' | '선지형' | '순서맞추기')[] = ['입력형', '선지형', '순서맞추기'];
   const inputTypeOptions = ['기본', '분수', '대분수'];
@@ -974,5 +974,3 @@ export function QuestionModal({
     </>
   );
 }
-
-    
