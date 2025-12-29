@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useRef, useState, useCallback } from 'react';
+import React, { useRef, useState, useCallback, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from './button';
 import { Bold, Italic, Underline, Strikethrough, Pilcrow, List, ListOrdered, Undo, Redo, Image as ImageIcon, Code, Table } from 'lucide-react';
@@ -69,6 +69,13 @@ const RichEditor = React.forwardRef<HTMLTextAreaElement, RichEditorProps>(
     
     const value = controlledValue !== undefined ? controlledValue : internalValue;
 
+    useEffect(() => {
+        const urlRegex = /(https?:\/\/[^\s]+?\.(?:png|jpg|jpeg|gif|webp))/g;
+        const urls = value?.match(urlRegex) || [];
+        const uniqueUrls = Array.from(new Set(urls));
+        setImagePreviews(uniqueUrls);
+    }, [value]);
+
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
       const newValue = e.target.value;
       if (controlledValue === undefined) {
@@ -81,10 +88,7 @@ const RichEditor = React.forwardRef<HTMLTextAreaElement, RichEditorProps>(
       const reader = new FileReader();
       reader.onloadend = () => {
         const newPreview = reader.result as string;
-        setImagePreviews(prev => [...prev, newPreview]);
-        // In a real implementation, you would upload the file and get a URL,
-        // then append an `<img>` tag or markdown to the editor's value.
-        const updatedValue = `${value}\n![Uploaded Image](${newPreview})`;
+        const updatedValue = `${value}\n${newPreview}`;
          if (controlledValue === undefined) {
           setInternalValue(updatedValue);
         }
