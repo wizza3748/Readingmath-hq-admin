@@ -353,9 +353,11 @@ export function QuestionModal({
     }
   
     const newAnswerSets = matches.map(() => ({
-      answerType: '입력형',
-      type: '기본',
-      answers: [],
+      answerType: '선지형',
+      answers: [
+        { value: '', isCorrect: true },
+        { value: '', isCorrect: false },
+      ],
       value: ''
     }));
   
