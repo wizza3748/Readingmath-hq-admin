@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import * as React from 'react';
@@ -647,13 +648,23 @@ export function QuestionModal({
         value: ''
     }));
 
-    // This uses append instead of replace to avoid removing existing answers
     newAnswerSets.forEach(newSet => {
         append(newSet as any);
     })
 
     toast({ title: `${matches.length}개의 답안 카드가 생성되었습니다.` });
 };
+
+const handleAddAnswerCard = () => {
+    append({
+      answerType: '선지형',
+      answers: [
+        { value: '', isCorrect: true },
+        { value: '', isCorrect: false },
+      ],
+      value: ''
+    } as any);
+  };
 
   const difficultyOptions: ('하' | '중하' | '중' | '중상' | '상')[] = ['하', '중하', '중', '중상', '상'];
   const behavioralAreaOptions: ('개념이해력' | '문제해결력' | '문해력' | '추론력')[] = ['개념이해력', '문제해결력', '문해력', '추론력'];
@@ -801,6 +812,9 @@ export function QuestionModal({
                 {fields.map((field, index) => (
                     <DescriptiveAnswerCard key={field.id} control={form.control} index={index} form={form} remove={remove} />
                 ))}
+                 <div className="flex justify-end">
+                    <Button type="button" onClick={handleAddAnswerCard}><Plus className="mr-2 h-4 w-4" />답안 추가</Button>
+                </div>
             </div>
             
             <div className="space-y-2 p-4 border rounded-md">
