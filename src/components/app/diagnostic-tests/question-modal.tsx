@@ -75,9 +75,8 @@ const formSchema = z.object({
   problemSolving: z.string().optional(),
   isReviewed: z.boolean().default(false),
 }).superRefine((data, ctx) => {
-    if ((data as any).questionType === '서술형' && (!data.problemSolving || data.problemSolving.trim() === '')) {
-      // Temporarily disable this validation to allow saving without problemSolving
-      /*
+    if ((data as any).questionType === '서술형' && !data.problemSolving) {
+      /* Disabling for now
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: '문제풀이 내용을 입력해 주세요.',
@@ -341,8 +340,8 @@ export function QuestionModal({
       toast({ variant: 'destructive', title: '마크업이 입력되지 않았습니다' });
       return;
     }
-    
-    const markupRegex = /\$\{.*?\}|\#\{.*?\}/g;
+
+    const markupRegex = /(\${[^}]+})|(#{[^}]+})/g;
     const matches = problemSolvingText.match(markupRegex);
 
     if (!matches || matches.length === 0) {
@@ -355,12 +354,12 @@ export function QuestionModal({
       answers: [
         { value: '', isCorrect: true },
         { value: '', isCorrect: false },
-      ]
+      ],
     }));
-    
+
     replace(newAnswerSets as any);
 
-    toast({ title: `${matches.length}개의 답안 카드가 생성되었습니다.`});
+    toast({ title: `${matches.length}개의 답안 카드가 생성되었습니다.` });
   };
 
   const difficultyOptions: ('하' | '중하' | '중' | '중상' | '상')[] = ['하', '중하', '중', '중상', '상'];
@@ -977,5 +976,3 @@ export function QuestionModal({
     </>
   );
 }
-
-    
