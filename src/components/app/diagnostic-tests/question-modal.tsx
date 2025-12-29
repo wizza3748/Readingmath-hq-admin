@@ -37,7 +37,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Separator } from '@/components/ui/separator';
-import { Plus, Trash2 } from 'lucide-react';
+import { Plus, Trash2, GripVertical } from 'lucide-react';
 import {
     AlertDialog,
     AlertDialogAction,
@@ -51,6 +51,11 @@ import {
 import { cn } from '@/lib/utils';
 import { RichEditor } from '@/components/ui/rich-editor';
 import { Switch } from '@/components/ui/switch';
+import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent } from '@dnd-kit/core';
+import { arrayMove, SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy, useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+import { restrictToVerticalAxis, restrictToWindowEdges } from '@dnd-kit/modifiers';
+
 
 const answerSchema = z.object({
     id: z.string().optional(),
@@ -384,6 +389,28 @@ const DescriptiveAnswerCard = ({ control, index, form, remove: removeAnswerCard 
     );
 };
 
+function SortableAnswerItem({ id, children }: { id: any, children: React.ReactNode }) {
+    const {
+        attributes,
+        listeners,
+        setNodeRef,
+        transform,
+        transition,
+    } = useSortable({ id });
+
+    const style = {
+        transform: CSS.Transform.toString(transform),
+        transition,
+    };
+
+    return (
+        <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+            {children}
+        </div>
+    );
+}
+
+
 export function QuestionModal({
   open,
   onOpenChange,
@@ -405,6 +432,7 @@ export function QuestionModal({
   const [showOXConfirm, setShowOXConfirm] = React.useState(false);
   const [isSymbolChecked, setIsSymbolChecked] = React.useState(false);
   const [currentInputAnswerType, setCurrentInputAnswerType] = React.useState('기본');
+  const [isReordering, setIsReordering] = React.useState(false);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -424,11 +452,27 @@ export function QuestionModal({
     },
   });
   
-  const { fields, append, remove, replace } = useFieldArray({
+  const { fields, append, remove, replace, move } = useFieldArray({
     control: form.control,
     name: "answers"
   });
 
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+    if (over && active.id !== over.id) {
+      const oldIndex = fields.findIndex((item) => item.id === active.id);
+      const newIndex = fields.findIndex((item) => item.id === over.id);
+      move(oldIndex, newIndex);
+    }
+  };
+  
   const selectedSubUnitId = form.watch('subUnitType');
   const answerType = form.watch('answerType');
 
@@ -473,14 +517,14 @@ export function QuestionModal({
                 subUnitType: question.subUnitType || '',
                 contentArea,
                 answerType: question.answerType || (question.questionType === '유형' ? '선지형' as const : undefined),
-                answers: question.answers || [],
+                answers: question.answers?.map((ans, idx) => ({...ans, id: ans.id || `answer-${idx}`})) || [],
             });
         } else {
             form.reset(defaultValues);
              if (questionType === '유형') {
               replace([
-                { value: '', isCorrect: true },
-                { value: '', isCorrect: false },
+                { value: '', isCorrect: true, id: 'answer-0' },
+                { value: '', isCorrect: false, id: 'answer-1' },
               ]);
             }
         }
@@ -631,7 +675,7 @@ export function QuestionModal({
   const handleGenerateAnswersFromMarkup = () => {
     const problemSolvingText = form.getValues('problemSolving');
     if (!problemSolvingText) {
-        toast({ variant: 'destructive', title: '마크업이 입력되지 않았습니다', duration: 1000 });
+        toast({ variant: 'destructive', title: '마크업이 입력되지 않았습니다' });
         return;
     }
 
@@ -639,22 +683,23 @@ export function QuestionModal({
     const matches = problemSolvingText.match(markupRegex);
 
     if (!matches || matches.length === 0) {
-        toast({ variant: 'destructive', title: '마크업을 찾을 수 없습니다.', duration: 1000 });
+        toast({ variant: 'destructive', title: '마크업을 찾을 수 없습니다.' });
         return;
     }
 
-    const newAnswerSets = matches.map(() => ({
+    const newAnswerSets = matches.map((_, i) => ({
       answerType: '선지형',
       answers: [
         { value: '', isCorrect: true },
         { value: '', isCorrect: false },
       ],
-      value: '', // This seems to be required by the shape, might need review
+      value: '', 
+      id: `new-answer-${fields.length + i}`
     }));
-
+    
     replace(newAnswerSets);
 
-    toast({ title: `${matches.length}개의 답안 카드가 생성되었습니다.`, duration: 1000 });
+    toast({ title: `${matches.length}개의 답안 카드가 생성되었습니다.` });
 };
 
 const handleAddAnswerCard = () => {
@@ -664,7 +709,8 @@ const handleAddAnswerCard = () => {
         { value: '', isCorrect: true },
         { value: '', isCorrect: false },
       ],
-      value: ''
+      value: '',
+      id: `new-answer-${fields.length}`
     } as any);
   };
 
@@ -810,11 +856,42 @@ const handleAddAnswerCard = () => {
             </div>
 
             <div className="space-y-4 p-4 border rounded-md">
-                <h3 className="text-lg font-semibold">답안</h3>
-                {fields.map((field, index) => (
-                    <DescriptiveAnswerCard key={field.id} control={form.control} index={index} form={form} remove={remove} />
-                ))}
-                 <div className="flex justify-end">
+                <div className="flex justify-between items-center">
+                    <h3 className="text-lg font-semibold">답안</h3>
+                    <Button type="button" variant="outline" size="sm" onClick={() => setIsReordering(!isReordering)}>
+                        {isReordering ? '순서 변경 완료' : '답안 순서 변경'}
+                    </Button>
+                </div>
+
+                {isReordering ? (
+                    <DndContext 
+                        sensors={sensors} 
+                        collisionDetection={closestCenter} 
+                        onDragEnd={handleDragEnd}
+                        modifiers={[restrictToVerticalAxis, restrictToWindowEdges]}
+                    >
+                        <SortableContext items={fields.map(f => f.id)} strategy={verticalListSortingStrategy}>
+                            <div className="space-y-2">
+                                {fields.map((field, index) => (
+                                    <SortableAnswerItem key={field.id} id={field.id}>
+                                        <div className="flex items-center gap-2 p-3 border rounded-md bg-white">
+                                            <GripVertical className="h-5 w-5 text-muted-foreground" />
+                                            <span className="font-semibold">{index + 1}.</span>
+                                            <span className="text-sm">답안 카드</span>
+                                        </div>
+                                    </SortableAnswerItem>
+                                ))}
+                            </div>
+                        </SortableContext>
+                    </DndContext>
+                ) : (
+                    <div className='space-y-4'>
+                        {fields.map((field, index) => (
+                            <DescriptiveAnswerCard key={field.id} control={form.control} index={index} form={form} remove={remove} />
+                        ))}
+                    </div>
+                )}
+                 <div className="flex justify-end mt-4">
                     <Button type="button" onClick={handleAddAnswerCard}><Plus className="mr-2 h-4 w-4" />답안 추가</Button>
                 </div>
             </div>
