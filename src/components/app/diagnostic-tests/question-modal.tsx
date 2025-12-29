@@ -713,6 +713,12 @@ const handleAddAnswerCard = () => {
       id: `new-answer-${fields.length}`
     } as any);
   };
+  
+  const handlePreview = () => {
+    const data = form.getValues();
+    localStorage.setItem('questionPreviewData', JSON.stringify(data));
+    window.open('/content/diagnostic-tests/preview', '_blank');
+  };
 
   const difficultyOptions: ('하' | '중하' | '중' | '중상' | '상')[] = ['하', '중하', '중', '중상', '상'];
   const behavioralAreaOptions: ('개념이해력' | '문제해결력' | '문해력' | '추론력')[] = ['개념이해력', '문제해결력', '문해력', '추론력'];
@@ -1246,7 +1252,7 @@ const handleAddAnswerCard = () => {
                           </FormItem>
                       )}
                     />
-                    <Button type="button" variant="outline">미리보기</Button>
+                    <Button type="button" variant="outline" onClick={handlePreview}>미리보기</Button>
                     <Button type="submit">문제 저장</Button>
                     <DialogClose asChild>
                         <Button type="button" variant="secondary">닫기</Button>
