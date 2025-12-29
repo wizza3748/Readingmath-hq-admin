@@ -11,5 +11,9 @@ export default function PreviewLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>{children}</>;
+  return (
+    <html lang="ko">
+      <body>{children}</body>
+    </html>
+  );
 }

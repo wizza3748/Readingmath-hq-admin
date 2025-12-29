@@ -716,7 +716,7 @@ const handleAddAnswerCard = () => {
   
   const handlePreview = () => {
     const data = form.getValues();
-    localStorage.setItem('questionPreviewData', JSON.stringify(data));
+    localStorage.setItem('questionPreviewData', JSON.stringify({ ...data, questionType }));
     window.open('/content/diagnostic-tests/preview', '_blank');
   };
 

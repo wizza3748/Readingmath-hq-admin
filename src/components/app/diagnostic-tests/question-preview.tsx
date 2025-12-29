@@ -12,6 +12,8 @@ interface QuestionData {
   solution?: string;
   answerType?: '선지형' | '입력형' | '순서맞추기';
   answers?: any[];
+  questionType?: '유형' | '서술형';
+  problemSolving?: string;
 }
 
 const generateCircledNumber = (num: number) => {
@@ -41,9 +43,65 @@ export default function QuestionPreview() {
     );
   }
 
-  const { prompt, viewContent, solution, answerType, answers } = questionData;
+  const { prompt, viewContent, solution, answerType, answers, questionType, problemSolving } = questionData;
 
   const renderAnswerSection = () => {
+    if (questionType === '서술형') {
+        return (
+            <div className="space-y-4">
+                {answers?.map((ans, index) => {
+                    if (ans.answerType === '선지형') {
+                        return (
+                             <div key={index} className="space-y-2">
+                                <p className="font-semibold">{index + 1}번 답안</p>
+                                {ans.answers?.map((choice: any, choiceIndex: number) => (
+                                    <Button key={choiceIndex} variant="outline" className="w-full justify-start text-lg p-6">
+                                        <span className='font-bold mr-4'>{choiceIndex + 1}</span>
+                                    </Button>
+                                ))}
+                            </div>
+                        )
+                    }
+                    if (ans.answerType === '입력형') {
+                       return <div key={index} className="space-y-2">
+                                <p className="font-semibold">{index + 1}번 답안</p>
+                                {ans.answers?.map((inputAns: any, inputIndex: number) => {
+                                    if (inputAns.type === '분수') {
+                                        return <div key={inputIndex} className="flex items-center gap-2">
+                                            <span className="font-bold text-lg">{inputAns.symbol ? `${generateCircledNumber(inputIndex + 1)}` : `${inputIndex+1}.`}</span>
+                                            <div className="flex flex-col w-24">
+                                                <Input className="text-center h-10 rounded-b-none border-b-0 text-lg"/>
+                                                <div className="border-t-2 border-black"></div>
+                                                <Input className="text-center h-10 rounded-t-none text-lg"/>
+                                            </div>
+                                       </div>
+                                    }
+                                     if (inputAns.type === '대분수') {
+                                        return <div key={inputIndex} className="flex items-center gap-2">
+                                                    <span className="font-bold text-lg">{inputAns.symbol ? `${generateCircledNumber(inputIndex + 1)}` : `${inputIndex+1}.`}</span>
+                                                    <Input className="w-20 h-12 text-center text-lg" />
+                                                    <div className="flex flex-col w-24">
+                                                        <Input className="text-center h-10 rounded-b-none border-b-0 text-lg"/>
+                                                        <div className="border-t-2 border-black"></div>
+                                                        <Input className="text-center h-10 rounded-t-none text-lg"/>
+                                                    </div>
+                                            </div>
+                                    }
+                                    return (
+                                        <div key={inputIndex} className="flex items-center gap-2">
+                                            <span className="font-bold text-lg">{inputAns.symbol ? `${generateCircledNumber(inputIndex + 1)}` : `${inputIndex+1}.`}</span>
+                                            <Input className="w-48 h-12 text-lg" />
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                    }
+                    return null;
+                })}
+            </div>
+        )
+    }
+
     switch (answerType) {
       case '선지형':
         return (
@@ -94,35 +152,54 @@ export default function QuestionPreview() {
     }
   };
 
+  const mainContent = () => {
+    if (questionType === '서술형') {
+        return (
+            <Card>
+                <CardContent className="p-6">
+                    <div className="prose max-w-none prose-lg">
+                        {renderHTML(problemSolving)}
+                    </div>
+                </CardContent>
+            </Card>
+        )
+    }
+    return (
+        <>
+            <Card>
+                <CardContent className="p-6">
+                <div className="prose max-w-none prose-lg">
+                    {renderHTML(prompt)}
+                    {renderHTML(viewContent)}
+                </div>
+                </CardContent>
+            </Card>
+
+            {answerType === '선지형' && answers && (
+                <Card>
+                <CardContent className="p-6">
+                    <h3 className="font-semibold text-xl mb-4">≡ 보기</h3>
+                    <div className="prose max-w-none prose-lg space-y-4">
+                    {answers.map((ans, index) => (
+                        <div key={index} className="flex gap-4 items-start">
+                        <span className="font-bold">{generateCircledNumber(index + 1)}</span>
+                        <div>{renderHTML(ans.value)}</div>
+                        </div>
+                    ))}
+                    </div>
+                </CardContent>
+                </Card>
+            )}
+        </>
+    )
+  }
+
   return (
     <div className="bg-gray-50 min-h-screen p-4 sm:p-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Column */}
         <div className="lg:col-span-2 space-y-6">
-          <Card>
-            <CardContent className="p-6">
-              <div className="prose max-w-none prose-lg">
-                {renderHTML(prompt)}
-                {renderHTML(viewContent)}
-              </div>
-            </CardContent>
-          </Card>
-
-          {answerType === '선지형' && answers && (
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="font-semibold text-xl mb-4">≡ 보기</h3>
-                <div className="prose max-w-none prose-lg space-y-4">
-                  {answers.map((ans, index) => (
-                    <div key={index} className="flex gap-4 items-start">
-                      <span className="font-bold">{generateCircledNumber(index + 1)}</span>
-                      <div>{renderHTML(ans.value)}</div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          )}
+          {mainContent()}
 
           {solution && (
             <Card>
