@@ -117,7 +117,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
             {answers?.map((ans, index) => (
               <Button key={index} variant="outline" className="w-full justify-start text-left text-lg p-6 h-auto min-h-[4rem]">
                  <div className="flex gap-4 items-start">
-                    <span className="font-bold mt-1">{generateCircledNumber(index + 1)}</span>
+                    <span className="font-bold mt-1">{index + 1}</span>
                     <div>{renderHTML(ans.value)}</div>
                  </div>
               </Button>
@@ -179,14 +179,17 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-10 gap-8">
             <div className="space-y-6 lg:col-span-7">
                 <Card>
-                    <CardContent className="p-6">
+                    <CardHeader>
+                        <CardTitle className="text-xl">발문</CardTitle>
+                    </CardHeader>
+                    <CardContent>
                         <div className="prose max-w-none prose-xl font-semibold">
                             {renderHTML(questionType === '서술형' ? problemSolving : prompt)}
                         </div>
                     </CardContent>
                 </Card>
 
-                {questionType === '유형' && viewContent && (
+                {viewContent && (
                     <Card>
                         <CardHeader>
                             <CardTitle className="text-xl">보기</CardTitle>
@@ -198,25 +201,6 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                         </CardContent>
                     </Card>
                 )}
-                
-                {questionType === '유형' && answerType === '선지형' && (
-                     <Card>
-                        <CardHeader>
-                            <CardTitle className="text-xl">보기</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="prose max-w-none prose-lg space-y-2">
-                                {answers?.map((ans, index) => (
-                                    <div key={index} className="flex gap-4 items-start">
-                                        <span className="font-bold mt-1">{generateCircledNumber(index + 1)}</span>
-                                        <div>{renderHTML(ans.value)}</div>
-                                    </div>
-                                ))}
-                            </div>
-                        </CardContent>
-                    </Card>
-                )}
-
 
                 {solution && (
                     <Card>
