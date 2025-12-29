@@ -155,9 +155,7 @@ export function QuestionList({ testId }: { testId: string }) {
                 count = (question.answers && question.answers.length > 0) ? 1 : 0;
             }
         } else if (question.questionType === '서술형') {
-            const hasAnswers = question.answers && question.answers.length > 0;
-            const hasProblemSolving = !!question.problemSolving;
-            count = (hasAnswers || hasProblemSolving) ? 1 : 0;
+            count = question.answers?.length || 0;
         }
         return <div className="text-center">{count}</div>
       } 
