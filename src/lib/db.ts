@@ -378,7 +378,7 @@ export async function updateDiagnosticTestStatus(db: Firestore, testId: string, 
 export type Question = {
     id: string;
     questionNumber: number;
-    questionType: '유형' | '서술형';
+    questionType: '객관식' | '서술형' | '유형';
     difficulty: '하' | '중하' | '중' | '중상' | '상';
     subUnitType: string;
     contentArea: '물리' | '생명과학' | '지구과학' | '화학' | '탐구활동' | '통합과학' | string;
@@ -418,6 +418,7 @@ export async function createQuestion(db: Firestore, testId: string, questionData
     
     const data = {
         ...questionData,
+        questionType: questionData.questionType === '유형' ? '객관식' : questionData.questionType,
         isExtended: false,
         isReviewed: false,
         solutionCount: 0,
@@ -454,7 +455,7 @@ export async function createQuestion(db: Firestore, testId: string, questionData
     }
 }
 
-export async function createBlankQuestion(db: Firestore, testId: string, questionType: '유형' | '서술형') {
+export async function createBlankQuestion(db: Firestore, testId: string, questionType: '객관식' | '서술형') {
   const questionsCollRef = collection(db, `diagnostic-tests/${testId}/questions`);
 
   try {
@@ -519,6 +520,7 @@ export async function updateQuestion(db: Firestore, testId: string, questionId: 
 
     const data = { 
         ...cleanedData,
+        questionType: questionData.questionType === '유형' ? '객관식' : questionData.questionType,
         updatedAt: serverTimestamp() 
     };
 

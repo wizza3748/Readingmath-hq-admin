@@ -92,7 +92,7 @@ const formSchema = z.object({
     }
 });
 
-type FormValues = z.infer<typeof formSchema> & { questionType: '유형' | '서술형' };
+type FormValues = z.infer<typeof formSchema> & { questionType: '객관식' | '서술형' };
 
 const generateCircledNumber = (num: number) => {
     return `①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳`[num-1] || String(num);
@@ -424,7 +424,7 @@ export function QuestionModal({
   onOpenChange: (open: boolean) => void;
   testId: string;
   question?: Question;
-  questionType: '유형' | '서술형';
+  questionType: '객관식' | '서술형' | '유형';
   onClose: () => void;
 }) {
   const firestore = useFirestore();
@@ -450,8 +450,8 @@ export function QuestionModal({
       viewContent: '',
       solution: '',
       problemSolving: '',
-      questionType: questionType,
-      answerType: questionType === '유형' ? '선지형' : undefined,
+      questionType: questionType === '유형' ? '객관식' : questionType,
+      answerType: questionType === '유형' || questionType === '객관식' ? '선지형' : undefined,
       answers: [],
     },
   });
@@ -494,6 +494,7 @@ export function QuestionModal({
 
   React.useEffect(() => {
     if (open) {
+        const currentQuestionType = questionType === '유형' ? '객관식' : questionType;
         const defaultValues = {
           difficulty: '중' as const,
           behavioralArea: '개념이해력' as const,
@@ -504,28 +505,29 @@ export function QuestionModal({
           viewContent: '',
           solution: '',
           problemSolving: '',
-          questionType: questionType,
-          answerType: questionType === '유형' ? '선지형' as const : undefined,
+          questionType: currentQuestionType,
+          answerType: currentQuestionType === '객관식' ? '선지형' as const : undefined,
           answers: [],
         };
 
         if (question) {
             const selectedUnit = curriculumUnits.find(unit => unit.id === question.subUnitType);
             const contentArea = question.contentArea || (selectedUnit && selectedUnit.contentArea) || '';
+            const qType = question.questionType === '유형' ? '객관식' : question.questionType;
             
             form.reset({
                 ...defaultValues,
                 ...question,
-                questionType: questionType,
+                questionType: qType,
                 isReviewed: question.isReviewed || false,
                 subUnitType: question.subUnitType || '',
                 contentArea,
-                answerType: question.answerType || (question.questionType === '유형' ? '선지형' as const : undefined),
+                answerType: question.answerType || (qType === '객관식' ? '선지형' as const : undefined),
                 answers: question.answers?.map((ans, idx) => ({...ans, id: ans.id || `answer-${idx}`})) || [],
             });
         } else {
             form.reset(defaultValues);
-             if (questionType === '유형') {
+             if (currentQuestionType === '객관식') {
               replace([
                 { value: '', isCorrect: true, id: 'answer-0' },
                 { value: '', isCorrect: false, id: 'answer-1' },
@@ -537,12 +539,13 @@ export function QuestionModal({
 
   const onSubmit = async (data: FormValues) => {
     if (!firestore) return;
+    const finalQuestionType = questionType === '유형' ? '객관식' : questionType;
     try {
       if (question) {
         // Update existing question
         await updateQuestion(firestore, testId, question.id, {
             ...data,
-            questionType,
+            questionType: finalQuestionType,
         });
         toast({ title: '문제가 수정되었습니다.', duration: 1000 });
       } else {
@@ -550,7 +553,7 @@ export function QuestionModal({
         const questionNumber = await getNextQuestionNumber(firestore, testId);
         await createQuestion(firestore, testId, {
           ...data,
-          questionType,
+          questionType: finalQuestionType,
           questionNumber,
         });
         toast({ title: '신규 문제가 등록되었습니다.', duration: 1000 });
@@ -720,7 +723,8 @@ const handleAddAnswerCard = () => {
   
   const handlePreview = () => {
     const data = form.getValues();
-    setPreviewData({ ...data, questionType });
+    const finalQuestionType = questionType === '유형' ? '객관식' : questionType;
+    setPreviewData({ ...data, questionType: finalQuestionType });
     setPreviewOpen(true);
   };
 
@@ -728,6 +732,7 @@ const handleAddAnswerCard = () => {
   const behavioralAreaOptions: ('개념이해력' | '문제해결력' | '문해력' | '추론력')[] = ['개념이해력', '문제해결력', '문해력', '추론력'];
   const answerTypeOptions: ('입력형' | '선지형' | '순서맞추기')[] = ['입력형', '선지형', '순서맞추기'];
   const inputTypeOptions = ['기본', '분수', '대분수'];
+  const currentQuestionType = questionType === '유형' ? '객관식' : questionType;
 
   const 서술형Layout = (
     <div className="grid grid-cols-2 flex-1 gap-6 px-6 overflow-hidden">
@@ -924,7 +929,7 @@ const handleAddAnswerCard = () => {
     </div>
   );
 
-  const 유형Layout = (
+  const 객관식Layout = (
     <div className="flex-1 space-y-4 px-6 overflow-y-auto">
         <div className='space-y-4 p-4 border rounded-md'>
             <h3 className="text-lg font-semibold">기본 정보</h3>
@@ -1229,12 +1234,12 @@ const handleAddAnswerCard = () => {
       <DialogContent className="max-w-full w-full h-full flex flex-col p-0">
         <DialogHeader className="p-6 pb-0">
           <DialogTitle>
-            문제 상세 ({questionType})
+            문제 상세 ({currentQuestionType})
           </DialogTitle>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col flex-1 overflow-y-hidden">
-            {questionType === '서술형' ? 서술형Layout : 유형Layout}
+            {currentQuestionType === '서술형' ? 서술형Layout : 객관식Layout}
             
             <DialogFooter className="p-6 pt-4 border-t sticky bottom-0 bg-background z-10">
                 <div className="flex justify-end items-center gap-4 w-full">

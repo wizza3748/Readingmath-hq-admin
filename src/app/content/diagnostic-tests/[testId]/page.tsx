@@ -42,7 +42,7 @@ export default function DiagnosticTestDetailPage() {
     }
   };
 
-  const handleAddQuestion = async (questionType: '유형' | '서술형') => {
+  const handleAddQuestion = async (questionType: '객관식' | '서술형') => {
     if (!firestore) return;
     try {
       await createBlankQuestion(firestore, testId, questionType);
@@ -100,8 +100,8 @@ export default function DiagnosticTestDetailPage() {
       </h1>
 
       <div className="flex justify-start gap-2">
-        <Button onClick={() => handleAddQuestion('유형')}>+ 유형 문제</Button>
-        <Button onClick={() => handleAddQuestion('서술형')}>+ 서술형 문제</Button>
+        <Button onClick={() => handleAddQuestion('객관식')}>+ 객관식</Button>
+        <Button onClick={() => handleAddQuestion('서술형')}>+ 서술형</Button>
       </div>
       
       <QuestionList testId={testId} />

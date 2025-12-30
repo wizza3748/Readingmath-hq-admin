@@ -133,7 +133,7 @@ export function QuestionList({ testId }: { testId: string }) {
         return rowIndex + 1;
       }
     },
-    { accessorKey: 'questionType', header: '문제 타입' },
+    { accessorKey: 'questionType', header: '문제 타입', cell: ({ row }) => row.original.questionType === '유형' ? '객관식' : row.original.questionType },
     { 
         accessorKey: 'subUnitType', 
         header: '단원', 
@@ -156,7 +156,7 @@ export function QuestionList({ testId }: { testId: string }) {
       cell: ({ row }) => {
         const question = row.original;
         let count = 0;
-        if (question.questionType === '유형') {
+        if (question.questionType === '객관식' || question.questionType === '유형') {
             if (question.answerType === '입력형') {
                 count = question.answers?.length || 0;
             } else if (question.answerType === '선지형' || question.answerType === '순서맞추기') {
