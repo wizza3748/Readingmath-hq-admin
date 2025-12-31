@@ -20,12 +20,14 @@ const AnswerPopover = ({ answerSet, trigger }: { answerSet: any, trigger: React.
     const hasAnswers = isChoiceQuestion && answerSet.answers && answerSet.answers.length > 0;
 
     return (
-        <Popover open={isOpen} onOpenChange={(open) => {
-             console.log(`[Popover State Changed] For answerSet, open: ${open}`);
-             setIsOpen(open);
-        }}>
+        <Popover open={isOpen} onOpenChange={setIsOpen}>
             <PopoverTrigger asChild>{trigger}</PopoverTrigger>
-            <PopoverContent className="w-80 z-[9999]">
+            <PopoverContent 
+                className="w-80 z-[9999]" 
+                onInteractOutside={(e) => {
+                    e.preventDefault();
+                }}
+            >
                 {hasAnswers ? (
                     <div className="grid gap-2">
                         <div className="space-y-2">
@@ -56,11 +58,11 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
   const [activePopover, setActivePopover] = useState<number | null>(null);
 
   const handleCaptureClick = (e: React.MouseEvent) => {
-    console.log('[Capture Phase Click]', {
-      target: e.target,
-      tagName: (e.target as HTMLElement).tagName,
-      className: (e.target as HTMLElement).className,
-    });
+    // console.log('[Capture Phase Click]', {
+    //   target: e.target,
+    //   tagName: (e.target as HTMLElement).tagName,
+    //   className: (e.target as HTMLElement).className,
+    // });
   };
 
   const renderHTML = (htmlString: string | undefined) => {
@@ -72,7 +74,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
       /(https?:\/\/[^\s]+?\.(?:png|jpg|jpeg|gif|webp|svg))/g,
       '<img src="$1" alt="image" style="max-width: 100%; height: auto; border-radius: 0.5rem; margin-top: 1rem; margin-bottom: 1rem;" />'
     );
-    return <div className="pointer-events-none" dangerouslySetInnerHTML={{ __html: processedHtml }} />;
+    return <div dangerouslySetInnerHTML={{ __html: processedHtml }} />;
   };
 
   if (!questionData) {
@@ -84,52 +86,16 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
   }
 
   const { prompt, viewContent, solution, answerType, answers, questionType, problemSolving } = questionData;
-
-  const renderAnswerPopover = (index: number, triggerContent: React.ReactNode) => {
-    const answerSet = answers?.[index];
-    
-    return (
-        <Popover open={activePopover === index} onOpenChange={(isOpen) => {
-            console.log(`[Popover State Changed] Index: ${index}, Open: ${isOpen}`);
-            setActivePopover(isOpen ? index : null);
-        }}>
-            <PopoverTrigger asChild>
-                {triggerContent}
-            </PopoverTrigger>
-            <PopoverContent className="w-80 z-[9999]">
-                 {answerSet && answerSet.answerType === '선지형' && answerSet.answers && answerSet.answers.length > 0 ? (
-                    <div className="grid gap-2">
-                        <div className="space-y-2">
-                            {answerSet.answers.map((choice: any, choiceIndex: number) => (
-                                <Button
-                                    key={choiceIndex}
-                                    variant="outline"
-                                    className="w-full justify-start text-left h-auto min-h-[2.5rem]"
-                                >
-                                    <div className="flex gap-2 items-start">
-                                        <span className='font-bold'>{choiceIndex + 1}</span>
-                                        <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
-                                    </div>
-                                </Button>
-                            ))}
-                        </div>
-                    </div>
-                ) : (
-                    <div className="text-sm text-muted-foreground">선지 정보가 없습니다.</div>
-                )}
-            </PopoverContent>
-        </Popover>
-    );
-};
-
+  
   if (questionType === '서술형') {
     const parseProblemSolving = (text: string | undefined) => {
-      if (!text || !answers) return renderHTML(text);
+      if (!text || !answers) return <div className="prose max-w-none prose-lg pointer-events-none" dangerouslySetInnerHTML={{ __html: text?.replace(/\n/g, '<br />') || '' }} />;
 
       let blankIndex = 0;
       const parts = text.split(/(\${[^}]+})/g).map((part, i) => {
         if (part.match(/\${[^}]+}/g)) {
           const currentIndex = blankIndex;
+          const answerSet = answers?.[currentIndex];
           blankIndex++;
           
           const trigger = (
@@ -139,15 +105,13 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
           );
 
           return (
-            <React.Fragment key={`fragment-${i}`}>
-              {renderAnswerPopover(currentIndex, trigger)}
-            </React.Fragment>
+            <AnswerPopover key={`popover-part-${i}`} answerSet={answerSet} trigger={trigger} />
           );
         }
-        return <span key={`text-${i}`} dangerouslySetInnerHTML={{ __html: part.replace(/\n/g, '<br />') }} />;
+        return <span key={`text-part-${i}`} className='pointer-events-none' dangerouslySetInnerHTML={{ __html: part.replace(/\n/g, '<br />') }} />;
       });
 
-      return <div className="prose max-w-none prose-lg pointer-events-none">{parts}</div>;
+      return <div className="prose max-w-none prose-lg">{parts}</div>;
     };
 
     return (
@@ -185,7 +149,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                   <CardTitle className="text-xl">보기</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="prose max-w-none prose-lg">
+                  <div className="prose max-w-none prose-lg pointer-events-none">
                     {renderHTML(viewContent)}
                   </div>
                 </CardContent>
@@ -198,7 +162,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                   <CardTitle className="text-xl">오답 해설</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="prose max-w-none prose-lg">{renderHTML(solution)}</div>
+                  <div className="prose max-w-none prose-lg pointer-events-none">{renderHTML(solution)}</div>
                 </CardContent>
               </Card>
             )}
@@ -210,7 +174,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                 <CardTitle className="text-xl">답안</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                 {answers?.map((_, index) => {
+                 {answers?.map((answerSet, index) => {
                     const trigger = (
                         <button
                           className="w-full justify-start text-left h-auto min-h-[2.5rem] flex items-center px-4 py-2 border rounded-md bg-white hover:bg-gray-100 pointer-events-auto relative z-[9999]"
@@ -219,9 +183,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                         </button>
                     );
                     return (
-                        <React.Fragment key={`answer-popover-${index}`}>
-                          {renderAnswerPopover(index, trigger)}
-                        </React.Fragment>
+                        <AnswerPopover key={`answer-popover-${index}`} answerSet={answerSet} trigger={trigger} />
                     );
                 })}
               </CardContent>
