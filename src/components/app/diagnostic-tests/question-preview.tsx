@@ -176,54 +176,67 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
   if (questionData.questionType === '서술형') {
     return (
       <div className="bg-gray-50 min-h-full p-4 sm:p-8">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">발문</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="prose max-w-none prose-xl font-semibold">
-                {renderHTML(prompt)}
-              </div>
-            </CardContent>
-          </Card>
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-10 gap-8">
+            <div className="lg:col-span-7 space-y-6">
+                <Card>
+                    <CardHeader>
+                    <CardTitle className="text-xl">발문</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                    <div className="prose max-w-none prose-xl font-semibold">
+                        {renderHTML(prompt)}
+                    </div>
+                    </CardContent>
+                </Card>
 
-          {problemSolving && (
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-xl">문제 풀이</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="prose max-w-none prose-lg">
-                  {renderHTML(problemSolving)}
-                </div>
-              </CardContent>
-            </Card>
-          )}
-
-          {viewContent && (
-              <Card>
-                  <CardHeader>
-                      <CardTitle className="text-xl">보기</CardTitle>
-                  </CardHeader>
-                  <CardContent>
+                {problemSolving && (
+                    <Card>
+                    <CardHeader>
+                        <CardTitle className="text-xl">문제 풀이</CardTitle>
+                    </CardHeader>
+                    <CardContent>
                         <div className="prose max-w-none prose-lg">
-                          {renderHTML(viewContent)}
+                        {renderHTML(problemSolving)}
                         </div>
-                  </CardContent>
-              </Card>
-          )}
+                    </CardContent>
+                    </Card>
+                )}
 
-          {solution && (
-              <Card>
-                  <CardHeader>
-                      <CardTitle className="text-xl">오답 해설</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                      <div className="prose max-w-none prose-lg">{renderHTML(solution)}</div>
-                  </CardContent>
-              </Card>
-          )}
+                {viewContent && (
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="text-xl">보기</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="prose max-w-none prose-lg">
+                                {renderHTML(viewContent)}
+                            </div>
+                        </CardContent>
+                    </Card>
+                )}
+
+                {solution && (
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="text-xl">오답 해설</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="prose max-w-none prose-lg">{renderHTML(solution)}</div>
+                        </CardContent>
+                    </Card>
+                )}
+            </div>
+
+             <div className="lg:col-span-3">
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="text-xl">답안</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        {/* The answer rendering logic for descriptive questions will go here */}
+                    </CardContent>
+                </Card>
+            </div>
         </div>
       </div>
     )
