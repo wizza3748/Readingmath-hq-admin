@@ -13,10 +13,17 @@ type QuestionData = Partial<Question> & {
 
 export default function QuestionPreview({ questionData }: { questionData: QuestionData | null }) {
 
-  const renderHTML = (htmlString: string | undefined) => {
+  const renderHTML = (htmlString: string | undefined, isProblemSolving = false) => {
     if (!htmlString) return null;
     
     let processedHtml = htmlString.replace(/\n/g, '<br />');
+
+    if (isProblemSolving) {
+        processedHtml = processedHtml.replace(
+            /\${[^}]+}/g,
+            `<span class="inline-block bg-gray-200 rounded-md h-8 w-24 mx-1 cursor-pointer">&nbsp;</span>`
+        );
+    }
 
     processedHtml = processedHtml.replace(
       /(https?:\/\/[^\s]+?\.(?:png|jpg|jpeg|gif|webp|svg))/g,
@@ -173,7 +180,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
     }
   };
 
-  if (questionData.questionType === '서술형') {
+  if (questionType === '서술형') {
     return (
       <div className="bg-gray-50 min-h-full p-4 sm:p-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-10 gap-8">
@@ -196,7 +203,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                     </CardHeader>
                     <CardContent>
                         <div className="prose max-w-none prose-lg">
-                        {renderHTML(problemSolving)}
+                        {renderHTML(problemSolving, true)}
                         </div>
                     </CardContent>
                     </Card>
@@ -242,6 +249,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
     )
   }
 
+  // 객관식 미리보기
   return (
     <div className="bg-gray-50 min-h-full p-4 sm:p-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-10 gap-8">
