@@ -9,61 +9,75 @@ import { Question } from '@/lib/db';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
 
+
 type QuestionData = Partial<Question> & {
     questionType?: '객관식' | '서술형' | '유형';
 };
 
-const AnswerPopover = ({ answerSet, trigger }: { answerSet: any, trigger: React.ReactNode }) => {
-    const [isOpen, setIsOpen] = useState(false);
+const AnswerPopover = ({
+  answerSet,
+  trigger,
+  isOpen,
+  onOpenChange,
+  onSelect,
+}: {
+  answerSet: any;
+  trigger: React.ReactNode;
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
+  onSelect: (value: string) => void;
+}) => {
+  const isChoiceQuestion = answerSet?.answerType === '선지형';
+  const hasAnswers = isChoiceQuestion && answerSet.answers && answerSet.answers.length > 0;
 
-    const isChoiceQuestion = answerSet?.answerType === '선지형';
-    const hasAnswers = isChoiceQuestion && answerSet.answers && answerSet.answers.length > 0;
+  const handleSelect = (value: string) => {
+    onSelect(value);
+    onOpenChange(false);
+  };
 
-    return (
-        <Popover open={isOpen} onOpenChange={setIsOpen}>
-            <PopoverTrigger asChild>{trigger}</PopoverTrigger>
-            <PopoverContent 
-                className="w-80 z-[9999]" 
-                onInteractOutside={(e) => {
-                    e.preventDefault();
-                }}
-            >
-                {hasAnswers ? (
-                    <div className="grid gap-2">
-                        <div className="space-y-2">
-                            {answerSet.answers.map((choice: any, choiceIndex: number) => (
-                                <Button
-                                    key={choiceIndex}
-                                    variant="outline"
-                                    className="w-full justify-start text-left h-auto min-h-[2.5rem]"
-                                >
-                                    <div className="flex gap-2 items-start">
-                                        <span className='font-bold'>{choiceIndex + 1}</span>
-                                        <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
-                                    </div>
-                                </Button>
-                            ))}
-                        </div>
-                    </div>
-                ) : (
-                    <div className="text-sm text-muted-foreground">선지 정보가 없습니다.</div>
-                )}
-            </PopoverContent>
-        </Popover>
-    );
+  return (
+    <Popover open={isOpen} onOpenChange={onOpenChange}>
+      <PopoverTrigger asChild onPointerDown={(e) => e.stopPropagation()}>
+        {trigger}
+      </PopoverTrigger>
+      <PopoverContent
+        className="w-80 z-[9999]"
+        onInteractOutside={(e) => {
+           e.preventDefault();
+        }}
+        onPointerDownOutside={(e) => e.preventDefault()}
+      >
+        {hasAnswers ? (
+          <div className="grid gap-2">
+            <div className="space-y-2">
+              {answerSet.answers.map((choice: any, choiceIndex: number) => (
+                <Button
+                  key={choice.id || choiceIndex}
+                  variant="outline"
+                  className="w-full justify-start text-left h-auto min-h-[2.5rem]"
+                  onClick={() => handleSelect(choice.value)}
+                  onPointerDown={(e) => e.stopPropagation()}
+                >
+                  <div className="flex gap-2 items-start">
+                    <span className='font-bold'>{choiceIndex + 1}</span>
+                    <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
+                  </div>
+                </Button>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="text-sm text-muted-foreground">선지 정보가 없습니다.</div>
+        )}
+      </PopoverContent>
+    </Popover>
+  );
 };
 
 
 export default function QuestionPreview({ questionData }: { questionData: QuestionData | null }) {
-  const [activePopover, setActivePopover] = useState<number | null>(null);
-
-  const handleCaptureClick = (e: React.MouseEvent) => {
-    // console.log('[Capture Phase Click]', {
-    //   target: e.target,
-    //   tagName: (e.target as HTMLElement).tagName,
-    //   className: (e.target as HTMLElement).className,
-    // });
-  };
+  const [activePopover, setActivePopover] = useState<string | null>(null);
+  const [userAnswers, setUserAnswers] = useState<Record<string, string>>({});
 
   const renderHTML = (htmlString: string | undefined) => {
     if (!htmlString) return null;
@@ -86,36 +100,64 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
   }
 
   const { prompt, viewContent, solution, answerType, answers, questionType, problemSolving } = questionData;
+
+  const handleSetAnswer = (popoverId: string, value: string) => {
+    setUserAnswers(prev => ({ ...prev, [popoverId]: value }));
+  };
+
+  const handlePopoverToggle = (popoverId: string) => {
+    setActivePopover(prev => (prev === popoverId ? null : popoverId));
+  };
   
   if (questionType === '서술형') {
     const parseProblemSolving = (text: string | undefined) => {
-      if (!text || !answers) return <div className="prose max-w-none prose-lg pointer-events-none" dangerouslySetInnerHTML={{ __html: text?.replace(/\n/g, '<br />') || '' }} />;
+        if (!text) return <div className="prose max-w-none prose-lg" dangerouslySetInnerHTML={{ __html: '' }} />;
 
-      let blankIndex = 0;
-      const parts = text.split(/(\${[^}]+})/g).map((part, i) => {
-        if (part.match(/\${[^}]+}/g)) {
-          const currentIndex = blankIndex;
-          const answerSet = answers?.[currentIndex];
-          blankIndex++;
-          
-          const trigger = (
-            <button
-                className={cn("inline-block bg-gray-200 rounded-md h-8 w-24 mx-1 p-0 align-middle cursor-pointer hover:bg-gray-300 pointer-events-auto relative z-[9999]")}
-            ></button>
-          );
+        let blankIndex = 0;
+        const parts = text.split(/(\${[^}]+})/g).map((part, i) => {
+            if (part.match(/\${[^}]+}/g)) {
+                const currentIndex = blankIndex;
+                const popoverId = `blank-${currentIndex}`;
+                const answerSet = answers?.[currentIndex];
+                blankIndex++;
+                
+                const userAnswer = userAnswers[popoverId];
 
-          return (
-            <AnswerPopover key={`popover-part-${i}`} answerSet={answerSet} trigger={trigger} />
-          );
-        }
-        return <span key={`text-part-${i}`} className='pointer-events-none' dangerouslySetInnerHTML={{ __html: part.replace(/\n/g, '<br />') }} />;
-      });
+                const trigger = (
+                    <button
+                        onClick={() => handlePopoverToggle(popoverId)}
+                        className={cn(
+                          "inline-flex items-center justify-center bg-gray-200 rounded-md h-8 min-w-24 mx-1 px-2 align-middle cursor-pointer hover:bg-gray-300 relative z-10 pointer-events-auto",
+                          userAnswer && "bg-blue-100 text-blue-800"
+                        )}
+                    >
+                        {userAnswer ? <span dangerouslySetInnerHTML={{__html: userAnswer}} /> : null}
+                    </button>
+                );
 
-      return <div className="prose max-w-none prose-lg">{parts}</div>;
+                return (
+                    <AnswerPopover
+                        key={popoverId}
+                        answerSet={answerSet}
+                        trigger={trigger}
+                        isOpen={activePopover === popoverId}
+                        onOpenChange={(open) => {
+                            if (!open) {
+                                setActivePopover(prev => prev === popoverId ? null : prev);
+                            }
+                        }}
+                        onSelect={(value) => handleSetAnswer(popoverId, value)}
+                    />
+                );
+            }
+            return <span key={`text-part-${i}`} dangerouslySetInnerHTML={{ __html: part.replace(/\n/g, '<br />') }} />;
+        });
+
+        return <div className="prose max-w-none prose-lg pointer-events-none">{parts}</div>;
     };
 
     return (
-      <div className="bg-gray-50 min-h-full p-4 sm:p-8" onMouseDownCapture={handleCaptureClick}>
+      <div className="bg-gray-50 min-h-full p-4 sm:p-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-10 gap-8">
           <div className="lg:col-span-7 space-y-6">
             {prompt && (
@@ -175,15 +217,29 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
               </CardHeader>
               <CardContent className="space-y-2">
                  {answers?.map((answerSet, index) => {
+                    const popoverId = `blank-${index}`;
+                    const userAnswer = userAnswers[popoverId];
                     const trigger = (
                         <button
+                           onClick={() => handlePopoverToggle(popoverId)}
                           className="w-full justify-start text-left h-auto min-h-[2.5rem] flex items-center px-4 py-2 border rounded-md bg-white hover:bg-gray-100 pointer-events-auto relative z-[9999]"
                         >
-                          답안 {index + 1}
+                          답안 {index + 1}: {userAnswer ? <span className="ml-2 font-semibold text-blue-800" dangerouslySetInnerHTML={{__html: userAnswer}} /> : <span className="ml-2 text-gray-400">빈칸</span>}
                         </button>
                     );
                     return (
-                        <AnswerPopover key={`answer-popover-${index}`} answerSet={answerSet} trigger={trigger} />
+                       <AnswerPopover
+                          key={popoverId}
+                          answerSet={answerSet}
+                          trigger={trigger}
+                          isOpen={activePopover === popoverId}
+                          onOpenChange={(open) => {
+                              if (!open) {
+                                  setActivePopover(prev => prev === popoverId ? null : prev);
+                              }
+                          }}
+                          onSelect={(value) => handleSetAnswer(popoverId, value)}
+                      />
                     );
                 })}
               </CardContent>
