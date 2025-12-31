@@ -51,11 +51,13 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                 const answerSet = answers?.[currentIndex];
                 blankIndex++;
 
-                if (!answerSet || answerSet.answerType !== '선지형') {
+                if (!answerSet) {
                     return (
                         <span key={i} className="inline-block bg-gray-200 rounded-md h-8 w-24 mx-1 align-middle" />
                     );
                 }
+                
+                const isChoiceQuestion = answerSet.answerType === '선지형';
 
                 return (
                     <Popover key={i} open={activePopover === currentIndex} onOpenChange={(isOpen) => setActivePopover(isOpen ? currentIndex : null)}>
@@ -67,26 +69,29 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                   "hover:bg-gray-300",
                                   activePopover === currentIndex && "ring-2 ring-primary"
                                 )}
+                                disabled={!isChoiceQuestion}
                             />
                         </PopoverTrigger>
-                        <PopoverContent className="w-80">
-                            <div className="grid gap-2">
-                                <div className="space-y-2">
-                                    {answerSet.answers?.map((choice: any, choiceIndex: number) => (
-                                        <Button
-                                            key={choiceIndex}
-                                            variant="outline"
-                                            className="w-full justify-start text-left h-auto min-h-[2.5rem]"
-                                        >
-                                            <div className="flex gap-2 items-start">
-                                                <span className='font-bold'>{choiceIndex + 1}</span>
-                                                <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
-                                            </div>
-                                        </Button>
-                                    ))}
-                                </div>
-                            </div>
-                        </PopoverContent>
+                        {isChoiceQuestion && (
+                          <PopoverContent className="w-80">
+                              <div className="grid gap-2">
+                                  <div className="space-y-2">
+                                      {answerSet.answers?.map((choice: any, choiceIndex: number) => (
+                                          <Button
+                                              key={choiceIndex}
+                                              variant="outline"
+                                              className="w-full justify-start text-left h-auto min-h-[2.5rem]"
+                                          >
+                                              <div className="flex gap-2 items-start">
+                                                  <span className='font-bold'>{choiceIndex + 1}</span>
+                                                  <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
+                                              </div>
+                                          </Button>
+                                      ))}
+                                  </div>
+                              </div>
+                          </PopoverContent>
+                        )}
                     </Popover>
                 );
             }
@@ -118,7 +123,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                     </CardHeader>
                     <CardContent>
                         <div className="prose max-w-none prose-lg">
-                        {parseProblemSolving(problemSolving)}
+                            {parseProblemSolving(problemSolving)}
                         </div>
                     </CardContent>
                     </Card>
@@ -149,13 +154,51 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                 )}
             </div>
 
-             <div className="lg:col-span-3">
+            <div className="lg:col-span-3">
                 <Card>
                     <CardHeader>
                         <CardTitle className="text-xl">답안</CardTitle>
                     </CardHeader>
-                    <CardContent>
-                        {/* The answer rendering logic for descriptive questions will go here */}
+                    <CardContent className="space-y-2">
+                        {answers?.map((answerSet, index) => {
+                             const isChoiceQuestion = answerSet.answerType === '선지형';
+                             return (
+                                <Popover key={index} open={activePopover === index} onOpenChange={(isOpen) => setActivePopover(isOpen ? index : null)}>
+                                    <PopoverTrigger asChild>
+                                        <Button
+                                            variant="outline"
+                                            className={cn(
+                                                "w-full justify-start text-left h-auto min-h-[2.5rem]",
+                                                activePopover === index && "ring-2 ring-primary"
+                                            )}
+                                            disabled={!isChoiceQuestion}
+                                        >
+                                            답안 {index + 1}
+                                        </Button>
+                                    </PopoverTrigger>
+                                     {isChoiceQuestion && (
+                                        <PopoverContent className="w-80">
+                                            <div className="grid gap-2">
+                                                <div className="space-y-2">
+                                                    {answerSet.answers?.map((choice: any, choiceIndex: number) => (
+                                                        <Button
+                                                            key={choiceIndex}
+                                                            variant="outline"
+                                                            className="w-full justify-start text-left h-auto min-h-[2.5rem]"
+                                                        >
+                                                            <div className="flex gap-2 items-start">
+                                                                <span className='font-bold'>{choiceIndex + 1}</span>
+                                                                <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
+                                                            </div>
+                                                        </Button>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </PopoverContent>
+                                     )}
+                                </Popover>
+                             )
+                        })}
                     </CardContent>
                 </Card>
             </div>
@@ -171,7 +214,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
         return (
           <div className="space-y-2">
             {answers?.map((ans, index) => (
-              <Button key={index} variant="outline" className="w-full justify-start text-left text-lg p-6 h-auto min-h-[4rem]" data-correct={ans.isCorrect ? 'true' : 'false'}>
+              <Button key={index} variant="outline" className="w-full justify-start text-left text-lg p-6 h-auto min-h-[4rem]">
                  <div className="flex gap-4 items-start w-full">
                     <span className="font-bold mt-1">{index + 1}</span>
                     <div className="flex-shrink whitespace-normal">{renderHTML(ans.value)}</div>
