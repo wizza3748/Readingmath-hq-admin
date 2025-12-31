@@ -51,13 +51,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                 const answerSet = answers?.[currentIndex];
                 blankIndex++;
 
-                if (!answerSet) {
-                    return (
-                        <span key={i} className="inline-block bg-gray-200 rounded-md h-8 w-24 mx-1 align-middle" />
-                    );
-                }
-                
-                const isChoiceQuestion = answerSet.answerType === '선지형';
+                const isChoiceQuestion = answerSet?.answerType === '선지형';
 
                 return (
                     <Popover key={i} open={activePopover === currentIndex} onOpenChange={(isOpen) => setActivePopover(isOpen ? currentIndex : null)}>
@@ -71,11 +65,11 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                 )}
                             />
                         </PopoverTrigger>
-                        {isChoiceQuestion && (
+                        {isChoiceQuestion && answerSet.answers && (
                           <PopoverContent className="w-80">
                               <div className="grid gap-2">
                                   <div className="space-y-2">
-                                      {answerSet.answers?.map((choice: any, choiceIndex: number) => (
+                                      {answerSet.answers.map((choice: any, choiceIndex: number) => (
                                           <Button
                                               key={choiceIndex}
                                               variant="outline"
@@ -174,11 +168,11 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                             답안 {index + 1}
                                         </Button>
                                     </PopoverTrigger>
-                                     {isChoiceQuestion && (
+                                     {isChoiceQuestion && answerSet.answers && (
                                         <PopoverContent className="w-80">
                                             <div className="grid gap-2">
                                                 <div className="space-y-2">
-                                                    {answerSet.answers?.map((choice: any, choiceIndex: number) => (
+                                                    {answerSet.answers.map((choice: any, choiceIndex: number) => (
                                                         <Button
                                                             key={choiceIndex}
                                                             variant="outline"
