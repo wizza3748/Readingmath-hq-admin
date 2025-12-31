@@ -50,12 +50,12 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                 const currentIndex = blankIndex;
                 const answerSet = answers?.[currentIndex];
                 blankIndex++;
-
-                const isChoiceQuestion = answerSet?.answerType === '선지형';
-                const hasChoices = isChoiceQuestion && Array.isArray(answerSet.answers) && answerSet.answers.length > 0;
-
+                
                 return (
-                    <Popover key={`problem-popover-${i}`} open={activePopover === currentIndex} onOpenChange={(isOpen) => setActivePopover(isOpen ? currentIndex : null)}>
+                    <Popover key={`problem-popover-${i}`} open={activePopover === currentIndex} onOpenChange={(isOpen) => {
+                        console.log(`[Popover State Changed] Index: ${currentIndex}, New state: ${isOpen}`);
+                        setActivePopover(isOpen ? currentIndex : null)
+                    }}>
                         <PopoverTrigger asChild>
                             <Button
                                 variant="outline"
@@ -64,28 +64,31 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                   "hover:bg-gray-300",
                                   activePopover === currentIndex && "ring-2 ring-primary"
                                 )}
+                                onClick={() => console.log(`[Popover Trigger Clicked] Index: ${currentIndex}, answerSet:`, answerSet)}
                             />
                         </PopoverTrigger>
-                        {hasChoices && (
-                          <PopoverContent className="w-80">
-                              <div className="grid gap-2">
-                                  <div className="space-y-2">
-                                      {answerSet.answers.map((choice: any, choiceIndex: number) => (
-                                          <Button
-                                              key={choiceIndex}
-                                              variant="outline"
-                                              className="w-full justify-start text-left h-auto min-h-[2.5rem]"
-                                          >
-                                              <div className="flex gap-2 items-start">
-                                                  <span className='font-bold'>{choiceIndex + 1}</span>
-                                                  <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
-                                              </div>
-                                          </Button>
-                                      ))}
-                                  </div>
-                              </div>
-                          </PopoverContent>
-                        )}
+                        <PopoverContent className="w-80 z-[9999]">
+                            {answerSet && answerSet.answers && answerSet.answers.length > 0 ? (
+                                <div className="grid gap-2">
+                                    <div className="space-y-2">
+                                        {answerSet.answers.map((choice: any, choiceIndex: number) => (
+                                            <Button
+                                                key={choiceIndex}
+                                                variant="outline"
+                                                className="w-full justify-start text-left h-auto min-h-[2.5rem]"
+                                            >
+                                                <div className="flex gap-2 items-start">
+                                                    <span className='font-bold'>{choiceIndex + 1}</span>
+                                                    <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
+                                                </div>
+                                            </Button>
+                                        ))}
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="text-sm text-muted-foreground">선지 정보가 없습니다.</div>
+                            )}
+                        </PopoverContent>
                     </Popover>
                 );
             }
@@ -156,10 +159,12 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                     <CardContent className="space-y-2">
                         {answers?.map((answerSet, index) => {
                              const isChoiceQuestion = answerSet?.answerType === '선지형';
-                             const hasChoices = isChoiceQuestion && Array.isArray(answerSet.answers) && answerSet.answers.length > 0;
                              
                              return (
-                                <Popover key={`answer-popover-${index}`} open={activePopover === index} onOpenChange={(isOpen) => setActivePopover(isOpen ? index : null)}>
+                                <Popover key={`answer-popover-${index}`} open={activePopover === index} onOpenChange={(isOpen) => {
+                                    console.log(`[Popover State Changed] Index: ${index}, New state: ${isOpen}`);
+                                    setActivePopover(isOpen ? index : null)
+                                }}>
                                     <PopoverTrigger asChild>
                                         <Button
                                             variant="outline"
@@ -167,12 +172,13 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                                 "w-full justify-start text-left h-auto min-h-[2.5rem]",
                                                 activePopover === index && "ring-2 ring-primary"
                                             )}
+                                            onClick={() => console.log(`[Popover Trigger Clicked] Index: ${index}, answerSet:`, answerSet)}
                                         >
                                             답안 {index + 1}
                                         </Button>
                                     </PopoverTrigger>
-                                     {hasChoices && (
-                                        <PopoverContent className="w-80">
+                                     <PopoverContent className="w-80 z-[9999]">
+                                        {isChoiceQuestion && answerSet.answers && answerSet.answers.length > 0 ? (
                                             <div className="grid gap-2">
                                                 <div className="space-y-2">
                                                     {answerSet.answers.map((choice: any, choiceIndex: number) => (
@@ -189,8 +195,10 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                                     ))}
                                                 </div>
                                             </div>
-                                        </PopoverContent>
-                                     )}
+                                        ) : (
+                                            <div className="text-sm text-muted-foreground">선지 정보가 없습니다.</div>
+                                        )}
+                                     </PopoverContent>
                                 </Popover>
                              )
                         })}
