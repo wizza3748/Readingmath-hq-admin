@@ -231,8 +231,8 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
 
   return (
     <div className="bg-gray-50 min-h-full p-4 sm:p-8">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 gap-8">
-            <div className="space-y-6">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-10 gap-8">
+            <div className="lg:col-span-6 space-y-6">
                 <Card>
                     <CardHeader>
                         <CardTitle className="text-xl">발문</CardTitle>
@@ -256,15 +256,6 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                         </CardContent>
                     </Card>
                 )}
-                
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="text-xl">답안</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        {renderAnswerSection()}
-                    </CardContent>
-                </Card>
 
                 {solution && (
                     <Card>
@@ -276,6 +267,17 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                         </CardContent>
                     </Card>
                 )}
+            </div>
+            
+            <div className="lg:col-span-4">
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="text-xl">답안</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        {renderAnswerSection()}
+                    </CardContent>
+                </Card>
             </div>
 
         </div>
