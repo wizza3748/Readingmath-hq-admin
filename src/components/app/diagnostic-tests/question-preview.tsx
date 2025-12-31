@@ -69,7 +69,6 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                   "hover:bg-gray-300",
                                   activePopover === currentIndex && "ring-2 ring-primary"
                                 )}
-                                disabled={!isChoiceQuestion}
                             />
                         </PopoverTrigger>
                         {isChoiceQuestion && (
@@ -171,7 +170,6 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                                 "w-full justify-start text-left h-auto min-h-[2.5rem]",
                                                 activePopover === index && "ring-2 ring-primary"
                                             )}
-                                            disabled={!isChoiceQuestion}
                                         >
                                             답안 {index + 1}
                                         </Button>
