@@ -6,24 +6,20 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Question } from '@/lib/db';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { cn } from '@/lib/utils';
 
 type QuestionData = Partial<Question> & {
     questionType?: '객관식' | '서술형' | '유형';
 };
 
 export default function QuestionPreview({ questionData }: { questionData: QuestionData | null }) {
+  const [activePopover, setActivePopover] = React.useState<number | null>(null);
 
-  const renderHTML = (htmlString: string | undefined, isProblemSolving = false) => {
+  const renderHTML = (htmlString: string | undefined) => {
     if (!htmlString) return null;
     
     let processedHtml = htmlString.replace(/\n/g, '<br />');
-
-    if (isProblemSolving) {
-        processedHtml = processedHtml.replace(
-            /\${[^}]+}/g,
-            `<span class="inline-block bg-gray-200 rounded-md h-8 w-24 mx-1 cursor-pointer">&nbsp;</span>`
-        );
-    }
 
     processedHtml = processedHtml.replace(
       /(https?:\/\/[^\s]+?\.(?:png|jpg|jpeg|gif|webp|svg))/g,
@@ -42,79 +38,135 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
 
   const { prompt, viewContent, solution, answerType, answers, questionType, problemSolving } = questionData;
   
-  const renderAnswerSection = () => {
-    if (questionType === '서술형') {
-        return (
-            <div className="space-y-4">
-                {answers?.map((ans, index) => {
-                    if (ans.answerType === '선지형') {
-                        return (
-                             <div key={index} className="space-y-2">
-                                <p className="font-semibold">{index + 1}번 답안</p>
-                                {ans.answers?.map((choice: any, choiceIndex: number) => (
-                                    <Button key={choiceIndex} variant="outline" className="w-full justify-start text-left text-lg p-6 h-auto min-h-[4rem]">
-                                        <div className="flex gap-4 items-start">
-                                            <span className='font-bold mr-4'>{choiceIndex + 1}</span>
-                                            <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
-                                        </div>
-                                    </Button>
-                                ))}
-                            </div>
-                        )
-                    }
-                    if (ans.answerType === '입력형') {
-                       return <div key={index} className="space-y-2">
-                                <p className="font-semibold">{index + 1}번 답안</p>
-                                {ans.answers?.map((inputAns: any, inputIndex: number) => {
-                                    const circledNumber = `①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳`[inputIndex] || String(inputIndex + 1);
-                                    if (inputAns.type === '분수') {
-                                        return <div key={inputIndex} className="flex items-center gap-2">
-                                            <span className="font-bold text-lg">{inputAns.symbol ? `${circledNumber}` : `${inputIndex+1}.`}</span>
-                                            <div className="flex flex-col w-24">
-                                                <Input className="text-center h-10 rounded-b-none border-b-0 text-lg"/>
-                                                <div className="border-t-2 border-black"></div>
-                                                <Input className="text-center h-10 rounded-t-none text-lg"/>
-                                            </div>
-                                       </div>
-                                    }
-                                     if (inputAns.type === '대분수') {
-                                        return <div key={inputIndex} className="flex items-center gap-2">
-                                                    <span className="font-bold text-lg">{inputAns.symbol ? `${circledNumber}` : `${inputIndex+1}.`}</span>
-                                                    <Input className="w-20 h-12 text-center text-lg" />
-                                                    <div className="flex flex-col w-24">
-                                                        <Input className="text-center h-10 rounded-b-none border-b-0 text-lg"/>
-                                                        <div className="border-t-2 border-black"></div>
-                                                        <Input className="text-center h-10 rounded-t-none text-lg"/>
-                                                    </div>
-                                            </div>
-                                    }
-                                    return (
-                                        <div key={inputIndex} className="flex items-center gap-2">
-                                            <span className="font-bold text-lg">{inputAns.symbol ? `${circledNumber}` : `${inputIndex+1}.`}</span>
-                                            <Input className="w-48 h-12 text-lg" />
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                    }
-                     if (ans.answerType === '순서맞추기') {
-                        return (
-                            <div key={index} className="space-y-2">
-                                <p className="font-semibold">{index + 1}번 답안</p>
-                                {ans.answers?.map((item: any, itemIndex: number) => (
-                                     <div key={itemIndex} className="border p-4 rounded-md bg-gray-100">
-                                        <div dangerouslySetInnerHTML={{ __html: item.value }} />
-                                    </div>
-                                ))}
-                            </div>
-                        )
-                    }
-                    return null;
-                })}
-            </div>
-        )
-    }
+  if (questionType === '서술형') {
+    const parseProblemSolving = (text: string | undefined) => {
+        if (!text) return null;
 
+        const parts = text.split(/(\${[^}]+})/g);
+        let blankIndex = 0;
+
+        return parts.map((part, i) => {
+            if (part.match(/\${[^}]+}/g)) {
+                const currentIndex = blankIndex;
+                const answerSet = answers?.[currentIndex];
+                blankIndex++;
+
+                if (!answerSet || answerSet.answerType !== '선지형') {
+                    return (
+                        <span key={i} className="inline-block bg-gray-200 rounded-md h-8 w-24 mx-1 align-middle" />
+                    );
+                }
+
+                return (
+                    <Popover key={i} open={activePopover === currentIndex} onOpenChange={(isOpen) => setActivePopover(isOpen ? currentIndex : null)}>
+                        <PopoverTrigger asChild>
+                            <Button
+                                variant="outline"
+                                className={cn(
+                                  "inline-block bg-gray-200 rounded-md h-8 w-24 mx-1 p-0 align-middle",
+                                  "hover:bg-gray-300",
+                                  activePopover === currentIndex && "ring-2 ring-primary"
+                                )}
+                            />
+                        </PopoverTrigger>
+                        <PopoverContent className="w-80">
+                            <div className="grid gap-2">
+                                <p className="text-sm font-bold">정답 {answerSet.answers?.findIndex((a: any) => a.isCorrect) + 1}번</p>
+                                <div className="space-y-2">
+                                    {answerSet.answers?.map((choice: any, choiceIndex: number) => (
+                                        <Button
+                                            key={choiceIndex}
+                                            variant={choice.isCorrect ? 'default' : 'outline'}
+                                            className="w-full justify-start text-left h-auto min-h-[2.5rem]"
+                                        >
+                                            <div className="flex gap-2 items-start">
+                                                <span className='font-bold'>{choiceIndex + 1}</span>
+                                                <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
+                                            </div>
+                                        </Button>
+                                    ))}
+                                </div>
+                            </div>
+                        </PopoverContent>
+                    </Popover>
+                );
+            }
+            return <span key={i} dangerouslySetInnerHTML={{ __html: part.replace(/\n/g, '<br />') }} />;
+        });
+    };
+
+    return (
+      <div className="bg-gray-50 min-h-full p-4 sm:p-8">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-10 gap-8">
+            <div className="lg:col-span-7 space-y-6">
+                {prompt && (
+                    <Card>
+                        <CardHeader>
+                        <CardTitle className="text-xl">발문</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                        <div className="prose max-w-none prose-xl font-semibold">
+                            {renderHTML(prompt)}
+                        </div>
+                        </CardContent>
+                    </Card>
+                )}
+
+                {problemSolving && (
+                    <Card>
+                    <CardHeader>
+                        <CardTitle className="text-xl">문제 풀이</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <div className="prose max-w-none prose-lg">
+                        {parseProblemSolving(problemSolving)}
+                        </div>
+                    </CardContent>
+                    </Card>
+                )}
+
+                {viewContent && (
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="text-xl">보기</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="prose max-w-none prose-lg">
+                                {renderHTML(viewContent)}
+                            </div>
+                        </CardContent>
+                    </Card>
+                )}
+
+                {solution && (
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="text-xl">오답 해설</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="prose max-w-none prose-lg">{renderHTML(solution)}</div>
+                        </CardContent>
+                    </Card>
+                )}
+            </div>
+
+             <div className="lg:col-span-3">
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="text-xl">답안</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        {/* The answer rendering logic for descriptive questions will go here */}
+                    </CardContent>
+                </Card>
+            </div>
+        </div>
+      </div>
+    )
+  }
+
+  // 객관식 미리보기
+  const renderAnswerSection = () => {
     switch (answerType) {
       case '선지형':
         return (
@@ -180,76 +232,6 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
     }
   };
 
-  if (questionType === '서술형') {
-    return (
-      <div className="bg-gray-50 min-h-full p-4 sm:p-8">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-10 gap-8">
-            <div className="lg:col-span-7 space-y-6">
-                <Card>
-                    <CardHeader>
-                    <CardTitle className="text-xl">발문</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                    <div className="prose max-w-none prose-xl font-semibold">
-                        {renderHTML(prompt)}
-                    </div>
-                    </CardContent>
-                </Card>
-
-                {problemSolving && (
-                    <Card>
-                    <CardHeader>
-                        <CardTitle className="text-xl">문제 풀이</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <div className="prose max-w-none prose-lg">
-                        {renderHTML(problemSolving, true)}
-                        </div>
-                    </CardContent>
-                    </Card>
-                )}
-
-                {viewContent && (
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="text-xl">보기</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="prose max-w-none prose-lg">
-                                {renderHTML(viewContent)}
-                            </div>
-                        </CardContent>
-                    </Card>
-                )}
-
-                {solution && (
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="text-xl">오답 해설</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="prose max-w-none prose-lg">{renderHTML(solution)}</div>
-                        </CardContent>
-                    </Card>
-                )}
-            </div>
-
-             <div className="lg:col-span-3">
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="text-xl">답안</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        {/* The answer rendering logic for descriptive questions will go here */}
-                    </CardContent>
-                </Card>
-            </div>
-        </div>
-      </div>
-    )
-  }
-
-  // 객관식 미리보기
   return (
     <div className="bg-gray-50 min-h-full p-4 sm:p-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-10 gap-8">
@@ -305,3 +287,5 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
     </div>
   );
 }
+
+    
