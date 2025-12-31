@@ -48,7 +48,6 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
         return parts.map((part, i) => {
             if (part.match(/\${[^}]+}/g)) {
                 const currentIndex = blankIndex;
-                const answerSet = answers?.[currentIndex];
                 blankIndex++;
                 
                 return (
@@ -57,36 +56,40 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                         setActivePopover(isOpen ? currentIndex : null)
                     }}>
                         <PopoverTrigger asChild>
-                            <Button
-                                variant="outline"
+                             <span
                                 className={cn(
                                   "inline-block bg-gray-200 rounded-md h-8 w-24 mx-1 p-0 align-middle",
                                   "hover:bg-gray-300",
-                                  activePopover === currentIndex && "ring-2 ring-primary"
+                                   activePopover === currentIndex && "ring-2 ring-primary"
                                 )}
-                            />
+                             />
                         </PopoverTrigger>
                         <PopoverContent className="w-80 z-[9999]">
-                            {answerSet && answerSet.answerType === '선지형' && answerSet.answers && answerSet.answers.length > 0 ? (
-                                <div className="grid gap-2">
-                                    <div className="space-y-2">
-                                        {answerSet.answers.map((choice: any, choiceIndex: number) => (
-                                            <Button
-                                                key={choiceIndex}
-                                                variant="outline"
-                                                className="w-full justify-start text-left h-auto min-h-[2.5rem]"
-                                            >
-                                                <div className="flex gap-2 items-start">
-                                                    <span className='font-bold'>{choiceIndex + 1}</span>
-                                                    <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
-                                                </div>
-                                            </Button>
-                                        ))}
-                                    </div>
-                                </div>
-                            ) : (
-                                <div className="text-sm text-muted-foreground">선지 정보가 없습니다.</div>
-                            )}
+                            {(() => {
+                                const answerSet = answers?.[currentIndex];
+                                const isChoiceQuestion = answerSet?.answerType === '선지형';
+                                if (isChoiceQuestion && answerSet.answers && answerSet.answers.length > 0) {
+                                    return (
+                                        <div className="grid gap-2">
+                                            <div className="space-y-2">
+                                                {answerSet.answers.map((choice: any, choiceIndex: number) => (
+                                                    <Button
+                                                        key={choiceIndex}
+                                                        variant="outline"
+                                                        className="w-full justify-start text-left h-auto min-h-[2.5rem]"
+                                                    >
+                                                        <div className="flex gap-2 items-start">
+                                                            <span className='font-bold'>{choiceIndex + 1}</span>
+                                                            <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
+                                                        </div>
+                                                    </Button>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    );
+                                }
+                                return <div className="text-sm text-muted-foreground">선지 정보가 없습니다.</div>;
+                            })()}
                         </PopoverContent>
                     </Popover>
                 );
@@ -157,8 +160,6 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                     </CardHeader>
                     <CardContent className="space-y-2">
                         {answers?.map((answerSet, index) => {
-                             const isChoiceQuestion = answerSet?.answerType === '선지형';
-                             
                              return (
                                 <Popover key={`answer-popover-${index}`} open={activePopover === index} onOpenChange={(isOpen) => {
                                     console.log(`[Popover State Changed] Index: ${index}, New state: ${isOpen}`);
@@ -176,26 +177,30 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                         </Button>
                                     </PopoverTrigger>
                                      <PopoverContent className="w-80 z-[9999]">
-                                        {isChoiceQuestion && answerSet.answers && answerSet.answers.length > 0 ? (
-                                            <div className="grid gap-2">
-                                                <div className="space-y-2">
-                                                    {answerSet.answers.map((choice: any, choiceIndex: number) => (
-                                                        <Button
-                                                            key={choiceIndex}
-                                                            variant="outline"
-                                                            className="w-full justify-start text-left h-auto min-h-[2.5rem]"
-                                                        >
-                                                            <div className="flex gap-2 items-start">
-                                                                <span className='font-bold'>{choiceIndex + 1}</span>
-                                                                <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
-                                                            </div>
-                                                        </Button>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        ) : (
-                                            <div className="text-sm text-muted-foreground">선지 정보가 없습니다.</div>
-                                        )}
+                                        {(() => {
+                                            const isChoiceQuestion = answerSet?.answerType === '선지형';
+                                            if (isChoiceQuestion && answerSet.answers && answerSet.answers.length > 0) {
+                                                return (
+                                                    <div className="grid gap-2">
+                                                        <div className="space-y-2">
+                                                            {answerSet.answers.map((choice: any, choiceIndex: number) => (
+                                                                <Button
+                                                                    key={choiceIndex}
+                                                                    variant="outline"
+                                                                    className="w-full justify-start text-left h-auto min-h-[2.5rem]"
+                                                                >
+                                                                    <div className="flex gap-2 items-start">
+                                                                        <span className='font-bold'>{choiceIndex + 1}</span>
+                                                                        <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
+                                                                    </div>
+                                                                </Button>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                );
+                                            }
+                                            return <div className="text-sm text-muted-foreground">선지 정보가 없습니다.</div>;
+                                        })()}
                                      </PopoverContent>
                                 </Popover>
                              )
@@ -218,7 +223,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
               <Button key={index} variant="outline" className="w-full justify-start text-left text-lg p-6 h-auto min-h-[4rem]">
                  <div className="flex gap-4 items-start w-full">
                     <span className="font-bold mt-1">{index + 1}</span>
-                    <div className="flex-shrink whitespace-normal">{renderHTML(ans.value)}</div>
+                    <div className="flex-1 flex-shrink min-w-0 whitespace-normal break-words">{renderHTML(ans.value)}</div>
                  </div>
               </Button>
             ))}
