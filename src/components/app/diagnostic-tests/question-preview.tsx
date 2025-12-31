@@ -13,32 +13,23 @@ type QuestionData = Partial<Question> & {
     questionType?: '객관식' | '서술형' | '유형';
 };
 
-const AnswerPopover = ({
-  popoverId,
-  answerSet,
-  userAnswer,
-  activePopover,
-  onSelect,
-  setActivePopover,
-  children,
-}: {
+const AnswerPopover: React.FC<{
   popoverId: string;
   answerSet: any;
-  userAnswer: string | undefined;
   activePopover: string | null;
-  onSelect: (value: string) => void;
   setActivePopover: (id: string | null) => void;
+  onSelect: (popoverId: string, value: string) => void;
   children: React.ReactNode;
+}> = ({
+  popoverId,
+  answerSet,
+  activePopover,
+  setActivePopover,
+  onSelect,
+  children,
 }) => {
-  const isChoiceQuestion = answerSet?.answerType === '선지형';
-  const hasAnswers = isChoiceQuestion && answerSet.answers && answerSet.answers.length > 0;
   const isOpen = activePopover === popoverId;
 
-  const handleSelect = (value: string) => {
-    onSelect(value);
-    setActivePopover(null);
-  };
-  
   const handleOpenChange = (open: boolean) => {
     if (open) {
       setActivePopover(popoverId);
@@ -49,6 +40,14 @@ const AnswerPopover = ({
     }
   };
 
+  const handleSelect = (value: string) => {
+    onSelect(popoverId, value);
+    setActivePopover(null);
+  };
+
+  const isChoiceQuestion = answerSet?.answerType === '선지형';
+  const hasAnswers = isChoiceQuestion && Array.isArray(answerSet.answers) && answerSet.answers.length > 0;
+
   return (
     <Popover open={isOpen} onOpenChange={handleOpenChange}>
       <PopoverTrigger asChild onPointerDown={(e) => e.stopPropagation()}>
@@ -58,9 +57,9 @@ const AnswerPopover = ({
         className="w-80 z-[9999]"
         onPointerDown={(e) => e.stopPropagation()}
         onInteractOutside={(e) => {
-            if (isOpen) {
-               e.preventDefault();
-            }
+          if (isOpen) {
+            e.preventDefault();
+          }
         }}
       >
         {hasAnswers ? (
@@ -72,7 +71,6 @@ const AnswerPopover = ({
                   variant="outline"
                   className="w-full justify-start text-left h-auto min-h-[2.5rem]"
                   onClick={() => handleSelect(choice.value)}
-                  onPointerDown={(e) => e.stopPropagation()}
                 >
                   <div className="flex gap-2 items-start">
                     <span className='font-bold'>{choiceIndex + 1}</span>
@@ -122,7 +120,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
   };
   
   if (questionType === '서술형') {
-    const parseProblemSolving = (text: string | undefined) => {
+      const parseProblemSolving = (text: string | undefined) => {
         if (!text) return <div className="prose max-w-none prose-lg" dangerouslySetInnerHTML={{ __html: '' }} />;
 
         let blankIndex = 0;
@@ -151,10 +149,9 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                         key={popoverId}
                         popoverId={popoverId}
                         answerSet={answerSet}
-                        userAnswer={userAnswer}
                         activePopover={activePopover}
                         setActivePopover={setActivePopover}
-                        onSelect={(value) => handleSetAnswer(popoverId, value)}
+                        onSelect={handleSetAnswer}
                     >
                       {trigger}
                     </AnswerPopover>
@@ -163,7 +160,13 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
             return <span key={`text-part-${i}`} dangerouslySetInnerHTML={{ __html: part.replace(/\n/g, '<br />') }} />;
         });
 
-        return <div className="prose max-w-none prose-lg pointer-events-none">{parts}</div>;
+        return (
+          <div 
+            className="prose max-w-none prose-lg pointer-events-none"
+          >
+            {parts}
+          </div>
+        );
     };
 
     return (
@@ -233,7 +236,8 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                         <button
                           className="w-full justify-start text-left h-auto min-h-[2.5rem] flex items-center px-4 py-2 border rounded-md bg-white hover:bg-gray-100 pointer-events-auto"
                         >
-                          {index + 1} {userAnswer ? <span className="ml-2 font-semibold text-blue-800" dangerouslySetInnerHTML={{__html: userAnswer}} /> : <span className="ml-2 text-gray-400"></span>}
+                          <span className="font-semibold">{index + 1}</span> 
+                          {userAnswer ? <span className="ml-2 font-semibold text-blue-800" dangerouslySetInnerHTML={{__html: userAnswer}} /> : <span className="ml-2 text-gray-400"></span>}
                         </button>
                     );
                     return (
@@ -241,10 +245,9 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                           key={popoverId}
                           popoverId={popoverId}
                           answerSet={answerSet}
-                          userAnswer={userAnswer}
                           activePopover={activePopover}
                           setActivePopover={setActivePopover}
-                          onSelect={(value) => handleSetAnswer(popoverId, value)}
+                          onSelect={handleSetAnswer}
                       >
                         {trigger}
                       </AnswerPopover>
