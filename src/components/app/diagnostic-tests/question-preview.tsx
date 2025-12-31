@@ -38,6 +38,46 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
 
   const { prompt, viewContent, solution, answerType, answers, questionType, problemSolving } = questionData;
   
+  const renderAnswerPopover = (answerIndex: number, triggerContent: React.ReactNode) => {
+    const answerSet = answers?.[answerIndex];
+    const isChoiceQuestion = answerSet?.answerType === '선지형';
+  
+    return (
+      <Popover 
+        key={`popover-${answerIndex}`} 
+        open={activePopover === answerIndex} 
+        onOpenChange={(isOpen) => setActivePopover(isOpen ? answerIndex : null)}
+      >
+        <PopoverTrigger asChild>
+          {triggerContent}
+        </PopoverTrigger>
+        <PopoverContent className="w-80 z-[9999]">
+          {isChoiceQuestion && answerSet.answers && answerSet.answers.length > 0 ? (
+            <div className="grid gap-2">
+              <div className="space-y-2">
+                {answerSet.answers.map((choice: any, choiceIndex: number) => (
+                  <Button
+                    key={choiceIndex}
+                    variant="outline"
+                    className="w-full justify-start text-left h-auto min-h-[2.5rem]"
+                  >
+                    <div className="flex gap-2 items-start">
+                      <span className='font-bold'>{choiceIndex + 1}</span>
+                      <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
+                    </div>
+                  </Button>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="text-sm text-muted-foreground">선지 정보가 없습니다.</div>
+          )}
+        </PopoverContent>
+      </Popover>
+    );
+  };
+
+
   if (questionType === '서술형') {
     const parseProblemSolving = (text: string | undefined) => {
         if (!text) return null;
@@ -50,49 +90,16 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                 const currentIndex = blankIndex;
                 blankIndex++;
                 
-                return (
-                    <Popover key={`problem-popover-${i}`} open={activePopover === currentIndex} onOpenChange={(isOpen) => {
-                        console.log(`[Popover State Changed] Index: ${currentIndex}, New state: ${isOpen}`);
-                        setActivePopover(isOpen ? currentIndex : null)
-                    }}>
-                        <PopoverTrigger asChild>
-                             <span
-                                className={cn(
-                                  "inline-block bg-gray-200 rounded-md h-8 w-24 mx-1 p-0 align-middle",
-                                  "hover:bg-gray-300",
-                                   activePopover === currentIndex && "ring-2 ring-primary"
-                                )}
-                             />
-                        </PopoverTrigger>
-                        <PopoverContent className="w-80 z-[9999]">
-                            {(() => {
-                                const answerSet = answers?.[currentIndex];
-                                const isChoiceQuestion = answerSet?.answerType === '선지형';
-                                if (isChoiceQuestion && answerSet.answers && answerSet.answers.length > 0) {
-                                    return (
-                                        <div className="grid gap-2">
-                                            <div className="space-y-2">
-                                                {answerSet.answers.map((choice: any, choiceIndex: number) => (
-                                                    <Button
-                                                        key={choiceIndex}
-                                                        variant="outline"
-                                                        className="w-full justify-start text-left h-auto min-h-[2.5rem]"
-                                                    >
-                                                        <div className="flex gap-2 items-start">
-                                                            <span className='font-bold'>{choiceIndex + 1}</span>
-                                                            <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
-                                                        </div>
-                                                    </Button>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    );
-                                }
-                                return <div className="text-sm text-muted-foreground">선지 정보가 없습니다.</div>;
-                            })()}
-                        </PopoverContent>
-                    </Popover>
+                const triggerSpan = (
+                  <span
+                    className={cn(
+                      "inline-block bg-gray-200 rounded-md h-8 w-24 mx-1 p-0 align-middle cursor-pointer",
+                      "hover:bg-gray-300",
+                      activePopover === currentIndex && "ring-2 ring-primary"
+                    )}
+                  />
                 );
+                return renderAnswerPopover(currentIndex, triggerSpan);
             }
             return <span key={`problem-text-${i}`} dangerouslySetInnerHTML={{ __html: part.replace(/\n/g, '<br />') }} />;
         });
@@ -159,51 +166,19 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                         <CardTitle className="text-xl">답안</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-2">
-                        {answers?.map((answerSet, index) => {
-                             return (
-                                <Popover key={`answer-popover-${index}`} open={activePopover === index} onOpenChange={(isOpen) => {
-                                    console.log(`[Popover State Changed] Index: ${index}, New state: ${isOpen}`);
-                                    setActivePopover(isOpen ? index : null)
-                                }}>
-                                    <PopoverTrigger asChild>
-                                        <Button
-                                            variant="outline"
-                                            className={cn(
-                                                "w-full justify-start text-left h-auto min-h-[2.5rem]",
-                                                activePopover === index && "ring-2 ring-primary"
-                                            )}
-                                        >
-                                            답안 {index + 1}
-                                        </Button>
-                                    </PopoverTrigger>
-                                     <PopoverContent className="w-80 z-[9999]">
-                                        {(() => {
-                                            const isChoiceQuestion = answerSet?.answerType === '선지형';
-                                            if (isChoiceQuestion && answerSet.answers && answerSet.answers.length > 0) {
-                                                return (
-                                                    <div className="grid gap-2">
-                                                        <div className="space-y-2">
-                                                            {answerSet.answers.map((choice: any, choiceIndex: number) => (
-                                                                <Button
-                                                                    key={choiceIndex}
-                                                                    variant="outline"
-                                                                    className="w-full justify-start text-left h-auto min-h-[2.5rem]"
-                                                                >
-                                                                    <div className="flex gap-2 items-start">
-                                                                        <span className='font-bold'>{choiceIndex + 1}</span>
-                                                                        <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
-                                                                    </div>
-                                                                </Button>
-                                                            ))}
-                                                        </div>
-                                                    </div>
-                                                );
-                                            }
-                                            return <div className="text-sm text-muted-foreground">선지 정보가 없습니다.</div>;
-                                        })()}
-                                     </PopoverContent>
-                                </Popover>
-                             )
+                        {answers?.map((_, index) => {
+                          const triggerButton = (
+                            <Button
+                              variant="outline"
+                              className={cn(
+                                "w-full justify-start text-left h-auto min-h-[2.5rem]",
+                                activePopover === index && "ring-2 ring-primary"
+                              )}
+                            >
+                              답안 {index + 1}
+                            </Button>
+                          );
+                          return renderAnswerPopover(index, triggerButton);
                         })}
                     </CardContent>
                 </Card>
