@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Question } from '@/lib/db';
 
 type QuestionData = Partial<Question> & {
-    questionType?: '유형' | '서술형';
+    questionType?: '객관식' | '서술형' | '유형';
 };
 
 export default function QuestionPreview({ questionData }: { questionData: QuestionData | null }) {
@@ -48,7 +48,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                     <Button key={choiceIndex} variant="outline" className="w-full justify-start text-left text-lg p-6 h-auto min-h-[4rem]">
                                         <div className="flex gap-4 items-start">
                                             <span className='font-bold mr-4'>{choiceIndex + 1}</span>
-                                            <div dangerouslySetInnerHTML={{ __html: choice.value }} />
+                                            <div className="flex-shrink whitespace-normal" dangerouslySetInnerHTML={{ __html: choice.value }} />
                                         </div>
                                     </Button>
                                 ))}
@@ -114,9 +114,9 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
           <div className="space-y-2">
             {answers?.map((ans, index) => (
               <Button key={index} variant="outline" className="w-full justify-start text-left text-lg p-6 h-auto min-h-[4rem]" data-correct={ans.isCorrect ? 'true' : 'false'}>
-                 <div className="flex gap-4 items-start">
+                 <div className="flex gap-4 items-start w-full">
                     <span className="font-bold mt-1">{index + 1}</span>
-                    <div>{renderHTML(ans.value)}</div>
+                    <div className="flex-shrink whitespace-normal">{renderHTML(ans.value)}</div>
                  </div>
               </Button>
             ))}
@@ -173,17 +173,73 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
     }
   };
 
+  if (questionData.questionType === '서술형') {
+    return (
+      <div className="bg-gray-50 min-h-full p-4 sm:p-8">
+        <div className="max-w-4xl mx-auto space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">발문</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="prose max-w-none prose-xl font-semibold">
+                {renderHTML(prompt)}
+              </div>
+            </CardContent>
+          </Card>
+
+          {problemSolving && (
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl">문제 풀이</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="prose max-w-none prose-lg">
+                  {renderHTML(problemSolving)}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {viewContent && (
+              <Card>
+                  <CardHeader>
+                      <CardTitle className="text-xl">보기</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                        <div className="prose max-w-none prose-lg">
+                          {renderHTML(viewContent)}
+                        </div>
+                  </CardContent>
+              </Card>
+          )}
+
+          {solution && (
+              <Card>
+                  <CardHeader>
+                      <CardTitle className="text-xl">오답 해설</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                      <div className="prose max-w-none prose-lg">{renderHTML(solution)}</div>
+                  </CardContent>
+              </Card>
+          )}
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="bg-gray-50 min-h-full p-4 sm:p-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-10 gap-8">
-            <div className="space-y-6 lg:col-span-7">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 gap-8">
+            <div className="space-y-6">
                 <Card>
                     <CardHeader>
                         <CardTitle className="text-xl">발문</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <div className="prose max-w-none prose-xl font-semibold">
-                            {renderHTML(questionType === '서술형' ? prompt : prompt)}
+                            {renderHTML(prompt)}
                         </div>
                     </CardContent>
                 </Card>
@@ -200,6 +256,15 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                         </CardContent>
                     </Card>
                 )}
+                
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="text-xl">답안</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        {renderAnswerSection()}
+                    </CardContent>
+                </Card>
 
                 {solution && (
                     <Card>
@@ -213,27 +278,6 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                 )}
             </div>
 
-            <div className="space-y-6 lg:col-span-3">
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="text-xl">답안</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                       {questionType === '유형' && answerType !== '선지형' ? renderAnswerSection() :
-                         <div className="space-y-2">
-                            {answers?.map((ans, index) => (
-                                <Button key={index} variant="outline" className="w-full justify-start text-left text-lg p-6 h-auto min-h-[4rem]" data-correct={ans.isCorrect ? 'true' : 'false'}>
-                                    <div className="flex gap-4 items-start">
-                                        <span className="font-bold mt-1">{index + 1}</span>
-                                        <div>{renderHTML(ans.value)}</div>
-                                    </div>
-                                </Button>
-                            ))}
-                         </div>
-                       }
-                    </CardContent>
-                </Card>
-            </div>
         </div>
     </div>
   );
