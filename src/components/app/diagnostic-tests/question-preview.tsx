@@ -43,14 +43,15 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
     const isChoiceQuestion = answerSet?.answerType === '선지형';
   
     return (
-      <Popover 
-        key={`popover-${answerIndex}`} 
-        open={activePopover === answerIndex} 
-        onOpenChange={(isOpen) => setActivePopover(isOpen ? answerIndex : null)}
+      <Popover
+        key={`popover-${answerIndex}`}
+        open={activePopover === answerIndex}
+        onOpenChange={(isOpen) => {
+            console.log(`[Popover State Changed] Index: ${answerIndex}, IsOpen: ${isOpen}`);
+            setActivePopover(isOpen ? answerIndex : null)
+        }}
       >
-        <PopoverTrigger asChild>
-          {triggerContent}
-        </PopoverTrigger>
+        <PopoverTrigger asChild>{triggerContent}</PopoverTrigger>
         <PopoverContent className="w-80 z-[9999]">
           {isChoiceQuestion && answerSet.answers && answerSet.answers.length > 0 ? (
             <div className="grid gap-2">
