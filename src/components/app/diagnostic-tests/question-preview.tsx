@@ -71,12 +71,11 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                         </PopoverTrigger>
                         <PopoverContent className="w-80">
                             <div className="grid gap-2">
-                                <p className="text-sm font-bold">정답 {answerSet.answers?.findIndex((a: any) => a.isCorrect) + 1}번</p>
                                 <div className="space-y-2">
                                     {answerSet.answers?.map((choice: any, choiceIndex: number) => (
                                         <Button
                                             key={choiceIndex}
-                                            variant={choice.isCorrect ? 'default' : 'outline'}
+                                            variant="outline"
                                             className="w-full justify-start text-left h-auto min-h-[2.5rem]"
                                         >
                                             <div className="flex gap-2 items-start">
@@ -287,5 +286,3 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
     </div>
   );
 }
-
-    
