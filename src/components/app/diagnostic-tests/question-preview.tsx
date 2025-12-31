@@ -1,14 +1,13 @@
 
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Question } from '@/lib/db';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
-
 
 type QuestionData = Partial<Question> & {
     questionType?: '객관식' | '서술형' | '유형';
@@ -19,16 +18,16 @@ const AnswerPopover = ({
   answerSet,
   userAnswer,
   activePopover,
-  setActivePopover,
   onSelect,
+  setActivePopover,
   children,
 }: {
   popoverId: string;
   answerSet: any;
   userAnswer: string | undefined;
   activePopover: string | null;
-  setActivePopover: (id: string | null) => void;
   onSelect: (value: string) => void;
+  setActivePopover: (id: string | null) => void;
   children: React.ReactNode;
 }) => {
   const isChoiceQuestion = answerSet?.answerType === '선지형';
@@ -57,10 +56,11 @@ const AnswerPopover = ({
       </PopoverTrigger>
       <PopoverContent
         className="w-80 z-[9999]"
-        onPointerDownOutside={(e) => {
-          if (isOpen) {
-             e.preventDefault();
-          }
+        onPointerDown={(e) => e.stopPropagation()}
+        onInteractOutside={(e) => {
+            if (isOpen) {
+               e.preventDefault();
+            }
         }}
       >
         {hasAnswers ? (
@@ -138,7 +138,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                 const trigger = (
                     <button
                         className={cn(
-                          "inline-flex items-center justify-center bg-gray-200 rounded-md h-8 min-w-24 mx-1 px-2 align-middle cursor-pointer hover:bg-gray-300 relative pointer-events-auto",
+                          "inline-flex items-center justify-center bg-gray-200 rounded-md h-8 min-w-24 mx-1 px-2 align-middle cursor-pointer hover:bg-gray-300 relative pointer-events-auto z-10",
                           userAnswer && "bg-blue-100 text-blue-800"
                         )}
                     >
@@ -163,7 +163,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
             return <span key={`text-part-${i}`} dangerouslySetInnerHTML={{ __html: part.replace(/\n/g, '<br />') }} />;
         });
 
-        return <div className="prose max-w-none prose-lg">{parts}</div>;
+        return <div className="prose max-w-none prose-lg pointer-events-none">{parts}</div>;
     };
 
     return (
@@ -233,7 +233,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                         <button
                           className="w-full justify-start text-left h-auto min-h-[2.5rem] flex items-center px-4 py-2 border rounded-md bg-white hover:bg-gray-100 pointer-events-auto"
                         >
-                          답안 {index + 1}: {userAnswer ? <span className="ml-2 font-semibold text-blue-800" dangerouslySetInnerHTML={{__html: userAnswer}} /> : <span className="ml-2 text-gray-400">빈칸</span>}
+                          {index + 1} {userAnswer ? <span className="ml-2 font-semibold text-blue-800" dangerouslySetInnerHTML={{__html: userAnswer}} /> : <span className="ml-2 text-gray-400"></span>}
                         </button>
                     );
                     return (
