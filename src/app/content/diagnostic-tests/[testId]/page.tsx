@@ -3,8 +3,8 @@
 
 import * as React from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { useFirebase } from '@/firebase';
-import { updateDiagnosticTestStatus, type DiagnosticTest, createBlankQuestion } from '@/lib/db';
+import { useFirebase, useFirestore } from '@/firebase';
+import { updateDiagnosticTestStatus, type DiagnosticTest, createBlankQuestion, getQuestionsQuery, type Question } from '@/lib/db';
 import { useDiagnosticTest } from '@/hooks/use-diagnostic-test';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
@@ -12,6 +12,8 @@ import { Label } from '@/components/ui/label';
 import { Skeleton } from '@/components/ui/skeleton';
 import { QuestionList } from '@/components/app/diagnostic-tests/question-list';
 import { useToast } from '@/hooks/use-toast';
+import { onSnapshot } from 'firebase/firestore';
+import { TestPreviewModal } from '@/components/app/diagnostic-tests/test-preview-modal';
 
 
 export default function DiagnosticTestDetailPage() {
@@ -21,6 +23,23 @@ export default function DiagnosticTestDetailPage() {
   const { toast } = useToast();
   const { firestore } = useFirebase() ?? {};
   const { test, setTest, loading } = useDiagnosticTest(firestore, testId);
+  const [questions, setQuestions] = React.useState<Question[]>([]);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!firestore || !testId) return;
+
+    const q = getQuestionsQuery(firestore, testId);
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const fetchedQuestions: Question[] = [];
+        querySnapshot.forEach((doc) => {
+            fetchedQuestions.push({ id: doc.id, ...doc.data() } as Question);
+        });
+        setQuestions(fetchedQuestions);
+    });
+
+    return unsubscribe;
+  }, [firestore, testId]);
 
   const handleStatusToggle = async (checked: boolean) => {
     if (!firestore || !test) return;
@@ -117,9 +136,19 @@ export default function DiagnosticTestDetailPage() {
                 {test.status === '검수완료' ? '검수완료' : '검수전'}
             </Label>
         </div>
-        <Button variant="outline" onClick={() => router.push('/content/diagnostic-tests')}>
-          목록
-        </Button>
+        <div className='flex items-center gap-2'>
+            <TestPreviewModal 
+                test={test} 
+                questions={questions}
+                open={isModalOpen}
+                onOpenChange={setIsModalOpen}
+            >
+                <Button variant="outline">미리보기</Button>
+            </TestPreviewModal>
+            <Button variant="outline" onClick={() => router.push('/content/diagnostic-tests')}>
+            목록
+            </Button>
+        </div>
       </div>
     </div>
   );
