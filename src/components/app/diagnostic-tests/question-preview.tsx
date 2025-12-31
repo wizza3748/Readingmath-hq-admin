@@ -15,37 +15,53 @@ type QuestionData = Partial<Question> & {
 };
 
 const AnswerPopover = ({
+  popoverId,
   answerSet,
-  trigger,
-  isOpen,
-  onOpenChange,
+  userAnswer,
+  activePopover,
+  setActivePopover,
   onSelect,
+  children,
 }: {
+  popoverId: string;
   answerSet: any;
-  trigger: React.ReactNode;
-  isOpen: boolean;
-  onOpenChange: (open: boolean) => void;
+  userAnswer: string | undefined;
+  activePopover: string | null;
+  setActivePopover: (id: string | null) => void;
   onSelect: (value: string) => void;
+  children: React.ReactNode;
 }) => {
   const isChoiceQuestion = answerSet?.answerType === '선지형';
   const hasAnswers = isChoiceQuestion && answerSet.answers && answerSet.answers.length > 0;
+  const isOpen = activePopover === popoverId;
 
   const handleSelect = (value: string) => {
     onSelect(value);
-    onOpenChange(false);
+    setActivePopover(null);
+  };
+  
+  const handleOpenChange = (open: boolean) => {
+    if (open) {
+      setActivePopover(popoverId);
+    } else {
+      if (isOpen) {
+        setActivePopover(null);
+      }
+    }
   };
 
   return (
-    <Popover open={isOpen} onOpenChange={onOpenChange}>
+    <Popover open={isOpen} onOpenChange={handleOpenChange}>
       <PopoverTrigger asChild onPointerDown={(e) => e.stopPropagation()}>
-        {trigger}
+        {children}
       </PopoverTrigger>
       <PopoverContent
         className="w-80 z-[9999]"
-        onInteractOutside={(e) => {
-           e.preventDefault();
+        onPointerDownOutside={(e) => {
+          if (isOpen) {
+             e.preventDefault();
+          }
         }}
-        onPointerDownOutside={(e) => e.preventDefault()}
       >
         {hasAnswers ? (
           <div className="grid gap-2">
@@ -101,12 +117,8 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
 
   const { prompt, viewContent, solution, answerType, answers, questionType, problemSolving } = questionData;
 
-  const handleSetAnswer = (popoverId: string, value: string) => {
-    setUserAnswers(prev => ({ ...prev, [popoverId]: value }));
-  };
-
-  const handlePopoverToggle = (popoverId: string) => {
-    setActivePopover(prev => (prev === popoverId ? null : popoverId));
+  const handleSetAnswer = (answerId: string, value: string) => {
+    setUserAnswers(prev => ({ ...prev, [answerId]: value }));
   };
   
   if (questionType === '서술형') {
@@ -117,7 +129,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
         const parts = text.split(/(\${[^}]+})/g).map((part, i) => {
             if (part.match(/\${[^}]+}/g)) {
                 const currentIndex = blankIndex;
-                const popoverId = `blank-${currentIndex}`;
+                const popoverId = `problem-${currentIndex}`;
                 const answerSet = answers?.[currentIndex];
                 blankIndex++;
                 
@@ -125,35 +137,33 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
 
                 const trigger = (
                     <button
-                        onClick={() => handlePopoverToggle(popoverId)}
                         className={cn(
-                          "inline-flex items-center justify-center bg-gray-200 rounded-md h-8 min-w-24 mx-1 px-2 align-middle cursor-pointer hover:bg-gray-300 relative z-10 pointer-events-auto",
+                          "inline-flex items-center justify-center bg-gray-200 rounded-md h-8 min-w-24 mx-1 px-2 align-middle cursor-pointer hover:bg-gray-300 relative pointer-events-auto",
                           userAnswer && "bg-blue-100 text-blue-800"
                         )}
                     >
-                        {userAnswer ? <span dangerouslySetInnerHTML={{__html: userAnswer}} /> : null}
+                        {userAnswer ? <span dangerouslySetInnerHTML={{__html: userAnswer}} /> : <>&nbsp;</>}
                     </button>
                 );
 
                 return (
                     <AnswerPopover
                         key={popoverId}
+                        popoverId={popoverId}
                         answerSet={answerSet}
-                        trigger={trigger}
-                        isOpen={activePopover === popoverId}
-                        onOpenChange={(open) => {
-                            if (!open) {
-                                setActivePopover(prev => prev === popoverId ? null : prev);
-                            }
-                        }}
+                        userAnswer={userAnswer}
+                        activePopover={activePopover}
+                        setActivePopover={setActivePopover}
                         onSelect={(value) => handleSetAnswer(popoverId, value)}
-                    />
+                    >
+                      {trigger}
+                    </AnswerPopover>
                 );
             }
             return <span key={`text-part-${i}`} dangerouslySetInnerHTML={{ __html: part.replace(/\n/g, '<br />') }} />;
         });
 
-        return <div className="prose max-w-none prose-lg pointer-events-none">{parts}</div>;
+        return <div className="prose max-w-none prose-lg">{parts}</div>;
     };
 
     return (
@@ -217,12 +227,11 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
               </CardHeader>
               <CardContent className="space-y-2">
                  {answers?.map((answerSet, index) => {
-                    const popoverId = `blank-${index}`;
+                    const popoverId = `answer-${index}`;
                     const userAnswer = userAnswers[popoverId];
                     const trigger = (
                         <button
-                           onClick={() => handlePopoverToggle(popoverId)}
-                          className="w-full justify-start text-left h-auto min-h-[2.5rem] flex items-center px-4 py-2 border rounded-md bg-white hover:bg-gray-100 pointer-events-auto relative z-[9999]"
+                          className="w-full justify-start text-left h-auto min-h-[2.5rem] flex items-center px-4 py-2 border rounded-md bg-white hover:bg-gray-100 pointer-events-auto"
                         >
                           답안 {index + 1}: {userAnswer ? <span className="ml-2 font-semibold text-blue-800" dangerouslySetInnerHTML={{__html: userAnswer}} /> : <span className="ml-2 text-gray-400">빈칸</span>}
                         </button>
@@ -230,16 +239,15 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                     return (
                        <AnswerPopover
                           key={popoverId}
+                          popoverId={popoverId}
                           answerSet={answerSet}
-                          trigger={trigger}
-                          isOpen={activePopover === popoverId}
-                          onOpenChange={(open) => {
-                              if (!open) {
-                                  setActivePopover(prev => prev === popoverId ? null : prev);
-                              }
-                          }}
+                          userAnswer={userAnswer}
+                          activePopover={activePopover}
+                          setActivePopover={setActivePopover}
                           onSelect={(value) => handleSetAnswer(popoverId, value)}
-                      />
+                      >
+                        {trigger}
+                      </AnswerPopover>
                     );
                 })}
               </CardContent>
