@@ -52,9 +52,10 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                 blankIndex++;
 
                 const isChoiceQuestion = answerSet?.answerType === '선지형';
+                const hasChoices = isChoiceQuestion && Array.isArray(answerSet.answers) && answerSet.answers.length > 0;
 
                 return (
-                    <Popover key={i} open={activePopover === currentIndex} onOpenChange={(isOpen) => setActivePopover(isOpen ? currentIndex : null)}>
+                    <Popover key={`problem-popover-${i}`} open={activePopover === currentIndex} onOpenChange={(isOpen) => setActivePopover(isOpen ? currentIndex : null)}>
                         <PopoverTrigger asChild>
                             <Button
                                 variant="outline"
@@ -65,7 +66,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                 )}
                             />
                         </PopoverTrigger>
-                        {isChoiceQuestion && answerSet.answers && (
+                        {hasChoices && (
                           <PopoverContent className="w-80">
                               <div className="grid gap-2">
                                   <div className="space-y-2">
@@ -88,7 +89,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                     </Popover>
                 );
             }
-            return <span key={i} dangerouslySetInnerHTML={{ __html: part.replace(/\n/g, '<br />') }} />;
+            return <span key={`problem-text-${i}`} dangerouslySetInnerHTML={{ __html: part.replace(/\n/g, '<br />') }} />;
         });
     };
 
@@ -154,9 +155,11 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                     </CardHeader>
                     <CardContent className="space-y-2">
                         {answers?.map((answerSet, index) => {
-                             const isChoiceQuestion = answerSet.answerType === '선지형';
+                             const isChoiceQuestion = answerSet?.answerType === '선지형';
+                             const hasChoices = isChoiceQuestion && Array.isArray(answerSet.answers) && answerSet.answers.length > 0;
+                             
                              return (
-                                <Popover key={index} open={activePopover === index} onOpenChange={(isOpen) => setActivePopover(isOpen ? index : null)}>
+                                <Popover key={`answer-popover-${index}`} open={activePopover === index} onOpenChange={(isOpen) => setActivePopover(isOpen ? index : null)}>
                                     <PopoverTrigger asChild>
                                         <Button
                                             variant="outline"
@@ -168,7 +171,7 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                             답안 {index + 1}
                                         </Button>
                                     </PopoverTrigger>
-                                     {isChoiceQuestion && answerSet.answers && (
+                                     {hasChoices && (
                                         <PopoverContent className="w-80">
                                             <div className="grid gap-2">
                                                 <div className="space-y-2">
