@@ -64,11 +64,10 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                   "hover:bg-gray-300",
                                   activePopover === currentIndex && "ring-2 ring-primary"
                                 )}
-                                onClick={() => console.log(`[Popover Trigger Clicked] Index: ${currentIndex}, answerSet:`, answerSet)}
                             />
                         </PopoverTrigger>
                         <PopoverContent className="w-80 z-[9999]">
-                            {answerSet && answerSet.answers && answerSet.answers.length > 0 ? (
+                            {answerSet && answerSet.answerType === '선지형' && answerSet.answers && answerSet.answers.length > 0 ? (
                                 <div className="grid gap-2">
                                     <div className="space-y-2">
                                         {answerSet.answers.map((choice: any, choiceIndex: number) => (
@@ -172,7 +171,6 @@ export default function QuestionPreview({ questionData }: { questionData: Questi
                                                 "w-full justify-start text-left h-auto min-h-[2.5rem]",
                                                 activePopover === index && "ring-2 ring-primary"
                                             )}
-                                            onClick={() => console.log(`[Popover Trigger Clicked] Index: ${index}, answerSet:`, answerSet)}
                                         >
                                             답안 {index + 1}
                                         </Button>
