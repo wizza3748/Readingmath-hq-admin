@@ -161,23 +161,36 @@ export function ReportPage4() {
 
   const CustomPolarAngleAxisTick = (props: any) => {
     const { x, y, payload } = props;
-    const { subject, score } = radarChartData.find(d => d.subject === payload.value) || {};
-    
-    let yOffset = 0;
-    if (payload.value === '개념이해력') yOffset = -15;
-    if (payload.value === '문해력') yOffset = 15;
+    const d = radarChartData.find(d => d.subject === payload.value);
+    if (!d) return null;
 
-    let xOffset = 0;
-    if (payload.value === '문제해결력') xOffset = 15;
-    if (payload.value === '추론력') xOffset = -15;
+    let textAnchor: 'middle' | 'start' | 'end' = 'middle';
+    let yOffset = 0;
+    
+    switch (payload.value) {
+        case '개념이해력':
+            yOffset = -15;
+            textAnchor = 'middle';
+            break;
+        case '문제해결력':
+            textAnchor = 'start';
+            break;
+        case '문해력':
+            yOffset = 15;
+            textAnchor = 'middle';
+            break;
+        case '추론력':
+            textAnchor = 'end';
+            break;
+    }
 
     return (
-      <g transform={`translate(${x + xOffset},${y + yOffset})`}>
-        <text textAnchor="middle" dominantBaseline="central" className="text-sm fill-gray-600">
-          {subject}
+      <g transform={`translate(${x},${y})`}>
+        <text y={yOffset} textAnchor={textAnchor} dominantBaseline="central" className="text-sm fill-gray-600">
+          {d.subject}
         </text>
-         <text textAnchor="middle" y="16" className="text-sm font-bold fill-gray-800">
-          {score}점
+         <text y={yOffset + 16} textAnchor={textAnchor} className="text-sm font-bold fill-gray-800">
+          {d.score}점
         </text>
       </g>
     );
@@ -191,8 +204,8 @@ export function ReportPage4() {
         <Card className="mt-4">
           <CardContent className="p-6 h-[250px]">
             <ResponsiveContainer width="100%" height="100%">
-              <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarChartData}>
-                <PolarGrid stroke="#e5e7eb" />
+              <RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarChartData}>
+                <PolarGrid gridType="polygon" stroke="#e5e7eb" />
                 <PolarAngleAxis dataKey="subject" tick={<CustomPolarAngleAxisTick />} />
                 <PolarRadiusAxis angle={90} domain={[0, 100]} tick={false} axisLine={false} />
                 <Radar name="Score" dataKey="score" stroke="#2563eb" fill="#3b82f6" fillOpacity={0.2} strokeWidth={2} />
