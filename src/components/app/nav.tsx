@@ -58,6 +58,7 @@ const navConfig: NavItem[] = [
     icon: <Library />,
     children: [
       { title: "진단평가관리(과학)", href: "/content/diagnostic-tests" },
+      { title: "진단평가 보고서샘플(과학)", href: "/content/diagnostic-test-report-samples" },
     ],
   },
 ];
