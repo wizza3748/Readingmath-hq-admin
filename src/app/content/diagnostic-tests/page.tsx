@@ -14,7 +14,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-import { Edit } from 'lucide-react';
+import { Edit, ArrowUpDown } from 'lucide-react';
 import { useFirebase, useFirestore } from "@/firebase";
 import { getDiagnosticTestsQuery, type DiagnosticTest, seedDiagnosticTests, initialDiagnosticTests } from "@/lib/db";
 import { onSnapshot, getDocs, collection } from "firebase/firestore";
@@ -53,14 +53,30 @@ const statusVariant: {
 const columns: ColumnDef<DiagnosticTest>[] = [
   {
     accessorKey: 'id',
-    header: '고유번호',
-    cell: ({ row }) => <div>{row.getValue('id')}</div>,
+    header: ({ column }) => (
+        <Button
+            variant="ghost"
+            onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+            고유번호
+            <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+    ),
+    cell: ({ row }) => <div className="pl-4">{row.getValue('id')}</div>,
   },
   {
     accessorKey: 'semesterName',
-    header: '학기명',
+    header: ({ column }) => (
+        <Button
+            variant="ghost"
+            onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+            학기명
+            <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+    ),
     cell: ({ row }) => (
-      <Link href={`/content/diagnostic-tests/${row.original.id}`} className="font-medium text-primary hover:underline">
+      <Link href={`/content/diagnostic-tests/${row.original.id}`} className="font-medium text-primary hover:underline pl-4">
         {row.getValue('semesterName')}
       </Link>
     ),
