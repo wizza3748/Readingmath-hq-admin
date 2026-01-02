@@ -312,7 +312,7 @@ export type DiagnosticTest = {
   status: '검수전' | '검수완료';
 };
 
-const initialDiagnosticTests: Omit<DiagnosticTest, 'createdAt' | 'totalQuestions'>[] = [
+export const initialDiagnosticTests: Omit<DiagnosticTest, 'createdAt' | 'totalQuestions'>[] = [
     { id: 15, semesterName: '초등 3학년 1학기', status: '검수전' },
     { id: 16, semesterName: '초등 3학년 1학기(쌍둥이)', status: '검수전' },
     { id: 17, semesterName: '초등 3학년 2학기', status: '검수전' },
@@ -345,21 +345,33 @@ const initialDiagnosticTests: Omit<DiagnosticTest, 'createdAt' | 'totalQuestions
 
 export async function seedDiagnosticTests(db: Firestore) {
     const collRef = collection(db, "diagnostic-tests");
+    const snapshot = await getDocs(collRef);
+    const existingIds = new Set(snapshot.docs.map(doc => parseInt(doc.id)));
+
     const batch = writeBatch(db);
+    let itemsAdded = 0;
 
     for (const test of initialDiagnosticTests) {
-        const docRef = doc(collRef, String(test.id));
-        batch.set(docRef, { ...test, totalQuestions: 0, createdAt: serverTimestamp() });
+        if (!existingIds.has(test.id)) {
+            const docRef = doc(collRef, String(test.id));
+            batch.set(docRef, { ...test, totalQuestions: 0, createdAt: serverTimestamp() });
+            itemsAdded++;
+        }
     }
 
-    await batch.commit().catch(async (serverError) => {
-        const permissionError = new FirestorePermissionError({
-            path: collRef.path,
-            operation: 'create',
-            requestResourceData: initialDiagnosticTests,
-        } satisfies SecurityRuleContext);
-        errorEmitter.emit('permission-error', permissionError);
-    });
+    if (itemsAdded > 0) {
+        await batch.commit().catch(async (serverError) => {
+            const permissionError = new FirestorePermissionError({
+                path: collRef.path,
+                operation: 'create',
+                requestResourceData: initialDiagnosticTests.filter(test => !existingIds.has(test.id)),
+            } satisfies SecurityRuleContext);
+            errorEmitter.emit('permission-error', permissionError);
+        });
+        console.log(`${itemsAdded} missing diagnostic tests have been seeded.`);
+    } else {
+        console.log("All diagnostic tests already exist in the database.");
+    }
 }
 
 export function getDiagnosticTestsQuery(db: Firestore): Query {

@@ -16,7 +16,7 @@ import {
 } from '@tanstack/react-table';
 import { Edit } from 'lucide-react';
 import { useFirebase, useFirestore } from "@/firebase";
-import { getDiagnosticTestsQuery, type DiagnosticTest, seedDiagnosticTests } from "@/lib/db";
+import { getDiagnosticTestsQuery, type DiagnosticTest, seedDiagnosticTests, initialDiagnosticTests } from "@/lib/db";
 import { onSnapshot, getDocs, collection } from "firebase/firestore";
 
 import { Button } from '@/components/ui/button';
@@ -214,8 +214,8 @@ function DiagnosticTestsTable() {
         const q = getDiagnosticTestsQuery(firestore);
 
         const unsubscribe = onSnapshot(q, async (querySnapshot) => {
-            if (querySnapshot.empty) {
-                console.log('No diagnostic tests found, seeding initial data...');
+            if (querySnapshot.size < initialDiagnosticTests.length) {
+                console.log('Diagnostic tests are incomplete, seeding missing data...');
                 await seedDiagnosticTests(firestore);
                 // The listener will pick up the new data automatically.
                 return;
