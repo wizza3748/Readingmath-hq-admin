@@ -105,7 +105,7 @@ const GaugeChart = ({ data }: { data: ContentAreaData }) => {
                     </ResponsiveContainer>
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
                         <span className="text-sm font-semibold" style={{ color: COLORS[data.name] }}>{data.name}</span>
-                        <span className="text-3xl font-bold" style={{ color: COLORS[data.name] }}>{data.avgScore}%</span>
+                        <span className="text-3xl font-bold" style={{ color: COLORS[data.name] }}>{data.avgScore}점</span>
                     </div>
                 </div>
                 <div className="text-center mt-3">
@@ -133,13 +133,14 @@ export function ReportPage3() {
             
             {/* 문항별 세부 결과 요약 */}
             <div className="mt-8">
-                <div className="rounded-md border max-h-[520px] overflow-y-auto">
+                <div className="rounded-md border">
                     <Table>
-                        <TableHeader className="sticky top-0 bg-gray-50 z-10">
+                        <TableHeader className="bg-gray-50">
                             <TableRow>
                                 <TableHead className="w-[60px] text-center">번호</TableHead>
                                 <TableHead className="w-[100px]">내용 영역</TableHead>
                                 <TableHead>중단원 유형</TableHead>
+                                <TableHead className="w-[100px]">문항 유형</TableHead>
                                 <TableHead className="w-[80px]">결과</TableHead>
                                 <TableHead className="w-[80px]">난이도</TableHead>
                             </TableRow>
@@ -150,6 +151,7 @@ export function ReportPage3() {
                                     <TableCell className="text-center">{row.number}</TableCell>
                                     <TableCell>{row.contentArea}</TableCell>
                                     <TableCell>{row.unitName}</TableCell>
+                                    <TableCell>{row.type}</TableCell>
                                     <TableCell className={
                                         row.result === '○' ? 'text-blue-500' : 
                                         row.result === '△' ? 'text-green-500' : 'text-red-500'
@@ -164,11 +166,8 @@ export function ReportPage3() {
             
             {/* 결과 표시 기준 */}
             <div className="mt-4 text-center text-xs text-gray-500">
-                <span>○ 풀이 과정 전체 정답</span>
-                <span className="mx-2">/</span>
-                <span>△ 풀이 과정 70% 이상 정답</span>
-                <span className="mx-2">/</span>
-                <span>✕ 풀이 과정 70% 미만 정답</span>
+                <p className='font-semibold'>[객관식] ○: 정답, ✕: 오답</p>
+                <p className='font-semibold'>[서술형] ○: 풀이 과정 전체 정답, △: 풀이 과정 70% 이상 정답, ✕: 풀이 과정 70% 미만 정답</p>
             </div>
         </div>
     );
