@@ -160,7 +160,7 @@ export function ReportPage4() {
   };
 
   const CustomPolarAngleAxisTick = (props: any) => {
-    const { x, y, payload } = props;
+    let { x, y, payload } = props;
     const d = radarChartData.find(d => d.subject === payload.value);
     if (!d) return null;
 
@@ -191,7 +191,7 @@ export function ReportPage4() {
         <text y={yOffset} textAnchor={textAnchor} dominantBaseline="central" className="text-sm fill-gray-600">
           {d.subject}
         </text>
-         <text y={yOffset + 16} textAnchor={textAnchor} className="text-sm font-bold fill-gray-800">
+         <text y={yOffset + 16} textAnchor={textAnchor} dominantBaseline="central" className="text-sm font-bold fill-gray-800">
           {d.score}점
         </text>
       </g>
@@ -200,7 +200,6 @@ export function ReportPage4() {
 
   return (
     <div className="bg-white p-12 md:p-16 w-full max-w-4xl shadow-lg relative print:shadow-none page-break" style={{ aspectRatio: '210 / 297' }}>
-      {/* 전체 평가 차트 영역 */}
       <div>
         <h2 className="text-lg font-bold text-gray-800 border-l-4 border-primary pl-3">행동 영역별 평가 결과</h2>
         <Card className="mt-4">
@@ -217,7 +216,6 @@ export function ReportPage4() {
         </Card>
       </div>
 
-      {/* 행동 영역별 설명 영역 */}
       <div className="mt-6 grid grid-cols-2 gap-4">
         {domainOrder.map(domainName => {
           const domainData = sampleBehavioralData.find(d => d.name === domainName);
@@ -239,7 +237,6 @@ export function ReportPage4() {
         })}
       </div>
       
-      {/* 문항별 세부 결과 영역 */}
       <div className="mt-6">
          <div className="flex justify-end items-center gap-4 text-xs mb-2">
             <div className="flex items-center gap-1"><XCircle className="w-3 h-3 text-red-500" /> 오답</div>
@@ -272,3 +269,5 @@ export function ReportPage4() {
     </div>
   );
 }
+
+    
