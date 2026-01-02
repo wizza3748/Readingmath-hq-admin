@@ -14,7 +14,6 @@ import {
   Cell,
 } from 'recharts';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 
 type BehavioralDomain = '개념이해력' | '문제해결력' | '문해력' | '추론력';
 
@@ -48,15 +47,24 @@ const sampleBehavioralData: BehavioralDomainData[] = [
 const sampleQuestionResults: QuestionResult[] = Array.from({ length: 28 }, (_, i) => {
     const domains: BehavioralDomain[] = ['개념이해력', '문제해결력', '문해력', '추론력'];
     const types: ('객관식' | '서술형')[] = ['객관식', '서술형'];
-    const results: ('correct' | 'incorrect' | 'partial')[] = ['correct', 'incorrect', 'partial'];
     
     const isDescriptive = (i + 1) % 7 === 6 || (i + 1) % 7 === 0;
+
+    let result: 'correct' | 'incorrect' | 'partial';
+    if (isDescriptive) {
+        const mod = i % 3;
+        if (mod === 0) result = 'correct';
+        else if (mod === 1) result = 'partial';
+        else result = 'incorrect';
+    } else {
+        result = (i % 5 === 4) ? 'incorrect' : 'correct';
+    }
 
     return {
         number: i + 1,
         behavioralDomain: domains[i % 4],
         type: isDescriptive ? '서술형' : '객관식',
-        result: isDescriptive ? results[(i % 3)] : (i % 5 === 4 ? 'incorrect' : 'correct'),
+        result: result,
         correctAnswers: isDescriptive ? (i % 3 === 0 ? 3 : i % 3 === 1 ? 2 : 1) : undefined,
         totalAnswers: isDescriptive ? 3 : undefined,
     }
@@ -239,9 +247,8 @@ export function ReportPage4() {
       
       <div className="mt-6">
          <div className="flex justify-end items-center gap-4 text-xs mb-2">
-            <div className="flex items-center gap-1"><XCircle className="w-3 h-3 text-red-500" /> 오답</div>
-            <div className="flex items-center gap-1"><AlertCircle className="w-3 h-3 text-yellow-500" /> 부분정답</div>
-            <div className="flex items-center gap-1"><CheckCircle className="w-3 h-3 text-green-500" /> 정답</div>
+            <div className="flex items-center gap-1"><span className="text-blue-500 font-bold text-lg">○</span> 정답</div>
+            <div className="flex items-center gap-1"><span className="text-red-500 font-bold text-lg">✕</span> 오답</div>
         </div>
         <div className="grid grid-cols-7 gap-1">
           {sampleQuestionResults.map(q => (
@@ -251,11 +258,13 @@ export function ReportPage4() {
               <div className="text-gray-500">{q.type}</div>
               <div className="h-5 flex items-center justify-center">
                 {q.type === '객관식' ? (
-                  q.result === 'correct' ? <CheckCircle className="w-4 h-4 text-green-500" /> : <XCircle className="w-4 h-4 text-red-500" />
+                  q.result === 'correct' ? <span className="text-blue-500 font-bold text-lg">○</span> : <span className="text-red-500 font-bold text-lg">✕</span>
                 ) : (
                   <div className="flex items-center gap-1">
                     {Array.from({length: q.totalAnswers || 0}).map((_, i) =>
-                       i < (q.correctAnswers || 0) ? <CheckCircle key={i} className="w-3 h-3 text-green-500" /> : <XCircle key={i} className="w-3 h-3 text-red-500" />
+                       i < (q.correctAnswers || 0) 
+                       ? <span key={i} className="text-blue-500 font-bold text-base">○</span> 
+                       : <span key={i} className="text-red-500 font-bold text-base">✕</span>
                     )}
                     <span className="font-semibold ml-1">({q.correctAnswers}/{q.totalAnswers})</span>
                   </div>
@@ -269,5 +278,3 @@ export function ReportPage4() {
     </div>
   );
 }
-
-    
