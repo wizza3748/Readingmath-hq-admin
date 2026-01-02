@@ -4,6 +4,7 @@
 import { Button } from '@/components/ui/button';
 import { Printer } from 'lucide-react';
 import { ReportPage2 } from '@/components/app/diagnostic-tests/report-page2';
+import { ReportPage3 } from '@/components/app/diagnostic-tests/report-page3';
 
 const Page1 = () => {
     const studentName = "김선우";
@@ -81,6 +82,7 @@ export default function DiagnosticTestReportSamplesPage() {
             <div className="space-y-8 print:space-y-0">
                 <Page1 />
                 <ReportPage2 />
+                <ReportPage3 />
             </div>
 
             <style jsx global>{`
