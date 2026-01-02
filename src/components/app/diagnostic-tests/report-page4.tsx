@@ -159,6 +159,30 @@ export function ReportPage4() {
     추론력: '#f97316',
   };
 
+  const CustomPolarAngleAxisTick = (props: any) => {
+    const { x, y, payload } = props;
+    const { subject, score } = radarChartData.find(d => d.subject === payload.value) || {};
+    
+    let yOffset = 0;
+    if (payload.value === '개념이해력') yOffset = -15;
+    if (payload.value === '문해력') yOffset = 15;
+
+    let xOffset = 0;
+    if (payload.value === '문제해결력') xOffset = 15;
+    if (payload.value === '추론력') xOffset = -15;
+
+    return (
+      <g transform={`translate(${x + xOffset},${y + yOffset})`}>
+        <text textAnchor="middle" dominantBaseline="central" className="text-sm fill-gray-600">
+          {subject}
+        </text>
+         <text textAnchor="middle" y="16" className="text-sm font-bold fill-gray-800">
+          {score}점
+        </text>
+      </g>
+    );
+  };
+
   return (
     <div className="bg-white p-12 md:p-16 w-full max-w-4xl shadow-lg relative print:shadow-none page-break" style={{ aspectRatio: '210 / 297' }}>
       {/* 전체 평가 차트 영역 */}
@@ -168,10 +192,10 @@ export function ReportPage4() {
           <CardContent className="p-6 h-[250px]">
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarChartData}>
-                <PolarGrid />
-                <PolarAngleAxis dataKey="subject" tick={{ fontSize: 14 }} />
+                <PolarGrid stroke="#e5e7eb" />
+                <PolarAngleAxis dataKey="subject" tick={<CustomPolarAngleAxisTick />} />
                 <PolarRadiusAxis angle={90} domain={[0, 100]} tick={false} axisLine={false} />
-                <Radar name="Score" dataKey="score" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                <Radar name="Score" dataKey="score" stroke="#2563eb" fill="#3b82f6" fillOpacity={0.2} strokeWidth={2} />
               </RadarChart>
             </ResponsiveContainer>
           </CardContent>
