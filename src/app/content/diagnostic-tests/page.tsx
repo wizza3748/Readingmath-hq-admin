@@ -202,9 +202,7 @@ function DiagnosticTestsTable() {
       { id: 'id', desc: false }
     ]);
     const [columnFilters, setColumnFilters] =
-      React.useState<ColumnFiltersState>([
-          { id: 'status', value: '검수전' }
-      ]);
+      React.useState<ColumnFiltersState>([]);
     const [columnVisibility, setColumnVisibility] =
       React.useState<VisibilityState>({});
     const [rowSelection, setRowSelection] = React.useState({});
