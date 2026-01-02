@@ -45,7 +45,7 @@ const sampleBehavioralData: BehavioralDomainData[] = [
 ];
 
 const sampleQuestionResults: QuestionResult[] = Array.from({ length: 28 }, (_, i) => {
-    const domains: BehavioralDomain[] = ['개념이해력', '문제해결력', '문해력', '추론력'];
+    const rowDomains: BehavioralDomain[] = ['개념이해력', '문제해결력', '문해력', '추론력', '개념이해력', '문제해결력', '문해력'];
     const types: ('객관식' | '서술형')[] = ['객관식', '서술형'];
     
     const isDescriptive = (i + 1) % 7 === 6 || (i + 1) % 7 === 0;
@@ -62,7 +62,7 @@ const sampleQuestionResults: QuestionResult[] = Array.from({ length: 28 }, (_, i
 
     return {
         number: i + 1,
-        behavioralDomain: domains[i % 4],
+        behavioralDomain: rowDomains[i % 7],
         type: isDescriptive ? '서술형' : '객관식',
         result: result,
         correctAnswers: isDescriptive ? (i % 3 === 0 ? 3 : i % 3 === 1 ? 2 : 1) : undefined,
@@ -278,3 +278,5 @@ export function ReportPage4() {
     </div>
   );
 }
+
+    
