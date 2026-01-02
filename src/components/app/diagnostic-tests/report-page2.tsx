@@ -220,13 +220,13 @@ export function ReportPage2() {
                                 <div className="text-gray-500">나의 위치</div>
                                 <div className="text-3xl font-bold text-primary mt-1">{data.level}레벨</div>
                             </div>
-                            <div className="bg-gray-50 p-4 rounded-lg text-center col-span-2">
-                                <div className="text-gray-500">풀이 답안 정답수</div>
-                                <div className="text-2xl font-bold mt-1">
-                                    <span className="text-primary">{data.objectiveCorrect + data.descriptiveCorrect}</span>
-                                    <span className="text-gray-400 mx-1">/</span>
-                                    <span>{data.objectiveTotal + data.descriptiveTotal} 문제</span>
-                                </div>
+                            <div className="bg-gray-50 p-3 rounded-lg text-sm text-center">
+                                <div className="text-gray-500 mb-1">객관식</div>
+                                <div className="font-semibold">{data.objectiveScore}점 ({data.objectiveCorrect}/{data.objectiveTotal} 문항)</div>
+                            </div>
+                             <div className="bg-gray-50 p-3 rounded-lg text-sm text-center">
+                                <div className="text-gray-500 mb-1">서술형</div>
+                                <div className="font-semibold">{data.descriptiveScore}점 ({data.descriptiveCorrect}/{data.descriptiveTotal} 답안)</div>
                             </div>
                         </div>
                         <Pyramid level={data.level} />
