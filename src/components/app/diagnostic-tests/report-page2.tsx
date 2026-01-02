@@ -5,8 +5,29 @@ import * as React from 'react';
 import * as ProgressPrimitive from '@radix-ui/react-progress';
 import { cn } from '@/lib/utils';
 import { Card, CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import { Progress as BaseProgress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
+
+const Progress = React.forwardRef<
+  React.ElementRef<typeof ProgressPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> & { indicatorClassName?: string }
+>(({ className, value, indicatorClassName, ...props }, ref) => (
+  <ProgressPrimitive.Root
+    ref={ref}
+    className={cn(
+      "relative h-4 w-full overflow-hidden rounded-full bg-secondary",
+      className
+    )}
+    {...props}
+  >
+    <ProgressPrimitive.Indicator
+      className={cn("h-full w-full flex-1 bg-primary transition-all", indicatorClassName)}
+      style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+    />
+  </ProgressPrimitive.Root>
+));
+Progress.displayName = ProgressPrimitive.Root.displayName;
+
 
 type ReportData = {
     studentName: string;
@@ -258,34 +279,3 @@ export function ReportPage2() {
         </div>
     );
 }
-
-// Override Progress component's indicator color
-const originalIndicator = Progress.render.propTypes;
-if (originalIndicator) {
-    Progress.render.propTypes = {
-      ...originalIndicator,
-      indicatorClassName: () => {},
-    };
-}
-
-
-const _Progress = Progress as any;
-_Progress.render = React.forwardRef<
-  React.ElementRef<typeof Progress>,
-  React.ComponentPropsWithoutRef<typeof Progress> & { indicatorClassName?: string }
->(({ className, value, indicatorClassName, ...props }, ref) => (
-  <ProgressPrimitive.Root
-    ref={ref}
-    className={cn(
-      "relative h-4 w-full overflow-hidden rounded-full bg-secondary",
-      className
-    )}
-    {...props}
-  >
-    <ProgressPrimitive.Indicator
-      className={cn("h-full w-full flex-1 bg-primary transition-all", indicatorClassName)}
-      style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
-    />
-  </ProgressPrimitive.Root>
-));
-_Progress.displayName = "Progress";
