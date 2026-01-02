@@ -1,6 +1,9 @@
 
 'use client';
 
+import * as React from 'react';
+import * as ProgressPrimitive from '@radix-ui/react-progress';
+import { cn } from '@/lib/utils';
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
@@ -258,10 +261,13 @@ export function ReportPage2() {
 
 // Override Progress component's indicator color
 const originalIndicator = Progress.render.propTypes;
-Progress.render.propTypes = {
-  ...originalIndicator,
-  indicatorClassName: () => {},
-};
+if (originalIndicator) {
+    Progress.render.propTypes = {
+      ...originalIndicator,
+      indicatorClassName: () => {},
+    };
+}
+
 
 const _Progress = Progress as any;
 _Progress.render = React.forwardRef<
