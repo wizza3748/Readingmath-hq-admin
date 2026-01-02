@@ -266,13 +266,13 @@ export function ReportPage2() {
                             {data.studentName} 학생의 {data.grade} 과학탐구력 진단평가 결과 100점 만점 중 {data.totalScore}점으로 전체 5레벨 중 {data.level}레벨 에 위치해 있습니다.
                         </p>
                         <p>{comments.title}</p>
+                        <p>{timeSummary}</p>
                         <div>
                             <h3 className="font-bold mb-2">&lt;우선순위 학습 로드맵 제안&gt;</h3>
                             <ul className="list-disc list-inside space-y-1">
                                 {comments.roadmap.map((item, i) => <li key={i}>{item}</li>)}
                             </ul>
                         </div>
-                        <p>{timeSummary}</p>
                     </CardContent>
                 </Card>
             </div>
