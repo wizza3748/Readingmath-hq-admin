@@ -174,6 +174,7 @@ export function ReportPage4() {
             break;
         case '문제해결력':
             textAnchor = 'start';
+            x = x + 10;
             break;
         case '문해력':
             yOffset = 15;
@@ -181,6 +182,7 @@ export function ReportPage4() {
             break;
         case '추론력':
             textAnchor = 'end';
+            x = x - 10;
             break;
     }
 
@@ -200,7 +202,7 @@ export function ReportPage4() {
     <div className="bg-white p-12 md:p-16 w-full max-w-4xl shadow-lg relative print:shadow-none page-break" style={{ aspectRatio: '210 / 297' }}>
       {/* 전체 평가 차트 영역 */}
       <div>
-        <h2 className="text-lg font-bold text-gray-800 border-l-4 border-primary pl-3">행동 영역별 평가 결과 - 전체</h2>
+        <h2 className="text-lg font-bold text-gray-800 border-l-4 border-primary pl-3">행동 영역별 평가 결과</h2>
         <Card className="mt-4">
           <CardContent className="p-6 h-[250px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -239,7 +241,6 @@ export function ReportPage4() {
       
       {/* 문항별 세부 결과 영역 */}
       <div className="mt-6">
-        <h2 className="text-lg font-bold text-gray-800 border-l-4 border-primary pl-3 mb-2">행동 영역별 평가 결과 - 문항별</h2>
          <div className="flex justify-end items-center gap-4 text-xs mb-2">
             <div className="flex items-center gap-1"><XCircle className="w-3 h-3 text-red-500" /> 오답</div>
             <div className="flex items-center gap-1"><AlertCircle className="w-3 h-3 text-yellow-500" /> 부분정답</div>
