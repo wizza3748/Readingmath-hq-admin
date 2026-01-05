@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -27,8 +28,8 @@ type PredictionResult = {
 };
 
 const sampleData: MetacognitionData = {
-  reliabilityScore: 6,
-  achievementScore: 9,
+  reliabilityScore: 81,
+  achievementScore: 83,
   studentName: '김선우',
 };
 
