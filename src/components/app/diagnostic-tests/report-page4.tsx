@@ -189,7 +189,7 @@ export function ReportPage4() {
     
     switch (payload.value) {
         case '개념이해력':
-            yOffset = -15;
+            yOffset = -20;
             textAnchor = 'middle';
             break;
         case '문제해결력':
@@ -223,7 +223,7 @@ export function ReportPage4() {
       <div>
         <h2 className="text-lg font-bold text-gray-800 border-l-4 border-primary pl-3">행동 영역별 평가 결과</h2>
         <Card className="mt-4">
-          <CardContent className="p-6 h-[280px]">
+          <CardContent className="p-6 h-[300px]">
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarChartData}>
                 <PolarGrid gridType="polygon" stroke="#e5e7eb" />
