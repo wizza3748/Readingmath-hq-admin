@@ -63,7 +63,11 @@ export default function WorkListPage() {
                     {item.id}
                   </a>
                 </div>
-                <div className="col-span-8">{item.title}</div>
+                <div className="col-span-8">
+                  <Link href={item.internalUrl} className="hover:underline">
+                    {item.title}
+                  </Link>
+                </div>
                 <div className="col-span-2 flex justify-end">
                   <Link href={item.internalUrl}>
                     <Link2 className="h-5 w-5 text-primary hover:opacity-80" />
