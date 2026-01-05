@@ -186,7 +186,7 @@ export function ReportPage4() {
             x = x + 10;
             break;
         case '문해력':
-            yOffset = 25;
+            yOffset = 15;
             textAnchor = 'middle';
             break;
         case '추론력':
