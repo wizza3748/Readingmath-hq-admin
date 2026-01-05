@@ -59,9 +59,11 @@ const sampleQuestionResults: QuestionResult[] = Array.from({ length: 28 }, (_, i
         result = (i % 5 === 4) ? 'incorrect' : 'correct';
     }
 
+    const behavioralDomain = rowDomains[i % rowDomains.length];
+
     return {
         number: i + 1,
-        behavioralDomain: rowDomains[i % 7],
+        behavioralDomain: behavioralDomain,
         type: isDescriptive ? '서술형' : '객관식',
         result: result,
         correctAnswers: isDescriptive ? (i % 3 === 0 ? 3 : i % 3 === 1 ? 2 : 1) : undefined,
@@ -184,7 +186,7 @@ export function ReportPage4() {
             x = x + 10;
             break;
         case '문해력':
-            yOffset = 15;
+            yOffset = 25;
             textAnchor = 'middle';
             break;
         case '추론력':
@@ -245,10 +247,6 @@ export function ReportPage4() {
       </div>
       
       <div className="mt-6">
-         <div className="flex justify-end items-center gap-4 text-xs mb-2">
-            <div className="flex items-center gap-1"><span className="text-blue-500 font-bold text-lg">○</span> 정답</div>
-            <div className="flex items-center gap-1"><span className="text-red-500 font-bold text-lg">✕</span> 오답</div>
-        </div>
         <div className="grid grid-cols-7 gap-1">
           {sampleQuestionResults.map(q => (
             <div key={q.number} className="border rounded-md p-2 text-center text-xs space-y-1">
