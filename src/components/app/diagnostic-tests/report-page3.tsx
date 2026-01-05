@@ -1,4 +1,3 @@
-
 'use client';
 
 import * as React from 'react';
@@ -141,7 +140,7 @@ export function ReportPage3() {
                                 <TableHead className="w-[100px]">내용 영역</TableHead>
                                 <TableHead>중단원 유형</TableHead>
                                 <TableHead className="w-[100px]">문항 유형</TableHead>
-                                <TableHead className="w-[80px]">결과</TableHead>
+                                <TableHead className="w-[80px] text-center">결과</TableHead>
                                 <TableHead className="w-[80px]">난이도</TableHead>
                             </TableRow>
                         </TableHeader>
@@ -152,10 +151,10 @@ export function ReportPage3() {
                                     <TableCell>{row.contentArea}</TableCell>
                                     <TableCell>{row.unitName}</TableCell>
                                     <TableCell>{row.type}</TableCell>
-                                    <TableCell className={
+                                    <TableCell className={'text-center font-bold ' + (
                                         row.result === '○' ? 'text-blue-500' : 
                                         row.result === '△' ? 'text-green-500' : 'text-red-500'
-                                    }>{row.result}</TableCell>
+                                    )}>{row.result}</TableCell>
                                     <TableCell>{row.difficulty}</TableCell>
                                 </TableRow>
                             ))}

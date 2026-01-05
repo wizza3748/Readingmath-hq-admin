@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -6,6 +5,7 @@ import { Printer } from 'lucide-react';
 import { ReportPage2 } from '@/components/app/diagnostic-tests/report-page2';
 import { ReportPage3 } from '@/components/app/diagnostic-tests/report-page3';
 import { ReportPage4 } from '@/components/app/diagnostic-tests/report-page4';
+import { ReportPage5 } from '@/components/app/diagnostic-tests/report-page5';
 
 const Page1 = () => {
     const studentName = "김선우";
@@ -85,6 +85,7 @@ export default function DiagnosticTestReportSamplesPage() {
                 <ReportPage2 />
                 <ReportPage3 />
                 <ReportPage4 />
+                <ReportPage5 />
             </div>
 
             <style jsx global>{`
