@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -6,6 +7,7 @@ import { ReportPage2 } from '@/components/app/diagnostic-tests/report-page2';
 import { ReportPage3 } from '@/components/app/diagnostic-tests/report-page3';
 import { ReportPage4 } from '@/components/app/diagnostic-tests/report-page4';
 import { ReportPage5 } from '@/components/app/diagnostic-tests/report-page5';
+import { ReportPage6 } from '@/components/app/diagnostic-tests/report-page6';
 
 const Page1 = () => {
     const studentName = "김선우";
@@ -86,6 +88,7 @@ export default function DiagnosticTestReportSamplesPage() {
                 <ReportPage3 />
                 <ReportPage4 />
                 <ReportPage5 />
+                <ReportPage6 />
             </div>
 
             <style jsx global>{`
