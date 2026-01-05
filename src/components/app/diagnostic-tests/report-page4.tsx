@@ -189,7 +189,7 @@ export function ReportPage4() {
     
     switch (payload.value) {
         case '개념이해력':
-            yOffset = -20;
+            yOffset = -10;
             textAnchor = 'middle';
             break;
         case '문제해결력':
@@ -197,7 +197,7 @@ export function ReportPage4() {
             x = x + 10;
             break;
         case '문해력':
-            yOffset = 20;
+            yOffset = 10;
             textAnchor = 'middle';
             break;
         case '추론력':
@@ -225,7 +225,7 @@ export function ReportPage4() {
         <Card className="mt-4">
           <CardContent className="p-6 h-[300px]">
             <ResponsiveContainer width="100%" height="100%">
-              <RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarChartData}>
+              <RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarChartData} margin={{ top: 20, right: 30, bottom: 20, left: 30 }}>
                 <PolarGrid gridType="polygon" stroke="#e5e7eb" />
                 <PolarAngleAxis dataKey="subject" tick={<CustomPolarAngleAxisTick />} />
                 <PolarRadiusAxis angle={90} domain={[0, 100]} tick={false} axisLine={false} />
