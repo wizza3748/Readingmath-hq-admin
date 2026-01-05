@@ -17,6 +17,12 @@ type WorkItem = {
 
 const workItems: WorkItem[] = [
   {
+    id: "RM-201",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-201",
+    title: "과학탐구력 진단평가 보고서 샘플(과학)",
+    internalUrl: "/content/diagnostic-test-report-samples",
+  },
+  {
     id: "RM-198",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-198",
     title: "[본사] 콘텐츠관리 > 진단평가관리(과학)",
@@ -34,7 +40,7 @@ export default function WorkListPage() {
   return (
     <div className="p-4 sm:p-6 lg:p-8">
       <h1 className="text-2xl font-bold font-headline tracking-tight">
-        일감 목록
+        리딩과학 일감 목록
       </h1>
       <div className="mt-6">
         <Card>
