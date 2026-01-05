@@ -34,12 +34,12 @@ const sampleData: MetacognitionData = {
 };
 
 const predictionResults: PredictionResult[] = [
-  { prediction: '확실해요', result: '○', count: 10, description: '정답이라고 확신했고 실제로 충족한 문항' },
-  { prediction: '확실해요', result: '✕', count: 2, description: '정답이라고 확신했으나 미충족한 문항' },
-  { prediction: '정답일 것 같아요', result: '○', count: 8, description: '확신은 없었으나 충족한 문항' },
-  { prediction: '정답일 것 같아요', result: '✕', count: 5, description: '확신 없이 미충족한 문항' },
-  { prediction: '모르겠어요', result: '○', count: 2, description: '모른다고 판단했으나 충족한 문항' },
-  { prediction: '모르겠어요', result: '✕', count: 1, description: '모른다고 판단했고 미충족한 문항' },
+  { prediction: '확실해요', result: '○', count: 10, description: '정답이라고 확신했고 실제로 맞힌 문항' },
+  { prediction: '확실해요', result: '✕', count: 2, description: '정답이라고 확신했으나 맞히지 못한 문항' },
+  { prediction: '정답일 것 같아요', result: '○', count: 8, description: '확신은 없었으나 실제로 맞힌 문항' },
+  { prediction: '정답일 것 같아요', result: '✕', count: 5, description: '확신 없이 맞히지 못한 문항' },
+  { prediction: '모르겠어요', result: '○', count: 2, description: '모른다고 판단했으나 실제로 맞힌 문항' },
+  { prediction: '모르겠어요', result: '✕', count: 1, description: '모른다고 판단했고 맞히지 못한 문항' },
 ];
 
 const DonutChart = ({
