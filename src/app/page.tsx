@@ -40,7 +40,7 @@ export default function WorkListPage() {
   return (
     <div className="p-4 sm:p-6 lg:p-8">
       <h1 className="text-2xl font-bold font-headline tracking-tight">
-        리딩과학 일감 목록
+        리딩수학과학 - 본사관리자
       </h1>
       <div className="mt-6">
         <Card>

@@ -71,9 +71,9 @@ function NavMenu({ items, level = 0 }: { items: NavItem[], level?: number }) {
       {items.map((item, index) => {
         const isChildActive = item.children ? item.children.some(child => child.href && pathname.startsWith(child.href)) : false;
         const isActive = item.href ? (item.href === '/' ? pathname === '/' : pathname.startsWith(item.href)) : isChildActive;
-        
+
         const [isOpen, setIsOpen] = React.useState(isChildActive);
-        
+
         React.useEffect(() => {
           if (isChildActive) {
             setIsOpen(true);
@@ -89,19 +89,19 @@ function NavMenu({ items, level = 0 }: { items: NavItem[], level?: number }) {
                     <SidebarMenuButton className="group/collapsible-button justify-between" isActive={isActive}>
                       <div className="flex items-center gap-2">
                         {item.icon}
-                        <span>{item.title}</span>
+                        <span className="group-data-[collapsible=icon]:hidden">{item.title}</span>
                       </div>
-                      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[state=open]/collapsible-button:rotate-180" />
+                      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[state=open]/collapsible-button:rotate-180 group-data-[collapsible=icon]:hidden" />
                     </SidebarMenuButton>
                   </CollapsibleTrigger>
                 </div>
                 <CollapsibleContent>
-                   <SidebarMenuSub
+                  <SidebarMenuSub
                     className={cn(
-                        level > 0 && "mx-3.5 border-l px-2.5 py-1"
+                      level > 0 && "mx-3.5 border-l px-2.5 py-1"
                     )}
-                   >
-                     <NavMenu items={item.children} level={level + 1} />
+                  >
+                    <NavMenu items={item.children} level={level + 1} />
                   </SidebarMenuSub>
                 </CollapsibleContent>
               </Collapsible>
@@ -114,7 +114,7 @@ function NavMenu({ items, level = 0 }: { items: NavItem[], level?: number }) {
             <SidebarMenuButton asChild isActive={isActive}>
               <Link href={item.href || "#"}>
                 {item.icon}
-                <span>{item.title}</span>
+                <span className="group-data-[collapsible=icon]:hidden">{item.title}</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
