@@ -8,22 +8,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 const Progress = React.forwardRef<
-  React.ElementRef<typeof ProgressPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> & { indicatorClassName?: string }
+    React.ElementRef<typeof ProgressPrimitive.Root>,
+    React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> & { indicatorClassName?: string }
 >(({ className, value, indicatorClassName, ...props }, ref) => (
-  <ProgressPrimitive.Root
-    ref={ref}
-    className={cn(
-      "relative h-4 w-full overflow-hidden rounded-full bg-secondary",
-      className
-    )}
-    {...props}
-  >
-    <ProgressPrimitive.Indicator
-      className={cn("h-full w-full flex-1 bg-primary transition-all", indicatorClassName)}
-      style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
-    />
-  </ProgressPrimitive.Root>
+    <ProgressPrimitive.Root
+        ref={ref}
+        className={cn(
+            "relative h-4 w-full overflow-hidden rounded-full bg-secondary",
+            className
+        )}
+        {...props}
+    >
+        <ProgressPrimitive.Indicator
+            className={cn("h-full w-full flex-1 bg-primary transition-all", indicatorClassName)}
+            style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+        />
+    </ProgressPrimitive.Root>
 ));
 Progress.displayName = ProgressPrimitive.Root.displayName;
 
@@ -157,14 +157,14 @@ const Pyramid = ({ level }: { level: number }) => {
                 })}
             </svg>
             {levels.map((l, i) => {
-                 const isActive = l.id === level;
-                 return (
-                    <div key={l.id} style={{ top: `${i * 44 + 12}px`}} className="absolute w-full text-center">
+                const isActive = l.id === level;
+                return (
+                    <div key={l.id} style={{ top: `${i * 44 + 12}px` }} className="absolute w-full text-center">
                         <span className={`text-2xl font-bold ${isActive ? 'text-white' : 'text-gray-400'}`}>{l.id}</span>
                     </div>
-                 )
+                )
             })}
-             {levels.map((l, i) => (
+            {levels.map((l, i) => (
                 <div key={`${l.id}-score`} style={{ top: `${i * 44 + 12}px` }} className="absolute right-0 flex items-center">
                     <span className="text-sm font-semibold text-gray-600 mr-2">{l.score}</span>
                     <div className="w-2 h-px bg-gray-400"></div>
@@ -179,9 +179,9 @@ export function ReportPage2() {
     const data = sampleReportData;
     const comments = getLevelComments(data.level);
     const timeSummary = timeComment(data.studentName, data.testTime, data.timeLimit);
-    
+
     return (
-        <div className="bg-white p-12 md:p-16 w-full max-w-4xl shadow-lg relative print:shadow-none page-break" style={{aspectRatio: '210 / 297'}}>
+        <div className="bg-white p-12 md:p-16 w-full max-w-4xl shadow-lg relative print:shadow-none page-break" style={{ aspectRatio: '210 / 297' }}>
             {/* 상단 정보 영역 */}
             <div className="bg-gray-100 p-4 rounded-lg flex justify-around items-center text-sm">
                 <div className="text-center">
@@ -210,22 +210,47 @@ export function ReportPage2() {
                 <h2 className="text-lg font-bold text-gray-800 border-l-4 border-primary pl-3">과학 문해력 종합 성취도</h2>
                 <Card className="mt-4">
                     <CardContent className="p-6 flex items-center justify-between">
-                        <div className="grid grid-cols-2 grid-rows-2 gap-x-6 gap-y-4">
-                            <div className="bg-gray-50 p-4 rounded-lg text-center">
-                                <div className="text-gray-500">나의 점수</div>
-                                <div className="text-3xl font-bold text-primary mt-1">{data.totalScore}점</div>
+                        <div className="grid grid-cols-2 grid-rows-2 gap-x-6 gap-y-4 flex-1">
+                            <div className="bg-primary/5 p-4 rounded-xl text-center border border-primary/10 shadow-sm">
+                                <div className="text-gray-500 text-sm font-medium">나의 점수</div>
+                                <div className="mt-1">
+                                    <span className="text-3xl font-bold text-primary">{data.totalScore}</span>
+                                    <span className="text-xl font-semibold text-primary/60 ml-1">점</span>
+                                    <span className="text-sm font-medium text-gray-400 ml-1">/ 100점</span>
+                                </div>
                             </div>
-                            <div className="bg-gray-50 p-4 rounded-lg text-center">
-                                <div className="text-gray-500">나의 위치</div>
-                                <div className="text-3xl font-bold text-primary mt-1">{data.level}레벨</div>
+                            <div className="bg-gray-50 p-4 rounded-xl text-center border border-gray-100 shadow-sm">
+                                <div className="text-gray-500 text-sm font-medium">나의 위치</div>
+                                <div className="mt-1 flex items-center justify-center gap-1">
+                                    <span className="text-3xl font-bold text-primary">{data.level}</span>
+                                    <span className="text-xl font-semibold text-primary/60">레벨</span>
+                                </div>
                             </div>
-                            <div className="bg-gray-50 p-3 rounded-lg text-sm text-center">
-                                <div className="text-gray-500 mb-1">객관식</div>
-                                <div className="font-semibold">{data.objectiveScore}점 ({data.objectiveCorrect}/{data.objectiveTotal} 문항)</div>
+                            <div className="bg-gray-50/50 p-4 rounded-xl text-center border border-gray-100">
+                                <div className="text-gray-500 text-xs font-medium mb-1">객관식 점수</div>
+                                <div className="flex flex-col items-center">
+                                    <div>
+                                        <span className="text-xl font-bold text-gray-800">{data.objectiveScore}</span>
+                                        <span className="text-sm font-semibold text-gray-500 ml-0.5">점</span>
+                                        <span className="text-xs font-medium text-gray-400 ml-1">/ 50점</span>
+                                    </div>
+                                    <div className="text-[11px] font-semibold text-primary/70 bg-primary/5 px-2 py-0.5 rounded-full mt-1">
+                                        ({data.objectiveCorrect} / {data.objectiveTotal}문항)
+                                    </div>
+                                </div>
                             </div>
-                             <div className="bg-gray-50 p-3 rounded-lg text-sm text-center">
-                                <div className="text-gray-500 mb-1">서술형</div>
-                                <div className="font-semibold">{data.descriptiveScore}점 ({data.descriptiveCorrect}/{data.descriptiveTotal} 답안)</div>
+                            <div className="bg-gray-50/50 p-4 rounded-xl text-center border border-gray-100">
+                                <div className="text-gray-500 text-xs font-medium mb-1">서술형 점수</div>
+                                <div className="flex flex-col items-center">
+                                    <div>
+                                        <span className="text-xl font-bold text-gray-800">{data.descriptiveScore}</span>
+                                        <span className="text-sm font-semibold text-gray-500 ml-0.5">점</span>
+                                        <span className="text-xs font-medium text-gray-400 ml-1">/ 50점</span>
+                                    </div>
+                                    <div className="text-[11px] font-semibold text-status-success/70 bg-green-50 px-2 py-0.5 rounded-full mt-1">
+                                        ({data.descriptiveCorrect} / {data.descriptiveTotal}답안)
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <Pyramid level={data.level} />
@@ -258,7 +283,7 @@ export function ReportPage2() {
 
             {/* 총평 */}
             <div className="mt-8">
-                 <h2 className="text-lg font-bold text-gray-800 border-l-4 border-primary pl-3">총평</h2>
+                <h2 className="text-lg font-bold text-gray-800 border-l-4 border-primary pl-3">총평</h2>
                 <Card className="mt-4">
                     <CardContent className="p-6 text-sm leading-relaxed text-gray-700 space-y-4">
                         <p>
