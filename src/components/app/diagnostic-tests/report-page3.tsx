@@ -4,35 +4,38 @@ import * as React from 'react';
 import { ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
 } from "@/components/ui/table";
 
 type ContentAreaData = {
-  name: '물리' | '생명과학' | '지구과학' | '화학';
-  avgScore: number;
-  correctQuestions: number;
-  totalQuestions: number;
-  objectiveCount: number;
-  descriptiveCount: number;
+    name: '물리' | '생명과학' | '지구과학' | '화학';
+    avgScore: number;
+    objectiveCorrect: number;
+    objectiveTotal: number;
+    descriptiveCorrect: number;
+    descriptiveTotal: number;
+    descriptiveQuestionCount: number;
 };
 
 type QuestionResult = {
-  number: number;
-  contentArea: string;
-  unitName: string;
-  type: '객관식' | '서술형';
-  result: '○' | '△' | '✕';
-  difficulty: '하' | '중하' | '중' | '중상' | '상';
+    number: number;
+    contentArea: string;
+    unitName: string;
+    type: '객관식' | '서술형';
+    result: '○' | '△' | '✕';
+    difficulty: '하' | '중하' | '중' | '중상' | '상';
 };
 
 const sampleContentAreas: ContentAreaData[] = [
-    { name: '물리', avgScore: 80, correctQuestions: 5, totalQuestions: 7, objectiveCount: 5, descriptiveCount: 2 },
-    { name: '생명과학', avgScore: 92, correctQuestions: 20, totalQuestions: 21, objectiveCount: 15, descriptiveCount: 6 },
+    { name: '물리', avgScore: 80, objectiveCorrect: 5, objectiveTotal: 5, descriptiveCorrect: 15, descriptiveTotal: 20, descriptiveQuestionCount: 2 },
+    { name: '화학', avgScore: 75, objectiveCorrect: 8, objectiveTotal: 10, descriptiveCorrect: 30, descriptiveTotal: 40, descriptiveQuestionCount: 5 },
+    { name: '생명과학', avgScore: 92, objectiveCorrect: 14, objectiveTotal: 15, descriptiveCorrect: 55, descriptiveTotal: 60, descriptiveQuestionCount: 6 },
+    { name: '지구과학', avgScore: 88, objectiveCorrect: 13, objectiveTotal: 14, descriptiveCorrect: 45, descriptiveTotal: 50, descriptiveQuestionCount: 6 },
 ];
 
 const sampleQuestionResults: QuestionResult[] = [
@@ -67,10 +70,10 @@ const sampleQuestionResults: QuestionResult[] = [
 ];
 
 const COLORS: { [key in ContentAreaData['name']]: string } = {
-  물리: '#3b82f6',
-  생명과학: '#10b981',
-  지구과학: '#8b5cf6',
-  화학: '#f97316',
+    물리: '#3b82f6',
+    생명과학: '#10b981',
+    지구과학: '#8b5cf6',
+    화학: '#f97316',
 };
 
 const GaugeChart = ({ data }: { data: ContentAreaData }) => {
@@ -82,7 +85,7 @@ const GaugeChart = ({ data }: { data: ContentAreaData }) => {
     return (
         <Card className="flex-1">
             <CardContent className="p-4 flex flex-col items-center justify-center">
-                 <div style={{ width: '150px', height: '150px', position: 'relative' }}>
+                <div style={{ width: '150px', height: '150px', position: 'relative' }}>
                     <ResponsiveContainer width="100%" height="100%">
                         <PieChart>
                             <Pie
@@ -107,10 +110,14 @@ const GaugeChart = ({ data }: { data: ContentAreaData }) => {
                         <span className="text-3xl font-bold" style={{ color: COLORS[data.name] }}>{data.avgScore}점</span>
                     </div>
                 </div>
-                <div className="text-center mt-3">
-                    <p className="text-sm text-gray-500">{`${data.avgScore}점 / 100점`}</p>
-                    <p className="text-sm font-semibold">{`정답 ${data.correctQuestions} / 전체 ${data.totalQuestions}`}</p>
-                    <p className="text-xs text-gray-400 mt-1">{`객관식 ${data.objectiveCount}문항 · 서술형 ${data.descriptiveCount}문항`}</p>
+                <div className="text-center mt-4 space-y-0.5">
+                    <p className="text-sm font-medium text-gray-400 italic font-mono mb-1">{data.avgScore}점 / 100점</p>
+                    <p className="text-[13px] font-bold text-gray-800 tracking-tight">
+                        객관식 {data.objectiveCorrect} / {data.objectiveTotal} 문항
+                    </p>
+                    <p className="text-[13px] font-bold text-gray-800 tracking-tight">
+                        서술형 {data.descriptiveCorrect} / {data.descriptiveTotal}답안, {data.descriptiveQuestionCount} 문항
+                    </p>
                 </div>
             </CardContent>
         </Card>
@@ -119,17 +126,17 @@ const GaugeChart = ({ data }: { data: ContentAreaData }) => {
 
 export function ReportPage3() {
     return (
-        <div className="bg-white p-12 md:p-16 w-full max-w-4xl shadow-lg relative print:shadow-none page-break" style={{aspectRatio: '210 / 297'}}>
+        <div className="bg-white p-12 md:p-16 w-full max-w-4xl shadow-lg relative print:shadow-none page-break" style={{ aspectRatio: '210 / 297' }}>
             {/* 내용 영역별 성취도 요약 */}
             <div>
                 <h2 className="text-lg font-bold text-gray-800 border-l-4 border-primary pl-3">내용 영역별 평가 결과</h2>
-                <div className="mt-4 flex gap-4">
+                <div className="mt-4 grid grid-cols-2 gap-4">
                     {sampleContentAreas.map((area) => (
                         <GaugeChart key={area.name} data={area} />
                     ))}
                 </div>
             </div>
-            
+
             {/* 문항별 세부 결과 요약 */}
             <div className="mt-8">
                 <div className="rounded-md border">
@@ -152,8 +159,8 @@ export function ReportPage3() {
                                     <TableCell>{row.unitName}</TableCell>
                                     <TableCell>{row.type}</TableCell>
                                     <TableCell className={'text-center font-bold ' + (
-                                        row.result === '○' ? 'text-blue-500' : 
-                                        row.result === '△' ? 'text-green-500' : 'text-red-500'
+                                        row.result === '○' ? 'text-blue-500' :
+                                            row.result === '△' ? 'text-green-500' : 'text-red-500'
                                     )}>{row.result}</TableCell>
                                     <TableCell>{row.difficulty}</TableCell>
                                 </TableRow>
@@ -162,7 +169,7 @@ export function ReportPage3() {
                     </Table>
                 </div>
             </div>
-            
+
             {/* 결과 표시 기준 */}
             <div className="mt-4 text-center text-xs text-gray-500">
                 <p className='font-semibold'>[객관식] ○: 정답, ✕: 오답</p>

@@ -38,47 +38,47 @@ type QuestionResult = {
 };
 
 const sampleBehavioralData: BehavioralDomainData[] = [
-  { name: '개념이해력', score: 85, correct: 10, total: 12, objectiveCorrect: 8, objectiveTotal: 9, descriptiveCorrect: 2, descriptiveTotal: 3 },
-  { name: '문제해결력', score: 95, correct: 9, total: 10, objectiveCorrect: 7, objectiveTotal: 7, descriptiveCorrect: 2, descriptiveTotal: 3 },
-  { name: '문해력', score: 75, correct: 6, total: 8, objectiveCorrect: 4, objectiveTotal: 5, descriptiveCorrect: 2, descriptiveTotal: 3 },
-  { name: '추론력', score: 100, correct: 8, total: 8, objectiveCorrect: 5, objectiveTotal: 5, descriptiveCorrect: 3, descriptiveTotal: 3 },
+  { name: '개념이해력', score: 85, correct: 10, total: 12, objectiveCorrect: 8, objectiveTotal: 9, descriptiveCorrect: 20, descriptiveTotal: 30 },
+  { name: '문제해결력', score: 95, correct: 9, total: 10, objectiveCorrect: 7, objectiveTotal: 7, descriptiveCorrect: 20, descriptiveTotal: 30 },
+  { name: '문해력', score: 75, correct: 6, total: 8, objectiveCorrect: 4, objectiveTotal: 5, descriptiveCorrect: 20, descriptiveTotal: 30 },
+  { name: '추론력', score: 100, correct: 8, total: 8, objectiveCorrect: 5, objectiveTotal: 5, descriptiveCorrect: 30, descriptiveTotal: 30 },
 ];
 
 const sampleQuestionResults: QuestionResult[] = Array.from({ length: 28 }, (_, i) => {
-    const rowDomains: BehavioralDomain[] = ['개념이해력', '문제해결력', '문해력', '추론력', '개념이해력', '문제해결력', '문해력'];
-    
-    const isDescriptive = (i + 1) % 7 === 6 || (i + 1) % 7 === 0;
+  const rowDomains: BehavioralDomain[] = ['개념이해력', '문제해결력', '문해력', '추론력', '개념이해력', '문제해결력', '문해력'];
 
-    let result: 'correct' | 'incorrect' | 'partial';
-    if (isDescriptive) {
-        const mod = i % 3;
-        if (mod === 0) result = 'correct';
-        else if (mod === 1) result = 'partial';
-        else result = 'incorrect';
-    } else {
-        result = (i % 5 === 4) ? 'incorrect' : 'correct';
-    }
+  const isDescriptive = (i + 1) % 7 === 6 || (i + 1) % 7 === 0;
 
-    let behavioralDomain: BehavioralDomain;
-    const mod7 = i % 7;
-    if (mod7 < 2) {
-      behavioralDomain = '개념이해력';
-    } else if (mod7 < 5) {
-      behavioralDomain = '문제해결력';
-    } else if (mod7 < 6) {
-        behavioralDomain = '문해력';
-    } else {
-        behavioralDomain = '추론력';
-    }
+  let result: 'correct' | 'incorrect' | 'partial';
+  if (isDescriptive) {
+    const mod = i % 3;
+    if (mod === 0) result = 'correct';
+    else if (mod === 1) result = 'partial';
+    else result = 'incorrect';
+  } else {
+    result = (i % 5 === 4) ? 'incorrect' : 'correct';
+  }
 
-    return {
-        number: i + 1,
-        behavioralDomain: behavioralDomain,
-        type: isDescriptive ? '서술형' : '객관식',
-        result: result,
-        correctAnswers: isDescriptive ? (i % 3 === 0 ? 3 : i % 3 === 1 ? 2 : 1) : undefined,
-        totalAnswers: isDescriptive ? 3 : undefined,
-    }
+  let behavioralDomain: BehavioralDomain;
+  const mod7 = i % 7;
+  if (mod7 < 2) {
+    behavioralDomain = '개념이해력';
+  } else if (mod7 < 5) {
+    behavioralDomain = '문제해결력';
+  } else if (mod7 < 6) {
+    behavioralDomain = '문해력';
+  } else {
+    behavioralDomain = '추론력';
+  }
+
+  return {
+    number: i + 1,
+    behavioralDomain: behavioralDomain,
+    type: isDescriptive ? '서술형' : '객관식',
+    result: result,
+    correctAnswers: isDescriptive ? (i % 3 === 0 ? 3 : i % 3 === 1 ? 2 : 1) : undefined,
+    totalAnswers: isDescriptive ? 3 : undefined,
+  }
 });
 
 
@@ -129,46 +129,46 @@ const getLevelComments: (level: number, domain: BehavioralDomain) => string = (l
 
 const domainOrder: BehavioralDomain[] = ['개념이해력', '문제해결력', '문해력', '추론력'];
 const radarChartData = domainOrder.map(domain => {
-    const data = sampleBehavioralData.find(d => d.name === domain);
-    return {
-        subject: domain,
-        score: data?.score || 0,
-        fullMark: 100,
-    };
+  const data = sampleBehavioralData.find(d => d.name === domain);
+  return {
+    subject: domain,
+    score: data?.score || 0,
+    fullMark: 100,
+  };
 });
 
 const DomainGaugeChart: React.FC<{ data: { score: number, color: string } }> = ({ data }) => {
-    const chartData = [
-      { name: 'score', value: data.score },
-      { name: 'remaining', value: 100 - data.score },
-    ];
-  
-    return (
-      <div className="w-24 h-24 relative">
-        <ResponsiveContainer width="100%" height="100%">
-          <PieChart>
-            <Pie
-              data={chartData}
-              cx="50%"
-              cy="50%"
-              startAngle={90}
-              endAngle={-270}
-              innerRadius="70%"
-              outerRadius="90%"
-              dataKey="value"
-              cornerRadius={5}
-              stroke="none"
-            >
-              <Cell fill={data.color} />
-              <Cell fill="#e5e7eb" />
-            </Pie>
-          </PieChart>
-        </ResponsiveContainer>
-        <div className="absolute inset-0 flex items-center justify-center text-2xl font-bold" style={{ color: data.color }}>
-          {data.score}
-        </div>
+  const chartData = [
+    { name: 'score', value: data.score },
+    { name: 'remaining', value: 100 - data.score },
+  ];
+
+  return (
+    <div className="w-24 h-24 relative">
+      <ResponsiveContainer width="100%" height="100%">
+        <PieChart>
+          <Pie
+            data={chartData}
+            cx="50%"
+            cy="50%"
+            startAngle={90}
+            endAngle={-270}
+            innerRadius="70%"
+            outerRadius="90%"
+            dataKey="value"
+            cornerRadius={5}
+            stroke="none"
+          >
+            <Cell fill={data.color} />
+            <Cell fill="#e5e7eb" />
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
+      <div className="absolute inset-0 flex items-center justify-center text-2xl font-bold" style={{ color: data.color }}>
+        {data.score}
       </div>
-    );
+    </div>
+  );
 };
 
 export function ReportPage4() {
@@ -186,24 +186,24 @@ export function ReportPage4() {
 
     let textAnchor: 'middle' | 'start' | 'end' = 'middle';
     let yOffset = 0;
-    
+
     switch (payload.value) {
-        case '개념이해력':
-            yOffset = -10;
-            textAnchor = 'middle';
-            break;
-        case '문제해결력':
-            textAnchor = 'start';
-            x = x + 10;
-            break;
-        case '문해력':
-            yOffset = 10;
-            textAnchor = 'middle';
-            break;
-        case '추론력':
-            textAnchor = 'end';
-            x = x - 10;
-            break;
+      case '개념이해력':
+        yOffset = -10;
+        textAnchor = 'middle';
+        break;
+      case '문제해결력':
+        textAnchor = 'start';
+        x = x + 10;
+        break;
+      case '문해력':
+        yOffset = 10;
+        textAnchor = 'middle';
+        break;
+      case '추론력':
+        textAnchor = 'end';
+        x = x - 10;
+        break;
     }
 
     return (
@@ -211,7 +211,7 @@ export function ReportPage4() {
         <text y={yOffset} textAnchor={textAnchor} dominantBaseline="central" className="text-sm fill-gray-600">
           {d.subject}
         </text>
-         <text y={yOffset + 16} textAnchor={textAnchor} dominantBaseline="central" className="text-sm font-bold fill-gray-800">
+        <text y={yOffset + 16} textAnchor={textAnchor} dominantBaseline="central" className="text-sm font-bold fill-gray-800">
           {d.score}점
         </text>
       </g>
@@ -248,7 +248,7 @@ export function ReportPage4() {
                 <DomainGaugeChart data={{ score: domainData.score, color: domainColors[domainName] }} />
                 <div className="flex-1">
                   <h3 className="font-bold text-lg">{domainName}</h3>
-                  <p className="text-sm text-gray-500">{`객관식 ${domainData.objectiveCorrect}/${domainData.objectiveTotal} · 서술형 ${domainData.descriptiveCorrect}/${domainData.descriptiveTotal}`}</p>
+                  <p className="text-sm text-gray-500">{`객관식 ${domainData.objectiveCorrect}/${domainData.objectiveTotal}문항 · 서술형 ${domainData.descriptiveCorrect}/${domainData.descriptiveTotal}답안`}</p>
                   <p className="mt-2 text-sm leading-snug">{getLevelComments(level, domainName)}</p>
                 </div>
               </div>
@@ -256,7 +256,7 @@ export function ReportPage4() {
           );
         })}
       </div>
-      
+
       <div className="mt-6">
         <div className="grid grid-cols-7 gap-1">
           {sampleQuestionResults.map(q => (
@@ -268,13 +268,15 @@ export function ReportPage4() {
                 {q.type === '객관식' ? (
                   q.result === 'correct' ? <span className="text-blue-500 font-bold text-lg">○</span> : <span className="text-red-500 font-bold text-lg">✕</span>
                 ) : (
-                  <div className="flex items-center gap-1">
-                    {Array.from({length: q.totalAnswers || 0}).map((_, i) =>
-                       i < (q.correctAnswers || 0) 
-                       ? <span key={i} className="text-blue-500 font-bold text-base">○</span> 
-                       : <span key={i} className="text-red-500 font-bold text-base">✕</span>
-                    )}
-                    <span className="font-semibold ml-1">({q.correctAnswers}/{q.totalAnswers})</span>
+                  <div className="flex items-center justify-center gap-0.5 whitespace-nowrap">
+                    <div className="flex items-center -space-x-0.5">
+                      {Array.from({ length: q.totalAnswers || 0 }).map((_, i) =>
+                        i < (q.correctAnswers || 0)
+                          ? <span key={i} className="text-blue-500 font-bold text-[15px]">○</span>
+                          : <span key={i} className="text-red-500 font-bold text-[15px]">✕</span>
+                      )}
+                    </div>
+                    <span className="font-semibold text-[10px] text-gray-500 tracking-tighter">({q.correctAnswers}/{q.totalAnswers}답안)</span>
                   </div>
                 )}
               </div>
