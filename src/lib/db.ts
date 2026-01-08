@@ -545,11 +545,14 @@ export async function updateQuestion(db: Firestore, testId: string, questionId: 
 
   const cleanedData = cleanupObject(questionData);
 
-  const data = {
+  const data: any = {
     ...cleanedData,
-    questionType: questionData.questionType === '유형' ? '객관식' : questionData.questionType,
     updatedAt: serverTimestamp()
   };
+
+  if (questionData.questionType !== undefined) {
+    data.questionType = questionData.questionType === '유형' ? '객관식' : questionData.questionType;
+  }
 
   await updateDoc(docRef, data)
     .catch(async (serverError) => {
