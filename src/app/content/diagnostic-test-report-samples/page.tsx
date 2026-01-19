@@ -16,15 +16,15 @@ const Page1 = () => {
 
     const MathSymbols = () => (
         <div className="absolute right-12 bottom-20 flex flex-col items-center space-y-8 opacity-10">
-          <span className="text-8xl font-thin text-gray-400">+</span>
-          <span className="text-8xl font-thin text-gray-400">-</span>
-          <span className="text-8xl font-thin text-gray-400">×</span>
-          <span className="text-8xl font-thin text-gray-400">÷</span>
+            <span className="text-8xl font-thin text-gray-400">+</span>
+            <span className="text-8xl font-thin text-gray-400">-</span>
+            <span className="text-8xl font-thin text-gray-400">×</span>
+            <span className="text-8xl font-thin text-gray-400">÷</span>
         </div>
-      );
+    );
 
     return (
-        <div className="bg-white p-12 md:p-16 w-full max-w-4xl shadow-lg relative print:shadow-none" style={{aspectRatio: '210 / 297'}}>
+        <div className="bg-white p-12 md:p-16 w-full max-w-4xl shadow-lg relative print:shadow-none" style={{ aspectRatio: '210 / 297' }}>
             {/* 상단 영역 */}
             <header className="flex justify-between items-center border-b-2 border-gray-200 pb-4">
                 <span className="text-sm text-gray-600">리딩과학으로 1등 과학 시작하기!</span>
@@ -58,9 +58,9 @@ const Page1 = () => {
 
             {/* 하단 로고 */}
             <div className="absolute bottom-16 left-16">
-                 <span className="text-xl font-bold text-gray-700">리딩수학과학</span>
+                <span className="text-xl font-bold text-gray-700">리딩수학과학</span>
             </div>
-            
+
             {/* 배경 심볼 */}
             <MathSymbols />
         </div>
@@ -81,13 +81,13 @@ export default function DiagnosticTestReportSamplesPage() {
                     인쇄하기
                 </Button>
             </div>
-            
+
             <div className="space-y-8 print:space-y-0">
                 <Page1 />
                 <ReportPage2 />
                 <ReportPage3 />
-                <ReportPage4 />
                 <ReportPage5 />
+                <ReportPage4 />
                 <ReportPage6 />
             </div>
 

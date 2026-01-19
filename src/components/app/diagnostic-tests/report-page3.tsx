@@ -127,7 +127,7 @@ const GaugeChart = ({ data }: { data: ContentAreaData }) => {
 export function ReportPage3() {
     return (
         <div className="bg-white p-12 md:p-16 w-full max-w-4xl shadow-lg relative print:shadow-none page-break" style={{ aspectRatio: '210 / 297' }}>
-            {/* 내용 영역별 성취도 요약 */}
+            {/* 내용 영역별 평가 결과 */}
             <div>
                 <h2 className="text-lg font-bold text-gray-800 border-l-4 border-primary pl-3">내용 영역별 평가 결과</h2>
                 <div className="mt-4 grid grid-cols-2 gap-4">

@@ -9,9 +9,6 @@ import {
   PolarAngleAxis,
   PolarRadiusAxis,
   ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
 } from 'recharts';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -45,8 +42,6 @@ const sampleBehavioralData: BehavioralDomainData[] = [
 ];
 
 const sampleQuestionResults: QuestionResult[] = Array.from({ length: 28 }, (_, i) => {
-  const rowDomains: BehavioralDomain[] = ['개념이해력', '문제해결력', '문해력', '추론력', '개념이해력', '문제해결력', '문해력'];
-
   const isDescriptive = (i + 1) % 7 === 6 || (i + 1) % 7 === 0;
 
   let result: 'correct' | 'incorrect' | 'partial';
@@ -78,7 +73,7 @@ const sampleQuestionResults: QuestionResult[] = Array.from({ length: 28 }, (_, i
     result: result,
     correctAnswers: isDescriptive ? (i % 3 === 0 ? 3 : i % 3 === 1 ? 2 : 1) : undefined,
     totalAnswers: isDescriptive ? 3 : undefined,
-  }
+  };
 });
 
 
@@ -112,7 +107,7 @@ const getLevelComments: (level: number, domain: BehavioralDomain) => string = (l
     },
     4: {
       개념이해력: '문제를 보자마자 핵심과 보조 개념을 구분해 찾는 연습을 반복하면, 여러 단원의 개념을 연결하는 속도와 능력이 강화됩니다.',
-      문제해결력: '단위와 수치 크기를 점검하는 2단 검토를 습관화하면, 시간 압박 속에서도 실수를 방지하고 풀이의 완성도를 높일 수 있습니다.',
+      문제해결력: '단위와 수치 크기를 점검하는 2단 검토를 습관화하면, 시간 압박 상황에서도 실수를 방지하고 풀이의 완성도를 높일 수 있습니다.',
       문해력: '핵심 표현에 표시하고 선택지 근거를 지문에서 찾는 습관을 들이면 함정 조건을 놓치지 않고 정확히 판단하는 힘이 길러집니다.',
       추론력: '근거, 원리, 결론 순으로 답안을 작성하고 변인을 명확히 정리한 뒤 결론을 내리는 연습을 하면 서술형 감점을 방지할 수 있습니다.',
     },
@@ -138,33 +133,9 @@ const radarChartData = domainOrder.map(domain => {
 });
 
 const DomainGaugeChart: React.FC<{ data: { score: number, color: string } }> = ({ data }) => {
-  const chartData = [
-    { name: 'score', value: data.score },
-    { name: 'remaining', value: 100 - data.score },
-  ];
-
   return (
-    <div className="w-24 h-24 relative">
-      <ResponsiveContainer width="100%" height="100%">
-        <PieChart>
-          <Pie
-            data={chartData}
-            cx="50%"
-            cy="50%"
-            startAngle={90}
-            endAngle={-270}
-            innerRadius="70%"
-            outerRadius="90%"
-            dataKey="value"
-            cornerRadius={5}
-            stroke="none"
-          >
-            <Cell fill={data.color} />
-            <Cell fill="#e5e7eb" />
-          </Pie>
-        </PieChart>
-      </ResponsiveContainer>
-      <div className="absolute inset-0 flex items-center justify-center text-2xl font-bold" style={{ color: data.color }}>
+    <div className="w-16 h-16 relative flex items-center justify-center border-4 border-gray-100 rounded-full" style={{ borderColor: `${data.color}22` }}>
+      <div className="text-xl font-bold" style={{ color: data.color }}>
         {data.score}
       </div>
     </div>
@@ -257,6 +228,7 @@ export function ReportPage4() {
         })}
       </div>
 
+      {/* 문항별 세부 결과 (그리드 형식) */}
       <div className="mt-6">
         <div className="grid grid-cols-7 gap-1">
           {sampleQuestionResults.map(q => (
@@ -284,7 +256,6 @@ export function ReportPage4() {
           ))}
         </div>
       </div>
-
     </div>
   );
 }
