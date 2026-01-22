@@ -17,6 +17,12 @@ type WorkItem = {
 
 const workItems: WorkItem[] = [
   {
+    id: "RM-203",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-203",
+    title: "선생님관리자(B2C) 학습상담 상세",
+    internalUrl: "/b2c/learning-counseling-detail",
+  },
+  {
     id: "RM-201",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-201",
     title: "과학탐구력 진단평가 보고서 샘플(과학)",

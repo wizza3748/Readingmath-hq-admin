@@ -61,6 +61,13 @@ const navConfig: NavItem[] = [
       { title: "진단평가 보고서샘플(과학)", href: "/content/diagnostic-test-report-samples" },
     ],
   },
+  {
+    title: "선생님관리(B2C)",
+    icon: <Users />,
+    children: [
+      { title: "학습상담 상세", href: "/b2c/learning-counseling-detail" },
+    ],
+  },
 ];
 
 function NavMenu({ items, level = 0 }: { items: NavItem[], level?: number }) {
