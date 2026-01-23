@@ -19,7 +19,7 @@ const workItems: WorkItem[] = [
   {
     id: "RM-203",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-203",
-    title: "선생님관리자(B2C) 학습상담 상세",
+    title: "선생님관리자(B2C) 학습상담",
     internalUrl: "/b2c/learning-counseling-detail",
   },
   {

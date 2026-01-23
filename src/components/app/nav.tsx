@@ -1,4 +1,5 @@
 
+// Navigation configuration
 "use client";
 
 import * as React from "react";
@@ -65,7 +66,7 @@ const navConfig: NavItem[] = [
     title: "선생님관리(B2C)",
     icon: <Users />,
     children: [
-      { title: "학습상담 상세", href: "/b2c/learning-counseling-detail" },
+      { title: "학습상담", href: "/b2c/learning-counseling-detail" },
     ],
   },
 ];
