@@ -17,6 +17,7 @@ import {
   UserCog,
   ScrollText,
   ChevronDown,
+  ShoppingCart,
 } from "lucide-react";
 import {
   Collapsible,
@@ -68,6 +69,11 @@ const navConfig: NavItem[] = [
     children: [
       { title: "학습상담", href: "/b2c/learning-counseling-detail" },
     ],
+  },
+  {
+    title: "공동구매관리",
+    href: "/admin/groupbuy",
+    icon: <ShoppingCart />,
   },
 ];
 

@@ -17,6 +17,12 @@ type WorkItem = {
 
 const workItems: WorkItem[] = [
   {
+    id: "RM-226",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-226",
+    title: "[본사] 공동구매 운영 시스템",
+    internalUrl: "/admin/groupbuy",
+  },
+  {
     id: "RM-203",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-203",
     title: "선생님관리자(B2C) 학습상담",
