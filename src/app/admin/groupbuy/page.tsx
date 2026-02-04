@@ -311,105 +311,184 @@ export default function GroupBuyAdminPage() {
                 </DialogContent>
             </Dialog>
 
-            {/* 5) 공동구매 통계 모달 (빈 쉘) */}
+            {/* 5) 공동구매 통계 모달 */}
             <Dialog open={isStatsModalOpen} onOpenChange={setIsStatsModalOpen}>
-                <DialogContent className="sm:max-w-[1000px] max-h-[90vh] overflow-y-auto">
-                    <DialogHeader>
-                        <DialogTitle className="flex items-center gap-2 text-xl">
-                            <BarChart3 className="w-6 h-6 text-primary" /> 공동구매 통계
+                <DialogContent className="sm:max-w-[1200px] max-h-[90vh] overflow-y-auto p-8 border-none shadow-2xl">
+                    <DialogHeader className="mb-8">
+                        <DialogTitle className="text-2xl font-black text-gray-900 flex items-center gap-3">
+                            <div className="w-2 h-8 bg-primary rounded-full" />
+                            공동구매 통계
                         </DialogTitle>
-                        <DialogDescription className="pt-2">
-                            {selectedItem?.title}
-                        </DialogDescription>
+                        {selectedItem && (
+                            <DialogDescription className="text-sm font-bold text-gray-500 mt-2 pl-5">
+                                {(() => {
+                                    const data = mapGroupBuyData(selectedItem);
+                                    return `${data.subject} X ${data.contractor} 공동구매 이벤트!`;
+                                })()}
+                            </DialogDescription>
+                        )}
                     </DialogHeader>
 
                     {selectedItem && (
-                        <div className="space-y-8 py-4">
+                        <div className="space-y-10">
                             {/* 요약 영역 */}
-                            {(() => {
-                                const isHQ = selectedItem.id === 'GB-LIVE-HQ-001';
-                                return (
-                                    <div className="grid grid-cols-4 gap-4">
-                                        {[
-                                            { label: "가입 인원", value: `${selectedItem.joinCount || 0}명` },
-                                            { label: "총 결제 건수", value: isHQ ? "0건" : "156건" },
-                                            { label: "총 결제 금액", value: selectedItem.totalAmount || "0원", highlight: true },
-                                            { label: "조회 기준 시각", value: isHQ ? "-" : "2026-01-26 17:00", small: true }
-                                        ].map((s, i) => (
-                                            <div key={i} className="p-4 bg-gray-50 rounded-xl border border-gray-100 space-y-1">
-                                                <p className="text-[10px] font-bold text-gray-400 uppercase">{s.label}</p>
-                                                <p className={cn("text-lg font-black", s.highlight ? "text-primary" : "text-gray-900", s.small && "text-sm")}>{s.value}</p>
+                            <div className="space-y-4">
+                                <div className="grid grid-cols-5 gap-4">
+                                    {[
+                                        { label: "순매출 인원", value: "183명", unit: "" },
+                                        { label: "순 매출액", value: "117,580,500원", unit: "" },
+                                        {
+                                            label: "순 신규 유입",
+                                            value: "131명",
+                                            subValue: "(71.6%)",
+                                            color: "text-blue-600"
+                                        },
+                                        {
+                                            label: "취소/환불",
+                                            value: "3명",
+                                            subValue: "(1.6%)",
+                                            color: "text-green-600"
+                                        },
+                                        {
+                                            label: "객단가",
+                                            value: "644,976원",
+                                            subText: "1인당 평균 결제 금액"
+                                        }
+                                    ].map((s, i) => (
+                                        <div key={i} className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl border border-gray-100 shadow-sm text-center h-[140px]">
+                                            <p className="text-[13px] font-bold text-gray-500 mb-2">{s.label}</p>
+                                            <div className="flex flex-col items-center">
+                                                <p className={cn("text-2xl font-black", s.color || "text-gray-900")}>
+                                                    {s.value}
+                                                    {s.subValue && <span className="text-sm ml-1 font-bold opacity-80">{s.subValue}</span>}
+                                                </p>
+                                                {s.subText && <p className="text-[11px] font-bold text-gray-400 mt-1">{s.subText}</p>}
                                             </div>
-                                        ))}
-                                    </div>
-                                );
-                            })()}
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="flex justify-end pr-2">
+                                    <p className="text-[12px] font-medium text-gray-400 flex items-center gap-1">
+                                        <span className="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center text-[10px]">i</span>
+                                        순 매출액 기준이며, 객단가는 환불 전 결제금액 기준입니다.
+                                    </p>
+                                </div>
+                            </div>
 
-                            {/* 이용권별 결제 현황 테이블 */}
-                            <div className="border rounded-xl overflow-hidden">
-                                <Table>
-                                    <TableHeader className="bg-gray-50/80">
-                                        <TableRow>
-                                            <TableHead className="font-bold text-xs">상품구분</TableHead>
-                                            <TableHead className="font-bold text-xs">상품금액</TableHead>
-                                            <TableHead className="font-bold text-xs text-center">신규 (인원/금액)</TableHead>
-                                            <TableHead className="font-bold text-xs text-center">복귀 (인원/금액)</TableHead>
-                                            <TableHead className="font-bold text-xs text-center">연장 (인원/금액)</TableHead>
-                                            <TableHead className="font-bold text-xs text-center">부분취소 (인원/금액)</TableHead>
-                                            <TableHead className="font-bold text-xs text-right">합계 (인원/금액)</TableHead>
-                                        </TableRow>
-                                    </TableHeader>
-                                    <TableBody>
-                                        {(() => {
-                                            const isHQ = selectedItem.id === 'GB-LIVE-HQ-001';
-                                            return (
-                                                <>
-                                                    {STATS_DUMMY.DEFAULT.items.map((it: any, i: number) => {
-                                                        const totalC = isHQ ? 0 : (it.new.count + it.return.count + it.renew.count);
-                                                        const totalA = isHQ ? 0 : (it.new.amount + it.return.amount + it.renew.amount);
-                                                        return (
-                                                            <TableRow key={i} className="text-[13px]">
-                                                                <TableCell className="font-bold">{it.type}</TableCell>
-                                                                <TableCell className="text-gray-500">{it.price.toLocaleString()}원</TableCell>
-                                                                <TableCell className="text-center">{isHQ ? 0 : it.new.count}명 / {isHQ ? 0 : it.new.amount.toLocaleString()}원</TableCell>
-                                                                <TableCell className="text-center">{isHQ ? 0 : it.return.count}명 / {isHQ ? 0 : it.return.amount.toLocaleString()}원</TableCell>
-                                                                <TableCell className="text-center text-blue-600">{isHQ ? 0 : it.renew.count}명 / {isHQ ? 0 : it.renew.amount.toLocaleString()}원</TableCell>
-                                                                <TableCell className="text-center text-red-500">{isHQ ? 0 : it.partial.count}명 / {isHQ ? 0 : it.partial.amount.toLocaleString()}원</TableCell>
-                                                                <TableCell className="text-right font-bold">{totalC}명 / {totalA.toLocaleString()}원</TableCell>
-                                                            </TableRow>
-                                                        );
-                                                    })}
-                                                    {/* 합계 행 */}
-                                                    <TableRow className="bg-primary/5 font-black text-primary">
-                                                        <TableCell colSpan={2} className="text-center">합계</TableCell>
-                                                        <TableCell className="text-center">{isHQ ? 0 : 80}명 / -</TableCell>
-                                                        <TableCell className="text-center">{isHQ ? 0 : 18}명 / -</TableCell>
-                                                        <TableCell className="text-center">{isHQ ? 0 : 8}명 / -</TableCell>
-                                                        <TableCell className="text-center">{isHQ ? 0 : 3}명 / -</TableCell>
-                                                        <TableCell className="text-right">{isHQ ? 0 : 106}명 / {isHQ ? "0원" : "18,134,400원"}</TableCell>
-                                                    </TableRow>
-                                                    {/* 비율 행 */}
-                                                    <TableRow className="bg-gray-50 text-[11px] font-bold text-gray-500">
-                                                        <TableCell colSpan={2} className="text-center">결제 비율 (취소 제외)</TableCell>
-                                                        <TableCell className="text-center">{isHQ ? "-" : "75%"}</TableCell>
-                                                        <TableCell className="text-center">{isHQ ? "-" : "17%"}</TableCell>
-                                                        <TableCell className="text-center">{isHQ ? "-" : "8%"}</TableCell>
-                                                        <TableCell className="text-center">-</TableCell>
-                                                        <TableCell className="text-right">{isHQ ? "-" : "100%"}</TableCell>
-                                                    </TableRow>
-                                                </>
-                                            );
-                                        })()}
-                                    </TableBody>
-                                </Table>
+                            {/* 상품별 판매 금액 영역 */}
+                            <div className="space-y-4">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-1 h-5 bg-blue-600 rounded-full" />
+                                    <h3 className="text-lg font-bold text-gray-900">상품별 판매 금액</h3>
+                                </div>
+                                <div className="border rounded-xl overflow-hidden shadow-sm">
+                                    <Table>
+                                        <TableHeader className="bg-gray-50/50 border-b">
+                                            <TableRow className="hover:bg-transparent">
+                                                <TableHead className="font-bold text-xs text-center py-4">상품명</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">상품 금액</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">결제 인원</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">결제 금액</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">취소/환불 인원</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">취소/환불 금액</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">순매출 인원</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">순매출액</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">판매 비중</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">환불율</TableHead>
+                                            </TableRow>
+                                        </TableHeader>
+                                        <TableBody>
+                                            {[
+                                                { name: "3개월 이용권", price: "238,500원", pCount: "31명", pAmount: "7,393,500원", rCount: "0명", rAmount: "0원", sCount: "31명", sAmount: "7,393,500원", share: "6.3%", refund: "0.0%" },
+                                                { name: "6개월 이용권", price: "477,000원", pCount: "74명", pAmount: "35,298,000원", rCount: "1명", rAmount: "477,000원", sCount: "73명", sAmount: "34,821,000원", share: "29.6%", refund: "1.4%" },
+                                                { name: "12개월 이용권", price: "954,000원", pCount: "81명", pAmount: "77,274,000원", rCount: "2명", rAmount: "1,908,000원", sCount: "79명", sAmount: "75,366,000원", share: "64.1%", refund: "2.5%" },
+                                            ].map((row, i) => (
+                                                <TableRow key={i} className="text-[13px] h-12">
+                                                    <TableCell className="text-gray-700 font-medium px-4">{row.name}</TableCell>
+                                                    <TableCell className="text-center text-gray-600">{row.price}</TableCell>
+                                                    <TableCell className="text-center text-gray-600">{row.pCount}</TableCell>
+                                                    <TableCell className="text-center text-gray-600">{row.pAmount}</TableCell>
+                                                    <TableCell className="text-center text-red-500 font-medium">{row.rCount}</TableCell>
+                                                    <TableCell className="text-center text-red-500 font-medium">{row.rAmount}</TableCell>
+                                                    <TableCell className="text-center font-bold text-gray-900">{row.sCount}</TableCell>
+                                                    <TableCell className="text-center font-bold text-gray-900">{row.sAmount}</TableCell>
+                                                    <TableCell className="text-center text-gray-600">{row.share}</TableCell>
+                                                    <TableCell className="text-center text-red-500 font-medium">{row.refund}</TableCell>
+                                                </TableRow>
+                                            ))}
+                                            {/* 합계 행 */}
+                                            <TableRow className="bg-blue-50/30 font-bold border-t h-12">
+                                                <TableCell className="px-4">합계</TableCell>
+                                                <TableCell className="text-center">-</TableCell>
+                                                <TableCell className="text-center">186명</TableCell>
+                                                <TableCell className="text-center">119,965,500원</TableCell>
+                                                <TableCell className="text-center text-red-500">3명</TableCell>
+                                                <TableCell className="text-center text-red-500">2,385,000원</TableCell>
+                                                <TableCell className="text-center text-gray-900 underline underline-offset-4 decoration-2 decoration-blue-200">183명</TableCell>
+                                                <TableCell className="text-center text-gray-900 underline underline-offset-4 decoration-2 decoration-blue-200">117,580,500원</TableCell>
+                                                <TableCell className="text-center">100%</TableCell>
+                                                <TableCell className="text-center text-red-500">1.6%</TableCell>
+                                            </TableRow>
+                                        </TableBody>
+                                    </Table>
+                                </div>
+                            </div>
+
+                            {/* 회원 유형별 판매 금액 영역 */}
+                            <div className="space-y-4">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-1 h-5 bg-blue-600 rounded-full" />
+                                    <h3 className="text-lg font-bold text-gray-900">회원 유형별 판매 금액</h3>
+                                </div>
+                                <div className="border rounded-xl overflow-hidden shadow-sm">
+                                    <Table>
+                                        <TableHeader className="bg-gray-50/50 border-b">
+                                            <TableRow className="hover:bg-transparent">
+                                                <TableHead className="font-bold text-xs text-center py-4">회원 구분</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">결제 인원</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">결제 금액</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">취소/환불 인원</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">취소/환불 금액</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">순매출 인원</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">순매출액</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">판매 비중</TableHead>
+                                                <TableHead className="font-bold text-xs text-center">환불율</TableHead>
+                                            </TableRow>
+                                        </TableHeader>
+                                        <TableBody>
+                                            {[
+                                                { type: "신규 회원", pCount: "133명", pAmount: "85,781,782원", rCount: "2명", rAmount: "1,289,952원", sCount: "131명", sAmount: "84,491,830원", share: "71.9%", refund: "1.5%" },
+                                                { type: "재결제 회원", pCount: "53명", pAmount: "34,183,718원", rCount: "1명", rAmount: "1,095,048원", sCount: "52명", sAmount: "33,088,670원", share: "28.1%", refund: "1.9%" },
+                                            ].map((row, i) => (
+                                                <TableRow key={i} className="text-[13px] h-12">
+                                                    <TableCell className="text-gray-700 font-medium px-4">{row.type}</TableCell>
+                                                    <TableCell className="text-center text-gray-600">{row.pCount}</TableCell>
+                                                    <TableCell className="text-center text-gray-600">{row.pAmount}</TableCell>
+                                                    <TableCell className="text-center text-red-500 font-medium">{row.rCount}</TableCell>
+                                                    <TableCell className="text-center text-red-500 font-medium">{row.rAmount}</TableCell>
+                                                    <TableCell className="text-center font-bold text-gray-900">{row.sCount}</TableCell>
+                                                    <TableCell className="text-center font-bold text-gray-900">{row.sAmount}</TableCell>
+                                                    <TableCell className="text-center text-gray-600">{row.share}</TableCell>
+                                                    <TableCell className="text-center text-red-500 font-medium">{row.refund}</TableCell>
+                                                </TableRow>
+                                            ))}
+                                            <TableRow className="bg-blue-50/30 font-bold border-t h-12">
+                                                <TableCell className="px-4">합계</TableCell>
+                                                <TableCell className="text-center">186명</TableCell>
+                                                <TableCell className="text-center">119,965,500원</TableCell>
+                                                <TableCell className="text-center text-red-500">3명</TableCell>
+                                                <TableCell className="text-center text-red-500">2,385,000원</TableCell>
+                                                <TableCell className="text-center text-gray-900 underline underline-offset-4 decoration-2 decoration-blue-200">183명</TableCell>
+                                                <TableCell className="text-center text-gray-900 underline underline-offset-4 decoration-2 decoration-blue-200">117,580,500원</TableCell>
+                                                <TableCell className="text-center">100%</TableCell>
+                                                <TableCell className="text-center text-red-500">1.6%</TableCell>
+                                            </TableRow>
+                                        </TableBody>
+                                    </Table>
+                                </div>
                             </div>
                         </div>
                     )}
-                    <DialogFooter className="pt-4 border-t">
-                        <Button className="w-full h-12 font-bold" onClick={() => setIsStatsModalOpen(false)}>
-                            닫기
-                        </Button>
-                    </DialogFooter>
                 </DialogContent>
             </Dialog>
         </div >
