@@ -12,10 +12,10 @@ type WorkItem = {
   id: string;
   jiraUrl: string;
   title: string;
-  internalUrl: string;
+  internalUrl?: string;
 };
 
-const workItems: WorkItem[] = [
+const hqWorkItems: WorkItem[] = [
   {
     id: "RM-226",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-226",
@@ -48,47 +48,73 @@ const workItems: WorkItem[] = [
   },
 ];
 
+const agencyWorkItems: WorkItem[] = [
+  {
+    id: "RM-237",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-237",
+    title: "[기관] 학습내역 기능 개선",
+    internalUrl: "/admin/learning-history",
+  },
+];
+
 export default function WorkListPage() {
-  return (
-    <div className="p-4 sm:p-6 lg:p-8">
-      <h1 className="text-2xl font-bold font-headline tracking-tight">
-        리딩수학과학 - 본사관리자
-      </h1>
-      <div className="mt-6">
-        <Card>
-          <CardContent className="p-6">
-            <div className="grid grid-cols-12 gap-4 text-sm text-muted-foreground mb-4">
-              <div className="col-span-2">일감</div>
-              <div className="col-span-8">제목</div>
-              <div className="col-span-2 text-right">바로가기</div>
+  const renderWorkList = (items: WorkItem[]) => (
+    <Card>
+      <CardContent className="p-6">
+        <div className="grid grid-cols-12 gap-4 text-sm text-muted-foreground mb-4">
+          <div className="col-span-2">일감</div>
+          <div className="col-span-8">제목</div>
+          <div className="col-span-2 text-right">바로가기</div>
+        </div>
+        <Separator />
+        {items.map((item) => (
+          <div key={item.id} className="grid grid-cols-12 gap-4 items-center mt-4">
+            <div className="col-span-2">
+              <a
+                href={item.jiraUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                {item.id}
+              </a>
             </div>
-            <Separator />
-            {workItems.map((item) => (
-              <div key={item.id} className="grid grid-cols-12 gap-4 items-center mt-4">
-                <div className="col-span-2">
-                  <a
-                    href={item.jiraUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline"
-                  >
-                    {item.id}
-                  </a>
-                </div>
-                <div className="col-span-8">
-                  <Link href={item.internalUrl} className="hover:underline">
-                    {item.title}
-                  </Link>
-                </div>
-                <div className="col-span-2 flex justify-end">
-                  <Link href={item.internalUrl}>
-                    <Link2 className="h-5 w-5 text-primary hover:opacity-80" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
+            <div className="col-span-8">
+              {item.internalUrl ? (
+                <Link href={item.internalUrl} className="hover:underline">
+                  {item.title}
+                </Link>
+              ) : (
+                <span>{item.title}</span>
+              )}
+            </div>
+            <div className="col-span-2 flex justify-end">
+              {item.internalUrl && (
+                <Link href={item.internalUrl}>
+                  <Link2 className="h-5 w-5 text-primary hover:opacity-80" />
+                </Link>
+              )}
+            </div>
+          </div>
+        ))}
+      </CardContent>
+    </Card>
+  );
+
+  return (
+    <div className="p-4 sm:p-6 lg:p-8 flex flex-col gap-10">
+      <div>
+        <h1 className="text-2xl font-bold font-headline tracking-tight mb-6">
+          리딩수학과학 - 본사관리자
+        </h1>
+        {renderWorkList(hqWorkItems)}
+      </div>
+
+      <div>
+        <h1 className="text-2xl font-bold font-headline tracking-tight mb-6">
+          리딩수학과학 - 기관관리자
+        </h1>
+        {renderWorkList(agencyWorkItems)}
       </div>
     </div>
   );

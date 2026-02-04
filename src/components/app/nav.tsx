@@ -40,13 +40,18 @@ type NavItem = {
   icon?: React.ReactNode;
   children?: NavItem[];
   disabled?: boolean;
+  type?: "link" | "label";
 };
 
 const navConfig: NavItem[] = [
   {
-    title: "대시보드",
+    title: "일감보드",
     href: "/",
     icon: <LayoutDashboard />,
+  },
+  {
+    title: "[본사관리자]",
+    type: "label",
   },
   {
     title: "기관관리",
@@ -74,6 +79,17 @@ const navConfig: NavItem[] = [
     title: "공동구매관리",
     href: "/admin/groupbuy",
     icon: <ShoppingCart />,
+  },
+  {
+    title: "[기관관리자]",
+    type: "label",
+  },
+  {
+    title: "학습관리",
+    icon: <GraduationCap />,
+    children: [
+      { title: "학습내역", href: "/admin/learning-history" },
+    ],
   },
 ];
 
@@ -120,6 +136,17 @@ function NavMenu({ items, level = 0 }: { items: NavItem[], level?: number }) {
                 </CollapsibleContent>
               </Collapsible>
             </SidebarMenuItem>
+          );
+        }
+
+        if (item.type === "label") {
+          return (
+            <div
+              key={index}
+              className="px-4 py-2 mt-2 text-[10px] font-bold text-sidebar-foreground/30 uppercase tracking-widest group-data-[collapsible=icon]:hidden select-none"
+            >
+              {item.title}
+            </div>
           );
         }
 
