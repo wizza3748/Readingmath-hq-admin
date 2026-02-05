@@ -299,7 +299,7 @@ export default function LearningCounselingDetailPage() {
 
     return (
         <TooltipProvider>
-            <div className="p-6 space-y-8 animate-in fade-in duration-500 max-w-5xl mx-auto">
+            <div className="p-6 md:px-10 space-y-8 animate-in fade-in duration-500 max-w-full mx-auto">
 
                 {/* 1. 학생 기본 정보 영역 (헤더) */}
                 <section className="bg-white border rounded-xl p-5 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -725,7 +725,7 @@ export default function LearningCounselingDetailPage() {
                             </TabsContent>
 
                             <TabsContent value="initial" className="m-0 p-10 animate-in fade-in duration-300">
-                                <div className="max-w-3xl mx-auto space-y-6">
+                                <div className="max-w-full mx-auto space-y-6">
                                     <div className="flex items-center gap-3 border-b pb-4">
                                         <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
                                             <Info className="w-5 h-5" />
