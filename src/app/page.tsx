@@ -59,62 +59,58 @@ const agencyWorkItems: WorkItem[] = [
 
 export default function WorkListPage() {
   const renderWorkList = (items: WorkItem[]) => (
-    <Card>
+    <Card className="h-full">
       <CardContent className="p-6">
-        <div className="grid grid-cols-12 gap-4 text-sm text-muted-foreground mb-4">
-          <div className="col-span-2">일감</div>
-          <div className="col-span-8">제목</div>
-          <div className="col-span-2 text-right">바로가기</div>
+        <div className="grid grid-cols-12 gap-4 text-sm font-semibold text-muted-foreground mb-4 px-2">
+          <div className="col-span-3">일감 ID</div>
+          <div className="col-span-9">제목</div>
         </div>
         <Separator />
-        {items.map((item) => (
-          <div key={item.id} className="grid grid-cols-12 gap-4 items-center mt-4">
-            <div className="col-span-2">
-              <a
-                href={item.jiraUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                {item.id}
-              </a>
+        <div className="space-y-1 mt-2">
+          {items.map((item) => (
+            <div key={item.id} className="grid grid-cols-12 gap-4 items-center p-2 rounded-md hover:bg-accent transition-colors">
+              <div className="col-span-3 font-mono text-sm text-primary/70">
+                <a
+                  href={item.jiraUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  {item.id}
+                </a>
+              </div>
+              <div className="col-span-9">
+                {item.internalUrl ? (
+                  <Link href={item.internalUrl} className="text-base font-semibold hover:text-primary transition-colors block truncate">
+                    {item.title}
+                  </Link>
+                ) : (
+                  <span className="text-base text-muted-foreground truncate block">{item.title}</span>
+                )}
+              </div>
             </div>
-            <div className="col-span-8">
-              {item.internalUrl ? (
-                <Link href={item.internalUrl} className="hover:underline">
-                  {item.title}
-                </Link>
-              ) : (
-                <span>{item.title}</span>
-              )}
-            </div>
-            <div className="col-span-2 flex justify-end">
-              {item.internalUrl && (
-                <Link href={item.internalUrl}>
-                  <Link2 className="h-5 w-5 text-primary hover:opacity-80" />
-                </Link>
-              )}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </CardContent>
     </Card>
   );
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 flex flex-col gap-10">
-      <div>
-        <h1 className="text-2xl font-bold font-headline tracking-tight mb-6">
-          리딩수학과학 - 본사관리자
-        </h1>
-        {renderWorkList(hqWorkItems)}
-      </div>
+    <div className="p-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="flex flex-col gap-6">
+          <h2 className="text-xl font-bold font-headline tracking-tight border-l-4 border-primary pl-3">
+            본사관리자
+          </h2>
+          {renderWorkList(hqWorkItems)}
+        </div>
 
-      <div>
-        <h1 className="text-2xl font-bold font-headline tracking-tight mb-6">
-          리딩수학과학 - 기관관리자
-        </h1>
-        {renderWorkList(agencyWorkItems)}
+        <div className="flex flex-col gap-6">
+          <h2 className="text-xl font-bold font-headline tracking-tight border-l-4 border-primary pl-3">
+            기관관리자
+          </h2>
+          {renderWorkList(agencyWorkItems)}
+        </div>
       </div>
     </div>
   );
