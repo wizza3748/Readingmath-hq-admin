@@ -28,6 +28,12 @@ import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip";
+import {
     Info,
     Save,
     Calendar,
@@ -88,7 +94,8 @@ export default function GroupBuyDetailPage() {
     const [selectedTickets, setSelectedTickets] = useState<Record<string, any>>({});
     const [benefitFreeDays, setBenefitFreeDays] = useState(5);
     const [diagTestOption, setDiagTestOption] = useState<'none' | 'provided'>('none');
-    const [diagTestRange, setDiagTestRange] = useState<'semester' | 'grade' | 'all'>('semester');
+    const [diagTestRange, setDiagTestRange] = useState<'semester' | 'grade' | 'all' | 'count'>('semester');
+    const [diagTestCount, setDiagTestCount] = useState(1);
     const [guideText, setGuideText] = useState('');
     const [adminMemo, setAdminMemo] = useState('');
     const [promoContentEnabled, setPromoContentEnabled] = useState(false);
@@ -104,7 +111,8 @@ export default function GroupBuyDetailPage() {
             setGuideText(data.guideText || '');
             setBenefitFreeDays(data.benefitFreeDays || 5);
             setDiagTestOption(data.diagProvided ? 'provided' : 'none');
-            setDiagTestRange(data.diagRange || 'semester');
+            setDiagTestRange((data.diagRange as any) || 'semester');
+            setDiagTestCount(data.diagCount || 1);
 
             // 2. 기간 로드 (도메인 필드 우선 - datetime-local 입력 포맷 대응)
             const formatForInput = (d?: string) => {
@@ -183,6 +191,7 @@ export default function GroupBuyDetailPage() {
             benefitFreeDays,
             diagProvided: diagTestOption === 'provided',
             diagRange: diagTestRange,
+            diagCount: diagTestCount,
             guideText,
             adminMemo,
             promo_content_enabled: promoContentEnabled,
@@ -266,284 +275,321 @@ export default function GroupBuyDetailPage() {
     if (!existingData) return <div className="p-10 text-center">데이터를 찾을 수 없습니다.</div>;
 
     return (
-        <div className="p-6 pb-40 space-y-8 animate-in fade-in duration-500 max-w-[1600px] mx-auto">
-            <div className="flex justify-between items-center">
-                <div className="flex items-center gap-3">
-                    <h1 className="text-2xl font-bold text-gray-900">공동구매 상세/수정</h1>
-                    <Badge className={cn(
-                        "font-bold",
-                        calcStatus === '진행중' ? "bg-primary text-white" :
-                            calcStatus === '진행전' ? "bg-amber-100 text-amber-700" : "bg-gray-100 text-gray-500"
-                    )}>
-                        {calcStatus}
-                    </Badge>
+        <TooltipProvider>
+            <div className="p-6 pb-40 space-y-8 animate-in fade-in duration-500 max-w-[1600px] mx-auto">
+                <div className="flex justify-between items-center">
+                    <div className="flex items-center gap-3">
+                        <h1 className="text-2xl font-bold text-gray-900">공동구매 상세/수정</h1>
+                        <Badge className={cn(
+                            "font-bold",
+                            calcStatus === '진행중' ? "bg-primary text-white" :
+                                calcStatus === '진행전' ? "bg-amber-100 text-amber-700" : "bg-gray-100 text-gray-500"
+                        )}>
+                            {calcStatus}
+                        </Badge>
+                    </div>
+                    <div className="flex gap-2">
+                    </div>
                 </div>
-                <div className="flex gap-2">
-                </div>
-            </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-                <div className="lg:col-span-2 space-y-8">
-                    {/* 기본 정보 */}
-                    <Card className="shadow-sm border-gray-100">
-                        <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
-                            <CardTitle className="text-base font-bold flex items-center gap-2">
-                                <Info className="w-4 h-4 text-primary" /> 기본 정보
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-6 space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="space-y-1.5">
-                                    <Label className="text-[11px] font-bold text-gray-400 pl-1 uppercase tracking-wider">계약자 (인플루언서) *</Label>
-                                    <Input value={contractor} onChange={(e) => setContractor(e.target.value)} disabled={isReadOnly} className="h-11" />
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                    <div className="lg:col-span-2 space-y-8">
+                        {/* 기본 정보 */}
+                        <Card className="shadow-sm border-gray-100">
+                            <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
+                                <CardTitle className="text-base font-bold flex items-center gap-2">
+                                    <Info className="w-4 h-4 text-primary" /> 기본 정보
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent className="p-6 space-y-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="space-y-1.5">
+                                        <Label className="text-[11px] font-bold text-gray-400 pl-1 uppercase tracking-wider">계약자 (인플루언서) *</Label>
+                                        <Input value={contractor} onChange={(e) => setContractor(e.target.value)} disabled={isReadOnly} className="h-11" />
+                                    </div>
+                                    <div className="space-y-1.5">
+                                        <Label className="text-[11px] font-bold text-gray-400 pl-1 uppercase tracking-wider">적용 과목 *</Label>
+                                        <RadioGroup value={subject} onValueChange={(v: any) => setSubject(v)} disabled={isReadOnly} className="flex gap-4 h-11 items-center px-4 bg-gray-50/50 rounded-md border border-gray-100">
+                                            {(['리딩수학', '리딩과학', '리딩수학과학'] as const).map(s => (
+                                                <div key={s} className="flex items-center space-x-2">
+                                                    <RadioGroupItem value={s} id={`s-${s}`} />
+                                                    <Label htmlFor={`s-${s}`} className="text-sm font-bold text-gray-700 cursor-pointer">{s}</Label>
+                                                </div>
+                                            ))}
+                                        </RadioGroup>
+                                    </div>
                                 </div>
                                 <div className="space-y-1.5">
-                                    <Label className="text-[11px] font-bold text-gray-400 pl-1 uppercase tracking-wider">적용 과목 *</Label>
-                                    <RadioGroup value={subject} onValueChange={(v: any) => setSubject(v)} disabled={isReadOnly} className="flex gap-4 h-11 items-center px-4 bg-gray-50/50 rounded-md border border-gray-100">
-                                        {(['리딩수학', '리딩과학', '리딩수학과학'] as const).map(s => (
-                                            <div key={s} className="flex items-center space-x-2">
-                                                <RadioGroupItem value={s} id={`s-${s}`} />
-                                                <Label htmlFor={`s-${s}`} className="text-sm font-bold text-gray-700 cursor-pointer">{s}</Label>
-                                            </div>
-                                        ))}
+                                    <Label className="text-[11px] font-bold text-gray-400 pl-1 uppercase tracking-wider">공동구매 제목 (자동 생성)</Label>
+                                    <Input value={groupBuyTitle} readOnly className="h-11 bg-gray-50 font-bold text-gray-700 shadow-inner" />
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="space-y-1.5">
+                                        <Label className="text-[11px] font-bold text-gray-400 pl-1 uppercase tracking-wider">공동구매 부제목 *</Label>
+                                        <Input value={subtitle} onChange={(e) => setSubtitle(e.target.value)} disabled={isReadOnly} placeholder="예: 최대 35% 할인" className="h-11" />
+                                    </div>
+                                    <div className="space-y-1.5">
+                                        <Label className="text-[11px] font-bold text-gray-400 pl-1 uppercase tracking-wider">공동구매 코드</Label>
+                                        <Input value={groupBuyCode} readOnly className="h-11 bg-gray-50 font-bold text-primary font-mono" />
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        {/* 기간 설정 */}
+                        <Card className="shadow-sm border-gray-100">
+                            <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
+                                <CardTitle className="text-base font-bold flex items-center gap-2">
+                                    <Calendar className="w-4 h-4 text-primary" /> 기간 설정
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent className="p-6 space-y-8">
+                                <div className="space-y-4">
+                                    <p className="text-sm font-bold text-gray-800">결제 가능 기간 (공구 진행 기간) *</p>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <Input type="datetime-local" value={paymentStartDate} onChange={(e) => setPaymentStartDate(autoSetTime(e.target.value, 'start'))} disabled={isReadOnly} className="h-11" />
+                                        <Input type="datetime-local" value={paymentEndDate} onChange={(e) => setPaymentEndDate(autoSetTime(e.target.value, 'end'))} disabled={isReadOnly} className="h-11" />
+                                    </div>
+                                </div>
+                                <Separator />
+                                <div className="space-y-6">
+                                    <div className="flex items-center justify-between bg-gray-50 p-4 rounded-xl border border-gray-100">
+                                        <div className="space-y-0.5">
+                                            <Label className="text-sm font-bold">가입 기간 개별 편집</Label>
+                                            <p className="text-xs text-gray-500">실제 기간과 가입 기간을 다르게 설정할 경우 활성화하세요.</p>
+                                        </div>
+                                        <Switch checked={isEditSignupPeriod} onCheckedChange={setIsEditSignupPeriod} disabled={isReadOnly} />
+                                    </div>
+                                    {isEditSignupPeriod && (
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-in fade-in slide-in-from-top-1 duration-300">
+                                            <Input type="datetime-local" value={signupStartDate} onChange={(e) => setSignupStartDate(autoSetTime(e.target.value, 'start'))} disabled={isReadOnly} className="h-11" />
+                                            <Input type="datetime-local" value={signupEndDate} onChange={(e) => setSignupEndDate(autoSetTime(e.target.value, 'end'))} disabled={isReadOnly} className="h-11" />
+                                        </div>
+                                    )}
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        {/* 이용권 설정 */}
+                        <Card className="shadow-sm border-gray-100 overflow-hidden">
+                            <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
+                                <CardTitle className="text-base font-bold flex items-center gap-2">
+                                    <Ticket className="w-4 h-4 text-primary" /> 이용권 설정
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent className="p-6 space-y-10">
+                                {subject === '리딩수학' && renderTicketTable('리딩수학')}
+                                {subject === '리딩과학' && renderTicketTable('리딩과학')}
+                                {subject === '리딩수학과학' && (
+                                    <>
+                                        {renderTicketTable('리딩수학')}
+                                        {renderTicketTable('리딩과학')}
+                                        {renderTicketTable('리딩수학과학')}
+                                    </>
+                                )}
+                            </CardContent>
+                        </Card>
+                    </div>
+
+                    <div className="space-y-8">
+                        {/* 상태 요약 */}
+                        <Card className="shadow-sm border-gray-100 bg-gray-50/30">
+                            <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-3">
+                                <CardTitle className="text-sm font-bold flex items-center gap-2 text-gray-600">
+                                    <List className="w-4 h-4" /> 상세 요약
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent className="p-0">
+                                <Table>
+                                    <TableBody>
+                                        <TableRow className="hover:bg-transparent border-none">
+                                            <TableCell className="text-xs font-bold text-gray-500 py-3 px-4">공동구매 상태</TableCell>
+                                            <TableCell className="text-right py-3 px-4">
+                                                <Badge variant="outline" className={cn(
+                                                    "font-bold text-[11px]",
+                                                    calcStatus === '진행중' ? "bg-primary/10 text-primary border-primary/20" :
+                                                        calcStatus === '진행전' ? "bg-amber-50 text-amber-700 border-amber-200" : "bg-gray-100 text-gray-500 border-gray-200"
+                                                )}>
+                                                    {calcStatus}
+                                                </Badge>
+                                            </TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </CardContent>
+                        </Card>
+
+                        {/* 혜택 설정 */}
+                        <Card className="shadow-sm border-gray-100">
+                            <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
+                                <CardTitle className="text-base font-bold flex items-center gap-2">
+                                    <Gift className="w-4 h-4 text-primary" /> 혜택 설정
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent className="p-6 space-y-6">
+                                <div className="space-y-1.5">
+                                    <Label className="text-[11px] font-bold text-gray-400 uppercase">무료체험 기간 *</Label>
+                                    <div className="flex items-center gap-2">
+                                        <Input type="number" value={benefitFreeDays} onChange={e => setBenefitFreeDays(Number(e.target.value))} disabled={isReadOnly} className="h-11 font-bold text-right" />
+                                        <span className="text-sm font-bold text-gray-500">일</span>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        {/* 진단평가 설정 */}
+                        <Card className="shadow-sm border-gray-100">
+                            <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
+                                <CardTitle className="text-base font-bold flex items-center gap-2">
+                                    <AlertCircle className="w-4 h-4 text-primary" /> 진단평가 설정
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent className="p-6 space-y-6">
+                                <div className="space-y-3">
+                                    <div className="flex items-center gap-1">
+                                        <Label className="text-[11px] font-bold text-gray-400 uppercase">진단평가 제공 여부</Label>
+                                        <Tooltip>
+                                            <TooltipTrigger asChild>
+                                                <Info className="w-4 h-4 text-gray-400 cursor-help -mt-1" />
+                                            </TooltipTrigger>
+                                            <TooltipContent side="right" className="max-w-xs p-4 space-y-3">
+                                                <div className="space-y-1">
+                                                    <p className="font-bold text-xs text-primary">[학생 적용 이전 학기]</p>
+                                                    <p className="text-xs leading-relaxed">현재 학기 기준으로 이전 학기의 진단평가만 제공됩니다. 이전 학기가 없는 경우 현재 학기의 진단평가가 제공됩니다.</p>
+                                                </div>
+                                                <div className="space-y-1">
+                                                    <p className="font-bold text-xs text-primary">[전체 학기]</p>
+                                                    <p className="text-xs leading-relaxed">모든 학기의 진단평가를 제한 없이 제공됩니다.</p>
+                                                </div>
+                                                <div className="space-y-1">
+                                                    <p className="font-bold text-xs text-primary">[선택 횟수]</p>
+                                                    <p className="text-xs leading-relaxed">전체 학기 기준으로 입력한 횟수만큼 진단평가가 제공됩니다.</p>
+                                                </div>
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    </div>
+                                    <RadioGroup value={diagTestOption} onValueChange={(v: any) => setDiagTestOption(v)} disabled={isReadOnly} className="flex gap-4">
+                                        <div className="flex items-center space-x-2">
+                                            <RadioGroupItem value="provided" id="d-provided" />
+                                            <Label htmlFor="d-provided" className="text-sm font-medium">제공</Label>
+                                        </div>
+                                        <div className="flex items-center space-x-2">
+                                            <RadioGroupItem value="none" id="d-none" />
+                                            <Label htmlFor="d-none" className="text-sm font-medium">없음</Label>
+                                        </div>
                                     </RadioGroup>
                                 </div>
-                            </div>
-                            <div className="space-y-1.5">
-                                <Label className="text-[11px] font-bold text-gray-400 pl-1 uppercase tracking-wider">공동구매 제목 (자동 생성)</Label>
-                                <Input value={groupBuyTitle} readOnly className="h-11 bg-gray-50 font-bold text-gray-700 shadow-inner" />
-                            </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="space-y-1.5">
-                                    <Label className="text-[11px] font-bold text-gray-400 pl-1 uppercase tracking-wider">공동구매 부제목 *</Label>
-                                    <Input value={subtitle} onChange={(e) => setSubtitle(e.target.value)} disabled={isReadOnly} placeholder="예: 최대 35% 할인" className="h-11" />
-                                </div>
-                                <div className="space-y-1.5">
-                                    <Label className="text-[11px] font-bold text-gray-400 pl-1 uppercase tracking-wider">공동구매 코드</Label>
-                                    <Input value={groupBuyCode} readOnly className="h-11 bg-gray-50 font-bold text-primary font-mono" />
-                                </div>
-                            </div>
-                        </CardContent>
-                    </Card>
 
-                    {/* 기간 설정 */}
-                    <Card className="shadow-sm border-gray-100">
-                        <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
-                            <CardTitle className="text-base font-bold flex items-center gap-2">
-                                <Calendar className="w-4 h-4 text-primary" /> 기간 설정
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-6 space-y-8">
-                            <div className="space-y-4">
-                                <p className="text-sm font-bold text-gray-800">결제 가능 기간 (공구 진행 기간) *</p>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <Input type="datetime-local" value={paymentStartDate} onChange={(e) => setPaymentStartDate(autoSetTime(e.target.value, 'start'))} disabled={isReadOnly} className="h-11" />
-                                    <Input type="datetime-local" value={paymentEndDate} onChange={(e) => setPaymentEndDate(autoSetTime(e.target.value, 'end'))} disabled={isReadOnly} className="h-11" />
+                                <Separator className="bg-gray-100" />
+
+                                <div className="space-y-3">
+                                    {diagTestOption === 'provided' ? (
+                                        <div className="space-y-4">
+                                            <RadioGroup value={diagTestRange} onValueChange={(v: any) => setDiagTestRange(v)} disabled={isReadOnly} className="grid grid-cols-1 gap-2">
+                                                {[
+                                                    { id: 'semester', label: '학생 적용 이전 학기' },
+                                                    { id: 'all', label: '전체 학기' },
+                                                    { id: 'count', label: '선택 횟수' }
+                                                ].map(opt => (
+                                                    <div key={opt.id} className="flex items-center space-x-2 bg-gray-50 p-3 rounded-lg border border-gray-100">
+                                                        <RadioGroupItem value={opt.id} id={`dr-${opt.id}`} />
+                                                        <Label htmlFor={`dr-${opt.id}`} className="text-sm font-medium cursor-pointer w-full">{opt.label}</Label>
+                                                    </div>
+                                                ))}
+                                            </RadioGroup>
+                                            {diagTestRange === 'count' && (
+                                                <div className="flex items-center gap-2 mt-2 pl-4 animate-in fade-in slide-in-from-top-1">
+                                                    <Input
+                                                        type="number"
+                                                        min={1}
+                                                        value={diagTestCount}
+                                                        onChange={(e) => setDiagTestCount(Number(e.target.value))}
+                                                        disabled={isReadOnly}
+                                                        className="w-20 h-9 text-center font-bold"
+                                                    />
+                                                    <span className="text-sm font-bold text-gray-500">회</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                    ) : (
+                                        <div className="p-4 bg-gray-50 rounded-xl border border-dashed border-gray-200 text-center">
+                                            <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">없음</p>
+                                        </div>
+                                    )}
                                 </div>
-                            </div>
-                            <Separator />
-                            <div className="space-y-6">
-                                <div className="flex items-center justify-between bg-gray-50 p-4 rounded-xl border border-gray-100">
+                            </CardContent>
+                        </Card>
+
+                        {/* 안내 문구 */}
+                        <Card className="shadow-sm border-gray-100">
+                            <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
+                                <CardTitle className="text-base font-bold flex items-center gap-2">
+                                    <AlignLeft className="w-4 h-4 text-primary" /> 공동구매 안내 문구
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent className="p-6">
+                                <Textarea value={guideText} onChange={e => setGuideText(e.target.value)} disabled={isReadOnly} rows={10} className="resize-none leading-relaxed text-sm p-4 bg-gray-50/50 border-gray-100" />
+                            </CardContent>
+                        </Card>
+
+                        {/* 홍보 콘텐츠 설정 영역 */}
+                        <Card className="shadow-sm border-gray-100">
+                            <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
+                                <CardTitle className="text-base font-bold flex items-center gap-2">
+                                    <ShoppingBag className="w-4 h-4 text-primary" /> 홍보 콘텐츠 설정
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent className="p-6">
+                                <div className="flex justify-between items-center bg-gray-50/50 p-4 rounded-xl border border-gray-100">
                                     <div className="space-y-0.5">
-                                        <Label className="text-sm font-bold">가입 기간 개별 편집</Label>
-                                        <p className="text-xs text-gray-500">실제 기간과 가입 기간을 다르게 설정할 경우 활성화하세요.</p>
+                                        <Label htmlFor="promo-toggle" className="text-sm font-bold cursor-pointer">홍보 콘텐츠 노출</Label>
+                                        <p className="text-xs text-gray-500">미리보기 및 결제 페이지에서 상품 상세 이미지를 노출합니다.</p>
                                     </div>
-                                    <Switch checked={isEditSignupPeriod} onCheckedChange={setIsEditSignupPeriod} disabled={isReadOnly} />
+                                    <Switch
+                                        id="promo-toggle"
+                                        checked={promoContentEnabled}
+                                        onCheckedChange={setPromoContentEnabled}
+                                        disabled={isReadOnly}
+                                    />
                                 </div>
-                                {isEditSignupPeriod && (
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-in fade-in slide-in-from-top-1 duration-300">
-                                        <Input type="datetime-local" value={signupStartDate} onChange={(e) => setSignupStartDate(autoSetTime(e.target.value, 'start'))} disabled={isReadOnly} className="h-11" />
-                                        <Input type="datetime-local" value={signupEndDate} onChange={(e) => setSignupEndDate(autoSetTime(e.target.value, 'end'))} disabled={isReadOnly} className="h-11" />
-                                    </div>
-                                )}
-                            </div>
-                        </CardContent>
-                    </Card>
+                            </CardContent>
+                        </Card>
 
-                    {/* 이용권 설정 */}
-                    <Card className="shadow-sm border-gray-100 overflow-hidden">
-                        <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
-                            <CardTitle className="text-base font-bold flex items-center gap-2">
-                                <Ticket className="w-4 h-4 text-primary" /> 이용권 설정
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-6 space-y-10">
-                            {subject === '리딩수학' && renderTicketTable('리딩수학')}
-                            {subject === '리딩과학' && renderTicketTable('리딩과학')}
-                            {subject === '리딩수학과학' && (
-                                <>
-                                    {renderTicketTable('리딩수학')}
-                                    {renderTicketTable('리딩과학')}
-                                    {renderTicketTable('리딩수학과학')}
-                                </>
-                            )}
-                        </CardContent>
-                    </Card>
-                </div>
+                        {/* 관리 메모 */}
+                        <Card className="shadow-sm border-gray-100">
+                            <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
+                                <CardTitle className="text-base font-bold flex items-center gap-2">
+                                    <Hash className="w-4 h-4 text-primary" /> 관리자 메모 (비노출)
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent className="p-6">
+                                <Textarea value={adminMemo} onChange={e => setAdminMemo(e.target.value)} disabled={isReadOnly} rows={4} className="resize-none text-sm bg-gray-50/50 border-gray-100" />
+                            </CardContent>
+                        </Card>
+                    </div >
+                </div >
 
-                <div className="space-y-8">
-                    {/* 상태 요약 */}
-                    <Card className="shadow-sm border-gray-100 bg-gray-50/30">
-                        <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-3">
-                            <CardTitle className="text-sm font-bold flex items-center gap-2 text-gray-600">
-                                <List className="w-4 h-4" /> 상세 요약
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-0">
-                            <Table>
-                                <TableBody>
-                                    <TableRow className="hover:bg-transparent border-none">
-                                        <TableCell className="text-xs font-bold text-gray-500 py-3 px-4">공동구매 상태</TableCell>
-                                        <TableCell className="text-right py-3 px-4">
-                                            <Badge variant="outline" className={cn(
-                                                "font-bold text-[11px]",
-                                                calcStatus === '진행중' ? "bg-primary/10 text-primary border-primary/20" :
-                                                    calcStatus === '진행전' ? "bg-amber-50 text-amber-700 border-amber-200" : "bg-gray-100 text-gray-500 border-gray-200"
-                                            )}>
-                                                {calcStatus}
-                                            </Badge>
-                                        </TableCell>
-                                    </TableRow>
-                                </TableBody>
-                            </Table>
-                        </CardContent>
-                    </Card>
-
-                    {/* 혜택 설정 */}
-                    <Card className="shadow-sm border-gray-100">
-                        <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
-                            <CardTitle className="text-base font-bold flex items-center gap-2">
-                                <Gift className="w-4 h-4 text-primary" /> 혜택 설정
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-6 space-y-6">
-                            <div className="space-y-1.5">
-                                <Label className="text-[11px] font-bold text-gray-400 uppercase">무료체험 기간 *</Label>
-                                <div className="flex items-center gap-2">
-                                    <Input type="number" value={benefitFreeDays} onChange={e => setBenefitFreeDays(Number(e.target.value))} disabled={isReadOnly} className="h-11 font-bold text-right" />
-                                    <span className="text-sm font-bold text-gray-500">일</span>
-                                </div>
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    {/* 진단평가 설정 */}
-                    <Card className="shadow-sm border-gray-100">
-                        <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
-                            <CardTitle className="text-base font-bold flex items-center gap-2">
-                                <AlertCircle className="w-4 h-4 text-primary" /> 진단평가 설정
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-6 space-y-6">
-                            <div className="space-y-3">
-                                <Label className="text-[11px] font-bold text-gray-400 uppercase">진단평가 제공 여부</Label>
-                                <RadioGroup value={diagTestOption} onValueChange={(v: any) => setDiagTestOption(v)} disabled={isReadOnly} className="flex gap-4">
-                                    <div className="flex items-center space-x-2">
-                                        <RadioGroupItem value="provided" id="d-provided" />
-                                        <Label htmlFor="d-provided" className="text-sm font-medium">제공</Label>
-                                    </div>
-                                    <div className="flex items-center space-x-2">
-                                        <RadioGroupItem value="none" id="d-none" />
-                                        <Label htmlFor="d-none" className="text-sm font-medium">없음</Label>
-                                    </div>
-                                </RadioGroup>
-                            </div>
-
-                            <Separator className="bg-gray-100" />
-
-                            <div className="space-y-3">
-                                <Label className="text-[11px] font-bold text-gray-400 uppercase">제공 설정 (학생 적용 학기)</Label>
-                                {diagTestOption === 'provided' ? (
-                                    <RadioGroup value={diagTestRange} onValueChange={(v: any) => setDiagTestRange(v)} disabled={isReadOnly} className="grid grid-cols-1 gap-2">
-                                        {[
-                                            { id: 'semester', label: '학생 적용 학기' },
-                                            { id: 'grade', label: '학생 적용 학년' },
-                                            { id: 'all', label: '전체' }
-                                        ].map(opt => (
-                                            <div key={opt.id} className="flex items-center space-x-2 bg-gray-50 p-3 rounded-lg border border-gray-100">
-                                                <RadioGroupItem value={opt.id} id={`dr-${opt.id}`} />
-                                                <Label htmlFor={`dr-${opt.id}`} className="text-sm font-medium cursor-pointer w-full">{opt.label}</Label>
-                                            </div>
-                                        ))}
-                                    </RadioGroup>
-                                ) : (
-                                    <div className="p-4 bg-gray-50 rounded-xl border border-dashed border-gray-200 text-center">
-                                        <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">없음</p>
-                                    </div>
-                                )}
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    {/* 안내 문구 */}
-                    <Card className="shadow-sm border-gray-100">
-                        <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
-                            <CardTitle className="text-base font-bold flex items-center gap-2">
-                                <AlignLeft className="w-4 h-4 text-primary" /> 공동구매 안내 문구
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-6">
-                            <Textarea value={guideText} onChange={e => setGuideText(e.target.value)} disabled={isReadOnly} rows={10} className="resize-none leading-relaxed text-sm p-4 bg-gray-50/50 border-gray-100" />
-                        </CardContent>
-                    </Card>
-
-                    {/* 홍보 콘텐츠 설정 영역 */}
-                    <Card className="shadow-sm border-gray-100">
-                        <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
-                            <CardTitle className="text-base font-bold flex items-center gap-2">
-                                <ShoppingBag className="w-4 h-4 text-primary" /> 홍보 콘텐츠 설정
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-6">
-                            <div className="flex justify-between items-center bg-gray-50/50 p-4 rounded-xl border border-gray-100">
-                                <div className="space-y-0.5">
-                                    <Label htmlFor="promo-toggle" className="text-sm font-bold cursor-pointer">홍보 콘텐츠 노출</Label>
-                                    <p className="text-xs text-gray-500">미리보기 및 결제 페이지에서 상품 상세 이미지를 노출합니다.</p>
-                                </div>
-                                <Switch
-                                    id="promo-toggle"
-                                    checked={promoContentEnabled}
-                                    onCheckedChange={setPromoContentEnabled}
-                                    disabled={isReadOnly}
-                                />
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    {/* 관리 메모 */}
-                    <Card className="shadow-sm border-gray-100">
-                        <CardHeader className="bg-gray-50/50 border-b border-gray-100 py-4">
-                            <CardTitle className="text-base font-bold flex items-center gap-2">
-                                <Hash className="w-4 h-4 text-primary" /> 관리자 메모 (비노출)
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-6">
-                            <Textarea value={adminMemo} onChange={e => setAdminMemo(e.target.value)} disabled={isReadOnly} rows={4} className="resize-none text-sm bg-gray-50/50 border-gray-100" />
-                        </CardContent>
-                    </Card>
+                {/* 하단 버튼 */}
+                < div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 z-50 flex justify-center gap-3 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]" >
+                    <Button variant="outline" className="h-12 px-10 font-bold text-gray-500 bg-gray-50 border-gray-200" onClick={() => router.push('/admin/groupbuy')}>목록</Button>
+                    {
+                        !isReadOnly && (
+                            <>
+                                <Button variant="outline" className="h-12 px-10 font-bold border-primary text-primary shadow-sm" onClick={() => window.open(`/admin/groupbuy/preview/${id}`, '_blank')}>
+                                    <Eye className="w-4 h-4 mr-2" /> 미리보기
+                                </Button>
+                                <Button
+                                    className="h-12 px-16 font-bold bg-primary hover:bg-primary/90 disabled:opacity-50 shadow-lg shadow-primary/20"
+                                    disabled={!isFormValid}
+                                    onClick={handleSave}
+                                >
+                                    <Save className="w-5 h-5 mr-2" /> 저장
+                                </Button>
+                            </>
+                        )
+                    }
                 </div >
             </div >
-
-            {/* 하단 버튼 */}
-            < div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 z-50 flex justify-center gap-3 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]" >
-                <Button variant="outline" className="h-12 px-10 font-bold text-gray-500 bg-gray-50 border-gray-200" onClick={() => router.push('/admin/groupbuy')}>목록</Button>
-                {
-                    !isReadOnly && (
-                        <>
-                            <Button variant="outline" className="h-12 px-10 font-bold border-primary text-primary shadow-sm" onClick={() => window.open(`/admin/groupbuy/preview/${id}`, '_blank')}>
-                                <Eye className="w-4 h-4 mr-2" /> 미리보기
-                            </Button>
-                            <Button
-                                className="h-12 px-16 font-bold bg-primary hover:bg-primary/90 disabled:opacity-50 shadow-lg shadow-primary/20"
-                                disabled={!isFormValid}
-                                onClick={handleSave}
-                            >
-                                <Save className="w-5 h-5 mr-2" /> 저장
-                            </Button>
-                        </>
-                    )
-                }
-            </div >
-        </div >
+        </TooltipProvider>
     );
 }

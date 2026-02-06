@@ -31,7 +31,8 @@ export interface GroupBuy {
     }>;
     benefitFreeDays?: number;
     diagProvided?: boolean;
-    diagRange?: 'semester' | 'grade' | 'all';
+    diagRange?: 'semester' | 'grade' | 'all' | 'count';
+    diagCount?: number;
     guideText?: string;
     adminMemo?: string;
     promo_content_enabled?: boolean;
@@ -237,7 +238,8 @@ export const mapGroupBuyData = (item: GroupBuy | Partial<GroupBuy>) => {
         isJoinPeriodEdit: item.isJoinPeriodEdit ?? item.isEditSignupPeriod ?? false,
         benefitFreeDays: item.benefitFreeDays ?? 0,
         diagProvided: item.diagProvided ?? false,
-        diagRange: item.diagRange || 'semester',
+        diagRange: (item.diagRange as any) || 'semester',
+        diagCount: item.diagCount ?? 1,
         promo_content_enabled: item.promo_content_enabled ?? false,
     };
 };

@@ -361,7 +361,12 @@ export default function GroupBuyPreviewPage() {
                                             : '미제공 항목'}
                                     </p>
                                     <p className="text-lg font-black text-blue-400/80 mt-1">
-                                        {data.diagProvided && `(${data.diagRange === 'semester' ? '학생 적용 학기' : data.diagRange === 'grade' ? '학생 적용 학년' : '전체 범위'})`}
+                                        {data.diagProvided && (
+                                            data.diagRange === 'semester' ? '(학생 적용 이전 학기)' :
+                                                data.diagRange === 'all' ? '(전체 학기)' :
+                                                    data.diagRange === 'count' ? `(선택 횟수: ${data.diagCount}회 응시 가능)` :
+                                                        data.diagRange === 'grade' ? '(학생 적용 학년)' : ''
+                                        )}
                                     </p>
                                 </div>
                             </div>
