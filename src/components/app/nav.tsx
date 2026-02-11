@@ -73,6 +73,7 @@ const navConfig: NavItem[] = [
     icon: <Users />,
     children: [
       { title: "학습상담", href: "/b2c/learning-counseling-detail" },
+      { title: "주간학습알림", href: "/b2c/weekly-notification" },
     ],
   },
   {

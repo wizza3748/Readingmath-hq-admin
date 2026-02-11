@@ -219,18 +219,33 @@ export default function GroupBuyDetailPage() {
                             <TableRow>
                                 <TableHead className="w-12 text-center">적용</TableHead>
                                 <TableHead className="font-bold">이용권</TableHead>
-                                <TableHead className="font-bold text-right pr-4">일수</TableHead>
+                                <TableHead className="font-bold text-right pr-4">
+                                    <div className="flex items-center justify-end gap-1">
+                                        일수
+                                        <Tooltip>
+                                            <TooltipTrigger asChild>
+                                                <Info className="w-3.5 h-3.5 text-gray-400 cursor-help" />
+                                            </TooltipTrigger>
+                                            <TooltipContent className="p-3 text-xs leading-relaxed text-left">
+                                                <ul className="list-disc pl-3 space-y-1">
+                                                    <li>일수는 최종 제공 이용일수입니다.</li>
+                                                    <li>기본값은 이용권 기준 3개월 90일, 6개월 180일, 12개월 365일입니다.</li>
+                                                    <li>추가 제공 이벤트가 있는 경우 최종 일수로 수정 입력해 주세요.</li>
+                                                </ul>
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    </div>
+                                </TableHead>
                                 <TableHead className="font-bold">정가</TableHead>
                                 <TableHead className="font-bold">할인가</TableHead>
                                 <TableHead className="font-bold text-center">할인율</TableHead>
                                 <TableHead className="font-bold text-right pr-6">월 환산가</TableHead>
-                                <TableHead className="font-bold text-right pr-4">이용기간 추가</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {TICKET_TEMPLATES.map(t => {
                                 const key = `${s}_${t.type}`;
-                                const data = selectedTickets[key] || { applied: false, days: t.days, price: 0, extraDays: 0 };
+                                const data = selectedTickets[key] || { applied: false, days: t.days, price: 0 };
                                 const standardPrice = PRICES[s as keyof typeof PRICES]?.[t.type as '3개월'] || 0;
                                 const discountRate = (data.price > 0 && standardPrice > 0) ? Math.round(((standardPrice - data.price) / standardPrice) * 100) : 0;
                                 const monthlyPrice = t.months > 0 ? Math.floor(data.price / t.months) : 0;
@@ -256,12 +271,6 @@ export default function GroupBuyDetailPage() {
                                         </TableCell>
                                         <TableCell className="text-center text-primary font-bold">{discountRate}%</TableCell>
                                         <TableCell className="text-right pr-6 font-bold">{monthlyPrice.toLocaleString()}원</TableCell>
-                                        <TableCell>
-                                            <div className="flex items-center justify-end gap-1">
-                                                <Input type="number" value={data.extraDays} onChange={e => setSelectedTickets({ ...selectedTickets, [key]: { ...data, extraDays: Number(e.target.value) } })} disabled={isReadOnly} className="h-9 w-16 text-right font-bold" />
-                                                <span className="text-xs font-bold text-gray-400">일</span>
-                                            </div>
-                                        </TableCell>
                                     </TableRow>
                                 );
                             })}

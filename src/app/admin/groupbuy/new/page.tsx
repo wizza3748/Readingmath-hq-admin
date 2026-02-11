@@ -85,7 +85,6 @@ export default function GroupBuyNewPage() {
         applied: boolean;
         days: number;
         price: number;
-        extraDays: number;
     }>>({});
 
     const [benefitFreeDays, setBenefitFreeDays] = useState(5);
@@ -148,8 +147,7 @@ export default function GroupBuyNewPage() {
                         newTickets[key] = {
                             applied: false,
                             days: t.days,
-                            price: 0,
-                            extraDays: 0
+                            price: 0
                         };
                     }
                 });
@@ -297,18 +295,33 @@ export default function GroupBuyNewPage() {
                             <TableRow className="h-10 hover:bg-transparent">
                                 <TableHead className="w-[50px] text-center font-bold">적용</TableHead>
                                 <TableHead className="w-[90px] font-bold">이용권</TableHead>
-                                <TableHead className="w-[85px] font-bold">일수</TableHead>
+                                <TableHead className="w-[120px] font-bold">
+                                    <div className="flex items-center gap-1">
+                                        일수
+                                        <Tooltip>
+                                            <TooltipTrigger asChild>
+                                                <Info className="w-3.5 h-3.5 text-gray-400 cursor-help" />
+                                            </TooltipTrigger>
+                                            <TooltipContent className="p-3 text-xs leading-relaxed">
+                                                <ul className="list-disc pl-3 space-y-1">
+                                                    <li>일수는 최종 제공 이용일수입니다.</li>
+                                                    <li>기본값은 이용권 기준 3개월 90일, 6개월 180일, 12개월 365일입니다.</li>
+                                                    <li>추가 제공 이벤트가 있는 경우 최종 일수로 수정 입력해 주세요.</li>
+                                                </ul>
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    </div>
+                                </TableHead>
                                 <TableHead className="w-[110px] font-bold">정가</TableHead>
                                 <TableHead className="w-[145px] font-bold">할인가</TableHead>
                                 <TableHead className="w-[80px] text-center font-bold">할인율</TableHead>
                                 <TableHead className="w-[110px] text-right font-bold">월 환산가</TableHead>
-                                <TableHead className="w-[100px] font-bold">이용기간 추가</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {TICKET_TEMPLATES.map(t => {
                                 const key = `${s}_${t.type}`;
-                                const data = selectedTickets[key] || { applied: false, days: t.days, price: 0, extraDays: 0 };
+                                const data = selectedTickets[key] || { applied: false, days: t.days, price: 0 };
                                 // @ts-ignore
                                 const standardPrice = PRICES[s][t.type];
                                 // 할인율: (정가 - 할인가) / 정가 * 100 -> 명세: 반올림(Round)
@@ -364,21 +377,6 @@ export default function GroupBuyNewPage() {
                                         </TableCell>
                                         <TableCell className="text-right font-bold text-gray-800">
                                             {data.applied && data.price > 0 ? `${monthlyPrice.toLocaleString()}원` : '-'}
-                                        </TableCell>
-                                        <TableCell>
-                                            <div className="flex items-center gap-1.5 min-w-[100px]">
-                                                <Input
-                                                    type="number"
-                                                    disabled={!data.applied}
-                                                    value={data.extraDays}
-                                                    onChange={(e) => handleTicketChange(key, 'extraDays', Number(e.target.value))}
-                                                    className={cn(
-                                                        "h-9 font-mono font-bold text-right px-2 border-gray-300 w-full",
-                                                        data.applied ? "bg-white text-gray-900 ring-1 ring-gray-100 shadow-sm" : "bg-gray-100/50 text-gray-400 border-gray-100"
-                                                    )}
-                                                />
-                                                <span className={cn("text-xs font-bold shrink-0", data.applied ? "text-gray-500" : "text-gray-300")}>일</span>
-                                            </div>
                                         </TableCell>
                                     </TableRow>
                                 );

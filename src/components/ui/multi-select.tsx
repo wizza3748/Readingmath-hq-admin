@@ -29,18 +29,38 @@ interface MultiSelectProps {
   options: MultiSelectOption[];
   placeholder?: string;
   className?: string;
+  onValueChange?: (value: string[]) => void;
+  defaultValue?: string[];
 }
 
 export function MultiSelect({
   options,
   placeholder = "Select options...",
   className,
+  onValueChange,
+  defaultValue = [],
 }: MultiSelectProps) {
   const [open, setOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<MultiSelectOption[]>([]);
+  const [selected, setSelected] = React.useState<MultiSelectOption[]>(
+    options.filter((o) => defaultValue.includes(o.value))
+  );
+
+  const handleSelect = (option: MultiSelectOption) => {
+    const isSelected = selected.some((s) => s.value === option.value);
+    let newSelected;
+    if (isSelected) {
+      newSelected = selected.filter((i) => i.value !== option.value);
+    } else {
+      newSelected = [...selected, option];
+    }
+    setSelected(newSelected);
+    onValueChange?.(newSelected.map((s) => s.value));
+  };
 
   const handleUnselect = (item: MultiSelectOption) => {
-    setSelected(selected.filter((i) => i.value !== item.value));
+    const newSelected = selected.filter((i) => i.value !== item.value);
+    setSelected(newSelected);
+    onValueChange?.(newSelected.map((s) => s.value));
   };
 
   return (
@@ -87,11 +107,7 @@ export function MultiSelect({
                   <CommandItem
                     key={option.value}
                     onSelect={() => {
-                      if (isSelected) {
-                        handleUnselect(option);
-                      } else {
-                        setSelected([...selected, option]);
-                      }
+                      handleSelect(option);
                       setOpen(true);
                     }}
                   >

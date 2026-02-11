@@ -17,6 +17,12 @@ type WorkItem = {
 
 const hqWorkItems: WorkItem[] = [
   {
+    id: "RM-235",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-235",
+    title: "[본사] 선생님관리(B2C) 주간학습알림 화면 개발",
+    internalUrl: "/b2c/weekly-notification",
+  },
+  {
     id: "RM-226",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-226",
     title: "[본사] 공동구매 운영 시스템",
@@ -85,7 +91,14 @@ export default function WorkListPage() {
                     {item.title}
                   </Link>
                 ) : (
-                  <span className="text-base text-muted-foreground truncate block">{item.title}</span>
+                  <a
+                    href={item.jiraUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base font-semibold hover:text-primary transition-colors block truncate"
+                  >
+                    {item.title}
+                  </a>
                 )}
               </div>
             </div>
