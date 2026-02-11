@@ -277,7 +277,7 @@ export default function WeeklyNotificationPage() {
     };
 
     return (
-        <div className="flex flex-col gap-6 p-6 max-w-[1600px] mx-auto animate-in fade-in duration-500">
+        <div className="p-6 md:px-10 space-y-8 animate-in fade-in duration-500 max-w-full mx-auto">
             <div className="flex justify-between items-center">
                 <h1 className="text-2xl font-bold tracking-tight">주간학습알림</h1>
             </div>
