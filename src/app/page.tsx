@@ -17,6 +17,12 @@ type WorkItem = {
 
 const hqWorkItems: WorkItem[] = [
   {
+    id: "RM-236",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-236",
+    title: "[본사/프론트] 리딩과학 문제은행/시험대비",
+    internalUrl: "/content/science-question-bank",
+  },
+  {
     id: "RM-235",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-235",
     title: "[본사] 선생님관리(B2C) 주간학습알림 화면 개발",
@@ -74,8 +80,8 @@ export default function WorkListPage() {
         <Separator />
         <div className="space-y-1 mt-2">
           {items.map((item) => (
-            <div key={item.id} className="grid grid-cols-12 gap-4 items-center p-2 rounded-md hover:bg-accent transition-colors">
-              <div className="col-span-3 font-mono text-sm text-primary/70">
+            <div key={item.id} className="grid grid-cols-12 gap-4 items-center p-2 rounded-md hover:bg-muted transition-colors">
+              <div className="col-span-3 font-mono text-sm text-muted-foreground">
                 <a
                   href={item.jiraUrl}
                   target="_blank"
@@ -87,7 +93,7 @@ export default function WorkListPage() {
               </div>
               <div className="col-span-9">
                 {item.internalUrl ? (
-                  <Link href={item.internalUrl} className="text-base font-semibold hover:text-primary transition-colors block truncate">
+                  <Link href={item.internalUrl} className="text-base font-semibold hover:underline transition-colors block truncate">
                     {item.title}
                   </Link>
                 ) : (
@@ -95,7 +101,7 @@ export default function WorkListPage() {
                     href={item.jiraUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-semibold hover:text-primary transition-colors block truncate"
+                    className="text-base font-semibold hover:underline transition-colors block truncate"
                   >
                     {item.title}
                   </a>
