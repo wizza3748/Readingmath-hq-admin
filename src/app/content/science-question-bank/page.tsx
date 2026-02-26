@@ -45,6 +45,7 @@ interface QuestionBankItem {
     mainUnit: string;
     subUnit: string;
     subUnitType: string;
+    difficulty: "기본" | "실력" | "심화";
     questions: QuestionStatus[];
 }
 
@@ -56,6 +57,7 @@ const initialData: QuestionBankItem[] = [
         mainUnit: "1단원 힘과 우리 생활",
         subUnit: "힘의 크기 비교와 도구를 이용해 무게 비교하기",
         subUnitType: "(1) 물체를 밀거나 당기기, 수평 잡기",
+        difficulty: "기본",
         questions: [
             { id: 1, status: "검수완료" },
             { id: 2, status: "검수완료" },
@@ -69,6 +71,7 @@ const initialData: QuestionBankItem[] = [
         mainUnit: "1단원 힘과 우리 생활",
         subUnit: "힘의 크기 비교와 도구를 이용해 무게 비교하기",
         subUnitType: "(2) 물체의 무게 측정과 도구의 이용",
+        difficulty: "실력",
         questions: [
             { id: 1, status: "검수완료" },
             { id: 2, status: "검수완료" },
@@ -82,6 +85,7 @@ const initialData: QuestionBankItem[] = [
         mainUnit: "2단원 동물의 생활",
         subUnit: "동물의 생김새와 생활 방식",
         subUnitType: "(1) 우리 주변의 동물",
+        difficulty: "심화",
         questions: [
             { id: 1, status: "검수완료" },
             { id: 2, status: "검수전" },
@@ -95,6 +99,7 @@ const initialData: QuestionBankItem[] = [
         mainUnit: "2단원 동물의 생활",
         subUnit: "동물의 생김새와 생활 방식",
         subUnitType: "(2) 동물의 사는 곳에 따른 특징",
+        difficulty: "기본",
         questions: [
             { id: 1, status: "검수완료" },
             { id: 2, status: "검수완료" },
@@ -108,6 +113,7 @@ const initialData: QuestionBankItem[] = [
         mainUnit: "1단원 - 물체와 물질",
         subUnit: "물질의 성질, 물체의 분류, 여러 가지 물질의 상태, 물질의 성질을 이용한 물체",
         subUnitType: "(1) 물체를 이루는 물질의 성질과 물체의 분류",
+        difficulty: "실력",
         questions: [
             { id: 1, status: "검수완료" },
             { id: 2, status: "검수완료" },
@@ -282,6 +288,7 @@ export default function ScienceQuestionBankPage() {
                             <TableHead className="w-[200px] font-bold">단원</TableHead>
                             <TableHead className="w-[250px] font-bold">중단원</TableHead>
                             <TableHead className="w-[300px] font-bold">중단원유형</TableHead>
+                            <TableHead className="w-[100px] font-bold">난이도</TableHead>
                             <TableHead className="w-[200px] font-bold">검수 상태</TableHead>
                             <TableHead className="w-[80px] font-bold text-center">편집</TableHead>
                             <TableHead className="w-[80px] font-bold text-center">삭제</TableHead>
@@ -299,6 +306,11 @@ export default function ScienceQuestionBankPage() {
                                     <Link href={`/content/science-question-bank/${item.id}`}>
                                         {item.subUnitType}
                                     </Link>
+                                </TableCell>
+                                <TableCell>
+                                    <Badge variant={item.difficulty === "기본" ? "secondary" : item.difficulty === "실력" ? "default" : "destructive"}>
+                                        {item.difficulty}
+                                    </Badge>
                                 </TableCell>
                                 <TableCell>
                                     <div className="flex flex-wrap gap-1">

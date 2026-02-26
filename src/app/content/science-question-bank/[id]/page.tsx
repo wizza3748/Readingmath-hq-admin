@@ -106,7 +106,8 @@ export default function SubUnitTypeDetailPage({ params }: { params: { id: string
         wanjaPage: 15,
         wanjaNumber: "2-10",
         isImportant: true,
-        createdAt: "2024-02-25 14:00:00"
+        createdAt: "2024-02-25 14:00:00",
+        difficulty: "실력" as "기본" | "실력" | "심화"
     });
 
     const [selectedQuestion, setSelectedQuestion] = React.useState<Question | null>(null);
@@ -205,6 +206,24 @@ export default function SubUnitTypeDetailPage({ params }: { params: { id: string
                                 </div>
 
                                 <div className="space-y-2">
+                                    <Label className="after:content-['*'] after:ml-0.5 after:text-red-500">난이도</Label>
+                                    <div className="flex items-center gap-4 bg-muted/30 px-4 py-2 rounded-lg border h-10">
+                                        <RadioGroup
+                                            value={formData.difficulty}
+                                            onValueChange={(val) => setFormData(prev => ({ ...prev, difficulty: val as any }))}
+                                            className="flex gap-4"
+                                        >
+                                            {["기본", "실력", "심화"].map((level) => (
+                                                <div key={level} className="flex items-center gap-1.5">
+                                                    <RadioGroupItem value={level} id={`subunit-diff-${level}`} />
+                                                    <Label htmlFor={`subunit-diff-${level}`} className="text-sm cursor-pointer">{level}</Label>
+                                                </div>
+                                            ))}
+                                        </RadioGroup>
+                                    </div>
+                                </div>
+
+                                <div className="space-y-2">
                                     <Label className="after:content-['*'] after:ml-0.5 after:text-red-500">교과서</Label>
                                     <Select value={formData.textbook} onValueChange={(val) => setFormData(prev => ({ ...prev, textbook: val }))}>
                                         <SelectTrigger>
@@ -219,47 +238,48 @@ export default function SubUnitTypeDetailPage({ params }: { params: { id: string
                                     </Select>
                                 </div>
 
-                                <div className="grid grid-cols-2 gap-6">
-                                    <div className="flex items-center space-x-2 pt-6">
-                                        <Switch
-                                            id="important"
-                                            checked={formData.isImportant}
-                                            onCheckedChange={(val) => setFormData(prev => ({ ...prev, isImportant: val }))}
-                                        />
-                                        <Label htmlFor="important" className="cursor-pointer">중요 유형</Label>
+                                {/* 교과서 하단 정보 필드 */}
+                                {(formData.textbook === "오투" || formData.textbook === "오투+완자") && (
+                                    <div className="col-span-full grid grid-cols-1 md:grid-cols-2 gap-6 p-4 bg-blue-50/50 rounded-lg border border-blue-100 mb-2">
+                                        <div className="space-y-2">
+                                            <Label className="after:content-['*'] after:ml-0.5 after:text-red-500">오투 쪽수</Label>
+                                            <Input type="number" value={formData.o2Page} onChange={(e) => setFormData(prev => ({ ...prev, o2Page: parseInt(e.target.value) }))} />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <Label className="after:content-['*'] after:ml-0.5 after:text-red-500">오투 문제번호</Label>
+                                            <Input value={formData.o2Number} onChange={(e) => setFormData(prev => ({ ...prev, o2Number: e.target.value }))} />
+                                        </div>
                                     </div>
-                                    <div className="space-y-1">
-                                        <Label className="text-xs text-muted-foreground">등록일시</Label>
-                                        <div className="text-sm border p-2 rounded-md bg-muted/30">{formData.createdAt}</div>
+                                )}
+
+                                {(formData.textbook === "완자" || formData.textbook === "오투+완자") && (
+                                    <div className="col-span-full grid grid-cols-1 md:grid-cols-2 gap-6 p-4 bg-green-50/50 rounded-lg border border-green-100 mb-2">
+                                        <div className="space-y-2">
+                                            <Label className="after:content-['*'] after:ml-0.5 after:text-red-500">완자 쪽수</Label>
+                                            <Input type="number" value={formData.wanjaPage} onChange={(e) => setFormData(prev => ({ ...prev, wanjaPage: parseInt(e.target.value) }))} />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <Label className="after:content-['*'] after:ml-0.5 after:text-red-500">완자 문제번호</Label>
+                                            <Input value={formData.wanjaNumber} onChange={(e) => setFormData(prev => ({ ...prev, wanjaNumber: e.target.value }))} />
+                                        </div>
                                     </div>
+                                )}
+
+                                <div className="flex items-center space-x-2 pt-6">
+                                    <Switch
+                                        id="important"
+                                        checked={formData.isImportant}
+                                        onCheckedChange={(val) => setFormData(prev => ({ ...prev, isImportant: val }))}
+                                    />
+                                    <Label htmlFor="important" className="cursor-pointer">중요 유형</Label>
+                                </div>
+
+                                <div className="space-y-1">
+                                    <Label className="text-xs text-muted-foreground">등록일시</Label>
+                                    <div className="text-sm border p-2 rounded-md bg-muted/30">{formData.createdAt}</div>
                                 </div>
                             </div>
 
-                            {(formData.textbook === "오투" || formData.textbook === "오투+완자") && (
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 bg-blue-50/50 rounded-lg border border-blue-100">
-                                    <div className="space-y-2">
-                                        <Label className="after:content-['*'] after:ml-0.5 after:text-red-500">오투 쪽수</Label>
-                                        <Input type="number" value={formData.o2Page} onChange={(e) => setFormData(prev => ({ ...prev, o2Page: parseInt(e.target.value) }))} />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <Label className="after:content-['*'] after:ml-0.5 after:text-red-500">오투 문제번호</Label>
-                                        <Input value={formData.o2Number} onChange={(e) => setFormData(prev => ({ ...prev, o2Number: e.target.value }))} />
-                                    </div>
-                                </div>
-                            )}
-
-                            {(formData.textbook === "완자" || formData.textbook === "오투+완자") && (
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 bg-green-50/50 rounded-lg border border-green-100">
-                                    <div className="space-y-2">
-                                        <Label className="after:content-['*'] after:ml-0.5 after:text-red-500">완자 쪽수</Label>
-                                        <Input type="number" value={formData.wanjaPage} onChange={(e) => setFormData(prev => ({ ...prev, wanjaPage: parseInt(e.target.value) }))} />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <Label className="after:content-['*'] after:ml-0.5 after:text-red-500">완자 문제번호</Label>
-                                        <Input value={formData.wanjaNumber} onChange={(e) => setFormData(prev => ({ ...prev, wanjaNumber: e.target.value }))} />
-                                    </div>
-                                </div>
-                            )}
 
                         </CardContent>
                     </Card>
@@ -347,7 +367,6 @@ export default function SubUnitTypeDetailPage({ params }: { params: { id: string
                                     <TableHead className="w-[120px] font-bold">문제 ID</TableHead>
                                     <TableHead className="font-bold">발문</TableHead>
                                     <TableHead className="w-[120px] font-bold">문제타입</TableHead>
-                                    <TableHead className="w-[100px] font-bold">난이도</TableHead>
                                     <TableHead className="w-[120px] font-bold">검수여부</TableHead>
                                     <TableHead className="w-[80px] font-bold text-center">수정</TableHead>
                                     <TableHead className="w-[80px] font-bold text-center">삭제</TableHead>
@@ -360,7 +379,6 @@ export default function SubUnitTypeDetailPage({ params }: { params: { id: string
                                         <TableCell className="font-mono text-xs">{q.questionId}</TableCell>
                                         <TableCell className="truncate max-w-[400px]">{q.stem}</TableCell>
                                         <TableCell><Badge variant="outline">{q.type}</Badge></TableCell>
-                                        <TableCell><Badge variant={difficultyVariant[q.difficulty]}>{q.difficulty}</Badge></TableCell>
                                         <TableCell>
                                             {q.isInspected ? (
                                                 <Badge className="bg-green-100 text-green-700 border-green-200">검수완료</Badge>
@@ -436,21 +454,6 @@ function QuestionDetailModal({ open, onOpenChange, question, onSave }: {
                 <div className="border-b bg-white p-4 flex flex-col gap-4">
                     <div className="flex items-center justify-between">
                         <DialogTitle className="text-xl font-bold">문제 상세</DialogTitle>
-                    </div>
-                    <div className="flex items-center gap-4 bg-muted/30 px-4 py-2 rounded-lg border w-fit">
-                        <span className="text-sm font-semibold">난이도 <span className="text-red-500">*</span></span>
-                        <RadioGroup
-                            value={difficulty}
-                            onValueChange={(val) => setDifficulty(val as Question["difficulty"])}
-                            className="flex gap-3"
-                        >
-                            {["기본", "실력", "심화", "최상위"].map((level) => (
-                                <div key={level} className="flex items-center gap-1.5">
-                                    <RadioGroupItem value={level} id={`diff-${level}`} />
-                                    <Label htmlFor={`diff-${level}`} className="text-sm cursor-pointer">{level}</Label>
-                                </div>
-                            ))}
-                        </RadioGroup>
                     </div>
                 </div>
 
