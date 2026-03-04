@@ -49,13 +49,13 @@ export default function TrainingCompletePage() {
                     자세히 보기
                 </Button>
 
-                {/* 문제 더 풀기 버튼 (본 작업 대상) */}
+                {/* 유형도전 버튼 (본 작업 대상) */}
                 <Button
                     variant="outline"
                     onClick={handleSolveMore}
                     className="bg-white border-2 border-[#2b44aa] text-[#2b44aa] hover:bg-blue-50 px-12 h-14 rounded-2xl font-black text-lg transition-all active:scale-95 shadow-md"
                 >
-                    문제 더 풀기
+                    유형도전
                 </Button>
             </div>
         </div>

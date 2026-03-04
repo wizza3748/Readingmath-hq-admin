@@ -143,12 +143,12 @@ export default function TrainingResultPage() {
                         오답노트 확인하기
                     </Button>
 
-                    {/* 문제 더 풀기 버튼 (본 작업 대상) */}
+                    {/* 유형도전 버튼 (본 작업 대상) */}
                     <Button
                         onClick={handleSolveMore}
                         className="ml-auto bg-white border-2 border-[#2b44aa] text-[#2b44aa] hover:bg-blue-50 px-8 h-12 rounded-lg font-black transition-all active:scale-95 shadow-sm"
                     >
-                        문제 더 풀기
+                        유형도전
                     </Button>
                 </div>
             </main>
