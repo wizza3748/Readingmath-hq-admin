@@ -242,7 +242,7 @@ export default function ScienceQuestionBankPage() {
                 </div>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-between gap-4">
                 <Dialog>
                     <DialogTrigger asChild>
                         <Button variant="default" className="bg-indigo-600 hover:bg-indigo-700">
@@ -276,6 +276,8 @@ export default function ScienceQuestionBankPage() {
                         </DialogFooter>
                     </DialogContent>
                 </Dialog>
+
+
             </div>
 
             <div className="rounded-md border bg-white overflow-x-auto">

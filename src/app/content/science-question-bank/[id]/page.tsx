@@ -100,7 +100,7 @@ export default function SubUnitTypeDetailPage({ params }: { params: { id: string
     const [formData, setFormData] = React.useState({
         attribute: "화학영역",
         name: "(1) 물체를 이루는 물질의 성질과 물체의 분류",
-        textbook: "오투+완자",
+        textbook: "기타",
         o2Page: 12,
         o2Number: "1-5",
         wanjaPage: 15,
@@ -230,10 +230,10 @@ export default function SubUnitTypeDetailPage({ params }: { params: { id: string
                                             <SelectValue placeholder="교과서를 선택해주세요" />
                                         </SelectTrigger>
                                         <SelectContent>
-                                            <SelectItem value="없음">없음</SelectItem>
                                             <SelectItem value="오투">오투</SelectItem>
                                             <SelectItem value="완자">완자</SelectItem>
                                             <SelectItem value="오투+완자">오투+완자</SelectItem>
+                                            <SelectItem value="기타">기타(기본값)</SelectItem>
                                         </SelectContent>
                                     </Select>
                                 </div>

@@ -1,11 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
-import { AppSidebar } from "@/components/app/sidebar";
-import { Header } from "@/components/app/header";
-import { SidebarInset } from "@/components/ui/sidebar";
-import { SidebarLayout } from "@/components/app/sidebar-layout";
-import { Toaster } from "@/components/ui/toaster";
-import { FirebaseClientProvider } from "@/firebase/client-provider";
+import ConditionalLayout from "@/components/app/conditional-layout";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -26,19 +20,9 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased">
-        <FirebaseClientProvider>
-          <SidebarLayout>
-            <AppSidebar />
-            <SidebarInset>
-              <Header />
-              <main>{children}</main>
-            </SidebarInset>
-          </SidebarLayout>
-          <Toaster />
-        </FirebaseClientProvider>
-        <Script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" strategy="afterInteractive" />
-      </body>
+      <ConditionalLayout>
+        {children}
+      </ConditionalLayout>
     </html>
   );
 }

@@ -69,6 +69,27 @@ const agencyWorkItems: WorkItem[] = [
   },
 ];
 
+const frontWorkItems: WorkItem[] = [
+  {
+    id: "RM-236",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-236",
+    title: "[프론트] 리딩과학 시험대비",
+    internalUrl: "/content/science-home",
+  },
+  {
+    id: "RM-236",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-236",
+    title: "[프론트] 리딩과학 시험대비 - 훈련 완료 화면",
+    internalUrl: "/content/exam-prep/mock/training-complete",
+  },
+  {
+    id: "RM-236",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-236",
+    title: "[프론트] 리딩과학 시험대비 - 훈련 결과 화면",
+    internalUrl: "/content/exam-prep/mock/training-result",
+  },
+];
+
 export default function WorkListPage() {
   const renderWorkList = (items: WorkItem[]) => (
     <Card className="h-full">
@@ -80,7 +101,7 @@ export default function WorkListPage() {
         <Separator />
         <div className="space-y-1 mt-2">
           {items.map((item) => (
-            <div key={item.id} className="grid grid-cols-12 gap-4 items-center p-2 rounded-md hover:bg-muted transition-colors">
+            <div key={`${item.id}-${item.internalUrl}`} className="grid grid-cols-12 gap-4 items-center p-2 rounded-md hover:bg-muted transition-colors">
               <div className="col-span-3 font-mono text-sm text-muted-foreground">
                 <a
                   href={item.jiraUrl}
@@ -116,7 +137,7 @@ export default function WorkListPage() {
 
   return (
     <div className="p-6">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="flex flex-col gap-6">
           <h2 className="text-xl font-bold font-headline tracking-tight border-l-4 border-primary pl-3">
             본사관리자
@@ -129,6 +150,13 @@ export default function WorkListPage() {
             기관관리자
           </h2>
           {renderWorkList(agencyWorkItems)}
+        </div>
+
+        <div className="flex flex-col gap-6">
+          <h2 className="text-xl font-bold font-headline tracking-tight border-l-4 border-indigo-500 pl-3">
+            프론트
+          </h2>
+          {renderWorkList(frontWorkItems)}
         </div>
       </div>
     </div>

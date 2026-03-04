@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+// Refresh config to pick up directory moves
 
 export default {
   darkMode: ['class'],
