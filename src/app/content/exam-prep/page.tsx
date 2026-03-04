@@ -11,7 +11,8 @@ import {
     Check,
     AlertCircle,
     RotateCcw,
-    Play
+    Play,
+    Star
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -994,6 +995,8 @@ function ExamPrepPage() {
 function TypeChip({ type, isSelected, onClick }: { type: TypeData; isSelected: boolean; onClick: () => void }) {
     const theme = ACHIEVEMENT_THEME[type.achievementColor];
 
+    const selectionColor = theme.key === "white" ? "#94A3B8" : theme.colorHex;
+
     return (
         <div
             onClick={onClick}
@@ -1005,7 +1008,7 @@ function TypeChip({ type, isSelected, onClick }: { type: TypeData; isSelected: b
                 isSelected ? "ring-offset-2 scale-[1.02] shadow-sm z-10" : "hover:brightness-95"
             )}
             style={isSelected ? {
-                boxShadow: `0 0 0 2px white, 0 0 0 4px ${theme.colorHex}`,
+                boxShadow: `0 0 0 2px white, 0 0 0 4px ${selectionColor}`,
                 zIndex: 20
             } : {}}
         >
@@ -1013,11 +1016,21 @@ function TypeChip({ type, isSelected, onClick }: { type: TypeData; isSelected: b
                 {type.no}
             </span>
 
+            {/* 중요 유형 표시: 별 아이콘 단독 노출 */}
+            {type.isImportant && (
+                <Star
+                    className={cn(
+                        "absolute top-1 left-1 z-10 w-2.5 h-2.5 drop-shadow-sm",
+                        theme.key === "white" ? "text-slate-500 fill-slate-500" : "text-white fill-white"
+                    )}
+                />
+            )}
+
             {/* 선택 상태: 우측 상단 체크 칩 */}
             {isSelected && (
                 <div
-                    className="absolute -top-2 -right-2 w-5 h-5 rounded-full flex items-center justify-center text-white shadow-sm ring-2 ring-white"
-                    style={{ backgroundColor: theme.colorHex }}
+                    className="absolute -top-2 -right-2 w-5 h-5 rounded-full flex items-center justify-center text-white shadow-sm ring-2 ring-white z-20"
+                    style={{ backgroundColor: selectionColor }}
                 >
                     <Check className="w-3.5 h-3.5 stroke-[4]" />
                 </div>
