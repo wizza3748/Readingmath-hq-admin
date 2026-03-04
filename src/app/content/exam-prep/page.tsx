@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import * as XLSX from "xlsx";
 import {
@@ -178,7 +178,7 @@ const applyMockColors = (types: TypeData[], bucket: BucketType, isUnit4: boolean
     }
 };
 
-export default function ExamPrepPage() {
+function ExamPrepPage() {
     // --- States ---
     const searchParams = useSearchParams();
     const [curriculum, setCurriculum] = useState<BigUnit[]>([]);
@@ -1023,5 +1023,17 @@ function TypeChip({ type, isSelected, onClick }: { type: TypeData; isSelected: b
                 </div>
             )}
         </div>
+    );
+}
+
+export default function SuspensedExamPrepPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+                <div className="text-gray-400 font-medium">데이터 로딩 중...</div>
+            </div>
+        }>
+            <ExamPrepPage />
+        </Suspense>
     );
 }

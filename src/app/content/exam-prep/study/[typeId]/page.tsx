@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, Suspense } from "react";
 import { useRouter, useParams, useSearchParams } from "next/navigation";
 import {
     ChevronLeft,
@@ -68,7 +68,7 @@ const FIXED_QUESTIONS = [
 ];
 
 
-export default function StudyPage() {
+function StudyPage() {
     const router = useRouter();
     const params = useParams();
     const searchParams = useSearchParams();
@@ -675,5 +675,17 @@ export default function StudyPage() {
             </div>
 
         </div>
+    );
+}
+
+export default function SuspensedStudyPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-white flex items-center justify-center">
+                <div className="text-gray-400 font-medium">유형 문제 로딩 중...</div>
+            </div>
+        }>
+            <StudyPage />
+        </Suspense>
     );
 }
