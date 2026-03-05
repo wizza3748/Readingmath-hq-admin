@@ -53,7 +53,7 @@ export default function TrainingCompletePage() {
                 <Button
                     variant="outline"
                     onClick={handleSolveMore}
-                    className="bg-white border-2 border-[#2b44aa] text-[#2b44aa] hover:bg-blue-50 px-12 h-14 rounded-2xl font-black text-lg transition-all active:scale-95 shadow-md"
+                    className="bg-white border-2 border-[#2b44aa] text-[#2b44aa] hover:bg-blue-50 hover:text-[#2b44aa] px-12 h-14 rounded-2xl font-black text-lg transition-all active:scale-95 shadow-md"
                 >
                     유형도전
                 </Button>
