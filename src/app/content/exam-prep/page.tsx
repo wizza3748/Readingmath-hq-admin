@@ -179,6 +179,256 @@ const applyMockColors = (types: TypeData[], bucket: BucketType, isUnit4: boolean
     }
 };
 
+// ─────────────────────────────────────────────────────────────────────────────
+// 신규 시트 기반 정적 데이터 (빨간색 글씨 = 중요 유형)
+// 키 형식: "시트명|중단원명|bucket|유형번호"
+// ─────────────────────────────────────────────────────────────────────────────
+const IMPORTANT_TYPE_KEYS = new Set<string>([
+    // ── 1단원-물질의 특성 ──────────────────────────────────────────────────────
+    // 중단원 1. 순물질과 혼합물, 녹는점과 어는점, 끓는점
+    "1단원-물질의 특성|1. 순물질과 혼합물, 녹는점과 어는점, 끓는점|basic|1",
+    "1단원-물질의 특성|1. 순물질과 혼합물, 녹는점과 어는점, 끓는점|basic|2",
+    "1단원-물질의 특성|1. 순물질과 혼합물, 녹는점과 어는점, 끓는점|basic|3",
+    "1단원-물질의 특성|1. 순물질과 혼합물, 녹는점과 어는점, 끓는점|basic|6",
+    "1단원-물질의 특성|1. 순물질과 혼합물, 녹는점과 어는점, 끓는점|skill|3",
+    "1단원-물질의 특성|1. 순물질과 혼합물, 녹는점과 어는점, 끓는점|skill|4",
+    "1단원-물질의 특성|1. 순물질과 혼합물, 녹는점과 어는점, 끓는점|skill|5",
+    "1단원-물질의 특성|1. 순물질과 혼합물, 녹는점과 어는점, 끓는점|skill|6",
+    "1단원-물질의 특성|1. 순물질과 혼합물, 녹는점과 어는점, 끓는점|skill|10",
+    "1단원-물질의 특성|1. 순물질과 혼합물, 녹는점과 어는점, 끓는점|skill|13",
+    "1단원-물질의 특성|1. 순물질과 혼합물, 녹는점과 어는점, 끓는점|skill|14",
+    "1단원-물질의 특성|1. 순물질과 혼합물, 녹는점과 어는점, 끓는점|skill|15",
+    "1단원-물질의 특성|1. 순물질과 혼합물, 녹는점과 어는점, 끓는점|advanced|2",
+    "1단원-물질의 특성|1. 순물질과 혼합물, 녹는점과 어는점, 끓는점|advanced|4",
+    "1단원-물질의 특성|1. 순물질과 혼합물, 녹는점과 어는점, 끓는점|advanced|6",
+    // 중단원 2. 밀도와 용해도
+    "1단원-물질의 특성|2. 밀도와 용해도|basic|2",
+    "1단원-물질의 특성|2. 밀도와 용해도|basic|3",
+    "1단원-물질의 특성|2. 밀도와 용해도|basic|9",
+    "1단원-물질의 특성|2. 밀도와 용해도|skill|4",
+    "1단원-물질의 특성|2. 밀도와 용해도|skill|5",
+    "1단원-물질의 특성|2. 밀도와 용해도|skill|6",
+    "1단원-물질의 특성|2. 밀도와 용해도|skill|10",
+    "1단원-물질의 특성|2. 밀도와 용해도|skill|14",
+    "1단원-물질의 특성|2. 밀도와 용해도|advanced|1",
+    "1단원-물질의 특성|2. 밀도와 용해도|advanced|2",
+    "1단원-물질의 특성|2. 밀도와 용해도|advanced|5",
+    "1단원-물질의 특성|2. 밀도와 용해도|advanced|6",
+    // 중단원 3. 혼합물의 분리
+    "1단원-물질의 특성|3. 혼합물의 분리|basic|1",
+    "1단원-물질의 특성|3. 혼합물의 분리|basic|2",
+    "1단원-물질의 특성|3. 혼합물의 분리|basic|3",
+    "1단원-물질의 특성|3. 혼합물의 분리|basic|4",
+    "1단원-물질의 특성|3. 혼합물의 분리|basic|5",
+    "1단원-물질의 특성|3. 혼합물의 분리|skill|5",
+    "1단원-물질의 특성|3. 혼합물의 분리|skill|9",
+    "1단원-물질의 특성|3. 혼합물의 분리|skill|10",
+    "1단원-물질의 특성|3. 혼합물의 분리|skill|11",
+    "1단원-물질의 특성|3. 혼합물의 분리|skill|12",
+    "1단원-물질의 특성|3. 혼합물의 분리|skill|14",
+    "1단원-물질의 특성|3. 혼합물의 분리|advanced|1",
+    "1단원-물질의 특성|3. 혼합물의 분리|advanced|4",
+    "1단원-물질의 특성|3. 혼합물의 분리|advanced|5",
+    "1단원-물질의 특성|3. 혼합물의 분리|advanced|6",
+
+    // ── 2단원-지권의 변화 ──────────────────────────────────────────────────────
+    // 중단원 1. 지구계와 지구 내부 구조
+    "2단원-지권의 변화|1. 지구계와 지구 내부 구조|basic|1",
+    "2단원-지권의 변화|1. 지구계와 지구 내부 구조|basic|6",
+    "2단원-지권의 변화|1. 지구계와 지구 내부 구조|basic|7",
+    "2단원-지권의 변화|1. 지구계와 지구 내부 구조|basic|8",
+    "2단원-지권의 변화|1. 지구계와 지구 내부 구조|basic|9",
+    "2단원-지권의 변화|1. 지구계와 지구 내부 구조|skill|1",
+    "2단원-지권의 변화|1. 지구계와 지구 내부 구조|skill|5",
+    "2단원-지권의 변화|1. 지구계와 지구 내부 구조|skill|9",
+    "2단원-지권의 변화|1. 지구계와 지구 내부 구조|skill|10",
+    "2단원-지권의 변화|1. 지구계와 지구 내부 구조|skill|11",
+    "2단원-지권의 변화|1. 지구계와 지구 내부 구조|advanced|1",
+    "2단원-지권의 변화|1. 지구계와 지구 내부 구조|advanced|4",
+    // 중단원 2. 암석과 암석의 순환
+    "2단원-지권의 변화|2. 암석과 암석의 순환|basic|1",
+    "2단원-지권의 변화|2. 암석과 암석의 순환|basic|2",
+    "2단원-지권의 변화|2. 암석과 암석의 순환|basic|3",
+    "2단원-지권의 변화|2. 암석과 암석의 순환|basic|7",
+    "2단원-지권의 변화|2. 암석과 암석의 순환|basic|8",
+    "2단원-지권의 변화|2. 암석과 암석의 순환|basic|9",
+    "2단원-지권의 변화|2. 암석과 암석의 순환|skill|1",
+    "2단원-지권의 변화|2. 암석과 암석의 순환|skill|8",
+    "2단원-지권의 변화|2. 암석과 암석의 순환|skill|9",
+    "2단원-지권의 변화|2. 암석과 암석의 순환|advanced|1",
+    "2단원-지권의 변화|2. 암석과 암석의 순환|advanced|4",
+    // 중단원 3. 광물과 토양
+    "2단원-지권의 변화|3. 광물과 토양|basic|1",
+    "2단원-지권의 변화|3. 광물과 토양|basic|7",
+    "2단원-지권의 변화|3. 광물과 토양|basic|8",
+    "2단원-지권의 변화|3. 광물과 토양|basic|9",
+    "2단원-지권의 변화|3. 광물과 토양|skill|4",
+    "2단원-지권의 변화|3. 광물과 토양|skill|8",
+    "2단원-지권의 변화|3. 광물과 토양|skill|10",
+    "2단원-지권의 변화|3. 광물과 토양|skill|11",
+    "2단원-지권의 변화|3. 광물과 토양|skill|12",
+    "2단원-지권의 변화|3. 광물과 토양|advanced|1",
+    "2단원-지권의 변화|3. 광물과 토양|advanced|2",
+    "2단원-지권의 변화|3. 광물과 토양|advanced|3",
+    "2단원-지권의 변화|3. 광물과 토양|advanced|4",
+    // 중단원 4. 지권의 운동
+    "2단원-지권의 변화|4. 지권의 운동|basic|1",
+    "2단원-지권의 변화|4. 지권의 운동|basic|4",
+    "2단원-지권의 변화|4. 지권의 운동|basic|5",
+    "2단원-지권의 변화|4. 지권의 운동|basic|6",
+    "2단원-지권의 변화|4. 지권의 운동|basic|7",
+    "2단원-지권의 변화|4. 지권의 운동|basic|8",
+    "2단원-지권의 변화|4. 지권의 운동|basic|9",
+    "2단원-지권의 변화|4. 지권의 운동|skill|1",
+    "2단원-지권의 변화|4. 지권의 운동|skill|5",
+    "2단원-지권의 변화|4. 지권의 운동|skill|7",
+    "2단원-지권의 변화|4. 지권의 운동|skill|10",
+    "2단원-지권의 변화|4. 지권의 운동|skill|11",
+    "2단원-지권의 변화|4. 지권의 운동|skill|12",
+    "2단원-지권의 변화|4. 지권의 운동|skill|13",
+    "2단원-지권의 변화|4. 지권의 운동|skill|14",
+    "2단원-지권의 변화|4. 지권의 운동|advanced|1",
+    "2단원-지권의 변화|4. 지권의 운동|advanced|4",
+    "2단원-지권의 변화|4. 지권의 운동|advanced|5",
+    "2단원-지권의 변화|4. 지권의 운동|advanced|6",
+
+    // ── 3단원-빛과 파동 ────────────────────────────────────────────────────────
+    // 중단원 1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상
+    "3단원-빛과 파동|1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상|basic|1",
+    "3단원-빛과 파동|1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상|basic|2",
+    "3단원-빛과 파동|1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상|basic|3",
+    "3단원-빛과 파동|1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상|basic|4",
+    "3단원-빛과 파동|1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상|basic|7",
+    "3단원-빛과 파동|1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상|basic|8",
+    "3단원-빛과 파동|1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상|basic|9",
+    "3단원-빛과 파동|1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상|skill|1",
+    "3단원-빛과 파동|1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상|skill|3",
+    "3단원-빛과 파동|1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상|skill|6",
+    "3단원-빛과 파동|1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상|skill|7",
+    "3단원-빛과 파동|1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상|skill|13",
+    "3단원-빛과 파동|1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상|skill|14",
+    "3단원-빛과 파동|1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상|advanced|1",
+    "3단원-빛과 파동|1. 물체를 보는 과정과 반사와 굴절, 평면 거울의 상|advanced|3",
+    // 중단원 2. 거울과 렌즈에 의한 상, 물체의 색과 빛의 합성
+    "3단원-빛과 파동|2. 거울과 렌즈에 의한 상, 물체의 색과 빛의 합성|basic|1",
+    "3단원-빛과 파동|2. 거울과 렌즈에 의한 상, 물체의 색과 빛의 합성|basic|4",
+    "3단원-빛과 파동|2. 거울과 렌즈에 의한 상, 물체의 색과 빛의 합성|basic|7",
+    "3단원-빛과 파동|2. 거울과 렌즈에 의한 상, 물체의 색과 빛의 합성|basic|9",
+    "3단원-빛과 파동|2. 거울과 렌즈에 의한 상, 물체의 색과 빛의 합성|skill|2",
+    "3단원-빛과 파동|2. 거울과 렌즈에 의한 상, 물체의 색과 빛의 합성|skill|3",
+    "3단원-빛과 파동|2. 거울과 렌즈에 의한 상, 물체의 색과 빛의 합성|skill|5",
+    "3단원-빛과 파동|2. 거울과 렌즈에 의한 상, 물체의 색과 빛의 합성|skill|10",
+    "3단원-빛과 파동|2. 거울과 렌즈에 의한 상, 물체의 색과 빛의 합성|skill|15",
+    "3단원-빛과 파동|2. 거울과 렌즈에 의한 상, 물체의 색과 빛의 합성|advanced|2",
+    "3단원-빛과 파동|2. 거울과 렌즈에 의한 상, 물체의 색과 빛의 합성|advanced|4",
+    // 중단원 3. 파동과 소리
+    "3단원-빛과 파동|3. 파동과 소리|basic|1",
+    "3단원-빛과 파동|3. 파동과 소리|basic|2",
+    "3단원-빛과 파동|3. 파동과 소리|basic|3",
+    "3단원-빛과 파동|3. 파동과 소리|basic|4",
+    "3단원-빛과 파동|3. 파동과 소리|basic|5",
+    "3단원-빛과 파동|3. 파동과 소리|basic|6",
+    "3단원-빛과 파동|3. 파동과 소리|basic|7",
+    "3단원-빛과 파동|3. 파동과 소리|basic|8",
+    "3단원-빛과 파동|3. 파동과 소리|basic|9",
+    "3단원-빛과 파동|3. 파동과 소리|skill|1",
+    "3단원-빛과 파동|3. 파동과 소리|skill|2",
+    "3단원-빛과 파동|3. 파동과 소리|skill|3",
+    "3단원-빛과 파동|3. 파동과 소리|skill|4",
+    "3단원-빛과 파동|3. 파동과 소리|skill|7",
+    "3단원-빛과 파동|3. 파동과 소리|skill|8",
+    "3단원-빛과 파동|3. 파동과 소리|skill|11",
+    "3단원-빛과 파동|3. 파동과 소리|skill|12",
+    "3단원-빛과 파동|3. 파동과 소리|skill|13",
+    "3단원-빛과 파동|3. 파동과 소리|advanced|2",
+    "3단원-빛과 파동|3. 파동과 소리|advanced|3",
+    "3단원-빛과 파동|3. 파동과 소리|advanced|5",
+    "3단원-빛과 파동|3. 파동과 소리|advanced|6",
+
+    // ── 4단원-물질의 구성 ──────────────────────────────────────────────────────
+    // 중단원 1. 원소
+    "4단원-물질의 구성|1. 원소|basic|4",
+    "4단원-물질의 구성|1. 원소|basic|5",
+    "4단원-물질의 구성|1. 원소|basic|6",
+    "4단원-물질의 구성|1. 원소|basic|7",
+    "4단원-물질의 구성|1. 원소|basic|8",
+    "4단원-물질의 구성|1. 원소|basic|9",
+    "4단원-물질의 구성|1. 원소|skill|2",
+    "4단원-물질의 구성|1. 원소|skill|4",
+    "4단원-물질의 구성|1. 원소|skill|6",
+    "4단원-물질의 구성|1. 원소|skill|9",
+    "4단원-물질의 구성|1. 원소|skill|11",
+    "4단원-물질의 구성|1. 원소|skill|12",
+    "4단원-물질의 구성|1. 원소|skill|13",
+    "4단원-물질의 구성|1. 원소|skill|14",
+    "4단원-물질의 구성|1. 원소|skill|15",
+    "4단원-물질의 구성|1. 원소|advanced|1",
+    "4단원-물질의 구성|1. 원소|advanced|3",
+    "4단원-물질의 구성|1. 원소|advanced|4",
+    "4단원-물질의 구성|1. 원소|advanced|5",
+    // 중단원 2. 원자와 분자
+    "4단원-물질의 구성|2. 원자와 분자|basic|1",
+    "4단원-물질의 구성|2. 원자와 분자|basic|6",
+    "4단원-물질의 구성|2. 원자와 분자|basic|7",
+    "4단원-물질의 구성|2. 원자와 분자|basic|8",
+    "4단원-물질의 구성|2. 원자와 분자|basic|9",
+    "4단원-물질의 구성|2. 원자와 분자|skill|2",
+    "4단원-물질의 구성|2. 원자와 분자|skill|4",
+    "4단원-물질의 구성|2. 원자와 분자|skill|6",
+    "4단원-물질의 구성|2. 원자와 분자|skill|11",
+    "4단원-물질의 구성|2. 원자와 분자|skill|12",
+    "4단원-물질의 구성|2. 원자와 분자|skill|13",
+    "4단원-물질의 구성|2. 원자와 분자|skill|14",
+    "4단원-물질의 구성|2. 원자와 분자|advanced|3",
+    "4단원-물질의 구성|2. 원자와 분자|advanced|4",
+    "4단원-물질의 구성|2. 원자와 분자|advanced|5",
+    "4단원-물질의 구성|2. 원자와 분자|advanced|6",
+    // 중단원 3. 이온
+    "4단원-물질의 구성|3. 이온|basic|2",
+    "4단원-물질의 구성|3. 이온|basic|3",
+    "4단원-물질의 구성|3. 이온|basic|4",
+    "4단원-물질의 구성|3. 이온|basic|5",
+    "4단원-물질의 구성|3. 이온|basic|6",
+    "4단원-물질의 구성|3. 이온|basic|7",
+    "4단원-물질의 구성|3. 이온|basic|8",
+    "4단원-물질의 구성|3. 이온|basic|9",
+    "4단원-물질의 구성|3. 이온|skill|6",
+    "4단원-물질의 구성|3. 이온|skill|7",
+    "4단원-물질의 구성|3. 이온|skill|8",
+    "4단원-물질의 구성|3. 이온|skill|9",
+    "4단원-물질의 구성|3. 이온|skill|10",
+    "4단원-물질의 구성|3. 이온|skill|11",
+    "4단원-물질의 구성|3. 이온|skill|12",
+    "4단원-물질의 구성|3. 이온|skill|13",
+    "4단원-물질의 구성|3. 이온|skill|14",
+    "4단원-물질의 구성|3. 이온|skill|15",
+    "4단원-물질의 구성|3. 이온|advanced|4",
+    "4단원-물질의 구성|3. 이온|advanced|5",
+    "4단원-물질의 구성|3. 이온|advanced|6",
+]);
+
+/**
+ * 유형번호 문자열에서 교과서 태그를 추출합니다.
+ * 예: "3(오+완)" → "오투+완자", "1(오)" → "오투", "7(완)" → "완자", "5" → "기타"
+ */
+function parseTextbookTag(rawNo: string): string {
+    const match = rawNo.match(/\(([^)]+)\)/);
+    if (!match) return "기타";
+    const bracket = match[1].trim();
+    if (bracket === "오+완") return "오투+완자";
+    if (bracket === "오") return "오투";
+    if (bracket === "완") return "완자";
+    return "기타";
+}
+
+/**
+ * 유형번호 문자열에서 순수 번호(숫자)만 추출합니다.
+ * 예: "3(오+완)" → "3", "10(오)" → "10"
+ */
+function parseRawNo(rawNo: string): string {
+    return rawNo.replace(/\s*\([^)]*\)\s*/g, "").trim();
+}
+
 function ExamPrepPage() {
     // --- States ---
     const searchParams = useSearchParams();
@@ -223,30 +473,38 @@ function ExamPrepPage() {
                     const sheet = workbook.Sheets[sheetName];
                     const data = XLSX.utils.sheet_to_json(sheet, { header: 1 }) as any[][];
 
-                    // 첫 번째 열(학년), 두 번째 열(대단원명) 등 파악 (실제 시트에 맞게 매핑)
-                    // 보통 1행은 헤더("학년", "대단원", "중단원", "난이도", "중단원 유형")
+                    // 신규 시트: 1행 A열에 대단원명이 들어있음 (예: "1단원-물질의 특성")
                     let bigUnitName = sheetName;
-
-                    if (data.length > 1 && data[1][1]) {
-                        bigUnitName = data[1][1].toString(); // 2번째 행 2번째 열에 대단원명이 들어있음
+                    if (data.length > 0 && data[0][0]) {
+                        bigUnitName = data[0][0].toString().trim();
                     }
 
                     const midUnitsMap = new Map<string, TypeData[]>();
                     let currentMidUnit = "";
 
-                    for (let i = 1; i < data.length; i++) {
+                    for (let i = 0; i < data.length; i++) {
                         const row = data[i];
                         if (!row || row.length === 0) continue;
 
                         const col0 = row[0]?.toString().trim();
+
                         // 중단원 식별: "중단원 1.", "중단원 2." 등
                         if (col0 && col0.startsWith("중단원")) {
                             currentMidUnit = col0.replace(/^중단원\s*/, "");
                             if (!midUnitsMap.has(currentMidUnit)) {
                                 midUnitsMap.set(currentMidUnit, []);
                             }
-                            // 다음 행이 "유형 번호" 등의 헤더일 것이므로 한 번 건너뜀
-                            if (i + 1 < data.length && data[i + 1][0] === "유형 번호") {
+                            // 헤더행 스킵: 다음 행에 "유형 번호" 또는 "기본" 등의 헤더가 있으면 건너뜀
+                            if (
+                                i + 1 < data.length &&
+                                data[i + 1] &&
+                                (
+                                    data[i + 1][0]?.toString().trim() === "유형 번호" ||
+                                    data[i + 1][0]?.toString().trim() === "기본" ||
+                                    data[i + 1][1]?.toString().trim() === "기본 유형" ||
+                                    data[i + 1][1]?.toString().trim() === "유형명"
+                                )
+                            ) {
                                 i++; // 헤더 스킵
                             }
                             continue;
@@ -254,30 +512,34 @@ function ExamPrepPage() {
 
                         if (!currentMidUnit) continue; // 중단원 파악 전의 행 스킵
 
-                        // row: [개념번호, 개념, 기본번호, 기본, 심화번호, 심화] -> 배열 길이에 주의
-                        // 개념
-                        const basicNo = row[0]?.toString().trim();
+                        // 신규 시트 컬럼 구조:
+                        // A(0): 기본 유형번호, B(1): 기본 유형명
+                        // C(2): 실력 유형번호, D(3): 실력 유형명
+                        // E(4): 심화 유형번호, F(5): 심화 유형명
+
+                        // 기본
+                        const basicRaw = row[0]?.toString().trim();
                         const basicName = row[1]?.toString().trim();
-                        if (basicNo && basicName) {
-                            midUnitsMap.get(currentMidUnit)!.push(createType(sheetName, currentMidUnit, "basic", basicNo, basicName));
+                        if (basicRaw && basicName && !/^(유형\s*번호|기본|유형명)$/.test(basicRaw)) {
+                            midUnitsMap.get(currentMidUnit)!.push(createType(sheetName, currentMidUnit, "basic", basicRaw, basicName));
                         }
 
-                        // 기본 (인덱스 수정 필요할 수 있음: 엑셀 보면 2, 3이 실력)
-                        const skillNo = row[2]?.toString().trim();
+                        // 실력
+                        const skillRaw = row[2]?.toString().trim();
                         const skillName = row[3]?.toString().trim();
-                        if (skillNo && skillName) {
-                            midUnitsMap.get(currentMidUnit)!.push(createType(sheetName, currentMidUnit, "skill", skillNo, skillName));
+                        if (skillRaw && skillName && !/^(유형\s*번호|실력|유형명)$/.test(skillRaw)) {
+                            midUnitsMap.get(currentMidUnit)!.push(createType(sheetName, currentMidUnit, "skill", skillRaw, skillName));
                         }
 
                         // 심화
-                        const advNo = row[4]?.toString().trim();
+                        const advRaw = row[4]?.toString().trim();
                         const advName = row[5]?.toString().trim();
-                        if (advNo && advName) {
-                            midUnitsMap.get(currentMidUnit)!.push(createType(sheetName, currentMidUnit, "advanced", advNo, advName));
+                        if (advRaw && advName && !/^(유형\s*번호|심화|유형명)$/.test(advRaw)) {
+                            midUnitsMap.get(currentMidUnit)!.push(createType(sheetName, currentMidUnit, "advanced", advRaw, advName));
                         }
                     }
 
-                    const isUnit4 = sheetName.includes("4.") || sheetName.includes("4단원");
+                    const isUnit4 = sheetName.includes("4단원") || sheetName.includes("4.");
 
                     midUnitsMap.forEach((types) => {
                         applyMockColors(types.filter(t => t.bucket === "basic"), "basic", isUnit4);
@@ -358,21 +620,20 @@ function ExamPrepPage() {
         loadExcelData();
     }, []);
 
-    function createType(sheet: string, midName: string, bucket: BucketType, no: string, name: string): TypeData {
+    function createType(sheet: string, midName: string, bucket: BucketType, rawNo: string, name: string): TypeData {
         const bucketLabelMap = { basic: "기본", skill: "실력", advanced: "심화" };
 
-        const idNum = parseInt(no) || 0;
-        const midIdx = midName.length;
+        // 신규 시트 기반: 유형번호 파싱
+        const no = parseRawNo(rawNo);      // 표시용 순수 번호 (예: "3(오+완)" → "3")
 
-        // 2. 교과서 분포 (전체/오투/완자/오투+완자/기타)
-        const textbooks = ["전체", "오투", "완자", "오투+완자", "기타"];
-        const textbookTag = textbooks[(idNum * 2 + midIdx) % 5];
+        // 1. 교과서 태그: 유형번호 괄호 표기에서 추출 (예: "3(오+완)" → "오투+완자")
+        const textbookTag = parseTextbookTag(rawNo);
 
-        // 3. 중요 유형 분포 (약 30%)
-        const isImportant = (idNum + midIdx) % 3 === 0;
+        // 2. 중요 유형: 브라우저에서 수집한 정적 Set 기준
+        const importantKey = `${sheet}|${midName}|${bucket}|${no}`;
+        const isImportant = IMPORTANT_TYPE_KEYS.has(importantKey);
 
-        // 1. 성취도 목 데이터 생성 (정밀 재조정 규칙 + 후처리 적용 대기) -----------------------
-
+        // 3. 성취도 목 데이터 생성 -------------------------------------------------------
         const typeId = `${sheet}:${midName}:${bucket}:${no}`;
         let hasProgress = false;
         let achColor: AchievementColor = "white";
@@ -411,7 +672,7 @@ function ExamPrepPage() {
                 }
             }
         }
-        // ------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------
 
         return {
             id: typeId,

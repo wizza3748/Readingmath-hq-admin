@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic'; // 항상 최신 데이터를 가져오도록 설정
 
 export async function GET() {
-    const sheetId = "1ab0Gv_xYKC_9GAslhOJIdulkhYMXm7b4";
+    const sheetId = "1Xf5UAdoKGCIgBbcJLyCLhLTwPkZVEpFC";
     // gid를 지정하지 않으면 스프레드시트 내의 전체 시트를 하나의 xlsx로 다운받습니다.
     const url = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=xlsx`;
 
