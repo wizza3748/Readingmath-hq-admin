@@ -59,9 +59,9 @@ declare global {
 }
 
 const branchList = [
-  "강남", "강북", "강서", "강원", "경남", "경산", "공주", "광주", "교육다움", 
-  "구리", "구미", "김포", "대구", "대전", "동부", "동작", "부산", "본사", 
-  "성남", "안산", "안양", "울산", "의정부", "인천", "인천B", "일산", "전주", 
+  "강남", "강북", "강서", "강원", "경남", "경산", "공주", "광주", "교육다움",
+  "구리", "구미", "김포", "대구", "대전", "동부", "동작", "부산", "본사",
+  "성남", "안산", "안양", "울산", "의정부", "인천", "인천B", "일산", "전주",
   "제주", "천안", "청주", "평택안성", "포항", "화성"
 ];
 
@@ -101,7 +101,7 @@ const formSchema = z
     perStudentFee: z.string().optional(),
     perStudentFee1: z.string().optional(),
     perStudentFee2: z.string().optional(),
-    
+
     // 메모
     memo: z.string().optional(),
   })
@@ -135,7 +135,7 @@ const formSchema = z
       }
     }
   });
-  
+
 type FormValues = z.infer<typeof formSchema>;
 
 const formatCurrency = (value: string | undefined) => {
@@ -151,7 +151,7 @@ const CurrencyInput = React.forwardRef<HTMLInputElement, React.InputHTMLAttribut
       const { value } = e.target;
       const numericValue = value.replace(/[^0-9]/g, "");
       const formattedValue = formatCurrency(numericValue);
-      
+
       const event = {
         ...e,
         target: { ...e.target, value: formattedValue }
@@ -161,7 +161,7 @@ const CurrencyInput = React.forwardRef<HTMLInputElement, React.InputHTMLAttribut
         onChange(event as React.ChangeEvent<HTMLInputElement>);
       }
     };
-    
+
     const displayValue = value ? `${value}${suffix}` : '';
 
     return <Input value={displayValue} onChange={handleChange} {...props} ref={ref} />;
@@ -205,7 +205,7 @@ function InstitutionFormContent() {
       memo: "",
     },
   });
-  
+
   const serviceType = form.watch("serviceType");
   const loginId = form.watch("loginId");
   const selectedBranch1 = form.watch("branch1");
@@ -246,7 +246,7 @@ function InstitutionFormContent() {
     }
     setLoginIdChecked(currentLoginId);
   };
-  
+
   const handleAddressSearch = () => {
     if (window.daum && window.daum.Postcode) {
       new window.daum.Postcode({
@@ -308,7 +308,7 @@ function InstitutionFormContent() {
       });
       return;
     }
-    
+
     try {
       const { passwordConfirm, ...institutionData } = data;
       await createInstitution(firestore, institutionData);
@@ -340,7 +340,7 @@ function InstitutionFormContent() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>기관명 *</FormLabel>
+                  <FormLabel>기관명 <span className="text-red-500">*</span></FormLabel>
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
@@ -353,7 +353,7 @@ function InstitutionFormContent() {
               name="ownerName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>기관장명 *</FormLabel>
+                  <FormLabel>기관장명 <span className="text-red-500">*</span></FormLabel>
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
@@ -366,7 +366,7 @@ function InstitutionFormContent() {
               name="loginId"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>아이디 *</FormLabel>
+                  <FormLabel>아이디 <span className="text-red-500">*</span></FormLabel>
                   <div className="flex gap-2">
                     <FormControl>
                       <Input {...field} />
@@ -385,7 +385,7 @@ function InstitutionFormContent() {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>비밀번호 *</FormLabel>
+                  <FormLabel>비밀번호 <span className="text-red-500">*</span></FormLabel>
                   <FormControl>
                     <Input type="password" {...field} />
                   </FormControl>
@@ -398,7 +398,7 @@ function InstitutionFormContent() {
               name="passwordConfirm"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>비밀번호 확인 *</FormLabel>
+                  <FormLabel>비밀번호 확인 <span className="text-red-500">*</span></FormLabel>
                   <FormControl>
                     <Input type="password" {...field} />
                   </FormControl>
@@ -411,7 +411,7 @@ function InstitutionFormContent() {
               name="ownerContact"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>기관장 연락처 *</FormLabel>
+                  <FormLabel>기관장 연락처 <span className="text-red-500">*</span></FormLabel>
                   <FormControl>
                     <Input {...field} placeholder="010-1234-5678" />
                   </FormControl>
@@ -419,7 +419,7 @@ function InstitutionFormContent() {
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="email"
               render={({ field }) => (
@@ -526,14 +526,14 @@ function InstitutionFormContent() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>첨부파일</FormLabel>
-                   <FormControl>
+                  <FormControl>
                     <div className="relative">
                       <Input type="file" className="pl-12" onChange={(e) => field.onChange(e.target.files)} />
-                       <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                         <Upload className="h-5 w-5 text-gray-400" />
-                       </div>
+                      <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <Upload className="h-5 w-5 text-gray-400" />
+                      </div>
                     </div>
-                   </FormControl>
+                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
@@ -544,7 +544,7 @@ function InstitutionFormContent() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>최근 계약 갱신일</FormLabel>
-                   <Popover>
+                  <Popover>
                     <PopoverTrigger asChild>
                       <FormControl>
                         <Button
@@ -576,12 +576,12 @@ function InstitutionFormContent() {
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="branch1"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>지사1 *</FormLabel>
+                  <FormLabel>지사1 <span className="text-red-500">*</span></FormLabel>
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
@@ -601,13 +601,13 @@ function InstitutionFormContent() {
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="branch2"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>지사2</FormLabel>
-                   <Select
+                  <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                     disabled={!selectedBranch1}
@@ -618,11 +618,11 @@ function InstitutionFormContent() {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                       {branchList
+                      {branchList
                         .filter(branch => branch !== selectedBranch1)
                         .map(branch => (
                           <SelectItem key={branch} value={branch}>{branch}</SelectItem>
-                       ))}
+                        ))}
                     </SelectContent>
                   </Select>
                   <FormMessage />
@@ -642,7 +642,7 @@ function InstitutionFormContent() {
               name="serviceStatus"
               render={({ field }) => (
                 <FormItem className="space-y-3">
-                  <FormLabel>서비스 상태 *</FormLabel>
+                  <FormLabel>서비스 상태 <span className="text-red-500">*</span></FormLabel>
                   <FormControl>
                     <RadioGroup
                       onValueChange={field.onChange}
@@ -661,13 +661,13 @@ function InstitutionFormContent() {
                         </FormControl>
                         <FormLabel className="font-normal">정상</FormLabel>
                       </FormItem>
-                       <FormItem className="flex items-center space-x-2 space-y-0">
+                      <FormItem className="flex items-center space-x-2 space-y-0">
                         <FormControl>
                           <RadioGroupItem value="무료사용" />
                         </FormControl>
                         <FormLabel className="font-normal">무료사용</FormLabel>
                       </FormItem>
-                       <FormItem className="flex items-center space-x-2 space-y-0">
+                      <FormItem className="flex items-center space-x-2 space-y-0">
                         <FormControl>
                           <RadioGroupItem value="미납정지" />
                         </FormControl>
@@ -679,7 +679,7 @@ function InstitutionFormContent() {
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="franchiseType"
               render={({ field }) => (
@@ -703,13 +703,13 @@ function InstitutionFormContent() {
                         </FormControl>
                         <FormLabel className="font-normal">스탠다드</FormLabel>
                       </FormItem>
-                       <FormItem className="flex items-center space-x-2 space-y-0">
+                      <FormItem className="flex items-center space-x-2 space-y-0">
                         <FormControl>
                           <RadioGroupItem value="슬림" />
                         </FormControl>
                         <FormLabel className="font-normal">슬림</FormLabel>
                       </FormItem>
-                       <FormItem className="flex items-center space-x-2 space-y-0">
+                      <FormItem className="flex items-center space-x-2 space-y-0">
                         <FormControl>
                           <RadioGroupItem value="학교" />
                         </FormControl>
@@ -721,12 +721,12 @@ function InstitutionFormContent() {
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="serviceType"
               render={({ field }) => (
                 <FormItem className="space-y-3">
-                  <FormLabel>서비스 타입 *</FormLabel>
+                  <FormLabel>서비스 타입 <span className="text-red-500">*</span></FormLabel>
                   <FormControl>
                     <RadioGroup
                       onValueChange={field.onChange}
@@ -745,7 +745,7 @@ function InstitutionFormContent() {
                         </FormControl>
                         <FormLabel className="font-normal">수학</FormLabel>
                       </FormItem>
-                       <FormItem className="flex items-center space-x-2 space-y-0">
+                      <FormItem className="flex items-center space-x-2 space-y-0">
                         <FormControl>
                           <RadioGroupItem value="과학" />
                         </FormControl>
@@ -758,115 +758,115 @@ function InstitutionFormContent() {
               )}
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <FormField
+                control={form.control}
+                name="minFee"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="flex items-center">
+                      최소 이용 금액 <span className="text-red-500">*</span>
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Button variant="ghost" size="icon" className="h-5 w-5 ml-1">
+                              <Info className="h-4 w-4 text-muted-foreground" />
+                            </Button>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>최소 이용 금액이 없는 경우 0을 반드시 입력해 주세요.</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </FormLabel>
+                    <FormControl>
+                      <Controller
+                        control={form.control}
+                        name="minFee"
+                        render={({ field: { onChange, value } }) => (
+                          <CurrencyInput
+                            value={value}
+                            onChange={onChange}
+                          />
+                        )}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <div />
+
+              {serviceType === "수학+과학" ? (
+                <>
+                  <FormField
+                    control={form.control}
+                    name="perStudentFee1"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>인당 이용료(1과목) <span className="text-red-500">*</span></FormLabel>
+                        <FormControl>
+                          <Controller
+                            control={form.control}
+                            name="perStudentFee1"
+                            render={({ field: { onChange, value } }) => (
+                              <CurrencyInput
+                                value={value}
+                                onChange={onChange}
+                              />
+                            )}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="perStudentFee2"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>인당 이용료(2과목) <span className="text-red-500">*</span></FormLabel>
+                        <FormControl>
+                          <Controller
+                            control={form.control}
+                            name="perStudentFee2"
+                            render={({ field: { onChange, value } }) => (
+                              <CurrencyInput
+                                value={value}
+                                onChange={onChange}
+                              />
+                            )}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </>
+              ) : (
                 <FormField
                   control={form.control}
-                  name="minFee"
+                  name="perStudentFee"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="flex items-center">
-                        최소 이용 금액 *
-                        <TooltipProvider>
-                           <Tooltip>
-                              <TooltipTrigger asChild>
-                                <Button variant="ghost" size="icon" className="h-5 w-5 ml-1">
-                                    <Info className="h-4 w-4 text-muted-foreground" />
-                                </Button>
-                              </TooltipTrigger>
-                              <TooltipContent>
-                                <p>최소 이용 금액이 없는 경우 0을 반드시 입력해 주세요.</p>
-                              </TooltipContent>
-                           </Tooltip>
-                        </TooltipProvider>
-                      </FormLabel>
+                      <FormLabel>인당 이용료 <span className="text-red-500">*</span></FormLabel>
                       <FormControl>
-                         <Controller
-                            control={form.control}
-                            name="minFee"
-                            render={({ field: { onChange, value } }) => (
-                                <CurrencyInput 
-                                    value={value}
-                                    onChange={onChange}
-                                />
-                            )}
-                         />
+                        <Controller
+                          control={form.control}
+                          name="perStudentFee"
+                          render={({ field: { onChange, value } }) => (
+                            <CurrencyInput
+                              value={value}
+                              onChange={onChange}
+                            />
+                          )}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                <div />
-
-                {serviceType === "수학+과학" ? (
-                    <>
-                        <FormField
-                            control={form.control}
-                            name="perStudentFee1"
-                            render={({ field }) => (
-                                <FormItem>
-                                <FormLabel>인당 이용료(1과목) *</FormLabel>
-                                <FormControl>
-                                    <Controller
-                                        control={form.control}
-                                        name="perStudentFee1"
-                                        render={({ field: { onChange, value } }) => (
-                                            <CurrencyInput 
-                                                value={value}
-                                                onChange={onChange}
-                                            />
-                                        )}
-                                    />
-                                </FormControl>
-                                <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="perStudentFee2"
-                            render={({ field }) => (
-                                <FormItem>
-                                <FormLabel>인당 이용료(2과목) *</FormLabel>
-                                <FormControl>
-                                    <Controller
-                                        control={form.control}
-                                        name="perStudentFee2"
-                                        render={({ field: { onChange, value } }) => (
-                                            <CurrencyInput 
-                                                value={value}
-                                                onChange={onChange}
-                                            />
-                                        )}
-                                    />
-                                </FormControl>
-                                <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </>
-                ) : (
-                    <FormField
-                        control={form.control}
-                        name="perStudentFee"
-                        render={({ field }) => (
-                            <FormItem>
-                            <FormLabel>인당 이용료 *</FormLabel>
-                             <FormControl>
-                                <Controller
-                                    control={form.control}
-                                    name="perStudentFee"
-                                    render={({ field: { onChange, value } }) => (
-                                        <CurrencyInput 
-                                            value={value}
-                                            onChange={onChange}
-                                        />
-                                    )}
-                                />
-                             </FormControl>
-                            <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                )}
+              )}
             </div>
           </CardContent>
         </Card>
@@ -910,51 +910,50 @@ function InstitutionFormContent() {
 function FormSkeleton() {
   return (
     <div className="space-y-8 mt-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>기관 정보</CardTitle>
-          </CardHeader>
-          <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-                <Skeleton className="h-4 w-20" />
-                <Skeleton className="h-10 w-full" />
-            </div>
-            <div className="space-y-2">
-                <Skeleton className="h-4 w-20" />
-                <Skeleton className="h-10 w-full" />
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>서비스 정보</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
-             <div className="space-y-2">
-                <Skeleton className="h-4 w-20" />
-                <Skeleton className="h-10 w-full" />
-            </div>
-             <div className="space-y-2">
-                <Skeleton className="h-4 w-20" />
-                <Skeleton className="h-10 w-full" />
-            </div>
-          </CardContent>
-        </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>기관 정보</CardTitle>
+        </CardHeader>
+        <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <Skeleton className="h-4 w-20" />
+            <Skeleton className="h-10 w-full" />
+          </div>
+          <div className="space-y-2">
+            <Skeleton className="h-4 w-20" />
+            <Skeleton className="h-10 w-full" />
+          </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>서비스 정보</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="space-y-2">
+            <Skeleton className="h-4 w-20" />
+            <Skeleton className="h-10 w-full" />
+          </div>
+          <div className="space-y-2">
+            <Skeleton className="h-4 w-20" />
+            <Skeleton className="h-10 w-full" />
+          </div>
+        </CardContent>
+      </Card>
     </div>
   )
 }
 
 
 export function InstitutionForm() {
-    const firebase = useFirebase();
+  const firebase = useFirebase();
 
-    if (!firebase?.firestore) {
-        return <FormSkeleton />;
-    }
+  if (!firebase?.firestore) {
+    return <FormSkeleton />;
+  }
 
-    return <InstitutionFormContent />;
+  return <InstitutionFormContent />;
 }
 
-    
 
-    
+

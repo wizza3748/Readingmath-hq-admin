@@ -35,6 +35,11 @@ export type ServiceChangeReservation = {
   serviceStatus: "일시정지" | "정상" | "무료사용" | "미납정지";
   franchiseType: "가맹전" | "스탠다드" | "슬림" | "학교";
   serviceType: "수학+과학" | "수학" | "과학";
+  reason?: string;
+  minFee?: string;
+  perStudentFee?: string;
+  perStudentFee1?: string;
+  perStudentFee2?: string;
 };
 
 export type Institution = {
