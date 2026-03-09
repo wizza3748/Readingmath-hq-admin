@@ -34,7 +34,7 @@ export default function TrainingCompletePage() {
                     </div>
                     {/* 캐릭터 이미지 (임시) */}
                     <img
-                        src="https://readingmath.co.kr/build/assets/alien_8-1-343222e3.svg"
+                        src="https://readingmath.co.kr/build/assets/alien_8-1-C9kW02q9.svg"
                         alt="Character"
                         className="w-[240px] h-[240px] relative z-10"
                     />

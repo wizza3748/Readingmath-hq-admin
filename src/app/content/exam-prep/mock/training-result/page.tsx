@@ -64,7 +64,7 @@ export default function TrainingResultPage() {
                         <div className="relative">
                             <div className="absolute inset-0 bg-yellow-400/20 blur-2xl rounded-full animate-pulse" />
                             <img
-                                src="https://readingmath.co.kr/build/assets/alien_8-1-343222e3.svg"
+                                src="https://readingmath.co.kr/build/assets/alien_8-1-C9kW02q9.svg"
                                 alt="Character"
                                 className="w-24 h-24 relative z-10"
                             />
@@ -114,7 +114,7 @@ export default function TrainingResultPage() {
                 {/* 하단 한줄 평 영역 */}
                 <div className="bg-[#f8f9ff] border-2 border-indigo-100 rounded-xl p-5 flex items-start gap-4">
                     <img
-                        src="https://readingmath.co.kr/build/assets/alien_8-1-343222e3.svg"
+                        src="https://readingmath.co.kr/build/assets/alien_8-1-C9kW02q9.svg"
                         alt="Bot"
                         className="w-12 h-12 bg-white rounded-full p-2 border border-indigo-50"
                     />

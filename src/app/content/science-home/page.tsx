@@ -55,7 +55,7 @@ export default function ScienceHomePage() {
                 <div className="absolute inset-0 z-0">
                     <div
                         className="w-full h-full bg-cover bg-center"
-                        style={{ backgroundImage: `url('https://readingmath.co.kr/build/assets/science_bg_main_8-1-88e6ee5d.svg')` }}
+                        style={{ backgroundImage: `url('https://readingmath.co.kr/build/assets/science_bg_main_8-1-BTNaVv7h.svg')` }}
                     />
                     {/* Depth Overlay */}
                     <div className="absolute inset-0 bg-black/10" />
@@ -76,7 +76,7 @@ export default function ScienceHomePage() {
                 {/* Character (SVG from URL) */}
                 <div className="relative z-10 w-[240px] h-[240px] transform hover:scale-105 transition-transform duration-500 cursor-pointer">
                     <img
-                        src="https://readingmath.co.kr/build/assets/alien_8-1-343222e3.svg"
+                        src="https://readingmath.co.kr/build/assets/alien_8-1-C9kW02q9.svg"
                         alt="Character"
                         className="w-full h-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.3)]"
                     />
