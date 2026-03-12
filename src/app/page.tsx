@@ -17,6 +17,12 @@ type WorkItem = {
 
 const hqWorkItems: WorkItem[] = [
   {
+    id: "RM-267",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-267",
+    title: "[본사] 지사관리 및 지사 정산 조회 기능 개발",
+    internalUrl: "/branches",
+  },
+  {
     id: "RM-263",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-263",
     title: "[본사] 기관 서비스 변경 예약 기능 확장",

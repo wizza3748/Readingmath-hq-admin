@@ -18,6 +18,8 @@ import {
   ScrollText,
   ChevronDown,
   ShoppingCart,
+  GitBranch,
+  Wallet,
 } from "lucide-react";
 import {
   Collapsible,
@@ -58,6 +60,14 @@ const navConfig: NavItem[] = [
     icon: <Building2 />,
     children: [
       { title: "기관목록", href: "/institutions" },
+    ],
+  },
+  {
+    title: "지사관리",
+    icon: <GitBranch />,
+    children: [
+      { title: "지사 목록", href: "/branches" },
+      { title: "정산 내역", href: "/branch-settlements" },
     ],
   },
   {
