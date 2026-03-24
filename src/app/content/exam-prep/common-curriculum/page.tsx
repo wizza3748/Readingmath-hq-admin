@@ -189,6 +189,10 @@ export default function CommonCurriculumLayerPage() {
         setOpenMidUnitId(prev => (prev === id ? null : id));
     };
 
+    const navigateToExamPrep = (midUnitId: string) => {
+        window.location.href = `/content/exam-prep?from=solveMore&midUnitId=${encodeURIComponent(midUnitId)}`;
+    };
+
     if (loading) return <div className="flex h-screen items-center justify-center bg-[#1a1c2c] text-white/50">로딩 중...</div>;
 
     return (
@@ -228,8 +232,18 @@ export default function CommonCurriculumLayerPage() {
                 {/* Header Overlay (Tabs) */}
                 <div className="absolute top-6 left-6 flex items-center gap-3 z-20">
                     <div className="flex bg-black/40 backdrop-blur-md p-1 rounded-xl border border-white/10 shadow-2xl">
-                        <div className="text-white/40 px-5 py-1.5 text-xs font-black min-w-[90px] text-center">기본 모드</div>
-                        <div className="bg-blue-500 text-white px-5 py-1.5 rounded-[9px] text-xs font-black shadow-lg shadow-blue-900/40 min-w-[90px] text-center">자유 모드</div>
+                        <div 
+                            className="text-white/40 hover:text-white px-5 py-1.5 text-xs font-black min-w-[90px] text-center cursor-pointer transition-colors"
+                            onClick={() => window.location.href = '/content/exam-prep'}
+                        >
+                            기본 모드
+                        </div>
+                        <div 
+                            className="text-white/40 hover:text-white px-5 py-1.5 text-xs font-black min-w-[90px] text-center cursor-pointer transition-colors"
+                            onClick={() => window.location.href = '/content/exam-prep/common-curriculum'}
+                        >
+                            자유 모드
+                        </div>
                     </div>
                     <div className="bg-indigo-600 text-white px-5 py-2 rounded-xl text-xs font-black shadow-lg shadow-indigo-900/40 border border-white/10 flex items-center gap-2">
                         <Zap className="h-3.5 w-3.5 fill-current" />
@@ -312,29 +326,40 @@ export default function CommonCurriculumLayerPage() {
                                                         ))}
                                                     </div>
 
-                                                    {/* Type Challenge Area (중단원 유형 보드) */}
-                                                    <div className="flex flex-col gap-4">
+                                                    {/* Type Challenge Area (Refined UI) */}
+                                                    <div 
+                                                        className="group/type-bank flex items-center justify-between bg-slate-50/80 hover:bg-slate-100/80 rounded-2xl p-4 px-5 transition-all cursor-pointer active:scale-[0.98] border border-transparent hover:border-slate-200 shadow-sm hover:shadow-md"
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            navigateToExamPrep(midUnit.id);
+                                                        }}
+                                                    >
                                                         <div className="flex items-center gap-2">
                                                             <div className="w-1 h-3 bg-indigo-500 rounded-full" />
                                                             <h3 className="text-sm font-black text-slate-800">유형도전</h3>
                                                         </div>
-                                                        
-                                                        {/* Type Board: Row Structure */}
-                                                        <div className="flex flex-col gap-4">
-                                                            {(['basic', 'skill', 'advanced'] as const).map(bucket => {
-                                                                const types = midUnit.types.filter(t => t.bucket === bucket);
+
+                                                        {/* Fixed 6 Legend Chips */}
+                                                        <div className="flex items-center gap-1.5 opacity-90 group-hover/type-bank:opacity-100 transition-opacity">
+                                                            {[
+                                                                { color: 'white' as AchievementColor, label: '미진행' },
+                                                                { color: 'gray' as AchievementColor, label: '미판정' },
+                                                                { color: 'red' as AchievementColor, label: '재학습 필요' },
+                                                                { color: 'yellow' as AchievementColor, label: '보충 필요' },
+                                                                { color: 'lime' as AchievementColor, label: '유형 이해' },
+                                                                { color: 'green' as AchievementColor, label: '유형 완전 이해' },
+                                                            ].map((item, idx) => {
+                                                                const theme = ACHIEVEMENT_THEME[item.color];
                                                                 return (
-                                                                    <div key={bucket} className="flex flex-col gap-2">
-                                                                        <div className="flex items-center justify-between px-1">
-                                                                            <span className="text-[11px] font-black text-slate-400">{bucket === 'basic' ? '기본' : bucket === 'skill' ? '실력' : '심화'}</span>
-                                                                        </div>
-                                                                        <div className="flex flex-wrap gap-2">
-                                                                            {types.map(type => (
-                                                                                <TypeChip key={type.id} type={type} />
-                                                                            ))}
-                                                                            {types.length === 0 && <span className="text-[10px] text-slate-300 py-1">준비된 유형이 없습니다.</span>}
-                                                                        </div>
-                                                                    </div>
+                                                                     <div
+                                                                        key={idx}
+                                                                        className={cn(
+                                                                            "h-7 w-7 rounded-lg flex items-center justify-center shadow-sm",
+                                                                            theme.bgClass,
+                                                                            theme.key === "white" ? "border border-slate-200" : "border-transparent"
+                                                                        )}
+                                                                        title={item.label}
+                                                                    />
                                                                 );
                                                             })}
                                                         </div>
@@ -372,40 +397,6 @@ export default function CommonCurriculumLayerPage() {
                     background: #cbd5e1;
                 }
             `}</style>
-        </div>
-    );
-}
-
-function TypeChip({ type }: { type: TypeData }) {
-    const theme = ACHIEVEMENT_THEME[type.achievementColor];
-    
-    // Clicking takes to study screen
-    const handleClick = () => {
-        window.location.href = `/content/exam-prep/study/${encodeURIComponent(type.id)}?mode=new&color=${type.achievementColor}&name=${encodeURIComponent(type.name)}`;
-    };
-
-    return (
-        <div
-            onClick={handleClick}
-            className={cn(
-                "relative h-10 w-10 min-w-[40px] rounded-xl flex items-center justify-center cursor-pointer transition-all hover:scale-105 active:scale-95 shadow-sm",
-                theme.bgClass,
-                theme.key === "white" ? "border border-slate-100" : "border-transparent"
-            )}
-            title={type.name}
-        >
-            <span className={cn("text-xs font-black", theme.textClass)}>
-                {type.no}
-            </span>
-
-            {type.isImportant && (
-                <Star
-                    className={cn(
-                        "absolute top-0.5 left-0.5 w-2 h-2",
-                        theme.key === "white" ? "text-slate-400 fill-slate-400" : "text-white fill-white"
-                    )}
-                />
-            )}
         </div>
     );
 }

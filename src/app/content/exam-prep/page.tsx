@@ -870,89 +870,113 @@ function ExamPrepPage() {
             {/* 공통 래퍼 컴포넌트 */}
             <div className="w-full max-w-5xl mx-auto px-4 md:px-6 flex flex-col items-stretch">
 
-                {/* 1. Sticky Header Filter Area */}
+                {/* 1. Header & Header Filter Area */}
                 <header
                     className={cn(
-                        "py-4 flex items-center justify-between transition-all bg-[#f4f6f8] gap-4",
+                        "py-6 flex flex-col transition-all bg-[#f4f6f8] gap-6",
                         modalType ? "static" : "sticky top-0 z-40"
                     )}
                 >
-                    {/* 좌측 그룹 (타이틀 + 필터들) */}
-                    <div className="flex items-center gap-3 md:gap-4 flex-wrap flex-1">
-                        <h1 className="text-xl font-extrabold text-slate-800 tracking-tight whitespace-nowrap mr-1 md:mr-2">시험대비</h1>
-
-                        <div className="flex items-center gap-2">
-                            <Select value={selectedGradeTerm} onValueChange={setSelectedGradeTerm}>
-                                <SelectTrigger className="w-auto min-w-[100px] bg-white border-slate-200 font-bold h-[34px] text-[13px] text-slate-700 rounded-full focus:ring-1 focus:ring-indigo-500 shadow-sm">
-                                    <SelectValue placeholder="학년-학기" />
-                                </SelectTrigger>
-                                <SelectContent className="max-h-[300px]">
-                                    <SelectItem value="초3-1">초3-1학기</SelectItem>
-                                    <SelectItem value="초3-2">초3-2학기</SelectItem>
-                                    <SelectItem value="초4-1">초4-1학기</SelectItem>
-                                    <SelectItem value="초4-2">초4-2학기</SelectItem>
-                                    <SelectItem value="초5-1">초5-1학기</SelectItem>
-                                    <SelectItem value="초5-2">초5-2학기</SelectItem>
-                                    <SelectItem value="초6-1">초6-1학기</SelectItem>
-                                    <SelectItem value="초6-2">초6-2학기</SelectItem>
-                                    <SelectItem value="중1-1">중1-1학기</SelectItem>
-                                    <SelectItem value="중1-2">중1-2학기</SelectItem>
-                                    <SelectItem value="mid2-1">중2-1학기</SelectItem>
-                                    <SelectItem value="중2-2">중2-2학기</SelectItem>
-                                    <SelectItem value="중3-1">중3-1학기</SelectItem>
-                                    <SelectItem value="중3-2">중3-2학기</SelectItem>
-                                </SelectContent>
-                            </Select>
-                        </div>
-
-                        <div className="flex bg-white p-1 rounded-full overflow-hidden border border-slate-200 shadow-sm">
-                            {["전체", "오투", "완자", "오투+완자", "기타"].map(tag => (
-                                <button
-                                    key={tag}
-                                    onClick={() => setSelectedTextbook(tag)}
-                                    className={cn(
-                                        "px-3 py-1 text-[11px] font-bold rounded-full transition-all whitespace-nowrap",
-                                        selectedTextbook === tag ? "bg-indigo-50 text-indigo-700 shadow-sm border border-indigo-100" : "text-slate-500 hover:text-slate-700 hover:bg-slate-50"
-                                    )}
+                    {/* 상단: 타이틀 & 모드 전환 */}
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-6">
+                            <h1 className="text-2xl font-black text-slate-800 tracking-tight whitespace-nowrap">시험대비</h1>
+                            
+                            {/* 모드 전환 버튼 (기본/자유) */}
+                            <div className="flex bg-[#1e222e] p-1 rounded-xl border border-white/5 shadow-xl">
+                                <div 
+                                    className="text-white/40 hover:text-white px-5 py-1.5 text-xs font-black min-w-[90px] text-center cursor-pointer transition-colors"
+                                    onClick={() => window.location.href = '/content/exam-prep'}
                                 >
-                                    {tag}
-                                </button>
-                            ))}
+                                    기본 모드
+                                </div>
+                                <div 
+                                    className="text-white/40 hover:text-white px-5 py-1.5 text-xs font-black min-w-[90px] text-center cursor-pointer transition-colors"
+                                    onClick={() => window.location.href = '/content/exam-prep/common-curriculum'}
+                                >
+                                    자유 모드
+                                </div>
+                            </div>
                         </div>
-
-                        <Button
-                            variant="outline"
-                            className={cn(
-                                "h-[34px] rounded-full text-xs font-bold gap-1.5 bg-white border-slate-200 px-3 shadow-sm",
-                                selectedAchievements.size > 0 && "border-indigo-600 text-indigo-600"
-                            )}
-                            onClick={() => setModalType("achievement")}
-                        >
-                            성취도 {selectedAchievements.size > 0 ? (selectedAchievements.size === 1 ? "1개" : `${selectedAchievements.size}개`) : ""}
-                            <ChevronDown className="h-3.5 w-3.5 opacity-70" />
-                        </Button>
                     </div>
 
-                    {/* 우측 그룹 (중요 유형만 보기 토글 + 초기화 버튼) */}
-                    <div className="flex items-center justify-end gap-3 md:gap-5 shrink-0 pl-4 border-l border-slate-200/60 ml-auto">
-                        <div className="flex items-center gap-2">
-                            <span className="text-[11px] font-bold text-slate-500 whitespace-nowrap">중요 유형만 보기</span>
-                            <Switch
-                                checked={onlyImportant}
-                                onCheckedChange={setOnlyImportant}
-                                className="scale-90 data-[state=checked]:bg-indigo-600"
-                            />
+                    {/* 하단: 필터 영역 */}
+                    <div className="flex items-center justify-between gap-4">
+                        {/* 좌측 필터 그룹 */}
+                        <div className="flex items-center gap-3 md:gap-4 flex-wrap flex-1">
+                            <div className="flex items-center gap-2">
+                                <Select value={selectedGradeTerm} onValueChange={setSelectedGradeTerm}>
+                                    <SelectTrigger className="w-auto min-w-[120px] bg-white border-slate-200 font-bold h-[38px] text-[13px] text-slate-700 rounded-full focus:ring-1 focus:ring-indigo-500 shadow-sm">
+                                        <SelectValue placeholder="학년-학기" />
+                                    </SelectTrigger>
+                                    <SelectContent className="max-h-[300px]">
+                                        <SelectItem value="초3-1">초3-1학기</SelectItem>
+                                        <SelectItem value="초3-2">초3-2학기</SelectItem>
+                                        <SelectItem value="초4-1">초4-1학기</SelectItem>
+                                        <SelectItem value="초4-2">초4-2학기</SelectItem>
+                                        <SelectItem value="초5-1">초5-1학기</SelectItem>
+                                        <SelectItem value="초5-2">초5-2학기</SelectItem>
+                                        <SelectItem value="초6-1">초6-1학기</SelectItem>
+                                        <SelectItem value="초6-2">초6-2학기</SelectItem>
+                                        <SelectItem value="중1-1">중1-1학기</SelectItem>
+                                        <SelectItem value="중1-2">중1-2학기</SelectItem>
+                                        <SelectItem value="mid2-1">중2-1학기</SelectItem>
+                                        <SelectItem value="중2-2">중2-2학기</SelectItem>
+                                        <SelectItem value="중3-1">중3-1학기</SelectItem>
+                                        <SelectItem value="중3-2">중3-2학기</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+
+                            <div className="flex bg-white p-1 rounded-full overflow-hidden border border-slate-200 shadow-sm">
+                                {["전체", "오투", "완자", "오투+완자", "기타"].map(tag => (
+                                    <button
+                                        key={tag}
+                                        onClick={() => setSelectedTextbook(tag)}
+                                        className={cn(
+                                            "px-4 py-1.5 text-[12px] font-bold rounded-full transition-all whitespace-nowrap",
+                                            selectedTextbook === tag ? "bg-indigo-50 text-indigo-700 shadow-sm border border-indigo-100" : "text-slate-500 hover:text-slate-700 hover:bg-slate-50"
+                                        )}
+                                    >
+                                        {tag}
+                                    </button>
+                                ))}
+                            </div>
+
+                            <Button
+                                variant="outline"
+                                className={cn(
+                                    "h-[38px] rounded-full text-[12px] font-bold gap-1.5 bg-white border-slate-200 px-4 shadow-sm",
+                                    selectedAchievements.size > 0 && "border-indigo-600 text-indigo-600"
+                                )}
+                                onClick={() => setModalType("achievement")}
+                            >
+                                성취도 {selectedAchievements.size > 0 ? (selectedAchievements.size === 1 ? "1개" : `${selectedAchievements.size}개`) : ""}
+                                <ChevronDown className="h-4 w-4 opacity-70" />
+                            </Button>
                         </div>
-                        <Button
-                            variant="ghost"
-                            size="sm"
-                            disabled={isFilterDefault}
-                            onClick={handleResetFilters}
-                            className="h-[34px] text-xs font-bold text-slate-500 hover:text-slate-800 hover:bg-slate-200/50 disabled:opacity-30 disabled:hover:bg-transparent transition-all"
-                        >
-                            <RotateCcw className="w-3.5 h-3.5 mr-1" />
-                            초기화
-                        </Button>
+
+                        {/* 우측 그룹 */}
+                        <div className="flex items-center justify-end gap-3 md:gap-5 shrink-0 pl-4 border-l border-slate-200/60">
+                            <div className="flex items-center gap-2">
+                                <span className="text-[11px] font-bold text-slate-500 whitespace-nowrap">중요 유형만 보기</span>
+                                <Switch
+                                    checked={onlyImportant}
+                                    onCheckedChange={setOnlyImportant}
+                                    className="scale-90 data-[state=checked]:bg-indigo-600"
+                                />
+                            </div>
+                            <Button
+                                variant="ghost"
+                                size="sm"
+                                disabled={isFilterDefault}
+                                onClick={handleResetFilters}
+                                className="h-[38px] text-[12px] font-bold text-slate-500 hover:text-slate-800 hover:bg-slate-200/50 disabled:opacity-30 disabled:hover:bg-transparent transition-all"
+                            >
+                                <RotateCcw className="w-3.5 h-3.5 mr-1" />
+                                초기화
+                            </Button>
+                        </div>
                     </div>
                 </header>
 
