@@ -40,7 +40,7 @@ export const ACHIEVEMENT_THEME: Record<AchievementColor, AchievementThemeDetail>
     gray: {
         key: "gray",
         label: "미판정",
-        description: "학습량이 부족해요. 2문제 이상 풀어보세요.",
+        description: "답안을 모두 입력하고 제출해 보세요.",
         colorHex: EXAM_PREP_COLORS.GRAY,
         bgClass: "bg-[#E2E8F0]",
         textClass: "text-[#0F172A]",

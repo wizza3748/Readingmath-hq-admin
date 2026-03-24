@@ -81,10 +81,8 @@ function StudyPage() {
     // --- State ---
     const [currentIndex, setCurrentIndex] = useState(0);
     const [answers, setAnswers] = useState<(number | null)[]>([null, null, null]);
+    const [isSubmitted, setIsSubmitted] = useState(false);
     const [gradedResults, setGradedResults] = useState<(boolean | null)[]>([null, null, null]);
-    const [isCurrentGraded, setIsCurrentGraded] = useState(false);
-    const [isReadDone, setIsReadDone] = useState(false); // 오답 시 '다 읽었어요' 여부
-    const [isCompleted, setIsCompleted] = useState(false);
     const [showResultScreen, setShowResultScreen] = useState(false); // 결과 화면 표시 여부 제어
     const [nextTypeId, setNextTypeId] = useState<string | null>(null);
     const [nextTypeName, setNextTypeName] = useState<string | null>(null);
@@ -96,7 +94,7 @@ function StudyPage() {
 
     // [다음 유형 찾기] 로직
     useEffect(() => {
-        if (!isCompleted || !showResultScreen) return;
+        if (!isSubmitted || !showResultScreen) return;
 
         async function fetchNextType() {
             setIsLoadingNext(true);
@@ -184,7 +182,7 @@ function StudyPage() {
         }
 
         fetchNextType();
-    }, [isCompleted, showResultScreen, typeId]);
+    }, [isSubmitted, showResultScreen, typeId]);
 
     // [P0] Safeguard: URL 파라미터에 이름이 없는 경우 현재 typeId로 이름 복구
     useEffect(() => {
@@ -245,12 +243,10 @@ function StudyPage() {
         // P0-수정: 흰색 유형칩(미학습)인 경우 로컬 스토리지 무시하고 항상 새로 시작
         if (color === "white") {
             setAnswers([null, null, null]);
+            setIsSubmitted(false);
             setGradedResults([null, null, null]);
-            setIsCompleted(false);
             setShowResultScreen(false);
             setCurrentIndex(0);
-            setIsCurrentGraded(false);
-            setIsReadDone(false);
             return;
         }
 
@@ -261,117 +257,82 @@ function StudyPage() {
                 const parsed = JSON.parse(saved);
                 const loadedAnswers = parsed.answers || [null, null, null];
                 const loadedGraded = parsed.gradedResults || [null, null, null];
+                const submitted = parsed.completed || false;
 
                 setAnswers(loadedAnswers);
+                setIsSubmitted(submitted);
                 setGradedResults(loadedGraded);
 
-                if (parsed.completed) {
-                    setIsCompleted(true);
+                if (submitted) {
                     if (mode === "resume") {
-                        // P0-5: 완료 타입 "이어서 풀기" 진입 시 - 결과 화면 자동 표시 안함, 1번 진입
+                        // 완료 상태 "이어서 풀기" 진입 시 - 결과 화면 생략 및 1번 진입 (해설보기 상태)
                         setShowResultScreen(false);
                         setCurrentIndex(0);
-                        const initGraded = loadedGraded[0] !== null;
-                        setIsCurrentGraded(initGraded);
-                        setIsReadDone(initGraded); // 정오답 무관 이미 완료된건 다 읽은 걸로 간주
                     } else {
-                        // 그 외의 경우 (정상 완료 후 리로드 등)는 기존처럼 결과 노출
+                        // 그 외 정상 완료 후 리로드 등은 결과 노출
                         setShowResultScreen(true);
                     }
-                } else if (mode === "resume" && parsed.lastGradedIndex !== undefined && parsed.lastGradedIndex >= 0) {
-                    // 이어서 풀기 진입 시: 마지막 채점 완료 문항의 "다음 문항"으로 이동
-                    const nextIdx = Math.min(parsed.lastGradedIndex + 1, 2);
-                    setCurrentIndex(nextIdx);
                 } else {
-                    // 1번부터 렌더링되도록
                     setCurrentIndex(0);
-                    const initGraded = loadedGraded[0] !== null;
-                    setIsCurrentGraded(initGraded);
-                    setIsReadDone(initGraded);
                 }
             } catch (e) {
                 console.error("Storage parse error", e);
             }
         }
-    }, [typeId, mode]);
+    }, [typeId, mode, color]);
 
     // --- Logic ---
     const currentQuestion = FIXED_QUESTIONS[currentIndex];
     const userChoice = answers[currentIndex];
 
-    // 현재 문항이 이미 채점 완료된 문항인지 (리뷰 모드 여부)
-    const isCompletedItem = gradedResults[currentIndex] !== null;
-    const isCorrect = gradedResults[currentIndex] === true;
+    // 제출 이후에만 채점 및 완료 아이템으로 표시됨
+    const isCompletedItem = isSubmitted;
+    const isCorrect = isSubmitted ? gradedResults[currentIndex] === true : false;
+    const isAllAnswered = answers.every(a => a !== null);
 
     const handleBack = () => {
         router.push("/content/exam-prep");
     };
 
-    const handleSelect = (idx: number) => {
-        if (isCompletedItem) return; // 완료 문항은 재채점/선택 불가
-        const next = [...answers];
-        next[currentIndex] = idx;
-        setAnswers(next);
-    };
-
-    const updateStorage = (newAnswers: (number | null)[], newResults: (boolean | null)[], lastIdx: number, done: boolean) => {
-        const solvedCount = newResults.filter(r => r !== null).length;
+    const updateStorage = (newAnswers: (number | null)[], newResults: (boolean | null)[], done: boolean) => {
         const storageData = {
             typeId, // 검수용
             answers: newAnswers,
             gradedResults: newResults,
-            lastGradedIndex: lastIdx,
-            gradedCount: solvedCount,
             completed: done
         };
         localStorage.setItem(`examPrep:${typeId}`, JSON.stringify(storageData));
     };
 
-    const handleSubmit = () => {
-        if (userChoice === null || isCompletedItem) return;
-        const correct = userChoice === currentQuestion.answer;
-
-        const nextResults = [...gradedResults];
-        nextResults[currentIndex] = correct;
-
-        const nextAnswers = [...answers];
-        nextAnswers[currentIndex] = userChoice;
-
-        setAnswers(nextAnswers);
-        setGradedResults(nextResults);
-        setIsCurrentGraded(true);
-
-        // 정답 시 즉시 다음으로 활성 (+ 해설 노출은 isCompletedItem=true로 처리됨)
-        if (correct) {
-            setIsReadDone(true);
-        } else {
-            // 오답 제출 시: 다음으로 비활성 유지, 다 읽었어요 노출
-            setIsReadDone(false);
-        }
-
-        const isLastAndDone = currentIndex === 2 && (correct || (!correct && false /* 이건 렌더링상 일단 completed 아님 */));
-        updateStorage(nextAnswers, nextResults, currentIndex, isLastAndDone); // 제출 즉시 저장
+    const handleSelect = (idx: number) => {
+        if (isCompletedItem) return; // 제출 완료 후 수정 불가
+        const next = [...answers];
+        next[currentIndex] = idx;
+        setAnswers(next);
+        // 채점 없이 답안만 로컬 저장
+        updateStorage(next, gradedResults, false);
     };
 
-    const handleNext = () => {
-        // [다 읽었어요] 클릭 여부는 이 시점에 isReadDone === true 로 보장됨
-        const isCurrentlyCorrect = gradedResults[currentIndex] === true;
-        const isDone = currentIndex === 2 && (isCurrentlyCorrect || (!isCurrentlyCorrect && isReadDone));
+    const handlePrev = () => {
+        if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
+    };
 
-        if (isDone || (currentIndex === 2 && gradedResults[2] !== null)) {
-            setIsCompleted(true);
-            setShowResultScreen(true); // 채점과 확인이 모두 끝났을 때만 결과화면 노출
-            updateStorage(answers, gradedResults, currentIndex, true);
-        } else {
-            const nextIdx = currentIndex + 1;
-            setCurrentIndex(nextIdx);
+    const handleNextItem = () => {
+        if (currentIndex < 2) setCurrentIndex(currentIndex + 1);
+    };
 
-            // 다음 문항의 채점 여부에 따라 상태 초기화
-            // '이동 즉시 해당 문항은 미완료 상태로 시작(선택 없음, 제출 비활성)' - 기존 기록 없다면
-            const nextGraded = gradedResults[nextIdx] !== null;
-            setIsCurrentGraded(nextGraded);
-            setIsReadDone(nextGraded);
-        }
+    const handleSubmit = () => {
+        if (!isAllAnswered || isCompletedItem) return;
+
+        // 전체 문항 일괄 채점
+        const nextResults = FIXED_QUESTIONS.map((q, i) => answers[i] === q.answer);
+        
+        setGradedResults(nextResults);
+        setIsSubmitted(true);
+        setShowResultScreen(true); // 채점 완료 시 자동 결과 화면 진입
+
+        // 변경된 일괄 채점 상태 및 제출 완료 기록
+        updateStorage(answers, nextResults, true);
     };
 
     const finalAchievement = useMemo(() => {
@@ -390,7 +351,7 @@ function StudyPage() {
         return solvedCount > 0 ? Math.round((correctCount / solvedCount) * 100) : 0;
     }, [gradedResults]);
 
-    if (isCompleted && showResultScreen) {
+    if (isSubmitted && showResultScreen) {
         return (
             <div className="min-h-screen bg-gray-50 flex flex-col items-center">
                 {/* 결과 헤더 */}
@@ -450,13 +411,25 @@ function StudyPage() {
                             ))}
                         </div>
 
-                        <div className={cn("w-full grid gap-3", (isLoadingNext || nextTypeId) ? "grid-cols-2" : "grid-cols-1")}>
+                        <div className="w-full grid gap-3 grid-cols-2">
+                            <Button variant="outline" size="lg" className="h-14 font-bold border-gray-300" onClick={() => {
+                                setShowResultScreen(false); // 채점 결과 상태의 문제 화면으로 이동
+                            }}>
+                                <Info className="w-5 h-5 mr-2" />
+                                해설보기
+                            </Button>
                             <Button variant="outline" size="lg" className="h-14 font-bold border-gray-300" onClick={() => {
                                 localStorage.removeItem(`examPrep:${typeId}`);
-                                window.location.reload();
+                                window.location.href = `/content/exam-prep/study/${encodeURIComponent(typeId)}?mode=new&color=white&name=${encodeURIComponent(displayTypeName || "")}`;
                             }}>
                                 <RotateCcw className="w-5 h-5 mr-2" />
                                 다시 문제풀기
+                            </Button>
+                        </div>
+                        <div className="w-full grid gap-3 mt-3 grid-cols-2">
+                            <Button variant="ghost" className="h-14 font-medium bg-gray-100/50 hover:bg-gray-100 text-gray-700" onClick={handleBack}>
+                                <Home className="w-4 h-4 mr-2" />
+                                시험대비 홈으로
                             </Button>
                             {isLoadingNext ? (
                                 <Button size="lg" className="h-14 font-bold bg-gray-200 text-gray-500 pointer-events-none shadow-inner" disabled>
@@ -469,12 +442,8 @@ function StudyPage() {
                                     다음 유형 풀기
                                     <ChevronRight className="w-5 h-5 ml-2" />
                                 </Button>
-                            ) : null}
+                            ) : <div />}
                         </div>
-                        <Button variant="ghost" className="mt-6 text-gray-400 font-medium" onClick={handleBack}>
-                            <Home className="w-4 h-4 mr-2" />
-                            시험대비 홈으로
-                        </Button>
                     </div>
                 </div>
             </div>
@@ -486,43 +455,55 @@ function StudyPage() {
             {/* 좌측 메인 영역 */}
             <div className="flex-1 flex flex-col h-screen overflow-hidden">
                 {/* 헤더 네비게이션 */}
-                <div className="h-16 border-b flex items-center px-6 justify-between bg-white shrink-0">
+                <div className="h-16 border-b flex items-center px-6 bg-white shrink-0">
                     <div className="flex items-center gap-4">
-                        <button onClick={handleBack} className="p-2 hover:bg-gray-100 rounded-lg">
+                        <button onClick={handleBack} className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
                             <ChevronLeft className="w-6 h-6 text-gray-600" />
                         </button>
                         <span className="font-bold text-lg text-gray-900 leading-none">{displayTypeName || "유형 문제 풀이"}</span>
                     </div>
+                </div>
 
-                    {/* 상단 번호 네비게이션 (1~3번) */}
-                    <div className="flex items-center gap-2 bg-gray-50 p-1.5 px-3 rounded-full border border-gray-100">
-                        {FIXED_QUESTIONS.map((_, i) => {
-                            const isDone = gradedResults[i] !== null;
-                            const isCurrent = i === currentIndex;
-                            return (
-                                <button
-                                    key={i}
-                                    disabled={!isDone} // P0-7: 미완료 문항 이동 불가
-                                    onClick={() => {
-                                        if (isDone) {
-                                            setCurrentIndex(i);
-                                            setIsCurrentGraded(true);
-                                            setIsReadDone(true); // 이미 완료된 문항은 오답/정답 모두 다 읽은 상태로 간주(재진입시 진행 차단 방지)
-                                        }
-                                    }}
-                                    className={cn(
-                                        "w-8 h-8 rounded-full flex items-center justify-center text-[13px] font-bold transition-all",
-                                        isCurrent ? "bg-primary text-white shadow-md shadow-primary/20 scale-110" :
-                                            isDone ? "bg-white text-gray-700 hover:bg-white/80 border border-gray-200" : "bg-transparent text-gray-300"
-                                    )}
-                                >
-                                    {i + 1}
-                                </button>
-                            );
-                        })}
-                    </div>
+                {/* 문항 탭 영역 */}
+                <div className="bg-white border-b px-6 flex items-end gap-1 shrink-0 pt-3 shadow-sm z-10 relative">
+                    {FIXED_QUESTIONS.map((_, i) => {
+                        const isDone = isSubmitted;
+                        const isAnswered = answers[i] !== null;
+                        const isCurrent = i === currentIndex;
+                        
+                        let tabClass = "text-gray-400 border-transparent hover:text-gray-600 hover:bg-gray-50";
+                        if (isCurrent) {
+                            tabClass = "text-primary border-primary font-bold bg-indigo-50/40";
+                        } else if (isDone) {
+                            tabClass = "text-gray-700 border-transparent hover:bg-gray-50";
+                        } else if (isAnswered) {
+                            tabClass = "text-indigo-600 border-transparent font-medium bg-indigo-50/20 hover:bg-indigo-50/40";
+                        }
 
-                    <div className="w-10" />
+                        return (
+                            <button
+                                key={i}
+                                onClick={() => setCurrentIndex(i)}
+                                className={cn(
+                                    "px-6 py-3 min-w-[130px] text-[15px] border-b-2 transition-all rounded-t-xl flex items-center justify-center gap-2 outline-none",
+                                    tabClass
+                                )}
+                            >
+                                <span>문제 {i + 1}</span>
+                                {isDone ? (
+                                    gradedResults[i] ? (
+                                        <span className="text-emerald-500 font-bold ml-1">O</span>
+                                    ) : (
+                                        <span className="text-rose-500 font-bold ml-1">X</span>
+                                    )
+                                ) : isAnswered && !isCurrent ? (
+                                    <span className="text-[11px] bg-indigo-100 text-indigo-600 px-2 py-0.5 rounded-full font-bold tracking-tight">저장됨</span>
+                                ) : !isAnswered && !isCurrent ? (
+                                    <span className="text-[11px] bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full font-medium tracking-tight">미입력</span>
+                                ) : null}
+                            </button>
+                        );
+                    })}
                 </div>
 
                 {/* 문제 영역 */}
@@ -625,50 +606,39 @@ function StudyPage() {
                 {/* 하단 푸터 (버튼 영역) */}
                 <div className="h-[100px] border-t bg-white px-6 md:px-12 flex items-center justify-between shrink-0 shadow-[0_-10px_30px_rgba(0,0,0,0.02)] z-10">
                     <div className="flex-1">
-                        {isCurrentGraded && !isCorrect && !isReadDone && (
+                        {isSubmitted && !isCorrect && (
                             <div className="flex items-center gap-3 text-rose-600 font-bold animate-in slide-in-from-bottom-2">
                                 <AlertCircle className="w-6 h-6" />
-                                <span className="text-[14px] md:text-[16px]">틀렸어요! 해설을 확인하고 <span className="bg-rose-100 px-2 py-0.5 rounded-md">[다 읽었어요]</span> 버튼을 눌러주세요.</span>
+                                <span className="text-[14px] md:text-[16px]">틀렸어요! 해설을 확인해보세요.</span>
                             </div>
                         )}
-                        {isCurrentGraded && (isCorrect || isReadDone) && ( // isReadDone 일 때도 문구 통일 혹은 정답 문구 유지
+                        {isSubmitted && isCorrect && (
                             <div className="flex items-center gap-3 text-emerald-600 font-bold animate-in slide-in-from-bottom-2">
                                 <div className="p-1.5 bg-emerald-100 rounded-full">
                                     <Check className="w-5 h-5 stroke-[3]" />
                                 </div>
-                                <span className="text-[14px] md:text-[16px]">{isCorrect ? "정답이에요! 구조적 핵심을 잘 짚었습니다." : "오답 노트를 통해 꼼꼼하게 복습하세요."}</span>
+                                <span className="text-[14px] md:text-[16px]">정답이에요!</span>
                             </div>
                         )}
                     </div>
 
                     <div className="flex items-center gap-3 md:gap-4 shrink-0">
-                        {!isCompletedItem ? (
+                        {!isSubmitted ? (
                             <Button
-                                disabled={userChoice === null}
+                                disabled={!isAllAnswered}
                                 onClick={handleSubmit}
-                                className="w-36 md:w-48 h-12 md:h-14 text-[16px] md:text-[17px] font-black bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 rounded-2xl transition-all active:scale-95"
+                                className="w-36 md:w-48 h-12 md:h-14 text-[16px] md:text-[17px] font-black bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 rounded-2xl transition-all active:scale-95 disabled:bg-gray-300 disabled:text-gray-500 disabled:shadow-none"
                             >
                                 제출하기
                             </Button>
                         ) : (
-                            <>
-                                {!isCorrect && !isReadDone && (
-                                    <Button
-                                        onClick={() => setIsReadDone(true)}
-                                        className="w-36 md:w-48 h-12 md:h-14 text-[16px] md:text-[17px] font-black bg-gray-900 hover:bg-black text-white rounded-2xl shadow-lg shadow-gray-200 transition-all active:scale-95"
-                                    >
-                                        다 읽었어요
-                                    </Button>
-                                )}
-                                <Button
-                                    disabled={!isCorrect && !isReadDone}
-                                    onClick={handleNext}
-                                    className="w-36 md:w-48 h-12 md:h-14 text-[16px] md:text-[17px] font-black bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 rounded-2xl transition-all active:scale-95 disabled:bg-gray-300 disabled:text-gray-500 disabled:shadow-none"
-                                >
-                                    {currentIndex === 2 ? "결과 보기" : "다음으로"}
-                                    <ChevronRight className="w-5 h-5 ml-1 md:ml-2 stroke-[3]" />
-                                </Button>
-                            </>
+                            <Button
+                                onClick={() => setShowResultScreen(true)}
+                                className="w-36 md:w-48 h-12 md:h-14 text-[16px] md:text-[17px] font-black bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 rounded-2xl transition-all active:scale-95 text-white"
+                            >
+                                유형 결과 보기
+                                <ChevronRight className="w-5 h-5 ml-1 md:ml-2 stroke-[3]" />
+                            </Button>
                         )}
                     </div>
                 </div>

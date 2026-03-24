@@ -648,15 +648,15 @@ function ExamPrepPage() {
                     const solvedCount = gradedResults.filter(r => r !== null).length;
                     const correctCount = gradedResults.filter(r => r === true).length;
 
-                    // [추가 규칙 4] API/로컬 데이터 존재 시 목 데이터 무조건 무시.
                     if (parsed && Array.isArray(parsed.gradedResults)) {
                         needsMockColor = false;
-                        if (parsed.gradedCount && parsed.gradedCount >= 1) {
+                        const hasAnswers = Array.isArray(parsed.answers) && parsed.answers.some((a: any) => a !== null);
+                        if (hasAnswers || parsed.completed) {
                             hasProgress = true;
                         }
-
-                        if (solvedCount === 0) achColor = "white";
-                        else {
+                        if (solvedCount === 0) {
+                            achColor = hasProgress ? "gray" : "white";
+                        } else {
                             achColor = getAchievementKey(solvedCount, correctCount, bucket);
                         }
 
@@ -816,7 +816,8 @@ function ExamPrepPage() {
         if (saved) {
             try {
                 const parsed = JSON.parse(saved);
-                if ((parsed.gradedCount && parsed.gradedCount >= 1) || parsed.completed) {
+                const hasAnswers = Array.isArray(parsed.answers) && parsed.answers.some((a: any) => a !== null);
+                if (hasAnswers || parsed.completed) {
                     hasCount = true;
                 }
             } catch (e) {
