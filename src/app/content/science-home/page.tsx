@@ -25,9 +25,11 @@ export default function ScienceHomePage() {
                         <div className="bg-white text-slate-800 px-6 py-1.5 rounded-[10px] text-xs font-black shadow-sm flex items-center justify-center min-w-[100px]">
                             기본 모드
                         </div>
-                        <div className="text-white/40 px-6 py-1.5 text-xs font-bold min-w-[100px] text-center cursor-not-allowed">
-                            자유 모드
-                        </div>
+                        <Link href="/content/exam-prep/common-curriculum">
+                            <div className="text-white/40 hover:text-white px-6 py-1.5 text-xs font-bold min-w-[100px] text-center cursor-pointer transition-colors">
+                                자유 모드
+                            </div>
+                        </Link>
                     </div>
 
                     {/* [P0] 시험대비 진입 버튼 - 독립 레이어로 배치 (이미지 기반) */}

@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
     X,
     ChevronDown,
@@ -113,9 +114,11 @@ const applyMockColors = (types: TypeData[], bucket: "basic" | "skill" | "advance
 };
 
 // --- Main Component ---
-export default function CommonCurriculumLayerPage() {
-    const [curriculum, setCurriculum] = useState<BigUnit[]>([]);
+function CommonCurriculumContent() {
+    const searchParams = useSearchParams();
+    const [bigUnits, setBigUnits] = useState<BigUnit[]>([]);
     const [loading, setLoading] = useState(true);
+    const [openBigUnitId, setOpenBigUnitId] = useState<string | null>(null); // Added this state
     const [openMidUnitId, setOpenMidUnitId] = useState<string | null>(null);
     const [activeTraining, setActiveTraining] = useState<'concept' | 'type' | 'descriptive' | null>(null);
     const [showDescription, setShowDescription] = useState(false);
@@ -133,6 +136,26 @@ export default function CommonCurriculumLayerPage() {
         setSelectedMidUnit({ bigUnitName, midUnitName, midUnitId });
         setActiveTraining(type);
     };
+
+    // --- Query Param Handling ---
+    useEffect(() => {
+        const midUnitIdParam = searchParams.get("midUnitId");
+        const typeParam = searchParams.get("type");
+
+        if (midUnitIdParam && bigUnits.length > 0) {
+            for (const bu of bigUnits) {
+                const mu = bu.midUnits.find(m => m.id === midUnitIdParam);
+                if (mu) {
+                    setOpenBigUnitId(bu.id);
+                    setOpenMidUnitId(mu.id);
+                    if (typeParam && ["concept", "type", "descriptive"].includes(typeParam)) {
+                        handleTrainingStart(bu.name, mu.name, mu.id, typeParam as any);
+                    }
+                    break;
+                }
+            }
+        }
+    }, [searchParams, bigUnits]);
 
     const handleNextTraining = () => {
         if (activeTraining === 'concept') setActiveTraining('type');
@@ -312,7 +335,7 @@ export default function CommonCurriculumLayerPage() {
                         }))
                     };
                 });
-                setCurriculum(newBigUnits);
+                setBigUnits(newBigUnits);
             } catch (err) {
                 console.error(err);
             } finally {
@@ -425,9 +448,8 @@ export default function CommonCurriculumLayerPage() {
                     </button>
                 </div>
 
-                {/* Sidebar Scroll Area */}
                 <div className="flex-1 overflow-y-auto p-6 flex flex-col gap-6 custom-scrollbar">
-                    {curriculum.map((bigUnit) => (
+                    {bigUnits.map((bigUnit: BigUnit) => (
                         <div key={bigUnit.id} className="flex flex-col gap-3">
                              <div className="flex items-center gap-2 mb-1">
                                 <span className="bg-indigo-50 text-indigo-600 text-[10px] font-black px-2 py-0.5 rounded-md border border-indigo-100 uppercase tracking-widest">
@@ -439,7 +461,7 @@ export default function CommonCurriculumLayerPage() {
                              </div>
 
                              <div className="flex flex-col gap-2">
-                                {bigUnit.midUnits.map((midUnit) => {
+                                {bigUnit.midUnits.map((midUnit: MidUnit) => {
                                     const isOpen = openMidUnitId === midUnit.id;
                                     return (
                                         <div key={midUnit.id} className={cn(
@@ -566,5 +588,13 @@ export default function CommonCurriculumLayerPage() {
                 }
             `}</style>
         </div>
+    );
+}
+
+export default function CommonCurriculumPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-[#1a1c2c] flex items-center justify-center text-white font-bold">Loading...</div>}>
+            <CommonCurriculumContent />
+        </Suspense>
     );
 }
