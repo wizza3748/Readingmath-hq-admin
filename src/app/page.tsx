@@ -83,6 +83,12 @@ const agencyWorkItems: WorkItem[] = [
 
 const frontWorkItems: WorkItem[] = [
   {
+    id: "RM-293",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-293",
+    title: "[프론트] 공통 커리큘럼 레이어 수정 - 유형도전 영역 추가 (UI 설계)",
+    internalUrl: "/content/exam-prep/common-curriculum",
+  },
+  {
     id: "RM-236",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-236",
     title: "[프론트] 리딩과학 시험대비",
