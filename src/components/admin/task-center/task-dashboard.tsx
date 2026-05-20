@@ -338,7 +338,7 @@ export default function TaskDashboard() {
         </div>
       </div>
 
-      {/* ── 과제 센터 이용 안내 모달 ── */}
+      {/* ── 과제 대시보드 이용 안내 모달 ── */}
       <Dialog open={helpOpen} onOpenChange={setHelpOpen}>
         <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto p-6 bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col gap-0">
           <DialogHeader className="pb-4 border-b border-slate-100 shrink-0">
@@ -346,7 +346,7 @@ export default function TaskDashboard() {
               <div className="p-2 rounded-lg bg-blue-50 text-blue-600">
                 <HelpCircle className="h-5 w-5" />
               </div>
-              <DialogTitle className="text-xl font-bold text-gray-900 leading-none">과제 센터 이용 안내</DialogTitle>
+              <DialogTitle className="text-xl font-bold text-gray-900 leading-none">과제 대시보드 이용 안내</DialogTitle>
             </div>
           </DialogHeader>
 

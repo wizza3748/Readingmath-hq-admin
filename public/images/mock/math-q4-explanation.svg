@@ -1,0 +1,32 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#fff" stroke="#ccc" />
+  <line x1="50" y1="20" x2="50" y2="180" stroke="#eee" />
+  <line x1="100" y1="20" x2="100" y2="180" stroke="#eee" />
+  <line x1="150" y1="20" x2="150" y2="180" stroke="#eee" />
+  <line x1="200" y1="20" x2="200" y2="180" stroke="#eee" />
+  <line x1="250" y1="20" x2="250" y2="180" stroke="#eee" />
+  
+  <line x1="20" y1="50" x2="280" y2="50" stroke="#eee" />
+  <line x1="20" y1="100" x2="280" y2="100" stroke="#eee" />
+  <line x1="20" y1="150" x2="280" y2="150" stroke="#eee" />
+  
+  <line x1="20" y1="180" x2="280" y2="180" stroke="#000" stroke-width="2" />
+  <line x1="20" y1="20" x2="20" y2="180" stroke="#000" stroke-width="2" />
+  
+  <text x="280" y="195" font-size="12" text-anchor="end">음악(점)</text>
+  <text x="15" y="15" font-size="12" text-anchor="start">미술(점)</text>
+  
+  <circle cx="50" cy="150" r="3" fill="#000" />
+  <circle cx="100" cy="100" r="3" fill="#000" />
+  <circle cx="150" cy="50" r="3" fill="#000" />
+  <circle cx="200" cy="50" r="3" fill="#000" />
+  <circle cx="250" cy="30" r="3" fill="#000" />
+  <circle cx="150" cy="150" r="3" fill="#000" />
+  <circle cx="150" cy="100" r="3" fill="#000" />
+  <circle cx="200" cy="100" r="3" fill="#000" />
+  <circle cx="100" cy="50" r="3" fill="#000" />
+  <circle cx="50" cy="100" r="3" fill="#000" />
+  
+  <!-- Diagonal line -->
+  <line x1="20" y1="180" x2="220" y2="20" stroke="cyan" stroke-width="2" />
+</svg>

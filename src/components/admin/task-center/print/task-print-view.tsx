@@ -83,7 +83,8 @@ export default function TaskPrintView({ taskId }: Props) {
       const originalTitle = document.title;
       const dateStr = new Date().toISOString().replace(/[:\-T]/g, "").slice(0, 13);
       const safeTaskName = task?.name ? task.name.replace(/[/\\?%*:|"<>]/g, '') : '과제출력';
-      document.title = `${safeTaskName}_${dateStr}`;
+      const suffix = printType === "teacher" ? "_교사용" : "";
+      document.title = `${safeTaskName}_${dateStr}${suffix}`;
       window.print();
       document.title = originalTitle;
     }, 100);

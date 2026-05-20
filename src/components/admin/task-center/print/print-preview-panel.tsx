@@ -5,6 +5,92 @@ import { TaskItem, StudentAssignment } from "@/lib/task-center-mock";
 import { MATH_PRINT_SAMPLES, SCIENCE_PRINT_SAMPLES, PrintQuestion } from "@/lib/task-print-sample-mock";
 import { PrintColor } from "./task-print-view";
 
+// ── 초경량 LaTeX 수식 렌더러 유틸리티 ──
+export function renderLatexToHtml(latex: string): string {
+  let html = latex.trim();
+
+  // 1. \therefore -> ∴
+  html = html.replace(/\\therefore/g, '∴');
+  
+  // 2. \approx -> ≈
+  html = html.replace(/\\approx/g, '≈');
+  
+  // 3. \ne -> ≠
+  html = html.replace(/\\ne/g, '≠');
+  
+  // 4. \le 또는 \leq -> ≤
+  html = html.replace(/\\le(q)?/g, '≤');
+  
+  // 5. \ge 또는 \geq -> ≥
+  html = html.replace(/\\ge(q)?/g, '≥');
+
+  // 6. \text{...} 처리 (수식 내 일반 텍스트)
+  let textPrev = "";
+  while (html !== textPrev) {
+    textPrev = html;
+    html = html.replace(/\\text\s*\{([^{}]+)\}/g, (match, txt) => {
+      return `<span class="not-italic font-sans" style="font-family: sans-serif;">${txt}</span>`;
+    });
+  }
+
+  // 7. 분수 처리: \frac{num}{den}
+  let fracPrev = "";
+  while (html !== fracPrev) {
+    fracPrev = html;
+    html = html.replace(/\\frac\s*\{([^{}]+)\}\s*\{([^{}]+)\}/g, (match, num, den) => {
+      return `<span class="inline-flex flex-col items-center mx-0.5" style="vertical-align: middle; line-height: 1.1;">
+        <span class="text-center text-[0.85em] border-b border-gray-700 px-0.5 pb-[1px]" style="line-height: 1.1;">${num}</span>
+        <span class="text-center text-[0.85em] pt-[1px]" style="line-height: 1.1;">${den}</span>
+      </span>`;
+    });
+  }
+
+  // 8. 위첨자 처리: x^{2} 및 x^2
+  html = html.replace(/([a-zA-Z0-9)]+)\^\{([^{}]+)\}/g, (match, base, exp) => {
+    return `${base}<sup class="text-[0.75em] -top-[0.35em] ml-[1px]" style="vertical-align: super; font-size: 75%;">${exp}</sup>`;
+  });
+  html = html.replace(/([a-zA-Z0-9)]+)\^([a-zA-Z0-9-+]+)/g, (match, base, exp) => {
+    return `${base}<sup class="text-[0.75em] -top-[0.35em] ml-[1px]" style="vertical-align: super; font-size: 75%;">${exp}</sup>`;
+  });
+
+  // 9. 곱셈 및 나눗셈 기호
+  html = html.replace(/\\times/g, '×');
+  html = html.replace(/\\div/g, '÷');
+
+  // 10. 백슬래시 정리
+  html = html.replace(/\\/g, '');
+
+  return `<span class="italic font-serif inline-block mx-0.5" style="font-family: 'Times New Roman', Times, serif; vertical-align: middle;">${html}</span>`;
+}
+
+export function parseAndRenderMath(text: string): string {
+  if (!text) return "";
+
+  let result = text;
+
+  // 1. $$ ... $$ 블록 수식
+  result = result.replace(/\$\$([\s\S]*?)\$\$/g, (match, formula) => {
+    return `<div class="my-2 text-center block max-w-full overflow-x-auto">${renderLatexToHtml(formula)}</div>`;
+  });
+
+  // 2. \[ ... \] 블록 수식
+  result = result.replace(/\\\[([\s\S]*?)\\\]/g, (match, formula) => {
+    return `<div class="my-2 text-center block max-w-full overflow-x-auto">${renderLatexToHtml(formula)}</div>`;
+  });
+
+  // 3. $ ... $ 인라인 수식
+  result = result.replace(/\$([\s\S]*?)\$/g, (match, formula) => {
+    return renderLatexToHtml(formula);
+  });
+
+  // 4. \( ... \) 인라인 수식
+  result = result.replace(/\\\(([\s\S]*?)\\\)/g, (match, formula) => {
+    return renderLatexToHtml(formula);
+  });
+
+  return result;
+}
+
 interface Props {
   task: TaskItem;
   isBlocked: boolean;
@@ -25,20 +111,26 @@ interface Props {
   setPreviewStudentId?: (id: string) => void;
 }
 
+export interface PrintItem {
+  type: 'question' | 'explanation';
+  question: PrintQuestion;
+}
+
 interface PageData {
-  left: PrintQuestion[];
-  right: PrintQuestion[];
+  left: PrintItem[];
+  right: PrintItem[];
   student: StudentAssignment | null;
   studentPageNo: number;
 }
 
-const PageHeader = ({ task, color, showName, showDate, showLogo, previewStudent }: any) => {
+const PageHeader = ({ task, color, showName, showDate, showLogo, previewStudent, printType }: any) => {
   // 테마 색상에 투명도 30% 적용 (HEX 8자리)
   const borderColor = color.length === 7 ? `${color}4D` : color;
+  const displayName = printType === "teacher" ? `${task.name} (교사용)` : task.name;
   
   return (
     <div className="mb-4 shrink-0">
-      <h2 className="text-[13pt] font-bold truncate mb-2" style={{ color }}>{task.name}</h2>
+      <h2 className="text-[13pt] font-bold truncate mb-2" style={{ color }}>{displayName}</h2>
       <div className="flex justify-between items-end pb-2 border-b" style={{ borderColor }}>
         <div className="text-[11pt] text-gray-700 flex gap-6">
           {showName && (
@@ -72,14 +164,15 @@ const PageHeader = ({ task, color, showName, showDate, showLogo, previewStudent 
   );
 };
 
-const AbbreviatedPageHeader = ({ task, color }: any) => {
+const AbbreviatedPageHeader = ({ task, color, printType }: any) => {
   // 테마 색상에 투명도 30% 적용 (HEX 8자리)
   const borderColor = color.length === 7 ? `${color}4D` : color;
+  const displayName = printType === "teacher" ? `${task.name} (교사용)` : task.name;
   
   return (
     <div className="mb-3 shrink-0">
       <div className="flex justify-between items-center pb-1 border-b" style={{ borderColor }}>
-        <h2 className="text-[10pt] font-bold truncate max-w-[85%]" style={{ color }}>{task.name}</h2>
+        <h2 className="text-[10pt] font-bold truncate max-w-[85%]" style={{ color }}>{displayName}</h2>
         <span className="text-[8pt] text-gray-400 font-medium shrink-0">
           리딩{task.subject === "math" ? "수학" : "과학"}
         </span>
@@ -88,30 +181,26 @@ const AbbreviatedPageHeader = ({ task, color }: any) => {
   );
 };
 
-const QuestionContent = ({ q, printType, task, color, fontSize, onImageLoad }: any) => {
-  let displayAnswer = q.answer;
-  if (q.choices && q.choices.length > 0) {
-    const choiceIndex = q.choices.indexOf(q.answer);
-    if (choiceIndex !== -1) {
-      displayAnswer = ['①','②','③','④','⑤'][choiceIndex];
-    }
-  }
-
+// ── 1. 문항 본문 (발문/보기/선지) 렌더링 컴포넌트 ──
+const QuestionBody = ({ q, color, fontSize, onImageLoad, scaleDownChoices }: any) => {
   return (
-    <>
-      <div className="flex items-start gap-2 mb-2 font-bold" style={{ fontSize: `${fontSize}pt` }}>
-        <span style={{ color }}>{q.teacherQuestionNo}.</span>
-        <div dangerouslySetInnerHTML={{ __html: q.stem }} className="leading-snug" />
+    <div className="max-w-full min-w-0 overflow-hidden flex flex-col">
+      <div className="flex items-start gap-2 mb-2 font-bold max-w-full min-w-0" style={{ fontSize: `${fontSize}pt` }}>
+        <span style={{ color }} className="shrink-0">{q.teacherQuestionNo}.</span>
+        <div dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.stem) }} className="leading-snug max-w-full min-w-0 overflow-hidden" />
       </div>
 
       {q.passage && (
-        <div className="border p-3 rounded mb-3 text-gray-800 leading-relaxed bg-white" style={{ fontSize: `${fontSize - 1}pt` }}>
-          <div dangerouslySetInnerHTML={{ __html: q.passage.replace(/\n/g, '<br/>') }} />
+        <div className="border p-3 rounded mb-3 text-gray-800 leading-relaxed bg-white max-w-full min-w-0 overflow-x-auto" style={{ fontSize: `${fontSize - 1}pt` }}>
+          <div 
+            dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.passage.replace(/\n/g, '<br/>')) }} 
+            className="max-w-full min-w-0 overflow-hidden [&_img]:!max-w-full [&_img]:!h-auto [&_img]:object-contain [&_table]:!max-w-full [&_table]:w-full [&_table]:table-fixed"
+          />
         </div>
       )}
 
       {q.image && (
-        <div className="mb-3 flex justify-center">
+        <div className="mb-3 flex justify-center max-w-full min-w-0 overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
             src={q.image} 
@@ -122,22 +211,148 @@ const QuestionContent = ({ q, printType, task, color, fontSize, onImageLoad }: a
         </div>
       )}
 
-      <div className="flex flex-col gap-1 mt-2 text-gray-700" style={{ fontSize: `${fontSize - 1}pt` }}>
-        {q.choices.map((choice: string, i: number) => (
-          <div key={i} className="flex items-start gap-2">
-            <span className="shrink-0">{['①','②','③','④','⑤'][i]}</span>
-            <span dangerouslySetInnerHTML={{ __html: choice }} />
-          </div>
-        ))}
-      </div>
-
-      {printType === "teacher" && (
-        <div className="mt-4 pt-3 border-t border-dashed" style={{ borderColor: color }}>
-          <div className="text-sm font-bold mb-1" style={{ color: color }}>정답: {displayAnswer}</div>
-          <div className="text-sm text-gray-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: q.explanation }} />
+      {q.choices && q.choices.length > 0 ? (
+        <div className="flex flex-col gap-1 mt-2 text-gray-700 max-w-full min-w-0" style={{ fontSize: `${fontSize - 1}pt` }}>
+          {q.choices.map((choice: string, i: number) => (
+            <div key={i} className="flex items-start gap-2 max-w-full min-w-0 overflow-hidden">
+              <span className="shrink-0">{['①','②','③','④','⑤'][i]}</span>
+              <span 
+                dangerouslySetInnerHTML={{ __html: parseAndRenderMath(choice) }} 
+                className={`max-w-full min-w-0 overflow-hidden [&_table]:!max-w-full [&_table]:w-full [&_table]:table-fixed ${
+                  scaleDownChoices 
+                    ? "[&_img]:!min-w-[40%] [&_img]:!max-h-[140px] [&_img]:!h-auto [&_img]:object-contain" 
+                    : "[&_img]:!min-w-[70%] [&_img]:!max-w-full [&_img]:!h-auto [&_img]:object-contain"
+                }`}
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="mt-4 mb-2 flex items-center gap-2 max-w-full min-w-0">
+          <span className="text-gray-800 font-bold shrink-0" style={{ fontSize: `${fontSize - 1}pt` }}>정답 :</span>
+          <div className="border-b border-gray-400 w-40 flex-1 max-w-[200px]"></div>
         </div>
       )}
-    </>
+    </div>
+  );
+};
+
+// ── 2. 정답·해설 영역 렌더링 컴포넌트 ──
+const QuestionExplanation = ({ q, color, fontSize, isSeparated, onImageLoad }: any) => {
+  // 정답과 해설이 모두 미등록된 문항은 아예 해설 카드를 표시하지 않음
+  if (!q.explanation && !q.answer) return null;
+
+  let displayAnswer = q.answer;
+  if (q.choices && q.choices.length > 0) {
+    const choiceIndex = q.choices.indexOf(q.answer);
+    if (choiceIndex !== -1) {
+      displayAnswer = ['①','②','③','④','⑤'][choiceIndex];
+    }
+  }
+
+  let cleanExplanation = q.explanation || "";
+  let extractedImages: string[] = [];
+
+  if (cleanExplanation) {
+    const imgRegex = /<img[^>]*>/g;
+    const matches = cleanExplanation.match(imgRegex);
+    if (matches) {
+      extractedImages = matches;
+      cleanExplanation = cleanExplanation.replace(imgRegex, "").trim();
+      // Remove leading/trailing line breaks or spaces
+      cleanExplanation = cleanExplanation.replace(/^(<br\s*\/?>|\s)+|(<br\s*\/?>|\s)+$/gi, "").trim();
+    }
+  }
+
+  return (
+    <div 
+      className={`flex flex-col max-w-full min-w-0 w-full ${
+        isSeparated 
+          ? "border border-slate-200 rounded-lg p-3 bg-slate-50/50 mt-1 shadow-sm break-inside-avoid" 
+          : "mt-4 pt-3 border-t border-dashed"
+      }`} 
+      style={{ borderColor: isSeparated ? undefined : color }}
+    >
+      {isSeparated && (
+        <div className="text-[10pt] font-bold mb-2 pb-1 border-b border-slate-200 flex items-center gap-1.5" style={{ color: color }}>
+          <span className="inline-block w-1.5 h-3 rounded-[2px]" style={{ backgroundColor: color }}></span>
+          {q.teacherQuestionNo}번 정답·해설
+        </div>
+      )}
+      
+      {/* 정답 노출 */}
+      <div className="text-[9.5pt] font-bold mb-1.5 flex items-center gap-1.5">
+        <span className="text-slate-500 font-semibold text-[9pt]">정답 :</span>
+        <span style={{ color }} dangerouslySetInnerHTML={{ __html: parseAndRenderMath(displayAnswer) }} />
+      </div>
+      
+      {/* 해설 내용 노출 */}
+      {cleanExplanation && (
+        <div 
+          className="text-[9.5pt] text-gray-700 leading-relaxed max-w-full min-w-0 overflow-hidden [&_table]:!max-w-full [&_table]:w-full [&_table]:table-fixed mt-1" 
+          dangerouslySetInnerHTML={{ __html: parseAndRenderMath(cleanExplanation) }} 
+        />
+      )}
+
+      {/* 해설 이미지 노출 (해설 내용 아래에 정렬하여 표시) */}
+      {extractedImages.map((imgHtml, idx) => (
+        <div 
+          key={idx}
+          className="mt-2 flex justify-center max-w-full min-w-0 overflow-hidden [&_img]:!max-w-full [&_img]:!h-auto [&_img]:object-contain border rounded p-1 bg-white"
+          dangerouslySetInnerHTML={{ __html: imgHtml }}
+          onLoad={onImageLoad}
+        />
+      ))}
+    </div>
+  );
+};
+
+// ── 3. 통합 매개 컴포넌트 ──
+const QuestionContent = ({ q, printType, task, color, fontSize, onImageLoad, scaleDownChoices, itemType = "all" }: any) => {
+  if (itemType === "question") {
+    return (
+      <QuestionBody 
+        q={q} 
+        color={color} 
+        fontSize={fontSize} 
+        onImageLoad={onImageLoad} 
+        scaleDownChoices={scaleDownChoices} 
+      />
+    );
+  }
+
+  if (itemType === "explanation") {
+    return (
+      <QuestionExplanation 
+        q={q} 
+        color={color} 
+        fontSize={fontSize} 
+        isSeparated={true} 
+        onImageLoad={onImageLoad} 
+      />
+    );
+  }
+
+  // 기본값 "all" (학생용 및 단일 렌더링용)
+  return (
+    <div className="max-w-full min-w-0 overflow-hidden flex flex-col">
+      <QuestionBody 
+        q={q} 
+        color={color} 
+        fontSize={fontSize} 
+        onImageLoad={onImageLoad} 
+        scaleDownChoices={scaleDownChoices} 
+      />
+      {printType === "teacher" && (
+        <QuestionExplanation 
+          q={q} 
+          color={color} 
+          fontSize={fontSize} 
+          isSeparated={false} 
+          onImageLoad={onImageLoad} 
+        />
+      )}
+    </div>
   );
 };
 
@@ -153,6 +368,7 @@ export default function PrintPreviewPanel({
   const [zoom, setZoom] = React.useState<number>(0);
   const [pages, setPages] = React.useState<PageData[]>([]);
   const [triggerMeasure, setTriggerMeasure] = React.useState(0);
+  const [scaleDownIds, setScaleDownIds] = React.useState<string[]>([]);
 
   React.useEffect(() => {
     setMounted(true);
@@ -206,6 +422,84 @@ export default function PrintPreviewPanel({
     return () => clearTimeout(timer);
   }, [questions, split, pageMargin, problemGap, fontSize, showName, showDate, showLogo, printType]);
 
+  // 이미지 로딩 및 수식 렌더링 완료 후 다단 배치 실시간 재계산 감지 로직
+  React.useEffect(() => {
+    if (!mounted) return;
+    
+    const container = document.getElementById('measure-container');
+    if (!container) return;
+
+    let timer: any = null;
+    const safeTrigger = () => {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => {
+        setTriggerMeasure(t => t + 1);
+      }, 100);
+    };
+
+    const handleImgLoad = () => {
+      safeTrigger();
+    };
+
+    // 1. 이미 존재하는 이미지들 중 로드 대기/완료 처리
+    const imgs = container.querySelectorAll('img');
+    imgs.forEach(img => {
+      if ((img as HTMLImageElement).complete) {
+        // 이미 완료된 이미지도 높이 반영을 위해 1회 재계산 트리거
+        safeTrigger();
+      } else {
+        img.addEventListener('load', handleImgLoad);
+      }
+    });
+
+    // 2. 동적으로 주입되는 이미지 및 수식 마크업 변화 감지
+    const observer = new MutationObserver((mutations) => {
+      let changed = false;
+      mutations.forEach(mutation => {
+        if (mutation.type === 'childList') {
+          mutation.addedNodes.forEach(node => {
+            if (node.nodeType === Node.ELEMENT_NODE) {
+              const el = node as HTMLElement;
+              const newImgs = el.tagName === 'IMG' ? [el] : Array.from(el.querySelectorAll('img'));
+              if (newImgs.length > 0) {
+                newImgs.forEach(img => {
+                  if ((img as HTMLImageElement).complete) {
+                    safeTrigger();
+                  } else {
+                    img.addEventListener('load', handleImgLoad);
+                  }
+                });
+                changed = true;
+              }
+              // 수식 등으로 DOM 내용이 바뀐 경우에도 높이 재측정 트리거
+              if (el.classList.contains('math') || el.querySelector('.italic')) {
+                changed = true;
+              }
+            }
+          });
+          changed = true;
+        }
+      });
+      if (changed) {
+        safeTrigger();
+      }
+    });
+
+    observer.observe(container, {
+      childList: true,
+      subtree: true
+    });
+
+    return () => {
+      if (timer) clearTimeout(timer);
+      observer.disconnect();
+      const currentImgs = container.querySelectorAll('img');
+      currentImgs.forEach(img => {
+        img.removeEventListener('load', handleImgLoad);
+      });
+    };
+  }, [mounted, questions]);
+
   // Actual auto-pagination logic over target students
   React.useEffect(() => {
     if (questions.length === 0) {
@@ -229,60 +523,167 @@ export default function PrintPreviewPanel({
     if (split === "2") maxItemsPerColumn = 1;
     else if (split === "4") maxItemsPerColumn = 2;
     else if (split === "6") maxItemsPerColumn = 3;
+
+    // 1단계: 각 문항의 본문 높이를 측정하여 본문 영역 한계를 초과하는 문항이 있는지 스캔
+    const newScaleDownIds: string[] = [];
+    const isPageOneInitial = true;
+    const initialHeaderHeight = isPageOneInitial ? headerHeight : shortHeaderHeight;
+    const maxAvailableHeight = pageHeightPx - (marginPx * 2) - initialHeaderHeight - 45;
+
+    for (let i = 0; i < questions.length; i++) {
+      const q = questions[i];
+      let itemHeight = 0;
+      
+      if (printType === "teacher") {
+        // 교사용일 때는 해설 영역 크기 때문에 억울하게 이미지가 줄지 않도록 본문 높이만으로 판정
+        const elBody = document.getElementById(`measure-q-body-${q.id}`);
+        itemHeight = elBody ? elBody.getBoundingClientRect().height : 0;
+      } else {
+        // 학생용일 때는 전체 높이로 판정
+        const el = document.getElementById(`measure-q-${q.id}`);
+        itemHeight = el ? el.getBoundingClientRect().height : 0;
+      }
+
+      // 문항의 높이가 1단 전체 최대 가용 높이를 넘어서면 추가 축소 대상으로 등록
+      if (itemHeight > maxAvailableHeight) {
+        newScaleDownIds.push(q.id);
+      }
+    }
+
+    // 변경점이 있을 때만 딱 1회 업데이트 (무한 루프 방지)
+    const hasScaleChanged = scaleDownIds.length !== newScaleDownIds.length ||
+      newScaleDownIds.some(id => !scaleDownIds.includes(id));
+    
+    if (hasScaleChanged) {
+      setScaleDownIds(newScaleDownIds);
+      return; // 다음 렌더링에 축소된 높이가 적용되도록 흐름 대기
+    }
     
     const allPages: PageData[] = [];
 
     // Paginate for each target student independently
     targetStudents.forEach((student) => {
-      const studentPages: { left: PrintQuestion[]; right: PrintQuestion[] }[] = [];
-      let currentPageData: { left: PrintQuestion[]; right: PrintQuestion[] } = { left: [], right: [] };
+      const studentPages: { left: PrintItem[]; right: PrintItem[] }[] = [];
+      let currentPageData: { left: PrintItem[]; right: PrintItem[] } = { left: [], right: [] };
       let currentColumn: 'left' | 'right' = 'left';
       let currentColumnHeight = 0;
+
+      // 헬퍼: 다음 단(또는 다음 페이지)으로 슬롯 전이
+      const moveToNextSlot = () => {
+        if (currentColumn === 'left') {
+          currentColumn = 'right';
+          currentColumnHeight = 0;
+        } else {
+          studentPages.push(currentPageData);
+          currentPageData = { left: [], right: [] };
+          currentColumn = 'left';
+          currentColumnHeight = 0;
+        }
+      };
 
       for (let i = 0; i < questions.length; i++) {
         const q = questions[i];
         
-        const el = document.getElementById(`measure-q-${q.id}`);
-        const itemHeight = el ? el.getBoundingClientRect().height : 0;
+        if (printType === "teacher") {
+          // ── 교사용 지능형 2단계 분리 배치 알고리즘 ──
+          const elBody = document.getElementById(`measure-q-body-${q.id}`);
+          const bodyHeight = elBody ? elBody.getBoundingClientRect().height : 0;
 
-        while (true) {
-          const isPageOne = studentPages.length === 0;
-          const currentHeaderHeight = isPageOne ? headerHeight : shortHeaderHeight;
+          const elExp = document.getElementById(`measure-q-exp-${q.id}`);
+          const expHeight = elExp ? elExp.getBoundingClientRect().height : 0;
 
-          // 20px buffer to prevent unexpected overflow
-          const currentAvailableHeight = pageHeightPx - (marginPx * 2) - currentHeaderHeight - 20;
+          // 1. 문항 본문 배치
+          while (true) {
+            const isPageOne = studentPages.length === 0;
+            const currentHeaderHeight = isPageOne ? headerHeight : shortHeaderHeight;
+            const currentAvailableHeight = pageHeightPx - (marginPx * 2) - currentHeaderHeight - 45;
 
-          const heightWithGap = itemHeight + (currentPageData[currentColumn].length > 0 ? gapPx : 0);
-          
-          const willExceedHeight = currentColumnHeight + heightWithGap > currentAvailableHeight;
-          const willExceedCount = currentPageData[currentColumn].length >= maxItemsPerColumn;
+            const heightWithGap = bodyHeight + (currentPageData[currentColumn].length > 0 ? gapPx : 0);
+            
+            const willExceedHeight = currentColumnHeight + heightWithGap > currentAvailableHeight;
+            const willExceedCount = currentPageData[currentColumn].length >= maxItemsPerColumn;
 
-          // 예외 처리: 현재 단이 비어있다면, 단독 배치를 위해 가용 높이를 초과하더라도 무조건 넣습니다.
-          if (currentPageData[currentColumn].length === 0) {
-            currentPageData[currentColumn].push(q);
-            currentColumnHeight += heightWithGap;
-            break; // 배치 완료
-          }
-
-          // 제한 조건을 초과하면 다음 단(슬롯)으로 이동
-          if (willExceedHeight || willExceedCount) {
-            if (currentColumn === 'left') {
-              currentColumn = 'right';
-              currentColumnHeight = 0;
-            } else {
-              // 우측 단도 가득 찼으면 다음 페이지로 넘김
-              studentPages.push(currentPageData);
-              currentPageData = { left: [], right: [] };
-              currentColumn = 'left';
-              currentColumnHeight = 0;
+            if (currentPageData[currentColumn].length === 0) {
+              // 단독 배치는 언제나 강행
+              currentPageData[currentColumn].push({ type: 'question', question: q });
+              currentColumnHeight += heightWithGap;
+              break;
             }
-            continue; // 이동한 슬롯에서 현재 문항을 다시 배치 시도
+
+            if (willExceedHeight || willExceedCount) {
+              moveToNextSlot();
+              continue;
+            }
+
+            currentPageData[currentColumn].push({ type: 'question', question: q });
+            currentColumnHeight += heightWithGap;
+            break;
           }
 
-          // 정상 배치
-          currentPageData[currentColumn].push(q);
-          currentColumnHeight += heightWithGap;
-          break; // 배치 완료
+          // 해설 정보가 실존할 때만 해설 배치 실행
+          if (q.explanation || q.answer) {
+            // 2. 정답·해설 배치
+            while (true) {
+              const isPageOne = studentPages.length === 0;
+              const currentHeaderHeight = isPageOne ? headerHeight : shortHeaderHeight;
+              const currentAvailableHeight = pageHeightPx - (marginPx * 2) - currentHeaderHeight - 45;
+
+              const heightWithGap = expHeight + (currentPageData[currentColumn].length > 0 ? gapPx : 0);
+              
+              // 정답/해설은 하나의 통 카드로 다뤄야 하므로 슬롯을 초과하면 다음 슬롯으로 온전히 밀어넘김
+              const willExceedHeight = currentColumnHeight + heightWithGap > currentAvailableHeight;
+              const willExceedCount = currentPageData[currentColumn].length >= maxItemsPerColumn;
+
+              if (currentPageData[currentColumn].length === 0) {
+                // 단독 배치 강행
+                currentPageData[currentColumn].push({ type: 'explanation', question: q });
+                currentColumnHeight += heightWithGap;
+                break;
+              }
+
+              if (willExceedHeight || willExceedCount) {
+                // 정답·해설이 남은 공간에 들어가지 않는 경우: 다음 단 배치 가능 여부 확인
+                // 다음 단에도 들어가지 않는 경우 다음 페이지 좌측 단 상단에 표시
+                moveToNextSlot();
+                continue;
+              }
+
+              currentPageData[currentColumn].push({ type: 'explanation', question: q });
+              currentColumnHeight += heightWithGap;
+              break;
+            }
+          }
+
+        } else {
+          // ── 학생용 기존 안전 배치 알고리즘 ──
+          const el = document.getElementById(`measure-q-${q.id}`);
+          const itemHeight = el ? el.getBoundingClientRect().height : 0;
+
+          while (true) {
+            const isPageOne = studentPages.length === 0;
+            const currentHeaderHeight = isPageOne ? headerHeight : shortHeaderHeight;
+            const currentAvailableHeight = pageHeightPx - (marginPx * 2) - currentHeaderHeight - 45;
+
+            const heightWithGap = itemHeight + (currentPageData[currentColumn].length > 0 ? gapPx : 0);
+            
+            const willExceedHeight = currentColumnHeight + heightWithGap > currentAvailableHeight;
+            const willExceedCount = currentPageData[currentColumn].length >= maxItemsPerColumn;
+
+            if (currentPageData[currentColumn].length === 0) {
+              currentPageData[currentColumn].push({ type: 'question', question: q });
+              currentColumnHeight += heightWithGap;
+              break;
+            }
+
+            if (willExceedHeight || willExceedCount) {
+              moveToNextSlot();
+              continue;
+            }
+
+            currentPageData[currentColumn].push({ type: 'question', question: q });
+            currentColumnHeight += heightWithGap;
+            break;
+          }
         }
       }
       
@@ -302,7 +703,7 @@ export default function PrintPreviewPanel({
     });
     
     setPages(allPages);
-  }, [triggerMeasure, questions, split, pageMargin, problemGap, targetStudents]);
+  }, [triggerMeasure, questions, split, pageMargin, problemGap, targetStudents, scaleDownIds, printType]);
 
   // Preview Student Select Scroll Trigger (조상 컨테이너 스크롤 전파 버그 방지를 위해 직접 scrollTo 제어)
   React.useEffect(() => {
@@ -384,21 +785,69 @@ export default function PrintPreviewPanel({
         }
       `}</style>
       
-      {/* ── 측정용 숨김 컨테이너 ── */}
       <div className="absolute top-0 left-[-9999px] invisible pointer-events-none" aria-hidden="true">
         <div id="measure-container" style={{ width: '210mm', padding: `${pageMargin}mm`, boxSizing: 'border-box' }}>
           <div id="measure-header">
-            <PageHeader task={task} color={color} showName={showName} showDate={showDate} showLogo={showLogo} previewStudent={null} />
+            <PageHeader task={task} color={color} showName={showName} showDate={showDate} showLogo={showLogo} previewStudent={null} printType={printType} />
           </div>
           <div id="measure-header-short">
-            <AbbreviatedPageHeader task={task} color={color} />
+            <AbbreviatedPageHeader task={task} color={color} printType={printType} />
           </div>
-          <div className={`grid ${gridColsClass}`} style={{ gap: `${problemGap}mm` }}>
-            {questions.map((q) => (
-              <div key={`measure-${q.id}`} id={`measure-q-${q.id}`} className="flex flex-col break-inside-avoid">
-                 <QuestionContent q={q} printType={printType} task={task} color={color} fontSize={fontSize} onImageLoad={handleImageLoad} />
-              </div>
-            ))}
+          
+          {/* 단일 컬럼 수직 배치로 CSS stretch 격자 왜곡 원천 차단 */}
+          <div className="flex flex-col gap-4" style={{ width: '100%' }}>
+            {questions.map((q) => {
+              // 실제 컬럼 너비 정확히 산출: (100% - problemGap) / 2
+              const singleColumnWidth = `calc((100% - ${problemGap}mm) / 2)`;
+              
+              if (printType === "teacher") {
+                return (
+                  <React.Fragment key={`measure-frag-${q.id}`}>
+                    {/* 교사용 본문 측정 */}
+                    <div 
+                      id={`measure-q-body-${q.id}`} 
+                      className="flex flex-col bg-white"
+                      style={{ 
+                         width: singleColumnWidth,
+                         maxWidth: singleColumnWidth,
+                         boxSizing: 'border-box'
+                      }}
+                    >
+                       <QuestionContent q={q} printType={printType} task={task} color={color} fontSize={fontSize} onImageLoad={handleImageLoad} scaleDownChoices={scaleDownIds.includes(q.id)} itemType="question" />
+                    </div>
+                    
+                    {/* 교사용 정답·해설 측정 */}
+                    <div 
+                      id={`measure-q-exp-${q.id}`} 
+                      className="flex flex-col bg-white"
+                      style={{ 
+                         width: singleColumnWidth,
+                         maxWidth: singleColumnWidth,
+                         boxSizing: 'border-box'
+                      }}
+                    >
+                       <QuestionContent q={q} printType={printType} task={task} color={color} fontSize={fontSize} onImageLoad={handleImageLoad} itemType="explanation" />
+                    </div>
+                  </React.Fragment>
+                );
+              }
+              
+              // 학생용 모드 (기존 1개로 측정)
+              return (
+                <div 
+                  key={`measure-${q.id}`} 
+                  id={`measure-q-${q.id}`} 
+                  className="flex flex-col bg-white"
+                  style={{ 
+                     width: singleColumnWidth,
+                     maxWidth: singleColumnWidth,
+                     boxSizing: 'border-box'
+                  }}
+                >
+                   <QuestionContent q={q} printType={printType} task={task} color={color} fontSize={fontSize} onImageLoad={handleImageLoad} scaleDownChoices={scaleDownIds.includes(q.id)} itemType="all" />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -470,7 +919,10 @@ export default function PrintPreviewPanel({
                 height: '297mm',
                 minHeight: '297mm',
                 maxHeight: '297mm',
-                padding: `${pageMargin}mm`,
+                paddingTop: `${pageMargin}mm`,
+                paddingLeft: `${pageMargin}mm`,
+                paddingRight: `${pageMargin}mm`,
+                paddingBottom: `calc(${pageMargin}mm + 30px)`,
                 boxSizing: 'border-box',
                 pageBreakAfter: pIndex === pages.length - 1 ? 'auto' : 'always',
                 pageBreakInside: 'avoid',
@@ -478,30 +930,71 @@ export default function PrintPreviewPanel({
               }}
             >
               {pageQuestions.studentPageNo === 1 ? (
-                <PageHeader task={task} color={color} showName={showName} showDate={showDate} showLogo={showLogo} previewStudent={pageQuestions.student} />
+                <PageHeader task={task} color={color} showName={showName} showDate={showDate} showLogo={showLogo} previewStudent={pageQuestions.student} printType={printType} />
               ) : (
-                <AbbreviatedPageHeader task={task} color={color} />
+                <AbbreviatedPageHeader task={task} color={color} printType={printType} />
               )}
 
-              <div className="flex flex-1 relative" style={{ gap: `${problemGap}mm` }}>
-                <div className="absolute top-0 bottom-0 left-1/2 border-l border-gray-300" style={{ transform: "translateX(-50%)" }} />
-                <div className="flex-1 flex flex-col z-10" style={{ gap: `${problemGap}mm` }}>
-                  {(pageQuestions?.left || []).map((q) => (
-                    <div key={q.id} className="flex flex-col break-inside-avoid bg-white">
-                      <QuestionContent q={q} printType={printType} task={task} color={color} fontSize={fontSize} onImageLoad={undefined} />
+              <div className="flex flex-1 relative min-w-0" style={{ gap: `${problemGap}mm` }}>
+                <div className="absolute top-0 bottom-0 left-1/2 border-l border-gray-300 z-20" style={{ transform: "translateX(-50%)" }} />
+                <div 
+                  className="flex-1 flex flex-col z-10 min-w-0 flex-shrink-0" 
+                  style={{ 
+                    gap: `${problemGap}mm`,
+                    width: `calc(50% - ${problemGap / 2}mm)`,
+                    maxWidth: `calc(50% - ${problemGap / 2}mm)`
+                  }}
+                >
+                  {(pageQuestions?.left || []).map((qItem) => (
+                    <div key={`${qItem.question.id}-${qItem.type}`} className="flex flex-col break-inside-avoid bg-white w-full max-w-full min-w-0 overflow-hidden">
+                      <QuestionContent 
+                        q={qItem.question} 
+                        printType={printType} 
+                        task={task} 
+                        color={color} 
+                        fontSize={fontSize} 
+                        onImageLoad={undefined} 
+                        scaleDownChoices={scaleDownIds.includes(qItem.question.id)} 
+                        itemType={qItem.type}
+                      />
                     </div>
                   ))}
                 </div>
-                <div className="flex-1 flex flex-col z-10" style={{ gap: `${problemGap}mm` }}>
-                  {(pageQuestions?.right || []).map((q) => (
-                    <div key={q.id} className="flex flex-col break-inside-avoid bg-white">
-                      <QuestionContent q={q} printType={printType} task={task} color={color} fontSize={fontSize} onImageLoad={undefined} />
+                <div 
+                  className="flex-1 flex flex-col z-10 min-w-0 flex-shrink-0" 
+                  style={{ 
+                    gap: `${problemGap}mm`,
+                    width: `calc(50% - ${problemGap / 2}mm)`,
+                    maxWidth: `calc(50% - ${problemGap / 2}mm)`
+                  }}
+                >
+                  {(pageQuestions?.right || []).map((qItem) => (
+                    <div key={`${qItem.question.id}-${qItem.type}`} className="flex flex-col break-inside-avoid bg-white w-full max-w-full min-w-0 overflow-hidden">
+                      <QuestionContent 
+                        q={qItem.question} 
+                        printType={printType} 
+                        task={task} 
+                        color={color} 
+                        fontSize={fontSize} 
+                        onImageLoad={undefined} 
+                        scaleDownChoices={scaleDownIds.includes(qItem.question.id)} 
+                        itemType={qItem.type}
+                      />
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="flex justify-between items-center text-[10pt] text-gray-400 mt-4 pt-2 shrink-0">
+              <div 
+                className="absolute flex justify-between items-center text-[10pt] text-gray-400 border-t border-gray-100 pt-2 shrink-0"
+                style={{
+                  bottom: `${pageMargin}mm`,
+                  left: `${pageMargin}mm`,
+                  right: `${pageMargin}mm`,
+                  height: '25px',
+                  boxSizing: 'border-box'
+                }}
+              >
                 <span>리딩{task.subject === "math" ? "수학" : "과학"}</span>
                 <span>{pIndex + 1} / {pages.length}</span>
               </div>
@@ -522,7 +1015,10 @@ export default function PrintPreviewPanel({
                 height: '297mm',
                 minHeight: '297mm',
                 maxHeight: '297mm',
-                padding: `${pageMargin}mm`,
+                paddingTop: `${pageMargin}mm`,
+                paddingLeft: `${pageMargin}mm`,
+                paddingRight: `${pageMargin}mm`,
+                paddingBottom: `calc(${pageMargin}mm + 30px)`,
                 boxSizing: 'border-box',
                 pageBreakAfter: pIndex === pages.length - 1 ? 'auto' : 'always',
                 pageBreakInside: 'avoid',
@@ -530,30 +1026,71 @@ export default function PrintPreviewPanel({
               }}
             >
               {pageQuestions.studentPageNo === 1 ? (
-                <PageHeader task={task} color={color} showName={showName} showDate={showDate} showLogo={showLogo} previewStudent={pageQuestions.student} />
+                <PageHeader task={task} color={color} showName={showName} showDate={showDate} showLogo={showLogo} previewStudent={pageQuestions.student} printType={printType} />
               ) : (
-                <AbbreviatedPageHeader task={task} color={color} />
+                <AbbreviatedPageHeader task={task} color={color} printType={printType} />
               )}
 
-              <div className="flex flex-1 relative" style={{ gap: `${problemGap}mm` }}>
-                <div className="absolute top-0 bottom-0 left-1/2 border-l border-gray-300" style={{ transform: "translateX(-50%)" }} />
-                <div className="flex-1 flex flex-col z-10" style={{ gap: `${problemGap}mm` }}>
-                  {(pageQuestions?.left || []).map((q) => (
-                    <div key={`p-${q.id}`} className="flex flex-col break-inside-avoid bg-white">
-                      <QuestionContent q={q} printType={printType} task={task} color={color} fontSize={fontSize} onImageLoad={undefined} />
+              <div className="flex flex-1 relative min-w-0" style={{ gap: `${problemGap}mm` }}>
+                <div className="absolute top-0 bottom-0 left-1/2 border-l border-gray-300 z-20" style={{ transform: "translateX(-50%)" }} />
+                <div 
+                  className="flex-1 flex flex-col z-10 min-w-0 flex-shrink-0" 
+                  style={{ 
+                    gap: `${problemGap}mm`,
+                    width: `calc(50% - ${problemGap / 2}mm)`,
+                    maxWidth: `calc(50% - ${problemGap / 2}mm)`
+                  }}
+                >
+                  {(pageQuestions?.left || []).map((qItem) => (
+                    <div key={`p-${qItem.question.id}-${qItem.type}`} className="flex flex-col break-inside-avoid bg-white w-full max-w-full min-w-0 overflow-hidden">
+                      <QuestionContent 
+                        q={qItem.question} 
+                        printType={printType} 
+                        task={task} 
+                        color={color} 
+                        fontSize={fontSize} 
+                        onImageLoad={undefined} 
+                        scaleDownChoices={scaleDownIds.includes(qItem.question.id)} 
+                        itemType={qItem.type}
+                      />
                     </div>
                   ))}
                 </div>
-                <div className="flex-1 flex flex-col z-10" style={{ gap: `${problemGap}mm` }}>
-                  {(pageQuestions?.right || []).map((q) => (
-                    <div key={`p-${q.id}`} className="flex flex-col break-inside-avoid bg-white">
-                      <QuestionContent q={q} printType={printType} task={task} color={color} fontSize={fontSize} onImageLoad={undefined} />
+                <div 
+                  className="flex-1 flex flex-col z-10 min-w-0 flex-shrink-0" 
+                  style={{ 
+                    gap: `${problemGap}mm`,
+                    width: `calc(50% - ${problemGap / 2}mm)`,
+                    maxWidth: `calc(50% - ${problemGap / 2}mm)`
+                  }}
+                >
+                  {(pageQuestions?.right || []).map((qItem) => (
+                    <div key={`p-${qItem.question.id}-${qItem.type}`} className="flex flex-col break-inside-avoid bg-white w-full max-w-full min-w-0 overflow-hidden">
+                      <QuestionContent 
+                        q={qItem.question} 
+                        printType={printType} 
+                        task={task} 
+                        color={color} 
+                        fontSize={fontSize} 
+                        onImageLoad={undefined} 
+                        scaleDownChoices={scaleDownIds.includes(qItem.question.id)} 
+                        itemType={qItem.type}
+                      />
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="flex justify-between items-center text-[10pt] text-gray-400 mt-4 pt-2 shrink-0">
+              <div 
+                className="absolute flex justify-between items-center text-[10pt] text-gray-400 border-t border-gray-100 pt-2 shrink-0"
+                style={{
+                  bottom: `${pageMargin}mm`,
+                  left: `${pageMargin}mm`,
+                  right: `${pageMargin}mm`,
+                  height: '25px',
+                  boxSizing: 'border-box'
+                }}
+              >
                 <span>리딩{task.subject === "math" ? "수학" : "과학"}</span>
                 <span>{pIndex + 1} / {pages.length}</span>
               </div>

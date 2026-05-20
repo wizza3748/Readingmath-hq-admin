@@ -39394,9 +39394,9 @@ export const INITIAL_TASKS: TaskItem[] = [
         "minorUnit": "지권의 변화 탐구 (1)",
         "typeName": "지권의 변화 모형 만들기",
         "difficulty": "basic",
-        "problemCount": 5,
+        "problemCount": 10,
         "maxCount": {
-          "basic": 5,
+          "basic": 10,
           "intermediate": 0,
           "advanced": 0
         },
@@ -39407,7 +39407,7 @@ export const INITIAL_TASKS: TaskItem[] = [
         }
       }
     ],
-    "totalProblems": 5,
+    "totalProblems": 10,
     "createdAt": "2026-05-19T08:00:00Z",
     "assignedStudents": [],
     "assignedClasses": [
