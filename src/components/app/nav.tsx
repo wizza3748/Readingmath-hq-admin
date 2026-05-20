@@ -101,7 +101,7 @@ const navConfig: NavItem[] = [
     icon: <GraduationCap />,
     children: [
       { title: "학습내역", href: "/admin/learning-history" },
-      { title: "과제 대시보드", href: "/admin/task-center" },
+      { title: "과제 센터", href: "/admin/task-center" },
     ],
   },
 ];

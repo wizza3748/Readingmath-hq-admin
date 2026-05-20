@@ -156,7 +156,7 @@ export default function TaskDashboard() {
     <div className="min-h-screen bg-[#f4f6f9] pb-16">
       <div className="px-6 pt-5 pb-1 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <h1 className="text-[1.5rem] font-bold text-foreground">과제 대시보드</h1>
+          <h1 className="text-[1.5rem] font-bold text-foreground">과제 센터</h1>
           <Button variant="outline" size="sm" onClick={() => setHelpOpen(true)} className="h-7 text-xs px-2.5 gap-1.5 bg-white border-gray-200 text-muted-foreground hover:text-foreground">
             <HelpCircle className="h-3.5 w-3.5" /> 이용 안내
           </Button>
@@ -338,7 +338,7 @@ export default function TaskDashboard() {
         </div>
       </div>
 
-      {/* ── 과제 대시보드 이용 안내 모달 ── */}
+      {/* ── 과제 센터 이용 안내 모달 ── */}
       <Dialog open={helpOpen} onOpenChange={setHelpOpen}>
         <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto p-6 bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col gap-0">
           <DialogHeader className="pb-4 border-b border-slate-100 shrink-0">
@@ -346,7 +346,7 @@ export default function TaskDashboard() {
               <div className="p-2 rounded-lg bg-blue-50 text-blue-600">
                 <HelpCircle className="h-5 w-5" />
               </div>
-              <DialogTitle className="text-xl font-bold text-gray-900 leading-none">과제 대시보드 이용 안내</DialogTitle>
+              <DialogTitle className="text-xl font-bold text-gray-900 leading-none">과제 센터 이용 안내</DialogTitle>
             </div>
           </DialogHeader>
 
