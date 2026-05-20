@@ -13,6 +13,7 @@ type WorkItem = {
   jiraUrl: string;
   title: string;
   internalUrl?: string;
+  isNew?: boolean;
 };
 
 const hqWorkItems: WorkItem[] = [
@@ -74,6 +75,13 @@ const hqWorkItems: WorkItem[] = [
 
 const agencyWorkItems: WorkItem[] = [
   {
+    id: "RM-360",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-360",
+    title: "[기관] 과제 센터 구축",
+    internalUrl: "/admin/task-center",
+    isNew: true,
+  },
+  {
     id: "RM-237",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-237",
     title: "[기관] 학습내역 기능 개선",
@@ -82,6 +90,20 @@ const agencyWorkItems: WorkItem[] = [
 ];
 
 const frontWorkItems: WorkItem[] = [
+  {
+    id: "RM-362",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-362",
+    title: "[프론트] 시험대비 기능 개선 및 성취도 반영 로직 수정",
+    internalUrl: "/front/exam-prep-improvement",
+    isNew: true,
+  },
+  {
+    id: "RM-361",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-361",
+    title: "[프론트] 과제 센터 구축",
+    internalUrl: "/front/task-center",
+    isNew: true,
+  },
   {
     id: "RM-293",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-293",
@@ -119,20 +141,39 @@ export default function WorkListPage() {
         <Separator />
         <div className="space-y-1 mt-2">
           {items.map((item) => (
-            <div key={`${item.id}-${item.internalUrl}`} className="grid grid-cols-12 gap-4 items-center p-2 rounded-md hover:bg-muted transition-colors">
-              <div className="col-span-3 font-mono text-sm text-muted-foreground">
+            <div
+              key={`${item.id}-${item.internalUrl}`}
+              className={`grid grid-cols-12 gap-4 items-center p-2 rounded-md transition-colors ${
+                item.isNew
+                  ? "bg-amber-50 hover:bg-amber-100 border border-amber-200"
+                  : "hover:bg-muted"
+              }`}
+            >
+              <div className="col-span-3 font-mono text-sm">
                 <a
                   href={item.jiraUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:underline"
+                  className={`hover:underline font-semibold ${
+                    item.isNew ? "text-amber-600" : "text-muted-foreground"
+                  }`}
                 >
                   {item.id}
                 </a>
+                {item.isNew && (
+                  <span className="ml-1.5 inline-block text-[10px] font-bold uppercase tracking-wide bg-amber-500 text-white px-1.5 py-0.5 rounded-full leading-none align-middle">
+                    NEW
+                  </span>
+                )}
               </div>
               <div className="col-span-9">
                 {item.internalUrl ? (
-                  <Link href={item.internalUrl} className="text-base font-semibold hover:underline transition-colors block truncate">
+                  <Link
+                    href={item.internalUrl}
+                    className={`text-base font-semibold hover:underline transition-colors block truncate ${
+                      item.isNew ? "text-amber-700" : ""
+                    }`}
+                  >
                     {item.title}
                   </Link>
                 ) : (
@@ -140,7 +181,9 @@ export default function WorkListPage() {
                     href={item.jiraUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-semibold hover:underline transition-colors block truncate"
+                    className={`text-base font-semibold hover:underline transition-colors block truncate ${
+                      item.isNew ? "text-amber-700" : ""
+                    }`}
                   >
                     {item.title}
                   </a>

@@ -27,7 +27,7 @@ function AppLogo() {
 
 export function AppSidebar() {
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar collapsible="offcanvas">
       <SidebarHeader>
         <Link href="/" className="flex items-center gap-2 font-bold font-headline text-lg">
           <AppLogo />

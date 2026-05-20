@@ -101,6 +101,7 @@ const navConfig: NavItem[] = [
     icon: <GraduationCap />,
     children: [
       { title: "학습내역", href: "/admin/learning-history" },
+      { title: "과제 센터", href: "/admin/task-center" },
     ],
   },
 ];
@@ -131,9 +132,9 @@ function NavMenu({ items, level = 0 }: { items: NavItem[], level?: number }) {
                     <SidebarMenuButton className="group/collapsible-button justify-between" isActive={isActive}>
                       <div className="flex items-center gap-2">
                         {item.icon}
-                        <span className="group-data-[collapsible=icon]:hidden">{item.title}</span>
+                        <span>{item.title}</span>
                       </div>
-                      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[state=open]/collapsible-button:rotate-180 group-data-[collapsible=icon]:hidden" />
+                      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[state=open]/collapsible-button:rotate-180" />
                     </SidebarMenuButton>
                   </CollapsibleTrigger>
                 </div>
@@ -155,7 +156,7 @@ function NavMenu({ items, level = 0 }: { items: NavItem[], level?: number }) {
           return (
             <div
               key={index}
-              className="px-4 py-2 mt-2 text-[10px] font-bold text-sidebar-foreground/30 uppercase tracking-widest group-data-[collapsible=icon]:hidden select-none"
+              className="px-4 py-2 mt-2 text-[10px] font-bold text-sidebar-foreground/30 uppercase tracking-widest select-none"
             >
               {item.title}
             </div>
@@ -167,7 +168,7 @@ function NavMenu({ items, level = 0 }: { items: NavItem[], level?: number }) {
             <SidebarMenuButton asChild isActive={isActive}>
               <Link href={item.href || "#"}>
                 {item.icon}
-                <span className="group-data-[collapsible=icon]:hidden">{item.title}</span>
+                <span>{item.title}</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>

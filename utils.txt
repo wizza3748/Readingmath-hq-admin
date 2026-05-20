@@ -1,0 +1,109 @@
+// ─────────────────────────────────────────────
+// 유틸리티 함수
+// ─────────────────────────────────────────────
+
+export function getTaskStatusLabel(status: TaskStatus) {
+  const map: Record<TaskStatus, string> = {
+    draft: "작성중",
+    published: "게시됨",
+    ended: "종료",
+  };
+  return map[status];
+}
+
+export function getStudentStatusLabel(status: StudentTaskStatus) {
+  const map: Record<StudentTaskStatus, string> = {
+    not_started: "미시작",
+    in_progress: "학습중",
+    submitted: "제출완료",
+    timeout: "시간초과",
+  };
+  return map[status];
+}
+
+export function getDifficultyLabel(d: Difficulty) {
+  const map: Record<Difficulty, string> = {
+    basic: "기본",
+    intermediate: "실력",
+    advanced: "심화",
+  };
+  return map[d];
+}
+
+export function calcAvgScore(students: StudentAssignment[]): number | null {
+  const targets = students.filter(s => s.status === "submitted" || s.status === "timeout");
+  if (targets.length === 0) return null;
+  const total = targets.reduce((sum, s) => sum + (s.score ?? 0), 0);
+  return Math.round(total / targets.length);
+}
+
+export function getMaxCount(type: SelectedType, difficulties: Difficulty[]): number {
+  if (difficulties.length === 0) {
+    return type.maxCount.basic + type.maxCount.intermediate + type.maxCount.advanced;
+  }
+  return difficulties.reduce((sum, d) => {
+    if (d === "basic") return sum + type.maxCount.basic;
+    if (d === "intermediate") return sum + type.maxCount.intermediate;
+    if (d === "advanced") return sum + type.maxCount.advanced;
+    return sum;
+  }, 0);
+}
+
+export function getCoursesBySubject(subject: Subject): string[] {
+  const curricula = subject === "math" ? MATH_CURRICULA : SCIENCE_CURRICULA;
+  return curricula.map(c => c.course).sort();
+}
+
+export function getCurriculumBySubjectAndCourse(subject: Subject, course: string): Curriculum | undefined {
+  const curricula = subject === "math" ? MATH_CURRICULA : SCIENCE_CURRICULA;
+  return curricula.find(c => c.course === course);
+}
+
+const DIFFICULTY_LIST_ALL: Difficulty[] = ["basic", "intermediate", "advanced"];
+
+// 기존 SelectedType(difficulty 없음)을 조합 구조로 정규화
+export function normalizeSelectedTypes(
+  selectedTypes: SelectedType[],
+  taskDifficulties: Difficulty[],
+  subject: Subject
+): SelectedType[] {
+  const result: SelectedType[] = [];
+  for (const t of selectedTypes) {
+    if ((t as SelectedType & { difficulty?: Difficulty }).difficulty) {
+      // 이미 difficulty가 있으면 그대로 사용
+      result.push(t);
+      continue;
+    }
+    // difficulty가 없는 구 버전: 확장 대상 난이도 결정
+    const targetDiffs = taskDifficulties.length > 0
+      ? taskDifficulties
+      : DIFFICULTY_LIST_ALL;
+    // 문제 수가 1 이상인 난이도만 생성
+    const expandDiffs = targetDiffs.filter(d => t.maxCount[d] > 0);
+    for (const d of expandDiffs) {
+      result.push({
+        ...t,
+        difficulty: d,
+        problemCount: 1,
+      });
+    }
+  }
+  return result;
+}
+
+// TaskItem을 새 조합 구조로 정규화
+export function normalizeTask(task: TaskItem, subject: Subject): TaskItem {
+  const hasNewStructure = task.selectedTypes.length > 0 &&
+    (task.selectedTypes[0] as SelectedType & { difficulty?: Difficulty }).difficulty !== undefined;
+  if (hasNewStructure) return task;
+  return {
+    ...task,
+    selectedTypes: normalizeSelectedTypes(task.selectedTypes, task.difficulties, subject),
+    onlyImportant: task.problemScope === "important" || task.onlyImportant === true,
+  };
+}
+
+// 조합 키 생성 헬퍼
+export function makeComboKey(typeId: string, difficulty: Difficulty): string {
+  return `${typeId}__${difficulty}`;
+}

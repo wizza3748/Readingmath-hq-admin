@@ -6,6 +6,7 @@ import { AppSidebar } from "@/components/app/sidebar";
 import { Header } from "@/components/app/header";
 import { SidebarInset } from "@/components/ui/sidebar";
 import { SidebarLayout } from "@/components/app/sidebar-layout";
+import { SidebarStateController } from "@/components/app/sidebar-state-controller";
 import { Toaster } from "@/components/ui/toaster";
 import { FirebaseClientProvider } from "@/firebase/client-provider";
 
@@ -20,7 +21,7 @@ export default function ConditionalLayout({
 
     if (isStandalone) {
         return (
-            <body className="font-body antialiased">
+            <body className="font-body antialiased" suppressHydrationWarning>
                 <FirebaseClientProvider>
                     {children}
                     <Toaster />
@@ -30,10 +31,13 @@ export default function ConditionalLayout({
         );
     }
 
+    const sidebarDefaultOpen = !pathname?.startsWith("/admin/task-center");
+
     return (
-        <body className="font-body antialiased">
+        <body className="font-body antialiased" suppressHydrationWarning>
             <FirebaseClientProvider>
-                <SidebarLayout>
+                <SidebarLayout defaultOpen={sidebarDefaultOpen}>
+                    <SidebarStateController />
                     <AppSidebar />
                     <SidebarInset>
                         <Header />
