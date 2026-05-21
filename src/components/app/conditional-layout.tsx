@@ -16,8 +16,13 @@ export default function ConditionalLayout({
     children: React.ReactNode;
 }) {
     const pathname = usePathname();
-    // P0-1: exam-prep 및 science-home 하위 경로 전체에서 사이드바 및 글로벌 헤더 미노출 보장
-    const isStandalone = pathname?.startsWith("/content/exam-prep") || pathname?.startsWith("/content/science-home");
+    // P0-1: exam-prep, science-home, math-home, science-task-center 및 math-task-center 하위 경로 전체에서 사이드바 및 글로벌 헤더 미노출 보장
+    const isStandalone = 
+        pathname?.startsWith("/content/exam-prep") || 
+        pathname?.startsWith("/content/science-home") || 
+        pathname?.startsWith("/content/math-home") ||
+        pathname?.startsWith("/content/science-task-center") ||
+        pathname?.startsWith("/content/math-task-center");
 
     if (isStandalone) {
         return (

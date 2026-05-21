@@ -26,13 +26,11 @@ interface Props {
   selectedTypes: SelectedType[];
   problemMode: "same" | "individual";
   prioritizeUnsolved: boolean;
-  timeLimit?: number;
   onlyImportant: boolean;
   readonly?: boolean;
   onNameChange: (v: string) => void;
   onTypeProblemCountChange: (typeId: string, difficulty: Difficulty, count: number) => void;
   onProblemModeChange: (v: "same" | "individual") => void;
-  onTimeLimitChange: (v?: number) => void;
   onOnlyImportantChange: (v: boolean) => void;
   onQuickSetAll: (count: number) => void;
 }
@@ -55,9 +53,9 @@ function SegBtn({ label, active, disabled, onClick }: { label: string; active: b
 
 export function TaskSettingPanel({
   task, taskId, name, selectedTypes, problemMode,
-  timeLimit, onlyImportant, readonly,
+  onlyImportant, readonly,
   onNameChange, onTypeProblemCountChange,
-  onProblemModeChange, onTimeLimitChange,
+  onProblemModeChange,
   onOnlyImportantChange, onQuickSetAll,
 }: Props) {
   const countKey = onlyImportant ? "importantCount" : "maxCount";
@@ -67,7 +65,6 @@ export function TaskSettingPanel({
   const [resultOpen, setResultOpen] = React.useState(false);
   const [tooltipOpen, setTooltipOpen] = React.useState(false);
   const [countTooltipOpen, setCountTooltipOpen] = React.useState(false);
-  const [timeTooltipOpen, setTimeTooltipOpen] = React.useState(false);
   const [assignHelpOpen, setAssignHelpOpen] = React.useState(false);
   const [resultHelpOpen, setResultHelpOpen] = React.useState(false);
 
@@ -111,7 +108,7 @@ export function TaskSettingPanel({
 
   const totalProblems = selectedTypes.reduce((s, t) => s + t.problemCount, 0);
   const assignedStudents: StudentAssignment[] = task?.assignedStudents ?? [];
-  const completed = assignedStudents.filter(s => s.status === "submitted" || s.status === "timeout");
+  const completed = assignedStudents.filter(s => s.status === "submitted");
   const avg = calcAvgScore(assignedStudents);
 
   const status = task?.status;
@@ -428,71 +425,6 @@ export function TaskSettingPanel({
           </div>
         </div>
       </div>
-
-      {/* 제한시간 */}
-      <div className="pt-2">
-        <div className="flex items-center gap-1.5 mb-3">
-            <p className="text-sm font-bold text-foreground">제한시간</p>
-            <TooltipProvider delayDuration={0}>
-              <Tooltip open={timeTooltipOpen} onOpenChange={setTimeTooltipOpen}>
-                <TooltipTrigger asChild>
-                  <button type="button" className="text-muted-foreground hover:text-foreground transition-colors p-0.5">
-                    <Info className="h-4 w-4" />
-                  </button>
-                </TooltipTrigger>
-                <TooltipContent side="top" align="start" className="max-w-[320px] p-3 space-y-2 bg-white border-border shadow-lg">
-                  <ul className="text-xs text-muted-foreground list-disc list-inside space-y-1.5 leading-relaxed">
-                    <li className="marker:text-blue-500">제한시간은 학생이 과제 풀이를 시작한 시점부터 적용됩니다.</li>
-                    <li className="marker:text-blue-500">제한시간이 끝나면 진행 중인 과제는 시간초과 상태로 처리됩니다.</li>
-                    <li className="marker:text-blue-500">미설정 선택 시 시간 제한 없이 과제를 풀 수 있습니다.</li>
-                  </ul>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-          <div className="flex gap-2 mb-3">
-            <Button
-              variant={!timeLimit ? "default" : "outline"}
-              className={`flex-1 h-9 ${!timeLimit ? "bg-blue-50 text-blue-600 border-blue-200 hover:bg-blue-100" : "text-muted-foreground"}`}
-              disabled={readonly}
-              onClick={() => {
-                onTimeLimitChange(undefined);
-                setTimeTooltipOpen(false);
-              }}
-            >
-              미설정
-            </Button>
-            <Button
-              variant={!!timeLimit ? "default" : "outline"}
-              className={`flex-1 h-9 ${!!timeLimit ? "bg-blue-50 text-blue-600 border-blue-200 hover:bg-blue-100" : "text-muted-foreground"}`}
-              disabled={readonly}
-              onClick={() => {
-                if (!timeLimit) onTimeLimitChange(30);
-                setTimeTooltipOpen(false);
-              }}
-            >
-              설정
-            </Button>
-          </div>
-          {!!timeLimit && (
-            <div className="flex items-center gap-2 bg-slate-50/50 p-3 rounded-xl border border-slate-200/60">
-              <span className="text-sm font-medium">제한시간 입력</span>
-              <Input
-                type="number"
-                min={1}
-                value={timeLimit}
-                disabled={readonly}
-                onChange={e => {
-                  const v = parseInt(e.target.value);
-                  onTimeLimitChange(v > 0 ? v : undefined);
-                  setTimeTooltipOpen(false);
-                }}
-                className="h-9 w-24 text-sm bg-white"
-              />
-              <span className="text-sm text-muted-foreground">분</span>
-            </div>
-          )}
-        </div>
       </div>
 
       {/* 배정 관리 카드 */}
@@ -573,7 +505,7 @@ export function TaskSettingPanel({
                     </button>
                   </TooltipTrigger>
                   <TooltipContent side="top" align="start" className="bg-white border-purple-100 shadow-md p-2.5 z-[60]">
-                    <p className="text-[11px] text-purple-600 font-medium">평균 점수는 제출완료와 시간초과 학생 기준으로 계산됩니다.</p>
+                    <p className="text-[11px] text-purple-600 font-medium">평균 점수는 제출완료 학생 기준으로 계산됩니다.</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>

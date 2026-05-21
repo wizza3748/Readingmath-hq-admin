@@ -154,10 +154,6 @@ export default function TaskPrintView({ taskId }: Props) {
             <span className="text-gray-500 text-xs mb-1 whitespace-nowrap">중요 문제만 출제</span>
             <span className="font-medium text-gray-900">{task.onlyImportant ? "예" : "아니요"}</span>
           </div>
-          <div className="flex flex-col shrink-0">
-            <span className="text-gray-500 text-xs mb-1 whitespace-nowrap">제한시간</span>
-            <span className="font-medium text-gray-900">{task.timeLimit ? `${task.timeLimit}분` : "없음"}</span>
-          </div>
         </div>
       </div>
 

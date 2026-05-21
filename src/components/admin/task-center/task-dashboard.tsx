@@ -47,7 +47,6 @@ export default function TaskDashboard() {
   const [courseFilter, setCourseFilter] = React.useState("all");
   const [difficulties, setDifficulties] = React.useState<Difficulty[]>([]);
   const [modeFilter, setModeFilter] = React.useState<ProblemMode | "all">("all");
-  const [timeLimitFilter, setTimeLimitFilter] = React.useState<"all" | "set" | "unset">("all");
   const [dateFrom, setDateFrom] = React.useState("");
   const [dateTo, setDateTo] = React.useState("");
   const [searchText, setSearchText] = React.useState("");
@@ -70,8 +69,6 @@ export default function TaskDashboard() {
     if (courseFilter !== "all" && t.course !== courseFilter) return false;
     if (difficulties.length > 0 && !difficulties.some(d => t.difficulties.includes(d))) return false;
     if (modeFilter !== "all" && t.problemMode !== modeFilter) return false;
-    if (timeLimitFilter === "set" && !t.timeLimit) return false;
-    if (timeLimitFilter === "unset" && t.timeLimit) return false;
     if (dateFrom) {
       const created = t.createdAt.slice(0, 10);
       if (created < dateFrom) return false;
@@ -112,7 +109,6 @@ export default function TaskDashboard() {
     setCourseFilter("all");
     setDifficulties([]);
     setModeFilter("all");
-    setTimeLimitFilter("all");
     setDateFrom("");
     setDateTo("");
     setSearchText("");
@@ -218,8 +214,7 @@ export default function TaskDashboard() {
         </div>
 
         {/* ── 필터 영역 ─────────────────────────────── */}
-        <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm px-5 py-4 space-y-3">
-          {/* row1: 상태 / 학습과정 / 난이도 / 구성방식 / 제한시간 */}
+        <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm px-5 py-4">
           <div className="flex flex-wrap items-end gap-x-5 gap-y-3">
             <div>
               <p className="text-xs font-semibold text-muted-foreground mb-1.5">과제 상태</p>
@@ -259,18 +254,6 @@ export default function TaskDashboard() {
               </div>
             </div>
             <div>
-              <p className="text-xs font-semibold text-muted-foreground mb-1.5">제한시간</p>
-              <div className="flex gap-1">
-                {(["all", "set", "unset"] as const).map(m => (
-                  <SegBtn key={m} label={m === "all" ? "전체" : m === "set" ? "설정" : "미설정"} active={timeLimitFilter === m} onClick={() => { setTimeLimitFilter(m); setPage(1); }} />
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* row2: 생성일 / 검색어 / 버튼 / 조회건수 */}
-          <div className="flex flex-wrap items-end gap-3">
-            <div>
               <p className="text-xs font-semibold text-muted-foreground mb-1.5">생성일</p>
               <div className="flex items-center gap-1">
                 <input
@@ -289,7 +272,7 @@ export default function TaskDashboard() {
                 />
               </div>
             </div>
-            <div className="flex-1 min-w-[200px] max-w-xs">
+            <div className="flex-grow min-w-[180px] max-w-xs">
               <p className="text-xs font-semibold text-muted-foreground mb-1.5">검색어</p>
               <Input
                 value={searchText}
@@ -299,14 +282,14 @@ export default function TaskDashboard() {
                 className="h-9 text-sm"
               />
             </div>
-            <div className="flex items-end gap-2 pb-0">
+            <div className="flex items-center gap-2">
               <Button size="sm" onClick={handleSearch} disabled={!canSearch} className="h-9 gap-1 px-4">
                 <Search className="h-3.5 w-3.5" /> 검색
               </Button>
               <Button size="sm" variant="outline" onClick={handleReset} className="h-9 gap-1 px-4">
                 <RotateCcw className="h-3.5 w-3.5" /> 초기화
               </Button>
-              <span className="text-sm text-muted-foreground ml-2 pb-1.5 whitespace-nowrap">
+              <span className="text-sm text-muted-foreground ml-2 whitespace-nowrap">
                 조회 건수: <span className="font-semibold text-foreground">{filtered.length}건</span>
               </span>
             </div>
@@ -376,7 +359,7 @@ export default function TaskDashboard() {
                 <li>작성중은 과제를 저장하고 수정할 수 있는 상태입니다.</li>
                 <li>게시됨은 학생에게 과제가 배정된 상태입니다.</li>
                 <li>종료는 과제 수행과 결과 처리가 종료된 상태입니다.</li>
-                <li>학생 과제 상태는 미시작, 진행중, 제출완료, 시간초과로 구분됩니다.</li>
+                <li>학생 과제 상태는 미시작, 진행중, 제출완료로 구분됩니다.</li>
               </ul>
             </div>
 

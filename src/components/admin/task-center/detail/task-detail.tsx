@@ -45,7 +45,6 @@ export default function TaskDetail({ taskId }: Props) {
   const [selectedTypes, setSelectedTypes] = React.useState<SelectedType[]>(normalizedExistingTask?.selectedTypes ?? []);
   const [problemMode, setProblemMode] = React.useState<ProblemMode>(normalizedExistingTask?.problemMode ?? "same");
   const [prioritizeUnsolved, setPrioritizeUnsolved] = React.useState(normalizedExistingTask?.prioritizeUnsolved ?? false);
-  const [timeLimit, setTimeLimit] = React.useState<number | undefined>(normalizedExistingTask?.timeLimit);
   const [onlyImportant, setOnlyImportant] = React.useState(normalizedExistingTask?.onlyImportant ?? false);
   const [isSaving, setIsSaving] = React.useState(false);
   const [listConfirmOpen, setListConfirmOpen] = React.useState(false);
@@ -56,7 +55,6 @@ export default function TaskDetail({ taskId }: Props) {
     selectedTypes: normalizedExistingTask?.selectedTypes ?? [],
     problemMode: normalizedExistingTask?.problemMode ?? "same",
     prioritizeUnsolved: normalizedExistingTask?.prioritizeUnsolved ?? false,
-    timeLimit: normalizedExistingTask?.timeLimit,
     onlyImportant: normalizedExistingTask?.onlyImportant ?? false,
   }));
 
@@ -66,7 +64,6 @@ export default function TaskDetail({ taskId }: Props) {
       setSelectedTypes(normalizedExistingTask.selectedTypes);
       setProblemMode(normalizedExistingTask.problemMode);
       setPrioritizeUnsolved(normalizedExistingTask.prioritizeUnsolved);
-      setTimeLimit(normalizedExistingTask.timeLimit);
       setOnlyImportant(normalizedExistingTask.onlyImportant ?? false);
       
       const autoName = buildAutoName(normalizedExistingTask.selectedTypes);
@@ -78,7 +75,6 @@ export default function TaskDetail({ taskId }: Props) {
         selectedTypes: normalizedExistingTask.selectedTypes,
         problemMode: normalizedExistingTask.problemMode,
         prioritizeUnsolved: normalizedExistingTask.prioritizeUnsolved,
-        timeLimit: normalizedExistingTask.timeLimit,
         onlyImportant: normalizedExistingTask.onlyImportant ?? false,
       });
     }
@@ -131,7 +127,7 @@ export default function TaskDetail({ taskId }: Props) {
   };
 
   const isDirty = () => {
-    const current = JSON.stringify({ name, selectedTypes, problemMode, prioritizeUnsolved, timeLimit, onlyImportant });
+    const current = JSON.stringify({ name, selectedTypes, problemMode, prioritizeUnsolved, onlyImportant });
     return current !== savedSnapshot.current;
   };
 
@@ -224,7 +220,7 @@ export default function TaskDetail({ taskId }: Props) {
         const newTask: TaskItem = {
           id: newId, subject, name: name.trim(), course: selectedTypes[0]?.course ?? "",
           status: "draft", difficulties: finalDifficulties, problemMode, prioritizeUnsolved,
-          timeLimit, onlyImportant, selectedTypes, totalProblems,
+          onlyImportant, selectedTypes, totalProblems,
           createdAt: new Date().toISOString(), assignedStudents: [],
           problemScope: onlyImportant ? "important" : "all", // 하위 호환용
         };
@@ -235,11 +231,11 @@ export default function TaskDetail({ taskId }: Props) {
       } else if (taskId) {
         updateTask(taskId, {
           name: name.trim(), difficulties: finalDifficulties, problemMode, prioritizeUnsolved,
-          timeLimit, onlyImportant, selectedTypes, totalProblems,
+          onlyImportant, selectedTypes, totalProblems,
           course: selectedTypes[0]?.course ?? normalizedExistingTask?.course ?? "",
           problemScope: onlyImportant ? "important" : "all", // 하위 호환용
         });
-        savedSnapshot.current = JSON.stringify({ name: name.trim(), selectedTypes, problemMode, prioritizeUnsolved, timeLimit, onlyImportant });
+        savedSnapshot.current = JSON.stringify({ name: name.trim(), selectedTypes, problemMode, prioritizeUnsolved, onlyImportant });
         setCurrentSubject(subject);
         toast({ title: "저장되었습니다." });
       }
@@ -272,13 +268,11 @@ export default function TaskDetail({ taskId }: Props) {
               selectedTypes={selectedTypes}
               problemMode={problemMode}
               prioritizeUnsolved={prioritizeUnsolved}
-              timeLimit={timeLimit}
               onlyImportant={onlyImportant}
               readonly={readonly}
               onNameChange={(v) => { setName(v); setNameManuallyEdited(true); }}
               onTypeProblemCountChange={handleTypeProblemCountChange}
               onProblemModeChange={handleProblemModeChange}
-              onTimeLimitChange={setTimeLimit}
               onOnlyImportantChange={handleOnlyImportantChange}
               onQuickSetAll={handleQuickSetAll}
             />

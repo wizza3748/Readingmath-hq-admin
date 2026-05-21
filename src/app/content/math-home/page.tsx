@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { getStoredTasks, Task } from "@/utils/taskStorage";
 
-export default function ScienceHomePage() {
+export default function MathHomePage() {
     const [tasks, setTasks] = useState<Task[]>([]);
     
     useEffect(() => {
@@ -24,10 +24,10 @@ export default function ScienceHomePage() {
         };
     }, []);
 
-    const scienceTasks = tasks.filter(t => t.subject === "science");
-    const unstartedCount = scienceTasks.filter(t => t.status === "not_started").length;
+    const mathTasks = tasks.filter(t => t.subject === "math");
+    const unstartedCount = mathTasks.filter(t => t.status === "not_started").length;
     
-    const latestUnstartedTask = [...scienceTasks]
+    const latestUnstartedTask = [...mathTasks]
         .filter(t => t.status === "not_started")
         .sort((a, b) => new Date(b.assignedAt).getTime() - new Date(a.assignedAt).getTime())[0];
 
@@ -78,7 +78,7 @@ export default function ScienceHomePage() {
                             시험 대비
                         </div>
                     </Link>
-                    <Link href="/content/science-task-center" className="h-[40px] flex items-center">
+                    <Link href="/content/math-task-center" className="h-[40px] flex items-center">
                         <div className="relative text-[#5c7797] hover:text-white px-5 py-1.5 text-[15px] font-bold min-w-[95px] text-center cursor-pointer transition-colors select-none">
                             <span>과제 센터</span>
                             {unstartedCount > 0 && (
@@ -104,7 +104,7 @@ export default function ScienceHomePage() {
             <div className="absolute top-[62px] right-6 z-40 flex items-center gap-2.5">
                 {/* 과제 알림 영역 */}
                 {unstartedCount > 0 && (
-                    <Link href="/content/science-task-center">
+                    <Link href="/content/math-task-center">
                         <div className="bg-[#fff9e6] hover:bg-[#fff2cc] border border-[#f59e0b]/40 shadow-[0_2px_10px_rgba(245,158,11,0.15)] px-4.5 py-2.5 rounded-full flex items-center gap-2 cursor-pointer transition-all duration-200 select-none">
                             <span className="text-[14px] leading-none animate-bounce">🎁</span>
                             <span className="text-[12.5px] font-bold text-[#b45309] tracking-tight leading-none">
@@ -120,11 +120,11 @@ export default function ScienceHomePage() {
                         중등 2학년 1학기 행성
                     </span>
                 </div>
-                {/* Badge 2: 과학 (클릭 시 수학 홈으로 이동) */}
-                <Link href="/content/math-home">
+                {/* Badge 2: 수학 (클릭 시 과학 홈으로 이동) */}
+                <Link href="/content/science-home">
                     <div className="bg-white hover:bg-slate-50 shadow-[0_2px_10px_rgba(0,0,0,0.12)] px-5 py-2.5 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 select-none">
                         <span className="text-[13.5px] font-bold text-[#1e293b] tracking-tight leading-none">
-                            과학
+                            수학
                         </span>
                     </div>
                 </Link>
@@ -132,11 +132,11 @@ export default function ScienceHomePage() {
 
             {/* 3. Hero Content Area */}
             <main className="relative h-screen w-full flex flex-col items-center justify-end pb-[7vh] pt-[48px]">
-                {/* Background Image */}
+                {/* Background Image (수학 홈 이미지) */}
                 <div className="absolute inset-0 z-0">
                     <div
                         className="w-full h-full bg-cover bg-center"
-                        style={{ backgroundImage: `url('https://readingmath.co.kr/build/assets/science_bg_main_8-1-BTNaVv7h.svg')` }}
+                        style={{ backgroundImage: `url('https://readingmath.co.kr/build/assets/bg_main_8-1-BVgw1sDG.svg')` }}
                     />
                     <div className="absolute inset-0 bg-black/25 pointer-events-none" />
                 </div>
@@ -145,9 +145,8 @@ export default function ScienceHomePage() {
                 <div className="relative z-10 mb-6 animate-bounce-slow">
                     <div className="bg-white rounded-2xl p-5 px-8 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.6)] border border-slate-100/90 relative max-w-[420px] select-none">
                         <p className="text-[14.5px] font-black text-slate-800 leading-relaxed text-center break-keep">
-                            (1) 순물질과 혼합물, 녹는점과 어는점, <br />
-                            끓는점의 <br />
-                            <span className="text-slate-800">개념훈련</span>을 시작해 보세요!
+                            (1) 유리수의 소수 표현의 <br />
+                            개념훈련을 시작해 보세요!
                         </p>
                         <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-white" />
                     </div>

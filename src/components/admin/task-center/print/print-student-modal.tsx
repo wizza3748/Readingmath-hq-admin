@@ -121,13 +121,11 @@ export default function PrintStudentModal({ open, onOpenChange, students, select
                         <span className={`px-2 py-0.5 rounded text-xs ${
                           s.status === "not_started" ? "bg-gray-100 text-gray-600" :
                           s.status === "in_progress" ? "bg-blue-100 text-blue-600" :
-                          s.status === "submitted" ? "bg-green-100 text-green-600" :
-                          s.status === "timeout" ? "bg-red-100 text-red-600" : ""
+                          s.status === "submitted" ? "bg-green-100 text-green-600" : ""
                         }`}>
                           {s.status === "not_started" ? "시작 전" :
-                           s.status === "in_progress" ? "진행 중" :
-                           s.status === "submitted" ? "제출 완료" :
-                           s.status === "timeout" ? "시간 초과" : s.status}
+                           s.status === "in_progress" ? "진행중" :
+                           s.status === "submitted" ? "제출완료" : s.status}
                         </span>
                       </div>
                     </div>

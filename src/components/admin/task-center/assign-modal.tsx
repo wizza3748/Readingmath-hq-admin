@@ -157,7 +157,7 @@ export function AssignModal({
 
   // 집계 데이터
   const assignedCount = task.assignedStudents.length;
-  const completedCount = task.assignedStudents.filter(s => s.status === "submitted" || s.status === "timeout").length;
+  const completedCount = task.assignedStudents.filter(s => s.status === "submitted").length;
   const notStartedCount = task.assignedStudents.filter(s => s.status === "not_started").length;
   const inProgressCount = task.assignedStudents.filter(s => s.status === "in_progress").length;
   
@@ -183,7 +183,6 @@ export function AssignModal({
       case "not_started": return "미시작";
       case "in_progress": return "진행중";
       case "submitted": return "제출완료";
-      case "timeout": return "시간초과";
       default: return "-";
     }
   };
@@ -193,7 +192,6 @@ export function AssignModal({
       case "not_started": return "bg-gray-100 text-gray-600";
       case "in_progress": return "bg-blue-100 text-blue-600";
       case "submitted": return "bg-green-100 text-green-600";
-      case "timeout": return "bg-red-100 text-red-600";
       default: return "bg-transparent text-gray-300";
     }
   };
@@ -276,8 +274,6 @@ export function AssignModal({
                 <span>문제 수 <span className="text-slate-800 font-bold">{task.totalProblems}문항</span></span>
                 <span className="text-slate-300 font-light">·</span>
                 <span>문제 구성 방식 <span className="text-slate-800 font-bold">{task.problemMode === "same" ? "동일 문제" : "학생별 문제"}</span></span>
-                <span className="text-slate-300 font-light">·</span>
-                <span>제한시간 <span className="text-slate-800 font-bold">{task.timeLimit ? `${task.timeLimit}분` : "미설정"}</span></span>
               </div>
             </div>
 

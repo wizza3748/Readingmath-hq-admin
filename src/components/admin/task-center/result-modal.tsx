@@ -16,7 +16,7 @@ import {
   StudentAssignment, 
   getStudentTaskStatusLabel 
 } from "@/lib/task-center-mock";
-import { BarChart3, Search, ChevronRight, Clock, CheckCircle2, XCircle, Users, Info } from "lucide-react";
+import { BarChart3, Search, ChevronRight, CheckCircle2, XCircle, Users, Info } from "lucide-react";
 
 interface ResultModalProps {
   open: boolean;
@@ -42,17 +42,14 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
 
   // 집계 로직
   const assignedStudents = task.assignedStudents;
-  const completedStudents = assignedStudents.filter(s => s.status === "submitted" || s.status === "timeout");
-  
   const totalCount = assignedStudents.length;
-  const completedCount = completedStudents.length;
+  const completedCount = assignedStudents.filter(s => s.status === "submitted").length;
   const inProgressCount = assignedStudents.filter(s => s.status === "in_progress").length;
   const notStartedCount = assignedStudents.filter(s => s.status === "not_started").length;
   const submittedCount = assignedStudents.filter(s => s.status === "submitted").length;
-  const timeoutCount = assignedStudents.filter(s => s.status === "timeout").length;
 
-  const avgScore = completedCount > 0 
-    ? Math.round(completedStudents.reduce((sum, s) => sum + (s.score || 0), 0) / completedCount)
+  const avgScore = completedCount > 0
+    ? Math.round(assignedStudents.filter(s => s.status === "submitted").reduce((sum, s) => sum + (s.score || 0), 0) / completedCount)
     : null;
 
   // 동적 반 목록 생성
@@ -66,7 +63,7 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
     return availableClasses
       .filter(cls => cls !== "전체")
       .map(cls => {
-        const classCompleted = assignedStudents.filter(s => s.classGroup === cls && (s.status === "submitted" || s.status === "timeout"));
+        const classCompleted = assignedStudents.filter(s => s.classGroup === cls && s.status === "submitted");
         if (classCompleted.length === 0) return null;
         const avg = Math.round(classCompleted.reduce((sum, s) => sum + (s.score || 0), 0) / classCompleted.length);
         return { name: cls, avg };
@@ -87,7 +84,7 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
       .filter(s => selectedClass === "전체" || s.classGroup === selectedClass)
       .filter(s => {
         if (selectedStatus === "all") return true;
-        if (selectedStatus === "completed") return s.status === "submitted" || s.status === "timeout";
+        if (selectedStatus === "completed") return s.status === "submitted";
         return s.status === selectedStatus;
       })
       .filter(s => {
@@ -100,7 +97,7 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
   // 학생 상세 가상 데이터 생성 (기존 로직 유지)
   const selectedStudent = assignedStudents.find(s => s.studentId === selectedStudentId);
   const mockDetail = React.useMemo(() => {
-    if (!selectedStudent || (selectedStudent.status !== "submitted" && selectedStudent.status !== "timeout")) return null;
+    if (!selectedStudent || selectedStudent.status !== "submitted") return null;
     
     const questions: { id: number; typeName: string; difficulty: string; isCorrect: boolean; studentAnswer: string; correctAnswer: string }[] = [];
     let qIdx = 1;
@@ -127,7 +124,6 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
     
     return {
       questions,
-      timeSpent: "24분 15초",
       typeStats: task.selectedTypes.map(t => {
         const typeQuestions = questions.filter(q => q.typeName === t.typeName);
         const correctCount = typeQuestions.filter(q => q.isCorrect).length;
@@ -143,7 +139,7 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
 
   // 유형별 요약 로직 (기존 로직 유지)
   const typeSummaries = task.selectedTypes.map(type => {
-    const studentsWithResult = completedStudents;
+    const studentsWithResult = assignedStudents.filter(s => s.status === "submitted");
     if (studentsWithResult.length === 0) return { typeName: type.typeName, total: type.problemCount, avgCorrect: null, avgScore: null };
     const avgCorrectValue = (type.problemCount * 0.82).toFixed(1);
     const avgScoreValue = Math.round(82 + Math.random() * 12);
@@ -155,7 +151,6 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
       case "not_started": return "bg-gray-100 text-gray-500";
       case "in_progress": return "bg-blue-100 text-blue-600";
       case "submitted": return "bg-green-100 text-green-600";
-      case "timeout": return "bg-red-100 text-red-600";
       default: return "bg-gray-100 text-gray-500";
     }
   };
@@ -200,8 +195,6 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
               <span>문제 수 <span className="text-slate-800 font-bold">{task.totalProblems}문항</span></span>
               <span className="text-slate-300 font-light">·</span>
               <span>문제 구성 방식 <span className="text-slate-800 font-bold">{task.problemMode === "same" ? "동일 문제" : "학생별 문제"}</span></span>
-              <span className="text-slate-300 font-light">·</span>
-              <span>제한시간 <span className="text-slate-800 font-bold">{task.timeLimit ? `${task.timeLimit}분` : "미설정"}</span></span>
             </div>
           </div>
 
@@ -221,8 +214,6 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
                 <span onClick={(e) => { e.stopPropagation(); handleStatusToggle("in_progress"); }} className={`transition-colors cursor-pointer ${selectedStatus === "in_progress" ? "text-blue-700 bg-blue-100/80 px-1 rounded" : "text-blue-400"}`}>진행중 {inProgressCount}</span>
                 <span className="text-blue-100 font-light">·</span>
                 <span onClick={(e) => { e.stopPropagation(); handleStatusToggle("submitted"); }} className={`transition-colors cursor-pointer ${selectedStatus === "submitted" ? "text-blue-700 bg-blue-100/80 px-1 rounded" : "text-blue-400"}`}>제출완료 {submittedCount}</span>
-                <span className="text-blue-100 font-light">·</span>
-                <span onClick={(e) => { e.stopPropagation(); handleStatusToggle("timeout"); }} className={`transition-colors cursor-pointer ${selectedStatus === "timeout" ? "text-blue-700 bg-blue-100/80 px-1 rounded" : "text-blue-400"}`}>시간초과 {timeoutCount}</span>
               </div>
             </button>
             
@@ -234,7 +225,7 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
             >
               <span className="text-[11px] font-bold text-green-600 mb-1">완료 학생</span>
               <span className="text-2xl font-extrabold text-green-800">{completedCount}<span className="text-xs ml-0.5 font-bold text-green-600/85">명</span></span>
-              <span className="text-[10px] font-bold text-green-400/80 mt-2">제출완료 + 시간초과</span>
+              <span className="text-[10px] font-bold text-green-400/80 mt-2">제출완료 학생</span>
             </button>
             
             <div className="bg-gradient-to-br from-purple-50/50 to-fuchsia-50/30 p-4 rounded-xl border border-purple-100 flex flex-col shadow-xs">
@@ -311,7 +302,7 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
                     </tr>
                   ) : (
                     filteredStudents.map(s => {
-                      const isCompleted = s.status === "submitted" || s.status === "timeout";
+                      const isCompleted = s.status === "submitted";
                       const assignType = (task.assignedClasses || []).includes(s.classGroup) ? "반 배정" : "개별 배정";
                       const total = s.totalCount ?? task.totalProblems;
                       const correct = s.correctCount ?? (s.score !== undefined ? Math.round((s.score / 100) * total) : 0);
@@ -338,7 +329,7 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
                               {isCompleted ? <span className="text-primary">{s.score ?? 0}점</span> : "-"}
                             </td>
                             <td className="py-3 px-4 text-[11px] text-muted-foreground whitespace-nowrap">
-                              {isCompleted ? formatDate(s.status === "timeout" ? (s.timedOutAt || s.submittedAt) : s.submittedAt) : "-"}
+                              {isCompleted ? formatDate(s.submittedAt) : "-"}
                             </td>
                             <td className="py-3 px-4 text-center">
                               {isCompleted && (
@@ -363,7 +354,6 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
                                     <div className="flex items-center gap-4">
                                       <h4 className="text-lg font-black text-primary">{s.studentName} 상세 결과</h4>
                                       <div className="flex items-center gap-3 text-xs font-bold">
-                                        <div className="flex items-center gap-1 text-muted-foreground"><Clock className="h-3 w-3" /> {mockDetail.timeSpent}</div>
                                         <div className="flex items-center gap-1 text-green-600"><CheckCircle2 className="h-3 w-3" /> 정답 {mockDetail.questions.filter(q => q.isCorrect).length}</div>
                                         <div className="flex items-center gap-1 text-red-500"><XCircle className="h-3 w-3" /> 오답 {mockDetail.questions.filter(q => !q.isCorrect).length}</div>
                                       </div>

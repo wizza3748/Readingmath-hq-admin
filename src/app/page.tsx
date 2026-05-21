@@ -101,7 +101,7 @@ const frontWorkItems: WorkItem[] = [
     id: "RM-361",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-361",
     title: "[프론트] 과제 센터 구축",
-    internalUrl: "/front/task-center",
+    internalUrl: "/content/math-home",
     isNew: true,
   },
   {

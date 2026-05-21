@@ -114,8 +114,8 @@ export function TaskTable({ tasks }: Props) {
 
   const sorted = [...tasks].sort((a, b) => {
     let va: number | string = 0, vb: number | string = 0;
-    const completedA = a.assignedStudents.filter(s => s.status === "submitted" || s.status === "timeout");
-    const completedB = b.assignedStudents.filter(s => s.status === "submitted" || s.status === "timeout");
+    const completedA = a.assignedStudents.filter(s => s.status === "submitted");
+    const completedB = b.assignedStudents.filter(s => s.status === "submitted");
     switch (sortKey) {
       case "id": va = a.id; vb = b.id; break;
       case "name": va = a.name; vb = b.name; break;
@@ -170,7 +170,6 @@ export function TaskTable({ tasks }: Props) {
               <th className="py-3 px-3 text-left font-semibold text-muted-foreground text-xs"><SortBtn k="problemCount" label="문제 수" /></th>
               <th className="py-3 px-3 text-left font-semibold text-muted-foreground text-xs whitespace-nowrap">난이도</th>
               <th className="py-3 px-3 text-left font-semibold text-muted-foreground text-xs whitespace-nowrap">문제 구성 방식</th>
-              <th className="py-3 px-3 text-left font-semibold text-muted-foreground text-xs whitespace-nowrap">제한시간</th>
               <th className="py-3 px-3 text-left font-semibold text-muted-foreground text-xs"><SortBtn k="createdAt" label="생성일시" /></th>
               <th className="py-3 px-3 text-left font-semibold text-muted-foreground text-xs whitespace-nowrap">상태</th>
               <th className="py-3 px-3 text-left font-semibold text-muted-foreground text-xs"><SortBtn k="assignedCount" label="배정" /></th>
@@ -182,12 +181,12 @@ export function TaskTable({ tasks }: Props) {
           <tbody>
             {sorted.length === 0 ? (
               <tr>
-                <td colSpan={14} className="py-16 text-center text-muted-foreground text-sm">
+                <td colSpan={13} className="py-16 text-center text-muted-foreground text-sm">
                   조회된 과제가 없습니다.
                 </td>
               </tr>
             ) : sorted.map((task) => {
-              const completed = task.assignedStudents.filter(s => s.status === "submitted" || s.status === "timeout");
+              const completed = task.assignedStudents.filter(s => s.status === "submitted");
               const avg = calcAvgScore(task.assignedStudents);
               const unitLabel = getUnitLabel(task);
               const unitItems = getUnitItems(task);
@@ -215,9 +214,6 @@ export function TaskTable({ tasks }: Props) {
                     <span className={`inline-flex w-fit whitespace-nowrap px-2 py-0.5 rounded-full text-[11px] font-medium border ${task.problemMode === "same" ? "bg-teal-50 text-teal-700 border-teal-200" : "bg-indigo-50 text-indigo-700 border-indigo-200"}`}>
                       {task.problemMode === "same" ? "동일" : "학생별"}
                     </span>
-                  </td>
-                  <td className="py-3 px-3 whitespace-nowrap text-muted-foreground">
-                    {task.timeLimit ? `${task.timeLimit}분` : "-"}
                   </td>
                   <td className="py-3 px-3 whitespace-nowrap text-muted-foreground text-xs">{fmt(task.createdAt)}</td>
                   <td className="py-3 px-3"><TaskStatusBadge status={task.status} /></td>

@@ -4,7 +4,7 @@
 
 export type Subject = "math" | "science";
 export type TaskStatus = "draft" | "published" | "ended";
-export type StudentTaskStatus = "not_started" | "in_progress" | "submitted" | "timeout";
+export type StudentTaskStatus = "not_started" | "in_progress" | "submitted";
 export type Difficulty = "basic" | "intermediate" | "advanced";
 export type ProblemMode = "same" | "individual";
 
@@ -37793,7 +37793,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "individual",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 30,
     "selectedTypes": [
       {
         "curriculumId": "math-초3-1",
@@ -37834,7 +37833,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "same",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 60,
     "selectedTypes": [
       {
         "curriculumId": "math-초4-2",
@@ -37979,7 +37977,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "individual",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 45,
     "selectedTypes": [
       {
         "curriculumId": "math-초6-2",
@@ -38021,7 +38018,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "same",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 60,
     "selectedTypes": [
       {
         "curriculumId": "math-중1-1",
@@ -38344,7 +38340,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "same",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 30,
     "selectedTypes": [
       {
         "curriculumId": "math-중2-1",
@@ -38439,7 +38434,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "individual",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 60,
     "selectedTypes": [
       {
         "curriculumId": "math-중2-2",
@@ -38905,7 +38899,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "individual",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 45,
     "selectedTypes": [
       {
         "curriculumId": "math-초3-1",
@@ -39011,7 +39004,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "same",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 30,
     "selectedTypes": [
       {
         "curriculumId": "math-중1-1",
@@ -39355,11 +39347,11 @@ export const INITIAL_TASKS: TaskItem[] = [
         "studentId": "stu-math-12-6",
         "studentName": "학생6",
         "classGroup": "1반",
-        "status": "timeout",
+        "status": "submitted",
         "score": 56,
         "problemCount": 22,
         "printStatus": "not_printed",
-        "timedOutAt": "2026-05-15T11:00:00Z"
+        "submittedAt": "2026-05-15T11:00:00Z"
       }
     ],
     "assignedClasses": [],
@@ -39384,7 +39376,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "same",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 30,
     "selectedTypes": [
       {
         "curriculumId": "sci-중1-1",
@@ -39427,7 +39418,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "individual",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 45,
     "selectedTypes": [
       {
         "curriculumId": "sci-중1-2",
@@ -39533,7 +39523,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "individual",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 60,
     "selectedTypes": [
       {
         "curriculumId": "sci-중2-2",
@@ -39615,7 +39604,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "same",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 30,
     "selectedTypes": [
       {
         "curriculumId": "sci-중3-1",
@@ -39822,7 +39810,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "same",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 45,
     "selectedTypes": [
       {
         "curriculumId": "sci-중1-1",
@@ -39978,7 +39965,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "individual",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 60,
     "selectedTypes": [
       {
         "curriculumId": "sci-중1-2",
@@ -40368,7 +40354,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "individual",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 30,
     "selectedTypes": [
       {
         "curriculumId": "sci-중2-2",
@@ -40615,7 +40600,6 @@ export const INITIAL_TASKS: TaskItem[] = [
     "problemMode": "same",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
-    "timeLimit": 45,
     "selectedTypes": [
       {
         "curriculumId": "sci-중3-1",
@@ -40960,11 +40944,11 @@ export const INITIAL_TASKS: TaskItem[] = [
         "studentId": "stu-science-12-6",
         "studentName": "학생6",
         "classGroup": "1반",
-        "status": "timeout",
+        "status": "submitted",
         "score": 56,
         "problemCount": 25,
         "printStatus": "not_printed",
-        "timedOutAt": "2026-05-15T11:00:00Z"
+        "submittedAt": "2026-05-15T11:00:00Z"
       }
     ],
     "assignedClasses": [],
@@ -40995,9 +40979,8 @@ export function getTaskStatusLabel(status: TaskStatus) {
 export function getStudentStatusLabel(status: StudentTaskStatus) {
   const map: Record<StudentTaskStatus, string> = {
     not_started: "미시작",
-    in_progress: "학습중",
+    in_progress: "진행중",
     submitted: "제출완료",
-    timeout: "시간초과",
   };
   return map[status];
 }
@@ -41016,7 +40999,7 @@ export function getDifficultyLabel(d: Difficulty) {
 }
 
 export function calcAvgScore(students: StudentAssignment[]): number | null {
-  const targets = students.filter(s => s.status === "submitted" || s.status === "timeout");
+  const targets = students.filter(s => s.status === "submitted");
   if (targets.length === 0) return null;
   const total = targets.reduce((sum, s) => sum + (s.score ?? 0), 0);
   return Math.round(total / targets.length);

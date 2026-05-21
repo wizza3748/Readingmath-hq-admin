@@ -41,8 +41,9 @@ export const useTaskCenterStore = create<TaskCenterStore>((set, get) => ({
     const source = get().tasks.find((t) => t.id === taskId);
     if (!source) throw new Error("Task not found");
     const newId = `task-${Date.now()}`;
+    const { timeLimit: _omitTimeLimit, ...rest } = source;
     const newTask: TaskItem = {
-      ...source,
+      ...rest,
       id: newId,
       name: `${source.name} (복제)`,
       status: "draft",
@@ -50,6 +51,7 @@ export const useTaskCenterStore = create<TaskCenterStore>((set, get) => ({
       assignedStudents: [],
       assignedClasses: [],
       individualStudentIds: [],
+      timeLimit: undefined,
     };
     set((state) => ({ tasks: [...state.tasks, newTask] }));
     return newTask;
@@ -111,11 +113,8 @@ export const useTaskCenterStore = create<TaskCenterStore>((set, get) => ({
     set((state) => ({
       tasks: state.tasks.map((t) => {
         if (t.id !== taskId) return t;
-        const updatedStudents = t.assignedStudents.map((s) => ({
-          ...s,
-          status: s.status === "in_progress" ? ("timeout" as const) : s.status,
-        }));
-        return { ...t, status: "ended", assignedStudents: updatedStudents };
+        // 학생 상태는 그대로 보존, 과제 상태만 "ended"로 변경
+        return { ...t, status: "ended" };
       }),
     }));
   },
