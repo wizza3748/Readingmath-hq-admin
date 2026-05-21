@@ -25,10 +25,10 @@ export default function ScienceHomePage() {
     }, []);
 
     const scienceTasks = tasks.filter(t => t.subject === "science");
-    const unstartedCount = scienceTasks.filter(t => t.status === "not_started").length;
+    const unstartedCount = scienceTasks.filter(t => t.status === "notStarted").length;
     
     const latestUnstartedTask = [...scienceTasks]
-        .filter(t => t.status === "not_started")
+        .filter(t => t.status === "notStarted")
         .sort((a, b) => new Date(b.assignedAt).getTime() - new Date(a.assignedAt).getTime())[0];
 
     const truncatedTaskTitle = latestUnstartedTask

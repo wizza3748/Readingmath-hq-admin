@@ -25,10 +25,10 @@ export default function MathHomePage() {
     }, []);
 
     const mathTasks = tasks.filter(t => t.subject === "math");
-    const unstartedCount = mathTasks.filter(t => t.status === "not_started").length;
+    const unstartedCount = mathTasks.filter(t => t.status === "notStarted").length;
     
     const latestUnstartedTask = [...mathTasks]
-        .filter(t => t.status === "not_started")
+        .filter(t => t.status === "notStarted")
         .sort((a, b) => new Date(b.assignedAt).getTime() - new Date(a.assignedAt).getTime())[0];
 
     const truncatedTaskTitle = latestUnstartedTask
