@@ -186,17 +186,12 @@ export default function ScienceTaskCenterPage() {
                 
                 {/* 2. <상단 영역> */}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10 pb-6 border-b border-white/[0.06]">
-                    <div className="flex items-center gap-4">
-                        <Link href="/content/science-home" className="p-3 bg-[#0a1226] hover:bg-[#111e3b] border border-white/[0.06] hover:border-white/[0.12] rounded-full transition-all group flex-shrink-0 shadow-lg hover:scale-105 active:scale-95">
-                            <ArrowLeft className="h-5 w-5 text-cyan-300 group-hover:-translate-x-0.5 transition-transform" />
-                        </Link>
-                        <div>
-                            <div className="flex items-center gap-2.5">
-                                <h1 className="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-white to-[#cbd5e1] bg-clip-text">과제 센터</h1>
-                                <span className="px-3 py-0.5 bg-gradient-to-r from-[#06b6d4]/20 to-[#0891b2]/20 text-[#22d3ee] text-[12px] font-black rounded-full border border-[#06b6d4]/30 shadow-[0_0_15px_rgba(6,182,212,0.15)]">과학</span>
-                            </div>
-                            <p className="text-[13.5px] text-[#94a3b8] mt-1 font-medium">과학과제를 확인하고 풀이할 수 있습니다.</p>
+                    <div>
+                        <div className="flex items-center gap-2.5">
+                            <h1 className="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-white to-[#cbd5e1] bg-clip-text">과제 센터</h1>
+                            <span className="px-3 py-0.5 bg-gradient-to-r from-[#06b6d4]/20 to-[#0891b2]/20 text-[#22d3ee] text-[12px] font-black rounded-full border border-[#06b6d4]/30 shadow-[0_0_15px_rgba(6,182,212,0.15)]">과학</span>
                         </div>
+                        <p className="text-[13.5px] text-[#94a3b8] mt-1 font-medium">과학과제를 확인하고 풀이할 수 있습니다.</p>
                     </div>
                 </div>
 
