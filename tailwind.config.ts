@@ -11,6 +11,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        sans: ['Noto Sans KR', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         body: ['Noto Sans KR', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         headline: ['Poppins', 'sans-serif'],
         code: ['monospace'],

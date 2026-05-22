@@ -182,7 +182,7 @@ const AbbreviatedPageHeader = ({ task, color, printType }: any) => {
 };
 
 // ── 1. 문항 본문 (발문/보기/선지) 렌더링 컴포넌트 ──
-const QuestionBody = ({ q, color, fontSize, onImageLoad, scaleDownChoices }: any) => {
+export const QuestionBody = ({ q, color, fontSize, onImageLoad, scaleDownChoices }: any) => {
   return (
     <div className="max-w-full min-w-0 overflow-hidden flex flex-col">
       <div className="flex items-start gap-2 mb-2 font-bold max-w-full min-w-0" style={{ fontSize: `${fontSize}pt` }}>
@@ -238,7 +238,7 @@ const QuestionBody = ({ q, color, fontSize, onImageLoad, scaleDownChoices }: any
 };
 
 // ── 2. 정답·해설 영역 렌더링 컴포넌트 ──
-const QuestionExplanation = ({ q, color, fontSize, isSeparated, onImageLoad }: any) => {
+export const QuestionExplanation = ({ q, color, fontSize, isSeparated, onImageLoad }: any) => {
   // 정답과 해설이 모두 미등록된 문항은 아예 해설 카드를 표시하지 않음
   if (!q.explanation && !q.answer) return null;
 
@@ -308,7 +308,7 @@ const QuestionExplanation = ({ q, color, fontSize, isSeparated, onImageLoad }: a
 };
 
 // ── 3. 통합 매개 컴포넌트 ──
-const QuestionContent = ({ q, printType, task, color, fontSize, onImageLoad, scaleDownChoices, itemType = "all" }: any) => {
+export const QuestionContent = ({ q, printType, task, color, fontSize, onImageLoad, scaleDownChoices, itemType = "all" }: any) => {
   if (itemType === "question") {
     return (
       <QuestionBody 

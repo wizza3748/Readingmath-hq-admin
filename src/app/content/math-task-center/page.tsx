@@ -121,7 +121,7 @@ export default function MathTaskCenterPage() {
     };
 
     return (
-        <div className="relative min-h-screen w-full overflow-x-hidden bg-[#060413] font-sans text-[#cbd5e1] pb-32">
+        <div className="relative min-h-screen w-full overflow-x-hidden bg-[#060413] font-body text-[#cbd5e1] pb-32">
             
             {/* 세련된 배경 발광 효과 (Radial Glow Elements) */}
             <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[radial-gradient(circle,rgba(99,102,241,0.12)_0%,transparent_70%)] pointer-events-none z-0" />
@@ -198,19 +198,6 @@ export default function MathTaskCenterPage() {
                             <p className="text-[13.5px] text-[#94a3b8] mt-1 font-medium">배정된 수학과제를 확인하고 실력을 키워보세요.</p>
                         </div>
                     </div>
-
-                    {/* 실시간 디버그 모드용 표시기 (정밀하고 트렌디하게 변경) */}
-                    <div className="mt-4 md:mt-0 px-4 py-2.5 bg-[#100c2f]/80 backdrop-blur-md border border-white/[0.08] rounded-2xl flex items-center gap-4 text-[12px] shadow-2xl">
-                        <span className="font-extrabold text-[#f59e0b] flex items-center gap-1.5">
-                            <Sparkles className="h-3.5 w-3.5 animate-pulse" /> 디버그 보드
-                        </span>
-                        <div className="h-3.5 w-[1px] bg-white/[0.08]" />
-                        <div className="flex items-center gap-3">
-                            <span className="text-[#94a3b8]">미시작 <strong className="text-[#fbbf24] font-mono ml-0.5">{unstartedTasks.length}</strong></span>
-                            <span className="text-[#94a3b8]">진행중 <strong className="text-[#38bdf8] font-mono ml-0.5">{ongoingTasks.length}</strong></span>
-                            <span className="text-[#94a3b8]">제출완료 <strong className="text-[#34d399] font-mono ml-0.5">{submittedTasks.length}</strong></span>
-                        </div>
-                    </div>
                 </div>
 
                 {/* 3. <학습 현황 요약 영역> (글래스모피즘 & 글로우 효과로 촌스러움 완벽 제거) */}
@@ -218,7 +205,7 @@ export default function MathTaskCenterPage() {
                     <div className="mb-12">
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                             {/* 카드 1: 완료 과제 수 */}
-                            <div className="relative overflow-hidden bg-white/[0.02] backdrop-blur-xl border border-white/[0.06] rounded-2xl p-5.5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03),0_10px_30px_rgba(0,0,0,0.3)] hover:border-white/[0.15] hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group">
+                            <div className="relative overflow-hidden bg-white/[0.02] backdrop-blur-xl border border-white/[0.06] rounded-2xl p-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03),0_10px_30px_rgba(0,0,0,0.3)] hover:border-white/[0.15] hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group">
                                 <div className="absolute top-[-20%] right-[-20%] p-6 bg-[#fbbf24]/5 rounded-full blur-2xl group-hover:bg-[#fbbf24]/8 transition-colors duration-300 pointer-events-none" />
                                 <div className="flex items-center justify-between">
                                     <span className="text-[12px] text-[#94a3b8] font-extrabold tracking-wide uppercase">완료 과제</span>
@@ -232,7 +219,7 @@ export default function MathTaskCenterPage() {
                             </div>
 
                             {/* 카드 2: 평균 점수 */}
-                            <div className="relative overflow-hidden bg-white/[0.02] backdrop-blur-xl border border-white/[0.06] rounded-2xl p-5.5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03),0_10px_30px_rgba(0,0,0,0.3)] hover:border-white/[0.15] hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group">
+                            <div className="relative overflow-hidden bg-white/[0.02] backdrop-blur-xl border border-white/[0.06] rounded-2xl p-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03),0_10px_30px_rgba(0,0,0,0.3)] hover:border-white/[0.15] hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group">
                                 <div className="absolute top-[-20%] right-[-20%] p-6 bg-[#34d399]/5 rounded-full blur-2xl group-hover:bg-[#34d399]/8 transition-colors duration-300 pointer-events-none" />
                                 <div className="flex items-center justify-between">
                                     <span className="text-[12px] text-[#94a3b8] font-extrabold tracking-wide uppercase">평균 점수</span>
@@ -246,7 +233,7 @@ export default function MathTaskCenterPage() {
                             </div>
 
                             {/* 카드 3: 제출 문항 수 */}
-                            <div className="relative overflow-hidden bg-white/[0.02] backdrop-blur-xl border border-white/[0.06] rounded-2xl p-5.5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03),0_10px_30px_rgba(0,0,0,0.3)] hover:border-white/[0.15] hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group">
+                            <div className="relative overflow-hidden bg-white/[0.02] backdrop-blur-xl border border-white/[0.06] rounded-2xl p-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03),0_10px_30px_rgba(0,0,0,0.3)] hover:border-white/[0.15] hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group">
                                 <div className="absolute top-[-20%] right-[-20%] p-6 bg-[#38bdf8]/5 rounded-full blur-2xl group-hover:bg-[#38bdf8]/8 transition-colors duration-300 pointer-events-none" />
                                 <div className="flex items-center justify-between">
                                     <span className="text-[12px] text-[#94a3b8] font-extrabold tracking-wide uppercase">제출 문항</span>
@@ -260,7 +247,7 @@ export default function MathTaskCenterPage() {
                             </div>
 
                             {/* 카드 4: 정답 문항 수 */}
-                            <div className="relative overflow-hidden bg-white/[0.02] backdrop-blur-xl border border-white/[0.06] rounded-2xl p-5.5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03),0_10px_30px_rgba(0,0,0,0.3)] hover:border-white/[0.15] hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group">
+                            <div className="relative overflow-hidden bg-white/[0.02] backdrop-blur-xl border border-white/[0.06] rounded-2xl p-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03),0_10px_30px_rgba(0,0,0,0.3)] hover:border-white/[0.15] hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group">
                                 <div className="absolute top-[-20%] right-[-20%] p-6 bg-[#a78bfa]/5 rounded-full blur-2xl group-hover:bg-[#a78bfa]/8 transition-colors duration-300 pointer-events-none" />
                                 <div className="flex items-center justify-between">
                                     <span className="text-[12px] text-[#94a3b8] font-extrabold tracking-wide uppercase">정답 문항</span>
@@ -291,7 +278,7 @@ export default function MathTaskCenterPage() {
                                 const progressPct = totalProbs > 0 ? Math.round((solved / totalProbs) * 100) : 0;
                                 
                                 return (
-                                    <div key={task.id} className="group relative bg-white/[0.02] backdrop-blur-xl border border-white/[0.06] hover:border-indigo-500/40 rounded-2xl p-6.5 shadow-[0_12px_45px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_40px_rgba(99,102,241,0.12)] transition-all duration-300 flex flex-col justify-between min-h-[210px] hover:-translate-y-1">
+                                    <div key={task.id} className="group relative bg-white/[0.02] backdrop-blur-xl border border-white/[0.06] hover:border-indigo-500/40 rounded-2xl p-6 shadow-[0_12px_45px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_40px_rgba(99,102,241,0.12)] transition-all duration-300 flex flex-col justify-between min-h-[210px] hover:-translate-y-1">
                                         <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                         
                                         <div>
@@ -299,16 +286,6 @@ export default function MathTaskCenterPage() {
                                                 <h3 className="text-[16px] font-bold text-white group-hover:text-indigo-200 transition-colors leading-snug break-keep tracking-tight">
                                                     {task.title}
                                                 </h3>
-                                                {/* 상태 강제 변경 드롭다운 (초미니멀하고 세련되게 장식) */}
-                                                <select 
-                                                    value={task.status} 
-                                                    onChange={(e) => handleStatusChange(task.id, e.target.value as Task["status"])}
-                                                    className="bg-[#120e36] border border-white/[0.1] hover:border-white/[0.2] text-[#94a3b8] text-[11px] font-extrabold px-2 py-0.5 rounded-lg focus:outline-none cursor-pointer shadow-md select-none transition-colors"
-                                                >
-                                                    <option value="notStarted">미시작</option>
-                                                    <option value="ongoing">진행중</option>
-                                                    <option value="submitted">제출완료</option>
-                                                </select>
                                             </div>
                                             
                                             {task.unitDisplayName && (
@@ -336,7 +313,7 @@ export default function MathTaskCenterPage() {
                                             <span className="text-[11px] text-[#64748b] font-mono">최근진행: {formatDate(task.updatedAt)}</span>
                                             <button 
                                                 onClick={() => openContinueModal(task)}
-                                                className="px-4.5 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 hover:shadow-[0_0_20px_rgba(99,102,241,0.35)] text-white text-[12px] font-extrabold rounded-xl shadow-lg transition-all duration-200 active:scale-95 flex items-center gap-1 group/btn"
+                                                className="px-6 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 hover:shadow-[0_0_20px_rgba(99,102,241,0.35)] text-white text-[12px] font-extrabold rounded-xl shadow-lg transition-all duration-200 active:scale-95 flex items-center gap-1 group/btn"
                                             >
                                                 계속 풀기 <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
                                             </button>
@@ -358,7 +335,7 @@ export default function MathTaskCenterPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             {unstartedTasks.map(task => (
-                                <div key={task.id} className="group relative bg-white/[0.02] backdrop-blur-xl border border-white/[0.06] hover:border-[#fbbf24]/40 rounded-2xl p-6.5 shadow-[0_12px_45px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_40px_rgba(251,191,36,0.08)] transition-all duration-300 flex flex-col justify-between min-h-[190px] hover:-translate-y-1">
+                                <div key={task.id} className="group relative bg-white/[0.02] backdrop-blur-xl border border-white/[0.06] hover:border-[#fbbf24]/40 rounded-2xl p-6 shadow-[0_12px_45px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_40px_rgba(251,191,36,0.08)] transition-all duration-300 flex flex-col justify-between min-h-[190px] hover:-translate-y-1">
                                     <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#fbbf24] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                     
                                     <div>
@@ -366,15 +343,6 @@ export default function MathTaskCenterPage() {
                                             <h3 className="text-[16px] font-bold text-white group-hover:text-[#fbbf24]/90 transition-colors leading-snug break-keep tracking-tight">
                                                 {task.title}
                                             </h3>
-                                            <select 
-                                                value={task.status} 
-                                                onChange={(e) => handleStatusChange(task.id, e.target.value as Task["status"])}
-                                                className="bg-[#120e36] border border-white/[0.1] hover:border-white/[0.2] text-[#94a3b8] text-[11px] font-extrabold px-2 py-0.5 rounded-lg focus:outline-none cursor-pointer shadow-md select-none transition-colors"
-                                            >
-                                                <option value="notStarted">미시작</option>
-                                                <option value="ongoing">진행중</option>
-                                                <option value="submitted">제출완료</option>
-                                            </select>
                                         </div>
                                         
                                         {task.unitDisplayName && (
@@ -391,7 +359,7 @@ export default function MathTaskCenterPage() {
                                         </div>
                                         <button 
                                             onClick={() => openStartModal(task)}
-                                            className="px-4.5 py-2 bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:from-[#fbbf24] hover:to-[#f59e0b] hover:shadow-[0_0_20px_rgba(251,191,36,0.35)] text-white text-[12px] font-extrabold rounded-xl shadow-lg transition-all duration-200 active:scale-95 flex items-center gap-1 group/btn"
+                                            className="px-6 py-2 bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:from-[#fbbf24] hover:to-[#f59e0b] hover:shadow-[0_0_20px_rgba(251,191,36,0.35)] text-white text-[12px] font-extrabold rounded-xl shadow-lg transition-all duration-200 active:scale-95 flex items-center gap-1 group/btn"
                                         >
                                             과제 풀기 <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
                                         </button>
@@ -412,7 +380,7 @@ export default function MathTaskCenterPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             {submittedTasks.slice(0, visibleCompletedCount).map(task => (
-                                <div key={task.id} className="group relative bg-white/[0.01] backdrop-blur-xl border border-white/[0.04] hover:border-[#34d399]/40 rounded-2xl p-6.5 shadow-[0_12px_45px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_40px_rgba(52,211,153,0.06)] transition-all duration-300 flex flex-col justify-between min-h-[190px] hover:-translate-y-1">
+                                <div key={task.id} className="group relative bg-white/[0.01] backdrop-blur-xl border border-white/[0.04] hover:border-[#34d399]/40 rounded-2xl p-6 shadow-[0_12px_45px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_40px_rgba(52,211,153,0.06)] transition-all duration-300 flex flex-col justify-between min-h-[190px] hover:-translate-y-1">
                                     <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#34d399] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                     
                                     <div>
@@ -420,15 +388,6 @@ export default function MathTaskCenterPage() {
                                             <h3 className="text-[16px] font-bold text-[#e2e8f0] group-hover:text-white transition-colors leading-snug break-keep tracking-tight">
                                                 {task.title}
                                             </h3>
-                                            <select 
-                                                value={task.status} 
-                                                onChange={(e) => handleStatusChange(task.id, e.target.value as Task["status"])}
-                                                className="bg-[#120e36] border border-white/[0.1] hover:border-white/[0.2] text-[#94a3b8] text-[11px] font-extrabold px-2 py-0.5 rounded-lg focus:outline-none cursor-pointer shadow-md select-none transition-colors"
-                                            >
-                                                <option value="notStarted">미시작</option>
-                                                <option value="ongoing">진행중</option>
-                                                <option value="submitted">제출완료</option>
-                                            </select>
                                         </div>
                                         
                                         {task.unitDisplayName && (
@@ -449,7 +408,7 @@ export default function MathTaskCenterPage() {
                                             </span>
                                         </div>
                                         <button 
-                                            className="px-4.5 py-2 bg-white/[0.03] hover:bg-white/[0.08] text-[#cbd5e1] hover:text-white border border-white/[0.08] hover:border-white/[0.15] text-[12px] font-extrabold rounded-xl shadow-md transition-all active:scale-95"
+                                            className="px-6 py-2 bg-white/[0.03] hover:bg-white/[0.08] text-[#cbd5e1] hover:text-white border border-white/[0.08] hover:border-white/[0.15] text-[12px] font-extrabold rounded-xl shadow-md transition-all active:scale-95"
                                         >
                                             결과 보기
                                         </button>
@@ -492,7 +451,7 @@ export default function MathTaskCenterPage() {
                     <div className="absolute inset-0 bg-[#020108]/90 backdrop-blur-md" />
                     
                     {/* Modal Content */}
-                    <div className="relative bg-[#0c0926]/90 backdrop-blur-2xl border border-white/[0.12] rounded-3xl p-7 max-w-[420px] w-full shadow-[0_25px_60px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.06)] z-10 animate-in fade-in zoom-in-95 duration-200">
+                    <div className="relative bg-[#0c0926]/90 backdrop-blur-2xl border border-white/[0.12] rounded-3xl p-8 max-w-[420px] w-full shadow-[0_25px_60px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.06)] z-10 animate-in fade-in zoom-in-95 duration-200">
                         <div className="absolute top-5 right-5">
                             <button 
                                 onClick={() => { setStartModalOpen(false); setSelectedTask(null); }}
@@ -543,7 +502,7 @@ export default function MathTaskCenterPage() {
                     <div className="absolute inset-0 bg-[#020108]/90 backdrop-blur-md" />
                     
                     {/* Modal Content */}
-                    <div className="relative bg-[#0c0926]/90 backdrop-blur-2xl border border-white/[0.12] rounded-3xl p-7 max-w-[420px] w-full shadow-[0_25px_60px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.06)] z-10 animate-in fade-in zoom-in-95 duration-200">
+                    <div className="relative bg-[#0c0926]/90 backdrop-blur-2xl border border-white/[0.12] rounded-3xl p-8 max-w-[420px] w-full shadow-[0_25px_60px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.06)] z-10 animate-in fade-in zoom-in-95 duration-200">
                         <div className="absolute top-5 right-5">
                             <button 
                                 onClick={() => { setContinueModalOpen(false); setSelectedTask(null); }}

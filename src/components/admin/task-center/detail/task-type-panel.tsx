@@ -6,6 +6,7 @@ import {
   Subject, makeComboKey, getDifficultyLabel,
 } from "@/lib/task-center-mock";
 import { CurriculumTree } from "../curriculum-tree";
+import { TypeProblemPreviewModal } from "./type-problem-preview-modal";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -39,6 +40,12 @@ export function TaskTypePanel({ subject, selectedTypes, onlyImportant, readonly,
       return a.localeCompare(b);
     });
   }, [subject]);
+  const [isPreviewOpen, setIsPreviewOpen] = React.useState(false);
+  const [previewTypeId, setPreviewTypeId] = React.useState("");
+  const [previewTypeName, setPreviewTypeName] = React.useState("");
+  const [previewDifficulty, setPreviewDifficulty] = React.useState<Difficulty>("basic");
+  const [previewProblemCount, setPreviewProblemCount] = React.useState<number>(3);
+
   const [course, setCourse] = React.useState<string>(() => {
     if (selectedTypes.length > 0 && selectedTypes[0].course) {
       return selectedTypes[0].course;
@@ -189,8 +196,12 @@ export function TaskTypePanel({ subject, selectedTypes, onlyImportant, readonly,
     onTypesChange(selectedTypes.filter(t => !(t.typeId === typeId && t.difficulty === difficulty)));
   };
 
-  const handlePreview = () => {
-    toast({ description: "준비중입니다!" });
+  const handlePreview = (typeId: string, difficulty: Difficulty, typeName: string, problemCount: number) => {
+    setPreviewTypeId(typeId);
+    setPreviewDifficulty(difficulty);
+    setPreviewTypeName(typeName);
+    setPreviewProblemCount(problemCount);
+    setIsPreviewOpen(true);
   };
 
   const handleClearAll = () => {
@@ -318,8 +329,8 @@ export function TaskTypePanel({ subject, selectedTypes, onlyImportant, readonly,
                       </TooltipProvider>
 
                       <div className="flex items-center gap-1.5 shrink-0 ml-2">
-                        <span className="text-xs font-bold text-muted-foreground mr-1">{t.problemCount}문항</span>
-                        <Button size="sm" variant="outline" onClick={handlePreview} className="h-7 px-2.5 text-xs bg-white text-muted-foreground hover:text-foreground shadow-sm">
+                        <span className="text-xs font-bold text-muted-foreground mr-1">{t.maxCount[t.difficulty]}문항</span>
+                        <Button size="sm" variant="outline" onClick={() => handlePreview(t.typeId, t.difficulty, t.typeName, t.maxCount[t.difficulty])} className="h-7 px-2.5 text-xs bg-white text-muted-foreground hover:text-foreground shadow-sm">
                           <Eye className="h-3.5 w-3.5 mr-1" /> 미리보기
                         </Button>
                         <Button size="icon" variant="ghost" onClick={() => handleRemoveCombo(t.typeId, t.difficulty)} disabled={readonly} className="h-7 w-7 text-muted-foreground hover:text-destructive hover:bg-destructive/10">
@@ -338,6 +349,16 @@ export function TaskTypePanel({ subject, selectedTypes, onlyImportant, readonly,
           )}
         </div>
       </div>
+      
+      <TypeProblemPreviewModal
+        isOpen={isPreviewOpen}
+        onClose={() => setIsPreviewOpen(false)}
+        subject={subject}
+        typeId={previewTypeId}
+        typeName={previewTypeName}
+        difficulty={previewDifficulty}
+        problemCount={previewProblemCount}
+      />
     </div>
   );
 }

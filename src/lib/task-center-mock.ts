@@ -38198,7 +38198,7 @@ export const INITIAL_TASKS: TaskItem[] = [
         "minorUnit": "기본 도형의 이해 (1)",
         "typeName": "기본 도형 여러 가지 방법으로 풀기",
         "difficulty": "basic",
-        "problemCount": 3,
+        "problemCount": 4,
         "maxCount": {
           "basic": 4,
           "intermediate": 3,
@@ -38218,7 +38218,7 @@ export const INITIAL_TASKS: TaskItem[] = [
         "minorUnit": "기본 도형의 이해 (1)",
         "typeName": "기본 도형 오류 찾기",
         "difficulty": "basic",
-        "problemCount": 3,
+        "problemCount": 4,
         "maxCount": {
           "basic": 4,
           "intermediate": 3,
@@ -38238,7 +38238,7 @@ export const INITIAL_TASKS: TaskItem[] = [
         "minorUnit": "기본 도형의 이해 (2)",
         "typeName": "기본 도형 조건에 맞는 답 구하기",
         "difficulty": "basic",
-        "problemCount": 3,
+        "problemCount": 4,
         "maxCount": {
           "basic": 4,
           "intermediate": 0,
@@ -38258,7 +38258,7 @@ export const INITIAL_TASKS: TaskItem[] = [
         "minorUnit": "기본 도형의 이해 (2)",
         "typeName": "기본 도형 여러 가지 방법으로 풀기",
         "difficulty": "basic",
-        "problemCount": 3,
+        "problemCount": 5,
         "maxCount": {
           "basic": 5,
           "intermediate": 2,
@@ -38271,7 +38271,7 @@ export const INITIAL_TASKS: TaskItem[] = [
         }
       }
     ],
-    "totalProblems": 18,
+    "totalProblems": 23,
     "createdAt": "2026-05-14T10:00:00Z",
     "assignedStudents": [
       {
@@ -38280,7 +38280,7 @@ export const INITIAL_TASKS: TaskItem[] = [
         "classGroup": "1반",
         "status": "submitted",
         "score": 85,
-        "problemCount": 18,
+        "problemCount": 23,
         "printStatus": "not_printed",
         "submittedAt": "2026-05-15T10:00:00Z"
       },
@@ -38290,7 +38290,7 @@ export const INITIAL_TASKS: TaskItem[] = [
         "classGroup": "1반",
         "status": "submitted",
         "score": 85,
-        "problemCount": 18,
+        "problemCount": 23,
         "printStatus": "not_printed",
         "submittedAt": "2026-05-15T10:00:00Z"
       },
@@ -38299,7 +38299,7 @@ export const INITIAL_TASKS: TaskItem[] = [
         "studentName": "학생3",
         "classGroup": "1반",
         "status": "in_progress",
-        "problemCount": 18,
+        "problemCount": 23,
         "printStatus": "not_printed"
       },
       {
@@ -38307,7 +38307,7 @@ export const INITIAL_TASKS: TaskItem[] = [
         "studentName": "학생4",
         "classGroup": "1반",
         "status": "in_progress",
-        "problemCount": 18,
+        "problemCount": 23,
         "printStatus": "not_printed"
       },
       {
@@ -38315,7 +38315,7 @@ export const INITIAL_TASKS: TaskItem[] = [
         "studentName": "학생5",
         "classGroup": "1반",
         "status": "in_progress",
-        "problemCount": 18,
+        "problemCount": 23,
         "printStatus": "not_printed"
       }
     ],
