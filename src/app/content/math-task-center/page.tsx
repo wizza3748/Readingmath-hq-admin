@@ -195,7 +195,7 @@ export default function MathTaskCenterPage() {
                                 <h1 className="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-white to-[#cbd5e1] bg-clip-text">과제 센터</h1>
                                 <span className="px-3 py-0.5 bg-gradient-to-r from-[#fbbf24]/20 to-[#d97706]/20 text-[#fbbf24] text-[12px] font-black rounded-full border border-[#fbbf24]/30 shadow-[0_0_15px_rgba(251,191,36,0.15)]">수학</span>
                             </div>
-                            <p className="text-[13.5px] text-[#94a3b8] mt-1 font-medium">배정된 수학과제를 확인하고 실력을 키워보세요.</p>
+                            <p className="text-[13.5px] text-[#94a3b8] mt-1 font-medium">수학과제를 확인하고 풀이할 수 있습니다.</p>
                         </div>
                     </div>
                 </div>
