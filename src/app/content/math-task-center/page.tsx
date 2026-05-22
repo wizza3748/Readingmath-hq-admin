@@ -24,7 +24,7 @@ import { getStoredTasks, updateTaskStatus, Task } from "@/utils/taskStorage";
 
 export default function MathTaskCenterPage() {
     const [tasks, setTasks] = useState<Task[]>([]);
-    const [isDarkMode, setIsDarkMode] = useState(true);
+    const [isDarkMode, setIsDarkMode] = useState(false);
     
     // 모달 상태
     const [startModalOpen, setStartModalOpen] = useState(false);
