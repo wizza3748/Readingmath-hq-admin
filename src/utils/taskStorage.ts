@@ -16,7 +16,7 @@ export interface Task {
 }
 
 const DEFAULT_TASKS: Task[] = [
-    // === 수학 과제 목록 (미시작 1, 진행중 2, 제출완료 5) ===
+    // === 수학 과제 목록 (미시작 1, 진행중 2, 제출완료 6) ===
     {
         id: "math-task-001",
         subject: "math",
@@ -108,8 +108,20 @@ const DEFAULT_TASKS: Task[] = [
         score: 100,
         correctProblems: 10
     },
+    {
+        id: "math-task-009",
+        subject: "math",
+        title: "약수와 배수 서술형 문제 완벽 정리",
+        status: "submitted",
+        assignedAt: "2026-05-14T08:00:00Z",
+        submittedAt: "2026-05-14T09:30:00Z",
+        unitDisplayName: "1단원-소인수분해",
+        totalProblems: 10,
+        score: 95,
+        correctProblems: 9
+    },
 
-    // === 과학 과제 목록 (미시작 1, 진행중 2, 제출완료 5) ===
+    // === 과학 과제 목록 (미시작 1, 진행중 2, 제출완료 6) ===
     {
         id: "sci-task-001",
         subject: "science",
@@ -200,13 +212,36 @@ const DEFAULT_TASKS: Task[] = [
         totalProblems: 15,
         score: 100,
         correctProblems: 15
+    },
+    {
+        id: "sci-task-009",
+        subject: "science",
+        title: "화학 반응의 종류와 생활 속의 화학 반응 분석",
+        status: "submitted",
+        assignedAt: "2026-05-13T10:00:00Z",
+        submittedAt: "2026-05-13T11:45:00Z",
+        unitDisplayName: "3단원-물질의 구성",
+        totalProblems: 12,
+        score: 91,
+        correctProblems: 11
     }
 ];
 
 const STORAGE_KEY = "readingmath_student_tasks";
+const VERSION_KEY = "readingmath_tasks_seed_version";
+const SEED_VERSION = "v2.0";
 
 export function getStoredTasks(): Task[] {
     if (typeof window === "undefined") return DEFAULT_TASKS;
+    
+    // 시드 버전 체크 및 강제 리셋
+    const storedVersion = localStorage.getItem(VERSION_KEY);
+    if (storedVersion !== SEED_VERSION) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_TASKS));
+        localStorage.setItem(VERSION_KEY, SEED_VERSION);
+        return DEFAULT_TASKS;
+    }
+
     const stored = localStorage.getItem(STORAGE_KEY);
     if (!stored) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_TASKS));
