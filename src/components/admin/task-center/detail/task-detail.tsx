@@ -47,6 +47,11 @@ export default function TaskDetail({ taskId }: Props) {
     const existing = normalizedExistingTask?.selectedTypes ?? [];
     return Array.from(new Set(existing.map(t => t.typeId)));
   });
+  const [bulkDifficulties, setBulkDifficulties] = React.useState<Record<Difficulty, boolean>>({
+    basic: true,
+    intermediate: true,
+    advanced: true
+  });
   const [problemMode, setProblemMode] = React.useState<ProblemMode>(normalizedExistingTask?.problemMode ?? "same");
   const [prioritizeUnsolved, setPrioritizeUnsolved] = React.useState(normalizedExistingTask?.prioritizeUnsolved ?? false);
   const [onlyImportant, setOnlyImportant] = React.useState(normalizedExistingTask?.onlyImportant ?? false);
@@ -267,10 +272,12 @@ export default function TaskDetail({ taskId }: Props) {
             subject={subject}
             selectedTypes={selectedTypes}
             checkedTypeIds={checkedTypeIds}
+            bulkDifficulties={bulkDifficulties}
             onlyImportant={onlyImportant}
             readonly={readonly}
             onTypesChange={handleTypesChange}
             onCheckedTypesChange={setCheckedTypeIds}
+            onBulkDifficultiesChange={setBulkDifficulties}
           />
 
           {/* 우측: 과제 설정 */}

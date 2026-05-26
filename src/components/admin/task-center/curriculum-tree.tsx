@@ -215,66 +215,6 @@ export function CurriculumTree({
                             >
                               <HighlightedText text={type.typeName} query={searchQuery} />
                             </span>
-
-                            {/* 난이도 선택 칩 */}
-                            <TooltipProvider delayDuration={200}>
-                              <div className="flex items-center gap-1 shrink-0" onClick={e => e.stopPropagation()}>
-                                {DIFFICULTY_LIST.map(d => {
-                                  const isSelected = selectedCombos.includes(makeComboKey(type.id, d));
-                                  const isDisabled = readonly;
-                                  
-                                  let chipClass = "h-7 px-2.5 rounded text-[11px] font-bold transition-all border flex items-center justify-center ";
-                                  
-                                  if (isSelected) {
-                                    // 선택됨: 진한 배경, 흰색 텍스트
-                                    if (d === "basic") {
-                                      chipClass += "bg-slate-700 text-white border-slate-700 hover:bg-slate-800 shadow-xs ";
-                                    } else if (d === "intermediate") {
-                                      chipClass += "bg-blue-600 text-white border-blue-600 hover:bg-blue-700 shadow-xs ";
-                                    } else {
-                                      chipClass += "bg-purple-600 text-white border-purple-600 hover:bg-purple-700 shadow-xs ";
-                                    }
-                                    if (readonly) chipClass += "opacity-70 cursor-not-allowed";
-                                  } else {
-                                    // 미선택: 흰 배경, 테두리, 난이도별 보조 색상 유지
-                                    if (readonly) {
-                                      chipClass += "bg-slate-50/30 text-slate-400 border-transparent cursor-not-allowed";
-                                    } else {
-                                      if (d === "basic") {
-                                        chipClass += "bg-white text-slate-600 border-slate-300 hover:bg-slate-50/80 hover:text-slate-800 ";
-                                      } else if (d === "intermediate") {
-                                        chipClass += "bg-white text-blue-600 border-blue-200 hover:bg-blue-50/40 hover:text-blue-700 ";
-                                      } else {
-                                        chipClass += "bg-white text-purple-600 border-purple-200 hover:bg-purple-50/40 hover:text-purple-700 ";
-                                      }
-                                    }
-                                  }
-
-                                  const buttonContent = (
-                                    <button
-                                      key={d}
-                                      type="button"
-                                      disabled={isDisabled}
-                                      onClick={() => onToggleCombo(type.id, d, type)}
-                                      className={chipClass}
-                                    >
-                                      {getDifficultyLabel(d)}
-                                    </button>
-                                  );
-
-                                  return (
-                                    <Tooltip key={d}>
-                                      <TooltipTrigger asChild>
-                                        {buttonContent}
-                                      </TooltipTrigger>
-                                      <TooltipContent side="top" className="bg-slate-900 border border-slate-800 text-white py-1 px-2 text-[10px] rounded shadow-md">
-                                        <p>클릭하여 {getDifficultyLabel(d)} 난이도를 선택 또는 해제할 수 있습니다.</p>
-                                      </TooltipContent>
-                                    </Tooltip>
-                                  );
-                                })}
-                              </div>
-                            </TooltipProvider>
                           </div>
                         </div>
                       </div>

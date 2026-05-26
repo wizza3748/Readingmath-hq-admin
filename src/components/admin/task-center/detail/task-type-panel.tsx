@@ -24,13 +24,15 @@ interface Props {
   subject: Subject;
   selectedTypes: SelectedType[];
   checkedTypeIds: string[];
+  bulkDifficulties: Record<Difficulty, boolean>;
   onlyImportant: boolean;
   readonly?: boolean;
   onTypesChange: (types: SelectedType[]) => void;
   onCheckedTypesChange: (ids: string[]) => void;
+  onBulkDifficultiesChange: (diffs: Record<Difficulty, boolean>) => void;
 }
 
-export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], onlyImportant, readonly, onTypesChange, onCheckedTypesChange }: Props) {
+export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bulkDifficulties, onlyImportant, readonly, onTypesChange, onCheckedTypesChange, onBulkDifficultiesChange }: Props) {
   const { toast } = useToast();
   const courses = React.useMemo(() => {
     const raw = getCoursesBySubject(subject);
@@ -152,7 +154,7 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], onl
     const exists = selectedTypes.find(t => t.typeId === typeId && t.difficulty === difficulty);
 
     if (exists) {
-      // OFF 토글: checkedTypeIds는 건드리지 않고 유지!
+      // OFF 토글: checkedTypeIds는 해제되어도 계속 유지!
       onTypesChange(selectedTypes.filter(t => !(t.typeId === typeId && t.difficulty === difficulty)));
     } else {
       // ON 토글
@@ -197,8 +199,36 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], onl
       onCheckedTypesChange(checkedTypeIds.filter(id => id !== type.id));
       onTypesChange(selectedTypes.filter(t => t.typeId !== type.id));
     } else {
-      // ON:checkedTypeIds에만 추가하고 난이도는 아무것도 켜지 않음 (기본 상태)
+      // ON: checkedTypeIds에 추가하고, 현재 bulkDifficulties 중 ON인 모든 난이도를 자동 주입 (0문항 방지)
+      const nextMultiplier = selectedTypes[0]?.problemCount ?? 1;
+      const activeDiffs = (["basic", "intermediate", "advanced"] as Difficulty[]).filter(d => bulkDifficulties[d]);
+      
+      const newEntries: SelectedType[] = activeDiffs.map(d => ({
+        curriculumId: curriculum!.id,
+        course,
+        typeId: type.id,
+        majorUnit: type.majorUnit,
+        minorUnit: type.minorUnit,
+        typeName: type.typeName,
+        difficulty: d,
+        problemCount: nextMultiplier,
+        maxCount: type.difficultyCount,
+        importantCount: type.importantCount,
+      }));
+
+      // 가드 사전 검사
+      const nextSelected = [...selectedTypes, ...newEntries];
+      if (nextSelected.length > 100) {
+        toast({ title: "선택 가능한 유형·난이도 조합은 최대 100개입니다. (선택 차단)", variant: "destructive" });
+        return;
+      }
+      if (nextSelected.length * nextMultiplier > 300) {
+        toast({ title: "전체 출제 문제 수는 최대 300문항입니다. (선택 차단)", variant: "destructive" });
+        return;
+      }
+
       onCheckedTypesChange([...checkedTypeIds, type.id]);
+      onTypesChange(nextSelected);
     }
   };
 
@@ -213,9 +243,44 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], onl
       onCheckedTypesChange(checkedTypeIds.filter(id => !typeIds.includes(id)));
       onTypesChange(selectedTypes.filter(t => !typeIds.includes(t.typeId)));
     } else {
-      // 소단원 선택: 미체크 유형 추가, 난이도는 켜지 않음
-      const toAdd = typeIds.filter(id => !checkedTypeIds.includes(id));
-      onCheckedTypesChange([...checkedTypeIds, ...toAdd]);
+      // 소단원 선택: 미체크 유형 추가, 현재 bulkDifficulties 중 ON 상태인 난이도를 일괄 자동 부여 (0문항 방지)
+      const nextMultiplier = selectedTypes[0]?.problemCount ?? 1;
+      const activeDiffs = (["basic", "intermediate", "advanced"] as Difficulty[]).filter(d => bulkDifficulties[d]);
+      const toAdd: SelectedType[] = [];
+
+      types.forEach(t => {
+        if (checkedTypeIds.includes(t.id)) return;
+        activeDiffs.forEach(d => {
+          toAdd.push({
+            curriculumId: curriculum!.id,
+            course,
+            typeId: t.id,
+            majorUnit: t.majorUnit,
+            minorUnit: t.minorUnit,
+            typeName: t.typeName,
+            difficulty: d,
+            problemCount: nextMultiplier,
+            maxCount: t.difficultyCount,
+            importantCount: t.importantCount,
+          });
+        });
+      });
+
+      const nextSelected = [...selectedTypes, ...toAdd];
+
+      // 가드 사전 검사
+      if (nextSelected.length > 100) {
+        toast({ title: "선택 가능한 유형·난이도 조합은 최대 100개입니다. (선택 차단)", variant: "destructive" });
+        return;
+      }
+      if (nextSelected.length * nextMultiplier > 300) {
+        toast({ title: "전체 출제 문제 수는 최대 300문항입니다. (선택 차단)", variant: "destructive" });
+        return;
+      }
+
+      const toAddIds = typeIds.filter(id => !checkedTypeIds.includes(id));
+      onCheckedTypesChange([...checkedTypeIds, ...toAddIds]);
+      onTypesChange(nextSelected);
     }
   };
 
@@ -223,67 +288,62 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], onl
     handleToggleMinorChecked(majorUnit, types);
   };
 
-  const handleApplyBulkDifficulty = (mode: string) => {
+  const handleToggleBulkDifficulty = (diff: Difficulty) => {
     if (readonly) return;
-    if (checkedTypeIds.length === 0) {
-      toast({ title: "선택된 유형이 없습니다. 커리큘럼 트리에서 유형을 먼저 체크해 주세요.", variant: "destructive" });
-      return;
-    }
+    const nextVal = !bulkDifficulties[diff];
 
-    let targetDiffs: Difficulty[] = [];
-    if (mode === "basic") targetDiffs = ["basic"];
-    else if (mode === "intermediate") targetDiffs = ["intermediate"];
-    else if (mode === "advanced") targetDiffs = ["advanced"];
-    else if (mode === "basic+intermediate") targetDiffs = ["basic", "intermediate"];
-    else if (mode === "basic+advanced") targetDiffs = ["basic", "advanced"];
-    else if (mode === "intermediate+advanced") targetDiffs = ["intermediate", "advanced"];
-    else if (mode === "all") targetDiffs = ["basic", "intermediate", "advanced"];
-    // 'clear'는 빈 배열 유지
+    // 1. 토글 상태 즉각 업데이트
+    onBulkDifficultiesChange({
+      ...bulkDifficulties,
+      [diff]: nextVal
+    });
 
-    // 1. checkedTypeIds에 속하지 않는 유형들의 기존 난이도 상태 유지
-    const keptTypes = selectedTypes.filter(t => !checkedTypeIds.includes(t.typeId));
+    // 2. 현재 체크된 유형들에 난이도 조합 적용/해제
+    if (nextVal) {
+      // OFF -> ON: 현재 checkedTypeIds에 속한 유형들에 해당 난이도 조합 일괄 추가
+      if (checkedTypeIds.length === 0) return;
+      const nextMultiplier = selectedTypes[0]?.problemCount ?? 1;
+      const toAdd: SelectedType[] = [];
 
-    // 2. checkedTypeIds에 속하는 유형들에 대해 새로운 난이도 조합 구성
-    const nextMultiplier = selectedTypes[0]?.problemCount ?? 1;
-    const newEntries: SelectedType[] = [];
-
-    if (targetDiffs.length > 0 && curriculum) {
       checkedTypeIds.forEach(typeId => {
-        const type = curriculum.types.find(t => t.id === typeId);
+        const alreadyExists = selectedTypes.some(t => t.typeId === typeId && t.difficulty === diff);
+        if (alreadyExists) return;
+
+        const type = curriculum?.types.find(t => t.id === typeId);
         if (!type) return;
 
-        targetDiffs.forEach(d => {
-          newEntries.push({
-            curriculumId: curriculum.id,
-            course,
-            typeId,
-            majorUnit: type.majorUnit,
-            minorUnit: type.minorUnit,
-            typeName: type.typeName,
-            difficulty: d,
-            problemCount: nextMultiplier,
-            maxCount: type.difficultyCount,
-            importantCount: type.importantCount,
-          });
+        toAdd.push({
+          curriculumId: curriculum!.id,
+          course,
+          typeId,
+          majorUnit: type.majorUnit,
+          minorUnit: type.minorUnit,
+          typeName: type.typeName,
+          difficulty: diff,
+          problemCount: nextMultiplier,
+          maxCount: type.difficultyCount,
+          importantCount: type.importantCount,
         });
       });
-    }
 
-    const nextSelectedTypes = [...keptTypes, ...newEntries];
+      const nextSelected = [...selectedTypes, ...toAdd];
 
-    // 3. 100개 조합 & 300문항 한계 사전 검사 및 초과 시 경고
-    if (nextSelectedTypes.length > 100) {
-      toast({ title: "선택 가능한 유형·난이도 조합은 최대 100개입니다. (일괄 적용 불가)", variant: "destructive" });
-      return;
-    }
-    if (nextSelectedTypes.length * nextMultiplier > 300) {
-      toast({ title: "전체 출제 문제 수는 최대 300문항입니다. (일괄 적용 불가)", variant: "destructive" });
-      return;
-    }
+      // 가드 체크
+      if (nextSelected.length > 100) {
+        toast({ title: "선택 가능한 유형·난이도 조합은 최대 100개입니다. (토글 적용 불가)", variant: "destructive" });
+        return;
+      }
+      if (nextSelected.length * nextMultiplier > 300) {
+        toast({ title: "전체 출제 문제 수는 최대 300문항입니다. (토글 적용 불가)", variant: "destructive" });
+        return;
+      }
 
-    // 4. 적용
-    onTypesChange(nextSelectedTypes);
-    toast({ title: "선택된 유형에 난이도 조합이 일괄 적용되었습니다." });
+      onTypesChange(nextSelected);
+    } else {
+      // ON -> OFF: 현재 checkedTypeIds에 속한 유형들에서 해당 난이도 일괄 소거
+      const nextSelected = selectedTypes.filter(t => !(checkedTypeIds.includes(t.typeId) && t.difficulty === diff));
+      onTypesChange(nextSelected);
+    }
   };
 
   const handleRemoveCombo = (typeId: string, difficulty: Difficulty) => {
@@ -330,31 +390,6 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], onl
           ))}
         </div>
 
-        {/* 선택 유형 난이도 적용 바 */}
-        {!readonly && (
-          <div className="p-3.5 bg-slate-50 border border-slate-200/80 rounded-xl space-y-2.5">
-            <div className="flex items-center gap-1.5">
-              <span className="w-1 h-3 bg-indigo-600 rounded-full" />
-              <span className="text-[11px] font-extrabold text-slate-500 uppercase tracking-wider">선택 유형 난이도 적용</span>
-              {checkedTypeIds.length > 0 && (
-                <span className="text-[10px] font-bold bg-indigo-50 text-indigo-600 px-1.5 py-0.5 rounded-full border border-indigo-100">
-                  {checkedTypeIds.length}개 유형 선택됨
-                </span>
-              )}
-            </div>
-            <div className="flex flex-wrap gap-1.5">
-              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-white text-slate-700 border-slate-200 hover:bg-slate-100/70" onClick={() => handleApplyBulkDifficulty("basic")}>기본만</Button>
-              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-white text-slate-700 border-slate-200 hover:bg-slate-100/70" onClick={() => handleApplyBulkDifficulty("intermediate")}>실력만</Button>
-              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-white text-slate-700 border-slate-200 hover:bg-slate-100/70" onClick={() => handleApplyBulkDifficulty("advanced")}>심화만</Button>
-              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-white text-slate-700 border-slate-200 hover:bg-slate-100/70" onClick={() => handleApplyBulkDifficulty("basic+intermediate")}>기본+실력</Button>
-              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-white text-slate-700 border-slate-200 hover:bg-slate-100/70" onClick={() => handleApplyBulkDifficulty("basic+advanced")}>기본+심화</Button>
-              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-white text-slate-700 border-slate-200 hover:bg-slate-100/70" onClick={() => handleApplyBulkDifficulty("intermediate+advanced")}>실력+심화</Button>
-              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-indigo-50 text-indigo-700 border-indigo-200 hover:bg-indigo-100/60" onClick={() => handleApplyBulkDifficulty("all")}>전체</Button>
-              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-rose-50 text-rose-700 border-rose-200 hover:bg-rose-100/60" onClick={() => handleApplyBulkDifficulty("clear")}>전체 해제</Button>
-            </div>
-          </div>
-        )}
-
         {/* 유형 검색 */}
         {!readonly && (
           <div className="flex items-center gap-2">
@@ -367,6 +402,51 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], onl
             />
             <Button size="sm" variant="secondary" onClick={handleSearch} disabled={searchInput.replace(/\s/g, '').length < 2}>검색</Button>
             <Button size="sm" variant="outline" onClick={handleClearSearch}>초기화</Button>
+          </div>
+        )}
+
+        {/* 출제 난이도 선택 영역 (유형명 검색 바로 아래) */}
+        {!readonly && (
+          <div className="flex flex-wrap items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-200/80 rounded-xl">
+            <div className="flex flex-wrap items-baseline gap-2.5">
+              <span className="text-xs font-black text-slate-800">출제 난이도 선택</span>
+              <span className="text-[10.5px] text-slate-500 font-medium">선택한 유형에 적용할 난이도입니다.</span>
+              {checkedTypeIds.length > 0 && (
+                <span className="text-[10px] font-bold text-indigo-600 bg-indigo-50/60 border border-indigo-100/50 px-2 py-0.5 rounded-full select-none">
+                  {checkedTypeIds.length}개 유형 선택 중
+                </span>
+              )}
+            </div>
+            <div className="flex gap-1.5 shrink-0 ml-auto">
+              {(["basic", "intermediate", "advanced"] as Difficulty[]).map(d => {
+                const isOn = bulkDifficulties[d];
+                const label = d === "basic" ? "기본" : d === "intermediate" ? "실력" : "심화";
+                
+                let btnClass = "h-7 px-3 text-[11px] font-black rounded-lg transition-all border flex items-center justify-center cursor-pointer select-none ";
+                if (isOn) {
+                  if (d === "basic") {
+                    btnClass += "bg-slate-700 text-white border-slate-700 hover:bg-slate-800 shadow-xs ";
+                  } else if (d === "intermediate") {
+                    btnClass += "bg-blue-600 text-white border-blue-600 hover:bg-blue-700 shadow-xs ";
+                  } else {
+                    btnClass += "bg-purple-600 text-white border-purple-600 hover:bg-purple-700 shadow-xs ";
+                  }
+                } else {
+                  btnClass += "bg-white border-slate-200 text-slate-400 hover:border-slate-350 hover:bg-slate-50/50 ";
+                }
+
+                return (
+                  <button
+                    key={d}
+                    type="button"
+                    onClick={() => handleToggleBulkDifficulty(d)}
+                    className={btnClass}
+                  >
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         )}
 
