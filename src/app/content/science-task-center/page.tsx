@@ -18,13 +18,24 @@ import {
     Award,
     BookOpen,
     ArrowRight,
-    Lock
+    Lock,
+    RotateCcw
 } from "lucide-react";
 import { getStoredTasks, updateTaskStatus, Task } from "@/utils/taskStorage";
 
 export default function ScienceTaskCenterPage() {
     const [tasks, setTasks] = useState<Task[]>([]);
     const [isDarkMode, setIsDarkMode] = useState(false); // 기본 테마는 라이트 모드 (false)
+    const observerRef = React.useRef<HTMLDivElement | null>(null);
+
+    // 목 데이터 초기화
+    const handleResetData = () => {
+        if (typeof window !== "undefined") {
+            localStorage.removeItem("readingmath_student_tasks");
+            localStorage.removeItem("readingmath_tasks_seed_version");
+            window.location.reload();
+        }
+    };
     
     // 모달 상태
     const [startModalOpen, setStartModalOpen] = useState(false);
@@ -44,6 +55,32 @@ export default function ScienceTaskCenterPage() {
             window.removeEventListener("task-status-changed", handleChanged);
         };
     }, []);
+
+    // 완료 과제 무한 스크롤 트리거
+    useEffect(() => {
+        const scienceSubmittedTasks = tasks.filter(t => t.subject === "science" && t.status === "submitted");
+        if (scienceSubmittedTasks.length <= visibleCompletedCount) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    setVisibleCompletedCount(prev => prev + 5);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        const currentTarget = observerRef.current;
+        if (currentTarget) {
+            observer.observe(currentTarget);
+        }
+
+        return () => {
+            if (currentTarget) {
+                observer.unobserve(currentTarget);
+            }
+        };
+    }, [tasks, visibleCompletedCount]);
 
     const scienceTasks = tasks.filter(t => t.subject === "science");
     
@@ -199,8 +236,21 @@ export default function ScienceTaskCenterPage() {
                         <p className={`text-[14.5px] ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-600'} mt-2 font-medium`}>과학과제를 확인하고 풀이할 수 있습니다.</p>
                     </div>
 
-                    {/* 테마 토글 버튼 (라이트 / 다크) */}
-                    <div className="mt-4 md:mt-0 flex items-center">
+                    {/* 데이터 초기화 및 테마 토글 버튼 */}
+                    <div className="mt-4 md:mt-0 flex items-center gap-3">
+                        <button
+                            onClick={handleResetData}
+                            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-[12.5px] font-extrabold shadow-sm transition-all active:scale-95 cursor-pointer ${
+                                isDarkMode 
+                                    ? 'bg-white/[0.02] border-white/[0.08] text-[#94a3b8] hover:text-white hover:bg-white/[0.06]' 
+                                    : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                            }`}
+                            title="진행중2, 미시작1, 완료6 목 데이터 초기화"
+                        >
+                            <RotateCcw className="h-3.5 w-3.5" />
+                            <span>데이터 초기화</span>
+                        </button>
+
                         <button
                             onClick={() => setIsDarkMode(!isDarkMode)}
                             className={`relative w-16 h-8 rounded-full transition-all duration-300 flex items-center p-1 cursor-pointer select-none focus:outline-none shadow-md ${
@@ -238,7 +288,6 @@ export default function ScienceTaskCenterPage() {
                                     <span className={`text-3xl font-black ${isDarkMode ? 'text-white' : 'text-slate-900'} font-mono tracking-tight`}>{completedCount}</span>
                                     <span className={`text-[13px] ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-600'} font-black`}>개</span>
                                 </div>
-                                <div className="mt-2.5 h-[1.5px] w-full bg-gradient-to-r from-[#06b6d4]/40 to-transparent" />
                             </div>
 
                             {/* 카드 2: 평균 점수 */}
@@ -252,7 +301,6 @@ export default function ScienceTaskCenterPage() {
                                     <span className={`text-3xl font-black ${isDarkMode ? 'text-[#34d399]' : 'text-emerald-600'} font-mono tracking-tight`}>{averageScore}</span>
                                     <span className={`text-[13px] ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-600'} font-black`}>점</span>
                                 </div>
-                                <div className="mt-2.5 h-[1.5px] w-full bg-gradient-to-r from-[#34d399]/40 to-transparent" />
                             </div>
 
                             {/* 카드 3: 제출 문항 수 */}
@@ -266,7 +314,6 @@ export default function ScienceTaskCenterPage() {
                                     <span className={`text-3xl font-black ${isDarkMode ? 'text-[#38bdf8]' : 'text-blue-600'} font-mono tracking-tight`}>{totalSubmittedProblems}</span>
                                     <span className={`text-[13px] ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-600'} font-black`}>문항</span>
                                 </div>
-                                <div className="mt-2.5 h-[1.5px] w-full bg-gradient-to-r from-[#38bdf8]/40 to-transparent" />
                             </div>
 
                             {/* 카드 4: 정답 문항 수 */}
@@ -280,7 +327,6 @@ export default function ScienceTaskCenterPage() {
                                     <span className={`text-3xl font-black ${isDarkMode ? 'text-[#a78bfa]' : 'text-purple-600'} font-mono tracking-tight`}>{totalCorrectProblems}</span>
                                     <span className={`text-[13px] ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-600'} font-black`}>문항</span>
                                 </div>
-                                <div className="mt-2.5 h-[1.5px] w-full bg-gradient-to-r from-[#a78bfa]/40 to-transparent" />
                             </div>
                         </div>
                     </div>
@@ -294,23 +340,24 @@ export default function ScienceTaskCenterPage() {
                             <span className={`${isDarkMode ? 'bg-[#38bdf8]/10 text-[#38bdf8] border-[#38bdf8]/20 shadow-[0_0_10px_rgba(56,189,248,0.1)]' : 'bg-blue-50 text-[#0284c7] border border-blue-200'} px-2.5 py-0.5 rounded-full text-[12px] font-black font-mono`}>{ongoingTasks.length}</span>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {ongoingTasks.slice(0, 2).map(task => {
+                        <div className="grid grid-cols-1 gap-5">
+                            {ongoingTasks.map(task => {
                                 const solved = Number(task.solvedProblems) || 0;
                                 const totalProbs = Number(task.totalProblems) || 0;
                                 const progressPct = totalProbs > 0 ? Math.round((solved / totalProbs) * 100) : 0;
                                 
                                 return (
-                                    <div key={task.id} className={`group relative ${isDarkMode ? 'bg-white/[0.02] border-white/[0.06] hover:border-cyan-500/40 shadow-[0_12px_45px_rgba(0,0,0,0.35)]' : 'bg-white border border-slate-200 shadow-[0_4px_16px_rgba(51,65,85,0.06)] hover:border-slate-300 hover:shadow-[0_8px_24px_rgba(51,65,85,0.12)]'} rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between h-full hover:-translate-y-1`}>
+                                    <div key={task.id} className={`group relative ${isDarkMode ? 'bg-white/[0.02] border-white/[0.06] hover:border-cyan-500/40 shadow-[0_12px_45px_rgba(0,0,0,0.35)]' : 'bg-white border border-slate-200 shadow-[0_4px_16px_rgba(51,65,85,0.06)] hover:border-slate-300 hover:shadow-[0_8px_24px_rgba(51,65,85,0.12)]'} rounded-2xl p-6 transition-all duration-300 flex flex-col sm:flex-row justify-between gap-6 hover:-translate-y-0.5`}>
                                         
-                                        <div>
-                                            <div className="flex items-start justify-between gap-3 mb-2.5">
+                                        {/* 좌측 정보 영역 */}
+                                        <div className="flex-1 min-w-0">
+                                            <div className="flex items-start gap-3 mb-2">
                                                 <h3 className={`text-[16px] font-extrabold ${isDarkMode ? 'text-white group-hover:text-cyan-200' : 'text-slate-900'} transition-colors leading-snug break-keep tracking-tight`}>
                                                     {task.title}
                                                 </h3>
                                             </div>
                                             
-                                            <div className="flex flex-wrap items-center gap-2 mb-4">
+                                            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-4">
                                                 {task.unitDisplayName && (
                                                     <span className={`inline-block px-2.5 py-0.5 ${isDarkMode ? 'bg-white/[0.04] text-[#a5f3fc] border-white/[0.04]' : 'bg-cyan-50 text-cyan-700 border border-cyan-100'} text-[11.5px] font-bold rounded-md leading-none`}>
                                                         {task.unitDisplayName}
@@ -320,26 +367,31 @@ export default function ScienceTaskCenterPage() {
                                                     출제일시: {formatDate(task.assignedAt)}
                                                 </span>
                                             </div>
+
+                                            {/* 진행중 과제 보조 정보 (Progress bar) - 좌측 정보 영역 하단에 표시 */}
+                                            <div className="max-w-md">
+                                                <div className="flex items-center justify-between text-[12px] font-extrabold mb-1.5">
+                                                    <span className={`flex items-center gap-1 ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-700'}`}>
+                                                        <PlayCircle className="h-3.5 w-3.5 text-[#38bdf8]" /> 풀이 진행률
+                                                    </span>
+                                                    <span className={`font-mono ${isDarkMode ? 'text-white bg-white/[0.05]' : 'text-cyan-900 bg-cyan-50 border border-cyan-100'} px-1.5 py-0.5 rounded text-[11.5px]`}>
+                                                        {progressPct}% ({solved}/{totalProbs})
+                                                    </span>
+                                                </div>
+                                                <div className={`w-full h-2.5 ${isDarkMode ? 'bg-[#081023]/90 border-white/[0.04]' : 'bg-slate-100 border-slate-200/50'} rounded-full overflow-hidden border p-[1px]`}>
+                                                    <div 
+                                                        className="h-full bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 rounded-full transition-all duration-500"
+                                                        style={{ width: `${progressPct}%` }}
+                                                    />
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        <div className="mt-2">
-                                            {/* Progress Bar */}
-                                            <div className="flex items-center justify-between text-[12px] font-extrabold mb-2">
-                                                <span className={`flex items-center gap-1 ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-700'}`}><PlayCircle className="h-3.5 w-3.5 text-[#38bdf8]" /> 풀이 진행률</span>
-                                                <span className={`font-mono ${isDarkMode ? 'text-white bg-white/[0.05]' : 'text-cyan-900 bg-cyan-50 border border-cyan-100'} px-1.5 py-0.5 rounded text-[11.5px]`}>{progressPct}% ({solved}/{totalProbs})</span>
-                                            </div>
-                                            <div className={`w-full h-3 ${isDarkMode ? 'bg-[#081023]/90 border-white/[0.04]' : 'bg-slate-100 border-slate-200/50'} rounded-full overflow-hidden border p-[1.5px] mb-1`}>
-                                                <div 
-                                                    className="h-full bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 rounded-full transition-all duration-500 shadow-[0_0_12px_rgba(6,182,212,0.5)]"
-                                                    style={{ width: `${progressPct}%` }}
-                                                />
-                                            </div>
-                                        </div>
-
-                                        <div className={`mt-5 pt-4 border-t ${isDarkMode ? 'border-white/[0.05]' : 'border-slate-100'} flex items-center justify-end`}>
+                                        {/* 우측 액션 영역 */}
+                                        <div className="flex items-center justify-end sm:self-center shrink-0">
                                             <button 
                                                 onClick={() => openContinueModal(task)}
-                                                className={`px-5 py-2.5 ${isDarkMode ? 'bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.35)]' : 'bg-cyan-600 hover:bg-cyan-700 hover:shadow-[0_4px_12px_rgba(8,145,178,0.15)]'} text-white text-[12.5px] font-extrabold rounded-xl shadow-md transition-all duration-200 active:scale-95 flex items-center gap-1 group/btn`}
+                                                className={`w-full sm:w-auto px-6 py-3 ${isDarkMode ? 'bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.35)]' : 'bg-cyan-600 hover:bg-cyan-700 hover:shadow-[0_4px_12px_rgba(8,145,178,0.15)]'} text-white text-[13px] font-extrabold rounded-xl shadow-md transition-all duration-200 active:scale-95 flex items-center justify-center gap-1 group/btn`}
                                             >
                                                 계속 풀기 <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
                                             </button>
@@ -359,18 +411,19 @@ export default function ScienceTaskCenterPage() {
                             <span className={`${isDarkMode ? 'bg-[#06b6d4]/10 text-[#06b6d4] border-[#06b6d4]/20 shadow-[0_0_10px_rgba(6,182,212,0.1)]' : 'bg-cyan-50 text-[#0891b2] border border-cyan-200'} px-2.5 py-0.5 rounded-full text-[12px] font-black font-mono`}>{unstartedTasks.length}</span>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 gap-5">
                             {unstartedTasks.slice(0, 1).map(task => (
-                                <div key={task.id} className={`group relative ${isDarkMode ? 'bg-white/[0.02] border-white/[0.06] hover:border-cyan-500/40 shadow-[0_12px_45px_rgba(0,0,0,0.35)]' : 'bg-white border border-slate-200 shadow-[0_4px_16px_rgba(51,65,85,0.06)] hover:border-slate-300 hover:shadow-[0_8px_24px_rgba(51,65,85,0.12)]'} rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between h-full hover:-translate-y-1`}>
+                                <div key={task.id} className={`group relative ${isDarkMode ? 'bg-white/[0.02] border-white/[0.06] hover:border-cyan-500/40 shadow-[0_12px_45px_rgba(0,0,0,0.35)]' : 'bg-white border border-slate-200 shadow-[0_4px_16px_rgba(51,65,85,0.06)] hover:border-slate-300 hover:shadow-[0_8px_24px_rgba(51,65,85,0.12)]'} rounded-2xl p-6 transition-all duration-300 flex flex-col sm:flex-row justify-between gap-6 hover:-translate-y-0.5`}>
                                     
-                                    <div>
-                                        <div className="flex items-start justify-between gap-3 mb-2.5">
+                                    {/* 좌측 정보 영역 */}
+                                    <div className="flex-1 min-w-0">
+                                        <div className="flex items-start gap-3 mb-2">
                                             <h3 className={`text-[16px] font-extrabold ${isDarkMode ? 'text-white group-hover:text-cyan-300' : 'text-slate-900'} transition-colors leading-snug break-keep tracking-tight`}>
                                                 {task.title}
                                             </h3>
                                         </div>
                                         
-                                        <div className="flex flex-wrap items-center gap-2 mb-4">
+                                        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-4">
                                             {task.unitDisplayName && (
                                                 <span className={`inline-block px-2.5 py-0.5 ${isDarkMode ? 'bg-white/[0.04] text-[#22d3ee] border-white/[0.04]' : 'bg-cyan-50 text-cyan-700 border border-cyan-100'} text-[11.5px] font-bold rounded-md leading-none`}>
                                                     {task.unitDisplayName}
@@ -380,16 +433,19 @@ export default function ScienceTaskCenterPage() {
                                                 출제일시: {formatDate(task.assignedAt)}
                                             </span>
                                         </div>
-                                    </div>
 
-                                    <div className={`mt-5 pt-4 border-t ${isDarkMode ? 'border-white/[0.05]' : 'border-slate-100'} flex items-center justify-between`}>
+                                        {/* 미시작 과제 상태별 보조 정보 (문항 수) - 좌측 정보 영역 하단에 표시 */}
                                         <div className={`text-[12.5px] ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-700'} font-extrabold flex items-center gap-1.5`}>
                                             <Lock className={`h-3.5 w-3.5 ${isDarkMode ? 'text-cyan-400/70' : 'text-[#0891b2]'}`} />
                                             문항수: <span className={`${isDarkMode ? 'text-white' : 'text-slate-900'} font-mono`}>{task.totalProblems}</span>문항
                                         </div>
+                                    </div>
+
+                                    {/* 우측 액션 영역 */}
+                                    <div className="flex items-center justify-end sm:self-center shrink-0">
                                         <button 
                                             onClick={() => openStartModal(task)}
-                                            className={`px-5 py-2.5 ${isDarkMode ? 'bg-gradient-to-r from-cyan-600 to-cyan-800 hover:from-cyan-500 hover:to-cyan-700 hover:shadow-[0_0_20px_rgba(6,182,212,0.35)]' : 'bg-cyan-600 hover:bg-cyan-700 text-white shadow-md'} text-[12.5px] font-extrabold rounded-xl transition-all duration-200 active:scale-95 flex items-center gap-1 group/btn`}
+                                            className={`w-full sm:w-auto px-6 py-3 ${isDarkMode ? 'bg-gradient-to-r from-cyan-600 to-cyan-800 hover:from-cyan-500 hover:to-cyan-700 hover:shadow-[0_0_20px_rgba(6,182,212,0.35)]' : 'bg-cyan-600 hover:bg-cyan-700 text-white shadow-md'} text-[13px] font-extrabold rounded-xl transition-all duration-200 active:scale-95 flex items-center justify-center gap-1 group/btn`}
                                         >
                                             과제 풀기 <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
                                         </button>
@@ -408,18 +464,19 @@ export default function ScienceTaskCenterPage() {
                             <span className={`${isDarkMode ? 'bg-[#34d399]/10 text-[#34d399] border-[#34d399]/20 shadow-[0_0_10px_rgba(52,211,153,0.1)]' : 'bg-emerald-50 text-emerald-700 border border-emerald-200'} px-2.5 py-0.5 rounded-full text-[12px] font-black font-mono`}>{submittedTasks.length}</span>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 gap-5">
                             {submittedTasks.slice(0, visibleCompletedCount).map(task => (
-                                <div key={task.id} className={`group relative ${isDarkMode ? 'bg-white/[0.01] border-white/[0.04] shadow-[0_12px_45px_rgba(0,0,0,0.35)]' : 'bg-white border border-slate-200 shadow-[0_4px_16px_rgba(51,65,85,0.06)] hover:border-slate-300 hover:shadow-[0_8px_24px_rgba(51,65,85,0.12)]'} rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between h-full hover:-translate-y-1`}>
+                                <div key={task.id} className={`group relative ${isDarkMode ? 'bg-white/[0.01] border-white/[0.04] shadow-[0_12px_45px_rgba(0,0,0,0.35)]' : 'bg-white border border-slate-200 shadow-[0_4px_16px_rgba(51,65,85,0.06)] hover:border-slate-300 hover:shadow-[0_8px_24px_rgba(51,65,85,0.12)]'} rounded-2xl p-6 transition-all duration-300 flex flex-col sm:flex-row justify-between gap-6 hover:-translate-y-0.5`}>
                                     
-                                    <div>
-                                        <div className="flex items-start justify-between gap-3 mb-2.5">
+                                    {/* 좌측 정보 영역 */}
+                                    <div className="flex-1 min-w-0">
+                                        <div className="flex items-start gap-3 mb-2">
                                             <h3 className={`text-[16px] font-extrabold ${isDarkMode ? 'text-[#e2e8f0] group-hover:text-white' : 'text-slate-900'} transition-colors leading-snug break-keep tracking-tight`}>
                                                 {task.title}
                                             </h3>
                                         </div>
                                         
-                                        <div className="flex flex-wrap items-center gap-2 mb-3">
+                                        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-3">
                                             {task.unitDisplayName && (
                                                 <span className={`inline-block px-2.5 py-0.5 ${isDarkMode ? 'bg-white/[0.03] text-[#a7f3d0] border-white/[0.03]' : 'bg-emerald-50 text-emerald-700 border border-emerald-100'} text-[11px] font-bold rounded-md leading-none`}>
                                                     {task.unitDisplayName}
@@ -428,38 +485,49 @@ export default function ScienceTaskCenterPage() {
                                             <span className={`text-[12px] ${isDarkMode ? 'text-[#64748b]' : 'text-slate-500'} font-medium`}>
                                                 출제일시: {formatDate(task.assignedAt)}
                                             </span>
-                                        </div>
-                                        <p className={`text-[12px] ${isDarkMode ? 'text-[#64748b]' : 'text-slate-500'} font-semibold mb-1`}>
-                                            제출일시: {formatDate(task.submittedAt)}
-                                        </p>
-                                    </div>
-
-                                    <div className={`mt-5 pt-4 border-t ${isDarkMode ? 'border-white/[0.05]' : 'border-slate-100'} flex items-center justify-between`}>
-                                        <div className="flex items-center gap-3">
-                                            <span className={`text-xl font-black ${isDarkMode ? 'text-[#34d399]' : 'text-emerald-600'} font-mono tracking-tight`}>{task.score}점</span>
-                                            <span className={`text-[12.5px] ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-700'} font-extrabold`}>
-                                                정답 <span className={`font-mono font-black ${isDarkMode ? 'text-[#34d399]' : 'text-emerald-600'}`}>{task.correctProblems}</span> / {task.totalProblems}
+                                            <span className={`text-[12px] ${isDarkMode ? 'text-[#64748b]' : 'text-slate-500'} font-medium`}>
+                                                제출일시: {formatDate(task.submittedAt)}
                                             </span>
                                         </div>
+
+                                        {/* 완료 과제 상태별 보조 정보 - 좌측 정보 영역 하단에 표시 */}
+                                        <div className="flex items-center gap-4">
+                                            <span className={`text-[12.5px] ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-700'} font-extrabold`}>
+                                                정답 맞춤: <span className={`font-mono font-black ${isDarkMode ? 'text-[#34d399]' : 'text-emerald-600'}`}>{task.correctProblems}</span> / {task.totalProblems} 문항
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    {/* 우측 액션 영역 */}
+                                    <div className="flex items-center justify-between sm:justify-end sm:self-center gap-5 shrink-0 w-full sm:w-auto border-t sm:border-t-0 pt-4 sm:pt-0 mt-4 sm:mt-0 border-slate-100 dark:border-white/[0.05]">
+                                        {/* 점수 영역 */}
+                                        <div className="flex flex-col items-start sm:items-end">
+                                            <span className={`inline-block px-2.5 py-0.5 ${isDarkMode ? 'bg-emerald-500/10 text-[#34d399] border-[#34d399]/20 shadow-[0_0_10px_rgba(52,211,153,0.1)]' : 'bg-emerald-50 text-emerald-600 border border-emerald-200'} text-[11px] font-extrabold rounded-full mb-1`}>
+                                                제출완료
+                                            </span>
+                                            <span className={`text-2xl font-black ${isDarkMode ? 'text-[#22d3ee]' : 'text-cyan-600'} font-mono leading-none`}>
+                                                {task.score}점
+                                            </span>
+                                        </div>
+
+                                        {/* 결과 보기 버튼 */}
                                         <button 
-                                            className={`px-6 py-2.5 ${isDarkMode ? 'bg-white/[0.03] text-[#cbd5e1] border-white/[0.08] hover:bg-white/[0.08] hover:text-white' : 'bg-slate-100 border border-slate-300 text-slate-700 hover:bg-slate-200'} text-[12.5px] font-extrabold rounded-xl shadow-md transition-all active:scale-95`}
+                                            className={`px-5 py-2.5 ${isDarkMode ? 'bg-white/[0.03] text-[#cbd5e1] border-white/[0.08] hover:bg-white/[0.08] hover:text-white' : 'bg-white border border-cyan-200 text-cyan-600 hover:bg-cyan-50'} text-[12.5px] font-extrabold rounded-xl shadow-sm transition-all active:scale-95 flex items-center gap-1 group/btn`}
                                         >
-                                            결과 보기
+                                            결과 보기 <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
                                         </button>
                                     </div>
                                 </div>
                             ))}
                         </div>
 
-                        {/* 완료 과제 더보기 버튼 (11건 이상일 때만 노출) */}
+                        {/* 완료 과제 무한 스크롤 및 로딩 스피너 */}
                         {submittedTasks.length > visibleCompletedCount && (
-                            <div className="mt-10 flex justify-center">
-                                <button 
-                                    onClick={handleShowMoreCompleted}
-                                    className={`px-10 py-3.5 ${isDarkMode ? 'bg-white/[0.02] hover:bg-white/[0.06] text-[#cbd5e1] hover:text-white border-white/[0.06]' : 'bg-white border border-slate-300 text-slate-600 hover:bg-slate-50 hover:text-slate-900'} text-[13px] font-extrabold rounded-2xl shadow-xl transition-all flex items-center gap-1.5 hover:-translate-y-0.5`}
-                                >
-                                    완료 과제 더보기 <ChevronDown className="h-4 w-4 text-[#94a3b8]" />
-                                </button>
+                            <div ref={observerRef} className="mt-10 flex flex-col items-center justify-center gap-3">
+                                <div className={`h-8 w-8 animate-spin rounded-full border-4 border-solid ${isDarkMode ? 'border-cyan-500 border-t-transparent' : 'border-cyan-600 border-t-transparent'}`} />
+                                <span className={`text-[13px] ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-500'} font-bold`}>
+                                    과제를 불러오고 있습니다...
+                                </span>
                             </div>
                         )}
                     </div>

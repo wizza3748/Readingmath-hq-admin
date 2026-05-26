@@ -3,6 +3,12 @@ import * as React from "react";
 import { Curriculum, CurriculumType, Difficulty, getDifficultyLabel, makeComboKey } from "@/lib/task-center-mock";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const DIFFICULTY_LIST: Difficulty[] = ["basic", "intermediate", "advanced"];
 
@@ -207,7 +213,11 @@ export function CurriculumTree({
                       <div key={type.id} className="ml-6">
                         {/* 유형 행 */}
                         <div
-                          className="flex items-center gap-1.5 py-1.5 px-2.5 rounded-lg hover:bg-slate-50/60 transition-colors duration-150 cursor-pointer overflow-hidden group/type"
+                          className={`flex items-center gap-1.5 py-1.5 px-2.5 rounded-lg transition-all duration-150 cursor-pointer overflow-hidden group/type border-l-2 ${
+                            typeState !== "none"
+                              ? "bg-indigo-50/40 hover:bg-indigo-50/60 border-indigo-500 rounded-r-lg rounded-l-none"
+                              : "hover:bg-slate-50/60 border-transparent"
+                          }`}
                           onClick={() => !readonly && onToggleTypeAllDiffs(type)}
                         >
                           <Checkbox
@@ -218,51 +228,75 @@ export function CurriculumTree({
                           />
                           <div className="flex-1 min-w-0 flex items-center justify-between">
                             <span
-                              className={`truncate mr-2 ${typeState !== "none" ? "text-primary font-medium" : "text-muted-foreground"}`}
+                              className={`truncate mr-2 ${typeState !== "none" ? "text-indigo-600 font-bold" : "text-slate-700"}`}
                               title={type.typeName}
                             >
                               <HighlightedText text={type.typeName} query={searchQuery} />
                             </span>
 
                             {/* 난이도 선택 칩 */}
-                            <div className="flex items-center gap-1 shrink-0" onClick={e => e.stopPropagation()}>
-                              {DIFFICULTY_LIST.map(d => {
-                                const count = type.difficultyCount[d];
-                                const isCountZero = count === 0;
-                                const isDisabled = readonly || isCountZero;
-                                const isSelected = selectedCombos.includes(makeComboKey(type.id, d));
-                                
-                                let chipClass = "h-6 px-2 rounded text-[10px] font-bold transition-all border ";
-                                if (isCountZero) {
-                                  chipClass += "bg-muted/20 text-muted-foreground/30 border-transparent cursor-not-allowed";
-                                } else if (isSelected) {
-                                  if (d === "basic") chipClass += "bg-slate-100 text-slate-600 border-slate-300 shadow-sm ";
-                                  else if (d === "intermediate") chipClass += "bg-indigo-50 text-indigo-600 border-indigo-200 shadow-sm ";
-                                  else chipClass += "bg-purple-50 text-purple-600 border-purple-200 shadow-sm ";
-                                  if (readonly) chipClass += "opacity-70 cursor-not-allowed";
-                                } else {
-                                  if (readonly) {
-                                    chipClass += "bg-slate-50/30 text-slate-400 border-transparent cursor-not-allowed";
+                            <TooltipProvider delayDuration={200}>
+                              <div className="flex items-center gap-1 shrink-0" onClick={e => e.stopPropagation()}>
+                                {DIFFICULTY_LIST.map(d => {
+                                  const count = type.difficultyCount[d];
+                                  const isCountZero = count === 0;
+                                  const isDisabled = readonly || isCountZero;
+                                  const isSelected = selectedCombos.includes(makeComboKey(type.id, d));
+                                  
+                                  let chipClass = "h-7 px-2.5 rounded text-[11px] font-bold transition-all border flex items-center justify-center ";
+                                  
+                                  if (isCountZero) {
+                                    chipClass += "bg-slate-50 text-slate-300 border-slate-200 cursor-not-allowed";
+                                  } else if (isSelected) {
+                                    // 선택됨: 진한 배경, 흰색 텍스트
+                                    if (d === "basic") {
+                                      chipClass += "bg-slate-700 text-white border-slate-700 hover:bg-slate-800 shadow-xs ";
+                                    } else if (d === "intermediate") {
+                                      chipClass += "bg-blue-600 text-white border-blue-600 hover:bg-blue-700 shadow-xs ";
+                                    } else {
+                                      chipClass += "bg-purple-600 text-white border-purple-600 hover:bg-purple-700 shadow-xs ";
+                                    }
+                                    if (readonly) chipClass += "opacity-70 cursor-not-allowed";
                                   } else {
-                                    if (d === "basic") chipClass += "bg-slate-50/50 text-slate-400 border-slate-100 hover:border-slate-300 hover:text-slate-600 ";
-                                    else if (d === "intermediate") chipClass += "bg-indigo-50/30 text-indigo-400 border-indigo-100 hover:border-indigo-200 hover:text-indigo-600 ";
-                                    else chipClass += "bg-purple-50/30 text-purple-400 border-purple-100 hover:border-purple-200 hover:text-purple-600 ";
+                                    // 미선택: 흰 배경, 테두리, 난이도별 보조 색상 유지
+                                    if (readonly) {
+                                      chipClass += "bg-slate-50/30 text-slate-400 border-transparent cursor-not-allowed";
+                                    } else {
+                                      if (d === "basic") {
+                                        chipClass += "bg-white text-slate-600 border-slate-300 hover:bg-slate-50/80 hover:text-slate-800 ";
+                                      } else if (d === "intermediate") {
+                                        chipClass += "bg-white text-blue-600 border-blue-200 hover:bg-blue-50/40 hover:text-blue-700 ";
+                                      } else {
+                                        chipClass += "bg-white text-purple-600 border-purple-200 hover:bg-purple-50/40 hover:text-purple-700 ";
+                                      }
+                                    }
                                   }
-                                }
 
-                                return (
-                                  <button
-                                    key={d}
-                                    type="button"
-                                    disabled={isDisabled}
-                                    onClick={() => onToggleCombo(type.id, d, type)}
-                                    className={chipClass}
-                                  >
-                                    {getDifficultyLabel(d)} {count}
-                                  </button>
-                                );
-                              })}
-                            </div>
+                                  const buttonContent = (
+                                    <button
+                                      key={d}
+                                      type="button"
+                                      disabled={isDisabled}
+                                      onClick={() => onToggleCombo(type.id, d, type)}
+                                      className={chipClass}
+                                    >
+                                      {getDifficultyLabel(d)} {count}
+                                    </button>
+                                  );
+
+                                  return (
+                                    <Tooltip key={d}>
+                                      <TooltipTrigger asChild>
+                                        {buttonContent}
+                                      </TooltipTrigger>
+                                      <TooltipContent side="top" className="bg-slate-900 border border-slate-800 text-white py-1 px-2 text-[10px] rounded shadow-md">
+                                        <p>숫자는 해당 난이도에 등록된 문제 수입니다.</p>
+                                      </TooltipContent>
+                                    </Tooltip>
+                                  );
+                                })}
+                              </div>
+                            </TooltipProvider>
                           </div>
                         </div>
                       </div>

@@ -7,6 +7,7 @@ import {
     Siren,
     Megaphone,
     Menu,
+    ArrowRight,
 } from "lucide-react";
 import { getStoredTasks, Task } from "@/utils/taskStorage";
 
@@ -31,11 +32,7 @@ export default function ScienceHomePage() {
         .filter(t => t.status === "notStarted")
         .sort((a, b) => new Date(b.assignedAt).getTime() - new Date(a.assignedAt).getTime())[0];
 
-    const truncatedTaskTitle = latestUnstartedTask
-        ? (latestUnstartedTask.title.length > 20 
-            ? latestUnstartedTask.title.substring(0, 20) + "..." 
-            : latestUnstartedTask.title)
-        : "";
+
     return (
         <div className="relative min-h-screen w-full overflow-hidden bg-[#081324] font-sans select-none text-white">
             {/* 1. Global Navigation Bar (GNB) */}
@@ -102,17 +99,6 @@ export default function ScienceHomePage() {
 
             {/* 2. Floating Info Badges */}
             <div className="absolute top-[62px] right-6 z-40 flex items-center gap-2.5">
-                {/* 과제 알림 영역 */}
-                {unstartedCount > 0 && (
-                    <Link href="/content/science-task-center">
-                        <div className="bg-[#fff9e6] hover:bg-[#fff2cc] border border-[#f59e0b]/40 shadow-[0_2px_10px_rgba(245,158,11,0.15)] px-4.5 py-2.5 rounded-full flex items-center gap-2 cursor-pointer transition-all duration-200 select-none">
-                            <span className="text-[14px] leading-none animate-bounce">🎁</span>
-                            <span className="text-[12.5px] font-bold text-[#b45309] tracking-tight leading-none">
-                                새로운 과제가 출제되었습니다. <span className="text-[#d97706] underline underline-offset-2">{truncatedTaskTitle}</span>
-                            </span>
-                        </div>
-                    </Link>
-                )}
                 {/* Badge 1: 학기 표시 배지 */}
                 <div className="bg-white hover:bg-slate-50 shadow-[0_2px_10px_rgba(0,0,0,0.12)] pl-[18px] pr-5 py-2.5 rounded-full flex items-center gap-2.5 cursor-pointer transition-all duration-200 select-none">
                     <span className="text-[15px] leading-none">🪐</span>
@@ -129,6 +115,47 @@ export default function ScienceHomePage() {
                     </div>
                 </Link>
             </div>
+
+            {/* 2-1. 과제 알림 카드 (배지 row 아래 분리 배치) */}
+            {unstartedCount > 0 && latestUnstartedTask && (
+                <Link href="/content/science-task-center" className="absolute top-[112px] right-6 z-40 block">
+                    <div className="w-[264px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.55),0_4px_20px_rgba(245,158,11,0.25)] cursor-pointer transition-all duration-200 hover:shadow-[0_24px_70px_rgba(0,0,0,0.65)] hover:-translate-y-1 select-none task-card-enter overflow-hidden">
+                        <div className="px-4 pt-3.5 pb-4">
+                            {/* 헤더: 도트 + 타이틀 + 과제 풀기 버튼 */}
+                            <div className="flex items-center gap-2 mb-3">
+                                {/* 새 과제 도착 타이틀 왼쪽에 도트 위치 */}
+                                <span className="relative flex h-2 w-2 flex-shrink-0">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+                                </span>
+                                <p className="text-[12px] font-extrabold text-[#ef4444] tracking-wider leading-none">새 과제 도착!</p>
+                                
+                                {/* 타이틀 영역 우측에 과제 풀기 버튼 배치 */}
+                                <div className="ml-auto flex-shrink-0">
+                                    <div className="bg-[#091527] hover:bg-[#0d1f35] text-white text-[11px] font-extrabold rounded-lg px-2.5 py-1 flex items-center gap-1 transition-colors duration-150">
+                                        과제 풀기 <ArrowRight className="h-2.5 w-2.5" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* 구분선 */}
+                            <div className="h-px bg-slate-100 mb-3" />
+
+                            {/* 과제명 */}
+                            <p className="text-[13.5px] font-extrabold text-slate-900 leading-snug break-keep mb-2 line-clamp-3">
+                                {latestUnstartedTask.title}
+                            </p>
+
+                            {/* 단원명 */}
+                            {latestUnstartedTask.unitDisplayName && (
+                                <span className="inline-block text-[10px] font-bold text-[#92400e] bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-md leading-none">
+                                    {latestUnstartedTask.unitDisplayName}
+                                </span>
+                            )}
+                        </div>
+                    </div>
+                </Link>
+            )}
 
             {/* 3. Hero Content Area */}
             <main className="relative h-screen w-full flex flex-col items-center justify-end pb-[7vh] pt-[48px]">
@@ -222,6 +249,13 @@ export default function ScienceHomePage() {
                 }
                 .animate-bounce-slow {
                     animation: bounce-slow 3.2s ease-in-out infinite;
+                }
+                @keyframes card-enter {
+                    0% { opacity: 0; transform: translateY(-8px) scale(0.97); }
+                    100% { opacity: 1; transform: translateY(0) scale(1); }
+                }
+                .task-card-enter {
+                    animation: card-enter 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
                 }
             `}</style>
         </div>

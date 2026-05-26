@@ -120,8 +120,56 @@ const DEFAULT_TASKS: Task[] = [
         score: 95,
         correctProblems: 9
     },
+    {
+        id: "math-task-010",
+        subject: "math",
+        title: "다항식과 단항식의 곱셈과 나눗셈 기초",
+        status: "submitted",
+        assignedAt: "2026-05-13T08:00:00Z",
+        submittedAt: "2026-05-13T09:15:00Z",
+        unitDisplayName: "4단원-다항식의 계산",
+        totalProblems: 10,
+        score: 90,
+        correctProblems: 9
+    },
+    {
+        id: "math-task-011",
+        subject: "math",
+        title: "연립방정식 실전 대비 100제 대비 모의고사",
+        status: "submitted",
+        assignedAt: "2026-05-12T08:00:00Z",
+        submittedAt: "2026-05-12T10:00:00Z",
+        unitDisplayName: "2단원-일차부등식과 연립방정식",
+        totalProblems: 15,
+        score: 86,
+        correctProblems: 13
+    },
+    {
+        id: "math-task-012",
+        subject: "math",
+        title: "함수와 함숫값 기본 개념 다지기",
+        status: "submitted",
+        assignedAt: "2026-05-11T14:00:00Z",
+        submittedAt: "2026-05-11T15:00:00Z",
+        unitDisplayName: "5단원-일차함수",
+        totalProblems: 8,
+        score: 100,
+        correctProblems: 8
+    },
+    {
+        id: "math-task-013",
+        subject: "math",
+        title: "일차함수의 그래프의 성질과 기울기 이해",
+        status: "submitted",
+        assignedAt: "2026-05-10T10:00:00Z",
+        submittedAt: "2026-05-10T11:30:00Z",
+        unitDisplayName: "5단원-일차함수",
+        totalProblems: 10,
+        score: 70,
+        correctProblems: 7
+    },
 
-    // === 과학 과제 목록 (미시작 1, 진행중 2, 제출완료 6) ===
+    // === 과학 과제 목록 (미시작 1, 진행중 2, 제출완료 10) ===
     {
         id: "sci-task-001",
         subject: "science",
@@ -224,94 +272,82 @@ const DEFAULT_TASKS: Task[] = [
         totalProblems: 12,
         score: 91,
         correctProblems: 11
+    },
+    {
+        id: "sci-task-010",
+        subject: "science",
+        title: "생물의 구성 단계와 세포의 구조 이해",
+        status: "submitted",
+        assignedAt: "2026-05-12T09:00:00Z",
+        submittedAt: "2026-05-12T10:20:00Z",
+        unitDisplayName: "4단원-생물의 구성과 다양성",
+        totalProblems: 10,
+        score: 90,
+        correctProblems: 9
+    },
+    {
+        id: "sci-task-011",
+        subject: "science",
+        title: "식물의 광합성과 증산 작용 실험 분석",
+        status: "submitted",
+        assignedAt: "2026-05-11T13:00:00Z",
+        submittedAt: "2026-05-11T14:40:00Z",
+        unitDisplayName: "4단원-생물의 구성과 다양성",
+        totalProblems: 12,
+        score: 75,
+        correctProblems: 9
+    },
+    {
+        id: "sci-task-012",
+        subject: "science",
+        title: "동물의 영양소 소화와 흡수 과정 기초",
+        status: "submitted",
+        assignedAt: "2026-05-10T10:00:00Z",
+        submittedAt: "2026-05-10T11:15:00Z",
+        unitDisplayName: "5단원-동물의 구조와 기능",
+        totalProblems: 10,
+        score: 100,
+        correctProblems: 10
+    },
+    {
+        id: "sci-task-013",
+        subject: "science",
+        title: "순환계와 호흡계의 상호 작용 형성 평가",
+        status: "submitted",
+        assignedAt: "2026-05-09T08:00:00Z",
+        submittedAt: "2026-05-09T09:30:00Z",
+        unitDisplayName: "5단원-동물의 구조와 기능",
+        totalProblems: 8,
+        score: 88,
+        correctProblems: 7
     }
 ];
 
 const STORAGE_KEY = "readingmath_student_tasks";
 const VERSION_KEY = "readingmath_tasks_seed_version";
-const SEED_VERSION = "v2.0";
+const SEED_VERSION = "v3.0";
+
+declare global {
+    interface Window {
+        __readingmath_tasks__?: Task[];
+    }
+}
 
 export function getStoredTasks(): Task[] {
     if (typeof window === "undefined") return DEFAULT_TASKS;
     
-    // 시드 버전 체크 및 강제 리셋
-    const storedVersion = localStorage.getItem(VERSION_KEY);
-    if (storedVersion !== SEED_VERSION) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_TASKS));
-        localStorage.setItem(VERSION_KEY, SEED_VERSION);
-        return DEFAULT_TASKS;
+    // 새로고침 시에는 window.__readingmath_tasks__가 없어지므로 매번 DEFAULT_TASKS의 새로운 복제본으로 초기화됩니다.
+    // 이로써 사용자가 브라우저 새로고침(F5)을 누르면 즉시 미시작 과제 1개인 초기 상태로 돌아옵니다.
+    if (!window.__readingmath_tasks__) {
+        window.__readingmath_tasks__ = JSON.parse(JSON.stringify(DEFAULT_TASKS));
     }
-
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (!stored) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_TASKS));
-        return DEFAULT_TASKS;
-    }
-    try {
-        const parsed: Task[] = JSON.parse(stored);
-        
-        // 강제 리셋 및 신규 16개 과제 마이그레이션 조건 검사
-        // 16개보다 현저히 적거나 새 ID(math-task-, sci-task-) 패턴이 온전히 존재하지 않으면 초기화
-        const hasNewMath = parsed.some(t => t.id.startsWith("math-task-"));
-        const hasNewSci = parsed.some(t => t.id.startsWith("sci-task-"));
-        
-        if (parsed.length < DEFAULT_TASKS.length || !hasNewMath || !hasNewSci) {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_TASKS));
-            return DEFAULT_TASKS;
-        }
-        
-        let changed = false;
-        const migrated = parsed.map(t => {
-            let itemChanged = false;
-            const updatedItem = { ...t };
-            
-            // status 마이그레이션: not_started -> notStarted
-            if ((updatedItem.status as string) === "not_started") {
-                updatedItem.status = "notStarted" as const;
-                itemChanged = true;
-            }
-            
-            // totalProblems 방어 및 복구
-            if (updatedItem.totalProblems === undefined || updatedItem.totalProblems === null || isNaN(Number(updatedItem.totalProblems))) {
-                const defaultItem = DEFAULT_TASKS.find(d => d.id === updatedItem.id);
-                updatedItem.totalProblems = defaultItem ? defaultItem.totalProblems : 10;
-                itemChanged = true;
-            }
-
-            // correctProblems 방어 (submitted 상태인데 correctProblems가 없는 경우)
-            if (updatedItem.status === "submitted" && (updatedItem.correctProblems === undefined || updatedItem.correctProblems === null || isNaN(Number(updatedItem.correctProblems)))) {
-                const defaultItem = DEFAULT_TASKS.find(d => d.id === updatedItem.id);
-                updatedItem.correctProblems = defaultItem && defaultItem.correctProblems !== undefined ? defaultItem.correctProblems : updatedItem.totalProblems;
-                itemChanged = true;
-            }
-
-            // score 방어 (submitted 상태인데 score가 없는 경우)
-            if (updatedItem.status === "submitted" && (updatedItem.score === undefined || updatedItem.score === null || isNaN(Number(updatedItem.score)))) {
-                const defaultItem = DEFAULT_TASKS.find(d => d.id === updatedItem.id);
-                updatedItem.score = defaultItem && defaultItem.score !== undefined ? defaultItem.score : 80;
-                itemChanged = true;
-            }
-            
-            if (itemChanged) {
-                changed = true;
-            }
-            return updatedItem;
-        });
-
-        if (changed) {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(migrated));
-            return migrated;
-        }
-        
-        return parsed;
-    } catch (e) {
-        return DEFAULT_TASKS;
-    }
+    
+    return window.__readingmath_tasks__ || DEFAULT_TASKS;
 }
 
 export function saveStoredTasks(tasks: Task[]): void {
     if (typeof window === "undefined") return;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+    window.__readingmath_tasks__ = tasks;
 }
 
 export function getUnstartedTasks(subject: "math" | "science"): Task[] {
