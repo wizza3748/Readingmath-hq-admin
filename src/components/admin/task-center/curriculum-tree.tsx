@@ -15,11 +15,12 @@ const DIFFICULTY_LIST: Difficulty[] = ["basic", "intermediate", "advanced"];
 interface Props {
   curriculum: Curriculum;
   selectedCombos: string[]; // `${typeId}__${difficulty}` 형태의 선택 조합 키 배열
+  checkedTypeIds: string[]; // 유형 단독 체크 상태 배열
   searchQuery?: string;
   onToggleCombo: (typeId: string, difficulty: Difficulty, type: CurriculumType) => void;
-  onToggleTypeAllDiffs: (type: CurriculumType) => void;
-  onToggleMinorAllDiffs: (minorUnit: string, types: CurriculumType[]) => void;
-  onToggleMajorAllDiffs: (majorUnit: string, types: CurriculumType[]) => void;
+  onToggleTypeChecked: (type: CurriculumType) => void;
+  onToggleMinorChecked: (minorUnit: string, types: CurriculumType[]) => void;
+  onToggleMajorChecked: (majorUnit: string, types: CurriculumType[]) => void;
   readonly?: boolean;
 }
 
@@ -39,48 +40,27 @@ function HighlightedText({ text, query }: { text: string; query?: string }) {
   );
 }
 
-// 조합 기준 triState 계산
-function typeComboTriState(
-  type: CurriculumType,
-  selectedCombos: string[]
-): "all" | "partial" | "none" {
-  const availableDiffs = DIFFICULTY_LIST.filter(d => type.difficultyCount[d] > 0);
-  if (availableDiffs.length === 0) return "none";
-  const selectedCount = availableDiffs.filter(d =>
-    selectedCombos.includes(makeComboKey(type.id, d))
-  ).length;
-  if (selectedCount === 0) return "none";
-  if (selectedCount === availableDiffs.length) return "all";
-  return "partial";
-}
-
-function minorComboTriState(
+function minorCheckTriState(
   types: CurriculumType[],
-  selectedCombos: string[]
+  checkedTypeIds: string[]
 ): "all" | "partial" | "none" {
-  let total = 0;
-  let selected = 0;
-  for (const t of types) {
-    const avail = DIFFICULTY_LIST.filter(d => t.difficultyCount[d] > 0);
-    total += avail.length;
-    selected += avail.filter(d => selectedCombos.includes(makeComboKey(t.id, d))).length;
-  }
-  if (total === 0 || selected === 0) return "none";
-  if (selected === total) return "all";
+  const checkedCount = types.filter(t => checkedTypeIds.includes(t.id)).length;
+  if (checkedCount === 0) return "none";
+  if (checkedCount === types.length) return "all";
   return "partial";
 }
 
-function majorComboTriState(
+function majorCheckTriState(
   minorMap: Map<string, CurriculumType[]>,
-  selectedCombos: string[]
+  checkedTypeIds: string[]
 ): "all" | "partial" | "none" {
   const allTypes = Array.from(minorMap.values()).flat();
-  return minorComboTriState(allTypes, selectedCombos);
+  return minorCheckTriState(allTypes, checkedTypeIds);
 }
 
 export function CurriculumTree({
-  curriculum, selectedCombos, searchQuery,
-  onToggleCombo, onToggleTypeAllDiffs, onToggleMinorAllDiffs, onToggleMajorAllDiffs,
+  curriculum, selectedCombos, checkedTypeIds, searchQuery,
+  onToggleCombo, onToggleTypeChecked, onToggleMinorChecked, onToggleMajorChecked,
   readonly
 }: Props) {
   // 대단원 그룹핑
@@ -118,8 +98,9 @@ export function CurriculumTree({
       let majorHasMatch = false;
       
       minorMap.forEach((types, minor) => {
-        // 선택된 항목이 있는지 확인
+        // 선택된 항목이 있는지 확인 (난이도 선택 또는 유형 체크 모두 포함)
         const hasSelectedType = types.some(t =>
+          checkedTypeIds.includes(t.id) ||
           DIFFICULTY_LIST.some(d => selectedCombos.includes(makeComboKey(t.id, d)))
         );
         
@@ -149,7 +130,7 @@ export function CurriculumTree({
       setOpenMinors(initialOpenMinors);
       initializedRef.current = true;
     }
-  }, [majorGroups, searchQuery, selectedCombos]);
+  }, [majorGroups, searchQuery, selectedCombos, checkedTypeIds]);
 
   const toggleMajor = (major: string) => setOpenMajors(prev => {
     const s = new Set(prev); s.has(major) ? s.delete(major) : s.add(major); return s;
@@ -161,7 +142,7 @@ export function CurriculumTree({
   return (
     <div className="space-y-1 text-sm">
       {Array.from(majorGroups.entries()).map(([major, minorMap]) => {
-        const majorState = majorComboTriState(minorMap, selectedCombos);
+        const majorState = majorCheckTriState(minorMap, checkedTypeIds);
         const isOpenMajor = openMajors.has(major);
 
         return (
@@ -174,7 +155,7 @@ export function CurriculumTree({
               <Checkbox
                 checked={majorState === "all" ? true : majorState === "partial" ? "indeterminate" : false}
                 disabled={readonly}
-                onCheckedChange={() => !readonly && onToggleMajorAllDiffs(major, Array.from(minorMap.values()).flat())}
+                onCheckedChange={() => !readonly && onToggleMajorChecked(major, Array.from(minorMap.values()).flat())}
               />
               <span className="font-bold text-slate-800 cursor-pointer" onClick={() => toggleMajor(major)}>
                 <HighlightedText text={major} query={searchQuery} />
@@ -185,7 +166,7 @@ export function CurriculumTree({
             </div>
 
             {isOpenMajor && Array.from(minorMap.entries()).map(([minor, types]) => {
-              const minorState = minorComboTriState(types, selectedCombos);
+              const minorState = minorCheckTriState(types, checkedTypeIds);
               const isOpenMinor = openMinors.has(minor);
 
               return (
@@ -198,7 +179,7 @@ export function CurriculumTree({
                     <Checkbox
                       checked={minorState === "all" ? true : minorState === "partial" ? "indeterminate" : false}
                       disabled={readonly}
-                      onCheckedChange={() => !readonly && onToggleMinorAllDiffs(minor, types)}
+                      onCheckedChange={() => !readonly && onToggleMinorChecked(minor, types)}
                     />
                     <span className="font-semibold text-slate-700 cursor-pointer" onClick={() => toggleMinor(minor)}>
                       <HighlightedText text={minor} query={searchQuery} />
@@ -206,7 +187,7 @@ export function CurriculumTree({
                   </div>
 
                   {isOpenMinor && types.map(type => {
-                    const typeState = typeComboTriState(type, selectedCombos);
+                    const isChecked = checkedTypeIds.includes(type.id);
                     const availableDiffs = DIFFICULTY_LIST; // 모든 난이도 활성화
 
                     return (
@@ -214,21 +195,21 @@ export function CurriculumTree({
                         {/* 유형 행 */}
                         <div
                           className={`flex items-center gap-1.5 py-1.5 px-2.5 rounded-lg transition-all duration-150 cursor-pointer overflow-hidden group/type border-l-2 ${
-                            typeState !== "none"
+                            isChecked
                               ? "bg-indigo-50/40 hover:bg-indigo-50/60 border-indigo-500 rounded-r-lg rounded-l-none"
                               : "hover:bg-slate-50/60 border-transparent"
                           }`}
-                          onClick={() => !readonly && onToggleTypeAllDiffs(type)}
+                          onClick={() => !readonly && onToggleTypeChecked(type)}
                         >
                           <Checkbox
-                            checked={typeState === "all" ? true : typeState === "partial" ? "indeterminate" : false}
-                            disabled={readonly || availableDiffs.length === 0}
-                            onCheckedChange={() => !readonly && onToggleTypeAllDiffs(type)}
+                            checked={isChecked}
+                            disabled={readonly}
+                            onCheckedChange={() => !readonly && onToggleTypeChecked(type)}
                             onClick={e => e.stopPropagation()}
                           />
                           <div className="flex-1 min-w-0 flex items-center justify-between">
                             <span
-                              className={`truncate mr-2 ${typeState !== "none" ? "text-indigo-600 font-bold" : "text-slate-700"}`}
+                              className={`truncate mr-2 ${isChecked ? "text-indigo-600 font-bold" : "text-slate-700"}`}
                               title={type.typeName}
                             >
                               <HighlightedText text={type.typeName} query={searchQuery} />

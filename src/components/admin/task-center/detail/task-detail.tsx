@@ -43,6 +43,10 @@ export default function TaskDetail({ taskId }: Props) {
   const [name, setName] = React.useState(normalizedExistingTask?.name ?? "");
   const [nameManuallyEdited, setNameManuallyEdited] = React.useState(false);
   const [selectedTypes, setSelectedTypes] = React.useState<SelectedType[]>(normalizedExistingTask?.selectedTypes ?? []);
+  const [checkedTypeIds, setCheckedTypeIds] = React.useState<string[]>(() => {
+    const existing = normalizedExistingTask?.selectedTypes ?? [];
+    return Array.from(new Set(existing.map(t => t.typeId)));
+  });
   const [problemMode, setProblemMode] = React.useState<ProblemMode>(normalizedExistingTask?.problemMode ?? "same");
   const [prioritizeUnsolved, setPrioritizeUnsolved] = React.useState(normalizedExistingTask?.prioritizeUnsolved ?? false);
   const [onlyImportant, setOnlyImportant] = React.useState(normalizedExistingTask?.onlyImportant ?? false);
@@ -62,6 +66,7 @@ export default function TaskDetail({ taskId }: Props) {
     if (normalizedExistingTask) {
       setName(normalizedExistingTask.name);
       setSelectedTypes(normalizedExistingTask.selectedTypes);
+      setCheckedTypeIds(Array.from(new Set(normalizedExistingTask.selectedTypes.map(t => t.typeId))));
       setProblemMode(normalizedExistingTask.problemMode);
       setPrioritizeUnsolved(normalizedExistingTask.prioritizeUnsolved);
       setOnlyImportant(normalizedExistingTask.onlyImportant ?? false);
@@ -261,9 +266,11 @@ export default function TaskDetail({ taskId }: Props) {
           <TaskTypePanel
             subject={subject}
             selectedTypes={selectedTypes}
+            checkedTypeIds={checkedTypeIds}
             onlyImportant={onlyImportant}
             readonly={readonly}
             onTypesChange={handleTypesChange}
+            onCheckedTypesChange={setCheckedTypeIds}
           />
 
           {/* 우측: 과제 설정 */}

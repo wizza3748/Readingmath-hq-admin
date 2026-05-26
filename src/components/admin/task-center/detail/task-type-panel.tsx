@@ -23,12 +23,14 @@ import {
 interface Props {
   subject: Subject;
   selectedTypes: SelectedType[];
+  checkedTypeIds: string[];
   onlyImportant: boolean;
   readonly?: boolean;
   onTypesChange: (types: SelectedType[]) => void;
+  onCheckedTypesChange: (ids: string[]) => void;
 }
 
-export function TaskTypePanel({ subject, selectedTypes, onlyImportant, readonly, onTypesChange }: Props) {
+export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds, onlyImportant, readonly, onTypesChange, onCheckedTypesChange }: Props) {
   const { toast } = useToast();
   const courses = React.useMemo(() => {
     const raw = getCoursesBySubject(subject);
@@ -147,12 +149,30 @@ export function TaskTypePanel({ subject, selectedTypes, onlyImportant, readonly,
 
   const handleToggleCombo = (typeId: string, difficulty: Difficulty, type: CurriculumType) => {
     if (readonly) return;
-    const key = makeComboKey(typeId, difficulty);
     const exists = selectedTypes.find(t => t.typeId === typeId && t.difficulty === difficulty);
 
     if (exists) {
+      // OFF 토글: checkedTypeIds는 건드리지 않고 유지!
       onTypesChange(selectedTypes.filter(t => !(t.typeId === typeId && t.difficulty === difficulty)));
     } else {
+      // ON 토글
+      const nextMultiplier = selectedTypes[0]?.problemCount ?? 1;
+      
+      // 조합 100개 / 총 문제 300개 한계 사전 검증
+      if (selectedTypes.length + 1 > 100) {
+        toast({ title: "선택 항목 최대값은 유형·난이도 조합 100개입니다.", variant: "destructive" });
+        return;
+      }
+      if ((selectedTypes.length + 1) * nextMultiplier > 300) {
+        toast({ title: "과제 전체 문제 수 최대값은 300문항입니다.", variant: "destructive" });
+        return;
+      }
+
+      // checkedTypeIds에 자동 추가 보정
+      if (!checkedTypeIds.includes(typeId)) {
+        onCheckedTypesChange([...checkedTypeIds, typeId]);
+      }
+
       const newEntry: SelectedType = {
         curriculumId: curriculum!.id,
         course,
@@ -161,7 +181,7 @@ export function TaskTypePanel({ subject, selectedTypes, onlyImportant, readonly,
         minorUnit: type.minorUnit,
         typeName: type.typeName,
         difficulty,
-        problemCount: 1,
+        problemCount: nextMultiplier,
         maxCount: type.difficultyCount,
         importantCount: type.importantCount,
       };
@@ -169,73 +189,101 @@ export function TaskTypePanel({ subject, selectedTypes, onlyImportant, readonly,
     }
   };
 
-  const handleToggleTypeAllDiffs = (type: CurriculumType) => {
+  const handleToggleTypeChecked = (type: CurriculumType) => {
     if (readonly) return;
-    const availableDiffs = (["basic", "intermediate", "advanced"] as Difficulty[]).filter(d => type.difficultyCount[d] > 0);
-    const allSelected = availableDiffs.every(d => selectedCombos.includes(makeComboKey(type.id, d)));
-
-    if (allSelected) {
+    const isChecked = checkedTypeIds.includes(type.id);
+    if (isChecked) {
+      // OFF: checkedTypeIds에서 소거 및 해당 유형의 모든 난이도 선택값 함께 해제
+      onCheckedTypesChange(checkedTypeIds.filter(id => id !== type.id));
       onTypesChange(selectedTypes.filter(t => t.typeId !== type.id));
     } else {
-      const currentTypeCombos = selectedTypes.filter(t => t.typeId === type.id);
-      const toAddDiffs = availableDiffs.filter(d => !currentTypeCombos.some(t => t.difficulty === d));
-      const newEntries: SelectedType[] = toAddDiffs.map(d => ({
-        curriculumId: curriculum!.id,
-        course,
-        typeId: type.id,
-        majorUnit: type.majorUnit,
-        minorUnit: type.minorUnit,
-        typeName: type.typeName,
-        difficulty: d,
-        problemCount: 1,
-        maxCount: type.difficultyCount,
-        importantCount: type.importantCount,
-      }));
-      onTypesChange([...selectedTypes, ...newEntries]);
+      // ON:checkedTypeIds에만 추가하고 난이도는 아무것도 켜지 않음 (기본 상태)
+      onCheckedTypesChange([...checkedTypeIds, type.id]);
     }
   };
 
-  const handleToggleMinorAllDiffs = (minorUnit: string, types: CurriculumType[]) => {
+  const handleToggleMinorChecked = (minorUnit: string, types: CurriculumType[]) => {
     if (readonly) return;
-    
-    const allAvailableCombos: { typeId: string; diff: Difficulty; type: CurriculumType }[] = [];
-    types.forEach(t => {
-      (["basic", "intermediate", "advanced"] as Difficulty[]).forEach(d => {
-        if (t.difficultyCount[d] > 0) {
-          allAvailableCombos.push({ typeId: t.id, diff: d, type: t });
-        }
-      });
-    });
+    const typeIds = types.map(t => t.id);
+    const checkedCount = types.filter(t => checkedTypeIds.includes(t.id)).length;
+    const isAllChecked = checkedCount === types.length;
 
-    const allSelected = allAvailableCombos.every(c => selectedCombos.includes(makeComboKey(c.typeId, c.diff)));
-
-    if (allSelected) {
-      const typeIds = types.map(t => t.id);
+    if (isAllChecked) {
+      // 소단원 해제: 하위 모든 유형 ID 소거 및 관련 난이도 전체 해제
+      onCheckedTypesChange(checkedTypeIds.filter(id => !typeIds.includes(id)));
       onTypesChange(selectedTypes.filter(t => !typeIds.includes(t.typeId)));
     } else {
-      const newEntries: SelectedType[] = [];
-      allAvailableCombos.forEach(c => {
-        if (!selectedCombos.includes(makeComboKey(c.typeId, c.diff))) {
-          newEntries.push({
-            curriculumId: curriculum!.id,
-            course,
-            typeId: c.typeId,
-            majorUnit: c.type.majorUnit,
-            minorUnit: c.type.minorUnit,
-            typeName: c.type.typeName,
-            difficulty: c.diff,
-            problemCount: 1,
-            maxCount: c.type.difficultyCount,
-            importantCount: c.type.importantCount,
-          });
-        }
-      });
-      onTypesChange([...selectedTypes, ...newEntries]);
+      // 소단원 선택: 미체크 유형 추가, 난이도는 켜지 않음
+      const toAdd = typeIds.filter(id => !checkedTypeIds.includes(id));
+      onCheckedTypesChange([...checkedTypeIds, ...toAdd]);
     }
   };
 
-  const handleToggleMajorAllDiffs = (majorUnit: string, types: CurriculumType[]) => {
-    handleToggleMinorAllDiffs(majorUnit, types);
+  const handleToggleMajorChecked = (majorUnit: string, types: CurriculumType[]) => {
+    handleToggleMinorChecked(majorUnit, types);
+  };
+
+  const handleApplyBulkDifficulty = (mode: string) => {
+    if (readonly) return;
+    if (checkedTypeIds.length === 0) {
+      toast({ title: "선택된 유형이 없습니다. 커리큘럼 트리에서 유형을 먼저 체크해 주세요.", variant: "destructive" });
+      return;
+    }
+
+    let targetDiffs: Difficulty[] = [];
+    if (mode === "basic") targetDiffs = ["basic"];
+    else if (mode === "intermediate") targetDiffs = ["intermediate"];
+    else if (mode === "advanced") targetDiffs = ["advanced"];
+    else if (mode === "basic+intermediate") targetDiffs = ["basic", "intermediate"];
+    else if (mode === "basic+advanced") targetDiffs = ["basic", "advanced"];
+    else if (mode === "intermediate+advanced") targetDiffs = ["intermediate", "advanced"];
+    else if (mode === "all") targetDiffs = ["basic", "intermediate", "advanced"];
+    // 'clear'는 빈 배열 유지
+
+    // 1. checkedTypeIds에 속하지 않는 유형들의 기존 난이도 상태 유지
+    const keptTypes = selectedTypes.filter(t => !checkedTypeIds.includes(t.typeId));
+
+    // 2. checkedTypeIds에 속하는 유형들에 대해 새로운 난이도 조합 구성
+    const nextMultiplier = selectedTypes[0]?.problemCount ?? 1;
+    const newEntries: SelectedType[] = [];
+
+    if (targetDiffs.length > 0 && curriculum) {
+      checkedTypeIds.forEach(typeId => {
+        const type = curriculum.types.find(t => t.id === typeId);
+        if (!type) return;
+
+        targetDiffs.forEach(d => {
+          newEntries.push({
+            curriculumId: curriculum.id,
+            course,
+            typeId,
+            majorUnit: type.majorUnit,
+            minorUnit: type.minorUnit,
+            typeName: type.typeName,
+            difficulty: d,
+            problemCount: nextMultiplier,
+            maxCount: type.difficultyCount,
+            importantCount: type.importantCount,
+          });
+        });
+      });
+    }
+
+    const nextSelectedTypes = [...keptTypes, ...newEntries];
+
+    // 3. 100개 조합 & 300문항 한계 사전 검사 및 초과 시 경고
+    if (nextSelectedTypes.length > 100) {
+      toast({ title: "선택 가능한 유형·난이도 조합은 최대 100개입니다. (일괄 적용 불가)", variant: "destructive" });
+      return;
+    }
+    if (nextSelectedTypes.length * nextMultiplier > 300) {
+      toast({ title: "전체 출제 문제 수는 최대 300문항입니다. (일괄 적용 불가)", variant: "destructive" });
+      return;
+    }
+
+    // 4. 적용
+    onTypesChange(nextSelectedTypes);
+    toast({ title: "선택된 유형에 난이도 조합이 일괄 적용되었습니다." });
   };
 
   const handleRemoveCombo = (typeId: string, difficulty: Difficulty) => {
@@ -282,6 +330,31 @@ export function TaskTypePanel({ subject, selectedTypes, onlyImportant, readonly,
           ))}
         </div>
 
+        {/* 선택 유형 난이도 적용 바 */}
+        {!readonly && (
+          <div className="p-3.5 bg-slate-50 border border-slate-200/80 rounded-xl space-y-2.5">
+            <div className="flex items-center gap-1.5">
+              <span className="w-1 h-3 bg-indigo-600 rounded-full" />
+              <span className="text-[11px] font-extrabold text-slate-500 uppercase tracking-wider">선택 유형 난이도 적용</span>
+              {checkedTypeIds.length > 0 && (
+                <span className="text-[10px] font-bold bg-indigo-50 text-indigo-600 px-1.5 py-0.5 rounded-full border border-indigo-100">
+                  {checkedTypeIds.length}개 유형 선택됨
+                </span>
+              )}
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-white text-slate-700 border-slate-200 hover:bg-slate-100/70" onClick={() => handleApplyBulkDifficulty("basic")}>기본만</Button>
+              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-white text-slate-700 border-slate-200 hover:bg-slate-100/70" onClick={() => handleApplyBulkDifficulty("intermediate")}>실력만</Button>
+              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-white text-slate-700 border-slate-200 hover:bg-slate-100/70" onClick={() => handleApplyBulkDifficulty("advanced")}>심화만</Button>
+              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-white text-slate-700 border-slate-200 hover:bg-slate-100/70" onClick={() => handleApplyBulkDifficulty("basic+intermediate")}>기본+실력</Button>
+              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-white text-slate-700 border-slate-200 hover:bg-slate-100/70" onClick={() => handleApplyBulkDifficulty("basic+advanced")}>기본+심화</Button>
+              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-white text-slate-700 border-slate-200 hover:bg-slate-100/70" onClick={() => handleApplyBulkDifficulty("intermediate+advanced")}>실력+심화</Button>
+              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-indigo-50 text-indigo-700 border-indigo-200 hover:bg-indigo-100/60" onClick={() => handleApplyBulkDifficulty("all")}>전체</Button>
+              <Button size="sm" variant="outline" className="h-7 text-[10.5px] font-bold px-2.5 bg-rose-50 text-rose-700 border-rose-200 hover:bg-rose-100/60" onClick={() => handleApplyBulkDifficulty("clear")}>전체 해제</Button>
+            </div>
+          </div>
+        )}
+
         {/* 유형 검색 */}
         {!readonly && (
           <div className="flex items-center gap-2">
@@ -308,11 +381,12 @@ export function TaskTypePanel({ subject, selectedTypes, onlyImportant, readonly,
               <CurriculumTree
                 curriculum={filteredCurriculum}
                 selectedCombos={selectedCombos}
+                checkedTypeIds={checkedTypeIds}
                 searchQuery={searchQuery}
                 onToggleCombo={handleToggleCombo}
-                onToggleTypeAllDiffs={handleToggleTypeAllDiffs}
-                onToggleMinorAllDiffs={handleToggleMinorAllDiffs}
-                onToggleMajorAllDiffs={handleToggleMajorAllDiffs}
+                onToggleTypeChecked={handleToggleTypeChecked}
+                onToggleMinorChecked={handleToggleMinorChecked}
+                onToggleMajorChecked={handleToggleMajorChecked}
                 readonly={readonly}
               />
             )
