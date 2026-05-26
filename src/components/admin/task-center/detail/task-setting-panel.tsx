@@ -237,6 +237,11 @@ export function TaskSettingPanel({
                 })}
               </div>
 
+              {/* 계산식 표시 영역 */}
+              <div className="py-2.5 px-3 bg-blue-50/30 border border-blue-100 rounded-xl text-center text-xs font-bold text-slate-700">
+                선택 항목 <span className="text-blue-600 font-extrabold">{comboCount}</span>개 × <span className="text-blue-600 font-extrabold">X{comboCount > 0 ? currentMultiplier : 1}</span> = 총 <span className="text-indigo-600 font-black text-[13px]">{comboCount * (comboCount > 0 ? currentMultiplier : 0)}</span>문항
+              </div>
+
               {/* 출제 요약 정보 보드 */}
               <div className="bg-slate-50/70 p-3.5 rounded-xl border border-slate-200/60 grid grid-cols-3 gap-2 text-center shadow-2xs">
                 <div>
