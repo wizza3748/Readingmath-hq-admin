@@ -115,11 +115,6 @@ export function TaskSettingPanel({
   const showAssign = !!task;
   const showResult = status === "published" || status === "ended";
 
-  const unitPaths = React.useMemo(() => {
-    const paths = selectedTypes.map(t => `${t.majorUnit} > ${t.minorUnit}`);
-    return Array.from(new Set(paths));
-  }, [selectedTypes]);
-
   return (
     <>
       {/* 과제 설정 카드 */}
@@ -135,33 +130,9 @@ export function TaskSettingPanel({
           maxLength={50}
           className="h-10 text-sm font-bold"
         />
-        {unitPaths.length > 0 && (
-          <div className="mt-3.5 px-0.5 flex items-baseline gap-2 overflow-hidden">
-            <span className="text-[11px] font-bold text-foreground/70 shrink-0">출제 단원:</span>
-            <TooltipProvider delayDuration={0}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <span className="text-[11px] text-muted-foreground truncate cursor-default">
-                    {unitPaths[0]}{unitPaths.length > 1 ? ` 외 ${unitPaths.length - 1}건` : ""}
-                  </span>
-                </TooltipTrigger>
-                <TooltipContent side="bottom" align="start" className="bg-white border-border shadow-lg p-3 z-[60]">
-                  <div className="text-xs space-y-2">
-                    <p className="font-bold text-foreground border-b pb-1.5 mb-1.5">출제 단원 목록</p>
-                    <div className="space-y-1.5 max-h-[200px] overflow-y-auto pr-2">
-                      {unitPaths.map((path, idx) => (
-                        <p key={idx} className="text-muted-foreground">• {path}</p>
-                      ))}
-                    </div>
-                  </div>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-        )}
       </div>
 
-      {/* 문제 수 설정 영역 (X1 / X2 / X3 방식) */}
+      {/* 문제 수 설정 영역 */}
       <div className="pb-5 border-b border-slate-100">
         <div className="flex items-center justify-between mb-3.5">
           <div className="flex items-center gap-1.5">
@@ -173,12 +144,15 @@ export function TaskSettingPanel({
                     <Info className="h-4 w-4" />
                   </button>
                 </TooltipTrigger>
-                <TooltipContent side="top" align="start" className="max-w-[320px] p-3 space-y-2 bg-white border-border shadow-lg z-[60]">
-                  <ul className="text-xs text-muted-foreground list-disc list-inside space-y-1.5 leading-relaxed">
-                    <li className="marker:text-blue-500 font-medium text-foreground/80">선택된 유형·난이도 조합마다 지정된 배수(X1, X2, X3)만큼 문제가 출제됩니다.</li>
-                    <li className="marker:text-blue-500">난이도 선택과 무관하게 언제든 자유롭게 X1 / X2 / X3를 지정할 수 있습니다.</li>
-                    <li className="marker:text-blue-500">선택 가능한 최대 조합 수는 100개이며, 총 출제 문제 수는 최대 300문항으로 제한됩니다.</li>
-                  </ul>
+                <TooltipContent side="top" align="start" className="max-w-[320px] p-3 space-y-2 bg-white border-border shadow-lg z-[60] text-xs text-muted-foreground leading-relaxed">
+                  <div className="space-y-2">
+                    <p className="font-semibold text-foreground/90">선택한 출제 유형마다 지정한 문항 수만큼 문제가 출제됩니다.</p>
+                    <p>예: 선택 유형 10개에서 [2문항씩]을 선택하면 총 20문항이 출제됩니다.</p>
+                    <p className="pt-1.5 border-t border-slate-100 font-medium text-blue-600">
+                      • 출제 유형은 최대 100개까지 선택할 수 있습니다.<br />
+                      • 총 문제 수는 최대 300문항까지 설정할 수 있습니다.
+                    </p>
+                  </div>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -207,7 +181,7 @@ export function TaskSettingPanel({
           )}
         </div>
 
-        {/* X1 / X2 / X3 배수 선택 버튼 */}
+        {/* 문항 수 선택 버튼 */}
         {(() => {
           const comboCount = selectedTypes.length;
           const currentMultiplier = selectedTypes[0]?.problemCount ?? 1;
@@ -231,7 +205,7 @@ export function TaskSettingPanel({
                       disabled={readonly || comboCount === 0 || isOverLimit}
                       onClick={() => onQuickSetAll(m)}
                     >
-                      X{m} {isOverLimit && "(초과)"}
+                      {m}문항씩 {isOverLimit && "(초과)"}
                     </Button>
                   );
                 })}
@@ -239,23 +213,7 @@ export function TaskSettingPanel({
 
               {/* 계산식 표시 영역 */}
               <div className="py-2.5 px-3 bg-blue-50/30 border border-blue-100 rounded-xl text-center text-xs font-bold text-slate-700">
-                선택 항목 <span className="text-blue-600 font-extrabold">{comboCount}</span>개 × <span className="text-blue-600 font-extrabold">X{comboCount > 0 ? currentMultiplier : 1}</span> = 총 <span className="text-indigo-600 font-black text-[13px]">{comboCount * (comboCount > 0 ? currentMultiplier : 0)}</span>문항
-              </div>
-
-              {/* 출제 요약 정보 보드 */}
-              <div className="bg-slate-50/70 p-3.5 rounded-xl border border-slate-200/60 grid grid-cols-3 gap-2 text-center shadow-2xs">
-                <div>
-                  <p className="text-[10px] font-extrabold text-slate-400 mb-1 uppercase tracking-wider">선택 항목</p>
-                  <p className="text-sm font-black text-slate-800">{comboCount}개</p>
-                </div>
-                <div className="border-l border-slate-200">
-                  <p className="text-[10px] font-extrabold text-slate-400 mb-1 uppercase tracking-wider">출제 배수</p>
-                  <p className="text-sm font-black text-blue-600">X{comboCount > 0 ? currentMultiplier : 0}</p>
-                </div>
-                <div className="border-l border-slate-200">
-                  <p className="text-[10px] font-extrabold text-slate-400 mb-1 uppercase tracking-wider">총 문제 수</p>
-                  <p className="text-sm font-black text-indigo-600">{comboCount * (comboCount > 0 ? currentMultiplier : 0)}문항</p>
-                </div>
+                선택 유형 <span className="text-blue-600 font-extrabold">{comboCount}</span>개 × <span className="text-blue-600 font-extrabold">{comboCount > 0 ? currentMultiplier : 1}문항씩</span> = 총 <span className="text-indigo-600 font-black text-[13px]">{comboCount * (comboCount > 0 ? currentMultiplier : 0)}</span>문항
               </div>
 
               {isImportantInsufficient && (

@@ -32,6 +32,33 @@ interface Props {
   onBulkDifficultiesChange: (diffs: Record<Difficulty, boolean>) => void;
 }
 
+function getUnitGroupId(type: CurriculumType, subject: Subject, course: string): string {
+  // 기본 폴백 조합 키: 학습과정 + 대단원명 + 소단원명 또는 중단원명
+  const fallbackKey = `${course}||${type.majorUnit}||${type.minorUnit}`;
+  
+  if (!type.id) return fallbackKey;
+  
+  if (subject === "math") {
+    // 수학은 대단원 ID + 소단원 ID 단위로 그룹핑해야 하나, ID 자체에 소단원 ID가 없으므로 
+    // 기준에 따라 ID가 없는 경우로 보아 fallbackKey를 그룹 키로 사용합니다.
+    return fallbackKey;
+  }
+  
+  // 과학의 경우: 대단원 ID + 중단원 ID 가 포함되어 있는지 검사
+  const parts = type.id.split("-");
+  if (parts.length >= 4) {
+    const typeIndex = parts[parts.length - 1];
+    const minorIndex = parts[parts.length - 2]; // 중단원 ID
+    const majorIndex = parts[parts.length - 3]; // 대단원 ID
+    
+    if (!isNaN(Number(minorIndex)) && !isNaN(Number(majorIndex))) {
+      return `sci_${majorIndex}__${minorIndex}`;
+    }
+  }
+  
+  return fallbackKey;
+}
+
 export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bulkDifficulties, onlyImportant, readonly, onTypesChange, onCheckedTypesChange, onBulkDifficultiesChange }: Props) {
   const { toast } = useToast();
   const courses = React.useMemo(() => {
@@ -128,26 +155,36 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
 
   const selectedCombos = selectedTypes.map(t => makeComboKey(t.typeId, t.difficulty));
 
-  // 1. 선택된 단원(minorUnit) 목록 추출
+  // 1. 선택된 단원(groupId) 목록 추출 (checkedTypeIds 기준, 순서 보존)
   const activeMinors = React.useMemo(() => {
-    return Array.from(new Set(selectedTypes.map(t => t.minorUnit)));
-  }, [selectedTypes]);
+    if (!filteredCurriculum || !checkedTypeIds.length) return [];
+    const checkedMinors = new Set<string>();
+    filteredCurriculum.types.forEach(t => {
+      if (checkedTypeIds.includes(t.id)) {
+        checkedMinors.add(getUnitGroupId(t, subject, course));
+      }
+    });
+    return Array.from(checkedMinors);
+  }, [filteredCurriculum, checkedTypeIds, subject, course]);
 
-  // 2. 각 minorUnit에 해당하는 유형 리스트 그룹화
+  // 2. 각 groupId에 해당하는 유형 리스트 그룹화 (checkedTypeIds 기준)
   const minorGroupedTypes = React.useMemo(() => {
-    const groups: Record<string, { majorUnit: string; types: CurriculumType[] }> = {};
+    const groups: Record<string, { majorUnit: string; minorUnit: string; types: CurriculumType[] }> = {};
     if (filteredCurriculum) {
       filteredCurriculum.types.forEach(t => {
-        if (!groups[t.minorUnit]) {
-          groups[t.minorUnit] = { majorUnit: t.majorUnit, types: [] };
+        if (!checkedTypeIds.includes(t.id)) return; // 체크된 유형만 하단 현황에 포함!
+        
+        const groupId = getUnitGroupId(t, subject, course);
+        if (!groups[groupId]) {
+          groups[groupId] = { majorUnit: t.majorUnit, minorUnit: t.minorUnit, types: [] };
         }
-        if (!groups[t.minorUnit].types.some(exist => exist.id === t.id)) {
-          groups[t.minorUnit].types.push(t);
+        if (!groups[groupId].types.some(exist => exist.id === t.id)) {
+          groups[groupId].types.push(t);
         }
       });
     }
     return groups;
-  }, [filteredCurriculum]);
+  }, [filteredCurriculum, checkedTypeIds, subject, course]);
 
   const handleToggleCombo = (typeId: string, difficulty: Difficulty, type: CurriculumType) => {
     if (readonly) return;
@@ -162,7 +199,11 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
       
       // 조합 100개 / 총 문제 300개 한계 사전 검증
       if (selectedTypes.length + 1 > 100) {
-        toast({ title: "선택 항목 최대값은 유형·난이도 조합 100개입니다.", variant: "destructive" });
+        toast({
+          title: "출제 유형은 최대 100개까지 선택할 수 있습니다.",
+          description: "유형 선택을 줄여주세요.",
+          variant: "destructive"
+        });
         return;
       }
       if ((selectedTypes.length + 1) * nextMultiplier > 300) {
@@ -219,7 +260,11 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
       // 가드 사전 검사
       const nextSelected = [...selectedTypes, ...newEntries];
       if (nextSelected.length > 100) {
-        toast({ title: "선택 가능한 유형·난이도 조합은 최대 100개입니다. (선택 차단)", variant: "destructive" });
+        toast({
+          title: "출제 유형은 최대 100개까지 선택할 수 있습니다.",
+          description: "유형 선택을 줄여주세요.",
+          variant: "destructive"
+        });
         return;
       }
       if (nextSelected.length * nextMultiplier > 300) {
@@ -270,7 +315,11 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
 
       // 가드 사전 검사
       if (nextSelected.length > 100) {
-        toast({ title: "선택 가능한 유형·난이도 조합은 최대 100개입니다. (선택 차단)", variant: "destructive" });
+        toast({
+          title: "출제 유형은 최대 100개까지 선택할 수 있습니다.",
+          description: "유형 선택을 줄여주세요.",
+          variant: "destructive"
+        });
         return;
       }
       if (nextSelected.length * nextMultiplier > 300) {
@@ -330,7 +379,11 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
 
       // 가드 체크
       if (nextSelected.length > 100) {
-        toast({ title: "선택 가능한 유형·난이도 조합은 최대 100개입니다. (토글 적용 불가)", variant: "destructive" });
+        toast({
+          title: "출제 유형은 최대 100개까지 선택할 수 있습니다.",
+          description: "유형 선택을 줄여주세요.",
+          variant: "destructive"
+        });
         return;
       }
       if (nextSelected.length * nextMultiplier > 300) {
@@ -482,7 +535,8 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
           <div className="pt-6 border-t border-slate-200/85 mt-6">
             <div className="flex items-center gap-2 mb-4">
               <span className="w-1.5 h-4 bg-indigo-600 rounded-full" />
-              <h4 className="text-sm font-black text-slate-800">단원별 난이도 현황</h4>
+              <h4 className="text-sm font-black text-slate-800">단원별 출제 유형 현황</h4>
+              <span className="text-xs text-slate-500 font-medium ml-2">선택한 단원의 유형과 출제 난이도를 확인하고 조정합니다.</span>
             </div>
 
             <div className="bg-white rounded-xl border border-slate-200 shadow-2xs overflow-hidden">
@@ -496,16 +550,16 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
 
               {/* 테이블 바디 */}
               <div className="divide-y divide-slate-100">
-                {activeMinors.map(minor => {
-                  const group = minorGroupedTypes[minor];
+                {activeMinors.map(groupId => {
+                  const group = minorGroupedTypes[groupId];
                   if (!group) return null;
 
                   return (
-                    <div key={minor} className="grid grid-cols-[220px_1fr_1fr_1fr] min-h-[90px] items-center text-center divide-x divide-slate-100">
+                    <div key={groupId} className="grid grid-cols-[220px_1fr_1fr_1fr] min-h-[90px] items-center text-center divide-x divide-slate-100">
                       {/* 좌측: 단원/유형 정보 */}
                       <div className="text-left py-3.5 px-4 flex flex-col justify-center min-w-0">
                         <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5 line-clamp-1">{group.majorUnit}</span>
-                        <span className="text-xs font-black text-slate-800 leading-snug">{minor}</span>
+                        <span className="text-xs font-black text-slate-800 leading-snug">{group.minorUnit}</span>
                       </div>
 
                       {/* 우측 3단 난이도 컬럼 내부: 간결한 칩 형태로 표시 */}
@@ -515,6 +569,12 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
                             {group.types.map((type, idx) => {
                               const isSelected = selectedCombos.includes(makeComboKey(type.id, d));
                               const hasImportant = type.importantCount[d] > 0;
+                              
+                              const isTypeImportant = type.importantCount.basic > 0 || type.importantCount.intermediate > 0 || type.importantCount.advanced > 0;
+                              const importantQuestionText = hasImportant ? "중요문제 있음" : "중요문제 없음";
+                              const tooltipDetailText = isTypeImportant 
+                                ? `중요유형 · ${importantQuestionText}` 
+                                : importantQuestionText;
                               
                               // 칩 스타일링: w-7 h-7 크기의 작고 예쁜 사각형 칩
                               let chipClass = "relative w-7 h-7 flex items-center justify-center rounded-lg border text-xs font-extrabold transition-all duration-150 select-none cursor-pointer ";
@@ -547,7 +607,7 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
                                     </TooltipTrigger>
                                     <TooltipContent side="top" className="bg-slate-900 text-white border border-slate-800 text-[10.5px] font-medium py-1.5 px-2.5 shadow-md max-w-[280px]">
                                       <p className="font-extrabold text-blue-400 mb-0.5">{type.typeName}</p>
-                                      <p className="opacity-80">유형 번호: {idx + 1}번 · 중요문제: {hasImportant ? "포함" : "없음"}</p>
+                                      <p className="opacity-80">{tooltipDetailText}</p>
                                     </TooltipContent>
                                   </Tooltip>
                                 </TooltipProvider>

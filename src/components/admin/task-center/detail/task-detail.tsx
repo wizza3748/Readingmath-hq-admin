@@ -67,6 +67,50 @@ export default function TaskDetail({ taskId }: Props) {
     onlyImportant: normalizedExistingTask?.onlyImportant ?? false,
   }));
 
+  const getAutoTaskName = React.useCallback((types: SelectedType[]) => {
+    if (!types || types.length === 0) return "";
+    
+    // 1. 오늘 날짜 YYYY-MM-DD 포맷팅
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+    const dateStr = `${yyyy}-${mm}-${dd}`;
+    
+    // 2. 선택된 유형들의 단원 목록을 '커리큘럼 트리 정렬 순서'를 기준으로 고유값 수집
+    const list = subject === "science" ? SCIENCE_CURRICULA : MATH_CURRICULA;
+    const currentCourse = types[0]?.course ?? "";
+    const curriculum = list.find(c => c.course === currentCourse);
+    
+    if (!curriculum) {
+      // 혹시라도 커리큘럼을 찾지 못할 경우의 안전 폴백 (기존 selectedTypes 기준 최초 순서)
+      const fallbackMinors = Array.from(new Set(types.map(t => t.minorUnit)));
+      if (fallbackMinors.length === 0) return "";
+      const base = fallbackMinors[0];
+      return fallbackMinors.length <= 1 
+        ? `${dateStr} | ${base}` 
+        : `${dateStr} | ${base} 외 ${fallbackMinors.length - 1}건`;
+    }
+    
+    // 커리큘럼 순서대로 선택된 단원 수집 (중복 제거)
+    const checkedMinors = new Set<string>();
+    const selectedTypeIds = new Set(types.map(t => t.typeId));
+    
+    curriculum.types.forEach(ct => {
+      if (selectedTypeIds.has(ct.id)) {
+        checkedMinors.add(ct.minorUnit);
+      }
+    });
+    
+    const sortedMinors = Array.from(checkedMinors);
+    if (sortedMinors.length === 0) return "";
+    
+    const base = sortedMinors[0];
+    return sortedMinors.length <= 1 
+      ? `${dateStr} | ${base}` 
+      : `${dateStr} | ${base} 외 ${sortedMinors.length - 1}건`;
+  }, [subject]);
+
   React.useEffect(() => {
     if (normalizedExistingTask) {
       setName(normalizedExistingTask.name);
@@ -76,7 +120,7 @@ export default function TaskDetail({ taskId }: Props) {
       setPrioritizeUnsolved(normalizedExistingTask.prioritizeUnsolved);
       setOnlyImportant(normalizedExistingTask.onlyImportant ?? false);
       
-      const autoName = buildAutoName(normalizedExistingTask.selectedTypes);
+      const autoName = getAutoTaskName(normalizedExistingTask.selectedTypes);
       const isManual = normalizedExistingTask.name !== autoName;
       setNameManuallyEdited(isManual);
 
@@ -89,7 +133,7 @@ export default function TaskDetail({ taskId }: Props) {
       });
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [taskId, normalizedExistingTask]);
+  }, [taskId, normalizedExistingTask, getAutoTaskName]);
 
   // ── 개발 환경 전용 selectedTypes 검증 디버그 로그
   React.useEffect(() => {
@@ -123,7 +167,11 @@ export default function TaskDetail({ taskId }: Props) {
     // 추가하려는 시도인지 확인 (기존 선택 개수보다 많아지는 경우)
     if (types.length > selectedTypes.length) {
       if (types.length > 100) {
-        toast({ title: "선택 가능한 유형·난이도 조합은 최대 100개입니다.", variant: "destructive" });
+        toast({
+          title: "출제 유형은 최대 100개까지 선택할 수 있습니다.",
+          description: "유형 선택을 줄여주세요.",
+          variant: "destructive"
+        });
         return;
       }
       
@@ -142,7 +190,7 @@ export default function TaskDetail({ taskId }: Props) {
       
       setSelectedTypes(adjustedTypes);
       if (!nameManuallyEdited) {
-        setName(buildAutoName(adjustedTypes));
+        setName(getAutoTaskName(adjustedTypes));
       }
     } else {
       // 삭제나 동일 유지인 경우
@@ -154,7 +202,7 @@ export default function TaskDetail({ taskId }: Props) {
       
       setSelectedTypes(adjustedTypes);
       if (!nameManuallyEdited) {
-        setName(buildAutoName(adjustedTypes));
+        setName(getAutoTaskName(adjustedTypes));
       }
     }
   };
@@ -291,7 +339,14 @@ export default function TaskDetail({ taskId }: Props) {
               prioritizeUnsolved={prioritizeUnsolved}
               onlyImportant={onlyImportant}
               readonly={readonly}
-              onNameChange={(v) => { setName(v); setNameManuallyEdited(true); }}
+              onNameChange={(v) => { 
+                setName(v); 
+                if (!v.trim()) {
+                  setNameManuallyEdited(false); 
+                } else {
+                  setNameManuallyEdited(true); 
+                }
+              }}
               onTypeProblemCountChange={handleTypeProblemCountChange}
               onProblemModeChange={handleProblemModeChange}
               onOnlyImportantChange={handleOnlyImportantChange}
