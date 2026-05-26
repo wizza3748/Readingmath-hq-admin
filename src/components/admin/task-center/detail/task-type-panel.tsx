@@ -94,12 +94,31 @@ export function TaskTypePanel({ subject, selectedTypes, onlyImportant, readonly,
         )
       : baseTypes;
     
+    const minorTypeCounters: Record<string, number> = {};
+    
     return {
       ...curriculum,
-      types: filtered.map(t => ({
-        ...t,
-        difficultyCount: { basic: 3, intermediate: 3, advanced: 3 }
-      }))
+      types: filtered.map(t => {
+        const minor = t.minorUnit;
+        if (minorTypeCounters[minor] === undefined) {
+          minorTypeCounters[minor] = 0;
+        } else {
+          minorTypeCounters[minor] += 1;
+        }
+        const idx = minorTypeCounters[minor];
+        
+        // 소단원 내에서 2번째(idx 1)와 6번째(idx 5) 유형만 중요 유형으로 지정
+        const isImportant = idx === 1 || idx === 5;
+        const fakeImportantCount = isImportant
+          ? { basic: 1, intermediate: 1, advanced: 1 }
+          : { basic: 0, intermediate: 0, advanced: 0 };
+
+        return {
+          ...t,
+          difficultyCount: { basic: 3, intermediate: 3, advanced: 3 },
+          importantCount: fakeImportantCount
+        };
+      })
     };
   }, [curriculum, searchQuery]);
 
@@ -333,15 +352,12 @@ export function TaskTypePanel({ subject, selectedTypes, onlyImportant, readonly,
                       <div className="text-left py-3.5 px-4 flex flex-col justify-center min-w-0">
                         <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5 line-clamp-1">{group.majorUnit}</span>
                         <span className="text-xs font-black text-slate-800 leading-snug">{minor}</span>
-                        <div className="mt-2.5 self-start">
-                          <span className="bg-slate-100 text-slate-600 text-[10px] font-bold px-2 py-0.5 rounded border border-slate-200 select-none">개념</span>
-                        </div>
                       </div>
 
                       {/* 우측 3단 난이도 컬럼 내부: 간결한 칩 형태로 표시 */}
                       {(["basic", "intermediate", "advanced"] as Difficulty[]).map(d => {
                         return (
-                          <div key={d} className="p-3 flex flex-wrap gap-2.5 justify-center items-center h-full min-h-[60px]">
+                          <div key={d} className="p-3 flex flex-wrap gap-2.5 justify-start items-center h-full min-h-[60px]">
                             {group.types.map((type, idx) => {
                               const isSelected = selectedCombos.includes(makeComboKey(type.id, d));
                               const hasImportant = type.importantCount[d] > 0;
