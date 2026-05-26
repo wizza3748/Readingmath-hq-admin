@@ -30,7 +30,7 @@ interface Props {
   onCheckedTypesChange: (ids: string[]) => void;
 }
 
-export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds, onlyImportant, readonly, onTypesChange, onCheckedTypesChange }: Props) {
+export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], onlyImportant, readonly, onTypesChange, onCheckedTypesChange }: Props) {
   const { toast } = useToast();
   const courses = React.useMemo(() => {
     const raw = getCoursesBySubject(subject);

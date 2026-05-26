@@ -42,9 +42,10 @@ function HighlightedText({ text, query }: { text: string; query?: string }) {
 
 function minorCheckTriState(
   types: CurriculumType[],
-  checkedTypeIds: string[]
+  checkedTypeIds: string[] = []
 ): "all" | "partial" | "none" {
-  const checkedCount = types.filter(t => checkedTypeIds.includes(t.id)).length;
+  const ids = checkedTypeIds || [];
+  const checkedCount = types.filter(t => ids.includes(t.id)).length;
   if (checkedCount === 0) return "none";
   if (checkedCount === types.length) return "all";
   return "partial";
@@ -52,14 +53,14 @@ function minorCheckTriState(
 
 function majorCheckTriState(
   minorMap: Map<string, CurriculumType[]>,
-  checkedTypeIds: string[]
+  checkedTypeIds: string[] = []
 ): "all" | "partial" | "none" {
   const allTypes = Array.from(minorMap.values()).flat();
   return minorCheckTriState(allTypes, checkedTypeIds);
 }
 
 export function CurriculumTree({
-  curriculum, selectedCombos, checkedTypeIds, searchQuery,
+  curriculum, selectedCombos, checkedTypeIds = [], searchQuery,
   onToggleCombo, onToggleTypeChecked, onToggleMinorChecked, onToggleMajorChecked,
   readonly
 }: Props) {
