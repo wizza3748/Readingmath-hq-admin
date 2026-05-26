@@ -207,7 +207,7 @@ export function CurriculumTree({
 
                   {isOpenMinor && types.map(type => {
                     const typeState = typeComboTriState(type, selectedCombos);
-                    const availableDiffs = DIFFICULTY_LIST.filter(d => type.difficultyCount[d] > 0);
+                    const availableDiffs = DIFFICULTY_LIST; // 모든 난이도 활성화
 
                     return (
                       <div key={type.id} className="ml-6">
@@ -238,16 +238,12 @@ export function CurriculumTree({
                             <TooltipProvider delayDuration={200}>
                               <div className="flex items-center gap-1 shrink-0" onClick={e => e.stopPropagation()}>
                                 {DIFFICULTY_LIST.map(d => {
-                                  const count = type.difficultyCount[d];
-                                  const isCountZero = count === 0;
-                                  const isDisabled = readonly || isCountZero;
                                   const isSelected = selectedCombos.includes(makeComboKey(type.id, d));
+                                  const isDisabled = readonly;
                                   
                                   let chipClass = "h-7 px-2.5 rounded text-[11px] font-bold transition-all border flex items-center justify-center ";
                                   
-                                  if (isCountZero) {
-                                    chipClass += "bg-slate-50 text-slate-300 border-slate-200 cursor-not-allowed";
-                                  } else if (isSelected) {
+                                  if (isSelected) {
                                     // 선택됨: 진한 배경, 흰색 텍스트
                                     if (d === "basic") {
                                       chipClass += "bg-slate-700 text-white border-slate-700 hover:bg-slate-800 shadow-xs ";
@@ -280,7 +276,7 @@ export function CurriculumTree({
                                       onClick={() => onToggleCombo(type.id, d, type)}
                                       className={chipClass}
                                     >
-                                      {getDifficultyLabel(d)} {count}
+                                      {getDifficultyLabel(d)}
                                     </button>
                                   );
 
@@ -290,7 +286,7 @@ export function CurriculumTree({
                                         {buttonContent}
                                       </TooltipTrigger>
                                       <TooltipContent side="top" className="bg-slate-900 border border-slate-800 text-white py-1 px-2 text-[10px] rounded shadow-md">
-                                        <p>숫자는 해당 난이도에 등록된 문제 수입니다.</p>
+                                        <p>클릭하여 {getDifficultyLabel(d)} 난이도를 선택 또는 해제할 수 있습니다.</p>
                                       </TooltipContent>
                                     </Tooltip>
                                   );

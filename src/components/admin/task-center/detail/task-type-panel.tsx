@@ -84,19 +84,47 @@ export function TaskTypePanel({ subject, selectedTypes, onlyImportant, readonly,
 
   const filteredCurriculum: Curriculum | undefined = React.useMemo(() => {
     if (!curriculum) return undefined;
-    if (!searchQuery.trim()) return curriculum;
+    const baseTypes = curriculum.types;
     const q = searchQuery.trim().toLowerCase();
+    const filtered = q
+      ? baseTypes.filter(t =>
+          t.typeName.toLowerCase().includes(q) ||
+          t.majorUnit.toLowerCase().includes(q) ||
+          t.minorUnit.toLowerCase().includes(q)
+        )
+      : baseTypes;
+    
     return {
       ...curriculum,
-      types: curriculum.types.filter(t =>
-        t.typeName.toLowerCase().includes(q) ||
-        t.majorUnit.toLowerCase().includes(q) ||
-        t.minorUnit.toLowerCase().includes(q)
-      ),
+      types: filtered.map(t => ({
+        ...t,
+        difficultyCount: { basic: 3, intermediate: 3, advanced: 3 }
+      }))
     };
   }, [curriculum, searchQuery]);
 
   const selectedCombos = selectedTypes.map(t => makeComboKey(t.typeId, t.difficulty));
+
+  // 1. 선택된 단원(minorUnit) 목록 추출
+  const activeMinors = React.useMemo(() => {
+    return Array.from(new Set(selectedTypes.map(t => t.minorUnit)));
+  }, [selectedTypes]);
+
+  // 2. 각 minorUnit에 해당하는 유형 리스트 그룹화
+  const minorGroupedTypes = React.useMemo(() => {
+    const groups: Record<string, { majorUnit: string; types: CurriculumType[] }> = {};
+    if (filteredCurriculum) {
+      filteredCurriculum.types.forEach(t => {
+        if (!groups[t.minorUnit]) {
+          groups[t.minorUnit] = { majorUnit: t.majorUnit, types: [] };
+        }
+        if (!groups[t.minorUnit].types.some(exist => exist.id === t.id)) {
+          groups[t.minorUnit].types.push(t);
+        }
+      });
+    }
+    return groups;
+  }, [filteredCurriculum]);
 
   const handleToggleCombo = (typeId: string, difficulty: Difficulty, type: CurriculumType) => {
     if (readonly) return;
@@ -276,78 +304,96 @@ export function TaskTypePanel({ subject, selectedTypes, onlyImportant, readonly,
           )}
         </div>
 
-        {/* 선택 유형 목록 */}
-        <div className="pt-3 border-t border-slate-200/80">
-          <div className="flex items-center justify-between mb-2">
-            <div 
-              className="flex items-center gap-1 cursor-pointer select-none group/title"
-              onClick={() => setIsTypesExpanded(!isTypesExpanded)}
-            >
-              {isTypesExpanded ? (
-                <ChevronDown className="h-4 w-4 text-muted-foreground group-hover/title:text-primary transition-colors" />
-              ) : (
-                <ChevronRight className="h-4 w-4 text-muted-foreground group-hover/title:text-primary transition-colors" />
-              )}
-              <p className="text-sm font-bold text-foreground group-hover/title:text-primary transition-colors">
-                선택된 출제 항목 <span className="text-primary">{selectedTypes.length}</span>개
-              </p>
+        {/* 4. 단원별 난이도 현황 영역 (하단 별도 영역) */}
+        {activeMinors.length > 0 && (
+          <div className="pt-6 border-t border-slate-200/85 mt-6">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="w-1.5 h-4 bg-indigo-600 rounded-full" />
+              <h4 className="text-sm font-black text-slate-800">단원별 난이도 현황</h4>
             </div>
-            {!readonly && selectedTypes.length > 0 && (
-              <Button size="sm" variant="ghost" onClick={handleClearAll} className="h-7 text-xs text-muted-foreground hover:text-destructive hover:bg-destructive/10">
-                <Trash2 className="h-3.5 w-3.5 mr-1" /> 전체 삭제
-              </Button>
-            )}
-          </div>
 
-          {isTypesExpanded && (
-            <>
-              {selectedTypes.length > 0 ? (
-                <ul className="space-y-1.5 pr-2">
-                  {selectedTypes.map(t => (
-                    <li key={`${t.typeId}__${t.difficulty}`} className="flex items-center gap-2 text-sm bg-slate-50/50 border border-slate-200/60 rounded-xl px-3 py-2 group">
-                      <TooltipProvider delayDuration={300}>
-                        <Tooltip>
-                          <TooltipTrigger asChild>
-                            <div className="flex-1 min-w-0 flex items-center gap-2 overflow-hidden">
-                              <Badge variant="outline" className={`shrink-0 px-1.5 py-0 h-5 text-[10px] font-bold border-transparent ${
-                                t.difficulty === "basic" ? "bg-slate-100 text-slate-600" :
-                                t.difficulty === "intermediate" ? "bg-indigo-50 text-indigo-600" :
-                                "bg-purple-50 text-purple-600"
-                              }`}>
-                                {getDifficultyLabel(t.difficulty)}
-                              </Badge>
-                              <span className="truncate text-[13px] text-foreground">
-                                <span className="text-muted-foreground mr-1.5">{t.majorUnit} &gt; {t.minorUnit} &gt;</span>
-                                <span className="font-medium">{t.typeName}</span>
-                              </span>
-                            </div>
-                          </TooltipTrigger>
-                          <TooltipContent side="top" align="start" className="bg-white border-border shadow-md">
-                            <p className="text-xs font-medium">{t.majorUnit} &gt; {t.minorUnit} &gt; {t.typeName} · {getDifficultyLabel(t.difficulty)}</p>
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
+            <div className="bg-white rounded-xl border border-slate-200 shadow-2xs overflow-hidden">
+              {/* 테이블 헤더 */}
+              <div className="grid grid-cols-[220px_1fr_1fr_1fr] bg-slate-50 border-b border-slate-200 text-xs font-bold text-slate-500 text-center py-2.5">
+                <div className="text-left pl-4">단원</div>
+                <div className="border-l border-slate-200/60">기본</div>
+                <div className="border-l border-slate-200/60">실력</div>
+                <div className="border-l border-slate-200/60">심화</div>
+              </div>
 
-                      <div className="flex items-center gap-1.5 shrink-0 ml-2">
-                        <span className="text-xs font-bold text-muted-foreground mr-1">{t.maxCount[t.difficulty]}문항</span>
-                        <Button size="sm" variant="outline" onClick={() => handlePreview(t.typeId, t.difficulty, t.typeName, t.maxCount[t.difficulty])} className="h-7 px-2.5 text-xs bg-white text-muted-foreground hover:text-foreground shadow-sm">
-                          <Eye className="h-3.5 w-3.5 mr-1" /> 미리보기
-                        </Button>
-                        <Button size="icon" variant="ghost" onClick={() => handleRemoveCombo(t.typeId, t.difficulty)} disabled={readonly} className="h-7 w-7 text-muted-foreground hover:text-destructive hover:bg-destructive/10">
-                          <X className="h-4 w-4" />
-                        </Button>
+              {/* 테이블 바디 */}
+              <div className="divide-y divide-slate-100">
+                {activeMinors.map(minor => {
+                  const group = minorGroupedTypes[minor];
+                  if (!group) return null;
+
+                  return (
+                    <div key={minor} className="grid grid-cols-[220px_1fr_1fr_1fr] min-h-[90px] items-center text-center divide-x divide-slate-100">
+                      {/* 좌측: 단원/유형 정보 */}
+                      <div className="text-left py-3.5 px-4 flex flex-col justify-center min-w-0">
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5 line-clamp-1">{group.majorUnit}</span>
+                        <span className="text-xs font-black text-slate-800 leading-snug">{minor}</span>
+                        <div className="mt-2.5 self-start">
+                          <span className="bg-slate-100 text-slate-600 text-[10px] font-bold px-2 py-0.5 rounded border border-slate-200 select-none">개념</span>
+                        </div>
                       </div>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <div className="py-4 text-center text-xs font-medium text-slate-400 bg-slate-50/30 rounded-xl border border-dashed border-slate-200/80">
-                  선택된 유형이 없습니다.
-                </div>
-              )}
-            </>
-          )}
-        </div>
+
+                      {/* 우측 3단 난이도 컬럼 내부: 간결한 칩 형태로 표시 */}
+                      {(["basic", "intermediate", "advanced"] as Difficulty[]).map(d => {
+                        return (
+                          <div key={d} className="p-3 flex flex-wrap gap-2.5 justify-center items-center h-full min-h-[60px]">
+                            {group.types.map((type, idx) => {
+                              const isSelected = selectedCombos.includes(makeComboKey(type.id, d));
+                              const hasImportant = type.importantCount[d] > 0;
+                              
+                              // 칩 스타일링: w-7 h-7 크기의 작고 예쁜 사각형 칩
+                              let chipClass = "relative w-7 h-7 flex items-center justify-center rounded-lg border text-xs font-extrabold transition-all duration-150 select-none cursor-pointer ";
+                              
+                              if (isSelected) {
+                                if (d === "basic") {
+                                  chipClass += "bg-slate-700 border-slate-700 text-white hover:bg-slate-800 shadow-2xs ";
+                                } else if (d === "intermediate") {
+                                  chipClass += "bg-blue-600 border-blue-600 text-white hover:bg-blue-700 shadow-2xs ";
+                                } else {
+                                  chipClass += "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 shadow-2xs ";
+                                }
+                              } else {
+                                chipClass += "bg-slate-100 border-slate-200 text-slate-400 hover:border-slate-300 hover:bg-slate-200/50 ";
+                              }
+
+                              return (
+                                <TooltipProvider key={type.id} delayDuration={200}>
+                                  <Tooltip>
+                                    <TooltipTrigger asChild>
+                                      <div
+                                        className={chipClass}
+                                        onClick={() => !readonly && handleToggleCombo(type.id, d, type)}
+                                      >
+                                        {hasImportant && (
+                                          <span className="absolute -top-1.5 -right-1 text-amber-500 text-[11px] font-black select-none drop-shadow-2xs">★</span>
+                                        )}
+                                        ?
+                                      </div>
+                                    </TooltipTrigger>
+                                    <TooltipContent side="top" className="bg-slate-900 text-white border border-slate-800 text-[10.5px] font-medium py-1.5 px-2.5 shadow-md max-w-[280px]">
+                                      <p className="font-extrabold text-blue-400 mb-0.5">{type.typeName}</p>
+                                      <p className="opacity-80">유형 번호: {idx + 1}번 · 중요문제: {hasImportant ? "포함" : "없음"}</p>
+                                    </TooltipContent>
+                                  </Tooltip>
+                                </TooltipProvider>
+                              );
+                            })}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        )}
+
       </div>
       
       <TypeProblemPreviewModal

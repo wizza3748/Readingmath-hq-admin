@@ -106,24 +106,52 @@ export default function TaskDetail({ taskId }: Props) {
     });
   }, [normalizedExistingTask, subject]);
 
-  // 선택 유형 변경 시 초기화
+  // 선택 유형 변경 시 초기화 및 100개 / 300문항 초과 방지
   const handleTypesChange = (types: SelectedType[]) => {
-    setSelectedTypes(types);
-    if (!nameManuallyEdited) {
-      setName(buildAutoName(types));
+    const currentMultiplier = selectedTypes[0]?.problemCount ?? 1;
+    
+    // 추가하려는 시도인지 확인 (기존 선택 개수보다 많아지는 경우)
+    if (types.length > selectedTypes.length) {
+      if (types.length > 100) {
+        toast({ title: "선택 가능한 유형·난이도 조합은 최대 100개입니다.", variant: "destructive" });
+        return;
+      }
+      
+      // 각 problemCount를 현재 배수(multiplier)로 보정
+      const adjustedTypes = types.map(t => ({
+        ...t,
+        problemCount: selectedTypes.find(exist => exist.typeId === t.typeId && exist.difficulty === t.difficulty)?.problemCount ?? currentMultiplier,
+        maxCount: { basic: 3, intermediate: 3, advanced: 3 } // 모든 유형 문제 수 3개로 목킹
+      }));
+      
+      const expectedTotal = adjustedTypes.length * currentMultiplier;
+      if (expectedTotal > 300) {
+        toast({ title: "전체 출제 문제 수는 최대 300문항입니다.", variant: "destructive" });
+        return;
+      }
+      
+      setSelectedTypes(adjustedTypes);
+      if (!nameManuallyEdited) {
+        setName(buildAutoName(adjustedTypes));
+      }
+    } else {
+      // 삭제나 동일 유지인 경우
+      const adjustedTypes = types.map(t => ({
+        ...t,
+        problemCount: selectedTypes.find(exist => exist.typeId === t.typeId && exist.difficulty === t.difficulty)?.problemCount ?? currentMultiplier,
+        maxCount: { basic: 3, intermediate: 3, advanced: 3 } // 모든 유형 문제 수 3개로 목킹
+      }));
+      
+      setSelectedTypes(adjustedTypes);
+      if (!nameManuallyEdited) {
+        setName(buildAutoName(adjustedTypes));
+      }
     }
   };
 
-  // 출제 범위(중요 문제만) 변경 시 문제 수 재계산
+  // 출제 범위(중요 문제만) 변경
   const handleOnlyImportantChange = (important: boolean) => {
     setOnlyImportant(important);
-    const countKey = important ? "importantCount" : "maxCount";
-    
-    setSelectedTypes(prev => prev.map(t => {
-      const max = t[countKey][t.difficulty];
-      const min = max > 0 ? 1 : 0;
-      return { ...t, problemCount: Math.max(min, 1) };
-    }));
   };
 
   const isDirty = () => {
@@ -155,41 +183,20 @@ export default function TaskDetail({ taskId }: Props) {
     setSelectedTypes(prev => prev.map(t => (t.typeId === typeId && t.difficulty === difficulty) ? { ...t, problemCount: count } : t));
   };
 
-  const handleQuickSetAll = (count: number) => {
+  // multiplier(배수) 일괄 적용 방식으로 변경
+  const handleQuickSetAll = (multiplier: number) => {
     if (selectedTypes.length === 0) return;
-
-    const countKey = onlyImportant ? "importantCount" : "maxCount";
-
-    // 1. 배분 대상 및 초기값 설정 (출제 가능 조합마다 1문항 우선 배정)
-    const updated = selectedTypes.map(t => {
-      const max = t[countKey][t.difficulty];
-      return { ...t, problemCount: max > 0 ? 1 : 0 };
-    });
-
-    const currentTotal = updated.reduce((sum, t) => sum + t.problemCount, 0);
-    let remainder = Math.max(0, count - currentTotal);
-
-    // 2. 잔여 문항 순차 배분 (최대값 초과 금지)
-    if (remainder > 0) {
-      let safetyCounter = 0;
-      while (remainder > 0 && safetyCounter < 1000) {
-        let allocatedInThisRound = 0;
-        for (let i = 0; i < updated.length && remainder > 0; i++) {
-          const t = updated[i];
-          const typeMax = t[countKey][t.difficulty];
-
-          if (t.problemCount < typeMax) {
-            t.problemCount++;
-            remainder--;
-            allocatedInThisRound++;
-          }
-        }
-        if (allocatedInThisRound === 0) break;
-        safetyCounter++;
-      }
+    
+    const expectedTotal = selectedTypes.length * multiplier;
+    if (expectedTotal > 300) {
+      toast({ title: "전체 출제 문제 수는 최대 300문항입니다.", variant: "destructive" });
+      return;
     }
 
-    setSelectedTypes([...updated]);
+    setSelectedTypes(prev => prev.map(t => ({
+      ...t,
+      problemCount: multiplier
+    })));
   };
 
   const handleSave = () => {

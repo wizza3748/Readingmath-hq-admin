@@ -161,11 +161,11 @@ export function TaskSettingPanel({
         )}
       </div>
 
-      {/* 문제 수 빠른 설정 (슬라이더 및 프리셋) */}
+      {/* 문제 수 설정 영역 (X1 / X2 / X3 방식) */}
       <div className="pb-5 border-b border-slate-100">
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between mb-3.5">
           <div className="flex items-center gap-1.5">
-            <p className="text-sm font-bold text-foreground">문제 수</p>
+            <p className="text-sm font-bold text-foreground">문제 수 설정</p>
             <TooltipProvider delayDuration={0}>
               <Tooltip open={countTooltipOpen} onOpenChange={setCountTooltipOpen}>
                 <TooltipTrigger asChild>
@@ -175,22 +175,16 @@ export function TaskSettingPanel({
                 </TooltipTrigger>
                 <TooltipContent side="top" align="start" className="max-w-[320px] p-3 space-y-2 bg-white border-border shadow-lg z-[60]">
                   <ul className="text-xs text-muted-foreground list-disc list-inside space-y-1.5 leading-relaxed">
-                    <li className="marker:text-blue-500 font-medium text-foreground/80">문제 수는 과제에 출제할 전체 문항 수입니다.</li>
-                    <li className="marker:text-blue-500">선택한 유형과 난이도에 포함된 문제 수 안에서 설정할 수 있습니다.</li>
-                    <li className="marker:text-blue-500">중요 문제만 선택하면 중요 문제 태그가 있는 문항만 출제됩니다.</li>
-                    <li className="marker:text-blue-500">출제 기준 유형·난이도마다 최소 1문항 이상 배정됩니다.</li>
-                    <li className="marker:text-blue-500">전체 문제 수를 변경하면 유형·난이도별 문제 수가 배분됩니다.</li>
-                    <li className="marker:text-blue-500">유형·난이도별 문제 수는 하단에서 직접 수정할 수 있습니다.</li>
+                    <li className="marker:text-blue-500 font-medium text-foreground/80">선택된 유형·난이도 조합마다 지정된 배수(X1, X2, X3)만큼 문제가 출제됩니다.</li>
+                    <li className="marker:text-blue-500">난이도 선택과 무관하게 언제든 자유롭게 X1 / X2 / X3를 지정할 수 있습니다.</li>
+                    <li className="marker:text-blue-500">선택 가능한 최대 조합 수는 100개이며, 총 출제 문제 수는 최대 300문항으로 제한됩니다.</li>
                   </ul>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-            <span className="text-xs font-normal text-muted-foreground">
-              최대 {maxPossibleProblems}문제
-            </span>
           </div>
 
-          {/* 중요 문제만 출제 (Checkbox) - 타이틀 우측으로 이동 */}
+          {/* 중요 문제만 출제 Checkbox */}
           {selectedTypes.length > 0 && (
             <div className="flex items-center gap-1.5 px-1">
               <input
@@ -212,167 +206,63 @@ export function TaskSettingPanel({
             </div>
           )}
         </div>
-        <div className="flex items-center gap-3 mb-4">
-          <div className="flex gap-2 flex-1">
-            {[10, 20, 25, 50].map(p => (
-              <Button
-                key={p}
-                variant={quickTotalCount === p ? "default" : "outline"}
-                size="sm"
-                className={`flex-1 h-9 ${quickTotalCount === p ? "bg-blue-50 text-blue-600 border-blue-200 hover:bg-blue-100" : "text-muted-foreground"}`}
-                disabled={!isSettingEnabled || p < minPossibleProblems || p > maxPossibleProblems}
-                onClick={() => handleQuickTotalApply(p)}
-              >
-                {p}
-              </Button>
-            ))}
-          </div>
-          <div className="flex items-center gap-2">
-            <Input
-              type="number"
-              min={minPossibleProblems}
-              max={maxPossibleProblems}
-              value={quickTotalCount || ""}
-              onChange={e => {
-                const val = parseInt(e.target.value);
-                if (!isNaN(val)) {
-                  handleQuickTotalApply(val);
-                }
-              }}
-              onBlur={e => {
-                const val = parseInt(e.target.value);
-                if (isNaN(val) || val < minPossibleProblems) {
-                  handleQuickTotalApply(minPossibleProblems);
-                } else if (val > maxPossibleProblems) {
-                  handleQuickTotalApply(maxPossibleProblems);
-                }
-              }}
-              disabled={!isSettingEnabled}
-              className="w-16 h-9 text-center font-semibold"
-            />
-            <span className="text-sm text-muted-foreground">문제</span>
-          </div>
-        </div>
-        <div>
-          <input
-            type="range"
-            min={minPossibleProblems || 1}
-            max={maxPossibleProblems || 100}
-            value={quickTotalCount || minPossibleProblems || 1}
-            onChange={e => {
-              const val = parseInt(e.target.value);
-              handleQuickTotalApply(val);
-            }}
-            disabled={!isSettingEnabled || maxPossibleProblems === 0}
-            className="w-full accent-blue-500 disabled:opacity-30"
-          />
-          <div className="flex justify-between text-xs text-muted-foreground mt-1">
-            <span>{minPossibleProblems || 1}</span>
-            <span>{maxPossibleProblems || 150}</span>
-          </div>
-        </div>
 
-        {isImportantInsufficient && (
-          <p className="text-[11px] text-amber-600 mt-2 font-bold px-1">⚠️ 선택한 유형·난이도에 중요 문제가 없습니다.</p>
-        )}
+        {/* X1 / X2 / X3 배수 선택 버튼 */}
+        {(() => {
+          const comboCount = selectedTypes.length;
+          const currentMultiplier = selectedTypes[0]?.problemCount ?? 1;
+
+          return (
+            <div className="space-y-4">
+              <div className="flex gap-2.5">
+                {([1, 2, 3] as const).map(m => {
+                  const isActive = currentMultiplier === m;
+                  const isOverLimit = comboCount * m > 300;
+                  
+                  return (
+                    <Button
+                      key={m}
+                      variant={isActive ? "default" : "outline"}
+                      className={`flex-1 h-10 text-xs font-black transition-all ${
+                        isActive
+                          ? "bg-blue-600 text-white border-blue-600 hover:bg-blue-700 shadow-sm"
+                          : "text-slate-600 bg-white border-slate-200 hover:border-slate-350 hover:bg-slate-50/50"
+                      }`}
+                      disabled={readonly || comboCount === 0 || isOverLimit}
+                      onClick={() => onQuickSetAll(m)}
+                    >
+                      X{m} {isOverLimit && "(초과)"}
+                    </Button>
+                  );
+                })}
+              </div>
+
+              {/* 출제 요약 정보 보드 */}
+              <div className="bg-slate-50/70 p-3.5 rounded-xl border border-slate-200/60 grid grid-cols-3 gap-2 text-center shadow-2xs">
+                <div>
+                  <p className="text-[10px] font-extrabold text-slate-400 mb-1 uppercase tracking-wider">선택 항목</p>
+                  <p className="text-sm font-black text-slate-800">{comboCount}개</p>
+                </div>
+                <div className="border-l border-slate-200">
+                  <p className="text-[10px] font-extrabold text-slate-400 mb-1 uppercase tracking-wider">출제 배수</p>
+                  <p className="text-sm font-black text-blue-600">X{comboCount > 0 ? currentMultiplier : 0}</p>
+                </div>
+                <div className="border-l border-slate-200">
+                  <p className="text-[10px] font-extrabold text-slate-400 mb-1 uppercase tracking-wider">총 문제 수</p>
+                  <p className="text-sm font-black text-indigo-600">{comboCount * (comboCount > 0 ? currentMultiplier : 0)}문항</p>
+                </div>
+              </div>
+
+              {isImportantInsufficient && (
+                <p className="text-[11px] text-amber-600 font-bold px-1 animate-pulse">⚠️ 선택한 유형·난이도에 중요 문제가 없습니다.</p>
+              )}
+            </div>
+          );
+        })()}
       </div>
 
-      {/* 유형별 문제 수 상세 */}
-      {isSettingEnabled && (
-        <div className="pb-5 border-b border-slate-100">
-          <div 
-            className="flex items-center gap-1 cursor-pointer select-none group/title mb-3"
-            onClick={() => setIsDetailExpanded(!isDetailExpanded)}
-          >
-            {isDetailExpanded ? (
-              <ChevronDown className="h-4 w-4 text-muted-foreground group-hover/title:text-primary transition-colors" />
-            ) : (
-              <ChevronRight className="h-4 w-4 text-muted-foreground group-hover/title:text-primary transition-colors" />
-            )}
-            <p className="text-sm font-bold text-foreground group-hover/title:text-primary transition-colors">
-              유형·난이도별 문제 수 상세{!isDetailExpanded && ` ${selectedTypes.length}개`}
-            </p>
-          </div>
-          
-          {isDetailExpanded && (
-            <ul className="space-y-2 mt-3 bg-slate-50/50 p-3 rounded-xl border border-slate-200/70">
-              {selectedTypes.map(t => {
-              const max = t[countKey][t.difficulty];
-              const min = max > 0 ? 1 : 0;
-              const comboKey = `${t.typeId}__${t.difficulty}`;
-
-              return (
-                <li key={comboKey} className="flex items-center gap-3 text-sm bg-white p-2 rounded-lg border border-slate-100 shadow-sm">
-                  <div className="flex-1 min-w-0 flex items-center gap-2">
-                    <Badge variant="outline" className={`shrink-0 px-1.5 py-0 h-5 text-[10px] font-bold border-transparent ${
-                      t.difficulty === "basic" ? "bg-slate-100 text-slate-600" :
-                      t.difficulty === "intermediate" ? "bg-indigo-50 text-indigo-600" :
-                      "bg-purple-50 text-purple-600"
-                    }`}>
-                      {getDifficultyLabel(t.difficulty)}
-                    </Badge>
-                    
-                    <TooltipProvider delayDuration={300}>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <span className="truncate text-xs text-foreground font-medium cursor-default">
-                            {t.typeName}
-                          </span>
-                        </TooltipTrigger>
-                        <TooltipContent side="top" align="start" className="bg-white border-border shadow-md">
-                          <p className="text-xs font-medium">{t.typeName} · {getDifficultyLabel(t.difficulty)}</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  </div>
-
-                  {max === 0 ? (
-                    <span className="text-[11px] text-amber-500 font-medium whitespace-nowrap">
-                      {onlyImportant ? "중요 문제 없음" : "출제 가능 문제 없음"}
-                    </span>
-                  ) : (
-                    <div className="flex items-center gap-3 shrink-0">
-                      <span className="text-[11px] text-muted-foreground whitespace-nowrap">
-                        최대 <span className="font-bold text-foreground">{max}</span>
-                      </span>
-                      <div className="flex items-center gap-1.5">
-                        <Input
-                          type="number"
-                          min={min}
-                          max={max}
-                          value={t.problemCount || ""}
-                          disabled={readonly}
-                          onChange={e => {
-                            const val = parseInt(e.target.value);
-                            if (!isNaN(val)) {
-                              const v = Math.min(max, Math.max(min, val));
-                              onTypeProblemCountChange(t.typeId, t.difficulty, v);
-                            }
-                          }}
-                          onBlur={e => {
-                            const val = parseInt(e.target.value);
-                            if (isNaN(val) || val < min) {
-                              onTypeProblemCountChange(t.typeId, t.difficulty, min);
-                            } else if (val > max) {
-                              onTypeProblemCountChange(t.typeId, t.difficulty, max);
-                            }
-                          }}
-                          className="h-7 w-14 text-xs text-center font-bold"
-                        />
-                        <span className="text-xs text-muted-foreground">문항</span>
-                      </div>
-                    </div>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-          )}
-        </div>
-      )}
-
       {/* 문제 구성 방식 */}
-      <div className="pb-5 border-b border-slate-100">
+      <div className="pb-2">
         <div>
           <div className="flex items-center gap-1.5 mb-3">
             <p className="text-sm font-bold text-foreground">문제 구성 방식</p>

@@ -573,8 +573,8 @@ export default function ScienceTaskCenterPage() {
                             </h3>
                             
                             <p className={`text-[14px] ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-600'} leading-relaxed break-keep mb-7`}>
-                                과제 화면에 들어가 문제를 풀이하게 됩니다.<br />
-                                제출 버튼을 누르기 전까지 입력한 답안은 자동으로 유지됩니다.
+                                문제를 확인하고 풀이한 뒤 답안을 입력해 주세요.<br />
+                                제출 전까지 입력한 답안은 유지됩니다.
                             </p>
 
                             <div className="w-full grid grid-cols-2 gap-3.5">
@@ -588,7 +588,7 @@ export default function ScienceTaskCenterPage() {
                                     onClick={confirmStartTask}
                                     className={`py-3.5 ${isDarkMode ? 'bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white hover:shadow-[0_0_20px_rgba(6,182,212,0.3)]' : 'bg-cyan-600 hover:bg-cyan-700 text-white'} text-[13.5px] font-extrabold rounded-xl shadow-lg transition-all active:scale-95`}
                                 >
-                                    풀기 시작
+                                    과제 풀기
                                 </button>
                             </div>
                         </div>
@@ -624,8 +624,8 @@ export default function ScienceTaskCenterPage() {
                             </h3>
                             
                             <p className={`text-[14px] ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-600'} leading-relaxed break-keep mb-7`}>
-                                이전에 진행하던 과제 풀이 화면으로 이동하여<br />
-                                저장되어 있던 답안에 이어 풀기를 계속합니다.
+                                이전에 진행하던 과제 풀이 화면으로 이동합니다.<br />
+                                입력한 답안은 저장된 상태로 유지됩니다.
                             </p>
 
                             <div className="w-full grid grid-cols-2 gap-3.5">
