@@ -229,16 +229,22 @@ export function TaskSettingPanel({
               </div>
 
               {/* 계산식 표시 영역 */}
-              <div className="py-2.5 px-3 bg-blue-50/30 border border-blue-100 rounded-xl text-center text-xs font-bold text-slate-700 space-y-1.5">
-                <div>
+              {onlyImportant ? (
+                <div className="py-2.5 px-3 bg-blue-50/30 border border-blue-100 rounded-xl text-center text-xs font-bold text-slate-700 space-y-1.5">
+                  <div>
+                    중요 문제 기준 출제 = 총 <span className="text-indigo-600 font-black text-[13px]">{displayTotal}</span>문항
+                  </div>
+                  {hasInsufficientImportant && (
+                    <p className="text-[11px] text-amber-600 font-bold">
+                      중요 문제 수가 부족해 출제 가능한 문항 수만 반영됩니다.
+                    </p>
+                  )}
+                </div>
+              ) : (
+                <div className="py-2.5 px-3 bg-blue-50/30 border border-blue-100 rounded-xl text-center text-xs font-bold text-slate-700">
                   선택 유형 <span className="text-blue-600 font-extrabold">{comboCount}</span>개 × <span className="text-blue-600 font-extrabold">{comboCount > 0 ? currentMultiplier : 1}문항씩</span> = 총 <span className="text-indigo-600 font-black text-[13px]">{displayTotal}</span>문항
                 </div>
-                {hasInsufficientImportant && (
-                  <p className="text-[11px] text-amber-600 font-bold">
-                    중요 문제 수가 부족해 출제 가능한 문항 수만 반영됩니다.
-                  </p>
-                )}
-              </div>
+              )}
 
               {isImportantInsufficient && (
                 <p className="text-[11px] text-amber-600 font-bold px-1 animate-pulse">⚠️ 선택한 유형·난이도에 중요 문제가 없습니다.</p>
