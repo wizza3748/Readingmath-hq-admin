@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { TaskItem, calcAvgScore } from "@/lib/task-center-mock";
+import { TaskItem, calcAvgScore, MATH_CURRICULA, SCIENCE_CURRICULA } from "@/lib/task-center-mock";
 import { TaskStatusBadge } from "./task-status-badge";
 import { DifficultyBadges } from "./difficulty-badges";
 import { useRouter } from "next/navigation";
@@ -20,6 +20,73 @@ interface Props {
 
 function fmt(dt: string) {
   return dt.replace("T", " ").slice(0, 16);
+}
+
+function getSortedMinorsInfo(task: TaskItem) {
+  const types = task.selectedTypes;
+  if (!types || types.length === 0) {
+    return { firstPath: "-", firstMinor: "", totalCount: 0, allPaths: [] };
+  }
+  
+  const list = task.subject === "science" ? SCIENCE_CURRICULA : MATH_CURRICULA;
+  const curriculum = list.find(c => c.course === task.course);
+  
+  // 1. 선택된 고유 단원 목록 수집 (대단원 > 소단원 경로 형태 및 고유 단원명)
+  const checkedMinors = new Set<string>(); // "minorUnit" 단원명 수집
+  const pathMap = new Map<string, string>(); // "minorUnit" -> "majorUnit > minorUnit" 경로 매핑
+  const selectedTypeIds = new Set(types.map(t => t.typeId));
+  
+  if (curriculum) {
+    // 커리큘럼 정렬 순서대로 순회
+    curriculum.types.forEach(ct => {
+      if (selectedTypeIds.has(ct.id)) {
+        checkedMinors.add(ct.minorUnit);
+        if (!pathMap.has(ct.minorUnit)) {
+          pathMap.set(ct.minorUnit, `${ct.majorUnit} > ${ct.minorUnit}`);
+        }
+      }
+    });
+  } else {
+    // 폴백
+    types.forEach(t => {
+      checkedMinors.add(t.minorUnit);
+      if (!pathMap.has(t.minorUnit)) {
+        pathMap.set(t.minorUnit, `${t.majorUnit} > ${t.minorUnit}`);
+      }
+    });
+  }
+  
+  const sortedMinors = Array.from(checkedMinors);
+  const totalCount = sortedMinors.length;
+  
+  if (totalCount === 0) {
+    return { firstPath: "-", firstMinor: "", totalCount: 0, allPaths: [] };
+  }
+  
+  const firstMinor = sortedMinors[0];
+  const firstPath = pathMap.get(firstMinor) || "-";
+  const allPaths = sortedMinors.map(minor => pathMap.get(minor) || "");
+  
+  return { firstPath, firstMinor, totalCount, allPaths };
+}
+
+function getDisplayTaskName(task: TaskItem): string {
+  if (!task.createdAt) return task.name;
+  const targetDate = new Date(task.createdAt);
+  const yyyy = targetDate.getFullYear();
+  const mm = String(targetDate.getMonth() + 1).padStart(2, "0");
+  const dd = String(targetDate.getDate()).padStart(2, "0");
+  const dateStr = `${yyyy}-${mm}-${dd}`;
+  
+  const info = getSortedMinorsInfo(task);
+  if (info.totalCount === 0) {
+    return task.name;
+  }
+  
+  const base = info.firstMinor;
+  return info.totalCount <= 1 
+    ? `${dateStr} | ${base}` 
+    : `${dateStr} | ${base} 외 ${info.totalCount - 1}건`;
 }
 
 function UnitPopover({ items, label }: { items: string[]; label: string }) {
@@ -66,7 +133,17 @@ function TypeCountPopover({ task }: { task: TaskItem }) {
     setMounted(true);
   }, []);
 
-  const count = task.selectedTypes.length;
+  // 고유 유형 수집
+  const uniqueTypes = React.useMemo(() => {
+    const seen = new Set<string>();
+    return task.selectedTypes.filter(t => {
+      if (seen.has(t.typeId)) return false;
+      seen.add(t.typeId);
+      return true;
+    });
+  }, [task.selectedTypes]);
+
+  const count = uniqueTypes.length;
   if (count === 0) return <span className="text-muted-foreground text-sm">0개</span>;
 
   return (
@@ -85,7 +162,7 @@ function TypeCountPopover({ task }: { task: TaskItem }) {
           <button onClick={() => setOpen(false)} className="p-0.5 hover:bg-slate-100 rounded transition-colors"><X className="h-3.5 w-3.5 text-slate-400 hover:text-slate-600" /></button>
         </div>
         <ul className="max-h-60 overflow-y-auto py-2 divide-y divide-slate-50">
-          {task.selectedTypes.map((t, i) => (
+          {uniqueTypes.map((t, i) => (
             <li key={i} className="px-4 py-2 text-xs">
               <span className="text-slate-400">{t.majorUnit} &gt; {t.minorUnit} &gt; </span>
               <span className="font-semibold text-slate-700">{t.typeName}</span>
@@ -118,9 +195,15 @@ export function TaskTable({ tasks }: Props) {
     const completedB = b.assignedStudents.filter(s => s.status === "submitted");
     switch (sortKey) {
       case "id": va = a.id; vb = b.id; break;
-      case "name": va = a.name; vb = b.name; break;
+      case "name": va = getDisplayTaskName(a); vb = getDisplayTaskName(b); break;
       case "course": va = a.course; vb = b.course; break;
-      case "typeCount": va = a.selectedTypes.length; vb = b.selectedTypes.length; break;
+      case "typeCount": {
+        const setA = new Set(a.selectedTypes.map(t => t.typeId));
+        const setB = new Set(b.selectedTypes.map(t => t.typeId));
+        va = setA.size;
+        vb = setB.size;
+        break;
+      }
       case "problemCount": va = a.totalProblems; vb = b.totalProblems; break;
       case "createdAt": va = a.createdAt; vb = b.createdAt; break;
       case "assignedCount": va = a.assignedStudents.length; vb = b.assignedStudents.length; break;
@@ -140,15 +223,15 @@ export function TaskTable({ tasks }: Props) {
   );
 
   const getUnitLabel = (task: TaskItem) => {
-    const types = task.selectedTypes;
-    if (types.length === 0) return "-";
-    const first = types[0];
-    const label = `${first.majorUnit} > ${first.minorUnit}`;
-    return types.length === 1 ? label : `${label} 외 ${types.length - 1}건`;
+    const info = getSortedMinorsInfo(task);
+    if (info.totalCount === 0) return "-";
+    return info.totalCount === 1 ? info.firstPath : `${info.firstPath} 외 ${info.totalCount - 1}건`;
   };
 
-  const getUnitItems = (task: TaskItem) =>
-    Array.from(new Set(task.selectedTypes.map(t => `${t.majorUnit} > ${t.minorUnit}`)));
+  const getUnitItems = (task: TaskItem) => {
+    const info = getSortedMinorsInfo(task);
+    return info.allPaths;
+  };
 
   return (
     <>
@@ -198,9 +281,9 @@ export function TaskTable({ tasks }: Props) {
                     <button
                       onClick={() => router.push(`/admin/task-center/${task.id}`)}
                       className="text-indigo-600 hover:text-indigo-800 hover:underline font-semibold truncate block w-full text-left transition-colors duration-150"
-                      title={task.name}
+                      title={getDisplayTaskName(task)}
                     >
-                      {task.name.length > 20 ? task.name.slice(0, 20) + "…" : task.name}
+                      {getDisplayTaskName(task).length > 20 ? getDisplayTaskName(task).slice(0, 20) + "…" : getDisplayTaskName(task)}
                     </button>
                   </td>
                   <td className="py-3 px-3 whitespace-nowrap font-semibold text-slate-700">{task.course}</td>
@@ -261,7 +344,7 @@ export function TaskTable({ tasks }: Props) {
         open={!!deleteTarget}
         onOpenChange={(o) => !o && setDeleteTarget(null)}
         title="과제 삭제"
-        description={`"${deleteTarget?.name}" 과제를 삭제하시겠습니까? 삭제한 과제는 복구할 수 없습니다.`}
+        description={`"${deleteTarget ? getDisplayTaskName(deleteTarget) : ""}" 과제를 삭제하시겠습니까? 삭제한 과제는 복구할 수 없습니다.`}
         confirmLabel="삭제"
         confirmVariant="destructive"
         onConfirm={() => {
@@ -278,7 +361,7 @@ export function TaskTable({ tasks }: Props) {
         open={!!duplicateTarget}
         onOpenChange={(o) => !o && setDuplicateTarget(null)}
         title="과제 복제"
-        description={`"${duplicateTarget?.name}" 과제를 복제하시겠습니까?`}
+        description={`"${duplicateTarget ? getDisplayTaskName(duplicateTarget) : ""}" 과제를 복제하시겠습니까?`}
         confirmLabel="복제"
         onConfirm={() => {
           if (duplicateTarget) {

@@ -121,7 +121,10 @@ export function TaskSettingPanel({
       <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-5">
         {/* 과제명 */}
       <div className="pb-5 border-b border-slate-100">
-        <p className="text-sm font-bold text-foreground mb-2">과제명</p>
+        <div className="flex items-baseline gap-2 mb-2">
+          <span className="text-sm font-bold text-foreground">과제명</span>
+          <span className="text-xs text-muted-foreground font-normal">선택 단원 기준으로 과제명이 자동 생성됩니다.</span>
+        </div>
         <Input
           value={name}
           onChange={e => onNameChange(e.target.value)}
@@ -186,12 +189,18 @@ export function TaskSettingPanel({
           const comboCount = selectedTypes.length;
           const currentMultiplier = selectedTypes[0]?.problemCount ?? 1;
 
+          // 중요 문제만 출제 ON 시: 중요 문제가 있는 조합만 유효, 초과 여부도 중요 문제 최대 수 기준 추가 체크
+          const validComboCount = onlyImportant
+            ? selectedTypes.filter(t => t.importantCount[t.difficulty] > 0).length
+            : comboCount;
+
           return (
             <div className="space-y-4">
               <div className="flex gap-2.5">
                 {([1, 2, 3] as const).map(m => {
                   const isActive = currentMultiplier === m;
-                  const isOverLimit = comboCount * m > 300;
+                  const isOverTotalLimit = comboCount * m > 300;
+                  const isOverLimit = isOverTotalLimit;
                   
                   return (
                     <Button
@@ -199,10 +208,10 @@ export function TaskSettingPanel({
                       variant={isActive ? "default" : "outline"}
                       className={`flex-1 h-10 text-xs font-black transition-all ${
                         isActive
-                          ? "bg-blue-600 text-white border-blue-600 hover:bg-blue-700 shadow-sm"
-                          : "text-slate-600 bg-white border-slate-200 hover:border-slate-350 hover:bg-slate-50/50"
+                          ? "bg-blue-600 text-white border-blue-600 hover:bg-blue-700 hover:text-white shadow-sm"
+                          : "text-slate-600 bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50 hover:text-slate-700"
                       }`}
-                      disabled={readonly || comboCount === 0 || isOverLimit}
+                      disabled={readonly || comboCount === 0 || isOverLimit || isImportantInsufficient}
                       onClick={() => onQuickSetAll(m)}
                     >
                       {m}문항씩 {isOverLimit && "(초과)"}
@@ -212,9 +221,24 @@ export function TaskSettingPanel({
               </div>
 
               {/* 계산식 표시 영역 */}
-              <div className="py-2.5 px-3 bg-blue-50/30 border border-blue-100 rounded-xl text-center text-xs font-bold text-slate-700">
-                선택 유형 <span className="text-blue-600 font-extrabold">{comboCount}</span>개 × <span className="text-blue-600 font-extrabold">{comboCount > 0 ? currentMultiplier : 1}문항씩</span> = 총 <span className="text-indigo-600 font-black text-[13px]">{comboCount * (comboCount > 0 ? currentMultiplier : 0)}</span>문항
-              </div>
+              {onlyImportant ? (
+                <div className="py-2.5 px-3 bg-amber-50/50 border border-amber-100 rounded-xl text-center text-xs font-bold text-slate-700">
+                  {isImportantInsufficient ? (
+                    <span className="text-amber-600">중요 문제 출제 가능한 유형·난이도 조합이 없습니다.</span>
+                  ) : (
+                    <>
+                      중요 문제 출제 |
+                      {" "}<span className="text-amber-600 font-extrabold">{comboCount}</span>개 조합 중{" "}
+                      <span className="text-amber-600 font-extrabold">{validComboCount}</span>개 출제 가능 |
+                      {" "}최대 <span className="text-indigo-600 font-black text-[13px]">{maxPossibleProblems}</span>문항
+                    </>
+                  )}
+                </div>
+              ) : (
+                <div className="py-2.5 px-3 bg-blue-50/30 border border-blue-100 rounded-xl text-center text-xs font-bold text-slate-700">
+                  선택 유형 <span className="text-blue-600 font-extrabold">{comboCount}</span>개 × <span className="text-blue-600 font-extrabold">{comboCount > 0 ? currentMultiplier : 1}문항씩</span> = 총 <span className="text-indigo-600 font-black text-[13px]">{comboCount * (comboCount > 0 ? currentMultiplier : 0)}</span>문항
+                </div>
+              )}
 
               {isImportantInsufficient && (
                 <p className="text-[11px] text-amber-600 font-bold px-1 animate-pulse">⚠️ 선택한 유형·난이도에 중요 문제가 없습니다.</p>
@@ -257,7 +281,11 @@ export function TaskSettingPanel({
               <Button
                 key={m}
                 variant={problemMode === m ? "default" : "outline"}
-                className={`flex-1 h-9 ${problemMode === m ? "bg-blue-50 text-blue-600 border-blue-200 hover:bg-blue-100" : "text-muted-foreground"}`}
+                className={`flex-1 h-10 text-xs font-black transition-all ${
+                  problemMode === m
+                    ? "bg-blue-600 text-white border-blue-600 hover:bg-blue-700 hover:text-white shadow-sm"
+                    : "text-slate-600 bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50 hover:text-slate-700"
+                }`}
                 disabled={readonly}
                 onClick={() => {
                   onProblemModeChange(m);

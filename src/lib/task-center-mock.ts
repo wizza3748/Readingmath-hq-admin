@@ -37802,20 +37802,60 @@ export const INITIAL_TASKS: TaskItem[] = [
         "minorUnit": "(1) 받아올림이 없는 세 자리 수의 덧셈",
         "typeName": "받아올림이 없는 덧셈 여러 가지 방법으로 계산하기",
         "difficulty": "intermediate",
-        "problemCount": 5,
-        "maxCount": {
-          "basic": 5,
-          "intermediate": 3,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 1,
-          "advanced": 1
-        }
+        "problemCount": 2,
+        "maxCount": { "basic": 5, "intermediate": 3, "advanced": 2 },
+        "importantCount": { "basic": 2, "intermediate": 1, "advanced": 1 }
+      },
+      {
+        "curriculumId": "math-초3-1",
+        "course": "초3-1",
+        "typeId": "mt-초3-1-0-1",
+        "majorUnit": "1단원-덧셈과 뺄셈",
+        "minorUnit": "(1) 받아올림이 없는 세 자리 수의 덧셈",
+        "typeName": "받아올림이 있는 덧셈 세로셈 계산하기",
+        "difficulty": "intermediate",
+        "problemCount": 2,
+        "maxCount": { "basic": 5, "intermediate": 3, "advanced": 2 },
+        "importantCount": { "basic": 2, "intermediate": 1, "advanced": 1 }
+      },
+      {
+        "curriculumId": "math-초3-1",
+        "course": "초3-1",
+        "typeId": "mt-초3-1-0-2",
+        "majorUnit": "1단원-덧셈과 뺄셈",
+        "minorUnit": "(1) 받아올림이 없는 세 자리 수의 덧셈",
+        "typeName": "받아올림이 없는 뺄셈 계산하기",
+        "difficulty": "intermediate",
+        "problemCount": 2,
+        "maxCount": { "basic": 5, "intermediate": 3, "advanced": 2 },
+        "importantCount": { "basic": 2, "intermediate": 1, "advanced": 1 }
+      },
+      {
+        "curriculumId": "math-초3-1",
+        "course": "초3-1",
+        "typeId": "mt-초3-1-0-3",
+        "majorUnit": "1단원-덧셈과 뺄셈",
+        "minorUnit": "(1) 받아올림이 없는 세 자리 수의 덧셈",
+        "typeName": "덧셈과 뺄셈의 혼합 문장제 해결하기",
+        "difficulty": "intermediate",
+        "problemCount": 2,
+        "maxCount": { "basic": 5, "intermediate": 3, "advanced": 2 },
+        "importantCount": { "basic": 2, "intermediate": 1, "advanced": 1 }
+      },
+      {
+        "curriculumId": "math-초3-1",
+        "course": "초3-1",
+        "typeId": "mt-초3-1-0-4",
+        "majorUnit": "1단원-덧셈과 뺄셈",
+        "minorUnit": "(1) 받아올림이 없는 세 자리 수의 덧셈",
+        "typeName": "세 자리 수의 덧셈과 뺄셈 활용하기",
+        "difficulty": "intermediate",
+        "problemCount": 2,
+        "maxCount": { "basic": 5, "intermediate": 3, "advanced": 2 },
+        "importantCount": { "basic": 2, "intermediate": 1, "advanced": 1 }
       }
     ],
-    "totalProblems": 5,
+    "totalProblems": 10,
     "createdAt": "2026-05-19T09:00:00Z",
     "assignedStudents": [],
     "assignedClasses": [],
@@ -41080,4 +41120,96 @@ export function buildAutoName(types: SelectedType[]): string {
   const base = first.typeName;
   return uniqueTypeIds.length <= 1 ? base : `${base} 외 ${uniqueTypeIds.length - 1}건`;
 }
+
+// ─────────────────────────────────────────────
+// 목데이터 유형 수 및 문제 수 런타임 보정 스크립트
+// ─────────────────────────────────────────────
+
+const TASK_SPEC_MAP: Record<string, { typeCount: number; problemCount: number; difficulty: Difficulty }> = {
+  // 수학 소형 (유형 5~8개, 문제 10~16문항)
+  "task-001": { typeCount: 5, problemCount: 2, difficulty: "intermediate" },
+  "task-002": { typeCount: 5, problemCount: 2, difficulty: "advanced" },
+  "task-003": { typeCount: 5, problemCount: 2, difficulty: "basic" },
+  "task-math-004": { typeCount: 8, problemCount: 2, difficulty: "basic" },
+  "task-math-005": { typeCount: 8, problemCount: 2, difficulty: "intermediate" },
+  // 과학 소형 (유형 5개, 문제 10문항)
+  "task-sci-102": { typeCount: 5, problemCount: 2, difficulty: "intermediate" },
+  "task-sci-103": { typeCount: 5, problemCount: 2, difficulty: "advanced" },
+  "task-sci-104": { typeCount: 5, problemCount: 2, difficulty: "basic" },
+
+  // 수학 중형 (유형 12~18개, 문제 24~36문항)
+  "task-math-006": { typeCount: 12, problemCount: 2, difficulty: "intermediate" },
+  "task-math-007": { typeCount: 12, problemCount: 2, difficulty: "advanced" },
+  "task-math-008": { typeCount: 12, problemCount: 2, difficulty: "basic" },
+  "task-math-009": { typeCount: 18, problemCount: 2, difficulty: "intermediate" },
+  // 과학 중형 (유형 12~18개, 문제 24~36문항)
+  "task-sci-105": { typeCount: 12, problemCount: 2, difficulty: "intermediate" },
+  "task-sci-106": { typeCount: 12, problemCount: 2, difficulty: "advanced" },
+  "task-sci-107": { typeCount: 12, problemCount: 2, difficulty: "basic" },
+  "task-sci-108": { typeCount: 18, problemCount: 2, difficulty: "intermediate" },
+
+  // 수학 대형 (유형 25~100개, 문제 50~300문항)
+  "task-math-010": { typeCount: 25, problemCount: 2, difficulty: "intermediate" },
+  "task-math-011": { typeCount: 40, problemCount: 2, difficulty: "basic" },
+  "task-math-012": { typeCount: 62, problemCount: 2, difficulty: "intermediate" },
+  "task-101": { typeCount: 100, problemCount: 3, difficulty: "intermediate" },
+  // 과학 대형 (유형 25~93개, 문제 50~186문항)
+  "task-sci-109": { typeCount: 25, problemCount: 2, difficulty: "intermediate" },
+  "task-sci-110": { typeCount: 40, problemCount: 2, difficulty: "intermediate" },
+  "task-sci-111": { typeCount: 62, problemCount: 2, difficulty: "intermediate" },
+  "task-sci-112": { typeCount: 93, problemCount: 2, difficulty: "intermediate" },
+};
+
+INITIAL_TASKS.forEach(task => {
+  const spec = TASK_SPEC_MAP[task.id];
+  if (!spec) return;
+
+  const curricula = task.subject === "math" ? MATH_CURRICULA : SCIENCE_CURRICULA;
+  const curriculum = curricula.find(c => c.course === task.course);
+  if (!curriculum) return;
+
+  // 고유한 유형 수집
+  const seen = new Set<string>();
+  const uniqueTypes = curriculum.types.filter(t => {
+    if (seen.has(t.id)) return false;
+    seen.add(t.id);
+    return true;
+  });
+
+  const targets = uniqueTypes.slice(0, spec.typeCount);
+  
+  task.selectedTypes = targets.map(t => ({
+    curriculumId: curriculum.id,
+    course: curriculum.course,
+    typeId: t.id,
+    majorUnit: t.majorUnit,
+    minorUnit: t.minorUnit,
+    typeName: t.typeName,
+    difficulty: spec.difficulty,
+    problemCount: spec.problemCount,
+    maxCount: {
+      basic: spec.difficulty === "basic" ? 3 : 0,
+      intermediate: spec.difficulty === "intermediate" ? 3 : 0,
+      advanced: spec.difficulty === "advanced" ? 3 : 0,
+    },
+    importantCount: {
+      basic: spec.difficulty === "basic" ? 1 : 0,
+      intermediate: spec.difficulty === "intermediate" ? 1 : 0,
+      advanced: spec.difficulty === "advanced" ? 1 : 0,
+    }
+  }));
+
+  // totalProblems 갱신
+  task.totalProblems = task.selectedTypes.length * spec.problemCount;
+  
+  // difficulties 갱신
+  task.difficulties = [spec.difficulty];
+
+  // 학생 제출 문항 수 보정
+  if (task.assignedStudents && task.assignedStudents.length > 0) {
+    task.assignedStudents.forEach(stu => {
+      stu.problemCount = task.totalProblems;
+    });
+  }
+});
 

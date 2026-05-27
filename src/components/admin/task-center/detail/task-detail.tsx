@@ -67,14 +67,14 @@ export default function TaskDetail({ taskId }: Props) {
     onlyImportant: normalizedExistingTask?.onlyImportant ?? false,
   }));
 
-  const getAutoTaskName = React.useCallback((types: SelectedType[]) => {
+  const getAutoTaskName = React.useCallback((types: SelectedType[], taskCreatedAt?: string) => {
     if (!types || types.length === 0) return "";
     
-    // 1. 오늘 날짜 YYYY-MM-DD 포맷팅
-    const today = new Date();
-    const yyyy = today.getFullYear();
-    const mm = String(today.getMonth() + 1).padStart(2, "0");
-    const dd = String(today.getDate()).padStart(2, "0");
+    // 1. 날짜 YYYY-MM-DD 포맷팅 (createdAt이 제공되면 해당 날짜 사용, 없으면 오늘 날짜 사용)
+    const targetDate = taskCreatedAt ? new Date(taskCreatedAt) : new Date();
+    const yyyy = targetDate.getFullYear();
+    const mm = String(targetDate.getMonth() + 1).padStart(2, "0");
+    const dd = String(targetDate.getDate()).padStart(2, "0");
     const dateStr = `${yyyy}-${mm}-${dd}`;
     
     // 2. 선택된 유형들의 단원 목록을 '커리큘럼 트리 정렬 순서'를 기준으로 고유값 수집
@@ -120,7 +120,7 @@ export default function TaskDetail({ taskId }: Props) {
       setPrioritizeUnsolved(normalizedExistingTask.prioritizeUnsolved);
       setOnlyImportant(normalizedExistingTask.onlyImportant ?? false);
       
-      const autoName = getAutoTaskName(normalizedExistingTask.selectedTypes);
+      const autoName = getAutoTaskName(normalizedExistingTask.selectedTypes, normalizedExistingTask.createdAt);
       const isManual = normalizedExistingTask.name !== autoName;
       setNameManuallyEdited(isManual);
 
@@ -190,7 +190,7 @@ export default function TaskDetail({ taskId }: Props) {
       
       setSelectedTypes(adjustedTypes);
       if (!nameManuallyEdited) {
-        setName(getAutoTaskName(adjustedTypes));
+        setName(getAutoTaskName(adjustedTypes, normalizedExistingTask?.createdAt));
       }
     } else {
       // 삭제나 동일 유지인 경우
@@ -202,7 +202,7 @@ export default function TaskDetail({ taskId }: Props) {
       
       setSelectedTypes(adjustedTypes);
       if (!nameManuallyEdited) {
-        setName(getAutoTaskName(adjustedTypes));
+        setName(getAutoTaskName(adjustedTypes, normalizedExistingTask?.createdAt));
       }
     }
   };
@@ -226,7 +226,13 @@ export default function TaskDetail({ taskId }: Props) {
     }
   };
 
-  const totalProblems = selectedTypes.reduce((s, t) => s + t.problemCount, 0);
+  // 중요 문제만 출제 ON 시: 각 조합의 importantCount[difficulty] 를 초과하지 않도록 clamp
+  const totalProblems = onlyImportant
+    ? selectedTypes.reduce((s, t) => {
+        const importantMax = t.importantCount[t.difficulty];
+        return s + (importantMax > 0 ? Math.min(t.problemCount, importantMax) : 0);
+      }, 0)
+    : selectedTypes.reduce((s, t) => s + t.problemCount, 0);
 
   const handleProblemModeChange = (mode: ProblemMode) => {
     setProblemMode(mode);
