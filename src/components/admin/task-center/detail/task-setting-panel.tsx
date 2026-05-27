@@ -78,8 +78,12 @@ export function TaskSettingPanel({
     maxPossibleProblems = selectedTypes.reduce((sum, t) => sum + t[countKey][t.difficulty], 0);
   }
 
-  // 중요 문제 부족 상태
+  // 중요 문제 부족 상태 (ON + 전혀 없음)
   const isImportantInsufficient = onlyImportant && maxPossibleProblems === 0 && selectedTypes.length > 0;
+
+  // 선택된 조합 전체에 중요 문제가 하나도 없는지 (체크박스 비활성 여부 판단)
+  const hasNoImportantProblems = selectedTypes.length > 0 &&
+    selectedTypes.reduce((sum, t) => sum + t.importantCount[t.difficulty], 0) === 0;
 
   // 2. 입력 활성화 여부
   const isSettingEnabled = !readonly && !isImportantInsufficient && selectedTypes.length > 0;
@@ -168,7 +172,7 @@ export function TaskSettingPanel({
                 id="onlyImportant"
                 type="checkbox"
                 checked={onlyImportant}
-                disabled={readonly || (selectedTypes.reduce((sum, t) => sum + t.importantCount[t.difficulty], 0) === 0)}
+                disabled={readonly || hasNoImportantProblems}
                 onChange={e => onOnlyImportantChange(e.target.checked)}
                 className="h-3.5 w-3.5 accent-primary rounded border-gray-300 cursor-pointer disabled:cursor-not-allowed"
               />
@@ -231,6 +235,10 @@ export function TaskSettingPanel({
                 <div className="py-2.5 px-3 bg-blue-50/30 border border-blue-100 rounded-xl text-center text-xs font-bold text-slate-700">
                   선택 유형 <span className="text-blue-600 font-extrabold">{comboCount}</span>개 × <span className="text-blue-600 font-extrabold">{comboCount > 0 ? currentMultiplier : 1}문항씩</span> = 총 <span className="text-indigo-600 font-black text-[13px]">{displayTotal}</span>문항
                 </div>
+              )}
+
+              {hasNoImportantProblems && !onlyImportant && (
+                <p className="text-[11px] text-muted-foreground px-1">선택한 유형·난이도에 중요 문제가 없습니다.</p>
               )}
 
               {isImportantInsufficient && (
