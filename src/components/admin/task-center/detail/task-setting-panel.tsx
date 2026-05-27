@@ -189,19 +189,13 @@ export function TaskSettingPanel({
           const comboCount = selectedTypes.length;
           const currentMultiplier = selectedTypes[0]?.problemCount ?? 1;
 
-          // 중요 문제만 출제 ON 시 clamp된 실제 출제 문제 수
+          // 중요 문제만 출제 ON 시: 중요 문제가 있는 조합만 합산
           const displayTotal = onlyImportant
             ? selectedTypes.reduce((s, t) => {
                 const importantMax = t.importantCount[t.difficulty];
                 return s + (importantMax > 0 ? Math.min(t.problemCount, importantMax) : 0);
               }, 0)
             : comboCount * (comboCount > 0 ? currentMultiplier : 0);
-
-          // 중요 문제 수가 선택 문항 수보다 적은 조합이 하나라도 있는지
-          const hasInsufficientImportant = onlyImportant && selectedTypes.some(t => {
-            const importantMax = t.importantCount[t.difficulty];
-            return importantMax > 0 && importantMax < t.problemCount;
-          });
 
           return (
             <div className="space-y-4">
@@ -230,15 +224,8 @@ export function TaskSettingPanel({
 
               {/* 계산식 표시 영역 */}
               {onlyImportant ? (
-                <div className="py-2.5 px-3 bg-blue-50/30 border border-blue-100 rounded-xl text-center text-xs font-bold text-slate-700 space-y-1.5">
-                  <div>
-                    중요 문제 기준 출제 = 총 <span className="text-indigo-600 font-black text-[13px]">{displayTotal}</span>문항
-                  </div>
-                  {hasInsufficientImportant && (
-                    <p className="text-[11px] text-amber-600 font-bold">
-                      중요 문제 수가 부족해 출제 가능한 문항 수만 반영됩니다.
-                    </p>
-                  )}
+                <div className="py-2.5 px-3 bg-blue-50/30 border border-blue-100 rounded-xl text-center text-xs font-bold text-slate-700">
+                  중요 문제 기준 출제 = 총 <span className="text-indigo-600 font-black text-[13px]">{displayTotal}</span>문항
                 </div>
               ) : (
                 <div className="py-2.5 px-3 bg-blue-50/30 border border-blue-100 rounded-xl text-center text-xs font-bold text-slate-700">
