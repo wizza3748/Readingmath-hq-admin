@@ -189,18 +189,26 @@ export function TaskSettingPanel({
           const comboCount = selectedTypes.length;
           const currentMultiplier = selectedTypes[0]?.problemCount ?? 1;
 
-          // 중요 문제만 출제 ON 시: 중요 문제가 있는 조합만 유효, 초과 여부도 중요 문제 최대 수 기준 추가 체크
-          const validComboCount = onlyImportant
-            ? selectedTypes.filter(t => t.importantCount[t.difficulty] > 0).length
-            : comboCount;
+          // 중요 문제만 출제 ON 시 clamp된 실제 출제 문제 수
+          const displayTotal = onlyImportant
+            ? selectedTypes.reduce((s, t) => {
+                const importantMax = t.importantCount[t.difficulty];
+                return s + (importantMax > 0 ? Math.min(t.problemCount, importantMax) : 0);
+              }, 0)
+            : comboCount * (comboCount > 0 ? currentMultiplier : 0);
+
+          // 중요 문제 수가 선택 문항 수보다 적은 조합이 하나라도 있는지
+          const hasInsufficientImportant = onlyImportant && selectedTypes.some(t => {
+            const importantMax = t.importantCount[t.difficulty];
+            return importantMax > 0 && importantMax < t.problemCount;
+          });
 
           return (
             <div className="space-y-4">
               <div className="flex gap-2.5">
                 {([1, 2, 3] as const).map(m => {
                   const isActive = currentMultiplier === m;
-                  const isOverTotalLimit = comboCount * m > 300;
-                  const isOverLimit = isOverTotalLimit;
+                  const isOverLimit = comboCount * m > 300;
                   
                   return (
                     <Button
@@ -221,24 +229,16 @@ export function TaskSettingPanel({
               </div>
 
               {/* 계산식 표시 영역 */}
-              {onlyImportant ? (
-                <div className="py-2.5 px-3 bg-amber-50/50 border border-amber-100 rounded-xl text-center text-xs font-bold text-slate-700">
-                  {isImportantInsufficient ? (
-                    <span className="text-amber-600">중요 문제 출제 가능한 유형·난이도 조합이 없습니다.</span>
-                  ) : (
-                    <>
-                      중요 문제 출제 |
-                      {" "}<span className="text-amber-600 font-extrabold">{comboCount}</span>개 조합 중{" "}
-                      <span className="text-amber-600 font-extrabold">{validComboCount}</span>개 출제 가능 |
-                      {" "}최대 <span className="text-indigo-600 font-black text-[13px]">{maxPossibleProblems}</span>문항
-                    </>
-                  )}
+              <div className="py-2.5 px-3 bg-blue-50/30 border border-blue-100 rounded-xl text-center text-xs font-bold text-slate-700 space-y-1.5">
+                <div>
+                  선택 유형 <span className="text-blue-600 font-extrabold">{comboCount}</span>개 × <span className="text-blue-600 font-extrabold">{comboCount > 0 ? currentMultiplier : 1}문항씩</span> = 총 <span className="text-indigo-600 font-black text-[13px]">{displayTotal}</span>문항
                 </div>
-              ) : (
-                <div className="py-2.5 px-3 bg-blue-50/30 border border-blue-100 rounded-xl text-center text-xs font-bold text-slate-700">
-                  선택 유형 <span className="text-blue-600 font-extrabold">{comboCount}</span>개 × <span className="text-blue-600 font-extrabold">{comboCount > 0 ? currentMultiplier : 1}문항씩</span> = 총 <span className="text-indigo-600 font-black text-[13px]">{comboCount * (comboCount > 0 ? currentMultiplier : 0)}</span>문항
-                </div>
-              )}
+                {hasInsufficientImportant && (
+                  <p className="text-[11px] text-amber-600 font-bold">
+                    중요 문제 수가 부족해 출제 가능한 문항 수만 반영됩니다.
+                  </p>
+                )}
+              </div>
 
               {isImportantInsufficient && (
                 <p className="text-[11px] text-amber-600 font-bold px-1 animate-pulse">⚠️ 선택한 유형·난이도에 중요 문제가 없습니다.</p>
