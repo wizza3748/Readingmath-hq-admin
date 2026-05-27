@@ -10,7 +10,7 @@ import { TypeProblemPreviewModal } from "./type-problem-preview-modal";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Trash2, X, Eye, ChevronDown, ChevronRight } from "lucide-react";
+import { Trash2, X, Eye, ChevronDown, ChevronRight, Check } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -602,7 +602,7 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
                                         {hasImportant && (
                                           <span className="absolute -top-1.5 -right-1 text-amber-500 text-[11px] font-black select-none drop-shadow-2xs">★</span>
                                         )}
-                                        ?
+                                        {isSelected && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                                       </div>
                                     </TooltipTrigger>
                                     <TooltipContent side="top" className="bg-slate-900 text-white border border-slate-800 text-[10.5px] font-medium py-1.5 px-2.5 shadow-md max-w-[280px]">
