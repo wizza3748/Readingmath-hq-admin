@@ -113,14 +113,14 @@ export default function TaskDetail({ taskId }: Props) {
 
   React.useEffect(() => {
     if (normalizedExistingTask) {
-      setName(normalizedExistingTask.name);
+      const autoName = getAutoTaskName(normalizedExistingTask.selectedTypes, normalizedExistingTask.createdAt);
+      setName(autoName || normalizedExistingTask.name);
       setSelectedTypes(normalizedExistingTask.selectedTypes);
       setCheckedTypeIds(Array.from(new Set(normalizedExistingTask.selectedTypes.map(t => t.typeId))));
       setProblemMode(normalizedExistingTask.problemMode);
       setPrioritizeUnsolved(normalizedExistingTask.prioritizeUnsolved);
       setOnlyImportant(normalizedExistingTask.onlyImportant ?? false);
       
-      const autoName = getAutoTaskName(normalizedExistingTask.selectedTypes, normalizedExistingTask.createdAt);
       const isManual = normalizedExistingTask.name !== autoName;
       setNameManuallyEdited(isManual);
 

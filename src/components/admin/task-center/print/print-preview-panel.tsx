@@ -185,9 +185,12 @@ const AbbreviatedPageHeader = ({ task, color, printType }: any) => {
 export const QuestionBody = ({ q, color, fontSize, onImageLoad, scaleDownChoices }: any) => {
   return (
     <div className="max-w-full min-w-0 overflow-hidden flex flex-col">
-      <div className="flex items-start gap-2 mb-2 font-bold max-w-full min-w-0" style={{ fontSize: `${fontSize}pt` }}>
-        <span style={{ color }} className="shrink-0">{q.teacherQuestionNo}.</span>
-        <div dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.stem) }} className="leading-snug max-w-full min-w-0 overflow-hidden" />
+      <div className="mb-2 font-bold max-w-full min-w-0 leading-snug" style={{ fontSize: `${fontSize}pt` }}>
+        <span style={{ color }} className="inline mr-1.5 whitespace-nowrap">{q.teacherQuestionNo}.</span>
+        <span 
+          dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.stem) }} 
+          className="inline max-w-full min-w-0 overflow-hidden [&_p]:inline [&_div]:inline" 
+        />
       </div>
 
       {q.passage && (
@@ -220,8 +223,8 @@ export const QuestionBody = ({ q, color, fontSize, onImageLoad, scaleDownChoices
                 dangerouslySetInnerHTML={{ __html: parseAndRenderMath(choice) }} 
                 className={`max-w-full min-w-0 overflow-hidden [&_table]:!max-w-full [&_table]:w-full [&_table]:table-fixed ${
                   scaleDownChoices 
-                    ? "[&_img]:!min-w-[40%] [&_img]:!max-h-[140px] [&_img]:!h-auto [&_img]:object-contain" 
-                    : "[&_img]:!min-w-[70%] [&_img]:!max-w-full [&_img]:!h-auto [&_img]:object-contain"
+                    ? "[&_img]:!max-w-[70%] [&_img]:!max-h-[110px] [&_img]:!h-auto [&_img]:object-contain" 
+                    : "[&_img]:!max-w-[90%] [&_img]:!max-h-[150px] [&_img]:!h-auto [&_img]:object-contain"
                 }`}
               />
             </div>
