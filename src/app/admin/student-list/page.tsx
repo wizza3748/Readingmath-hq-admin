@@ -1,0 +1,679 @@
+"use client";
+
+import * as React from "react";
+import { useRouter } from "next/navigation";
+import { Plus, Pencil, Trash2, Download, RefreshCw, Layers, FileSpreadsheet } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
+import { ConfirmDialog } from "@/components/admin/task-center/confirm-dialog";
+import {
+  Student,
+  StudentServiceStatus,
+  StudentServiceType,
+  getStudentStatusLabel,
+  getStudentServiceTypeLabel,
+  getStoredStudents,
+  saveStoredStudents,
+  getAssignedTeacherMap,
+} from "@/lib/student-mock";
+import { ALL_CLASSES, getStoredTeachers, Teacher } from "@/lib/teacher-mock";
+
+export default function StudentListPage() {
+  const { toast } = useToast();
+  const router = useRouter();
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  // ── 데이터 상태 ──────────────────────────────────────────────
+  const [students, setStudents] = React.useState<Student[]>([]);
+  const [teachers, setTeachers] = React.useState<Teacher[]>([]);
+
+  // ── 필터 상태 (선생님목록 스타일에 맞춰 한 줄 통합형) ─────────────────
+  const [filterStatus, setFilterStatus] = React.useState<StudentServiceStatus | "all">("all");
+  const [filterType, setFilterType] = React.useState<StudentServiceType | "all">("all");
+  const [filterGrade, setFilterGrade] = React.useState<string>("all");
+  const [filterClass, setFilterClass] = React.useState<string>("all");
+  const [filterRecommend, setFilterRecommend] = React.useState<string>("all");
+  const [searchText, setSearchText] = React.useState("");
+
+  const [appliedStatus, setAppliedStatus] = React.useState<StudentServiceStatus | "all">("all");
+  const [appliedType, setAppliedType] = React.useState<StudentServiceType | "all">("all");
+  const [appliedGrade, setAppliedGrade] = React.useState<string>("all");
+  const [appliedClass, setAppliedClass] = React.useState<string>("all");
+  const [appliedRecommend, setAppliedRecommend] = React.useState<string>("all");
+  const [searchApplied, setSearchApplied] = React.useState("");
+
+  // ── 정렬 상태 ──────────────────────────────────────────────
+  const [sortField, setSortField] = React.useState<string | null>(null);
+  const [sortDirection, setSortDirection] = React.useState<"asc" | "desc">("asc");
+
+  // ── 페이징 ──────────────────────────────────────────────────
+  const [page, setPage] = React.useState(1);
+  const [perPage, setPerPage] = React.useState(10);
+
+  // ── 삭제 확인 다이얼로그 ────────────────────────────────────
+  const [deleteTarget, setDeleteTarget] = React.useState<Student | null>(null);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+    setStudents(getStoredStudents());
+    setTeachers(getStoredTeachers());
+  }, []);
+
+  // ── 실시간 담당 선생님 매핑용 딕셔너리 연산 ─────────────────
+  const teacherMap = React.useMemo(() => {
+    return getAssignedTeacherMap(teachers);
+  }, [teachers]);
+
+  // ── 추천코드 필터링 목록 추출 ──────────────────────────────
+  const recommendCodes = React.useMemo(() => {
+    const codes = students
+      .map(s => s.recommendCode)
+      .filter((c): c is string => typeof c === "string" && c.trim() !== "");
+    return Array.from(new Set(codes));
+  }, [students]);
+
+  // ── 필터링 연산 ──────────────────────────────────────────────
+  const filtered = React.useMemo(() => {
+    return students.filter(s => {
+      if (appliedStatus !== "all" && s.serviceStatus !== appliedStatus) return false;
+      if (appliedType !== "all" && s.serviceType !== appliedType) return false;
+      if (appliedGrade !== "all" && s.grade !== appliedGrade) return false;
+      if (appliedClass !== "all" && s.classId !== appliedClass) return false;
+      if (appliedRecommend !== "all" && s.recommendCode !== appliedRecommend) return false;
+      if (searchApplied.length >= 1) {
+        const q = searchApplied.toLowerCase();
+        if (
+          !s.name.toLowerCase().includes(q) &&
+          !s.loginId.toLowerCase().includes(q)
+        ) return false;
+      }
+      return true;
+    });
+  }, [students, appliedStatus, appliedType, appliedGrade, appliedClass, appliedRecommend, searchApplied]);
+
+  // ── 정렬 연산 ──────────────────────────────────────────────
+  const sorted = React.useMemo(() => {
+    if (!sortField) return filtered;
+
+    return [...filtered].sort((a, b) => {
+      let valA: any = "";
+      let valB: any = "";
+
+      if (sortField === "name") {
+        valA = a.name;
+        valB = b.name;
+      } else if (sortField === "grade") {
+        const gradeOrder: Record<string, number> = {
+          "초등 3": 1, "초등 4": 2, "초등 5": 3, "초등 6": 4,
+          "중등 1": 5, "중등 2": 6, "중등 3": 7, "미정": 99
+        };
+        valA = gradeOrder[a.grade] || 99;
+        valB = gradeOrder[b.grade] || 99;
+      } else if (sortField === "semester") {
+        const semOrder: Record<string, number> = { "1학기": 1, "2학기": 2 };
+        valA = semOrder[a.semester] || 99;
+        valB = semOrder[b.semester] || 99;
+      } else if (sortField === "class") {
+        const clsA = ALL_CLASSES.find(c => c.id === a.classId)?.name || "";
+        const clsB = ALL_CLASSES.find(c => c.id === b.classId)?.name || "";
+        valA = clsA;
+        valB = clsB;
+      } else if (sortField === "serviceEndDate") {
+        valA = a.serviceEndDate || "9999-99-99";
+        valB = b.serviceEndDate || "9999-99-99";
+      } else if (sortField === "createdAt") {
+        valA = a.createdAt;
+        valB = b.createdAt;
+      }
+
+      if (valA < valB) return sortDirection === "asc" ? -1 : 1;
+      if (valA > valB) return sortDirection === "asc" ? 1 : -1;
+      return 0;
+    });
+  }, [filtered, sortField, sortDirection]);
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / perPage));
+  const paged = sorted.slice((page - 1) * perPage, page * perPage);
+  const startRow = filtered.length === 0 ? 0 : (page - 1) * perPage + 1;
+  const endRow = Math.min(page * perPage, filtered.length);
+
+  const pageNums = Array.from({ length: Math.min(totalPages, 7) }, (_, i) => {
+    if (totalPages <= 7) return i + 1;
+    if (page <= 4) return i + 1;
+    if (page >= totalPages - 3) return totalPages - 6 + i;
+    return page - 3 + i;
+  });
+
+  // ── 핸들러 ──────────────────────────────────────────────────
+  const handleSort = (field: string) => {
+    if (sortField === field) {
+      if (sortDirection === "asc") {
+        setSortDirection("desc");
+      } else {
+        setSortField(null); // 3차 클릭 시 정렬 해제
+      }
+    } else {
+      setSortField(field);
+      setSortDirection("asc");
+    }
+    setPage(1);
+  };
+
+  const handleSearch = () => {
+    setAppliedStatus(filterStatus);
+    setAppliedType(filterType);
+    setAppliedGrade(filterGrade);
+    setAppliedClass(filterClass);
+    setAppliedRecommend(filterRecommend);
+    setSearchApplied(searchText.trim());
+    setPage(1);
+  };
+
+  const handleReset = () => {
+    setFilterStatus("all");
+    setFilterType("all");
+    setFilterGrade("all");
+    setFilterClass("all");
+    setFilterRecommend("all");
+    setSearchText("");
+
+    setAppliedStatus("all");
+    setAppliedType("all");
+    setAppliedGrade("all");
+    setAppliedClass("all");
+    setAppliedRecommend("all");
+    setSearchApplied("");
+    setPage(1);
+  };
+
+  const handleDeleteClick = (student: Student) => {
+    setDeleteTarget(student);
+  };
+
+  const handleDeleteConfirm = () => {
+    if (!deleteTarget) return;
+    const nextStudents = students.filter(s => s.id !== deleteTarget.id);
+    setStudents(nextStudents);
+    saveStoredStudents(nextStudents);
+    toast({ title: "학생 정보가 삭제되었습니다." });
+    setDeleteTarget(null);
+  };
+
+  if (!isMounted) {
+    return <div className="min-h-[calc(100vh-80px)] bg-[#f4f6f9]" />;
+  }
+
+  return (
+    <div className="w-full min-h-[calc(100vh-80px)] bg-[#f4f6f9] px-6 pt-5 pb-6">
+      
+      {/* ── 페이지 헤더 ───────────────────────────────────────── */}
+      <div className="pb-4 flex items-center justify-between">
+        <h1 className="text-[1.5rem] font-bold text-foreground">학생목록</h1>
+        <div className="flex items-center gap-2">
+          {/* 학생 개별 등록 */}
+          <Button
+            className="h-9 px-4 gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold shadow-sm"
+            onClick={() => toast({ title: "준비중입니다!" })}
+          >
+            <Plus className="h-4 w-4" />
+            학생 개별 등록
+          </Button>
+          {/* 학생 일괄 등록 (개별 등록 우측 배치, 솔리드 스타일 대칭) */}
+          <Button
+            className="h-9 px-4 gap-1.5 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold shadow-sm"
+            onClick={() => toast({ title: "학생 일괄 등록이 준비중입니다." })}
+          >
+            <Plus className="h-4 w-4" />
+            학생 일괄 등록
+          </Button>
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        
+        {/* ── 통합 검색 필터 영역 (선생님목록의 고급스러운 패밀리룩 이식) ── */}
+        <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm px-5 py-4">
+          <div className="flex flex-wrap items-end gap-x-4 gap-y-3">
+            
+            {/* 서비스 상태 필터 */}
+            <div>
+              <p className="text-xs font-semibold text-muted-foreground mb-1.5">서비스 상태</p>
+              <Select value={filterStatus} onValueChange={v => setFilterStatus(v as any)}>
+                <SelectTrigger className="h-9 w-32 text-sm bg-white border-slate-200">
+                  <SelectValue placeholder="서비스 상태" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">전체</SelectItem>
+                  <SelectItem value="before_use">사용전</SelectItem>
+                  <SelectItem value="in_use">사용중</SelectItem>
+                  <SelectItem value="suspended">서비스 정지</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* 서비스 타입 필터 */}
+            <div>
+              <p className="text-xs font-semibold text-muted-foreground mb-1.5">서비스 타입</p>
+              <Select value={filterType} onValueChange={v => setFilterType(v as any)}>
+                <SelectTrigger className="h-9 w-36 text-sm bg-white border-slate-200">
+                  <SelectValue placeholder="서비스 타입" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">전체</SelectItem>
+                  <SelectItem value="math">리딩수학</SelectItem>
+                  <SelectItem value="science">리딩과학</SelectItem>
+                  <SelectItem value="combo">리딩수학+과학 통합</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* 학년 필터 */}
+            <div>
+              <p className="text-xs font-semibold text-muted-foreground mb-1.5">학년</p>
+              <Select value={filterGrade} onValueChange={setFilterGrade}>
+                <SelectTrigger className="h-9 w-28 text-sm bg-white border-slate-200">
+                  <SelectValue placeholder="학년" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">전체</SelectItem>
+                  {["초등 3", "초등 4", "초등 5", "초등 6", "중등 1", "중등 2", "중등 3", "미정"].map(g => (
+                    <SelectItem key={g} value={g}>{g}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* 반 필터 */}
+            <div>
+              <p className="text-xs font-semibold text-muted-foreground mb-1.5">반</p>
+              <Select value={filterClass} onValueChange={setFilterClass}>
+                <SelectTrigger className="h-9 w-32 text-sm bg-white border-slate-200">
+                  <SelectValue placeholder="반 전체" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">전체</SelectItem>
+                  {ALL_CLASSES.map(c => (
+                    <SelectItem key={c.id} value={c.id}>{c.name}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* 추천코드 필터 */}
+            <div>
+              <p className="text-xs font-semibold text-muted-foreground mb-1.5">추천코드</p>
+              <Select value={filterRecommend} onValueChange={setFilterRecommend}>
+                <SelectTrigger className="h-9 w-32 text-sm bg-white border-slate-200">
+                  <SelectValue placeholder="추천코드" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">전체</SelectItem>
+                  {recommendCodes.map(code => (
+                    <SelectItem key={code} value={code}>{code}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* 검색어 인풋 */}
+            <div className="flex-1 min-w-[200px] max-w-xs">
+              <p className="text-xs font-semibold text-muted-foreground mb-1.5">검색어</p>
+              <Input
+                value={searchText}
+                onChange={e => setSearchText(e.target.value)}
+                onKeyDown={e => e.key === "Enter" && handleSearch()}
+                placeholder="학생 이름 또는 아이디 입력"
+                className="h-9 text-sm bg-white border-slate-200"
+              />
+            </div>
+
+            {/* 필터 조작 버튼군 */}
+            <div className="flex items-center gap-2">
+              <Button
+                size="sm"
+                onClick={handleSearch}
+                className="h-9 px-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold"
+              >
+                검색
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={handleReset}
+                className="h-9 px-4 text-sm font-semibold bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
+              >
+                초기화
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* ── 보조 및 기능 액션 버튼 영역 ───────────────────────── */}
+        <div className="flex flex-wrap items-center justify-end gap-2">
+          {/* 학생 반 일괄 변경 */}
+          <Button
+            size="sm"
+            variant="outline"
+            className="h-9 px-3 gap-1.5 bg-green-50 hover:bg-green-100/80 text-green-700 border-green-200 font-semibold"
+            onClick={() => toast({ title: "학생 반 일괄 변경 기능이 준비중입니다." })}
+          >
+            <RefreshCw className="h-3.5 w-3.5 text-green-600" />
+            학생 반 일괄 변경
+          </Button>
+
+          {/* 반 관리 */}
+          <Button
+            size="sm"
+            variant="outline"
+            className="h-9 px-3 gap-1.5 bg-blue-50 hover:bg-blue-100/80 text-blue-700 border-blue-200 font-semibold"
+            onClick={() => toast({ title: "반 관리 모달이 준비중입니다." })}
+          >
+            <Layers className="h-4 w-4 text-blue-600" />
+            반 관리
+          </Button>
+
+          {/* 엑셀 다운로드 (반 관리 우측 배치 및 차분한 그레이톤 스타일 적용) */}
+          <Button
+            size="sm"
+            variant="outline"
+            className="h-9 px-3 gap-1.5 bg-slate-50 hover:bg-slate-100/80 text-slate-700 border-slate-200 font-semibold"
+            onClick={() => toast({ title: "엑셀 다운로드가 준비중입니다." })}
+          >
+            <FileSpreadsheet className="h-4 w-4 text-slate-500" />
+            엑셀 다운로드
+          </Button>
+        </div>
+
+        {/* ── 테이블 ────────────────────────────────────────── */}
+        <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm min-w-[1200px]">
+              <thead>
+                <tr className="border-b border-slate-100 bg-slate-50/80">
+                  <th className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-20">
+                    고유 번호
+                  </th>
+                  <th
+                    onClick={() => handleSort("name")}
+                    className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-24 cursor-pointer select-none hover:bg-slate-100/80"
+                  >
+                    학생 이름 {sortField === "name" ? (sortDirection === "asc" ? "↑" : "↓") : ""}
+                  </th>
+                  <th className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-20">
+                    PIN 번호
+                  </th>
+                  <th className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-32">
+                    아이디
+                  </th>
+                  <th className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-36">
+                    부모님 연락처
+                  </th>
+                  <th className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-40">
+                    서비스 타입
+                  </th>
+                  <th
+                    onClick={() => handleSort("grade")}
+                    className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-20 cursor-pointer select-none hover:bg-slate-100/80"
+                  >
+                    학년 {sortField === "grade" ? (sortDirection === "asc" ? "↑" : "↓") : ""}
+                  </th>
+                  <th
+                    onClick={() => handleSort("semester")}
+                    className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-20 cursor-pointer select-none hover:bg-slate-100/80"
+                  >
+                    학기 {sortField === "semester" ? (sortDirection === "asc" ? "↑" : "↓") : ""}
+                  </th>
+                  <th
+                    onClick={() => handleSort("class")}
+                    className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-28 cursor-pointer select-none hover:bg-slate-100/80"
+                  >
+                    반 {sortField === "class" ? (sortDirection === "asc" ? "↑" : "↓") : ""}
+                  </th>
+                  {/* 추가된 조회 전용 담당 선생님 컬럼 */}
+                  <th className="text-left px-4 py-3 text-[11px] font-bold text-slate-600 bg-slate-100/50 whitespace-nowrap w-28">
+                    담당 선생님
+                  </th>
+                  <th className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-24">
+                    서비스상태
+                  </th>
+                  <th
+                    onClick={() => handleSort("serviceEndDate")}
+                    className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-28 cursor-pointer select-none hover:bg-slate-100/80"
+                  >
+                    서비스 종료일 {sortField === "serviceEndDate" ? (sortDirection === "asc" ? "↑" : "↓") : ""}
+                  </th>
+                  <th
+                    onClick={() => handleSort("createdAt")}
+                    className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-28 cursor-pointer select-none hover:bg-slate-100/80"
+                  >
+                    등록일 {sortField === "createdAt" ? (sortDirection === "asc" ? "↑" : "↓") : ""}
+                  </th>
+                  <th className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-28">
+                    추천코드
+                  </th>
+                  <th className="px-4 py-3 w-16" />
+                </tr>
+              </thead>
+              <tbody>
+                {paged.length === 0 ? (
+                  <tr>
+                    <td colSpan={15} className="text-center py-16 text-slate-400 text-sm">
+                      조회된 학생 정보가 없습니다.
+                    </td>
+                  </tr>
+                ) : (
+                  paged.map(student => {
+                    const matchedClass = ALL_CLASSES.find(c => c.id === student.classId);
+                    const teacherName = student.classId ? teacherMap[student.classId] || "-" : "-";
+
+                    // 서비스 타입 배지 스타일링
+                    let serviceTypeBadge = "bg-slate-50 text-slate-600 border-slate-200";
+                    if (student.serviceType === "math") {
+                      serviceTypeBadge = "bg-orange-50 text-orange-700 border-orange-100";
+                    } else if (student.serviceType === "science") {
+                      serviceTypeBadge = "bg-blue-50 text-blue-700 border-blue-100";
+                    } else if (student.serviceType === "combo") {
+                      serviceTypeBadge = "bg-amber-50 text-amber-700 border-amber-100";
+                    }
+
+                    // 서비스 상태 배지 스타일링
+                    let statusBadge = "bg-slate-100 text-slate-600 border-slate-200";
+                    if (student.serviceStatus === "in_use") {
+                      statusBadge = "bg-emerald-50 text-emerald-700 border-emerald-100";
+                    } else if (student.serviceStatus === "suspended") {
+                      statusBadge = "bg-orange-50 text-orange-700 border-orange-100";
+                    } else if (student.serviceStatus === "before_use") {
+                      statusBadge = "bg-slate-100 text-slate-700 border-slate-200";
+                    }
+
+                    return (
+                      <tr
+                        key={student.id}
+                        className="border-b border-slate-100 last:border-0 hover:bg-slate-50/60 transition-colors"
+                      >
+                        {/* 고유 번호 */}
+                        <td className="px-4 py-3 text-slate-500 text-xs">
+                          {student.seq}
+                        </td>
+
+                        {/* 학생 이름 */}
+                        <td className="px-4 py-3">
+                          <button
+                            onClick={() => toast({ title: "상세 진입 기능은 다음 작업에 연결됩니다." })}
+                            className="text-blue-600 font-semibold text-sm hover:underline"
+                          >
+                            {student.name}
+                          </button>
+                        </td>
+
+                        {/* PIN 번호 */}
+                        <td className="px-4 py-3 text-slate-600 text-sm">
+                          {student.pinNumber || "-"}
+                        </td>
+
+                        {/* 아이디 */}
+                        <td className="px-4 py-3 text-slate-700 text-sm font-medium">
+                          {student.loginId || "-"}
+                        </td>
+
+                        {/* 부모님 연락처 */}
+                        <td className="px-4 py-3 text-slate-700 text-sm">
+                          {student.parentPhone || "-"}
+                        </td>
+
+                        {/* 서비스 타입 배지 */}
+                        <td className="px-4 py-3">
+                          <span className={`text-[11px] font-bold px-2 py-0.5 rounded border ${serviceTypeBadge}`}>
+                            {getStudentServiceTypeLabel(student.serviceType)}
+                          </span>
+                        </td>
+
+                        {/* 학년 */}
+                        <td className="px-4 py-3 text-slate-700 text-sm">
+                          {student.grade}
+                        </td>
+
+                        {/* 학기 */}
+                        <td className="px-4 py-3 text-slate-700 text-sm">
+                          {student.semester || "-"}
+                        </td>
+
+                        {/* 반 */}
+                        <td className="px-4 py-3 text-slate-700 text-sm font-semibold">
+                          {matchedClass ? matchedClass.name : "-"}
+                        </td>
+
+                        {/* 담당 선생님 (조회 전용 및 강조 스타일) */}
+                        <td className="px-4 py-3 text-slate-800 text-sm font-bold bg-slate-50/30">
+                          {teacherName}
+                        </td>
+
+                        {/* 서비스상태 */}
+                        <td className="px-4 py-3">
+                          <span className={`text-[11px] font-bold px-2 py-0.5 rounded border ${statusBadge}`}>
+                            {getStudentStatusLabel(student.serviceStatus)}
+                          </span>
+                        </td>
+
+                        {/* 서비스 종료일 */}
+                        <td className="px-4 py-3 text-slate-500 text-xs">
+                          {student.serviceEndDate || "-"}
+                        </td>
+
+                        {/* 등록일 */}
+                        <td className="px-4 py-3 text-slate-500 text-xs">
+                          {student.createdAt}
+                        </td>
+
+                        {/* 추천코드 */}
+                        <td className="px-4 py-3 text-slate-600 text-xs">
+                          {student.recommendCode || "-"}
+                        </td>
+
+                        {/* 액션 */}
+                        <td className="px-4 py-3">
+                          <div className="flex items-center gap-1 justify-end">
+                            {/* 수정 */}
+                            <button
+                              className="w-7 h-7 flex items-center justify-center rounded-md text-blue-500 hover:bg-blue-50 transition-colors"
+                              onClick={() => toast({ title: "상세 진입 기능은 다음 작업에 연결됩니다." })}
+                              title="수정"
+                            >
+                              <Pencil className="h-3.5 w-3.5" />
+                            </button>
+
+                            {/* 삭제 */}
+                            <button
+                              className="w-7 h-7 flex items-center justify-center rounded-md text-rose-400 hover:bg-rose-50 transition-colors"
+                              onClick={() => handleDeleteClick(student)}
+                              title="삭제"
+                            >
+                              <Trash2 className="h-3.5 w-3.5" />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })
+                )}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* ── 페이징 ─────────────────────────────────────────── */}
+        <div className="flex items-center justify-between">
+          {/* 좌측: 건수 + 페이지당 */}
+          <div className="flex items-center gap-2 text-sm text-slate-500">
+            <span>
+              {startRow} - {endRow} / 전체 {filtered.length}
+            </span>
+            <Select
+              value={String(perPage)}
+              onValueChange={v => { setPerPage(Number(v)); setPage(1); }}
+            >
+              <SelectTrigger className="h-7 w-16 text-sm border-slate-200 bg-white">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {[10, 20, 50, 100].map(n => (
+                  <SelectItem key={n} value={String(n)}>{n}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* 우측: 페이지 버튼 */}
+          <div className="flex items-center gap-1">
+            <button
+              onClick={() => setPage(p => Math.max(1, p - 1))}
+              disabled={page === 1}
+              className="w-8 h-8 rounded-lg text-sm hover:bg-muted disabled:opacity-40"
+            >
+              ‹
+            </button>
+            {pageNums.map(n => (
+              <button
+                key={n}
+                onClick={() => setPage(n)}
+                className={`w-8 h-8 rounded-lg text-sm font-medium transition-colors ${
+                  n === page
+                    ? "bg-primary text-primary-foreground"
+                    : "hover:bg-muted text-foreground"
+                }`}
+              >
+                {n}
+              </button>
+            ))}
+            <button
+              onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+              disabled={page === totalPages}
+              className="w-8 h-8 rounded-lg text-sm hover:bg-muted disabled:opacity-40"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* ── 삭제 확인 다이얼로그 ─────────────────────────────── */}
+      <ConfirmDialog
+        open={!!deleteTarget}
+        onOpenChange={open => { if (!open) setDeleteTarget(null); }}
+        title="학생 삭제"
+        description={`'${deleteTarget?.name}' 학생을 삭제하시겠습니까?\n삭제된 정보는 복구할 수 없습니다.`}
+        confirmLabel="삭제"
+        confirmVariant="destructive"
+        onConfirm={handleDeleteConfirm}
+      />
+    </div>
+  );
+}

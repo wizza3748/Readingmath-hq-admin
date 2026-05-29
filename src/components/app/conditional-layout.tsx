@@ -36,7 +36,7 @@ export default function ConditionalLayout({
         );
     }
 
-    const sidebarDefaultOpen = !pathname?.startsWith("/admin/task-center");
+    const sidebarDefaultOpen = !pathname?.startsWith("/admin/task-center") && !pathname?.startsWith("/admin/teacher-list");
 
     return (
         <body className="font-body antialiased" suppressHydrationWarning>

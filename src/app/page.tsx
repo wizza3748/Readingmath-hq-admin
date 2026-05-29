@@ -82,6 +82,13 @@ const agencyWorkItems: WorkItem[] = [
     isNew: true,
   },
   {
+    id: "RM-383",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-383",
+    title: "[기관] 선생님별 담당 반 설정",
+    internalUrl: "/admin/teacher-list",
+    isNew: true,
+  },
+  {
     id: "RM-237",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-237",
     title: "[기관] 학습내역 기능 개선",

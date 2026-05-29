@@ -26,6 +26,7 @@ interface Props {
   checkedTypeIds: string[];
   bulkDifficulties: Record<Difficulty, boolean>;
   onlyImportant: boolean;
+  onlyImportantType: boolean;
   readonly?: boolean;
   onTypesChange: (types: SelectedType[]) => void;
   onCheckedTypesChange: (ids: string[]) => void;
@@ -59,7 +60,7 @@ function getUnitGroupId(type: CurriculumType, subject: Subject, course: string):
   return fallbackKey;
 }
 
-export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bulkDifficulties, onlyImportant, readonly, onTypesChange, onCheckedTypesChange, onBulkDifficultiesChange }: Props) {
+export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bulkDifficulties, onlyImportant, onlyImportantType, readonly, onTypesChange, onCheckedTypesChange, onBulkDifficultiesChange }: Props) {
   const { toast } = useToast();
   const courses = React.useMemo(() => {
     const raw = getCoursesBySubject(subject);
@@ -124,11 +125,12 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
   const [searchInput, setSearchInput] = React.useState("");
   const [searchQuery, setSearchQuery] = React.useState("");
 
+  // 커리큘럼 트리 전용: 검색 + 중요 유형 필터 모두 적용
   const filteredCurriculum: Curriculum | undefined = React.useMemo(() => {
     if (!curriculum) return undefined;
     const baseTypes = curriculum.types;
     const q = searchQuery.trim().toLowerCase();
-    const filtered = q
+    const searched = q
       ? baseTypes.filter(t =>
           t.typeName.toLowerCase().includes(q) ||
           t.majorUnit.toLowerCase().includes(q) ||
@@ -137,55 +139,102 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
       : baseTypes;
     
     const minorTypeCounters: Record<string, number> = {};
-    
-    return {
-      ...curriculum,
-      types: filtered.map(t => {
-        const minor = t.minorUnit;
-        if (minorTypeCounters[minor] === undefined) {
-          minorTypeCounters[minor] = 0;
-        } else {
-          minorTypeCounters[minor] += 1;
-        }
-        const idx = minorTypeCounters[minor];
-        
-        // 소단원 내에서 2번째(idx 1)와 6번째(idx 5) 유형만 중요 유형으로 지정
-        const isImportant = idx === 1 || idx === 5;
-        const fakeImportantCount = isImportant
-          ? { basic: 1, intermediate: 1, advanced: 1 }
-          : { basic: 0, intermediate: 0, advanced: 0 };
+    const withImportant = searched.map(t => {
+      const minor = t.minorUnit;
+      if (minorTypeCounters[minor] === undefined) {
+        minorTypeCounters[minor] = 0;
+      } else {
+        minorTypeCounters[minor] += 1;
+      }
+      const idx = minorTypeCounters[minor];
+      const isImportant = idx === 1 || idx === 5;
+      const fakeImportantCount = isImportant
+        ? { basic: 1, intermediate: 1, advanced: 1 }
+        : { basic: 0, intermediate: 0, advanced: 0 };
+      return {
+        ...t,
+        difficultyCount: { basic: 3, intermediate: 3, advanced: 3 },
+        importantCount: fakeImportantCount
+      };
+    });
 
-        return {
-          ...t,
-          difficultyCount: { basic: 3, intermediate: 3, advanced: 3 },
-          importantCount: fakeImportantCount
-        };
-      })
-    };
+    // 커리큘럼 트리에서만 중요 유형 필터 적용 (★ 없는 유형 숨김)
+    const finalTypes = onlyImportantType
+      ? withImportant.filter(t =>
+          t.importantCount.basic > 0 || t.importantCount.intermediate > 0 || t.importantCount.advanced > 0
+        )
+      : withImportant;
+    
+    return { ...curriculum, types: finalTypes };
+  }, [curriculum, searchQuery, onlyImportantType]);
+
+  // 단원별 출제 유형 현황 전용: 검색만 적용, 중요 유형 필터 미적용 (비중요 유형도 회색 칩으로 표시)
+  const statusCurriculum: Curriculum | undefined = React.useMemo(() => {
+    if (!curriculum) return undefined;
+    const baseTypes = curriculum.types;
+    const q = searchQuery.trim().toLowerCase();
+    const searched = q
+      ? baseTypes.filter(t =>
+          t.typeName.toLowerCase().includes(q) ||
+          t.majorUnit.toLowerCase().includes(q) ||
+          t.minorUnit.toLowerCase().includes(q)
+        )
+      : baseTypes;
+
+    const minorTypeCounters: Record<string, number> = {};
+    const withImportant = searched.map(t => {
+      const minor = t.minorUnit;
+      if (minorTypeCounters[minor] === undefined) {
+        minorTypeCounters[minor] = 0;
+      } else {
+        minorTypeCounters[minor] += 1;
+      }
+      const idx = minorTypeCounters[minor];
+      const isImportant = idx === 1 || idx === 5;
+      const fakeImportantCount = isImportant
+        ? { basic: 1, intermediate: 1, advanced: 1 }
+        : { basic: 0, intermediate: 0, advanced: 0 };
+      return {
+        ...t,
+        difficultyCount: { basic: 3, intermediate: 3, advanced: 3 },
+        importantCount: fakeImportantCount
+      };
+    });
+
+    return { ...curriculum, types: withImportant };
   }, [curriculum, searchQuery]);
 
   const selectedCombos = selectedTypes.map(t => makeComboKey(t.typeId, t.difficulty));
 
-  // 1. 선택된 단원(groupId) 목록 추출 (checkedTypeIds 기준, 순서 보존)
+  // 1. 선택된 단원(groupId) 목록 추출 — statusCurriculum 기준 (중요 유형 필터 무관)
   const activeMinors = React.useMemo(() => {
-    if (!filteredCurriculum || !checkedTypeIds.length) return [];
+    if (!statusCurriculum || !checkedTypeIds.length) return [];
     const checkedMinors = new Set<string>();
-    filteredCurriculum.types.forEach(t => {
+    statusCurriculum.types.forEach(t => {
       if (checkedTypeIds.includes(t.id)) {
         checkedMinors.add(getUnitGroupId(t, subject, course));
       }
     });
     return Array.from(checkedMinors);
-  }, [filteredCurriculum, checkedTypeIds, subject, course]);
+  }, [statusCurriculum, checkedTypeIds, subject, course]);
 
-  // 2. 각 groupId에 해당하는 유형 리스트 그룹화 (checkedTypeIds 기준)
+  // 2. 각 groupId의 유형 그룹화 — statusCurriculum 기준 (체크된 유형 소속 소단원의 모든 유형 포함)
   const minorGroupedTypes = React.useMemo(() => {
     const groups: Record<string, { majorUnit: string; minorUnit: string; types: CurriculumType[] }> = {};
-    if (filteredCurriculum) {
-      filteredCurriculum.types.forEach(t => {
-        if (!checkedTypeIds.includes(t.id)) return; // 체크된 유형만 하단 현황에 포함!
-        
+    if (statusCurriculum) {
+      // 체크된 유형이 속한 소단원(groupId) 목록
+      const checkedGroupIds = new Set<string>();
+      statusCurriculum.types.forEach(t => {
+        if (checkedTypeIds.includes(t.id)) {
+          checkedGroupIds.add(getUnitGroupId(t, subject, course));
+        }
+      });
+
+      // 해당 소단원에 속하는 모든 유형을 그룹에 포함 (비중요 유형도 포함하여 회색 칩으로 표시)
+      statusCurriculum.types.forEach(t => {
         const groupId = getUnitGroupId(t, subject, course);
+        if (!checkedGroupIds.has(groupId)) return;
+
         if (!groups[groupId]) {
           groups[groupId] = { majorUnit: t.majorUnit, minorUnit: t.minorUnit, types: [] };
         }
@@ -195,7 +244,7 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
       });
     }
     return groups;
-  }, [filteredCurriculum, checkedTypeIds, subject, course]);
+  }, [statusCurriculum, checkedTypeIds, subject, course]);
 
   const handleToggleCombo = (typeId: string, difficulty: Difficulty, type: CurriculumType) => {
     if (readonly) return;
@@ -581,10 +630,10 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
                         return (
                           <div key={d} className="p-3 flex flex-wrap gap-2.5 justify-start items-center h-full min-h-[60px]">
                             {group.types.map((type, idx) => {
-                              const isSelected = selectedCombos.includes(makeComboKey(type.id, d));
+                              const isTypeImportant = type.importantCount.basic > 0 || type.importantCount.intermediate > 0 || type.importantCount.advanced > 0;
+                              const isSelected = selectedCombos.includes(makeComboKey(type.id, d)) && (!onlyImportantType || isTypeImportant);
                               const hasImportant = type.importantCount[d] > 0;
                               
-                              const isTypeImportant = type.importantCount.basic > 0 || type.importantCount.intermediate > 0 || type.importantCount.advanced > 0;
                               const importantQuestionText = hasImportant ? "중요문제 있음" : "중요문제 없음";
                               const tooltipDetailText = isTypeImportant 
                                 ? `중요유형 · ${importantQuestionText}` 
@@ -611,7 +660,18 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
                                     <TooltipTrigger asChild>
                                       <div
                                         className={chipClass}
-                                        onClick={() => !readonly && handleToggleCombo(type.id, d, type)}
+                                        onClick={() => {
+                                          if (readonly) return;
+                                          if (onlyImportantType && !isTypeImportant) {
+                                            toast({
+                                              title: "중요 유형만 출제 필터가 켜져 있습니다.",
+                                              description: "비중요 유형은 선택을 변경할 수 없습니다.",
+                                              variant: "destructive"
+                                            });
+                                            return;
+                                          }
+                                          handleToggleCombo(type.id, d, type);
+                                        }}
                                       >
                                         {hasImportant && (
                                           <span className="absolute -top-1.5 -right-1 text-amber-500 text-[11px] font-black select-none drop-shadow-2xs">★</span>

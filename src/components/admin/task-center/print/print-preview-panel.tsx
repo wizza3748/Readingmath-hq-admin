@@ -215,20 +215,42 @@ export const QuestionBody = ({ q, color, fontSize, onImageLoad, scaleDownChoices
       )}
 
       {q.choices && q.choices.length > 0 ? (
-        <div className="flex flex-col gap-1 mt-2 text-gray-700 max-w-full min-w-0" style={{ fontSize: `${fontSize - 1}pt` }}>
-          {q.choices.map((choice: string, i: number) => (
-            <div key={i} className="flex items-start gap-2 max-w-full min-w-0 overflow-hidden">
-              <span className="shrink-0">{['①','②','③','④','⑤'][i]}</span>
-              <span 
-                dangerouslySetInnerHTML={{ __html: parseAndRenderMath(choice) }} 
-                className={`max-w-full min-w-0 overflow-hidden [&_table]:!max-w-full [&_table]:w-full [&_table]:table-fixed ${
-                  scaleDownChoices 
-                    ? "[&_img]:!max-w-[70%] [&_img]:!max-h-[110px] [&_img]:!h-auto [&_img]:object-contain" 
-                    : "[&_img]:!max-w-[90%] [&_img]:!max-h-[150px] [&_img]:!h-auto [&_img]:object-contain"
+        // ── 가로 맞춤형 선지 렌더링 ──
+        // flex-wrap으로 자동 줄바꿈: 텍스트·수식·이미지 선지 모두 적용
+        // 이미지 선지는 max-width: 48% 제약으로 출력 영역(A4) 침범 방지 + 비율 유지
+        // 선지 1개가 50% 초과이면 100% 너비 차지 → 다음 줄에 단독 배치
+        <div className="flex flex-wrap gap-x-3 gap-y-1.5 mt-2 text-gray-700 max-w-full min-w-0 items-start" style={{ fontSize: `${fontSize - 1}pt` }}>
+          {q.choices.map((choice: string, i: number) => {
+            // 이미지 선지 여부 판단
+            const isImageChoice = /<img\s/i.test(choice);
+            return (
+              <div
+                key={i}
+                className={`flex items-start gap-1.5 min-w-0 ${
+                  isImageChoice
+                    ? // 이미지 선지: 최대 48% 너비 (2열 배치 기준), 초과 시 flex-basis 100%로 단독 배치
+                      "[&_img]:!max-w-full [&_img]:!h-auto [&_img]:object-contain"
+                    : // 텍스트·수식 선지: 내용 너비 기준 자연스러운 가로 배치
+                      "max-w-full"
                 }`}
-              />
-            </div>
-          ))}
+                style={
+                  isImageChoice
+                    ? { maxWidth: "48%", flexBasis: "auto", flexGrow: 0, flexShrink: 0 }
+                    : undefined
+                }
+              >
+                <span className="shrink-0 font-medium">{['①','②','③','④','⑤'][i]}</span>
+                <span
+                  dangerouslySetInnerHTML={{ __html: parseAndRenderMath(choice) }}
+                  className={`min-w-0 overflow-hidden [&_table]:!max-w-full [&_table]:w-full [&_table]:table-fixed ${
+                    isImageChoice
+                      ? "[&_img]:!max-w-full [&_img]:!w-full [&_img]:!h-auto [&_img]:object-contain [&_img]:block"
+                      : "max-w-full"
+                  }`}
+                />
+              </div>
+            );
+          })}
         </div>
       ) : (
         <div className="mt-4 mb-2 flex items-center gap-2 max-w-full min-w-0">

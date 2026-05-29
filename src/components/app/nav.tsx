@@ -97,6 +97,20 @@ const navConfig: NavItem[] = [
     type: "label",
   },
   {
+    title: "학생관리",
+    icon: <Users />,
+    children: [
+      { title: "학생목록", href: "/admin/student-list" },
+    ],
+  },
+  {
+    title: "선생님관리",
+    icon: <UserCog />,
+    children: [
+      { title: "선생님목록", href: "/admin/teacher-list" },
+    ],
+  },
+  {
     title: "학습관리",
     icon: <GraduationCap />,
     children: [

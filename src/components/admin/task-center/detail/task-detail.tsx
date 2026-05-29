@@ -55,6 +55,7 @@ export default function TaskDetail({ taskId }: Props) {
   const [problemMode, setProblemMode] = React.useState<ProblemMode>(normalizedExistingTask?.problemMode ?? "same");
   const [prioritizeUnsolved, setPrioritizeUnsolved] = React.useState(normalizedExistingTask?.prioritizeUnsolved ?? false);
   const [onlyImportant, setOnlyImportant] = React.useState(normalizedExistingTask?.onlyImportant ?? false);
+  const [onlyImportantType, setOnlyImportantType] = React.useState(normalizedExistingTask?.onlyImportantType ?? false);
   const [isSaving, setIsSaving] = React.useState(false);
   const [listConfirmOpen, setListConfirmOpen] = React.useState(false);
 
@@ -65,6 +66,7 @@ export default function TaskDetail({ taskId }: Props) {
     problemMode: normalizedExistingTask?.problemMode ?? "same",
     prioritizeUnsolved: normalizedExistingTask?.prioritizeUnsolved ?? false,
     onlyImportant: normalizedExistingTask?.onlyImportant ?? false,
+    onlyImportantType: normalizedExistingTask?.onlyImportantType ?? false,
   }));
 
   const getAutoTaskName = React.useCallback((types: SelectedType[], taskCreatedAt?: string) => {
@@ -120,6 +122,7 @@ export default function TaskDetail({ taskId }: Props) {
       setProblemMode(normalizedExistingTask.problemMode);
       setPrioritizeUnsolved(normalizedExistingTask.prioritizeUnsolved);
       setOnlyImportant(normalizedExistingTask.onlyImportant ?? false);
+      setOnlyImportantType(normalizedExistingTask.onlyImportantType ?? false);
       
       const isManual = normalizedExistingTask.name !== autoName;
       setNameManuallyEdited(isManual);
@@ -130,6 +133,7 @@ export default function TaskDetail({ taskId }: Props) {
         problemMode: normalizedExistingTask.problemMode,
         prioritizeUnsolved: normalizedExistingTask.prioritizeUnsolved,
         onlyImportant: normalizedExistingTask.onlyImportant ?? false,
+        onlyImportantType: normalizedExistingTask.onlyImportantType ?? false,
       });
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -212,8 +216,13 @@ export default function TaskDetail({ taskId }: Props) {
     setOnlyImportant(important);
   };
 
+  // 중요 유형만 출제 필터 변경
+  const handleOnlyImportantTypeChange = (v: boolean) => {
+    setOnlyImportantType(v);
+  };
+
   const isDirty = () => {
-    const current = JSON.stringify({ name, selectedTypes, problemMode, prioritizeUnsolved, onlyImportant });
+    const current = JSON.stringify({ name, selectedTypes, problemMode, prioritizeUnsolved, onlyImportant, onlyImportantType });
     return current !== savedSnapshot.current;
   };
 
@@ -226,13 +235,18 @@ export default function TaskDetail({ taskId }: Props) {
     }
   };
 
+  // 중요 유형만 출제 ON 시: 중요 유형(importantCount 합 > 0)만 계산 대상으로 필터링
+  const activeSelectedTypesForCalculation = onlyImportantType
+    ? selectedTypes.filter(t => t.importantCount.basic > 0 || t.importantCount.intermediate > 0 || t.importantCount.advanced > 0)
+    : selectedTypes;
+
   // 중요 문제만 출제 ON 시: 각 조합의 importantCount[difficulty] 를 초과하지 않도록 clamp
   const totalProblems = onlyImportant
-    ? selectedTypes.reduce((s, t) => {
+    ? activeSelectedTypesForCalculation.reduce((s, t) => {
         const importantMax = t.importantCount[t.difficulty];
         return s + (importantMax > 0 ? Math.min(t.problemCount, importantMax) : 0);
       }, 0)
-    : selectedTypes.reduce((s, t) => s + t.problemCount, 0);
+    : activeSelectedTypesForCalculation.reduce((s, t) => s + t.problemCount, 0);
 
   const handleProblemModeChange = (mode: ProblemMode) => {
     setProblemMode(mode);
@@ -264,15 +278,19 @@ export default function TaskDetail({ taskId }: Props) {
   };
 
   const handleSave = () => {
-    const totalMax = selectedTypes.reduce((sum, t) => sum + t.maxCount[t.difficulty], 0);
+    const activeTypesForCheck = onlyImportantType
+      ? selectedTypes.filter(t => t.importantCount.basic > 0 || t.importantCount.intermediate > 0 || t.importantCount.advanced > 0)
+      : selectedTypes;
+
+    const totalMax = activeTypesForCheck.reduce((sum, t) => sum + t.maxCount[t.difficulty], 0);
 
     if (!name.trim()) { toast({ title: "과제명을 입력하세요.", variant: "destructive" }); return; }
-    if (selectedTypes.length === 0) { toast({ title: "유형·난이도를 1개 이상 선택하세요.", variant: "destructive" }); return; }
+    if (activeTypesForCheck.length === 0) { toast({ title: "선택한 단원에 출제 가능한 중요 유형이 없습니다.", variant: "destructive" }); return; }
     if (totalMax === 0) { toast({ title: "선택한 유형·난이도에 출제 가능한 문제가 없습니다.", variant: "destructive" }); return; }
 
     // 중요 문제 부족 상태 검사
     if (onlyImportant) {
-      const importantMax = selectedTypes.reduce((sum, t) => sum + t.importantCount[t.difficulty], 0);
+      const importantMax = activeTypesForCheck.reduce((sum, t) => sum + t.importantCount[t.difficulty], 0);
       if (importantMax === 0) {
         toast({ title: "선택한 유형·난이도에 중요 문제가 없습니다.", variant: "destructive" });
         return;
@@ -291,7 +309,7 @@ export default function TaskDetail({ taskId }: Props) {
         const newTask: TaskItem = {
           id: newId, subject, name: name.trim(), course: selectedTypes[0]?.course ?? "",
           status: "draft", difficulties: finalDifficulties, problemMode, prioritizeUnsolved,
-          onlyImportant, selectedTypes, totalProblems,
+          onlyImportant, onlyImportantType, selectedTypes, totalProblems,
           createdAt: new Date().toISOString(), assignedStudents: [],
           problemScope: onlyImportant ? "important" : "all", // 하위 호환용
         };
@@ -302,11 +320,11 @@ export default function TaskDetail({ taskId }: Props) {
       } else if (taskId) {
         updateTask(taskId, {
           name: name.trim(), difficulties: finalDifficulties, problemMode, prioritizeUnsolved,
-          onlyImportant, selectedTypes, totalProblems,
+          onlyImportant, onlyImportantType, selectedTypes, totalProblems,
           course: selectedTypes[0]?.course ?? normalizedExistingTask?.course ?? "",
           problemScope: onlyImportant ? "important" : "all", // 하위 호환용
         });
-        savedSnapshot.current = JSON.stringify({ name: name.trim(), selectedTypes, problemMode, prioritizeUnsolved, onlyImportant });
+        savedSnapshot.current = JSON.stringify({ name: name.trim(), selectedTypes, problemMode, prioritizeUnsolved, onlyImportant, onlyImportantType });
         setCurrentSubject(subject);
         toast({ title: "저장되었습니다." });
       }
@@ -328,6 +346,7 @@ export default function TaskDetail({ taskId }: Props) {
             checkedTypeIds={checkedTypeIds}
             bulkDifficulties={bulkDifficulties}
             onlyImportant={onlyImportant}
+            onlyImportantType={onlyImportantType}
             readonly={readonly}
             onTypesChange={handleTypesChange}
             onCheckedTypesChange={setCheckedTypeIds}
@@ -344,6 +363,7 @@ export default function TaskDetail({ taskId }: Props) {
               problemMode={problemMode}
               prioritizeUnsolved={prioritizeUnsolved}
               onlyImportant={onlyImportant}
+              onlyImportantType={onlyImportantType}
               readonly={readonly}
               onNameChange={(v) => { 
                 setName(v); 
@@ -356,6 +376,7 @@ export default function TaskDetail({ taskId }: Props) {
               onTypeProblemCountChange={handleTypeProblemCountChange}
               onProblemModeChange={handleProblemModeChange}
               onOnlyImportantChange={handleOnlyImportantChange}
+              onOnlyImportantTypeChange={handleOnlyImportantTypeChange}
               onQuickSetAll={handleQuickSetAll}
             />
           </div>

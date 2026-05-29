@@ -27,11 +27,13 @@ interface Props {
   problemMode: "same" | "individual";
   prioritizeUnsolved: boolean;
   onlyImportant: boolean;
+  onlyImportantType: boolean;
   readonly?: boolean;
   onNameChange: (v: string) => void;
   onTypeProblemCountChange: (typeId: string, difficulty: Difficulty, count: number) => void;
   onProblemModeChange: (v: "same" | "individual") => void;
   onOnlyImportantChange: (v: boolean) => void;
+  onOnlyImportantTypeChange: (v: boolean) => void;
   onQuickSetAll: (count: number) => void;
 }
 
@@ -53,10 +55,10 @@ function SegBtn({ label, active, disabled, onClick }: { label: string; active: b
 
 export function TaskSettingPanel({
   task, taskId, name, selectedTypes, problemMode,
-  onlyImportant, readonly,
+  onlyImportant, onlyImportantType, readonly,
   onNameChange, onTypeProblemCountChange,
   onProblemModeChange,
-  onOnlyImportantChange, onQuickSetAll,
+  onOnlyImportantChange, onOnlyImportantTypeChange, onQuickSetAll,
 }: Props) {
   const countKey = onlyImportant ? "importantCount" : "maxCount";
   const { assignStudents } = useTaskCenterStore();
@@ -68,14 +70,19 @@ export function TaskSettingPanel({
   const [assignHelpOpen, setAssignHelpOpen] = React.useState(false);
   const [resultHelpOpen, setResultHelpOpen] = React.useState(false);
 
+  // 중요 유형 필터가 켜져 있으면 중요 유형만 필터링한 리스트를 기준으로 계산
+  const activeSelectedTypes = onlyImportantType
+    ? selectedTypes.filter(t => t.importantCount.basic > 0 || t.importantCount.intermediate > 0 || t.importantCount.advanced > 0)
+    : selectedTypes;
+
   // 1. 문제 수 범위 계산 (선택된 조합 기준)
   let minPossibleProblems = 0;
   let maxPossibleProblems = 0;
 
-  if (selectedTypes.length > 0) {
+  if (activeSelectedTypes.length > 0) {
     // 각 조합마다 최소 1문항 배정 (최대값이 0인 경우 제외)
-    minPossibleProblems = selectedTypes.reduce((sum, t) => sum + (t[countKey][t.difficulty] > 0 ? 1 : 0), 0);
-    maxPossibleProblems = selectedTypes.reduce((sum, t) => sum + t[countKey][t.difficulty], 0);
+    minPossibleProblems = activeSelectedTypes.reduce((sum, t) => sum + (t[countKey][t.difficulty] > 0 ? 1 : 0), 0);
+    maxPossibleProblems = activeSelectedTypes.reduce((sum, t) => sum + t[countKey][t.difficulty], 0);
   }
 
   // 중요 문제 부족 상태 (ON + 전혀 없음)
@@ -86,7 +93,7 @@ export function TaskSettingPanel({
     selectedTypes.reduce((sum, t) => sum + t.importantCount[t.difficulty], 0) === 0;
 
   // 2. 입력 활성화 여부
-  const isSettingEnabled = !readonly && !isImportantInsufficient && selectedTypes.length > 0;
+  const isSettingEnabled = !readonly && !isImportantInsufficient && activeSelectedTypes.length > 0;
   const [isDetailExpanded, setIsDetailExpanded] = React.useState(true);
 
   // 학습과정 변경 시 펼침 상태로 초기화
@@ -97,9 +104,9 @@ export function TaskSettingPanel({
 
   const [quickTotalCount, setQuickTotalCount] = React.useState<number>(0);
   React.useEffect(() => {
-    const total = selectedTypes.reduce((s, t) => s + t.problemCount, 0);
+    const total = activeSelectedTypes.reduce((s, t) => s + t.problemCount, 0);
     setQuickTotalCount(total);
-  }, [selectedTypes, onlyImportant]);
+  }, [selectedTypes, onlyImportant, onlyImportantType]);
 
   const handleQuickTotalApply = (count: number) => {
     const validCount = Math.min(Math.max(minPossibleProblems, count), maxPossibleProblems);
@@ -110,7 +117,7 @@ export function TaskSettingPanel({
     setCountTooltipOpen(false);
   };
 
-  const totalProblems = selectedTypes.reduce((s, t) => s + t.problemCount, 0);
+  const totalProblems = activeSelectedTypes.reduce((s, t) => s + t.problemCount, 0);
   const assignedStudents: StudentAssignment[] = task?.assignedStudents ?? [];
   const completed = assignedStudents.filter(s => s.status === "submitted");
   const avg = calcAvgScore(assignedStudents);
@@ -165,37 +172,60 @@ export function TaskSettingPanel({
             </TooltipProvider>
           </div>
 
-          {/* 중요 문제만 출제 Checkbox */}
+          {/* 중요 유형만 출제 + 중요 문제만 출제 Checkbox 묶음 */}
           {selectedTypes.length > 0 && (
-            <div className="flex items-center gap-1.5 px-1">
-              <input
-                id="onlyImportant"
-                type="checkbox"
-                checked={onlyImportant}
-                disabled={readonly || hasNoImportantProblems}
-                onChange={e => onOnlyImportantChange(e.target.checked)}
-                className="h-3.5 w-3.5 accent-primary rounded border-gray-300 cursor-pointer disabled:cursor-not-allowed"
-              />
-              <label 
-                htmlFor="onlyImportant" 
-                className={`text-[11px] font-bold cursor-pointer whitespace-nowrap ${
-                  onlyImportant ? "text-blue-600" : "text-muted-foreground hover:text-foreground"
-                } transition-colors`}
-              >
-                중요 문제만 출제
-              </label>
+            <div className="flex items-center gap-3">
+              {/* 중요 유형만 출제 */}
+              <div className="flex items-center gap-1.5 px-1">
+                <input
+                  id="onlyImportantType"
+                  type="checkbox"
+                  checked={onlyImportantType}
+                  disabled={readonly}
+                  onChange={e => onOnlyImportantTypeChange(e.target.checked)}
+                  className="h-3.5 w-3.5 accent-primary rounded border-gray-300 cursor-pointer disabled:cursor-not-allowed"
+                />
+                <label
+                  htmlFor="onlyImportantType"
+                  className={`text-[11px] font-bold cursor-pointer whitespace-nowrap ${
+                    onlyImportantType ? "text-amber-600" : "text-muted-foreground hover:text-foreground"
+                  } transition-colors`}
+                >
+                  중요 유형만 출제
+                </label>
+              </div>
+
+              {/* 중요 문제만 출제 */}
+              <div className="flex items-center gap-1.5 px-1">
+                <input
+                  id="onlyImportant"
+                  type="checkbox"
+                  checked={onlyImportant}
+                  disabled={readonly || hasNoImportantProblems}
+                  onChange={e => onOnlyImportantChange(e.target.checked)}
+                  className="h-3.5 w-3.5 accent-primary rounded border-gray-300 cursor-pointer disabled:cursor-not-allowed"
+                />
+                <label 
+                  htmlFor="onlyImportant" 
+                  className={`text-[11px] font-bold cursor-pointer whitespace-nowrap ${
+                    onlyImportant ? "text-blue-600" : "text-muted-foreground hover:text-foreground"
+                  } transition-colors`}
+                >
+                  중요 문제만 출제
+                </label>
+              </div>
             </div>
           )}
         </div>
 
         {/* 문항 수 선택 버튼 */}
         {(() => {
-          const comboCount = selectedTypes.length;
-          const currentMultiplier = selectedTypes[0]?.problemCount ?? 1;
+          const comboCount = activeSelectedTypes.length;
+          const currentMultiplier = activeSelectedTypes[0]?.problemCount ?? 1;
 
           // 중요 문제만 출제 ON 시: 중요 문제가 있는 조합만 합산
           const displayTotal = onlyImportant
-            ? selectedTypes.reduce((s, t) => {
+            ? activeSelectedTypes.reduce((s, t) => {
                 const importantMax = t.importantCount[t.difficulty];
                 return s + (importantMax > 0 ? Math.min(t.problemCount, importantMax) : 0);
               }, 0)

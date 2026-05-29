@@ -65,6 +65,7 @@ export interface TaskItem {
   timeLimit?: number; // 분 단위, undefined = 미설정
   problemScope?: ProblemScope; // 하위 호환용
   onlyImportant?: boolean; // 중요 문제만 출제
+  onlyImportantType?: boolean; // 중요 유형만 출제
   selectedTypes: SelectedType[];
   totalProblems: number;
   createdAt: string;
