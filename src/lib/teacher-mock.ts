@@ -86,22 +86,22 @@ export const MOCK_TEACHERS: Teacher[] = [
     email: "",
     createdAt: "2025-12-17T08:36:27",
     assignedClasses: [
-      { id: "class-1", name: "초3A반", studentCount: 5 },
-      { id: "class-2", name: "초4B반", studentCount: 3 },
+      { id: "class-1", name: "초3A반", studentCount: 2 },
+      { id: "class-2", name: "초4B반", studentCount: 1 },
     ],
   },
 ];
 
 // ── 전체 반 목록 ──────────────────────────────────────────────
 export const ALL_CLASSES_INITIAL: ClassInfo[] = [
-  { id: "class-1", name: "초3A반", studentCount: 5 },
-  { id: "class-2", name: "초4B반", studentCount: 3 },
-  { id: "class-3", name: "초5C반", studentCount: 0 },
-  { id: "class-4", name: "중1A반", studentCount: 10 },
+  { id: "class-1", name: "초3A반", studentCount: 2 },
+  { id: "class-2", name: "초4B반", studentCount: 1 },
+  { id: "class-3", name: "초5C반", studentCount: 1 },
+  { id: "class-4", name: "중1A반", studentCount: 0 },
   { id: "class-5", name: "중2B반", studentCount: 0 },
-  { id: "class-6", name: "고1A반", studentCount: 8 },
+  { id: "class-6", name: "고1A반", studentCount: 0 },
   { id: "class-7", name: "고2B반", studentCount: 0 },
-  { id: "class-8", name: "고3C반", studentCount: 12 },
+  { id: "class-8", name: "고3C반", studentCount: 0 },
 ];
 
 export const ALL_CLASSES = ALL_CLASSES_INITIAL;
