@@ -183,6 +183,10 @@ const AbbreviatedPageHeader = ({ task, color, printType }: any) => {
 
 // ── 1. 문항 본문 (발문/보기/선지) 렌더링 컴포넌트 ──
 export const QuestionBody = ({ q, color, fontSize, onImageLoad, scaleDownChoices }: any) => {
+  // q.passage가 이미지만 포함하고 있는지 판별 (HTML 태그를 걷어낸 실질적인 글자가 없는 경우)
+  const cleanPassageText = q.passage ? q.passage.replace(/<[^>]*>/g, "").replace(/\s/g, "") : "";
+  const isImageOnlyPassage = q.passage && q.passage.includes("<img") && cleanPassageText.length === 0;
+
   return (
     <div className="max-w-full min-w-0 overflow-hidden flex flex-col">
       <div className="mb-2 font-bold max-w-full min-w-0 leading-snug" style={{ fontSize: `${fontSize}pt` }}>
@@ -194,7 +198,14 @@ export const QuestionBody = ({ q, color, fontSize, onImageLoad, scaleDownChoices
       </div>
 
       {q.passage && (
-        <div className="border p-3 rounded mb-3 text-gray-800 leading-relaxed bg-white max-w-full min-w-0 overflow-x-auto" style={{ fontSize: `${fontSize - 1}pt` }}>
+        <div 
+          className={`${
+            isImageOnlyPassage 
+              ? "mb-3 flex justify-center w-full" 
+              : "border p-3 rounded mb-3 text-gray-800 leading-relaxed bg-white"
+          } max-w-full min-w-0 overflow-x-auto`} 
+          style={{ fontSize: `${fontSize - 1}pt` }}
+        >
           <div 
             dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.passage.replace(/\n/g, '<br/>')) }} 
             className="max-w-full min-w-0 overflow-hidden [&_img]:!max-w-full [&_img]:!h-auto [&_img]:object-contain [&_table]:!max-w-full [&_table]:w-full [&_table]:table-fixed"
@@ -208,7 +219,7 @@ export const QuestionBody = ({ q, color, fontSize, onImageLoad, scaleDownChoices
           <img 
             src={q.image} 
             alt="문제 이미지" 
-            className="max-w-full h-auto max-h-[150px] object-contain border rounded p-1" 
+            className="max-w-full h-auto max-h-[150px] object-contain" 
             onLoad={onImageLoad}
           />
         </div>
@@ -216,26 +227,22 @@ export const QuestionBody = ({ q, color, fontSize, onImageLoad, scaleDownChoices
 
       {q.choices && q.choices.length > 0 ? (
         // ── 가로 맞춤형 선지 렌더링 ──
-        // flex-wrap으로 자동 줄바꿈: 텍스트·수식·이미지 선지 모두 적용
-        // 이미지 선지는 max-width: 48% 제약으로 출력 영역(A4) 침범 방지 + 비율 유지
-        // 선지 1개가 50% 초과이면 100% 너비 차지 → 다음 줄에 단독 배치
-        <div className="flex flex-wrap gap-x-3 gap-y-1.5 mt-2 text-gray-700 max-w-full min-w-0 items-start" style={{ fontSize: `${fontSize - 1}pt` }}>
+        // flex-wrap으로 안전하고 유연한 자동 줄바꿈을 유지하면서,
+        // 각 선지가 쪼개지지 않도록 whitespace-nowrap을 적용하고, 선지 사이 여백을 gap-x-8 gap-y-2로 대폭 넓혀 쾌적한 가독성을 제공합니다.
+        <div className="flex flex-wrap gap-x-8 gap-y-2 mt-2 text-gray-700 max-w-full min-w-0 items-start" style={{ fontSize: `${fontSize - 1}pt` }}>
           {q.choices.map((choice: string, i: number) => {
-            // 이미지 선지 여부 판단
             const isImageChoice = /<img\s/i.test(choice);
             return (
               <div
                 key={i}
                 className={`flex items-start gap-1.5 min-w-0 ${
                   isImageChoice
-                    ? // 이미지 선지: 최대 48% 너비 (2열 배치 기준), 초과 시 flex-basis 100%로 단독 배치
-                      "[&_img]:!max-w-full [&_img]:!h-auto [&_img]:object-contain"
-                    : // 텍스트·수식 선지: 내용 너비 기준 자연스러운 가로 배치
-                      "max-w-full"
+                    ? "[&_img]:!max-w-full [&_img]:!h-auto [&_img]:object-contain"
+                    : "max-w-full whitespace-nowrap" // 수식이나 텍스트가 좁은 폭 때문에 강제로 여러 줄로 쪼개지는 현상 절대 차단
                 }`}
                 style={
                   isImageChoice
-                    ? { maxWidth: "48%", flexBasis: "auto", flexGrow: 0, flexShrink: 0 }
+                    ? { maxWidth: "44%", flexBasis: "44%", flexGrow: 0, flexShrink: 0 }
                     : undefined
                 }
               >
@@ -253,9 +260,9 @@ export const QuestionBody = ({ q, color, fontSize, onImageLoad, scaleDownChoices
           })}
         </div>
       ) : (
-        <div className="mt-4 mb-2 flex items-center gap-2 max-w-full min-w-0">
+        <div className="mt-4 mb-2 flex items-end gap-2 max-w-full min-w-0">
           <span className="text-gray-800 font-bold shrink-0" style={{ fontSize: `${fontSize - 1}pt` }}>정답 :</span>
-          <div className="border-b border-gray-400 w-40 flex-1 max-w-[200px]"></div>
+          <div className="border-b border-gray-400 w-40 flex-1 max-w-[200px] mb-[2px]"></div>
         </div>
       )}
     </div>
