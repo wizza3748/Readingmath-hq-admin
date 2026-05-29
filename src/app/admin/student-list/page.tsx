@@ -525,7 +525,7 @@ export default function StudentListPage() {
           <Button
             size="sm"
             variant="outline"
-            className="h-9 px-3 gap-1.5 bg-green-50 hover:bg-green-100/80 text-green-700 border-green-200 font-semibold"
+            className="h-9 px-3 gap-1.5 bg-green-50 hover:bg-green-100/80 text-green-700 hover:text-green-800 border-green-200 font-semibold"
             onClick={() => {
               if (selectedStudentIds.length === 0) {
                 toast({ title: "반을 일괄 변경할 학생을 먼저 선택해 주세요.", variant: "destructive" });
@@ -543,7 +543,7 @@ export default function StudentListPage() {
           <Button
             size="sm"
             variant="outline"
-            className="h-9 px-3 gap-1.5 bg-blue-50 hover:bg-blue-100/80 text-blue-700 border-blue-200 font-semibold"
+            className="h-9 px-3 gap-1.5 bg-blue-50 hover:bg-blue-100/80 text-blue-700 hover:text-blue-800 border-blue-200 font-semibold"
             onClick={() => {
               setClassModalMode("list");
               setIsClassModalOpen(true);
@@ -557,7 +557,7 @@ export default function StudentListPage() {
           <Button
             size="sm"
             variant="outline"
-            className="h-9 px-3 gap-1.5 bg-slate-50 hover:bg-slate-100/80 text-slate-700 border-slate-200 font-semibold"
+            className="h-9 px-3 gap-1.5 bg-slate-50 hover:bg-slate-100/80 text-slate-700 hover:text-slate-800 border-slate-200 font-semibold"
             onClick={() => toast({ title: "엑셀 다운로드가 준비중입니다." })}
           >
             <FileSpreadsheet className="h-4 w-4 text-slate-500" />
