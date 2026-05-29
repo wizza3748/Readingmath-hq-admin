@@ -24,7 +24,14 @@ import {
   saveStoredStudents,
   getAssignedTeacherMap,
 } from "@/lib/student-mock";
-import { ALL_CLASSES, getStoredTeachers, Teacher } from "@/lib/teacher-mock";
+import { ALL_CLASSES, getStoredTeachers, Teacher, getStoredClasses, saveStoredClasses, ClassInfo } from "@/lib/teacher-mock";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog";
 
 export default function StudentListPage() {
   const { toast } = useToast();
@@ -34,6 +41,7 @@ export default function StudentListPage() {
   // ── 데이터 상태 ──────────────────────────────────────────────
   const [students, setStudents] = React.useState<Student[]>([]);
   const [teachers, setTeachers] = React.useState<Teacher[]>([]);
+  const [classesList, setClassesList] = React.useState<ClassInfo[]>([]);
 
   // ── 필터 상태 (선생님목록 스타일에 맞춰 한 줄 통합형) ─────────────────
   const [filterStatus, setFilterStatus] = React.useState<StudentServiceStatus | "all">("all");
@@ -61,10 +69,23 @@ export default function StudentListPage() {
   // ── 삭제 확인 다이얼로그 ────────────────────────────────────
   const [deleteTarget, setDeleteTarget] = React.useState<Student | null>(null);
 
+  // ── 반 관리 모달 상태 ──────────────────────────────────────
+  const [isClassModalOpen, setIsClassModalOpen] = React.useState(false);
+  const [classModalMode, setClassModalMode] = React.useState<"list" | "create" | "edit">("list");
+  const [newClassName, setNewClassName] = React.useState("");
+  const [editingClassId, setEditingClassId] = React.useState<string | null>(null);
+  const [editingClassName, setEditingClassName] = React.useState("");
+  
+  // 반 삭제 제약 제어 상태
+  const [classDeletePreventOpen, setClassDeletePreventOpen] = React.useState(false);
+  const [classDeleteConfirmOpen, setClassDeleteConfirmOpen] = React.useState(false);
+  const [classDeleteTarget, setClassDeleteTarget] = React.useState<ClassInfo | null>(null);
+
   React.useEffect(() => {
     setIsMounted(true);
     setStudents(getStoredStudents());
     setTeachers(getStoredTeachers());
+    setClassesList(getStoredClasses());
   }, []);
 
   // ── 실시간 담당 선생님 매핑용 딕셔너리 연산 ─────────────────
@@ -207,6 +228,75 @@ export default function StudentListPage() {
     setDeleteTarget(null);
   };
 
+  // ── 반 관리 모달 핸들러 ────────────────────────────────────
+  const handleAddClass = () => {
+    if (!newClassName.trim()) {
+      toast({ title: "반 이름을 입력해 주세요.", variant: "destructive" });
+      return;
+    }
+    const newId = `class-${Date.now()}`;
+    const newClass: ClassInfo = {
+      id: newId,
+      name: newClassName.trim(),
+      studentCount: 0,
+    };
+    const nextClasses = [...classesList, newClass];
+    setClassesList(nextClasses);
+    saveStoredClasses(nextClasses);
+    toast({ title: "반이 성공적으로 등록되었습니다." });
+    setNewClassName("");
+    setClassModalMode("list");
+  };
+
+  const handleStartEditClass = (cls: ClassInfo) => {
+    setEditingClassId(cls.id);
+    setEditingClassName(cls.name);
+    setClassModalMode("edit");
+  };
+
+  const handleSaveEditClass = () => {
+    if (!editingClassName.trim()) {
+      toast({ title: "반 이름을 입력해 주세요.", variant: "destructive" });
+      return;
+    }
+    const nextClasses = classesList.map(c => {
+      if (c.id === editingClassId) {
+        return { ...c, name: editingClassName.trim() };
+      }
+      return c;
+    });
+    setClassesList(nextClasses);
+    saveStoredClasses(nextClasses);
+    toast({ title: "반 이름이 수정되었습니다." });
+    setEditingClassId(null);
+    setEditingClassName("");
+    setClassModalMode("list");
+  };
+
+  const handleClassDeleteClick = (cls: ClassInfo) => {
+    const assignedTeacher = teacherMap[cls.id];
+    
+    // 삭제 불가 조건: 소속 학생 수 1명 이상이거나, 담당 선생님이 배정되어 있는 경우
+    if (cls.studentCount >= 1 || assignedTeacher) {
+      setClassDeleteTarget(cls);
+      setClassDeletePreventOpen(true);
+    } else {
+      // 삭제 가능
+      setClassDeleteTarget(cls);
+      setClassDeleteConfirmOpen(true);
+    }
+  };
+
+  const handleClassDeleteConfirm = () => {
+    if (!classDeleteTarget) return;
+    const nextClasses = classesList.filter(c => c.id !== classDeleteTarget.id);
+    setClassesList(nextClasses);
+    saveStoredClasses(nextClasses);
+    toast({ title: "반이 성공적으로 삭제되었습니다." });
+    setClassDeleteConfirmOpen(false);
+    setClassDeleteTarget(null);
+  };
+
   if (!isMounted) {
     return <div className="min-h-[calc(100vh-80px)] bg-[#f4f6f9]" />;
   }
@@ -300,7 +390,7 @@ export default function StudentListPage() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">전체</SelectItem>
-                  {ALL_CLASSES.map(c => (
+                  {classesList.map(c => (
                     <SelectItem key={c.id} value={c.id}>{c.name}</SelectItem>
                   ))}
                 </SelectContent>
@@ -374,7 +464,10 @@ export default function StudentListPage() {
             size="sm"
             variant="outline"
             className="h-9 px-3 gap-1.5 bg-blue-50 hover:bg-blue-100/80 text-blue-700 border-blue-200 font-semibold"
-            onClick={() => toast({ title: "반 관리 모달이 준비중입니다." })}
+            onClick={() => {
+              setClassModalMode("list");
+              setIsClassModalOpen(true);
+            }}
           >
             <Layers className="h-4 w-4 text-blue-600" />
             반 관리
@@ -471,7 +564,7 @@ export default function StudentListPage() {
                   </tr>
                 ) : (
                   paged.map(student => {
-                    const matchedClass = ALL_CLASSES.find(c => c.id === student.classId);
+                    const matchedClass = classesList.find(c => c.id === student.classId);
                     const teacherName = student.classId ? teacherMap[student.classId] || "-" : "-";
 
                     // 서비스 타입 배지 스타일링
@@ -507,7 +600,7 @@ export default function StudentListPage() {
                         {/* 학생 이름 */}
                         <td className="px-4 py-3">
                           <button
-                            onClick={() => toast({ title: "상세 진입 기능은 다음 작업에 연결됩니다." })}
+                            onClick={() => router.push(`/admin/student-list/${student.id}`)}
                             className="text-blue-600 font-semibold text-sm hover:underline"
                           >
                             {student.name}
@@ -584,7 +677,7 @@ export default function StudentListPage() {
                             {/* 수정 */}
                             <button
                               className="w-7 h-7 flex items-center justify-center rounded-md text-blue-500 hover:bg-blue-50 transition-colors"
-                              onClick={() => toast({ title: "상세 진입 기능은 다음 작업에 연결됩니다." })}
+                              onClick={() => router.push(`/admin/student-list/${student.id}`)}
                               title="수정"
                             >
                               <Pencil className="h-3.5 w-3.5" />
@@ -674,6 +767,216 @@ export default function StudentListPage() {
         confirmVariant="destructive"
         onConfirm={handleDeleteConfirm}
       />
+
+      {/* ── 반 관리 모달 ────────────────────────────────────────── */}
+      <Dialog open={isClassModalOpen} onOpenChange={setIsClassModalOpen}>
+        <DialogContent className="max-w-2xl rounded-xl bg-white p-6">
+          <DialogHeader>
+            <DialogTitle className="text-base font-bold text-slate-800">
+              {classModalMode === "list" && "반 관리 - 목록"}
+              {classModalMode === "create" && "반 관리 - 등록"}
+              {classModalMode === "edit" && "반 관리 - 수정"}
+            </DialogTitle>
+          </DialogHeader>
+
+          {/* 1. 목록 상태 (mode === 'list') */}
+          {classModalMode === "list" && (
+            <div className="space-y-4">
+              <div className="max-h-80 overflow-y-auto border border-slate-100 rounded-lg">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-100 bg-slate-50/60 sticky top-0">
+                      <th className="text-left px-4 py-2.5 text-xs font-semibold text-slate-500 w-16">번호</th>
+                      <th className="text-left px-4 py-2.5 text-xs font-semibold text-slate-500">반 이름</th>
+                      <th className="text-left px-4 py-2.5 text-xs font-semibold text-slate-600 bg-slate-100/30">담당 선생님</th>
+                      <th className="text-left px-4 py-2.5 text-xs font-semibold text-slate-500 w-24">학생 수</th>
+                      <th className="text-center px-4 py-2.5 text-xs font-semibold text-slate-500 w-24">관리</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {classesList.length === 0 ? (
+                      <tr>
+                        <td colSpan={5} className="text-center py-10 text-slate-400 text-sm">
+                          등록된 반 정보가 없습니다.
+                        </td>
+                      </tr>
+                    ) : (
+                      classesList.map((cls, idx) => {
+                        const teacherName = teacherMap[cls.id] || "-";
+                        return (
+                          <tr key={cls.id} className="border-b border-slate-100 last:border-0 hover:bg-slate-50/50 transition-colors">
+                            <td className="px-4 py-2.5 text-xs text-slate-400">{idx + 1}</td>
+                            <td className="px-4 py-2.5 text-sm text-slate-700 font-medium">{cls.name}</td>
+                            <td className="px-4 py-2.5 text-sm text-slate-800 font-bold bg-slate-50/30">{teacherName}</td>
+                            <td className="px-4 py-2.5 text-sm text-slate-500">{cls.studentCount}명</td>
+                            <td className="px-4 py-2.5">
+                              <div className="flex items-center justify-center gap-1.5">
+                                <button
+                                  onClick={() => handleStartEditClass(cls)}
+                                  className="w-7 h-7 flex items-center justify-center rounded-md text-blue-500 hover:bg-blue-50 transition-colors"
+                                  title="수정"
+                                >
+                                  <Pencil className="h-3.5 w-3.5" />
+                                </button>
+                                <button
+                                  onClick={() => handleClassDeleteClick(cls)}
+                                  className="w-7 h-7 flex items-center justify-center rounded-md text-rose-400 hover:bg-rose-50 transition-colors"
+                                  title="삭제"
+                                >
+                                  <Trash2 className="h-3.5 w-3.5" />
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        );
+                      })
+                    )}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="flex justify-end">
+                <Button
+                  size="sm"
+                  onClick={() => setClassModalMode("create")}
+                  className="h-9 px-4 gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-sm"
+                >
+                  <Plus className="h-4 w-4" />
+                  반 등록
+                </Button>
+              </div>
+            </div>
+          )}
+
+          {/* 2. 등록 상태 (mode === 'create') */}
+          {classModalMode === "create" && (
+            <div className="space-y-4 py-2">
+              <div className="space-y-2">
+                <label className="text-xs font-semibold text-slate-600">반 이름</label>
+                <Input
+                  value={newClassName}
+                  onChange={e => setNewClassName(e.target.value)}
+                  placeholder="반 이름을 입력해 주세요 (예: 초3A반)"
+                  className="h-10 text-sm border-slate-200"
+                  onKeyDown={e => e.key === "Enter" && handleAddClass()}
+                />
+              </div>
+              <DialogFooter className="flex items-center justify-end gap-2 pt-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    setNewClassName("");
+                    setClassModalMode("list");
+                  }}
+                  className="h-9 px-4 text-xs font-semibold bg-white border-slate-200 text-slate-600"
+                >
+                  취소
+                </Button>
+                <Button
+                  size="sm"
+                  onClick={handleAddClass}
+                  className="h-9 px-4 text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white"
+                >
+                  등록
+                </Button>
+              </DialogFooter>
+            </div>
+          )}
+
+          {/* 3. 수정 상태 (mode === 'edit') */}
+          {classModalMode === "edit" && (
+            <div className="space-y-4 py-2">
+              <div className="space-y-2">
+                <label className="text-xs font-semibold text-slate-600">반 이름 수정</label>
+                <Input
+                  value={editingClassName}
+                  onChange={e => setEditingClassName(e.target.value)}
+                  placeholder="수정할 반 이름을 입력해 주세요"
+                  className="h-10 text-sm border-slate-200"
+                  onKeyDown={e => e.key === "Enter" && handleSaveEditClass()}
+                />
+              </div>
+              <DialogFooter className="flex items-center justify-end gap-2 pt-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    setEditingClassId(null);
+                    setEditingClassName("");
+                    setClassModalMode("list");
+                  }}
+                  className="h-9 px-4 text-xs font-semibold bg-white border-slate-200 text-slate-600"
+                >
+                  취소
+                </Button>
+                <Button
+                  size="sm"
+                  onClick={handleSaveEditClass}
+                  className="h-9 px-4 text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white"
+                >
+                  저장
+                </Button>
+              </DialogFooter>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* ── 반 삭제 제한 안내 얼럿 모달 ────────────────────────────── */}
+      <Dialog open={classDeletePreventOpen} onOpenChange={setClassDeletePreventOpen}>
+        <DialogContent className="max-w-md rounded-xl bg-white p-6">
+          <DialogHeader>
+            <DialogTitle className="text-base font-bold text-slate-800">반 삭제 제한</DialogTitle>
+          </DialogHeader>
+          <div className="py-4 text-sm text-slate-600 leading-relaxed whitespace-pre-line">
+            {`해당 반은 삭제할 수 없습니다.
+소속 학생 또는 담당 선생님 설정을 해제한 뒤 다시 진행해 주세요.`}
+          </div>
+          <DialogFooter className="flex items-center justify-end pt-2">
+            <Button
+              size="sm"
+              onClick={() => setClassDeletePreventOpen(false)}
+              className="h-9 px-4 text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white"
+            >
+              확인
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* ── 반 삭제 확인 다이얼로그 모달 ────────────────────────────── */}
+      <Dialog open={classDeleteConfirmOpen} onOpenChange={setClassDeleteConfirmOpen}>
+        <DialogContent className="max-w-md rounded-xl bg-white p-6">
+          <DialogHeader>
+            <DialogTitle className="text-base font-bold text-slate-800">반 삭제</DialogTitle>
+          </DialogHeader>
+          <div className="py-4 text-sm text-slate-600 leading-relaxed">
+            {`해당 반을 삭제하시겠습니까?
+삭제한 반은 복구할 수 없습니다.`}
+          </div>
+          <DialogFooter className="flex items-center justify-end gap-2 pt-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                setClassDeleteConfirmOpen(false);
+                setClassDeleteTarget(null);
+              }}
+              className="h-9 px-4 text-xs font-semibold bg-white border-slate-200 text-slate-600"
+            >
+              취소
+            </Button>
+            <Button
+              size="sm"
+              onClick={handleClassDeleteConfirm}
+              className="h-9 px-4 text-xs font-semibold bg-rose-600 hover:bg-rose-700 text-white"
+            >
+              삭제
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

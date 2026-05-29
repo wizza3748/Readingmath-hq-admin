@@ -93,7 +93,7 @@ export const MOCK_TEACHERS: Teacher[] = [
 ];
 
 // ── 전체 반 목록 ──────────────────────────────────────────────
-export const ALL_CLASSES: ClassInfo[] = [
+export const ALL_CLASSES_INITIAL: ClassInfo[] = [
   { id: "class-1", name: "초3A반", studentCount: 5 },
   { id: "class-2", name: "초4B반", studentCount: 3 },
   { id: "class-3", name: "초5C반", studentCount: 0 },
@@ -103,6 +103,32 @@ export const ALL_CLASSES: ClassInfo[] = [
   { id: "class-7", name: "고2B반", studentCount: 0 },
   { id: "class-8", name: "고3C반", studentCount: 12 },
 ];
+
+export const ALL_CLASSES = ALL_CLASSES_INITIAL;
+
+const CLASSES_STORAGE_KEY = "readingmath_classes_data";
+
+export function getStoredClasses(): ClassInfo[] {
+  if (typeof window === "undefined") {
+    return ALL_CLASSES_INITIAL;
+  }
+  const stored = localStorage.getItem(CLASSES_STORAGE_KEY);
+  if (!stored) {
+    localStorage.setItem(CLASSES_STORAGE_KEY, JSON.stringify(ALL_CLASSES_INITIAL));
+    return ALL_CLASSES_INITIAL;
+  }
+  try {
+    return JSON.parse(stored);
+  } catch (e) {
+    return ALL_CLASSES_INITIAL;
+  }
+}
+
+export function saveStoredClasses(classes: ClassInfo[]): void {
+  if (typeof window !== "undefined") {
+    localStorage.setItem(CLASSES_STORAGE_KEY, JSON.stringify(classes));
+  }
+}
 
 const TEACHER_STORAGE_KEY = "readingmath_teachers_data";
 
