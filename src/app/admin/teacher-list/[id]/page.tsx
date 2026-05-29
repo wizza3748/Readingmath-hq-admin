@@ -16,6 +16,7 @@ import {
   getStoredTeachers,
   saveStoredTeachers,
   canDeleteTeacher,
+  getStoredClasses, // ⬅️ 최신 로컬스토리지 반 정보 로더 추가
 } from "@/lib/teacher-mock";
 
 interface TeacherDetailPageProps {
@@ -55,6 +56,7 @@ export default function TeacherDetailPage({ params }: TeacherDetailPageProps) {
 
   // ── 데이터 관리 상태 ───────────────────────────────────────
   const [teachersList, setTeachersList] = React.useState<Teacher[]>([]);
+  const [classesList, setClassesList] = React.useState<ClassInfo[]>([]); // ⬅️ 반 목록 상태 추가
   const [currentTeacher, setCurrentTeacher] = React.useState<Teacher | null>(null);
   const [hasOtherRepresentative, setHasOtherRepresentative] = React.useState(false);
 
@@ -75,6 +77,7 @@ export default function TeacherDetailPage({ params }: TeacherDetailPageProps) {
 
     const list = getStoredTeachers();
     setTeachersList(list);
+    setClassesList(getStoredClasses()); // ⬅️ 마운트 시 최신 반 리스트 로드
 
     const target = list.find((t) => t.id === teacherId);
     if (!target) {
@@ -101,7 +104,7 @@ export default function TeacherDetailPage({ params }: TeacherDetailPageProps) {
 
   // ── 담당 반 선택 목록 연산 (삭제되지 않은 반 + 미매칭 반 + 현재 본인 매칭 반) ──
   const availableClasses = React.useMemo(() => {
-    if (!teacherId) return ALL_CLASSES;
+    if (!teacherId) return classesList;
 
     // 다른 선생님들이 매칭한 반 ID 목록만 수집
     const otherAssignedIds = new Set<string>();
@@ -111,9 +114,9 @@ export default function TeacherDetailPage({ params }: TeacherDetailPageProps) {
       }
     });
 
-    // 전체 반(ALL_CLASSES) 중 다른 선생님에게 매칭되지 않은 반만 필터링 (본인 매칭 반은 포함됨)
-    return ALL_CLASSES.filter((c) => !otherAssignedIds.has(c.id));
-  }, [teachersList, teacherId]);
+    // 전체 반 중 다른 선생님에게 매칭되지 않은 반만 필터링 (본인 매칭 반은 포함됨)
+    return classesList.filter((c) => !otherAssignedIds.has(c.id));
+  }, [teachersList, teacherId, classesList]);
 
   // ── 대표 선생님 클릭 가드 (상세) ──────────────────────────
   const handleRepChange = (checked: boolean) => {
@@ -154,7 +157,7 @@ export default function TeacherDetailPage({ params }: TeacherDetailPageProps) {
     }
 
     // 담당 반 정보 조립
-    const assignedClasses: ClassInfo[] = ALL_CLASSES.filter((c) =>
+    const assignedClasses: ClassInfo[] = classesList.filter((c) =>
       selectedClassIds.includes(c.id)
     );
 
@@ -366,7 +369,7 @@ export default function TeacherDetailPage({ params }: TeacherDetailPageProps) {
                     ) : (
                       <div className="flex flex-wrap gap-1.5">
                         {selectedClassIds.map((id) => {
-                          const cls = ALL_CLASSES.find((c) => c.id === id);
+                          const cls = classesList.find((c) => c.id === id);
                           return (
                             <span
                               key={id}

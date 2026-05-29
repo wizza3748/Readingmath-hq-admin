@@ -14,6 +14,7 @@ import {
   ALL_CLASSES,
   getStoredTeachers,
   saveStoredTeachers,
+  getStoredClasses, // ⬅️ 최신 로컬스토리지 반 정보 로더 추가
 } from "@/lib/teacher-mock";
 
 export default function TeacherCreatePage() {
@@ -36,11 +37,13 @@ export default function TeacherCreatePage() {
 
   // ── 기존 데이터 로드 및 환경 분석 ─────────────────────────
   const [existingTeachers, setExistingTeachers] = React.useState<Teacher[]>([]);
+  const [classesList, setClassesList] = React.useState<ClassInfo[]>([]); // ⬅️ 반 목록 상태 추가
   const [hasRepresentative, setHasRepresentative] = React.useState(false);
 
   React.useEffect(() => {
     const list = getStoredTeachers();
     setExistingTeachers(list);
+    setClassesList(getStoredClasses()); // ⬅️ 마운트 시 최신 반 리스트 로드
     // 기관 내 대표선생님이 1명이라도 존재하는지 감지
     const hasRep = list.some((t) => t.role === "representative");
     setHasRepresentative(hasRep);
@@ -65,9 +68,9 @@ export default function TeacherCreatePage() {
       t.assignedClasses.forEach((c) => assignedIds.add(c.id));
     });
 
-    // 전체 반(ALL_CLASSES) 중 다른 선생님에게 매칭되지 않은 반만 필터링
-    return ALL_CLASSES.filter((c) => !assignedIds.has(c.id));
-  }, [existingTeachers]);
+    // 전체 반 중 다른 선생님에게 매칭되지 않은 반만 필터링
+    return classesList.filter((c) => !assignedIds.has(c.id));
+  }, [existingTeachers, classesList]);
 
   // ── 대표 선생님 클릭 가드 ──────────────────────────────────
   const handleRepChange = (checked: boolean) => {
@@ -120,7 +123,7 @@ export default function TeacherCreatePage() {
     }
 
     // 2. 담당 반 상세 정보 빌드
-    const assignedClasses: ClassInfo[] = ALL_CLASSES.filter((c) =>
+    const assignedClasses: ClassInfo[] = classesList.filter((c) =>
       selectedClassIds.includes(c.id)
     );
 
@@ -303,7 +306,7 @@ export default function TeacherCreatePage() {
                     ) : (
                       <div className="flex flex-wrap gap-1.5">
                         {selectedClassIds.map((id) => {
-                          const cls = ALL_CLASSES.find((c) => c.id === id);
+                          const cls = classesList.find((c) => c.id === id);
                           return (
                             <span
                               key={id}
