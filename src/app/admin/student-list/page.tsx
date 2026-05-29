@@ -81,6 +81,11 @@ export default function StudentListPage() {
   const [classDeleteConfirmOpen, setClassDeleteConfirmOpen] = React.useState(false);
   const [classDeleteTarget, setClassDeleteTarget] = React.useState<ClassInfo | null>(null);
 
+  // ── 학생 반 일괄 변경 모달 및 체크박스 상태 ───────────────────
+  const [selectedStudentIds, setSelectedStudentIds] = React.useState<string[]>([]);
+  const [bulkClassModalOpen, setBulkClassModalOpen] = React.useState(false);
+  const [bulkSelectedClassId, setBulkSelectedClassId] = React.useState<string | null>(null);
+
   React.useEffect(() => {
     setIsMounted(true);
     setStudents(getStoredStudents());
@@ -163,6 +168,7 @@ export default function StudentListPage() {
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / perPage));
   const paged = sorted.slice((page - 1) * perPage, page * perPage);
+  const isAllSelected = paged.length > 0 && paged.every(s => selectedStudentIds.includes(s.id));
   const startRow = filtered.length === 0 ? 0 : (page - 1) * perPage + 1;
   const endRow = Math.min(page * perPage, filtered.length);
 
@@ -295,6 +301,60 @@ export default function StudentListPage() {
     toast({ title: "반이 성공적으로 삭제되었습니다." });
     setClassDeleteConfirmOpen(false);
     setClassDeleteTarget(null);
+  };
+
+  // ── 전체 선택 토글 핸들러 ───────────────────────────────────
+  const handleSelectAll = (checked: boolean) => {
+    if (checked) {
+      const pagedIds = paged.map(s => s.id);
+      setSelectedStudentIds(prev => Array.from(new Set([...prev, ...pagedIds])));
+    } else {
+      const pagedIds = new Set(paged.map(s => s.id));
+      setSelectedStudentIds(prev => prev.filter(id => !pagedIds.has(id)));
+    }
+  };
+
+  // ── 개별 선택 토글 핸들러 ───────────────────────────────────
+  const handleSelectOne = (studentId: string, checked: boolean) => {
+    if (checked) {
+      setSelectedStudentIds(prev => [...prev, studentId]);
+    } else {
+      setSelectedStudentIds(prev => prev.filter(id => id !== studentId));
+    }
+  };
+
+  // ── 일괄 변경 적용 핸들러 ───────────────────────────────────
+  const handleApplyBulkClass = () => {
+    if (selectedStudentIds.length === 0) {
+      toast({ title: "선택된 학생이 없습니다.", variant: "destructive" });
+      return;
+    }
+    if (!bulkSelectedClassId) {
+      toast({ title: "변경할 반을 선택해 주세요.", variant: "destructive" });
+      return;
+    }
+
+    const nextStudents = students.map(s => {
+      if (selectedStudentIds.includes(s.id)) {
+        return { ...s, classId: bulkSelectedClassId === "none" ? null : bulkSelectedClassId };
+      }
+      return s;
+    });
+    setStudents(nextStudents);
+    saveStoredStudents(nextStudents);
+
+    // 반별 학생 수 실시간 자동 재연산 동기화
+    const nextClasses = classesList.map(cls => {
+      const count = nextStudents.filter(s => s.classId === cls.id).length;
+      return { ...cls, studentCount: count };
+    });
+    setClassesList(nextClasses);
+    saveStoredClasses(nextClasses);
+
+    toast({ title: `성공적으로 ${selectedStudentIds.length}명 학생의 반이 변경되었습니다.` });
+    setSelectedStudentIds([]); 
+    setBulkSelectedClassId(null);
+    setBulkClassModalOpen(false);
   };
 
   if (!isMounted) {
@@ -448,12 +508,32 @@ export default function StudentListPage() {
 
         {/* ── 보조 및 기능 액션 버튼 영역 ───────────────────────── */}
         <div className="flex flex-wrap items-center justify-end gap-2">
+          {/* 선택 표시기 (체크된 학생 수 > 0 일 때 실시간 등장) */}
+          {selectedStudentIds.length > 0 && (
+            <div className="flex items-center gap-2 mr-2 text-xs font-bold text-slate-700 animate-in fade-in slide-in-from-right-1 duration-200">
+              <span>{selectedStudentIds.length} 선택됨</span>
+              <button
+                onClick={() => setSelectedStudentIds([])}
+                className="px-2 py-1 rounded bg-rose-50 text-rose-600 hover:bg-rose-100 transition-colors text-[10px] font-bold"
+              >
+                초기화
+              </button>
+            </div>
+          )}
+
           {/* 학생 반 일괄 변경 */}
           <Button
             size="sm"
             variant="outline"
             className="h-9 px-3 gap-1.5 bg-green-50 hover:bg-green-100/80 text-green-700 border-green-200 font-semibold"
-            onClick={() => toast({ title: "학생 반 일괄 변경 기능이 준비중입니다." })}
+            onClick={() => {
+              if (selectedStudentIds.length === 0) {
+                toast({ title: "반을 일괄 변경할 학생을 먼저 선택해 주세요.", variant: "destructive" });
+                return;
+              }
+              setBulkSelectedClassId(null);
+              setBulkClassModalOpen(true);
+            }}
           >
             <RefreshCw className="h-3.5 w-3.5 text-green-600" />
             학생 반 일괄 변경
@@ -473,7 +553,7 @@ export default function StudentListPage() {
             반 관리
           </Button>
 
-          {/* 엑셀 다운로드 (반 관리 우측 배치 및 차분한 그레이톤 스타일 적용) */}
+          {/* 엑셀 다운로드 */}
           <Button
             size="sm"
             variant="outline"
@@ -491,6 +571,14 @@ export default function StudentListPage() {
             <table className="w-full text-sm min-w-[1200px]">
               <thead>
                 <tr className="border-b border-slate-100 bg-slate-50/80">
+                  <th className="px-4 py-3 w-10">
+                    <input
+                      type="checkbox"
+                      checked={isAllSelected}
+                      onChange={e => handleSelectAll(e.target.checked)}
+                      className="rounded text-blue-600 focus:ring-blue-500 border-slate-300 w-4 h-4 cursor-pointer"
+                    />
+                  </th>
                   <th className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-20">
                     고유 번호
                   </th>
@@ -558,7 +646,7 @@ export default function StudentListPage() {
               <tbody>
                 {paged.length === 0 ? (
                   <tr>
-                    <td colSpan={15} className="text-center py-16 text-slate-400 text-sm">
+                    <td colSpan={16} className="text-center py-16 text-slate-400 text-sm">
                       조회된 학생 정보가 없습니다.
                     </td>
                   </tr>
@@ -592,6 +680,14 @@ export default function StudentListPage() {
                         key={student.id}
                         className="border-b border-slate-100 last:border-0 hover:bg-slate-50/60 transition-colors"
                       >
+                        <td className="px-4 py-3 w-10">
+                          <input
+                            type="checkbox"
+                            checked={selectedStudentIds.includes(student.id)}
+                            onChange={e => handleSelectOne(student.id, e.target.checked)}
+                            className="rounded text-blue-600 focus:ring-blue-500 border-slate-300 w-4 h-4 cursor-pointer"
+                          />
+                        </td>
                         {/* 고유 번호 */}
                         <td className="px-4 py-3 text-slate-500 text-xs">
                           {student.seq}
@@ -973,6 +1069,67 @@ export default function StudentListPage() {
               className="h-9 px-4 text-xs font-semibold bg-rose-600 hover:bg-rose-700 text-white"
             >
               삭제
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* ── 학생 반 일괄 변경 모달 ────────────────────────────── */}
+      <Dialog open={bulkClassModalOpen} onOpenChange={setBulkClassModalOpen}>
+        <DialogContent className="max-w-xl rounded-xl bg-white p-6">
+          <DialogHeader>
+            <DialogTitle className="text-base font-bold text-slate-800">학생 반 일괄 변경</DialogTitle>
+          </DialogHeader>
+
+          <div className="py-2 space-y-5">
+            {/* 정보 안내 카드 (연한 회색 배경과 둥근 패널) */}
+            <div className="bg-slate-50 border border-slate-100 rounded-lg p-4 text-sm text-slate-600 leading-relaxed">
+              <p className="font-semibold text-slate-800 mb-0.5">
+                총 <span className="text-blue-600 font-extrabold">{selectedStudentIds.length}명</span>의 학생이 선택되었습니다.
+              </p>
+              <p className="text-xs text-slate-400">아래에서 지정할 반을 선택해주세요.</p>
+            </div>
+
+            {/* 반 선택 인풋 필드 */}
+            <div className="grid grid-cols-4 gap-4 items-center">
+              <label className="text-sm font-semibold text-slate-600 col-span-1">
+                <span className="text-red-500 mr-1">*</span>반
+              </label>
+              <div className="col-span-3">
+                <select
+                  value={bulkSelectedClassId || ""}
+                  onChange={e => setBulkSelectedClassId(e.target.value)}
+                  className="h-10 text-sm w-full bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 font-semibold"
+                >
+                  <option value="" disabled>반을 선택해주세요.</option>
+                  <option value="none">미지정 (-)</option>
+                  {classesList.map(c => (
+                    <option key={c.id} value={c.id}>{c.name}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <DialogFooter className="flex items-center justify-end gap-2 pt-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                setBulkClassModalOpen(false);
+                setBulkSelectedClassId(null);
+              }}
+              className="h-9 px-4 text-xs font-semibold bg-white border-slate-200 text-slate-600"
+            >
+              취소
+            </Button>
+            <Button
+              size="sm"
+              onClick={handleApplyBulkClass}
+              disabled={!bulkSelectedClassId}
+              className="h-9 px-4 text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-40 disabled:hover:bg-blue-600"
+            >
+              적용
             </Button>
           </DialogFooter>
         </DialogContent>
