@@ -6,7 +6,7 @@ import {
   Subject,
   INITIAL_TASKS,
   StudentAssignment,
-  SAMPLE_STUDENTS,
+  getAdaptedSampleStudents,
 } from "./task-center-mock";
 
 interface TaskCenterStore {
@@ -58,7 +58,7 @@ export const useTaskCenterStore = create<TaskCenterStore>((set, get) => ({
   },
 
   assignStudents: (taskId: string, classGroups: string[], individualIds: string[]) => {
-    const allStudents = SAMPLE_STUDENTS;
+    const allStudents = getAdaptedSampleStudents();
     set((state) => ({
       tasks: state.tasks.map((t) => {
         if (t.id !== taskId) return t;

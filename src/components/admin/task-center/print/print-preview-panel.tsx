@@ -103,8 +103,10 @@ interface Props {
   pageMargin: number;
   problemGap: number;
   fontSize: number;
+  showClass: boolean;
   showName: boolean;
   showDate: boolean;
+  showUnit: boolean;
   showLogo: boolean;
   printTarget?: "all" | "selected";
   selectedStudentIds?: string[];
@@ -123,25 +125,69 @@ interface PageData {
   studentPageNo: number;
 }
 
-const PageHeader = ({ task, color, showName, showDate, showLogo, previewStudent, printType }: any) => {
+const PageHeader = ({ task, color, showClass, showName, showDate, showUnit, showLogo, previewStudent, printType }: any) => {
   // 테마 색상에 투명도 30% 적용 (HEX 8자리)
   const borderColor = color.length === 7 ? `${color}4D` : color;
   const displayName = printType === "teacher" ? `${task.name} (교사용)` : task.name;
   
+  // 반 정보 추출
+  let classText = "__________";
+  if (task.problemMode === "same") {
+    const classes = task.assignedClasses || [];
+    if (classes.length === 1) {
+      classText = classes[0];
+    }
+  } else {
+    if (previewStudent && previewStudent.classGroup) {
+      classText = previewStudent.classGroup;
+    }
+  }
+
+  // 단원 정보 추출
+  const unitList = React.useMemo(() => {
+    const list: string[] = [];
+    const seen = new Set<string>();
+    (task.selectedTypes || []).forEach((t: any) => {
+      const key = `${t.majorUnit} > ${t.minorUnit}`;
+      if (!seen.has(key)) {
+        seen.add(key);
+        list.push(key);
+      }
+    });
+    return list;
+  }, [task.selectedTypes]);
+
   return (
     <div className="mb-4 shrink-0">
-      <h2 className="text-[13pt] font-bold truncate mb-2" style={{ color }}>{displayName}</h2>
+      <h2 className="text-[13pt] font-bold truncate mb-2" style={{ color }} title={displayName}>{displayName}</h2>
       <div className="flex justify-between items-end pb-2 border-b" style={{ borderColor }}>
-        <div className="text-[11pt] text-gray-700 flex gap-6">
-          {showName && (
-            <span>이름: {task.problemMode === "individual" && previewStudent?.studentName ? previewStudent.studentName : "__________"}</span>
-          )}
-          {showDate && (
-            <span>날짜: {new Date().toLocaleDateString('ko-KR')}</span>
+        <div className="flex flex-col flex-1 min-w-0 pr-4">
+          <div className="text-[11pt] text-gray-700 flex flex-wrap gap-x-6 gap-y-1 items-center max-w-full font-medium">
+            {showClass && (
+              <span className="truncate max-w-[200px]" title={classText}>반: {classText}</span>
+            )}
+            {showName && (
+              <span className="shrink-0">이름: {task.problemMode === "individual" && previewStudent?.studentName ? previewStudent.studentName : "__________"}</span>
+            )}
+            {showDate && (
+              <span className="shrink-0">날짜: {new Date().toLocaleDateString('ko-KR')}</span>
+            )}
+          </div>
+          {showUnit && unitList.length > 0 && (
+            <div className="text-[9.5pt] text-gray-500 mt-2 font-medium leading-relaxed whitespace-normal break-keep">
+              {task.course && (
+                <div className="font-bold text-gray-700 mb-1">[{task.course}]</div>
+              )}
+              {unitList.map((unit, idx) => (
+                <div key={idx} className="w-full">
+                  {unit}
+                </div>
+              ))}
+            </div>
           )}
         </div>
         {showLogo && (
-          <div className="h-[20px] flex items-center">
+          <div className="h-[20px] flex items-center shrink-0 mb-0.5">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               src={task.subject === "math" ? "/print_sample/math_logo.png" : "/print_sample/science_logo.png"} 
@@ -171,11 +217,8 @@ const AbbreviatedPageHeader = ({ task, color, printType }: any) => {
   
   return (
     <div className="mb-3 shrink-0">
-      <div className="flex justify-between items-center pb-1 border-b" style={{ borderColor }}>
-        <h2 className="text-[10pt] font-bold truncate max-w-[85%]" style={{ color }}>{displayName}</h2>
-        <span className="text-[8pt] text-gray-400 font-medium shrink-0">
-          리딩{task.subject === "math" ? "수학" : "과학"}
-        </span>
+      <div className="flex justify-between items-center pb-1 border-b" style={{ borderColor, borderWidth: '0 0 1px 0' }}>
+        <h2 className="text-[10pt] font-bold truncate" style={{ color }}>{displayName}</h2>
       </div>
     </div>
   );
@@ -390,7 +433,7 @@ export const QuestionContent = ({ q, printType, task, color, fontSize, onImageLo
 
 export default function PrintPreviewPanel({
   task, isBlocked, blockMessage, printType, previewStudentId, activeStudents,
-  color, split, pageMargin, problemGap, fontSize, showName, showDate, showLogo,
+  color, split, pageMargin, problemGap, fontSize, showClass, showName, showDate, showUnit, showLogo,
   printTarget = "all", selectedStudentIds = [], setPreviewStudentId
 }: Props) {
   
@@ -452,7 +495,7 @@ export default function PrintPreviewPanel({
       setTriggerMeasure(t => t + 1);
     }, 150);
     return () => clearTimeout(timer);
-  }, [questions, split, pageMargin, problemGap, fontSize, showName, showDate, showLogo, printType]);
+  }, [questions, split, pageMargin, problemGap, fontSize, showClass, showName, showDate, showUnit, showLogo, printType]);
 
   // 이미지 로딩 및 수식 렌더링 완료 후 다단 배치 실시간 재계산 감지 로직
   React.useEffect(() => {
@@ -735,7 +778,7 @@ export default function PrintPreviewPanel({
     });
     
     setPages(allPages);
-  }, [triggerMeasure, questions, split, pageMargin, problemGap, targetStudents, scaleDownIds, printType]);
+  }, [triggerMeasure, questions, split, pageMargin, problemGap, targetStudents, scaleDownIds, printType, showClass, showUnit]);
 
   // Preview Student Select Scroll Trigger (조상 컨테이너 스크롤 전파 버그 방지를 위해 직접 scrollTo 제어)
   React.useEffect(() => {
@@ -820,7 +863,7 @@ export default function PrintPreviewPanel({
       <div className="absolute top-0 left-[-9999px] invisible pointer-events-none" aria-hidden="true">
         <div id="measure-container" style={{ width: '210mm', padding: `${pageMargin}mm`, boxSizing: 'border-box' }}>
           <div id="measure-header">
-            <PageHeader task={task} color={color} showName={showName} showDate={showDate} showLogo={showLogo} previewStudent={null} printType={printType} />
+            <PageHeader task={task} color={color} showClass={showClass} showName={showName} showDate={showDate} showUnit={showUnit} showLogo={showLogo} previewStudent={null} printType={printType} />
           </div>
           <div id="measure-header-short">
             <AbbreviatedPageHeader task={task} color={color} printType={printType} />
@@ -829,8 +872,8 @@ export default function PrintPreviewPanel({
           {/* 단일 컬럼 수직 배치로 CSS stretch 격자 왜곡 원천 차단 */}
           <div className="flex flex-col gap-4" style={{ width: '100%' }}>
             {questions.map((q) => {
-              // 실제 컬럼 너비 정확히 산출: (100% - problemGap) / 2
-              const singleColumnWidth = `calc((100% - ${problemGap}mm) / 2)`;
+              // 실제 컬럼 너비 정확히 산출: 좌우 다단 간격은 시험지 표준 8mm로 고정
+              const singleColumnWidth = `calc((100% - 8mm) / 2)`;
               
               if (printType === "teacher") {
                 return (
@@ -962,19 +1005,19 @@ export default function PrintPreviewPanel({
               }}
             >
               {pageQuestions.studentPageNo === 1 ? (
-                <PageHeader task={task} color={color} showName={showName} showDate={showDate} showLogo={showLogo} previewStudent={pageQuestions.student} printType={printType} />
+                <PageHeader task={task} color={color} showClass={showClass} showName={showName} showDate={showDate} showUnit={showUnit} showLogo={showLogo} previewStudent={pageQuestions.student} printType={printType} />
               ) : (
                 <AbbreviatedPageHeader task={task} color={color} printType={printType} />
               )}
 
-              <div className="flex flex-1 relative min-w-0" style={{ gap: `${problemGap}mm` }}>
+              <div className="flex flex-1 relative min-w-0" style={{ gap: '8mm' }}>
                 <div className="absolute top-0 bottom-0 left-1/2 border-l border-gray-300 z-20" style={{ transform: "translateX(-50%)" }} />
                 <div 
                   className="flex-1 flex flex-col z-10 min-w-0 flex-shrink-0" 
                   style={{ 
                     gap: `${problemGap}mm`,
-                    width: `calc(50% - ${problemGap / 2}mm)`,
-                    maxWidth: `calc(50% - ${problemGap / 2}mm)`
+                    width: 'calc(50% - 4mm)',
+                    maxWidth: 'calc(50% - 4mm)'
                   }}
                 >
                   {(pageQuestions?.left || []).map((qItem) => (
@@ -996,8 +1039,8 @@ export default function PrintPreviewPanel({
                   className="flex-1 flex flex-col z-10 min-w-0 flex-shrink-0" 
                   style={{ 
                     gap: `${problemGap}mm`,
-                    width: `calc(50% - ${problemGap / 2}mm)`,
-                    maxWidth: `calc(50% - ${problemGap / 2}mm)`
+                    width: 'calc(50% - 4mm)',
+                    maxWidth: 'calc(50% - 4mm)'
                   }}
                 >
                   {(pageQuestions?.right || []).map((qItem) => (
@@ -1058,19 +1101,19 @@ export default function PrintPreviewPanel({
               }}
             >
               {pageQuestions.studentPageNo === 1 ? (
-                <PageHeader task={task} color={color} showName={showName} showDate={showDate} showLogo={showLogo} previewStudent={pageQuestions.student} printType={printType} />
+                <PageHeader task={task} color={color} showClass={showClass} showName={showName} showDate={showDate} showUnit={showUnit} showLogo={showLogo} previewStudent={pageQuestions.student} printType={printType} />
               ) : (
                 <AbbreviatedPageHeader task={task} color={color} printType={printType} />
               )}
 
-              <div className="flex flex-1 relative min-w-0" style={{ gap: `${problemGap}mm` }}>
+              <div className="flex flex-1 relative min-w-0" style={{ gap: '8mm' }}>
                 <div className="absolute top-0 bottom-0 left-1/2 border-l border-gray-300 z-20" style={{ transform: "translateX(-50%)" }} />
                 <div 
                   className="flex-1 flex flex-col z-10 min-w-0 flex-shrink-0" 
                   style={{ 
                     gap: `${problemGap}mm`,
-                    width: `calc(50% - ${problemGap / 2}mm)`,
-                    maxWidth: `calc(50% - ${problemGap / 2}mm)`
+                    width: 'calc(50% - 4mm)',
+                    maxWidth: 'calc(50% - 4mm)'
                   }}
                 >
                   {(pageQuestions?.left || []).map((qItem) => (
@@ -1092,8 +1135,8 @@ export default function PrintPreviewPanel({
                   className="flex-1 flex flex-col z-10 min-w-0 flex-shrink-0" 
                   style={{ 
                     gap: `${problemGap}mm`,
-                    width: `calc(50% - ${problemGap / 2}mm)`,
-                    maxWidth: `calc(50% - ${problemGap / 2}mm)`
+                    width: 'calc(50% - 4mm)',
+                    maxWidth: 'calc(50% - 4mm)'
                   }}
                 >
                   {(pageQuestions?.right || []).map((qItem) => (

@@ -28,10 +28,14 @@ interface Props {
   setProblemGap: (v: number) => void;
   fontSize: number;
   setFontSize: (v: number) => void;
+  showClass: boolean;
+  setShowClass: (v: boolean) => void;
   showName: boolean;
   setShowName: (v: boolean) => void;
   showDate: boolean;
   setShowDate: (v: boolean) => void;
+  showUnit: boolean;
+  setShowUnit: (v: boolean) => void;
   showLogo: boolean;
   setShowLogo: (v: boolean) => void;
   onOpenStudentModal: () => void;
@@ -58,8 +62,10 @@ export default function PrintSettingPanel({
   pageMargin, setPageMargin,
   problemGap, setProblemGap,
   fontSize, setFontSize,
+  showClass, setShowClass,
   showName, setShowName,
   showDate, setShowDate,
+  showUnit, setShowUnit,
   showLogo, setShowLogo,
   onOpenStudentModal,
   activeStudents
@@ -207,12 +213,20 @@ export default function PrintSettingPanel({
         <Label className="text-gray-700 font-semibold">추가 표시</Label>
         <div className="flex flex-col gap-2">
           <div className="flex items-center space-x-2">
+            <Checkbox id="opt-class" checked={showClass} onCheckedChange={(c) => setShowClass(!!c)} />
+            <Label htmlFor="opt-class" className="font-normal cursor-pointer">반 표시</Label>
+          </div>
+          <div className="flex items-center space-x-2">
             <Checkbox id="opt-name" checked={showName} onCheckedChange={(c) => setShowName(!!c)} />
             <Label htmlFor="opt-name" className="font-normal cursor-pointer">이름 표시</Label>
           </div>
           <div className="flex items-center space-x-2">
             <Checkbox id="opt-date" checked={showDate} onCheckedChange={(c) => setShowDate(!!c)} />
             <Label htmlFor="opt-date" className="font-normal cursor-pointer">오늘 날짜 표시</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Checkbox id="opt-unit" checked={showUnit} onCheckedChange={(c) => setShowUnit(!!c)} />
+            <Label htmlFor="opt-unit" className="font-normal cursor-pointer">출제 단원 표시</Label>
           </div>
           <div className="flex items-center space-x-2">
             <Checkbox id="opt-logo" checked={showLogo} onCheckedChange={(c) => setShowLogo(!!c)} />

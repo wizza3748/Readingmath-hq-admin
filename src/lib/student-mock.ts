@@ -68,8 +68,8 @@ export const INITIAL_STUDENTS: Student[] = [
     serviceType: "combo",
     grade: "초등 4",
     semester: "2학기",
-    classId: null,
-    serviceStatus: "before_use",
+    classId: "class-1", // 대표선생님반 소속
+    serviceStatus: "in_use",
     serviceEndDate: "",
     createdAt: "2026-01-06",
     recommendCode: "",
@@ -84,8 +84,8 @@ export const INITIAL_STUDENTS: Student[] = [
     serviceType: "combo",
     grade: "초등 4",
     semester: "1학기",
-    classId: null,
-    serviceStatus: "suspended",
+    classId: "class-2", // 그냥선생님반 소속 (3명 중 1)
+    serviceStatus: "in_use",
     serviceEndDate: "",
     createdAt: "2025-12-17",
     recommendCode: "REC-ALPHA",
@@ -100,8 +100,8 @@ export const INITIAL_STUDENTS: Student[] = [
     serviceType: "combo",
     grade: "미정",
     semester: "",
-    classId: null,
-    serviceStatus: "suspended",
+    classId: "class-2", // 그냥선생님반 소속 (3명 중 2)
+    serviceStatus: "in_use",
     serviceEndDate: "",
     createdAt: "2025-12-17",
     recommendCode: "",
@@ -116,8 +116,8 @@ export const INITIAL_STUDENTS: Student[] = [
     serviceType: "combo",
     grade: "미정",
     semester: "",
-    classId: "class-1", // 초3A반 (진반장 담당)
-    serviceStatus: "suspended",
+    classId: "class-1", // 대표선생님반 소속
+    serviceStatus: "in_use",
     serviceEndDate: "",
     createdAt: "2025-12-17",
     recommendCode: "",
@@ -132,8 +132,8 @@ export const INITIAL_STUDENTS: Student[] = [
     serviceType: "combo",
     grade: "미정",
     semester: "",
-    classId: "class-1", // 초3A반 (진반장 담당)
-    serviceStatus: "suspended",
+    classId: "class-1", // 대표선생님반 소속
+    serviceStatus: "in_use",
     serviceEndDate: "",
     createdAt: "2025-12-17",
     recommendCode: "REC-BETA",
@@ -148,8 +148,8 @@ export const INITIAL_STUDENTS: Student[] = [
     serviceType: "combo",
     grade: "초등 3",
     semester: "1학기",
-    classId: "class-2", // 초4B반 (진반장 담당)
-    serviceStatus: "suspended",
+    classId: "class-2", // 그냥선생님반 소속 (3명 중 3)
+    serviceStatus: "in_use",
     serviceEndDate: "",
     createdAt: "2025-12-17",
     recommendCode: "",
@@ -164,7 +164,7 @@ export const INITIAL_STUDENTS: Student[] = [
     serviceType: "combo",
     grade: "중등 1",
     semester: "1학기",
-    classId: "class-3", // 초5C반 (담당교사 미지정 반)
+    classId: "class-1", // 대표선생님반 소속
     serviceStatus: "in_use",
     serviceEndDate: "",
     createdAt: "2025-12-17",
@@ -184,7 +184,36 @@ export function getStoredStudents(): Student[] {
     return INITIAL_STUDENTS;
   }
   try {
-    return JSON.parse(stored);
+    const parsed = JSON.parse(stored) as Student[];
+    let changed = false;
+    const updated = parsed.map(s => {
+      let isUpdated = false;
+      if (s.serviceStatus !== "in_use") {
+        s.serviceStatus = "in_use";
+        isUpdated = true;
+      }
+      
+      const name = s.name;
+      let targetClass = s.classId;
+      if (name === "육학생" || name === "오학생" || name === "이학생") {
+        targetClass = "class-2";
+      } else {
+        targetClass = "class-1";
+      }
+      
+      if (s.classId !== targetClass) {
+        s.classId = targetClass;
+        isUpdated = true;
+      }
+      
+      if (isUpdated) changed = true;
+      return s;
+    });
+    
+    if (changed) {
+      localStorage.setItem(STUDENT_STORAGE_KEY, JSON.stringify(updated));
+    }
+    return updated;
   } catch (e) {
     return INITIAL_STUDENTS;
   }

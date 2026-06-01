@@ -18,6 +18,23 @@ import { AssignModal } from "../assign-modal";
 import { ResultModal } from "../result-modal";
 import { useTaskCenterStore } from "@/lib/task-center-store";
 import { useToast } from "@/hooks/use-toast";
+import { getStoredClasses } from "@/lib/teacher-mock";
+
+const getMappedClassName = (name: string): string => {
+  if (typeof window === "undefined") return name;
+  const storedClasses = getStoredClasses();
+  if (storedClasses.length === 0) return name;
+
+  if (storedClasses.some(c => c.name === name)) {
+    return name;
+  }
+
+  if (name === "1반" && storedClasses[0]) return storedClasses[0].name;
+  if (name === "2반" && storedClasses[1]) return storedClasses[1].name;
+  if (name === "3반" && storedClasses[2]) return storedClasses[2].name;
+
+  return storedClasses[0] ? storedClasses[0].name : name;
+};
 
 interface Props {
   task?: TaskItem;
@@ -69,6 +86,11 @@ export function TaskSettingPanel({
   const [countTooltipOpen, setCountTooltipOpen] = React.useState(false);
   const [assignHelpOpen, setAssignHelpOpen] = React.useState(false);
   const [resultHelpOpen, setResultHelpOpen] = React.useState(false);
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // 중요 유형 필터가 켜져 있으면 중요 유형만 필터링한 리스트를 기준으로 계산
   const activeSelectedTypes = onlyImportantType
@@ -378,24 +400,28 @@ export function TaskSettingPanel({
           {assignedStudents.length === 0 ? (
             <p className="text-sm text-blue-400 font-medium italic py-1 px-0.5">배정된 학생이 없습니다.</p>
           ) : (
-            <div className="space-y-2.5 px-0.5">
+            <div className="px-0.5">
               <div className="flex items-center gap-2.5">
-                <span className="text-xl font-black text-blue-700">{assignedStudents.length}<span className="text-sm font-bold ml-0.5">명</span></span>
-                <Badge variant="outline" className="bg-blue-600 text-white border-transparent px-2.5 py-0.5 text-[10px] font-bold shadow-sm">
+                {(() => {
+                  const classes = task?.assignedClasses ?? [];
+                  if (classes.length > 0) {
+                    const mappedFirst = getMappedClassName(classes[0]);
+                    const displayClassName = classes.length === 1 ? mappedFirst : `${mappedFirst} 외 ${classes.length - 1}개`;
+                    return (
+                      <span className="text-xl font-black text-blue-700 leading-none tracking-tight">
+                        {mounted ? displayClassName : classes[0]}
+                      </span>
+                    );
+                  }
+                  return (
+                    <span className="text-xl font-black text-blue-700 leading-none tracking-tight">
+                      {assignedStudents.length}<span className="text-sm font-bold ml-0.5">명</span>
+                    </span>
+                  );
+                })()}
+                <Badge variant="outline" className="bg-blue-600 text-white border-transparent px-2.5 py-0.5 text-[10px] font-bold shadow-sm shrink-0">
                   완료 {completed.length}명
                 </Badge>
-              </div>
-
-              <div className="flex items-center gap-1.5 text-[11px] text-blue-500 font-medium">
-                {assignedStudents.filter(s => (task?.assignedClasses ?? []).includes(s.classGroup)).length > 0 && (
-                  <span>반 배정 <span className="font-bold text-blue-700">{assignedStudents.filter(s => (task?.assignedClasses ?? []).includes(s.classGroup)).length}</span>명</span>
-                )}
-                {assignedStudents.filter(s => (task?.assignedClasses ?? []).includes(s.classGroup)).length > 0 && (task?.individualStudentIds ?? []).length > 0 && (
-                  <span className="mx-0.5 text-blue-200 font-bold">·</span>
-                )}
-                {(task?.individualStudentIds ?? []).length > 0 && (
-                  <span>개별 배정 <span className="font-bold text-blue-700">{(task?.individualStudentIds ?? []).length}</span>명</span>
-                )}
               </div>
             </div>
           )}
@@ -436,46 +462,17 @@ export function TaskSettingPanel({
           </div>
 
           {completed.length === 0 ? (
-            <div className="space-y-1.5 py-1 px-0.5">
-              <p className="text-sm text-purple-400 font-medium italic">결과가 생성된 학생이 없습니다.</p>
-              <p className="text-xs font-bold text-purple-500 opacity-60">평균 -</p>
-            </div>
+            <p className="text-sm text-purple-400 font-medium italic py-1 px-0.5">결과가 생성된 학생이 없습니다.</p>
           ) : (
-            <div className="space-y-2.5 px-0.5">
+            <div className="px-0.5">
               <div className="flex items-center gap-2.5">
-                <span className="text-xl font-black text-purple-700">완료 {completed.length}<span className="text-sm font-bold ml-0.5">명</span></span>
-                <Badge variant="outline" className="bg-purple-600 text-white border-transparent px-2.5 py-0.5 text-[10px] font-bold shadow-sm">
+                <span className="text-xl font-black text-purple-700 leading-none tracking-tight">
+                  완료 {completed.length}<span className="text-sm font-bold ml-0.5">명</span>
+                </span>
+                <Badge variant="outline" className="bg-purple-600 text-white border-transparent px-2.5 py-0.5 text-[10px] font-bold shadow-sm shrink-0">
                   평균 {Math.round(completed.reduce((sum, s) => sum + (s.score || 0), 0) / completed.length)}점
                 </Badge>
               </div>
-
-              {(() => {
-                const classAverages = (task?.assignedClasses ?? [])
-                  .map(cls => {
-                    const classCompleted = completed.filter(s => s.classGroup === cls);
-                    if (classCompleted.length === 0) return null;
-                    const avgScore = Math.round(classCompleted.reduce((sum, s) => sum + (s.score || 0), 0) / classCompleted.length);
-                    return { name: cls, avg: avgScore };
-                  })
-                  .filter(Boolean) as { name: string; avg: number }[];
-
-                if (classAverages.length === 0) return null;
-
-                return (
-                  <div className="flex items-center gap-1.5 text-[11px] text-purple-500 font-medium">
-                    {classAverages.length <= 2 ? (
-                      classAverages.map((ca, idx) => (
-                        <React.Fragment key={ca.name}>
-                          <span>{ca.name} 평균 <span className="font-bold text-purple-700">{ca.avg}</span>점</span>
-                          {idx === 0 && classAverages.length === 2 && <span className="mx-0.5 text-purple-200 font-bold">·</span>}
-                        </React.Fragment>
-                      ))
-                    ) : (
-                      <span>{classAverages[0].name} 평균 <span className="font-bold text-purple-700">{classAverages[0].avg}</span>점 외 {classAverages.length - 1}개</span>
-                    )}
-                  </div>
-                );
-              })()}
             </div>
           )}
         </div>

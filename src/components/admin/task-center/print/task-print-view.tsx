@@ -32,8 +32,10 @@ export default function TaskPrintView({ taskId }: Props) {
   const [problemGap, setProblemGap] = React.useState<number>(16);
   const [fontSize, setFontSize] = React.useState<number>(12);
   
+  const [showClass, setShowClass] = React.useState<boolean>(true);
   const [showName, setShowName] = React.useState<boolean>(true);
   const [showDate, setShowDate] = React.useState<boolean>(true);
+  const [showUnit, setShowUnit] = React.useState<boolean>(true);
   const [showLogo, setShowLogo] = React.useState<boolean>(true);
 
   const [studentModalOpen, setStudentModalOpen] = React.useState(false);
@@ -72,8 +74,10 @@ export default function TaskPrintView({ taskId }: Props) {
     setPageMargin(10);
     setProblemGap(16);
     setFontSize(12);
+    setShowClass(true);
     setShowName(true);
     setShowDate(true);
+    setShowUnit(true);
     setShowLogo(true);
   };
 
@@ -173,8 +177,10 @@ export default function TaskPrintView({ taskId }: Props) {
               pageMargin={pageMargin} setPageMargin={setPageMargin}
               problemGap={problemGap} setProblemGap={setProblemGap}
               fontSize={fontSize} setFontSize={setFontSize}
+              showClass={showClass} setShowClass={setShowClass}
               showName={showName} setShowName={setShowName}
               showDate={showDate} setShowDate={setShowDate}
+              showUnit={showUnit} setShowUnit={setShowUnit}
               showLogo={showLogo} setShowLogo={setShowLogo}
               onOpenStudentModal={() => setStudentModalOpen(true)}
               activeStudents={activeStudents}
@@ -195,8 +201,10 @@ export default function TaskPrintView({ taskId }: Props) {
               pageMargin={pageMargin}
               problemGap={problemGap}
               fontSize={fontSize}
+              showClass={showClass}
               showName={showName}
               showDate={showDate}
+              showUnit={showUnit}
               showLogo={showLogo}
               printTarget={printTarget}
               selectedStudentIds={selectedStudentIds}

@@ -37770,6 +37770,9 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
 
 // ─────────────────────────────────────────────
 
+import { getStoredClasses } from "./teacher-mock";
+import { getStoredStudents } from "./student-mock";
+
 export const SAMPLE_CLASSES = ["1반", "2반", "3반"];
 
 export const SAMPLE_STUDENTS: StudentAssignment[] = [
@@ -37781,6 +37784,34 @@ export const SAMPLE_STUDENTS: StudentAssignment[] = [
   { studentId: "s6", studentName: "한미르", classGroup: "1반", status: "not_started", printStatus: "not_printed" },
 ];
 
+export function getAdaptedSampleClasses(): string[] {
+  if (typeof window === "undefined") {
+    return ["초3A반", "초4B반", "초5C반", "중1A반", "중2B반", "고1A반", "고2B반", "고3C반"];
+  }
+  return getStoredClasses().map(c => c.name);
+}
+
+export function getAdaptedSampleStudents(): StudentAssignment[] {
+  if (typeof window === "undefined") {
+    return [
+      { studentId: "s1", studentName: "김리딩", classGroup: "초3A반", status: "not_started" as any, printStatus: "not_printed" as any },
+      { studentId: "s2", studentName: "이수학", classGroup: "초3A반", status: "not_started" as any, printStatus: "not_printed" as any }
+    ];
+  }
+  const students = getStoredStudents();
+  const classes = getStoredClasses();
+  return students.map(s => {
+    const cls = classes.find(c => c.id === s.classId);
+    return {
+      studentId: s.id,
+      studentName: s.name,
+      classGroup: cls ? cls.name : "반 없음",
+      status: "not_started" as any,
+      printStatus: "not_printed" as any
+    };
+  });
+}
+
 export const INITIAL_TASKS: TaskItem[] = [
   {
     "id": "task-001",
@@ -37791,7 +37822,7 @@ export const INITIAL_TASKS: TaskItem[] = [
     "difficulties": [
       "intermediate"
     ],
-    "problemMode": "individual",
+    "problemMode": "same",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
     "selectedTypes": [
@@ -37871,7 +37902,7 @@ export const INITIAL_TASKS: TaskItem[] = [
     "difficulties": [
       "advanced"
     ],
-    "problemMode": "same",
+    "problemMode": "individual",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
     "selectedTypes": [
@@ -38011,7 +38042,7 @@ export const INITIAL_TASKS: TaskItem[] = [
     "subject": "math",
     "name": "분자끼리 나누어떨어지고 분모가 같은 (분수)÷(단위분수)",
     "course": "초6-2",
-    "status": "draft",
+    "status": "published",
     "difficulties": [
       "basic"
     ],
@@ -38043,7 +38074,9 @@ export const INITIAL_TASKS: TaskItem[] = [
     "totalProblems": 8,
     "createdAt": "2026-05-17T16:00:00Z",
     "assignedStudents": [],
-    "assignedClasses": [],
+    "assignedClasses": [
+      "1반"
+    ],
     "individualStudentIds": []
   },
   {
@@ -38174,7 +38207,7 @@ export const INITIAL_TASKS: TaskItem[] = [
       }
     ],
     "assignedClasses": [
-      "1반"
+      "2반"
     ],
     "individualStudentIds": []
   },
@@ -38314,60 +38347,11 @@ export const INITIAL_TASKS: TaskItem[] = [
     ],
     "totalProblems": 23,
     "createdAt": "2026-05-14T10:00:00Z",
-    "assignedStudents": [
-      {
-        "studentId": "stu-math-6-1",
-        "studentName": "학생1",
-        "classGroup": "1반",
-        "status": "submitted",
-        "score": 85,
-        "problemCount": 23,
-        "printStatus": "not_printed",
-        "submittedAt": "2026-05-15T10:00:00Z"
-      },
-      {
-        "studentId": "stu-math-6-2",
-        "studentName": "학생2",
-        "classGroup": "1반",
-        "status": "submitted",
-        "score": 85,
-        "problemCount": 23,
-        "printStatus": "not_printed",
-        "submittedAt": "2026-05-15T10:00:00Z"
-      },
-      {
-        "studentId": "stu-math-6-3",
-        "studentName": "학생3",
-        "classGroup": "1반",
-        "status": "in_progress",
-        "problemCount": 23,
-        "printStatus": "not_printed"
-      },
-      {
-        "studentId": "stu-math-6-4",
-        "studentName": "학생4",
-        "classGroup": "1반",
-        "status": "in_progress",
-        "problemCount": 23,
-        "printStatus": "not_printed"
-      },
-      {
-        "studentId": "stu-math-6-5",
-        "studentName": "학생5",
-        "classGroup": "1반",
-        "status": "in_progress",
-        "problemCount": 23,
-        "printStatus": "not_printed"
-      }
+    "assignedStudents": [],
+    "assignedClasses": [
+      "2반"
     ],
-    "assignedClasses": [],
-    "individualStudentIds": [
-      "stu-math-6-1",
-      "stu-math-6-2",
-      "stu-math-6-3",
-      "stu-math-6-4",
-      "stu-math-6-5"
-    ]
+    "individualStudentIds": []
   },
   {
     "id": "task-math-007",
@@ -38378,7 +38362,7 @@ export const INITIAL_TASKS: TaskItem[] = [
     "difficulties": [
       "basic"
     ],
-    "problemMode": "same",
+    "problemMode": "individual",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
     "selectedTypes": [
@@ -38458,7 +38442,7 @@ export const INITIAL_TASKS: TaskItem[] = [
       }
     ],
     "assignedClasses": [
-      "1반"
+      "2반"
     ],
     "individualStudentIds": []
   },
@@ -38472,7 +38456,7 @@ export const INITIAL_TASKS: TaskItem[] = [
       "advanced",
       "basic"
     ],
-    "problemMode": "individual",
+    "problemMode": "same",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
     "selectedTypes": [
@@ -39206,7 +39190,7 @@ export const INITIAL_TASKS: TaskItem[] = [
       "basic",
       "advanced"
     ],
-    "problemMode": "individual",
+    "problemMode": "same",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
     "selectedTypes": [
@@ -39715,7 +39699,7 @@ export const INITIAL_TASKS: TaskItem[] = [
       "intermediate",
       "advanced"
     ],
-    "problemMode": "individual",
+    "problemMode": "same",
     "prioritizeUnsolved": false,
     "onlyImportant": false,
     "selectedTypes": [
@@ -41211,6 +41195,142 @@ INITIAL_TASKS.forEach(task => {
     task.assignedStudents.forEach(stu => {
       stu.problemCount = task.totalProblems;
     });
+  }
+
+  // ─────────────────────────────────────────────
+  // 목데이터 전체 정합성 자가치유 (Self-Healing)
+  // ─────────────────────────────────────────────
+  // 1. assignedClasses가 지정되어 있는 반 배정 과제의 경우
+  if (task.assignedClasses && task.assignedClasses.length > 0) {
+    const allGlobalStudents = getAdaptedSampleStudents();
+    
+    // 예전 반 명칭 매핑 (선생님/학생 관리의 등록된 반 정보와 동적으로 매칭되도록 연동!)
+    const storedClasses = getStoredClasses();
+    const mappedClasses = task.assignedClasses.map(c => {
+      // 1. 이미 등록된 반 명칭과 동일하다면 그대로 반환
+      if (storedClasses.some(sc => sc.name === c)) {
+        return c;
+      }
+      
+      // 2. 과거 목데이터 번호 반(1반, 2반, 3반)을 등록된 반 리스트의 순서대로 동적 매칭
+      if (c === "1반" && storedClasses[0]) return storedClasses[0].name;
+      if (c === "2반" && storedClasses[1]) return storedClasses[1].name;
+      if (c === "3반" && storedClasses[2]) return storedClasses[2].name;
+      
+      // 3. 구버전 예전 한글 명칭(초3A반, 초4B반, 초5C반)도 등록된 반 리스트 순서대로 매칭
+      if (c === "초3A반" && storedClasses[0]) return storedClasses[0].name;
+      if (c === "초4B반" && storedClasses[1]) return storedClasses[1].name;
+      if (c === "초5C반" && storedClasses[2]) return storedClasses[2].name;
+      
+      return c;
+    });
+
+    // 해당 반에 소속된 실제 동적 학생들 필터링
+    const classStudents = allGlobalStudents.filter(s => mappedClasses.includes(s.classGroup));
+
+    if (classStudents.length > 0) {
+      // 기존 assignedStudents 에서 진행 상태("in_progress", "submitted")를 추출
+      const activeStates = task.assignedStudents
+        .filter(as => as.status !== "not_started")
+        .map(as => ({
+          status: as.status,
+          score: as.score,
+          correctCount: as.correctCount,
+          totalCount: as.totalCount,
+          submittedAt: as.submittedAt
+        }));
+
+      let activeIndex = 0;
+
+      // 실제 학생 명단으로 assignedStudents 배열을 100% 리셋 및 동기화!
+      task.assignedStudents = classStudents.map(s => {
+        // 기존에 진행 중이거나 제출 완료한 학생이 하나라도 있었다면, 첫 번째 학생(들)에게 그 상태를 이관
+        let state: any = { status: "not_started" };
+        if (activeIndex < activeStates.length) {
+          state = activeStates[activeIndex++];
+        }
+
+        return {
+          studentId: s.studentId,
+          studentName: s.studentName,
+          classGroup: s.classGroup,
+          status: state.status,
+          score: state.score,
+          correctCount: state.correctCount,
+          totalCount: state.totalCount,
+          submittedAt: state.submittedAt,
+          printStatus: "not_printed" as const,
+          problemCount: task.totalProblems
+        };
+      });
+      
+      // assignedClasses 명칭도 매핑된 명칭으로 표준화
+      task.assignedClasses = mappedClasses;
+    }
+  } 
+  // 2. assignedClasses가 없고 individualStudentIds가 있는 개별 배정 과제의 경우
+  else if (task.individualStudentIds && task.individualStudentIds.length > 0) {
+    const allGlobalStudents = getAdaptedSampleStudents();
+    
+    // 고스트 학생을 배제하고, 실제 존재하는 학생들만 필터링하여 매핑
+    const validStudents: typeof task.assignedStudents = [];
+    const validIds: string[] = [];
+
+    task.assignedStudents.forEach(as => {
+      // 이름 기준으로 매핑 우선 시도
+      const realStudent = allGlobalStudents.find(s => s.studentName === as.studentName);
+      if (realStudent) {
+        validStudents.push({
+          ...as,
+          studentId: realStudent.studentId,
+          classGroup: realStudent.classGroup,
+          problemCount: task.totalProblems
+        });
+        validIds.push(realStudent.studentId);
+      }
+    });
+
+    if (validStudents.length > 0) {
+      task.assignedStudents = validStudents;
+      task.individualStudentIds = validIds;
+    } else {
+      // 이름 매핑조차 안 되는 고스트 학생만 있는 경우, 실제 학생 중 일부를 샘플로 배정하여 완전히 썩은 데이터 방지
+      // 이와 동시에 기존에 고스트 학생이 들고 있던 완료(submitted) 및 진행중(in_progress) 등의 진행 상태를 그대로 이관합니다! (QA 편의성 극대화)
+      const sampleStudents = allGlobalStudents.slice(0, Math.min(5, allGlobalStudents.length));
+      
+      const activeStates = task.assignedStudents
+        .filter(as => as.status !== "not_started")
+        .map(as => ({
+          status: as.status,
+          score: as.score,
+          correctCount: as.correctCount,
+          totalCount: as.totalCount,
+          submittedAt: as.submittedAt
+        }));
+
+      let activeIndex = 0;
+
+      task.assignedStudents = sampleStudents.map(s => {
+        let state: any = { status: "not_started" };
+        if (activeIndex < activeStates.length) {
+          state = activeStates[activeIndex++];
+        }
+
+        return {
+          studentId: s.studentId,
+          studentName: s.studentName,
+          classGroup: s.classGroup,
+          status: state.status,
+          score: state.score,
+          correctCount: state.correctCount,
+          totalCount: state.totalCount,
+          submittedAt: state.submittedAt,
+          printStatus: "not_printed" as const,
+          problemCount: task.totalProblems
+        };
+      });
+      task.individualStudentIds = sampleStudents.map(s => s.studentId);
+    }
   }
 });
 

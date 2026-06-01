@@ -10,6 +10,7 @@ import { Copy, Trash2, Eye, ArrowUpDown, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { ConfirmDialog } from "./confirm-dialog";
 import { useTaskCenterStore } from "@/lib/task-center-store";
+import { getStoredClasses } from "@/lib/teacher-mock";
 
 type SortKey = "id" | "name" | "course" | "typeCount" | "problemCount" | "createdAt" | "assignedCount" | "completedCount" | "avgScore";
 type SortDir = "asc" | "desc";
@@ -17,6 +18,22 @@ type SortDir = "asc" | "desc";
 interface Props {
   tasks: TaskItem[];
 }
+
+const getMappedClassName = (name: string): string => {
+  if (typeof window === "undefined") return name;
+  const storedClasses = getStoredClasses();
+  if (storedClasses.length === 0) return name;
+
+  if (storedClasses.some(c => c.name === name)) {
+    return name;
+  }
+
+  if (name === "1반" && storedClasses[0]) return storedClasses[0].name;
+  if (name === "2반" && storedClasses[1]) return storedClasses[1].name;
+  if (name === "3반" && storedClasses[2]) return storedClasses[2].name;
+
+  return storedClasses[0] ? storedClasses[0].name : name;
+};
 
 function fmt(dt: string) {
   return dt.replace("T", " ").slice(0, 16);
@@ -183,6 +200,11 @@ export function TaskTable({ tasks }: Props) {
   const [sortDir, setSortDir] = React.useState<SortDir>("desc");
   const [deleteTarget, setDeleteTarget] = React.useState<TaskItem | null>(null);
   const [duplicateTarget, setDuplicateTarget] = React.useState<TaskItem | null>(null);
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleSort = (key: SortKey) => {
     if (sortKey === key) setSortDir(d => d === "asc" ? "desc" : "asc");
@@ -294,16 +316,28 @@ export function TaskTable({ tasks }: Props) {
                   <td className="py-3 px-3 whitespace-nowrap">{task.totalProblems}문항</td>
                   <td className="py-3 px-3"><DifficultyBadges difficulties={task.difficulties} /></td>
                   <td className="py-3 px-3">
-                    <span className={`inline-flex w-fit whitespace-nowrap px-2 py-0.5 rounded-full text-[11px] font-medium border ${task.problemMode === "same" ? "bg-teal-50 text-teal-700 border-teal-200" : "bg-indigo-50 text-indigo-700 border-indigo-200"}`}>
-                      {task.problemMode === "same" ? "동일" : "학생별"}
-                    </span>
+                    {mounted ? (
+                      <span className={`inline-flex w-fit whitespace-nowrap px-2 py-0.5 rounded-full text-[11px] font-medium border ${task.problemMode === "same" ? "bg-teal-50 text-teal-700 border-teal-200" : "bg-indigo-50 text-indigo-700 border-indigo-200"}`}>
+                        {task.problemMode === "same" ? "동일" : "학생별"}
+                      </span>
+                    ) : ""}
                   </td>
                   <td className="py-3 px-3 whitespace-nowrap text-muted-foreground text-xs">{fmt(task.createdAt)}</td>
                   <td className="py-3 px-3"><TaskStatusBadge status={task.status} /></td>
-                  <td className="py-3 px-3 whitespace-nowrap">{task.assignedStudents.length}명</td>
-                  <td className="py-3 px-3 whitespace-nowrap">{completed.length}명</td>
+                  <td className="py-3 px-3 whitespace-nowrap font-medium text-slate-700">
+                    {mounted ? (() => {
+                      const classes = task.assignedClasses || [];
+                      if (classes.length > 0) {
+                        const mappedFirst = getMappedClassName(classes[0]);
+                        if (classes.length === 1) return mappedFirst;
+                        return `${mappedFirst} 외 ${classes.length - 1}개`;
+                      }
+                      return `${task.assignedStudents.length}명`;
+                    })() : ""}
+                  </td>
+                  <td className="py-3 px-3 whitespace-nowrap">{mounted ? `${completed.length}명` : ""}</td>
                   <td className="py-3 px-3 whitespace-nowrap font-semibold">
-                    {avg !== null ? `${avg}점` : "-"}
+                    {mounted ? (avg !== null ? `${avg}점` : "-") : ""}
                   </td>
                   <td className="py-3 px-3">
                     <div className="flex items-center gap-1.5 justify-start">

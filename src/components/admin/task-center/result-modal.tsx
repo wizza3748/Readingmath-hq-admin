@@ -16,7 +16,24 @@ import {
   StudentAssignment, 
   getStudentTaskStatusLabel 
 } from "@/lib/task-center-mock";
+import { getStoredClasses } from "@/lib/teacher-mock";
 import { BarChart3, Search, ChevronRight, CheckCircle2, XCircle, Users, Info } from "lucide-react";
+
+const getMappedClassName = (name: string): string => {
+  if (typeof window === "undefined") return name;
+  const storedClasses = getStoredClasses();
+  if (storedClasses.length === 0) return name;
+
+  if (storedClasses.some(c => c.name === name)) {
+    return name;
+  }
+
+  if (name === "1반" && storedClasses[0]) return storedClasses[0].name;
+  if (name === "2반" && storedClasses[1]) return storedClasses[1].name;
+  if (name === "3반" && storedClasses[2]) return storedClasses[2].name;
+
+  return storedClasses[0] ? storedClasses[0].name : name;
+};
 
 interface ResultModalProps {
   open: boolean;
@@ -53,10 +70,18 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
     : null;
 
   // 동적 반 목록 생성
-  const availableClasses = React.useMemo(() => {
-    const classes = Array.from(new Set(assignedStudents.map(s => s.classGroup))).filter(Boolean);
-    return ["전체", ...classes.sort()];
+  const actualClasses = React.useMemo(() => {
+    return Array.from(new Set(assignedStudents.map(s => s.classGroup))).filter(Boolean).sort();
   }, [assignedStudents]);
+
+  const classesCount = actualClasses.length;
+  const onlyClassName = classesCount === 1 ? actualClasses[0] : "";
+  const isClassTask = (task.assignedClasses || []).length > 0;
+  const showFilterBar = isClassTask && classesCount > 1;
+
+  const availableClasses = React.useMemo(() => {
+    return ["전체", ...actualClasses];
+  }, [actualClasses]);
 
   // 반별 평균 정보
   const classAverages = React.useMemo(() => {
@@ -173,278 +198,302 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-[960px] h-[85vh] flex flex-col p-0 overflow-hidden rounded-2xl border border-slate-200 shadow-2xl">
+      <DialogContent className="max-w-[960px] h-[760px] max-h-[90vh] flex flex-col p-0 overflow-hidden rounded-2xl border border-slate-200 shadow-2xl">
         {/* 모달 헤더 */}
-        <DialogHeader className="p-6 flex flex-row items-center border-b border-slate-100 shrink-0">
+        <DialogHeader className="px-6 pt-5 pb-3 flex flex-row items-center border-b border-slate-100 shrink-0">
           <DialogTitle className="flex items-center gap-2 text-xl font-extrabold text-slate-800">
-            <BarChart3 className="h-5 w-5 text-primary" />
+            <BarChart3 className="h-5 w-5 text-purple-600" />
             과제 결과 현황
           </DialogTitle>
         </DialogHeader>
 
-        <div className="flex-1 overflow-y-auto px-6 py-6 space-y-8 bg-muted/5">
-          {/* 과제 정보 영역 */}
-          <div className="bg-white p-6 rounded-xl border border-slate-200/80 shadow-sm space-y-4">
-            <div className="flex flex-col gap-1.5">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">과제명</span>
-              <span className="text-base font-bold text-slate-800 leading-normal break-words whitespace-pre-wrap">{task.name}</span>
+        <div className="flex-1 flex flex-col min-h-0 bg-slate-50/30">
+          {/* 상단 정보 바 (가로 1줄 플랫 구조로 흐리멍텅한 둥근 라인 박스 완전 제거 및 영역 구분 강화) */}
+          <div className="px-6 py-3 border-b border-slate-200/60 bg-white flex items-center justify-between gap-4 text-xs font-semibold text-slate-500 shrink-0 select-none shadow-xs">
+            <div className="flex items-center gap-2 max-w-[50%] min-w-0">
+              <span className="text-[10px] font-black text-slate-500 bg-slate-100 px-2 py-0.5 rounded border border-slate-200/60 uppercase tracking-wider shrink-0">과제명</span>
+              <span className="font-extrabold text-slate-800 leading-none truncate">{task.name}</span>
             </div>
-            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold text-slate-500">
-              <span>학습과정 <span className="text-slate-800 font-bold">{task.course}</span></span>
+            <div className="flex items-center gap-3 text-slate-400 shrink-0">
+              <span>학습과정 <strong className="text-slate-700 font-extrabold">{task.course}</strong></span>
               <span className="text-slate-300 font-light">·</span>
-              <span>문제 수 <span className="text-slate-800 font-bold">{task.totalProblems}문항</span></span>
+              <span>문제 수 <strong className="text-slate-700 font-extrabold">{task.totalProblems}문항</strong></span>
               <span className="text-slate-300 font-light">·</span>
-              <span>문제 구성 방식 <span className="text-slate-800 font-bold">{task.problemMode === "same" ? "동일 문제" : "학생별 문제"}</span></span>
+              <span className="text-slate-600 font-bold bg-slate-100/80 px-1.5 py-0.5 rounded border border-slate-200/30">{task.problemMode === "same" ? "동일 문제" : "학생별 문제"}</span>
             </div>
           </div>
 
-          {/* 결과 요약 영역 */}
-          <div className="grid grid-cols-3 gap-4">
+          {/* 결과 요약 영역 (상단 정보 바 바로 밑에 단정하게 배치) */}
+          <div className="px-6 py-4 border-b border-slate-200/40 bg-slate-50/50 grid grid-cols-3 gap-3 shrink-0">
             <button 
               onClick={() => setSelectedStatus("all")}
-              className={`p-4 rounded-xl border flex flex-col text-left transition-all duration-200 ${
-                selectedStatus === "all" ? "bg-gradient-to-br from-blue-50 to-indigo-50/50 border-blue-200 ring-2 ring-blue-400/20 shadow-sm" : "bg-white border-slate-200 hover:border-blue-200"
+              className={`p-3.5 rounded-xl border flex flex-col text-left transition-all duration-200 shadow-xs group cursor-pointer ${
+                selectedStatus === "all" 
+                  ? "bg-gradient-to-br from-indigo-600 to-indigo-700 border-indigo-600 text-white shadow-md shadow-indigo-600/10" 
+                  : "bg-white border-slate-200 hover:border-indigo-300"
               }`}
             >
-              <span className="text-[11px] font-bold text-blue-600 mb-1">배정 학생</span>
-              <span className="text-2xl font-extrabold text-blue-800">{totalCount}<span className="text-xs ml-0.5 font-bold text-blue-600/85">명</span></span>
-              <div className="flex flex-wrap gap-x-2 gap-y-1 mt-2 text-[10px] font-bold">
-                <span onClick={(e) => { e.stopPropagation(); handleStatusToggle("not_started"); }} className={`transition-colors cursor-pointer ${selectedStatus === "not_started" ? "text-blue-700 bg-blue-100/80 px-1 rounded" : "text-blue-400"}`}>미시작 {notStartedCount}</span>
-                <span className="text-blue-100 font-light">·</span>
-                <span onClick={(e) => { e.stopPropagation(); handleStatusToggle("in_progress"); }} className={`transition-colors cursor-pointer ${selectedStatus === "in_progress" ? "text-blue-700 bg-blue-100/80 px-1 rounded" : "text-blue-400"}`}>진행중 {inProgressCount}</span>
-                <span className="text-blue-100 font-light">·</span>
-                <span onClick={(e) => { e.stopPropagation(); handleStatusToggle("submitted"); }} className={`transition-colors cursor-pointer ${selectedStatus === "submitted" ? "text-blue-700 bg-blue-100/80 px-1 rounded" : "text-blue-400"}`}>제출완료 {submittedCount}</span>
+              <span className={`text-[10px] font-black uppercase mb-1 tracking-wider ${selectedStatus === "all" ? "text-indigo-100" : "text-indigo-600"}`}>
+                {(() => {
+                  const classes = task?.assignedClasses ?? [];
+                  if (classes.length > 0) {
+                    const mappedFirst = getMappedClassName(classes[0]);
+                    return classes.length === 1 ? mappedFirst : `${mappedFirst} 외 ${classes.length - 1}개`;
+                  }
+                  return "배정 학생";
+                })()}
+              </span>
+              <span className={`text-xl font-black leading-none ${selectedStatus === "all" ? "text-white" : "text-slate-800"}`}>
+                {totalCount}<span className={`text-[10px] ml-0.5 font-bold ${selectedStatus === "all" ? "text-indigo-100/90" : "text-indigo-500"}`}>명</span>
+              </span>
+              <div className={`flex flex-wrap gap-x-2 gap-y-0.5 mt-2.5 text-[9px] font-bold ${selectedStatus === "all" ? "text-indigo-200" : "text-slate-400"}`}>
+                <span onClick={(e) => { e.stopPropagation(); handleStatusToggle("not_started"); }} className={`transition-all hover:scale-105 cursor-pointer ${selectedStatus === "not_started" ? "text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100" : selectedStatus === "all" ? "hover:text-white" : ""}`}>미시작 {notStartedCount}</span>
+                <span>·</span>
+                <span onClick={(e) => { e.stopPropagation(); handleStatusToggle("in_progress"); }} className={`transition-all hover:scale-105 cursor-pointer ${selectedStatus === "in_progress" ? "text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100" : selectedStatus === "all" ? "hover:text-white" : ""}`}>진행중 {inProgressCount}</span>
+                <span>·</span>
+                <span onClick={(e) => { e.stopPropagation(); handleStatusToggle("submitted"); }} className={`transition-all hover:scale-105 cursor-pointer ${selectedStatus === "submitted" ? "text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100" : selectedStatus === "all" ? "hover:text-white" : ""}`}>제출완료 {submittedCount}</span>
               </div>
             </button>
             
             <button 
               onClick={() => handleStatusToggle("completed")}
-              className={`p-4 rounded-xl border flex flex-col text-left transition-all duration-200 ${
-                selectedStatus === "completed" ? "bg-gradient-to-br from-green-50 to-emerald-50/50 border-green-200 ring-2 ring-green-400/20 shadow-sm" : "bg-white border-slate-200 hover:border-green-200"
+              className={`p-3.5 rounded-xl border flex flex-col text-left transition-all duration-200 shadow-xs group cursor-pointer ${
+                selectedStatus === "completed" 
+                  ? "bg-gradient-to-br from-emerald-600 to-emerald-700 border-emerald-600 text-white shadow-md shadow-emerald-600/10" 
+                  : "bg-white border-slate-200 hover:border-emerald-300"
               }`}
             >
-              <span className="text-[11px] font-bold text-green-600 mb-1">완료 학생</span>
-              <span className="text-2xl font-extrabold text-green-800">{completedCount}<span className="text-xs ml-0.5 font-bold text-green-600/85">명</span></span>
-              <span className="text-[10px] font-bold text-green-400/80 mt-2">제출완료 학생</span>
+              <span className={`text-[10px] font-black uppercase mb-1 tracking-wider ${selectedStatus === "completed" ? "text-emerald-100" : "text-emerald-600"}`}>완료 학생</span>
+              <span className={`text-xl font-black leading-none ${selectedStatus === "completed" ? "text-white" : "text-slate-800"}`}>
+                {completedCount}<span className={`text-[10px] ml-0.5 font-bold ${selectedStatus === "completed" ? "text-emerald-100/90" : "text-emerald-500"}`}>명</span>
+              </span>
+              <span className={`text-[9px] font-bold mt-2.5 tracking-wider ${selectedStatus === "completed" ? "text-emerald-200" : "text-slate-400"}`}>제출완료 학생 수</span>
             </button>
             
-            <div className="bg-gradient-to-br from-purple-50/50 to-fuchsia-50/30 p-4 rounded-xl border border-purple-100 flex flex-col shadow-xs">
-              <span className="text-[11px] font-bold text-purple-600 mb-1">평균 점수</span>
-              <span className="text-2xl font-extrabold text-purple-800">{avgScore !== null ? `${avgScore}점` : "-"}</span>
-              <div className="mt-2 flex items-center gap-1.5 min-h-[14px]">
+            <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs flex flex-col text-left">
+              <span className="text-[10px] font-black text-purple-600 mb-1 tracking-wider">평균 점수</span>
+              <span className="text-xl font-black text-slate-800 leading-none">
+                {avgScore !== null ? `${avgScore}점` : "-"}
+              </span>
+              <div className="mt-2.5 flex items-center gap-1.5 min-h-[14px]">
                 {classAvgText ? (
-                  <span className="text-[10px] font-bold text-purple-400/80 leading-tight">{classAvgText}</span>
+                  <span className="text-[9px] font-bold text-slate-400 leading-tight truncate">{classAvgText}</span>
                 ) : (
-                  <span className="text-[10px] font-bold text-purple-400 opacity-60">반별 데이터 없음</span>
+                  <span className="text-[9px] font-bold text-slate-300 opacity-60">반별 데이터 없음</span>
                 )}
               </div>
             </div>
           </div>
 
-          {/* 반 선택 및 검색 영역 */}
-          <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-wrap items-center gap-4">
-            <div className="flex flex-wrap gap-2 shrink-0">
-              {availableClasses.map(cls => (
-                <button
-                  key={cls}
-                  onClick={() => setSelectedClass(cls)}
-                  className={`h-8 px-4 rounded-full text-xs font-bold transition-all duration-200 border ${
-                    selectedClass === cls 
-                      ? "bg-primary border-primary text-primary-foreground shadow-sm shadow-primary/10" 
-                      : "bg-white border-slate-200 text-muted-foreground hover:border-primary/30 hover:text-primary hover:bg-slate-50/50"
-                  }`}
-                >
-                  {cls}
-                </button>
-              ))}
-            </div>
+          {/* 반 선택 및 검색 영역 (배정된 반이 여러 개일 때만 필터링/검색 지원) */}
+          {showFilterBar && (
+            <div className="px-6 pt-8 pb-3 flex items-center justify-between gap-4 shrink-0">
+              <div className="flex flex-wrap gap-1.5">
+                {availableClasses.map(cls => (
+                  <button
+                    key={cls}
+                    onClick={() => setSelectedClass(cls)}
+                    className={`h-8 px-3.5 rounded-full text-xs font-bold transition-all duration-200 border flex items-center ${
+                      selectedClass === cls 
+                        ? "bg-slate-800 border-slate-800 text-white shadow-sm font-black" 
+                        : "bg-white border-slate-200 text-slate-500 hover:border-slate-300 hover:text-slate-700"
+                    }`}
+                  >
+                    {cls}
+                  </button>
+                ))}
+              </div>
 
-            <div className="flex-1 min-w-[200px] relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-400" />
-              <Input 
-                className="h-9 pl-9 text-xs bg-slate-50 border border-slate-200 focus-visible:ring-primary/20 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-offset-0 transition-all rounded-lg" 
-                placeholder="학생 이름 검색" 
-                value={searchKeyword}
-                onChange={e => setSearchKeyword(e.target.value)}
-              />
+              <div className="relative w-44">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-400" />
+                <Input 
+                  className="h-9 pl-9 text-xs bg-white border border-slate-200 focus-visible:ring-primary/20 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-offset-0 transition-all rounded-lg shadow-xs" 
+                  placeholder="학생 이름 검색" 
+                  value={searchKeyword}
+                  onChange={e => setSearchKeyword(e.target.value)}
+                />
+              </div>
             </div>
-          </div>
+          )}
 
-          {/* 목록 영역 */}
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <h3 className="text-sm font-black flex items-center gap-2">
-                <Users className="h-4 w-4 text-primary" />
-                학생 결과 목록
-              </h3>
-              <p className="text-xs text-muted-foreground">총 <span className="font-bold text-foreground">{filteredStudents.length}</span>명</p>
-            </div>
-            <div className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
-              <table className="w-full text-sm">
-                <thead className="bg-slate-50 border-b border-slate-100">
-                  <tr className="text-[11px] text-slate-500 font-bold uppercase tracking-wider">
-                    <th className="py-3 px-4 text-left">학생명</th>
-                    <th className="py-3 px-4 text-left">반</th>
-                    <th className="py-3 px-4 text-center">배정 방식</th>
-                    <th className="py-3 px-4 text-center">학생 과제 상태</th>
-                    <th className="py-3 px-4 text-center">정답 수</th>
-                    <th className="py-3 px-4 text-center">점수</th>
-                    <th className="py-3 px-4 text-left">제출 일시</th>
-                    <th className="py-3 px-4 text-center w-20">상세</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y">
-                  {filteredStudents.length === 0 ? (
-                    <tr>
-                      <td colSpan={8} className="py-12 text-center text-muted-foreground italic">
-                        검색 결과가 없습니다.
-                      </td>
+          {/* 스크롤 영역 (테이블 + 하단 유형별 요약 포함 - 필터바 없을 때 pt-8로 칼각 Spacing 구현) */}
+          <div className={`flex-1 overflow-y-auto px-6 pb-5 space-y-8 ${!showFilterBar ? "pt-8" : "pt-2.5"}`}>
+            {/* 학생 결과 목록 */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-black flex items-center gap-2 text-slate-700">
+                  <Users className="h-4 w-4 text-purple-600" />
+                  학생 결과 목록
+                </h3>
+                <p className="text-xs text-muted-foreground">현재 필터 결과 <span className="font-bold text-foreground">{filteredStudents.length}</span>명</p>
+              </div>
+              <div className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
+                <table className="w-full text-sm">
+                  <thead className="bg-slate-50 border-b border-slate-100">
+                    <tr className="text-[11px] text-slate-500 font-bold uppercase tracking-wider">
+                      <th className="py-3 px-4 text-left">학생명</th>
+                      <th className="py-3 px-4 text-left">반</th>
+                      <th className="py-3 px-4 text-center">배정 방식</th>
+                      <th className="py-3 px-4 text-center">학생 과제 상태</th>
+                      <th className="py-3 px-4 text-center">정답 수</th>
+                      <th className="py-3 px-4 text-center">점수</th>
+                      <th className="py-3 px-4 text-left">제출 일시</th>
+                      <th className="py-3 px-4 text-center w-20">상세</th>
                     </tr>
-                  ) : (
-                    filteredStudents.map(s => {
-                      const isCompleted = s.status === "submitted";
-                      const assignType = (task.assignedClasses || []).includes(s.classGroup) ? "반 배정" : "개별 배정";
-                      const total = s.totalCount ?? task.totalProblems;
-                      const correct = s.correctCount ?? (s.score !== undefined ? Math.round((s.score / 100) * total) : 0);
-                      
-                      return (
-                        <React.Fragment key={s.studentId}>
-                          <tr className={`hover:bg-slate-50/50 border-b border-slate-100 transition-colors duration-150 ${selectedStudentId === s.studentId ? "bg-indigo-50/30" : ""}`}>
-                            <td className="py-3 px-4 font-bold">{s.studentName}</td>
-                            <td className="py-3 px-4 text-xs text-muted-foreground font-medium">{s.classGroup}</td>
-                            <td className="py-3 px-4 text-center">
-                              <span className={`text-[10px] font-black px-1.5 py-0.5 rounded border ${
-                                assignType === "반 배정" ? "bg-blue-50 text-blue-600 border-blue-100" : "bg-purple-50 text-purple-600 border-purple-100"
-                              }`}>{assignType}</span>
-                            </td>
-                            <td className="py-3 px-4 text-center">
-                              <span className={`text-[10px] font-black px-2 py-1 rounded-full ${getStatusColor(s.status)}`}>
-                                {getStudentTaskStatusLabel(s.status)}
-                              </span>
-                            </td>
-                            <td className="py-3 px-4 text-center font-medium">
-                              {isCompleted ? `${correct}/${total}` : "-"}
-                            </td>
-                            <td className="py-3 px-4 text-center font-black">
-                              {isCompleted ? <span className="text-primary">{s.score ?? 0}점</span> : "-"}
-                            </td>
-                            <td className="py-3 px-4 text-[11px] text-muted-foreground whitespace-nowrap">
-                              {isCompleted ? formatDate(s.submittedAt) : "-"}
-                            </td>
-                            <td className="py-3 px-4 text-center">
-                              {isCompleted && (
-                                <Button 
-                                  size="sm" 
-                                  variant="ghost" 
-                                  className={`h-7 w-7 p-0 rounded-full ${selectedStudentId === s.studentId ? "bg-primary text-white" : ""}`}
-                                  onClick={() => setSelectedStudentId(selectedStudentId === s.studentId ? null : s.studentId)}
-                                >
-                                  <ChevronRight className={`h-4 w-4 transition-transform ${selectedStudentId === s.studentId ? "rotate-90" : ""}`} />
-                                </Button>
-                              )}
-                            </td>
-                          </tr>
-                          
-                          {/* 학생별 결과 상세 영역 */}
-                          {selectedStudentId === s.studentId && mockDetail && (
-                            <tr>
-                              <td colSpan={8} className="p-0 bg-muted/10 border-b">
-                                <div className="p-6 space-y-6">
-                                  <div className="flex items-center justify-between border-b pb-4">
-                                    <div className="flex items-center gap-4">
-                                      <h4 className="text-lg font-black text-primary">{s.studentName} 상세 결과</h4>
-                                      <div className="flex items-center gap-3 text-xs font-bold">
-                                        <div className="flex items-center gap-1 text-green-600"><CheckCircle2 className="h-3 w-3" /> 정답 {mockDetail.questions.filter(q => q.isCorrect).length}</div>
-                                        <div className="flex items-center gap-1 text-red-500"><XCircle className="h-3 w-3" /> 오답 {mockDetail.questions.filter(q => !q.isCorrect).length}</div>
-                                      </div>
-                                    </div>
-                                    <Badge className="bg-primary px-3 py-1 text-sm font-black">{s.score ?? 0}점</Badge>
-                                  </div>
-                                  
-                                  <div className="grid grid-cols-2 gap-8">
-                                    <div className="space-y-3">
-                                      <h5 className="text-[11px] font-black text-muted-foreground uppercase flex items-center gap-1.5">
-                                        <Info className="h-3 w-3" /> 문항별 정오답
-                                      </h5>
-                                      <div className="grid grid-cols-5 gap-2">
-                                        {mockDetail.questions.map(q => (
-                                          <div key={q.id} className={`flex flex-col items-center p-2 rounded-lg border ${q.isCorrect ? "bg-green-50 border-green-100 text-green-700" : "bg-red-50 border-red-100 text-red-700"}`}>
-                                            <span className="text-[10px] font-bold opacity-60 mb-1">{q.id}</span>
-                                            <span className="text-sm font-black">{q.isCorrect ? "O" : "X"}</span>
-                                          </div>
-                                        ))}
-                                      </div>
-                                    </div>
-
-                                    <div className="space-y-3">
-                                      <h5 className="text-[11px] font-black text-muted-foreground uppercase flex items-center gap-1.5">
-                                        <BarChart3 className="h-3 w-3" /> 유형별 성취도
-                                      </h5>
-                                      <div className="space-y-2">
-                                        {mockDetail.typeStats.map((ts, idx) => (
-                                          <div key={idx} className="flex items-center justify-between p-2.5 bg-white rounded-lg border shadow-sm">
-                                            <span className="text-xs font-bold text-foreground truncate max-w-[140px]">{ts.typeName}</span>
-                                            <div className="flex items-center gap-3">
-                                              <span className="text-[11px] font-bold text-muted-foreground">{ts.correct}/{ts.total}</span>
-                                              <span className="text-xs font-black text-primary w-10 text-right">{ts.score}점</span>
-                                            </div>
-                                          </div>
-                                        ))}
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                  </thead>
+                  <tbody className="divide-y">
+                    {filteredStudents.length === 0 ? (
+                      <tr>
+                        <td colSpan={8} className="py-12 text-center text-muted-foreground italic">
+                          검색 결과가 없습니다.
+                        </td>
+                      </tr>
+                    ) : (
+                      filteredStudents.map(s => {
+                        const isCompleted = s.status === "submitted";
+                        const assignType = (task.assignedClasses || []).includes(s.classGroup) ? "반 배정" : "개별 배정";
+                        const total = s.totalCount ?? task.totalProblems;
+                        const correct = s.correctCount ?? (s.score !== undefined ? Math.round((s.score / 100) * total) : 0);
+                        
+                        return (
+                          <React.Fragment key={s.studentId}>
+                            <tr className={`hover:bg-slate-50/50 border-b border-slate-100 transition-colors duration-150 ${selectedStudentId === s.studentId ? "bg-indigo-50/30" : ""}`}>
+                              <td className="py-3 px-4 font-bold">{s.studentName}</td>
+                              <td className="py-3 px-4 text-xs text-muted-foreground font-medium">{s.classGroup}</td>
+                              <td className="py-3 px-4 text-center">
+                                <span className={`text-[10px] font-black px-1.5 py-0.5 rounded border ${
+                                  assignType === "반 배정" ? "bg-blue-50 text-blue-600 border-blue-100" : "bg-purple-50 text-purple-600 border-purple-100"
+                                }`}>{assignType}</span>
+                              </td>
+                              <td className="py-3 px-4 text-center">
+                                <span className={`text-[10px] font-black px-2 py-1 rounded-full ${getStatusColor(s.status)}`}>
+                                  {getStudentTaskStatusLabel(s.status)}
+                                </span>
+                              </td>
+                              <td className="py-3 px-4 text-center font-medium">
+                                {isCompleted ? `${correct}/${total}` : "-"}
+                              </td>
+                              <td className="py-3 px-4 text-center font-black">
+                                {isCompleted ? <span className="text-primary">{s.score ?? 0}점</span> : "-"}
+                              </td>
+                              <td className="py-3 px-4 text-[11px] text-muted-foreground whitespace-nowrap">
+                                {isCompleted ? formatDate(s.submittedAt) : "-"}
+                              </td>
+                              <td className="py-3 px-4 text-center">
+                                {isCompleted && (
+                                  <Button 
+                                    size="sm" 
+                                    variant="ghost" 
+                                    className={`h-7 w-7 p-0 rounded-full ${selectedStudentId === s.studentId ? "bg-primary text-white" : ""}`}
+                                    onClick={() => setSelectedStudentId(selectedStudentId === s.studentId ? null : s.studentId)}
+                                  >
+                                    <ChevronRight className={`h-4 w-4 transition-transform ${selectedStudentId === s.studentId ? "rotate-90" : ""}`} />
+                                  </Button>
+                                )}
                               </td>
                             </tr>
-                          )}
-                        </React.Fragment>
-                      );
-                    })
-                  )}
-                </tbody>
-              </table>
+                            
+                            {/* 학생별 결과 상세 영역 */}
+                            {selectedStudentId === s.studentId && mockDetail && (
+                              <tr>
+                                <td colSpan={8} className="p-0 bg-muted/10 border-b">
+                                  <div className="p-6 space-y-6">
+                                    <div className="flex items-center justify-between border-b pb-4">
+                                      <div className="flex items-center gap-4">
+                                        <h4 className="text-lg font-black text-primary">{s.studentName} 상세 결과</h4>
+                                        <div className="flex items-center gap-3 text-xs font-bold">
+                                          <div className="flex items-center gap-1 text-green-600"><CheckCircle2 className="h-3 w-3" /> 정답 {mockDetail.questions.filter(q => q.isCorrect).length}</div>
+                                          <div className="flex items-center gap-1 text-red-500"><XCircle className="h-3 w-3" /> 오답 {mockDetail.questions.filter(q => !q.isCorrect).length}</div>
+                                        </div>
+                                      </div>
+                                      <Badge className="bg-primary px-3 py-1 text-sm font-black">{s.score ?? 0}점</Badge>
+                                    </div>
+                                    
+                                    <div className="grid grid-cols-2 gap-8">
+                                      <div className="space-y-3">
+                                        <h5 className="text-[11px] font-black text-muted-foreground uppercase flex items-center gap-1.5">
+                                          <Info className="h-3 w-3" /> 문항별 정오답
+                                        </h5>
+                                        <div className="grid grid-cols-5 gap-2">
+                                          {mockDetail.questions.map(q => (
+                                            <div key={q.id} className={`flex flex-col items-center p-2 rounded-lg border ${q.isCorrect ? "bg-green-50 border-green-100 text-green-700" : "bg-red-50 border-red-100 text-red-700"}`}>
+                                              <span className="text-[10px] font-bold opacity-60 mb-1">{q.id}</span>
+                                              <span className="text-sm font-black">{q.isCorrect ? "O" : "X"}</span>
+                                            </div>
+                                          ))}
+                                        </div>
+                                      </div>
+ 
+                                      <div className="space-y-3">
+                                        <h5 className="text-[11px] font-black text-muted-foreground uppercase flex items-center gap-1.5">
+                                          <BarChart3 className="h-3 w-3" /> 유형별 성취도
+                                        </h5>
+                                        <div className="space-y-2">
+                                          {mockDetail.typeStats.map((ts, idx) => (
+                                            <div key={idx} className="flex items-center justify-between p-2.5 bg-white rounded-lg border shadow-sm">
+                                              <span className="text-xs font-bold text-foreground truncate max-w-[140px]">{ts.typeName}</span>
+                                              <div className="flex items-center gap-3">
+                                                <span className="text-[11px] font-bold text-muted-foreground">{ts.correct}/{ts.total}</span>
+                                                <span className="text-xs font-black text-primary w-10 text-right">{ts.score}점</span>
+                                              </div>
+                                            </div>
+                                          ))}
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            )}
+                          </React.Fragment>
+                        );
+                      })
+                    )}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
 
-          {/* 유형별 결과 요약 영역 */}
-          <div className="space-y-4 pt-4 border-t">
-            <h3 className="text-sm font-black flex items-center gap-2">
-              <BarChart3 className="h-4 w-4 text-purple-600" />
-              유형별 결과 요약
-            </h3>
-            <div className="grid grid-cols-2 gap-4">
-              {typeSummaries.length === 0 ? (
-                <div className="col-span-2 py-8 text-center text-muted-foreground italic bg-muted/10 rounded-xl">유형별 결과가 없습니다.</div>
-              ) : (
-                typeSummaries.map((ts, idx) => (
-                  <div key={idx} className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between hover:border-purple-300 transition-all duration-200">
-                    <div className="flex flex-col gap-1">
-                      <span className="text-[10px] font-black text-purple-400 uppercase tracking-widest">유형명</span>
-                      <span className="text-sm font-bold text-foreground">{ts.typeName}</span>
+            {/* 유형별 결과 요약 영역 */}
+            <div className="space-y-4 pt-4 border-t border-slate-200/80">
+              <h3 className="text-sm font-black flex items-center gap-2 text-slate-700">
+                <BarChart3 className="h-4 w-4 text-purple-600" />
+                유형별 결과 요약
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                {typeSummaries.length === 0 ? (
+                  <div className="col-span-2 py-8 text-center text-muted-foreground italic bg-muted/10 rounded-xl">유형별 결과가 없습니다.</div>
+                ) : (
+                  typeSummaries.map((ts, idx) => (
+                    <div key={idx} className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between hover:border-purple-300 transition-all duration-200">
+                      <div className="flex flex-col gap-1">
+                        <span className="text-[10px] font-black text-purple-400 uppercase tracking-widest">유형명</span>
+                        <span className="text-sm font-bold text-foreground">{ts.typeName}</span>
+                      </div>
+                      <div className="flex items-center gap-6">
+                        <div className="flex flex-col items-end gap-0.5">
+                          <span className="text-[9px] font-black text-muted-foreground uppercase">문항 수</span>
+                          <span className="text-xs font-bold">{ts.total}</span>
+                        </div>
+                        <div className="flex flex-col items-end gap-0.5">
+                          <span className="text-[9px] font-black text-muted-foreground uppercase">평균 정답</span>
+                          <span className="text-xs font-bold text-green-600">{ts.avgCorrect ? `${ts.avgCorrect}개` : "-"}</span>
+                        </div>
+                        <div className="flex flex-col items-end gap-0.5">
+                          <span className="text-[9px] font-black text-muted-foreground uppercase">평균 점수</span>
+                          <span className="text-sm font-black text-primary">{ts.avgScore !== null ? `${ts.avgScore}점` : "-"}</span>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-6">
-                      <div className="flex flex-col items-end gap-0.5">
-                        <span className="text-[9px] font-black text-muted-foreground uppercase">문항 수</span>
-                        <span className="text-xs font-bold">{ts.total}</span>
-                      </div>
-                      <div className="flex flex-col items-end gap-0.5">
-                        <span className="text-[9px] font-black text-muted-foreground uppercase">평균 정답</span>
-                        <span className="text-xs font-bold text-green-600">{ts.avgCorrect ? `${ts.avgCorrect}개` : "-"}</span>
-                      </div>
-                      <div className="flex flex-col items-end gap-0.5">
-                        <span className="text-[9px] font-black text-muted-foreground uppercase">평균 점수</span>
-                        <span className="text-sm font-black text-primary">{ts.avgScore !== null ? `${ts.avgScore}점` : "-"}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))
-              )}
+                  ))
+                )}
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="px-6 py-4 border-t bg-muted/10 flex justify-end">
-          <Button variant="outline" onClick={() => onOpenChange(false)} className="h-10 px-8 font-bold text-muted-foreground">닫기</Button>
+        <div className="px-6 py-4 border-t bg-white flex justify-end shrink-0">
+          <Button variant="outline" onClick={() => onOpenChange(false)} className="h-10 px-8 font-black text-slate-500">닫기</Button>
         </div>
       </DialogContent>
     </Dialog>

@@ -52,7 +52,7 @@ export default function TaskDashboard() {
   const [searchText, setSearchText] = React.useState("");
   const [searchApplied, setSearchApplied] = React.useState("");
   const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(10);
+  const [perPage, setPerPage] = React.useState(20);
   const [helpOpen, setHelpOpen] = React.useState(false);
 
   const subjectTasks = tasks.filter(t => t.subject === currentSubject);

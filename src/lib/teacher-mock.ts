@@ -73,12 +73,14 @@ export const MOCK_TEACHERS: Teacher[] = [
     phone: "01036983748",
     email: "",
     createdAt: "2025-12-17T08:48:00",
-    assignedClasses: [],
+    assignedClasses: [
+      { id: "class-2", name: "그냥선생님반", studentCount: 3 },
+    ],
   },
   {
     id: "teacher-34",
     seq: 34,
-    name: "진반장",
+    name: "진원장",
     loginId: "jinsun123",
     role: "representative",
     serviceStatus: "normal",
@@ -86,17 +88,16 @@ export const MOCK_TEACHERS: Teacher[] = [
     email: "",
     createdAt: "2025-12-17T08:36:27",
     assignedClasses: [
-      { id: "class-1", name: "초3A반", studentCount: 2 },
-      { id: "class-2", name: "초4B반", studentCount: 1 },
+      { id: "class-1", name: "대표선생님반", studentCount: 4 },
     ],
   },
 ];
 
 // ── 전체 반 목록 ──────────────────────────────────────────────
 export const ALL_CLASSES_INITIAL: ClassInfo[] = [
-  { id: "class-1", name: "초3A반", studentCount: 2 },
-  { id: "class-2", name: "초4B반", studentCount: 1 },
-  { id: "class-3", name: "초5C반", studentCount: 1 },
+  { id: "class-1", name: "대표선생님반", studentCount: 4 },
+  { id: "class-2", name: "그냥선생님반", studentCount: 3 },
+  { id: "class-3", name: "초5C반", studentCount: 0 },
   { id: "class-4", name: "중1A반", studentCount: 0 },
   { id: "class-5", name: "중2B반", studentCount: 0 },
   { id: "class-6", name: "고1A반", studentCount: 0 },
@@ -118,7 +119,28 @@ export function getStoredClasses(): ClassInfo[] {
     return ALL_CLASSES_INITIAL;
   }
   try {
-    return JSON.parse(stored);
+    const parsed = JSON.parse(stored) as ClassInfo[];
+    let changed = false;
+    const updated = parsed.map(c => {
+      let count = c.studentCount;
+      let name = c.name;
+      
+      if (c.id === "class-1") {
+        if (c.studentCount !== 4) { count = 4; changed = true; }
+        if (c.name === "초3A반") { name = "대표선생님반"; changed = true; }
+      }
+      else if (c.id === "class-2") {
+        if (c.studentCount !== 3) { count = 3; changed = true; }
+        if (c.name === "초4B반") { name = "그냥선생님반"; changed = true; }
+      }
+      else if (c.id === "class-3" && c.studentCount !== 0) { count = 0; changed = true; }
+      
+      return { ...c, name, studentCount: count };
+    });
+    if (changed) {
+      localStorage.setItem(CLASSES_STORAGE_KEY, JSON.stringify(updated));
+    }
+    return updated;
   } catch (e) {
     return ALL_CLASSES_INITIAL;
   }
@@ -142,7 +164,54 @@ export function getStoredTeachers(): Teacher[] {
     return MOCK_TEACHERS;
   }
   try {
-    return JSON.parse(stored);
+    const parsed = JSON.parse(stored) as Teacher[];
+    let changed = false;
+    const updated = parsed.map(t => {
+      // 1. teacher-34 (진원장) 보정
+      if (t.id === "teacher-34") {
+        const isNameDiff = t.name !== "진원장";
+        const class1 = t.assignedClasses.find(c => c.id === "class-1");
+        const isClass1Invalid = !class1 || class1.studentCount !== 4 || class1.name === "초3A반";
+        const hasExtraClasses = t.assignedClasses.length !== 1;
+        
+        if (isNameDiff || isClass1Invalid || hasExtraClasses) {
+          changed = true;
+          const currentName = (class1 && class1.name !== "초3A반") ? class1.name : "대표선생님반";
+          return {
+            ...t,
+            name: "진원장",
+            assignedClasses: [
+              { id: "class-1", name: currentName, studentCount: 4 }
+            ]
+          };
+        }
+      }
+      
+      // 2. teacher-35 (진선생) 보정
+      if (t.id === "teacher-35") {
+        const isNameDiff = t.name !== "진선생";
+        const class2 = t.assignedClasses.find(c => c.id === "class-2");
+        const isClass2Invalid = !class2 || class2.studentCount !== 3 || class2.name === "초4B반";
+        const hasExtraClasses = t.assignedClasses.length !== 1;
+        
+        if (isNameDiff || isClass2Invalid || hasExtraClasses) {
+          changed = true;
+          const currentName = (class2 && class2.name !== "초4B반") ? class2.name : "그냥선생님반";
+          return {
+            ...t,
+            name: "진선생",
+            assignedClasses: [
+              { id: "class-2", name: currentName, studentCount: 3 }
+            ]
+          };
+        }
+      }
+      return t;
+    });
+    if (changed) {
+      localStorage.setItem(TEACHER_STORAGE_KEY, JSON.stringify(updated));
+    }
+    return updated;
   } catch (e) {
     return MOCK_TEACHERS;
   }
