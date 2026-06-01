@@ -415,7 +415,7 @@ export function TaskSettingPanel({
                   }
                   return (
                     <span className="text-xl font-black text-blue-700 leading-none tracking-tight">
-                      {assignedStudents.length}<span className="text-sm font-bold ml-0.5">명</span>
+                      {mounted ? assignedStudents.length : ""}<span className="text-sm font-bold ml-0.5">{mounted ? "명" : ""}</span>
                     </span>
                   );
                 })()}

@@ -619,7 +619,7 @@ export function AssignModal({
                         {filteredStudents.length === 0 ? (
                           <tr>
                             <td colSpan={5} className="py-12 text-center text-muted-foreground italic">
-                              학생 데이터가 없습니다.
+                              {searchName.trim() ? "검색 결과가 없습니다." : "학생 데이터가 없습니다."}
                             </td>
                           </tr>
                         ) : (
