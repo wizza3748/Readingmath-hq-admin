@@ -238,25 +238,25 @@ export default function MathTaskCenterPage() {
                             <Link href="/content/science-task-center">
                                 <span className={`px-3 py-0.5 ${isDarkMode ? 'bg-[#fbbf24]/10 text-[#fbbf24] border-[#fbbf24]/20 shadow-[0_0_15px_rgba(251,191,36,0.15)]' : 'bg-amber-50 text-amber-700 border-amber-200'} text-[12px] font-black rounded-full border cursor-pointer hover:opacity-80 transition-opacity`}>수학</span>
                             </Link>
+
+                            <button
+                                onClick={handleResetData}
+                                className={`flex items-center gap-1 px-3 py-0.5 rounded-full border text-[12px] font-black shadow-sm transition-all active:scale-95 cursor-pointer ml-1 ${
+                                    isDarkMode 
+                                        ? 'bg-white/[0.02] border-white/[0.08] text-[#94a3b8] hover:text-white hover:bg-white/[0.06]' 
+                                        : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                                }`}
+                                title="진행중2, 미시작1, 완료6 목 데이터 초기화"
+                            >
+                                <RotateCcw className="h-3 w-3" />
+                                <span>데이터 초기화</span>
+                            </button>
                         </div>
                         <p className={`text-[14.5px] ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-600'} mt-2 font-medium`}>수학과제를 확인하고 풀이할 수 있습니다.</p>
                     </div>
 
-                    {/* 데이터 초기화 및 테마 토글 버튼 */}
-                    <div className="mt-4 md:mt-0 flex items-center gap-3">
-                        <button
-                            onClick={handleResetData}
-                            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-[12.5px] font-extrabold shadow-sm transition-all active:scale-95 cursor-pointer ${
-                                isDarkMode 
-                                    ? 'bg-white/[0.02] border-white/[0.08] text-[#94a3b8] hover:text-white hover:bg-white/[0.06]' 
-                                    : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                            }`}
-                            title="진행중2, 미시작1, 완료6 목 데이터 초기화"
-                        >
-                            <RotateCcw className="h-3.5 w-3.5" />
-                            <span>데이터 초기화</span>
-                        </button>
-
+                    {/* 테마 토글 버튼 */}
+                    <div className="mt-4 md:mt-0 flex items-center">
                         <button
                             onClick={() => setIsDarkMode(!isDarkMode)}
                             className={`relative w-16 h-8 rounded-full transition-all duration-300 flex items-center p-1 cursor-pointer select-none focus:outline-none shadow-md ${
@@ -418,7 +418,7 @@ export default function MathTaskCenterPage() {
                         </div>
 
                         <div className="grid grid-cols-1 gap-5">
-                            {unstartedTasks.slice(0, 1).map(task => (
+                            {unstartedTasks.map(task => (
                                 <div key={task.id} className={`group relative ${isDarkMode ? 'bg-white/[0.02] border-white/[0.06] hover:border-[#fbbf24]/40 shadow-[0_12px_45px_rgba(0,0,0,0.35)]' : 'bg-white border border-slate-200 shadow-[0_4px_16px_rgba(51,65,85,0.06)] hover:border-slate-300 hover:shadow-[0_8px_24px_rgba(51,65,85,0.12)]'} rounded-2xl p-6 transition-all duration-300 flex flex-col sm:flex-row justify-between gap-6 hover:-translate-y-0.5`}>
                                     
                                     {/* 좌측 정보 영역 */}

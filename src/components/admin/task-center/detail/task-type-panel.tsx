@@ -153,8 +153,8 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
         : { basic: 0, intermediate: 0, advanced: 0 };
       return {
         ...t,
-        difficultyCount: { basic: 3, intermediate: 3, advanced: 3 },
-        importantCount: fakeImportantCount
+        difficultyCount: subject === "science" ? t.difficultyCount : { basic: 3, intermediate: 3, advanced: 3 },
+        importantCount: subject === "science" ? t.importantCount : fakeImportantCount
       };
     });
 
@@ -196,8 +196,8 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
         : { basic: 0, intermediate: 0, advanced: 0 };
       return {
         ...t,
-        difficultyCount: { basic: 3, intermediate: 3, advanced: 3 },
-        importantCount: fakeImportantCount
+        difficultyCount: subject === "science" ? t.difficultyCount : { basic: 3, intermediate: 3, advanced: 3 },
+        importantCount: subject === "science" ? t.importantCount : fakeImportantCount
       };
     });
 
@@ -302,7 +302,9 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
     } else {
       // ON: checkedTypeIds에 추가하고, 현재 bulkDifficulties 중 ON인 모든 난이도를 자동 주입 (0문항 방지)
       const nextMultiplier = selectedTypes[0]?.problemCount ?? 1;
-      const activeDiffs = (["basic", "intermediate", "advanced"] as Difficulty[]).filter(d => bulkDifficulties[d]);
+      const activeDiffs = subject === "science"
+        ? (["basic", "intermediate", "advanced"] as Difficulty[]).filter(d => (type.difficultyCount[d] || 0) > 0)
+        : (["basic", "intermediate", "advanced"] as Difficulty[]).filter(d => bulkDifficulties[d]);
       
       const newEntries: SelectedType[] = activeDiffs.map(d => ({
         curriculumId: curriculum!.id,
@@ -350,11 +352,14 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
     } else {
       // 소단원 선택: 미체크 유형 추가, 현재 bulkDifficulties 중 ON 상태인 난이도를 일괄 자동 부여 (0문항 방지)
       const nextMultiplier = selectedTypes[0]?.problemCount ?? 1;
-      const activeDiffs = (["basic", "intermediate", "advanced"] as Difficulty[]).filter(d => bulkDifficulties[d]);
       const toAdd: SelectedType[] = [];
 
       types.forEach(t => {
         if (checkedTypeIds.includes(t.id)) return;
+        const activeDiffs = subject === "science"
+          ? (["basic", "intermediate", "advanced"] as Difficulty[]).filter(d => (t.difficultyCount[d] || 0) > 0)
+          : (["basic", "intermediate", "advanced"] as Difficulty[]).filter(d => bulkDifficulties[d]);
+
         activeDiffs.forEach(d => {
           toAdd.push({
             curriculumId: curriculum!.id,
@@ -418,6 +423,8 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
 
         const type = curriculum?.types.find(t => t.id === typeId);
         if (!type) return;
+
+        if (subject === "science" && (type.difficultyCount[diff] || 0) === 0) return;
 
         toAdd.push({
           curriculumId: curriculum!.id,
@@ -630,6 +637,7 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
                         return (
                           <div key={d} className="p-3 flex flex-wrap gap-2.5 justify-start items-center h-full min-h-[60px]">
                             {group.types.map((type, idx) => {
+                              if ((type.difficultyCount[d] || 0) === 0) return null;
                               const isTypeImportant = type.importantCount.basic > 0 || type.importantCount.intermediate > 0 || type.importantCount.advanced > 0;
                               const isSelected = selectedCombos.includes(makeComboKey(type.id, d)) && (!onlyImportantType || isTypeImportant);
                               const hasImportant = type.importantCount[d] > 0;

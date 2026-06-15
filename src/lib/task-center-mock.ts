@@ -30865,6488 +30865,6 @@ export const MATH_CURRICULA: Curriculum[] = [
 
 export const SCIENCE_CURRICULA: Curriculum[] = [
   {
-    "id": "sci-초3-1",
-    "subject": "science",
-    "course": "초3-1",
-    "types": [
-      {
-        "id": "sc-초3-1-0-1-1",
-        "majorUnit": "1단원-과학 탐구",
-        "minorUnit": "과학 탐구 특성 (1)",
-        "typeName": "과학 탐구 특징 비교하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학 탐구 특징 비교하기)"
-      },
-      {
-        "id": "sc-초3-1-0-1-2",
-        "majorUnit": "1단원-과학 탐구",
-        "minorUnit": "과학 탐구 특성 (1)",
-        "typeName": "과학 탐구 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학 탐구 특징 비교하기)"
-      },
-      {
-        "id": "sc-초3-1-0-1-3",
-        "majorUnit": "1단원-과학 탐구",
-        "minorUnit": "과학 탐구 특성 (1)",
-        "typeName": "과학 탐구 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학 탐구 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-1-0-2-1",
-        "majorUnit": "1단원-과학 탐구",
-        "minorUnit": "과학 탐구 관찰 (2)",
-        "typeName": "과학 탐구 분류하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학 탐구 분류하기)"
-      },
-      {
-        "id": "sc-초3-1-0-2-2",
-        "majorUnit": "1단원-과학 탐구",
-        "minorUnit": "과학 탐구 관찰 (2)",
-        "typeName": "과학 탐구 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학 탐구 분류하기)"
-      },
-      {
-        "id": "sc-초3-1-0-2-3",
-        "majorUnit": "1단원-과학 탐구",
-        "minorUnit": "과학 탐구 관찰 (2)",
-        "typeName": "과학 탐구 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학 탐구 특징 비교하기)"
-      },
-      {
-        "id": "sc-초3-1-1-1-1",
-        "majorUnit": "2단원-물질의 성질",
-        "minorUnit": "물질의 성질 관찰 (1)",
-        "typeName": "물질의 성질 분류하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 성질 분류하기)"
-      },
-      {
-        "id": "sc-초3-1-1-1-2",
-        "majorUnit": "2단원-물질의 성질",
-        "minorUnit": "물질의 성질 관찰 (1)",
-        "typeName": "물질의 성질 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 성질 모형 만들기)"
-      },
-      {
-        "id": "sc-초3-1-1-1-3",
-        "majorUnit": "2단원-물질의 성질",
-        "minorUnit": "물질의 성질 관찰 (1)",
-        "typeName": "물질의 성질 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 성질 모형 만들기)"
-      },
-      {
-        "id": "sc-초3-1-1-1-4",
-        "majorUnit": "2단원-물질의 성질",
-        "minorUnit": "물질의 성질 관찰 (1)",
-        "typeName": "물질의 성질 모형 만들기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 성질 모형 만들기)"
-      },
-      {
-        "id": "sc-초3-1-1-1-5",
-        "majorUnit": "2단원-물질의 성질",
-        "minorUnit": "물질의 성질 관찰 (1)",
-        "typeName": "물질의 성질 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 성질 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초3-1-1-2-1",
-        "majorUnit": "2단원-물질의 성질",
-        "minorUnit": "물질의 성질 탐구 (2)",
-        "typeName": "물질의 성질 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 성질 모형 만들기)"
-      },
-      {
-        "id": "sc-초3-1-1-2-2",
-        "majorUnit": "2단원-물질의 성질",
-        "minorUnit": "물질의 성질 탐구 (2)",
-        "typeName": "물질의 성질 현상 분석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 성질 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-1-1-3-1",
-        "majorUnit": "2단원-물질의 성질",
-        "minorUnit": "물질의 성질 탐구 (3)",
-        "typeName": "물질의 성질 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 성질 분류하기)"
-      },
-      {
-        "id": "sc-초3-1-1-3-2",
-        "majorUnit": "2단원-물질의 성질",
-        "minorUnit": "물질의 성질 탐구 (3)",
-        "typeName": "물질의 성질 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 성질 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-1-1-4-1",
-        "majorUnit": "2단원-물질의 성질",
-        "minorUnit": "물질의 성질 탐구 (4)",
-        "typeName": "물질의 성질 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 성질 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-1-1-4-2",
-        "majorUnit": "2단원-물질의 성질",
-        "minorUnit": "물질의 성질 탐구 (4)",
-        "typeName": "물질의 성질 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 성질 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-1-2-1-1",
-        "majorUnit": "3단원-동물의 한살이",
-        "minorUnit": "동물의 한살이 관찰 (1)",
-        "typeName": "동물의 한살이 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 한살이 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초3-1-2-1-2",
-        "majorUnit": "3단원-동물의 한살이",
-        "minorUnit": "동물의 한살이 관찰 (1)",
-        "typeName": "동물의 한살이 모형 만들기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 한살이 모형 만들기)"
-      },
-      {
-        "id": "sc-초3-1-2-1-3",
-        "majorUnit": "3단원-동물의 한살이",
-        "minorUnit": "동물의 한살이 관찰 (1)",
-        "typeName": "동물의 한살이 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 한살이 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초3-1-2-1-4",
-        "majorUnit": "3단원-동물의 한살이",
-        "minorUnit": "동물의 한살이 관찰 (1)",
-        "typeName": "동물의 한살이 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 한살이 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-1-2-2-1",
-        "majorUnit": "3단원-동물의 한살이",
-        "minorUnit": "동물의 한살이 탐구 (2)",
-        "typeName": "동물의 한살이 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 한살이 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-1-2-2-2",
-        "majorUnit": "3단원-동물의 한살이",
-        "minorUnit": "동물의 한살이 탐구 (2)",
-        "typeName": "동물의 한살이 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 한살이 특징 비교하기)"
-      },
-      {
-        "id": "sc-초3-1-2-2-3",
-        "majorUnit": "3단원-동물의 한살이",
-        "minorUnit": "동물의 한살이 탐구 (2)",
-        "typeName": "동물의 한살이 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 한살이 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-1-2-2-4",
-        "majorUnit": "3단원-동물의 한살이",
-        "minorUnit": "동물의 한살이 탐구 (2)",
-        "typeName": "동물의 한살이 분류하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 한살이 분류하기)"
-      },
-      {
-        "id": "sc-초3-1-2-3-1",
-        "majorUnit": "3단원-동물의 한살이",
-        "minorUnit": "동물의 한살이 관찰 (3)",
-        "typeName": "동물의 한살이 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 한살이 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-1-2-3-2",
-        "majorUnit": "3단원-동물의 한살이",
-        "minorUnit": "동물의 한살이 관찰 (3)",
-        "typeName": "동물의 한살이 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 한살이 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-1-3-1-1",
-        "majorUnit": "4단원-자석의 이용",
-        "minorUnit": "자석의 이용 변화 이해 (1)",
-        "typeName": "자석의 이용 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 자석의 이용 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초3-1-3-1-2",
-        "majorUnit": "4단원-자석의 이용",
-        "minorUnit": "자석의 이용 변화 이해 (1)",
-        "typeName": "자석의 이용 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 자석의 이용 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-1-3-1-3",
-        "majorUnit": "4단원-자석의 이용",
-        "minorUnit": "자석의 이용 변화 이해 (1)",
-        "typeName": "자석의 이용 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 자석의 이용 분류하기)"
-      },
-      {
-        "id": "sc-초3-1-3-1-4",
-        "majorUnit": "4단원-자석의 이용",
-        "minorUnit": "자석의 이용 변화 이해 (1)",
-        "typeName": "자석의 이용 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 자석의 이용 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-1-3-1-5",
-        "majorUnit": "4단원-자석의 이용",
-        "minorUnit": "자석의 이용 변화 이해 (1)",
-        "typeName": "자석의 이용 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 자석의 이용 분류하기)"
-      },
-      {
-        "id": "sc-초3-1-3-2-1",
-        "majorUnit": "4단원-자석의 이용",
-        "minorUnit": "자석의 이용 변화 이해 (2)",
-        "typeName": "자석의 이용 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 자석의 이용 분류하기)"
-      },
-      {
-        "id": "sc-초3-1-3-2-2",
-        "majorUnit": "4단원-자석의 이용",
-        "minorUnit": "자석의 이용 변화 이해 (2)",
-        "typeName": "자석의 이용 현상 분석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 자석의 이용 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-1-3-3-1",
-        "majorUnit": "4단원-자석의 이용",
-        "minorUnit": "자석의 이용 탐구 (3)",
-        "typeName": "자석의 이용 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 자석의 이용 분류하기)"
-      },
-      {
-        "id": "sc-초3-1-3-3-2",
-        "majorUnit": "4단원-자석의 이용",
-        "minorUnit": "자석의 이용 탐구 (3)",
-        "typeName": "자석의 이용 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 자석의 이용 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-1-3-3-3",
-        "majorUnit": "4단원-자석의 이용",
-        "minorUnit": "자석의 이용 탐구 (3)",
-        "typeName": "자석의 이용 현상 분석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 자석의 이용 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-1-3-4-1",
-        "majorUnit": "4단원-자석의 이용",
-        "minorUnit": "자석의 이용 탐구 (4)",
-        "typeName": "자석의 이용 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 자석의 이용 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-1-3-4-2",
-        "majorUnit": "4단원-자석의 이용",
-        "minorUnit": "자석의 이용 탐구 (4)",
-        "typeName": "자석의 이용 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 자석의 이용 분류하기)"
-      },
-      {
-        "id": "sc-초3-1-4-1-1",
-        "majorUnit": "5단원-지구의 모습",
-        "minorUnit": "지구의 모습 변화 이해 (1)",
-        "typeName": "지구의 모습 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구의 모습 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-1-4-1-2",
-        "majorUnit": "5단원-지구의 모습",
-        "minorUnit": "지구의 모습 변화 이해 (1)",
-        "typeName": "지구의 모습 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구의 모습 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초3-1-4-1-3",
-        "majorUnit": "5단원-지구의 모습",
-        "minorUnit": "지구의 모습 변화 이해 (1)",
-        "typeName": "지구의 모습 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구의 모습 특징 비교하기)"
-      },
-      {
-        "id": "sc-초3-1-4-1-4",
-        "majorUnit": "5단원-지구의 모습",
-        "minorUnit": "지구의 모습 변화 이해 (1)",
-        "typeName": "지구의 모습 모형 만들기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구의 모습 모형 만들기)"
-      },
-      {
-        "id": "sc-초3-1-4-1-5",
-        "majorUnit": "5단원-지구의 모습",
-        "minorUnit": "지구의 모습 변화 이해 (1)",
-        "typeName": "지구의 모습 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구의 모습 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-1-4-2-1",
-        "majorUnit": "5단원-지구의 모습",
-        "minorUnit": "지구의 모습 탐구 (2)",
-        "typeName": "지구의 모습 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구의 모습 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초3-1-4-2-2",
-        "majorUnit": "5단원-지구의 모습",
-        "minorUnit": "지구의 모습 탐구 (2)",
-        "typeName": "지구의 모습 모형 만들기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구의 모습 모형 만들기)"
-      },
-      {
-        "id": "sc-초3-1-4-2-3",
-        "majorUnit": "5단원-지구의 모습",
-        "minorUnit": "지구의 모습 탐구 (2)",
-        "typeName": "지구의 모습 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구의 모습 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-1-4-2-4",
-        "majorUnit": "5단원-지구의 모습",
-        "minorUnit": "지구의 모습 탐구 (2)",
-        "typeName": "지구의 모습 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구의 모습 실험 결과 해석하기)"
-      }
-    ]
-  },
-  {
-    "id": "sci-초3-2",
-    "subject": "science",
-    "course": "초3-2",
-    "types": [
-      {
-        "id": "sc-초3-2-0-1-1",
-        "majorUnit": "1단원-동물의 생활",
-        "minorUnit": "동물의 생활 관찰 (1)",
-        "typeName": "동물의 생활 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 생활 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초3-2-0-1-2",
-        "majorUnit": "1단원-동물의 생활",
-        "minorUnit": "동물의 생활 관찰 (1)",
-        "typeName": "동물의 생활 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 생활 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-2-0-1-3",
-        "majorUnit": "1단원-동물의 생활",
-        "minorUnit": "동물의 생활 관찰 (1)",
-        "typeName": "동물의 생활 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 생활 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-2-0-1-4",
-        "majorUnit": "1단원-동물의 생활",
-        "minorUnit": "동물의 생활 관찰 (1)",
-        "typeName": "동물의 생활 현상 분석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 생활 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-2-0-1-5",
-        "majorUnit": "1단원-동물의 생활",
-        "minorUnit": "동물의 생활 관찰 (1)",
-        "typeName": "동물의 생활 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 생활 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-2-0-2-1",
-        "majorUnit": "1단원-동물의 생활",
-        "minorUnit": "동물의 생활 특성 (2)",
-        "typeName": "동물의 생활 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 생활 특징 비교하기)"
-      },
-      {
-        "id": "sc-초3-2-0-2-2",
-        "majorUnit": "1단원-동물의 생활",
-        "minorUnit": "동물의 생활 특성 (2)",
-        "typeName": "동물의 생활 현상 분석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 생활 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-2-0-2-3",
-        "majorUnit": "1단원-동물의 생활",
-        "minorUnit": "동물의 생활 특성 (2)",
-        "typeName": "동물의 생활 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 생활 분류하기)"
-      },
-      {
-        "id": "sc-초3-2-0-2-4",
-        "majorUnit": "1단원-동물의 생활",
-        "minorUnit": "동물의 생활 특성 (2)",
-        "typeName": "동물의 생활 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 생활 특징 비교하기)"
-      },
-      {
-        "id": "sc-초3-2-0-2-5",
-        "majorUnit": "1단원-동물의 생활",
-        "minorUnit": "동물의 생활 특성 (2)",
-        "typeName": "동물의 생활 모형 만들기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 동물의 생활 모형 만들기)"
-      },
-      {
-        "id": "sc-초3-2-1-1-1",
-        "majorUnit": "2단원-지표의 변화",
-        "minorUnit": "지표의 변화 탐구 (1)",
-        "typeName": "지표의 변화 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지표의 변화 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-2-1-1-2",
-        "majorUnit": "2단원-지표의 변화",
-        "minorUnit": "지표의 변화 탐구 (1)",
-        "typeName": "지표의 변화 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지표의 변화 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-2-1-1-3",
-        "majorUnit": "2단원-지표의 변화",
-        "minorUnit": "지표의 변화 탐구 (1)",
-        "typeName": "지표의 변화 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지표의 변화 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-2-1-1-4",
-        "majorUnit": "2단원-지표의 변화",
-        "minorUnit": "지표의 변화 탐구 (1)",
-        "typeName": "지표의 변화 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지표의 변화 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초3-2-1-2-1",
-        "majorUnit": "2단원-지표의 변화",
-        "minorUnit": "지표의 변화 탐구 (2)",
-        "typeName": "지표의 변화 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지표의 변화 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-2-1-2-2",
-        "majorUnit": "2단원-지표의 변화",
-        "minorUnit": "지표의 변화 탐구 (2)",
-        "typeName": "지표의 변화 현상 분석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지표의 변화 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-2-1-2-3",
-        "majorUnit": "2단원-지표의 변화",
-        "minorUnit": "지표의 변화 탐구 (2)",
-        "typeName": "지표의 변화 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지표의 변화 분류하기)"
-      },
-      {
-        "id": "sc-초3-2-1-2-4",
-        "majorUnit": "2단원-지표의 변화",
-        "minorUnit": "지표의 변화 탐구 (2)",
-        "typeName": "지표의 변화 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지표의 변화 분류하기)"
-      },
-      {
-        "id": "sc-초3-2-1-2-5",
-        "majorUnit": "2단원-지표의 변화",
-        "minorUnit": "지표의 변화 탐구 (2)",
-        "typeName": "지표의 변화 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지표의 변화 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-2-1-3-1",
-        "majorUnit": "2단원-지표의 변화",
-        "minorUnit": "지표의 변화 관찰 (3)",
-        "typeName": "지표의 변화 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지표의 변화 특징 비교하기)"
-      },
-      {
-        "id": "sc-초3-2-1-3-2",
-        "majorUnit": "2단원-지표의 변화",
-        "minorUnit": "지표의 변화 관찰 (3)",
-        "typeName": "지표의 변화 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지표의 변화 특징 비교하기)"
-      },
-      {
-        "id": "sc-초3-2-1-3-3",
-        "majorUnit": "2단원-지표의 변화",
-        "minorUnit": "지표의 변화 관찰 (3)",
-        "typeName": "지표의 변화 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지표의 변화 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초3-2-1-3-4",
-        "majorUnit": "2단원-지표의 변화",
-        "minorUnit": "지표의 변화 관찰 (3)",
-        "typeName": "지표의 변화 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지표의 변화 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-2-1-3-5",
-        "majorUnit": "2단원-지표의 변화",
-        "minorUnit": "지표의 변화 관찰 (3)",
-        "typeName": "지표의 변화 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지표의 변화 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-2-2-1-1",
-        "majorUnit": "3단원-물질의 상태",
-        "minorUnit": "물질의 상태 탐구 (1)",
-        "typeName": "물질의 상태 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초3-2-2-1-2",
-        "majorUnit": "3단원-물질의 상태",
-        "minorUnit": "물질의 상태 탐구 (1)",
-        "typeName": "물질의 상태 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 분류하기)"
-      },
-      {
-        "id": "sc-초3-2-2-2-1",
-        "majorUnit": "3단원-물질의 상태",
-        "minorUnit": "물질의 상태 탐구 (2)",
-        "typeName": "물질의 상태 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 특징 비교하기)"
-      },
-      {
-        "id": "sc-초3-2-2-2-2",
-        "majorUnit": "3단원-물질의 상태",
-        "minorUnit": "물질의 상태 탐구 (2)",
-        "typeName": "물질의 상태 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-2-2-2-3",
-        "majorUnit": "3단원-물질의 상태",
-        "minorUnit": "물질의 상태 탐구 (2)",
-        "typeName": "물질의 상태 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초3-2-2-3-1",
-        "majorUnit": "3단원-물질의 상태",
-        "minorUnit": "물질의 상태 특성 (3)",
-        "typeName": "물질의 상태 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 분류하기)"
-      },
-      {
-        "id": "sc-초3-2-2-3-2",
-        "majorUnit": "3단원-물질의 상태",
-        "minorUnit": "물질의 상태 특성 (3)",
-        "typeName": "물질의 상태 모형 만들기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 모형 만들기)"
-      },
-      {
-        "id": "sc-초3-2-2-3-3",
-        "majorUnit": "3단원-물질의 상태",
-        "minorUnit": "물질의 상태 특성 (3)",
-        "typeName": "물질의 상태 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 분류하기)"
-      },
-      {
-        "id": "sc-초3-2-2-4-1",
-        "majorUnit": "3단원-물질의 상태",
-        "minorUnit": "물질의 상태 관찰 (4)",
-        "typeName": "물질의 상태 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 모형 만들기)"
-      },
-      {
-        "id": "sc-초3-2-2-4-2",
-        "majorUnit": "3단원-물질의 상태",
-        "minorUnit": "물질의 상태 관찰 (4)",
-        "typeName": "물질의 상태 특징 비교하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 특징 비교하기)"
-      },
-      {
-        "id": "sc-초3-2-3-1-1",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 관찰 (1)",
-        "typeName": "소리의 성질 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-2-3-1-2",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 관찰 (1)",
-        "typeName": "소리의 성질 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-2-3-1-3",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 관찰 (1)",
-        "typeName": "소리의 성질 특징 비교하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 특징 비교하기)"
-      },
-      {
-        "id": "sc-초3-2-3-1-4",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 관찰 (1)",
-        "typeName": "소리의 성질 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 분류하기)"
-      },
-      {
-        "id": "sc-초3-2-3-1-5",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 관찰 (1)",
-        "typeName": "소리의 성질 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 분류하기)"
-      },
-      {
-        "id": "sc-초3-2-3-2-1",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 탐구 (2)",
-        "typeName": "소리의 성질 특징 비교하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 특징 비교하기)"
-      },
-      {
-        "id": "sc-초3-2-3-2-2",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 탐구 (2)",
-        "typeName": "소리의 성질 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 모형 만들기)"
-      },
-      {
-        "id": "sc-초3-2-3-2-3",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 탐구 (2)",
-        "typeName": "소리의 성질 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 모형 만들기)"
-      },
-      {
-        "id": "sc-초3-2-3-2-4",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 탐구 (2)",
-        "typeName": "소리의 성질 현상 분석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 현상 분석하기)"
-      },
-      {
-        "id": "sc-초3-2-3-2-5",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 탐구 (2)",
-        "typeName": "소리의 성질 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초3-2-3-3-1",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 변화 이해 (3)",
-        "typeName": "소리의 성질 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 분류하기)"
-      },
-      {
-        "id": "sc-초3-2-3-3-2",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 변화 이해 (3)",
-        "typeName": "소리의 성질 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초3-2-3-3-3",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 변화 이해 (3)",
-        "typeName": "소리의 성질 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 모형 만들기)"
-      },
-      {
-        "id": "sc-초3-2-3-3-4",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 변화 이해 (3)",
-        "typeName": "소리의 성질 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초3-2-3-3-5",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 변화 이해 (3)",
-        "typeName": "소리의 성질 분류하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 분류하기)"
-      },
-      {
-        "id": "sc-초3-2-3-4-1",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 변화 이해 (4)",
-        "typeName": "소리의 성질 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초3-2-3-4-2",
-        "majorUnit": "4단원-소리의 성질",
-        "minorUnit": "소리의 성질 변화 이해 (4)",
-        "typeName": "소리의 성질 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리의 성질 분류하기)"
-      }
-    ]
-  },
-  {
-    "id": "sci-초4-1",
-    "subject": "science",
-    "course": "초4-1",
-    "types": [
-      {
-        "id": "sc-초4-1-0-1-1",
-        "majorUnit": "1단원-지층과 화석",
-        "minorUnit": "지층과 화석 관찰 (1)",
-        "typeName": "지층과 화석 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지층과 화석 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-1-0-1-2",
-        "majorUnit": "1단원-지층과 화석",
-        "minorUnit": "지층과 화석 관찰 (1)",
-        "typeName": "지층과 화석 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지층과 화석 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-1-0-1-3",
-        "majorUnit": "1단원-지층과 화석",
-        "minorUnit": "지층과 화석 관찰 (1)",
-        "typeName": "지층과 화석 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지층과 화석 분류하기)"
-      },
-      {
-        "id": "sc-초4-1-0-1-4",
-        "majorUnit": "1단원-지층과 화석",
-        "minorUnit": "지층과 화석 관찰 (1)",
-        "typeName": "지층과 화석 모형 만들기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지층과 화석 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-1-0-2-1",
-        "majorUnit": "1단원-지층과 화석",
-        "minorUnit": "지층과 화석 관찰 (2)",
-        "typeName": "지층과 화석 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지층과 화석 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-1-0-2-2",
-        "majorUnit": "1단원-지층과 화석",
-        "minorUnit": "지층과 화석 관찰 (2)",
-        "typeName": "지층과 화석 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지층과 화석 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-1-0-2-3",
-        "majorUnit": "1단원-지층과 화석",
-        "minorUnit": "지층과 화석 관찰 (2)",
-        "typeName": "지층과 화석 현상 분석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지층과 화석 현상 분석하기)"
-      },
-      {
-        "id": "sc-초4-1-0-2-4",
-        "majorUnit": "1단원-지층과 화석",
-        "minorUnit": "지층과 화석 관찰 (2)",
-        "typeName": "지층과 화석 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지층과 화석 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-1-0-2-5",
-        "majorUnit": "1단원-지층과 화석",
-        "minorUnit": "지층과 화석 관찰 (2)",
-        "typeName": "지층과 화석 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지층과 화석 분류하기)"
-      },
-      {
-        "id": "sc-초4-1-0-3-1",
-        "majorUnit": "1단원-지층과 화석",
-        "minorUnit": "지층과 화석 탐구 (3)",
-        "typeName": "지층과 화석 특징 비교하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지층과 화석 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-1-0-3-2",
-        "majorUnit": "1단원-지층과 화석",
-        "minorUnit": "지층과 화석 탐구 (3)",
-        "typeName": "지층과 화석 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지층과 화석 분류하기)"
-      },
-      {
-        "id": "sc-초4-1-0-3-3",
-        "majorUnit": "1단원-지층과 화석",
-        "minorUnit": "지층과 화석 탐구 (3)",
-        "typeName": "지층과 화석 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지층과 화석 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-1-0-3-4",
-        "majorUnit": "1단원-지층과 화석",
-        "minorUnit": "지층과 화석 탐구 (3)",
-        "typeName": "지층과 화석 특징 비교하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지층과 화석 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-1-0-3-5",
-        "majorUnit": "1단원-지층과 화석",
-        "minorUnit": "지층과 화석 탐구 (3)",
-        "typeName": "지층과 화석 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지층과 화석 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-1-1-1-1",
-        "majorUnit": "2단원-식물의 한살이",
-        "minorUnit": "식물의 한살이 관찰 (1)",
-        "typeName": "식물의 한살이 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 한살이 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-1-1-1-2",
-        "majorUnit": "2단원-식물의 한살이",
-        "minorUnit": "식물의 한살이 관찰 (1)",
-        "typeName": "식물의 한살이 현상 분석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 한살이 현상 분석하기)"
-      },
-      {
-        "id": "sc-초4-1-1-1-3",
-        "majorUnit": "2단원-식물의 한살이",
-        "minorUnit": "식물의 한살이 관찰 (1)",
-        "typeName": "식물의 한살이 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 한살이 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-1-1-1-4",
-        "majorUnit": "2단원-식물의 한살이",
-        "minorUnit": "식물의 한살이 관찰 (1)",
-        "typeName": "식물의 한살이 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 한살이 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-1-1-1-5",
-        "majorUnit": "2단원-식물의 한살이",
-        "minorUnit": "식물의 한살이 관찰 (1)",
-        "typeName": "식물의 한살이 현상 분석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 한살이 현상 분석하기)"
-      },
-      {
-        "id": "sc-초4-1-1-2-1",
-        "majorUnit": "2단원-식물의 한살이",
-        "minorUnit": "식물의 한살이 관찰 (2)",
-        "typeName": "식물의 한살이 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 한살이 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-1-1-2-2",
-        "majorUnit": "2단원-식물의 한살이",
-        "minorUnit": "식물의 한살이 관찰 (2)",
-        "typeName": "식물의 한살이 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 한살이 분류하기)"
-      },
-      {
-        "id": "sc-초4-1-1-3-1",
-        "majorUnit": "2단원-식물의 한살이",
-        "minorUnit": "식물의 한살이 탐구 (3)",
-        "typeName": "식물의 한살이 분류하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 한살이 분류하기)"
-      },
-      {
-        "id": "sc-초4-1-1-3-2",
-        "majorUnit": "2단원-식물의 한살이",
-        "minorUnit": "식물의 한살이 탐구 (3)",
-        "typeName": "식물의 한살이 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 한살이 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-1-1-3-3",
-        "majorUnit": "2단원-식물의 한살이",
-        "minorUnit": "식물의 한살이 탐구 (3)",
-        "typeName": "식물의 한살이 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 한살이 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-1-1-3-4",
-        "majorUnit": "2단원-식물의 한살이",
-        "minorUnit": "식물의 한살이 탐구 (3)",
-        "typeName": "식물의 한살이 분류하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 한살이 분류하기)"
-      },
-      {
-        "id": "sc-초4-1-1-4-1",
-        "majorUnit": "2단원-식물의 한살이",
-        "minorUnit": "식물의 한살이 변화 이해 (4)",
-        "typeName": "식물의 한살이 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 한살이 분류하기)"
-      },
-      {
-        "id": "sc-초4-1-1-4-2",
-        "majorUnit": "2단원-식물의 한살이",
-        "minorUnit": "식물의 한살이 변화 이해 (4)",
-        "typeName": "식물의 한살이 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 한살이 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-1-2-1-1",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 탐구 (1)",
-        "typeName": "물체의 무게 모형 만들기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-1-2-1-2",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 탐구 (1)",
-        "typeName": "물체의 무게 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-1-2-1-3",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 탐구 (1)",
-        "typeName": "물체의 무게 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-1-2-1-4",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 탐구 (1)",
-        "typeName": "물체의 무게 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-1-2-1-5",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 탐구 (1)",
-        "typeName": "물체의 무게 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-1-2-2-1",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 탐구 (2)",
-        "typeName": "물체의 무게 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-1-2-2-2",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 탐구 (2)",
-        "typeName": "물체의 무게 현상 분석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 현상 분석하기)"
-      },
-      {
-        "id": "sc-초4-1-2-2-3",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 탐구 (2)",
-        "typeName": "물체의 무게 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-1-2-3-1",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 관찰 (3)",
-        "typeName": "물체의 무게 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 분류하기)"
-      },
-      {
-        "id": "sc-초4-1-2-3-2",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 관찰 (3)",
-        "typeName": "물체의 무게 분류하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 분류하기)"
-      },
-      {
-        "id": "sc-초4-1-2-3-3",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 관찰 (3)",
-        "typeName": "물체의 무게 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 분류하기)"
-      },
-      {
-        "id": "sc-초4-1-2-3-4",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 관찰 (3)",
-        "typeName": "물체의 무게 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-1-2-3-5",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 관찰 (3)",
-        "typeName": "물체의 무게 현상 분석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 현상 분석하기)"
-      },
-      {
-        "id": "sc-초4-1-2-4-1",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 관찰 (4)",
-        "typeName": "물체의 무게 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-1-2-4-2",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 관찰 (4)",
-        "typeName": "물체의 무게 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 현상 분석하기)"
-      },
-      {
-        "id": "sc-초4-1-2-4-3",
-        "majorUnit": "3단원-물체의 무게",
-        "minorUnit": "물체의 무게 관찰 (4)",
-        "typeName": "물체의 무게 모형 만들기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 무게 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-1-3-1-1",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 탐구 (1)",
-        "typeName": "혼합물의 분리 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-1-3-1-2",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 탐구 (1)",
-        "typeName": "혼합물의 분리 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-1-3-1-3",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 탐구 (1)",
-        "typeName": "혼합물의 분리 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-1-3-1-4",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 탐구 (1)",
-        "typeName": "혼합물의 분리 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 분류하기)"
-      },
-      {
-        "id": "sc-초4-1-3-1-5",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 탐구 (1)",
-        "typeName": "혼합물의 분리 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-1-3-2-1",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 탐구 (2)",
-        "typeName": "혼합물의 분리 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-1-3-2-2",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 탐구 (2)",
-        "typeName": "혼합물의 분리 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-1-3-2-3",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 탐구 (2)",
-        "typeName": "혼합물의 분리 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-1-3-2-4",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 탐구 (2)",
-        "typeName": "혼합물의 분리 특징 비교하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-1-3-2-5",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 탐구 (2)",
-        "typeName": "혼합물의 분리 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 분류하기)"
-      },
-      {
-        "id": "sc-초4-1-3-3-1",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 변화 이해 (3)",
-        "typeName": "혼합물의 분리 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-1-3-3-2",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 변화 이해 (3)",
-        "typeName": "혼합물의 분리 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-1-3-3-3",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 변화 이해 (3)",
-        "typeName": "혼합물의 분리 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-1-3-3-4",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 변화 이해 (3)",
-        "typeName": "혼합물의 분리 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-1-3-3-5",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 변화 이해 (3)",
-        "typeName": "혼합물의 분리 모형 만들기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-1-3-4-1",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 탐구 (4)",
-        "typeName": "혼합물의 분리 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-1-3-4-2",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 탐구 (4)",
-        "typeName": "혼합물의 분리 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-1-3-4-3",
-        "majorUnit": "4단원-혼합물의 분리",
-        "minorUnit": "혼합물의 분리 탐구 (4)",
-        "typeName": "혼합물의 분리 분류하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혼합물의 분리 분류하기)"
-      }
-    ]
-  },
-  {
-    "id": "sci-초4-2",
-    "subject": "science",
-    "course": "초4-2",
-    "types": [
-      {
-        "id": "sc-초4-2-0-1-1",
-        "majorUnit": "1단원-식물의 생활",
-        "minorUnit": "식물의 생활 관찰 (1)",
-        "typeName": "식물의 생활 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 생활 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-2-0-1-2",
-        "majorUnit": "1단원-식물의 생활",
-        "minorUnit": "식물의 생활 관찰 (1)",
-        "typeName": "식물의 생활 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 생활 현상 분석하기)"
-      },
-      {
-        "id": "sc-초4-2-0-2-1",
-        "majorUnit": "1단원-식물의 생활",
-        "minorUnit": "식물의 생활 탐구 (2)",
-        "typeName": "식물의 생활 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 생활 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-2-0-2-2",
-        "majorUnit": "1단원-식물의 생활",
-        "minorUnit": "식물의 생활 탐구 (2)",
-        "typeName": "식물의 생활 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 생활 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-2-0-2-3",
-        "majorUnit": "1단원-식물의 생활",
-        "minorUnit": "식물의 생활 탐구 (2)",
-        "typeName": "식물의 생활 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 생활 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-2-0-2-4",
-        "majorUnit": "1단원-식물의 생활",
-        "minorUnit": "식물의 생활 탐구 (2)",
-        "typeName": "식물의 생활 현상 분석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 생활 현상 분석하기)"
-      },
-      {
-        "id": "sc-초4-2-0-2-5",
-        "majorUnit": "1단원-식물의 생활",
-        "minorUnit": "식물의 생활 탐구 (2)",
-        "typeName": "식물의 생활 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 생활 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-2-0-3-1",
-        "majorUnit": "1단원-식물의 생활",
-        "minorUnit": "식물의 생활 특성 (3)",
-        "typeName": "식물의 생활 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 생활 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-2-0-3-2",
-        "majorUnit": "1단원-식물의 생활",
-        "minorUnit": "식물의 생활 특성 (3)",
-        "typeName": "식물의 생활 분류하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 생활 분류하기)"
-      },
-      {
-        "id": "sc-초4-2-0-3-3",
-        "majorUnit": "1단원-식물의 생활",
-        "minorUnit": "식물의 생활 특성 (3)",
-        "typeName": "식물의 생활 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 생활 분류하기)"
-      },
-      {
-        "id": "sc-초4-2-0-4-1",
-        "majorUnit": "1단원-식물의 생활",
-        "minorUnit": "식물의 생활 관찰 (4)",
-        "typeName": "식물의 생활 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 생활 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-2-0-4-2",
-        "majorUnit": "1단원-식물의 생활",
-        "minorUnit": "식물의 생활 관찰 (4)",
-        "typeName": "식물의 생활 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 생활 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-2-0-4-3",
-        "majorUnit": "1단원-식물의 생활",
-        "minorUnit": "식물의 생활 관찰 (4)",
-        "typeName": "식물의 생활 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 생활 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-2-0-4-4",
-        "majorUnit": "1단원-식물의 생활",
-        "minorUnit": "식물의 생활 관찰 (4)",
-        "typeName": "식물의 생활 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 생활 분류하기)"
-      },
-      {
-        "id": "sc-초4-2-1-1-1",
-        "majorUnit": "2단원-물의 상태 변화",
-        "minorUnit": "물의 상태 변화 변화 이해 (1)",
-        "typeName": "물의 상태 변화 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물의 상태 변화 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-2-1-1-2",
-        "majorUnit": "2단원-물의 상태 변화",
-        "minorUnit": "물의 상태 변화 변화 이해 (1)",
-        "typeName": "물의 상태 변화 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물의 상태 변화 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-2-1-1-3",
-        "majorUnit": "2단원-물의 상태 변화",
-        "minorUnit": "물의 상태 변화 변화 이해 (1)",
-        "typeName": "물의 상태 변화 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물의 상태 변화 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-2-1-1-4",
-        "majorUnit": "2단원-물의 상태 변화",
-        "minorUnit": "물의 상태 변화 변화 이해 (1)",
-        "typeName": "물의 상태 변화 모형 만들기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물의 상태 변화 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-2-1-1-5",
-        "majorUnit": "2단원-물의 상태 변화",
-        "minorUnit": "물의 상태 변화 변화 이해 (1)",
-        "typeName": "물의 상태 변화 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물의 상태 변화 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-2-1-2-1",
-        "majorUnit": "2단원-물의 상태 변화",
-        "minorUnit": "물의 상태 변화 특성 (2)",
-        "typeName": "물의 상태 변화 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물의 상태 변화 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-2-1-2-2",
-        "majorUnit": "2단원-물의 상태 변화",
-        "minorUnit": "물의 상태 변화 특성 (2)",
-        "typeName": "물의 상태 변화 모형 만들기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물의 상태 변화 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-2-1-2-3",
-        "majorUnit": "2단원-물의 상태 변화",
-        "minorUnit": "물의 상태 변화 특성 (2)",
-        "typeName": "물의 상태 변화 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물의 상태 변화 현상 분석하기)"
-      },
-      {
-        "id": "sc-초4-2-1-2-4",
-        "majorUnit": "2단원-물의 상태 변화",
-        "minorUnit": "물의 상태 변화 특성 (2)",
-        "typeName": "물의 상태 변화 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물의 상태 변화 분류하기)"
-      },
-      {
-        "id": "sc-초4-2-1-2-5",
-        "majorUnit": "2단원-물의 상태 변화",
-        "minorUnit": "물의 상태 변화 특성 (2)",
-        "typeName": "물의 상태 변화 모형 만들기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물의 상태 변화 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-2-2-1-1",
-        "majorUnit": "3단원-거울과 그림자",
-        "minorUnit": "거울과 그림자 관찰 (1)",
-        "typeName": "거울과 그림자 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 거울과 그림자 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-2-2-1-2",
-        "majorUnit": "3단원-거울과 그림자",
-        "minorUnit": "거울과 그림자 관찰 (1)",
-        "typeName": "거울과 그림자 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 거울과 그림자 현상 분석하기)"
-      },
-      {
-        "id": "sc-초4-2-2-2-1",
-        "majorUnit": "3단원-거울과 그림자",
-        "minorUnit": "거울과 그림자 특성 (2)",
-        "typeName": "거울과 그림자 분류하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 거울과 그림자 분류하기)"
-      },
-      {
-        "id": "sc-초4-2-2-2-2",
-        "majorUnit": "3단원-거울과 그림자",
-        "minorUnit": "거울과 그림자 특성 (2)",
-        "typeName": "거울과 그림자 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 거울과 그림자 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-2-2-2-3",
-        "majorUnit": "3단원-거울과 그림자",
-        "minorUnit": "거울과 그림자 특성 (2)",
-        "typeName": "거울과 그림자 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 거울과 그림자 분류하기)"
-      },
-      {
-        "id": "sc-초4-2-2-2-4",
-        "majorUnit": "3단원-거울과 그림자",
-        "minorUnit": "거울과 그림자 특성 (2)",
-        "typeName": "거울과 그림자 모형 만들기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 거울과 그림자 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-2-2-3-1",
-        "majorUnit": "3단원-거울과 그림자",
-        "minorUnit": "거울과 그림자 변화 이해 (3)",
-        "typeName": "거울과 그림자 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 거울과 그림자 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-2-2-3-2",
-        "majorUnit": "3단원-거울과 그림자",
-        "minorUnit": "거울과 그림자 변화 이해 (3)",
-        "typeName": "거울과 그림자 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 거울과 그림자 현상 분석하기)"
-      },
-      {
-        "id": "sc-초4-2-2-3-3",
-        "majorUnit": "3단원-거울과 그림자",
-        "minorUnit": "거울과 그림자 변화 이해 (3)",
-        "typeName": "거울과 그림자 모형 만들기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 거울과 그림자 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-2-2-4-1",
-        "majorUnit": "3단원-거울과 그림자",
-        "minorUnit": "거울과 그림자 변화 이해 (4)",
-        "typeName": "거울과 그림자 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 거울과 그림자 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-2-2-4-2",
-        "majorUnit": "3단원-거울과 그림자",
-        "minorUnit": "거울과 그림자 변화 이해 (4)",
-        "typeName": "거울과 그림자 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 거울과 그림자 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-2-2-4-3",
-        "majorUnit": "3단원-거울과 그림자",
-        "minorUnit": "거울과 그림자 변화 이해 (4)",
-        "typeName": "거울과 그림자 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 거울과 그림자 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-2-2-4-4",
-        "majorUnit": "3단원-거울과 그림자",
-        "minorUnit": "거울과 그림자 변화 이해 (4)",
-        "typeName": "거울과 그림자 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 거울과 그림자 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-2-3-1-1",
-        "majorUnit": "4단원-화산과 지진",
-        "minorUnit": "화산과 지진 관찰 (1)",
-        "typeName": "화산과 지진 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 화산과 지진 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-2-3-1-2",
-        "majorUnit": "4단원-화산과 지진",
-        "minorUnit": "화산과 지진 관찰 (1)",
-        "typeName": "화산과 지진 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 화산과 지진 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-2-3-2-1",
-        "majorUnit": "4단원-화산과 지진",
-        "minorUnit": "화산과 지진 관찰 (2)",
-        "typeName": "화산과 지진 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 화산과 지진 특징 비교하기)"
-      },
-      {
-        "id": "sc-초4-2-3-2-2",
-        "majorUnit": "4단원-화산과 지진",
-        "minorUnit": "화산과 지진 관찰 (2)",
-        "typeName": "화산과 지진 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 화산과 지진 모형 만들기)"
-      },
-      {
-        "id": "sc-초4-2-3-2-3",
-        "majorUnit": "4단원-화산과 지진",
-        "minorUnit": "화산과 지진 관찰 (2)",
-        "typeName": "화산과 지진 현상 분석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 화산과 지진 현상 분석하기)"
-      },
-      {
-        "id": "sc-초4-2-3-2-4",
-        "majorUnit": "4단원-화산과 지진",
-        "minorUnit": "화산과 지진 관찰 (2)",
-        "typeName": "화산과 지진 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 화산과 지진 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초4-2-3-3-1",
-        "majorUnit": "4단원-화산과 지진",
-        "minorUnit": "화산과 지진 변화 이해 (3)",
-        "typeName": "화산과 지진 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 화산과 지진 분류하기)"
-      },
-      {
-        "id": "sc-초4-2-3-3-2",
-        "majorUnit": "4단원-화산과 지진",
-        "minorUnit": "화산과 지진 변화 이해 (3)",
-        "typeName": "화산과 지진 현상 분석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 화산과 지진 현상 분석하기)"
-      },
-      {
-        "id": "sc-초4-2-3-3-3",
-        "majorUnit": "4단원-화산과 지진",
-        "minorUnit": "화산과 지진 변화 이해 (3)",
-        "typeName": "화산과 지진 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 화산과 지진 현상 분석하기)"
-      },
-      {
-        "id": "sc-초4-2-3-4-1",
-        "majorUnit": "4단원-화산과 지진",
-        "minorUnit": "화산과 지진 관찰 (4)",
-        "typeName": "화산과 지진 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 화산과 지진 분류하기)"
-      },
-      {
-        "id": "sc-초4-2-3-4-2",
-        "majorUnit": "4단원-화산과 지진",
-        "minorUnit": "화산과 지진 관찰 (4)",
-        "typeName": "화산과 지진 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 화산과 지진 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초4-2-3-4-3",
-        "majorUnit": "4단원-화산과 지진",
-        "minorUnit": "화산과 지진 관찰 (4)",
-        "typeName": "화산과 지진 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 화산과 지진 분류하기)"
-      },
-      {
-        "id": "sc-초4-2-3-4-4",
-        "majorUnit": "4단원-화산과 지진",
-        "minorUnit": "화산과 지진 관찰 (4)",
-        "typeName": "화산과 지진 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 화산과 지진 일상생활 적용하기)"
-      }
-    ]
-  },
-  {
-    "id": "sci-초5-1",
-    "subject": "science",
-    "course": "초5-1",
-    "types": [
-      {
-        "id": "sc-초5-1-0-1-1",
-        "majorUnit": "1단원-온도와 열",
-        "minorUnit": "온도와 열 특성 (1)",
-        "typeName": "온도와 열 현상 분석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 온도와 열 현상 분석하기)"
-      },
-      {
-        "id": "sc-초5-1-0-1-2",
-        "majorUnit": "1단원-온도와 열",
-        "minorUnit": "온도와 열 특성 (1)",
-        "typeName": "온도와 열 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 온도와 열 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초5-1-0-1-3",
-        "majorUnit": "1단원-온도와 열",
-        "minorUnit": "온도와 열 특성 (1)",
-        "typeName": "온도와 열 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 온도와 열 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-1-0-1-4",
-        "majorUnit": "1단원-온도와 열",
-        "minorUnit": "온도와 열 특성 (1)",
-        "typeName": "온도와 열 특징 비교하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 온도와 열 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-1-0-2-1",
-        "majorUnit": "1단원-온도와 열",
-        "minorUnit": "온도와 열 특성 (2)",
-        "typeName": "온도와 열 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 온도와 열 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초5-1-0-2-2",
-        "majorUnit": "1단원-온도와 열",
-        "minorUnit": "온도와 열 특성 (2)",
-        "typeName": "온도와 열 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 온도와 열 분류하기)"
-      },
-      {
-        "id": "sc-초5-1-1-1-1",
-        "majorUnit": "2단원-태양계와 별",
-        "minorUnit": "태양계와 별 관찰 (1)",
-        "typeName": "태양계와 별 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 태양계와 별 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-1-1-1-2",
-        "majorUnit": "2단원-태양계와 별",
-        "minorUnit": "태양계와 별 관찰 (1)",
-        "typeName": "태양계와 별 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 태양계와 별 분류하기)"
-      },
-      {
-        "id": "sc-초5-1-1-1-3",
-        "majorUnit": "2단원-태양계와 별",
-        "minorUnit": "태양계와 별 관찰 (1)",
-        "typeName": "태양계와 별 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 태양계와 별 분류하기)"
-      },
-      {
-        "id": "sc-초5-1-1-2-1",
-        "majorUnit": "2단원-태양계와 별",
-        "minorUnit": "태양계와 별 특성 (2)",
-        "typeName": "태양계와 별 분류하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 태양계와 별 분류하기)"
-      },
-      {
-        "id": "sc-초5-1-1-2-2",
-        "majorUnit": "2단원-태양계와 별",
-        "minorUnit": "태양계와 별 특성 (2)",
-        "typeName": "태양계와 별 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 태양계와 별 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초5-1-1-2-3",
-        "majorUnit": "2단원-태양계와 별",
-        "minorUnit": "태양계와 별 특성 (2)",
-        "typeName": "태양계와 별 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 태양계와 별 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-1-1-3-1",
-        "majorUnit": "2단원-태양계와 별",
-        "minorUnit": "태양계와 별 특성 (3)",
-        "typeName": "태양계와 별 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 태양계와 별 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초5-1-1-3-2",
-        "majorUnit": "2단원-태양계와 별",
-        "minorUnit": "태양계와 별 특성 (3)",
-        "typeName": "태양계와 별 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 태양계와 별 분류하기)"
-      },
-      {
-        "id": "sc-초5-1-1-3-3",
-        "majorUnit": "2단원-태양계와 별",
-        "minorUnit": "태양계와 별 특성 (3)",
-        "typeName": "태양계와 별 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 태양계와 별 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-1-1-3-4",
-        "majorUnit": "2단원-태양계와 별",
-        "minorUnit": "태양계와 별 특성 (3)",
-        "typeName": "태양계와 별 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 태양계와 별 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-1-2-1-1",
-        "majorUnit": "3단원-용해와 용액",
-        "minorUnit": "용해와 용액 탐구 (1)",
-        "typeName": "용해와 용액 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 용해와 용액 분류하기)"
-      },
-      {
-        "id": "sc-초5-1-2-1-2",
-        "majorUnit": "3단원-용해와 용액",
-        "minorUnit": "용해와 용액 탐구 (1)",
-        "typeName": "용해와 용액 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 용해와 용액 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-1-2-1-3",
-        "majorUnit": "3단원-용해와 용액",
-        "minorUnit": "용해와 용액 탐구 (1)",
-        "typeName": "용해와 용액 현상 분석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 용해와 용액 현상 분석하기)"
-      },
-      {
-        "id": "sc-초5-1-2-2-1",
-        "majorUnit": "3단원-용해와 용액",
-        "minorUnit": "용해와 용액 변화 이해 (2)",
-        "typeName": "용해와 용액 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 용해와 용액 분류하기)"
-      },
-      {
-        "id": "sc-초5-1-2-2-2",
-        "majorUnit": "3단원-용해와 용액",
-        "minorUnit": "용해와 용액 변화 이해 (2)",
-        "typeName": "용해와 용액 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 용해와 용액 모형 만들기)"
-      },
-      {
-        "id": "sc-초5-1-2-3-1",
-        "majorUnit": "3단원-용해와 용액",
-        "minorUnit": "용해와 용액 관찰 (3)",
-        "typeName": "용해와 용액 분류하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 용해와 용액 분류하기)"
-      },
-      {
-        "id": "sc-초5-1-2-3-2",
-        "majorUnit": "3단원-용해와 용액",
-        "minorUnit": "용해와 용액 관찰 (3)",
-        "typeName": "용해와 용액 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 용해와 용액 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초5-1-2-3-3",
-        "majorUnit": "3단원-용해와 용액",
-        "minorUnit": "용해와 용액 관찰 (3)",
-        "typeName": "용해와 용액 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 용해와 용액 분류하기)"
-      },
-      {
-        "id": "sc-초5-1-2-3-4",
-        "majorUnit": "3단원-용해와 용액",
-        "minorUnit": "용해와 용액 관찰 (3)",
-        "typeName": "용해와 용액 모형 만들기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 용해와 용액 모형 만들기)"
-      },
-      {
-        "id": "sc-초5-1-2-3-5",
-        "majorUnit": "3단원-용해와 용액",
-        "minorUnit": "용해와 용액 관찰 (3)",
-        "typeName": "용해와 용액 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 용해와 용액 분류하기)"
-      },
-      {
-        "id": "sc-초5-1-2-4-1",
-        "majorUnit": "3단원-용해와 용액",
-        "minorUnit": "용해와 용액 특성 (4)",
-        "typeName": "용해와 용액 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 용해와 용액 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-1-2-4-2",
-        "majorUnit": "3단원-용해와 용액",
-        "minorUnit": "용해와 용액 특성 (4)",
-        "typeName": "용해와 용액 분류하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 용해와 용액 분류하기)"
-      },
-      {
-        "id": "sc-초5-1-3-1-1",
-        "majorUnit": "4단원-다양한 생물과 우리 생활",
-        "minorUnit": "다양한 생물과 우리 생활 특성 (1)",
-        "typeName": "다양한 생물과 우리 생활 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 다양한 생물과 우리 생활 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-1-3-1-2",
-        "majorUnit": "4단원-다양한 생물과 우리 생활",
-        "minorUnit": "다양한 생물과 우리 생활 특성 (1)",
-        "typeName": "다양한 생물과 우리 생활 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 다양한 생물과 우리 생활 모형 만들기)"
-      },
-      {
-        "id": "sc-초5-1-3-1-3",
-        "majorUnit": "4단원-다양한 생물과 우리 생활",
-        "minorUnit": "다양한 생물과 우리 생활 특성 (1)",
-        "typeName": "다양한 생물과 우리 생활 모형 만들기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 다양한 생물과 우리 생활 모형 만들기)"
-      },
-      {
-        "id": "sc-초5-1-3-1-4",
-        "majorUnit": "4단원-다양한 생물과 우리 생활",
-        "minorUnit": "다양한 생물과 우리 생활 특성 (1)",
-        "typeName": "다양한 생물과 우리 생활 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 다양한 생물과 우리 생활 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-1-3-2-1",
-        "majorUnit": "4단원-다양한 생물과 우리 생활",
-        "minorUnit": "다양한 생물과 우리 생활 변화 이해 (2)",
-        "typeName": "다양한 생물과 우리 생활 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 다양한 생물과 우리 생활 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-1-3-2-2",
-        "majorUnit": "4단원-다양한 생물과 우리 생활",
-        "minorUnit": "다양한 생물과 우리 생활 변화 이해 (2)",
-        "typeName": "다양한 생물과 우리 생활 현상 분석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 다양한 생물과 우리 생활 현상 분석하기)"
-      }
-    ]
-  },
-  {
-    "id": "sci-초5-2",
-    "subject": "science",
-    "course": "초5-2",
-    "types": [
-      {
-        "id": "sc-초5-2-0-1-1",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (1)",
-        "typeName": "날씨와 우리 생활 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 현상 분석하기)"
-      },
-      {
-        "id": "sc-초5-2-0-1-2",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (1)",
-        "typeName": "날씨와 우리 생활 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 분류하기)"
-      },
-      {
-        "id": "sc-초5-2-0-1-3",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (1)",
-        "typeName": "날씨와 우리 생활 특징 비교하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-2-0-1-4",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (1)",
-        "typeName": "날씨와 우리 생활 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 분류하기)"
-      },
-      {
-        "id": "sc-초5-2-0-2-1",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (2)",
-        "typeName": "날씨와 우리 생활 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-2-0-2-2",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (2)",
-        "typeName": "날씨와 우리 생활 분류하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 분류하기)"
-      },
-      {
-        "id": "sc-초5-2-0-2-3",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (2)",
-        "typeName": "날씨와 우리 생활 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-2-0-3-1",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (3)",
-        "typeName": "날씨와 우리 생활 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 모형 만들기)"
-      },
-      {
-        "id": "sc-초5-2-0-3-2",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (3)",
-        "typeName": "날씨와 우리 생활 현상 분석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 현상 분석하기)"
-      },
-      {
-        "id": "sc-초5-2-0-3-3",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (3)",
-        "typeName": "날씨와 우리 생활 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-2-0-3-4",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (3)",
-        "typeName": "날씨와 우리 생활 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초5-2-0-3-5",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (3)",
-        "typeName": "날씨와 우리 생활 모형 만들기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 모형 만들기)"
-      },
-      {
-        "id": "sc-초5-2-0-4-1",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (4)",
-        "typeName": "날씨와 우리 생활 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 현상 분석하기)"
-      },
-      {
-        "id": "sc-초5-2-0-4-2",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (4)",
-        "typeName": "날씨와 우리 생활 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초5-2-0-4-3",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (4)",
-        "typeName": "날씨와 우리 생활 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초5-2-0-4-4",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (4)",
-        "typeName": "날씨와 우리 생활 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-2-0-4-5",
-        "majorUnit": "1단원-날씨와 우리 생활",
-        "minorUnit": "날씨와 우리 생활 탐구 (4)",
-        "typeName": "날씨와 우리 생활 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 날씨와 우리 생활 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-2-1-1-1",
-        "majorUnit": "2단원-산과 염기",
-        "minorUnit": "산과 염기 특성 (1)",
-        "typeName": "산과 염기 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 산과 염기 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-2-1-1-2",
-        "majorUnit": "2단원-산과 염기",
-        "minorUnit": "산과 염기 특성 (1)",
-        "typeName": "산과 염기 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 산과 염기 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-2-1-1-3",
-        "majorUnit": "2단원-산과 염기",
-        "minorUnit": "산과 염기 특성 (1)",
-        "typeName": "산과 염기 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 산과 염기 현상 분석하기)"
-      },
-      {
-        "id": "sc-초5-2-1-1-4",
-        "majorUnit": "2단원-산과 염기",
-        "minorUnit": "산과 염기 특성 (1)",
-        "typeName": "산과 염기 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 산과 염기 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초5-2-1-1-5",
-        "majorUnit": "2단원-산과 염기",
-        "minorUnit": "산과 염기 특성 (1)",
-        "typeName": "산과 염기 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 산과 염기 현상 분석하기)"
-      },
-      {
-        "id": "sc-초5-2-1-2-1",
-        "majorUnit": "2단원-산과 염기",
-        "minorUnit": "산과 염기 특성 (2)",
-        "typeName": "산과 염기 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 산과 염기 모형 만들기)"
-      },
-      {
-        "id": "sc-초5-2-1-2-2",
-        "majorUnit": "2단원-산과 염기",
-        "minorUnit": "산과 염기 특성 (2)",
-        "typeName": "산과 염기 특징 비교하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 산과 염기 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-2-1-2-3",
-        "majorUnit": "2단원-산과 염기",
-        "minorUnit": "산과 염기 특성 (2)",
-        "typeName": "산과 염기 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 산과 염기 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-2-1-2-4",
-        "majorUnit": "2단원-산과 염기",
-        "minorUnit": "산과 염기 특성 (2)",
-        "typeName": "산과 염기 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 산과 염기 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-2-1-2-5",
-        "majorUnit": "2단원-산과 염기",
-        "minorUnit": "산과 염기 특성 (2)",
-        "typeName": "산과 염기 현상 분석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 산과 염기 현상 분석하기)"
-      },
-      {
-        "id": "sc-초5-2-2-1-1",
-        "majorUnit": "3단원-물체의 빠르기",
-        "minorUnit": "물체의 빠르기 특성 (1)",
-        "typeName": "물체의 빠르기 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 빠르기 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-2-2-1-2",
-        "majorUnit": "3단원-물체의 빠르기",
-        "minorUnit": "물체의 빠르기 특성 (1)",
-        "typeName": "물체의 빠르기 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 빠르기 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-2-2-1-3",
-        "majorUnit": "3단원-물체의 빠르기",
-        "minorUnit": "물체의 빠르기 특성 (1)",
-        "typeName": "물체의 빠르기 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 빠르기 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-2-2-2-1",
-        "majorUnit": "3단원-물체의 빠르기",
-        "minorUnit": "물체의 빠르기 관찰 (2)",
-        "typeName": "물체의 빠르기 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 빠르기 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-2-2-2-2",
-        "majorUnit": "3단원-물체의 빠르기",
-        "minorUnit": "물체의 빠르기 관찰 (2)",
-        "typeName": "물체의 빠르기 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 빠르기 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-2-2-2-3",
-        "majorUnit": "3단원-물체의 빠르기",
-        "minorUnit": "물체의 빠르기 관찰 (2)",
-        "typeName": "물체의 빠르기 모형 만들기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 빠르기 모형 만들기)"
-      },
-      {
-        "id": "sc-초5-2-2-2-4",
-        "majorUnit": "3단원-물체의 빠르기",
-        "minorUnit": "물체의 빠르기 관찰 (2)",
-        "typeName": "물체의 빠르기 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 빠르기 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-2-2-2-5",
-        "majorUnit": "3단원-물체의 빠르기",
-        "minorUnit": "물체의 빠르기 관찰 (2)",
-        "typeName": "물체의 빠르기 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 빠르기 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-2-3-1-1",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 특성 (1)",
-        "typeName": "우리 몸의 구조와 기능 분류하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 분류하기)"
-      },
-      {
-        "id": "sc-초5-2-3-1-2",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 특성 (1)",
-        "typeName": "우리 몸의 구조와 기능 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초5-2-3-1-3",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 특성 (1)",
-        "typeName": "우리 몸의 구조와 기능 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-2-3-2-1",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 관찰 (2)",
-        "typeName": "우리 몸의 구조와 기능 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-2-3-2-2",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 관찰 (2)",
-        "typeName": "우리 몸의 구조와 기능 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 특징 비교하기)"
-      },
-      {
-        "id": "sc-초5-2-3-3-1",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 변화 이해 (3)",
-        "typeName": "우리 몸의 구조와 기능 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초5-2-3-3-2",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 변화 이해 (3)",
-        "typeName": "우리 몸의 구조와 기능 분류하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 분류하기)"
-      },
-      {
-        "id": "sc-초5-2-3-4-1",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 특성 (4)",
-        "typeName": "우리 몸의 구조와 기능 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-2-3-4-2",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 특성 (4)",
-        "typeName": "우리 몸의 구조와 기능 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초5-2-3-4-3",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 특성 (4)",
-        "typeName": "우리 몸의 구조와 기능 모형 만들기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 모형 만들기)"
-      }
-    ]
-  },
-  {
-    "id": "sci-초6-1",
-    "subject": "science",
-    "course": "초6-1",
-    "types": [
-      {
-        "id": "sc-초6-1-0-1-1",
-        "majorUnit": "1단원-지구와 달의 운동",
-        "minorUnit": "지구와 달의 운동 특성 (1)",
-        "typeName": "지구와 달의 운동 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구와 달의 운동 특징 비교하기)"
-      },
-      {
-        "id": "sc-초6-1-0-1-2",
-        "majorUnit": "1단원-지구와 달의 운동",
-        "minorUnit": "지구와 달의 운동 특성 (1)",
-        "typeName": "지구와 달의 운동 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구와 달의 운동 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-1-0-2-1",
-        "majorUnit": "1단원-지구와 달의 운동",
-        "minorUnit": "지구와 달의 운동 특성 (2)",
-        "typeName": "지구와 달의 운동 특징 비교하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구와 달의 운동 특징 비교하기)"
-      },
-      {
-        "id": "sc-초6-1-0-2-2",
-        "majorUnit": "1단원-지구와 달의 운동",
-        "minorUnit": "지구와 달의 운동 특성 (2)",
-        "typeName": "지구와 달의 운동 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구와 달의 운동 특징 비교하기)"
-      },
-      {
-        "id": "sc-초6-1-0-2-3",
-        "majorUnit": "1단원-지구와 달의 운동",
-        "minorUnit": "지구와 달의 운동 특성 (2)",
-        "typeName": "지구와 달의 운동 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구와 달의 운동 분류하기)"
-      },
-      {
-        "id": "sc-초6-1-0-2-4",
-        "majorUnit": "1단원-지구와 달의 운동",
-        "minorUnit": "지구와 달의 운동 특성 (2)",
-        "typeName": "지구와 달의 운동 특징 비교하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구와 달의 운동 특징 비교하기)"
-      },
-      {
-        "id": "sc-초6-1-0-2-5",
-        "majorUnit": "1단원-지구와 달의 운동",
-        "minorUnit": "지구와 달의 운동 특성 (2)",
-        "typeName": "지구와 달의 운동 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구와 달의 운동 현상 분석하기)"
-      },
-      {
-        "id": "sc-초6-1-0-3-1",
-        "majorUnit": "1단원-지구와 달의 운동",
-        "minorUnit": "지구와 달의 운동 특성 (3)",
-        "typeName": "지구와 달의 운동 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구와 달의 운동 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초6-1-0-3-2",
-        "majorUnit": "1단원-지구와 달의 운동",
-        "minorUnit": "지구와 달의 운동 특성 (3)",
-        "typeName": "지구와 달의 운동 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구와 달의 운동 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-1-0-3-3",
-        "majorUnit": "1단원-지구와 달의 운동",
-        "minorUnit": "지구와 달의 운동 특성 (3)",
-        "typeName": "지구와 달의 운동 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구와 달의 운동 분류하기)"
-      },
-      {
-        "id": "sc-초6-1-0-3-4",
-        "majorUnit": "1단원-지구와 달의 운동",
-        "minorUnit": "지구와 달의 운동 특성 (3)",
-        "typeName": "지구와 달의 운동 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구와 달의 운동 분류하기)"
-      },
-      {
-        "id": "sc-초6-1-1-1-1",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 특성 (1)",
-        "typeName": "여러 가지 기체 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-1-1-1-2",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 특성 (1)",
-        "typeName": "여러 가지 기체 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 특징 비교하기)"
-      },
-      {
-        "id": "sc-초6-1-1-1-3",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 특성 (1)",
-        "typeName": "여러 가지 기체 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-1-1-1-4",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 특성 (1)",
-        "typeName": "여러 가지 기체 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-1-1-2-1",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 변화 이해 (2)",
-        "typeName": "여러 가지 기체 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초6-1-1-2-2",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 변화 이해 (2)",
-        "typeName": "여러 가지 기체 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 특징 비교하기)"
-      },
-      {
-        "id": "sc-초6-1-1-2-3",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 변화 이해 (2)",
-        "typeName": "여러 가지 기체 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초6-1-1-2-4",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 변화 이해 (2)",
-        "typeName": "여러 가지 기체 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 특징 비교하기)"
-      },
-      {
-        "id": "sc-초6-1-1-3-1",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 관찰 (3)",
-        "typeName": "여러 가지 기체 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초6-1-1-3-2",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 관찰 (3)",
-        "typeName": "여러 가지 기체 모형 만들기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-1-1-3-3",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 관찰 (3)",
-        "typeName": "여러 가지 기체 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 특징 비교하기)"
-      },
-      {
-        "id": "sc-초6-1-1-3-4",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 관찰 (3)",
-        "typeName": "여러 가지 기체 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 분류하기)"
-      },
-      {
-        "id": "sc-초6-1-1-4-1",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 변화 이해 (4)",
-        "typeName": "여러 가지 기체 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-1-1-4-2",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 변화 이해 (4)",
-        "typeName": "여러 가지 기체 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-1-1-4-3",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 변화 이해 (4)",
-        "typeName": "여러 가지 기체 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-1-1-4-4",
-        "majorUnit": "2단원-여러 가지 기체",
-        "minorUnit": "여러 가지 기체 변화 이해 (4)",
-        "typeName": "여러 가지 기체 분류하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 여러 가지 기체 분류하기)"
-      },
-      {
-        "id": "sc-초6-1-2-1-1",
-        "majorUnit": "3단원-식물의 구조와 기능",
-        "minorUnit": "식물의 구조와 기능 변화 이해 (1)",
-        "typeName": "식물의 구조와 기능 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 구조와 기능 현상 분석하기)"
-      },
-      {
-        "id": "sc-초6-1-2-1-2",
-        "majorUnit": "3단원-식물의 구조와 기능",
-        "minorUnit": "식물의 구조와 기능 변화 이해 (1)",
-        "typeName": "식물의 구조와 기능 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 구조와 기능 현상 분석하기)"
-      },
-      {
-        "id": "sc-초6-1-2-1-3",
-        "majorUnit": "3단원-식물의 구조와 기능",
-        "minorUnit": "식물의 구조와 기능 변화 이해 (1)",
-        "typeName": "식물의 구조와 기능 모형 만들기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 구조와 기능 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-1-2-1-4",
-        "majorUnit": "3단원-식물의 구조와 기능",
-        "minorUnit": "식물의 구조와 기능 변화 이해 (1)",
-        "typeName": "식물의 구조와 기능 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 구조와 기능 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-1-2-2-1",
-        "majorUnit": "3단원-식물의 구조와 기능",
-        "minorUnit": "식물의 구조와 기능 특성 (2)",
-        "typeName": "식물의 구조와 기능 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 구조와 기능 현상 분석하기)"
-      },
-      {
-        "id": "sc-초6-1-2-2-2",
-        "majorUnit": "3단원-식물의 구조와 기능",
-        "minorUnit": "식물의 구조와 기능 특성 (2)",
-        "typeName": "식물의 구조와 기능 분류하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 구조와 기능 분류하기)"
-      },
-      {
-        "id": "sc-초6-1-2-2-3",
-        "majorUnit": "3단원-식물의 구조와 기능",
-        "minorUnit": "식물의 구조와 기능 특성 (2)",
-        "typeName": "식물의 구조와 기능 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 구조와 기능 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-1-2-2-4",
-        "majorUnit": "3단원-식물의 구조와 기능",
-        "minorUnit": "식물의 구조와 기능 특성 (2)",
-        "typeName": "식물의 구조와 기능 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 구조와 기능 현상 분석하기)"
-      },
-      {
-        "id": "sc-초6-1-2-3-1",
-        "majorUnit": "3단원-식물의 구조와 기능",
-        "minorUnit": "식물의 구조와 기능 관찰 (3)",
-        "typeName": "식물의 구조와 기능 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 구조와 기능 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초6-1-2-3-2",
-        "majorUnit": "3단원-식물의 구조와 기능",
-        "minorUnit": "식물의 구조와 기능 관찰 (3)",
-        "typeName": "식물의 구조와 기능 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 구조와 기능 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-1-2-3-3",
-        "majorUnit": "3단원-식물의 구조와 기능",
-        "minorUnit": "식물의 구조와 기능 관찰 (3)",
-        "typeName": "식물의 구조와 기능 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 구조와 기능 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-1-2-3-4",
-        "majorUnit": "3단원-식물의 구조와 기능",
-        "minorUnit": "식물의 구조와 기능 관찰 (3)",
-        "typeName": "식물의 구조와 기능 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 구조와 기능 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-1-2-4-1",
-        "majorUnit": "3단원-식물의 구조와 기능",
-        "minorUnit": "식물의 구조와 기능 특성 (4)",
-        "typeName": "식물의 구조와 기능 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 구조와 기능 특징 비교하기)"
-      },
-      {
-        "id": "sc-초6-1-2-4-2",
-        "majorUnit": "3단원-식물의 구조와 기능",
-        "minorUnit": "식물의 구조와 기능 특성 (4)",
-        "typeName": "식물의 구조와 기능 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 식물의 구조와 기능 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-1-3-1-1",
-        "majorUnit": "4단원-빛과 렌즈",
-        "minorUnit": "빛과 렌즈 특성 (1)",
-        "typeName": "빛과 렌즈 현상 분석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 렌즈 현상 분석하기)"
-      },
-      {
-        "id": "sc-초6-1-3-1-2",
-        "majorUnit": "4단원-빛과 렌즈",
-        "minorUnit": "빛과 렌즈 특성 (1)",
-        "typeName": "빛과 렌즈 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 렌즈 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-1-3-2-1",
-        "majorUnit": "4단원-빛과 렌즈",
-        "minorUnit": "빛과 렌즈 변화 이해 (2)",
-        "typeName": "빛과 렌즈 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 렌즈 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초6-1-3-2-2",
-        "majorUnit": "4단원-빛과 렌즈",
-        "minorUnit": "빛과 렌즈 변화 이해 (2)",
-        "typeName": "빛과 렌즈 특징 비교하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 렌즈 특징 비교하기)"
-      },
-      {
-        "id": "sc-초6-1-3-2-3",
-        "majorUnit": "4단원-빛과 렌즈",
-        "minorUnit": "빛과 렌즈 변화 이해 (2)",
-        "typeName": "빛과 렌즈 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 렌즈 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초6-1-3-2-4",
-        "majorUnit": "4단원-빛과 렌즈",
-        "minorUnit": "빛과 렌즈 변화 이해 (2)",
-        "typeName": "빛과 렌즈 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 렌즈 현상 분석하기)"
-      },
-      {
-        "id": "sc-초6-1-3-2-5",
-        "majorUnit": "4단원-빛과 렌즈",
-        "minorUnit": "빛과 렌즈 변화 이해 (2)",
-        "typeName": "빛과 렌즈 현상 분석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 렌즈 현상 분석하기)"
-      },
-      {
-        "id": "sc-초6-1-3-3-1",
-        "majorUnit": "4단원-빛과 렌즈",
-        "minorUnit": "빛과 렌즈 변화 이해 (3)",
-        "typeName": "빛과 렌즈 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 렌즈 현상 분석하기)"
-      },
-      {
-        "id": "sc-초6-1-3-3-2",
-        "majorUnit": "4단원-빛과 렌즈",
-        "minorUnit": "빛과 렌즈 변화 이해 (3)",
-        "typeName": "빛과 렌즈 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 렌즈 일상생활 적용하기)"
-      }
-    ]
-  },
-  {
-    "id": "sci-초6-2",
-    "subject": "science",
-    "course": "초6-2",
-    "types": [
-      {
-        "id": "sc-초6-2-0-1-1",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 변화 이해 (1)",
-        "typeName": "전기의 이용 특징 비교하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 특징 비교하기)"
-      },
-      {
-        "id": "sc-초6-2-0-1-2",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 변화 이해 (1)",
-        "typeName": "전기의 이용 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 현상 분석하기)"
-      },
-      {
-        "id": "sc-초6-2-0-1-3",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 변화 이해 (1)",
-        "typeName": "전기의 이용 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 특징 비교하기)"
-      },
-      {
-        "id": "sc-초6-2-0-1-4",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 변화 이해 (1)",
-        "typeName": "전기의 이용 모형 만들기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-2-0-2-1",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 특성 (2)",
-        "typeName": "전기의 이용 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-2-0-2-2",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 특성 (2)",
-        "typeName": "전기의 이용 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 현상 분석하기)"
-      },
-      {
-        "id": "sc-초6-2-0-2-3",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 특성 (2)",
-        "typeName": "전기의 이용 모형 만들기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-2-0-2-4",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 특성 (2)",
-        "typeName": "전기의 이용 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 분류하기)"
-      },
-      {
-        "id": "sc-초6-2-0-3-1",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 탐구 (3)",
-        "typeName": "전기의 이용 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-2-0-3-2",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 탐구 (3)",
-        "typeName": "전기의 이용 모형 만들기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-2-0-3-3",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 탐구 (3)",
-        "typeName": "전기의 이용 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 분류하기)"
-      },
-      {
-        "id": "sc-초6-2-0-3-4",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 탐구 (3)",
-        "typeName": "전기의 이용 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 분류하기)"
-      },
-      {
-        "id": "sc-초6-2-0-3-5",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 탐구 (3)",
-        "typeName": "전기의 이용 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초6-2-0-4-1",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 변화 이해 (4)",
-        "typeName": "전기의 이용 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 현상 분석하기)"
-      },
-      {
-        "id": "sc-초6-2-0-4-2",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 변화 이해 (4)",
-        "typeName": "전기의 이용 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-2-0-4-3",
-        "majorUnit": "1단원-전기의 이용",
-        "minorUnit": "전기의 이용 변화 이해 (4)",
-        "typeName": "전기의 이용 모형 만들기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 전기의 이용 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-2-1-1-1",
-        "majorUnit": "2단원-계절의 변화",
-        "minorUnit": "계절의 변화 변화 이해 (1)",
-        "typeName": "계절의 변화 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 계절의 변화 분류하기)"
-      },
-      {
-        "id": "sc-초6-2-1-1-2",
-        "majorUnit": "2단원-계절의 변화",
-        "minorUnit": "계절의 변화 변화 이해 (1)",
-        "typeName": "계절의 변화 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 계절의 변화 분류하기)"
-      },
-      {
-        "id": "sc-초6-2-1-1-3",
-        "majorUnit": "2단원-계절의 변화",
-        "minorUnit": "계절의 변화 변화 이해 (1)",
-        "typeName": "계절의 변화 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 계절의 변화 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-2-1-1-4",
-        "majorUnit": "2단원-계절의 변화",
-        "minorUnit": "계절의 변화 변화 이해 (1)",
-        "typeName": "계절의 변화 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 계절의 변화 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-초6-2-1-2-1",
-        "majorUnit": "2단원-계절의 변화",
-        "minorUnit": "계절의 변화 관찰 (2)",
-        "typeName": "계절의 변화 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 계절의 변화 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-2-1-2-2",
-        "majorUnit": "2단원-계절의 변화",
-        "minorUnit": "계절의 변화 관찰 (2)",
-        "typeName": "계절의 변화 현상 분석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 계절의 변화 현상 분석하기)"
-      },
-      {
-        "id": "sc-초6-2-1-2-3",
-        "majorUnit": "2단원-계절의 변화",
-        "minorUnit": "계절의 변화 관찰 (2)",
-        "typeName": "계절의 변화 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 계절의 변화 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-2-1-3-1",
-        "majorUnit": "2단원-계절의 변화",
-        "minorUnit": "계절의 변화 변화 이해 (3)",
-        "typeName": "계절의 변화 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 계절의 변화 특징 비교하기)"
-      },
-      {
-        "id": "sc-초6-2-1-3-2",
-        "majorUnit": "2단원-계절의 변화",
-        "minorUnit": "계절의 변화 변화 이해 (3)",
-        "typeName": "계절의 변화 분류하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 계절의 변화 분류하기)"
-      },
-      {
-        "id": "sc-초6-2-2-1-1",
-        "majorUnit": "3단원-연소와 소화",
-        "minorUnit": "연소와 소화 탐구 (1)",
-        "typeName": "연소와 소화 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 연소와 소화 분류하기)"
-      },
-      {
-        "id": "sc-초6-2-2-1-2",
-        "majorUnit": "3단원-연소와 소화",
-        "minorUnit": "연소와 소화 탐구 (1)",
-        "typeName": "연소와 소화 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 연소와 소화 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-2-2-1-3",
-        "majorUnit": "3단원-연소와 소화",
-        "minorUnit": "연소와 소화 탐구 (1)",
-        "typeName": "연소와 소화 분류하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 연소와 소화 분류하기)"
-      },
-      {
-        "id": "sc-초6-2-2-2-1",
-        "majorUnit": "3단원-연소와 소화",
-        "minorUnit": "연소와 소화 탐구 (2)",
-        "typeName": "연소와 소화 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 연소와 소화 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-2-2-2-2",
-        "majorUnit": "3단원-연소와 소화",
-        "minorUnit": "연소와 소화 탐구 (2)",
-        "typeName": "연소와 소화 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 연소와 소화 분류하기)"
-      },
-      {
-        "id": "sc-초6-2-3-1-1",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 변화 이해 (1)",
-        "typeName": "우리 몸의 구조와 기능 분류하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 분류하기)"
-      },
-      {
-        "id": "sc-초6-2-3-1-2",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 변화 이해 (1)",
-        "typeName": "우리 몸의 구조와 기능 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 특징 비교하기)"
-      },
-      {
-        "id": "sc-초6-2-3-2-1",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 특성 (2)",
-        "typeName": "우리 몸의 구조와 기능 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-2-3-2-2",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 특성 (2)",
-        "typeName": "우리 몸의 구조와 기능 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-2-3-3-1",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 특성 (3)",
-        "typeName": "우리 몸의 구조와 기능 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 현상 분석하기)"
-      },
-      {
-        "id": "sc-초6-2-3-3-2",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 특성 (3)",
-        "typeName": "우리 몸의 구조와 기능 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-2-3-3-3",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 특성 (3)",
-        "typeName": "우리 몸의 구조와 기능 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-초6-2-3-3-4",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 특성 (3)",
-        "typeName": "우리 몸의 구조와 기능 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 모형 만들기)"
-      },
-      {
-        "id": "sc-초6-2-3-3-5",
-        "majorUnit": "4단원-우리 몸의 구조와 기능",
-        "minorUnit": "우리 몸의 구조와 기능 특성 (3)",
-        "typeName": "우리 몸의 구조와 기능 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리 몸의 구조와 기능 특징 비교하기)"
-      }
-    ]
-  },
-  {
     "id": "sci-중1-1",
     "subject": "science",
     "course": "중1-1",
@@ -37367,7 +30885,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 각 탐구 단계에 대한 옳은 설명 고르기)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 각 탐구 단계에 대한 옳은 설명 고르기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r3-skill",
@@ -37386,7 +30905,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학적 탐구 방법의 단계 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학적 탐구 방법의 단계 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r3-adv",
@@ -37405,7 +30924,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 사례 분석을 통한 최적의 가설 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 사례 분석을 통한 최적의 가설 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r4-basic",
@@ -37423,8 +30942,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 첨단 과학 기술의 명칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 첨단 과학 기술의 명칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r4-skill",
@@ -37443,7 +30961,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 탐구 단계의 올바른 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 탐구 단계의 올바른 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r4-adv",
@@ -37462,7 +30980,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 문제 인식부터 결론 도출까지 전체 흐름 비판적 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 문제 인식부터 결론 도출까지 전체 흐름 비판적 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r5-basic",
@@ -37480,7 +30998,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지속가능한 삶의 정의)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지속가능한 삶의 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r5-skill",
@@ -37499,7 +31018,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 화석 연료와 환경 문제)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화석 연료와 환경 문제 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r5-adv",
@@ -37518,7 +31037,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 미래 세대를 위한 에너지 선택의 타당성 평가)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 미래 세대를 위한 에너지 선택의 타당성 평가 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r6-basic",
@@ -37537,7 +31056,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 문제 인식 단계의 사례)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 문제 인식 단계의 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r6-skill",
@@ -37555,7 +31074,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 가설 증명을 위한 변인 통제)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가설 증명을 위한 변인 통제 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r6-adv",
@@ -37574,7 +31093,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 결과와 가설이 불일치할 때의 올바른 대처 방법)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 결과와 가설이 불일치할 때의 올바른 대처 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r7-basic",
@@ -37592,8 +31111,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 첨단 과학 기술 용어)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 첨단 과학 기술 용어 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r7-skill",
@@ -37612,7 +31130,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 탐구 설계 시 주의점)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 탐구 설계 시 주의점 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r7-adv",
@@ -37631,7 +31149,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 관찰부터 결론 도출까지 전체 프로세스 타당성 검토)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 관찰부터 결론 도출까지 전체 프로세스 타당성 검토 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r8-basic",
@@ -37650,7 +31168,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 탐구 단계 명칭 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 탐구 단계 명칭 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r8-skill",
@@ -37669,7 +31187,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 특정 기술의 사회적 기여도 평가)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 기술의 사회적 기여도 평가 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r8-adv",
@@ -37688,7 +31206,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 변인 사이의 인과관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 변인 사이의 인과관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r9-basic",
@@ -37707,7 +31225,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학적 탐구 방법에 대한 일반적인 특징 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학적 탐구 방법에 대한 일반적인 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r9-skill",
@@ -37725,7 +31243,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지속가능성 실천의 주체 : 개인적, 사회적 노력의 병행 필요성)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지속가능성 실천의 주체 : 개인적, 사회적 노력의 병행 필요성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r10-basic",
@@ -37744,7 +31263,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 신재생 에너지와 화석 연료의 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 신재생 에너지와 화석 연료의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r10-skill",
@@ -37763,7 +31282,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학 발전의 인류 문명 기여)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학 발전의 인류 문명 기여 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r11-basic",
@@ -37782,7 +31301,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지속가능한 삶을 위한 실생활 실천 방안)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지속가능한 삶을 위한 실생활 실천 방안 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r11-skill",
@@ -37801,7 +31320,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 실험에서 다르게 해야 할 조건(독립 변인) 식별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실험에서 다르게 해야 할 조건(독립 변인) 식별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r12-skill",
@@ -37819,7 +31338,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 실험 데이터를 보고 결과 도출하기)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실험 데이터를 보고 결과 도출하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r13-skill",
@@ -37838,7 +31358,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학-기술-사회(STS)의 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학-기술-사회(STS)의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r14-skill",
@@ -37857,7 +31377,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학 기술 사례와 영향의 올바른 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학 기술 사례와 영향의 올바른 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r15-skill",
@@ -37876,7 +31396,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 순서 없이 나열된 탐구 과정을 시간 순으로 나열)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 순서 없이 나열된 탐구 과정을 시간 순으로 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r16-skill",
@@ -37895,7 +31415,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 자율 주행차에 적용된 기술적 원리 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자율 주행차에 적용된 기술적 원리 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r17-skill",
@@ -37914,7 +31434,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 첨단 기술의 오개념 교정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 첨단 기술의 오개념 교정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r18-basic",
@@ -37933,7 +31453,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 탐구 단계별 특징과 설명의 적절성 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 탐구 단계별 특징과 설명의 적절성 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r18-skill",
@@ -37952,7 +31472,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 탐구 계획서의 기본 구성)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 탐구 계획서의 기본 구성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r18-adv",
@@ -37970,7 +31490,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 우리나라의 지속가능발전 전략 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리나라의 지속가능발전 전략 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r19-basic",
@@ -37989,7 +31510,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 지속가능발전의 의미와 지향점 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지속가능발전의 의미와 지향점 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r19-skill",
@@ -38007,8 +31528,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학 원리의 타 분야 융합)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학 원리의 타 분야 융합 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r19-adv",
@@ -38027,7 +31547,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 무작위로 제시된 탐구 과정을 순서대로 배열)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 무작위로 제시된 탐구 과정을 순서대로 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r20-basic",
@@ -38046,7 +31566,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학기술의 사회적 필요성)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학기술의 사회적 필요성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r20-skill",
@@ -38065,7 +31585,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 실험 순서 및 조건 기록 등 계획 수립의 타당성 검토)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실험 순서 및 조건 기록 등 계획 수립의 타당성 검토 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s0-r21-skill",
@@ -38083,8 +31603,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 첨단 기술의 부정적 영향 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 첨단 기술의 부정적 영향 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r3-basic",
@@ -38102,7 +31621,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생명 활동에 필요한 에너지를 만드는 소기관)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생명 활동에 필요한 에너지를 만드는 소기관 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r3-skill",
@@ -38120,8 +31640,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 여러 가지 세포의 모양과 크기 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 가지 세포의 모양과 크기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r3-adv",
@@ -38139,7 +31658,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물의 구성 단계를 작은 단위부터 순서대로 나열하기)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 구성 단계를 작은 단위부터 순서대로 나열하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r4-basic",
@@ -38158,7 +31678,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물 세포의 각 부분별 기능 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물 세포의 각 부분별 기능 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r4-skill",
@@ -38177,7 +31697,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 세포의 종류와 기능에 따른 모양의 다양성)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포의 종류와 기능에 따른 모양의 다양성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r4-adv",
@@ -38196,7 +31716,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 동물의 구성 단계를 순서대로 나열하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동물의 구성 단계를 순서대로 나열하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r5-basic",
@@ -38214,8 +31734,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 독립적인 생명 활동을 하는 개체의 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 독립적인 생명 활동을 하는 개체의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r5-skill",
@@ -38234,7 +31753,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물의 구성 단계와 그 예시)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 구성 단계와 그 예시 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r5-adv",
@@ -38253,7 +31772,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 동물과 식물의 구성 단계 차이점(조직계/기관계) 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동물과 식물의 구성 단계 차이점(조직계/기관계) 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r6-basic",
@@ -38272,7 +31791,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물 세포의 주요 구조 명칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물 세포의 주요 구조 명칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r6-skill",
@@ -38290,8 +31809,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물의 유기적 구성 단계 및 세포 구조의 비교 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물의 유기적 구성 단계 및 세포 구조의 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r6-adv",
@@ -38310,7 +31828,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물 세포의 구조)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물 세포의 구조 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r7-basic",
@@ -38329,7 +31847,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물의 구성 단계 기본 순서)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 구성 단계 기본 순서 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r7-skill",
@@ -38348,7 +31866,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 세포의 특징에 대한 종합적 판단)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포의 특징에 대한 종합적 판단 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r7-adv",
@@ -38367,7 +31885,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 여러 조직이 모여 특정 기능을 하는 '기관'의 위계 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 조직이 모여 특정 기능을 하는 '기관'의 위계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r8-basic",
@@ -38386,7 +31904,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물 세포에만 존재하는 특수 구조 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물 세포에만 존재하는 특수 구조 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r8-skill",
@@ -38405,7 +31923,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 동물의 구성 단계별 위계와 기능적 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동물의 구성 단계별 위계와 기능적 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r8-adv",
@@ -38423,7 +31941,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물의 조직(울타리조직 등)과 기관의 체계적 분류)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 조직(울타리조직 등)과 기관의 체계적 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r9-basic",
@@ -38441,7 +31960,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 동물의 구성 단계별 포함 관계와 특징)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동물의 구성 단계별 포함 관계와 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r9-skill",
@@ -38460,7 +31980,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 세포 소기관(에너지 생산, 광합성 등)의 상세 기능)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포 소기관(에너지 생산, 광합성 등)의 상세 기능 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r10-basic",
@@ -38479,7 +31999,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 세포의 정의와 특징 이해하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포의 정의와 특징 이해하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r10-skill",
@@ -38498,7 +32018,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 현미경 표본(프레파라트) 제작 순서의 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 현미경 표본(프레파라트) 제작 순서의 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r11-basic",
@@ -38517,7 +32037,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물의 구성 단계 개념과 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물의 구성 단계 개념과 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r11-skill",
@@ -38535,8 +32055,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 신경세포와 상피세포의 모양 및 기능적 차이)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 신경세포와 상피세포의 모양 및 기능적 차이 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r12-skill",
@@ -38555,7 +32074,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물의 구성 단계별 구체적 예시)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 구성 단계별 구체적 예시 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r13-skill",
@@ -38574,7 +32093,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 동물의 기관을 이루는 조직과 기능)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동물의 기관을 이루는 조직과 기능 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r14-skill",
@@ -38592,7 +32111,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물의 잎 단면 구조와 구성 단계 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 잎 단면 구조와 구성 단계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r15-skill",
@@ -38611,7 +32131,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 동물 세포와 식물 세포의 구조적 차이점)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동물 세포와 식물 세포의 구조적 차이점 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r16-skill",
@@ -38629,8 +32149,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 현미경을 이용한 동물/식물 세포 관찰 결과 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 현미경을 이용한 동물/식물 세포 관찰 결과 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r17-skill",
@@ -38649,7 +32168,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 벤다이어그램을 통한 세포 공통 구조 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 벤다이어그램을 통한 세포 공통 구조 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r18-basic",
@@ -38668,7 +32187,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물 세포와 동물 세포의 주요 구조 명칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물 세포와 동물 세포의 주요 구조 명칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r18-skill",
@@ -38687,7 +32206,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물의 생명 활동)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물의 생명 활동 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r18-adv",
@@ -38706,7 +32225,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물 세포 내 에너지 전환 및 소기관 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물 세포 내 에너지 전환 및 소기관 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r19-basic",
@@ -38725,7 +32244,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물 세포에만 존재하는 구조 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물 세포에만 존재하는 구조 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r19-skill",
@@ -38743,7 +32262,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 동물 세포의 구조와 기능)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동물 세포의 구조와 기능 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r19-adv",
@@ -38762,7 +32282,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 인체 기관계의 종류와 통합적 기능 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 인체 기관계의 종류와 통합적 기능 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r20-basic",
@@ -38781,7 +32301,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물의 구성 단계별 그림과 명칭 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 구성 단계별 그림과 명칭 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r20-skill",
@@ -38799,8 +32319,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물 세포의 구조와 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물 세포의 구조와 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r21-skill",
@@ -38818,8 +32337,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 동물 및 식물 세포 소기관 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동물 및 식물 세포 소기관 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r22-skill",
@@ -38838,7 +32356,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 세포 소기관의 기능 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포 소기관의 기능 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r28-basic",
@@ -38856,8 +32374,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생태계 다양성과 생물다양성의 상관관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생태계 다양성과 생물다양성의 상관관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r28-skill",
@@ -38875,7 +32392,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성이 형성되는 과정의 순서 배열)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성이 형성되는 과정의 순서 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r28-adv",
@@ -38893,8 +32411,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 분류 단계가 하위(종)로 갈수록 나타나는 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분류 단계가 하위(종)로 갈수록 나타나는 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r29-basic",
@@ -38913,7 +32430,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 종 다양성을 판단하는 기준(종의 수와 고른 분포))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 종 다양성을 판단하는 기준(종의 수와 고른 분포) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r29-skill",
@@ -38932,7 +32449,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 특정 지역의 생물다양성 비교 및 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 지역의 생물다양성 비교 및 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r29-adv",
@@ -38951,7 +32468,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 강, 목, 과 등 분류 계급을 통한 친밀도 판단)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 강, 목, 과 등 분류 계급을 통한 친밀도 판단 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r30-basic",
@@ -38970,7 +32487,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성에 포함되는 요소)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성에 포함되는 요소 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r30-skill",
@@ -38988,8 +32505,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 변이인 것과 변이가 아닌 사례 구분하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 변이인 것과 변이가 아닌 사례 구분하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r30-adv",
@@ -39007,8 +32523,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 먹이 환경과 자연 선택에 의한 신체 구조의 적응적 변화 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 먹이 환경과 자연 선택에 의한 신체 구조의 적응적 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r31-basic",
@@ -39026,8 +32541,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성의 의미와 범위 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성의 의미와 범위 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r31-skill",
@@ -39045,7 +32559,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생태계 다양성과 생물 종 다양성의 상관관계 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생태계 다양성과 생물 종 다양성의 상관관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r31-adv",
@@ -39063,8 +32578,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 분류 단계의 포함 관계에 따른 생물 수 변화)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분류 단계의 포함 관계에 따른 생물 수 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r32-basic",
@@ -39082,7 +32596,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물 사이에서 나타나는 변이의 개념)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 사이에서 나타나는 변이의 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r32-skill",
@@ -39101,7 +32615,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 특정 생물의 상위 분류 단계(목, 과, 속) 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 생물의 상위 분류 단계(목, 과, 속) 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r32-adv",
@@ -39119,8 +32633,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 살아남은 형질이 자손에게 전달되어 종이 분화되는 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 살아남은 형질이 자손에게 전달되어 종이 분화되는 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r33-basic",
@@ -39138,7 +32651,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 서식 환경에 적응한 생물의 특징(여우))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서식 환경에 적응한 생물의 특징(여우) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r33-skill",
@@ -39157,7 +32670,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 분류 단계(강, 목 등)의 포함 관계에 따른 공통 특징 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분류 단계(강, 목 등)의 포함 관계에 따른 공통 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r33-adv",
@@ -39175,7 +32688,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 분류 단계상의 거리를 통한 생물 간 유연관계 파악)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분류 단계상의 거리를 통한 생물 간 유연관계 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r34-basic",
@@ -39194,7 +32708,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물을 분류하는 목적과 유용성)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물을 분류하는 목적과 유용성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r34-skill",
@@ -39213,7 +32727,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 환경 변화에 따른 적응과 자연 선택 과정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 환경 변화에 따른 적응과 자연 선택 과정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r35-basic",
@@ -39232,7 +32746,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물 분류의 기본 단위 '종'의 정의)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 분류의 기본 단위 '종'의 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r35-skill",
@@ -39250,7 +32764,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 표에 제시된 동물의 분류 단계 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 표에 제시된 동물의 분류 단계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r36-basic",
@@ -39269,7 +32784,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물 분류 단계의 명칭과 순서)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 분류 단계의 명칭과 순서 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r36-skill",
@@ -39288,7 +32803,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 여러 생물종을 통한 생물학적 종의 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 생물종을 통한 생물학적 종의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r37-skill",
@@ -39306,8 +32821,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 서로 다른 두 지역(밭과 숲)의 생물다양성 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서로 다른 두 지역(밭과 숲)의 생물다양성 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r38-skill",
@@ -39326,7 +32840,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 가상 생물(A~E)의 특징을 바탕으로 한 분류 기준 설정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가상 생물(A~E)의 특징을 바탕으로 한 분류 기준 설정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r39-skill",
@@ -39345,7 +32859,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 먹이 환경에 따른 핀치의 부리 변이 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 먹이 환경에 따른 핀치의 부리 변이 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r40-skill",
@@ -39364,7 +32878,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 분류 단계를 이용한 생물 간 유연관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분류 단계를 이용한 생물 간 유연관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r41-skill",
@@ -39382,8 +32896,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 변이가 생물의 생존과 환경 적응에 미치는 역할)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 변이가 생물의 생존과 환경 적응에 미치는 역할 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r42-skill",
@@ -39402,7 +32915,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생식 능력이 있는 자손 형성 유무와 종의 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생식 능력이 있는 자손 형성 유무와 종의 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r43-basic",
@@ -39421,7 +32934,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 지역에 따른 종다양성 비교(종의 수와 비율))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지역에 따른 종다양성 비교(종의 수와 비율) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r43-skill",
@@ -39440,7 +32953,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 위도에 따른 종다양성 변화 자료 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 위도에 따른 종다양성 변화 자료 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r44-basic",
@@ -39459,7 +32972,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물 분류 단계의 명칭과 순서)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 분류 단계의 명칭과 순서 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r44-skill",
@@ -39477,7 +32990,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성이 형성되는 과정(변이와 자연선택))"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성이 형성되는 과정(변이와 자연선택) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r44-adv",
@@ -39496,7 +33010,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 유성 생식과 무성 생식 생물의 환경 변화 적응 전략 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 유성 생식과 무성 생식 생물의 환경 변화 적응 전략 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r45-basic",
@@ -39515,7 +33029,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성의 의미(생태계, 종, 유전적 다양성))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성의 의미(생태계, 종, 유전적 다양성) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r45-skill",
@@ -39533,8 +33047,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물 분류 단계(문-강-목-과-속-종)의 포함 관계와 서열 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 분류 단계(문-강-목-과-속-종)의 포함 관계와 서열 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r45-adv",
@@ -39552,8 +33065,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 먹이 자원 경쟁과 섬의 환경이 핀치의 종 분화에 미친 영향)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 먹이 자원 경쟁과 섬의 환경이 핀치의 종 분화에 미친 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r46-skill",
@@ -39572,7 +33084,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 항생제 내성 세균의 출현과 변이 형성 과정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 항생제 내성 세균의 출현과 변이 형성 과정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r46-adv",
@@ -39591,7 +33103,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 환경 변화 시 변이가 생존에 미치는 영향 분석(나방의 선택적 생존 모델))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 환경 변화 시 변이가 생존에 미치는 영향 분석(나방의 선택적 생존 모델) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r47-skill",
@@ -39610,7 +33122,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 먹이 그물의 복잡성과 생태계 평형 유지)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 먹이 그물의 복잡성과 생태계 평형 유지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r53-basic",
@@ -39629,7 +33141,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 원핵생물계의 주요 특징과 대표 생물 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원핵생물계의 주요 특징과 대표 생물 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r53-skill",
@@ -39648,7 +33160,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 5계 분류 기준에 따른 생물 무리의 특징 비교 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 5계 분류 기준에 따른 생물 무리의 특징 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r53-adv",
@@ -39667,7 +33179,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 원핵생물계와 원생생물계의 세포 수준에서의 차이점)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원핵생물계와 원생생물계의 세포 수준에서의 차이점 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r54-basic",
@@ -39685,7 +33197,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 핵막의 유무에 따른 생물 무리의 크게 나누기)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 핵막의 유무에 따른 생물 무리의 크게 나누기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r54-skill",
@@ -39704,7 +33217,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 버섯과 곰팡이의 균사 구조와 포자 번식 특성 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 버섯과 곰팡이의 균사 구조와 포자 번식 특성 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r54-adv",
@@ -39723,7 +33236,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물 5계의 종합적인 특징 비교표 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 5계의 종합적인 특징 비교표 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r55-basic",
@@ -39742,7 +33255,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 5계 분류 모식도에서 각 계의 위치 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 5계 분류 모식도에서 각 계의 위치 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r55-skill",
@@ -39761,7 +33274,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 제시된 생물 목록에서 같은 계에 속하는 것끼리 묶기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 제시된 생물 목록에서 같은 계에 속하는 것끼리 묶기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r55-adv",
@@ -39780,7 +33293,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물계와 균계의 유사성과 결정적 차이점 심층 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물계와 균계의 유사성과 결정적 차이점 심층 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r56-basic",
@@ -39798,8 +33311,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물 5계의 대표적인 특징 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 5계의 대표적인 특징 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r56-skill",
@@ -39818,7 +33330,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 해조류의 원생생물계 소속 이유 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 해조류의 원생생물계 소속 이유 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r56-adv",
@@ -39837,7 +33349,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 예/아니요 질문에 따른 분류 기준(A, B) 도출)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 예/아니요 질문에 따른 분류 기준(A, B) 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r57-basic",
@@ -39855,7 +33367,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 원생생물계에 속하는 생물의 예시와 특징)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원생생물계에 속하는 생물의 예시와 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r57-skill",
@@ -39874,7 +33387,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 벤다이어그램을 통한 생물계의 공통점과 차이점)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 벤다이어그램을 통한 생물계의 공통점과 차이점 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r57-adv",
@@ -39892,7 +33405,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 핵의 유무와 세부 조건에 따른 계의 복합 구분)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 핵의 유무와 세부 조건에 따른 계의 복합 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r58-basic",
@@ -39911,7 +33425,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 균계의 양분 얻는 방식과 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 균계의 양분 얻는 방식과 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r58-skill",
@@ -39930,7 +33444,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 5계별 세포벽의 유무와 성분 유추)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 5계별 세포벽의 유무와 성분 유추 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r58-adv",
@@ -39948,7 +33462,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 복잡한 분류 흐름도(A~E)에서의 생물 매칭)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복잡한 분류 흐름도(A~E)에서의 생물 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r59-basic",
@@ -39967,7 +33482,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물계의 광합성 및 세포 구조적 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물계의 광합성 및 세포 구조적 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r59-skill",
@@ -39985,8 +33500,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물 5계의 주요 특징 비교표 데이터 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 5계의 주요 특징 비교표 데이터 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r60-basic",
@@ -40004,8 +33518,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 동물계의 특징과 양분 섭취 방법)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동물계의 특징과 양분 섭취 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r60-skill",
@@ -40024,7 +33537,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 균계(느타리버섯 등)의 공통적인 생물학적 특징 추출)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 균계(느타리버섯 등)의 공통적인 생물학적 특징 추출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r61-basic",
@@ -40043,7 +33556,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 주변 생물의 소속 계 연결하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주변 생물의 소속 계 연결하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r61-skill",
@@ -40062,7 +33575,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 세포의 수와 광합성 여부에 따른 미지의 생물계 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포의 수와 광합성 여부에 따른 미지의 생물계 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r62-skill",
@@ -40081,7 +33594,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물의 운동성 유무에 따른 계의 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물의 운동성 유무에 따른 계의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r63-skill",
@@ -40100,7 +33613,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 세포의 개수(단세포/다세포)에 따른 생물 분류)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포의 개수(단세포/다세포)에 따른 생물 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r64-skill",
@@ -40119,7 +33632,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 광합성 여부에 따른 독립 영양과 종속 영양의 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성 여부에 따른 독립 영양과 종속 영양의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r65-skill",
@@ -40138,7 +33651,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 제시된 생물 무리의 분류 기준 추출)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 제시된 생물 무리의 분류 기준 추출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r66-skill",
@@ -40156,8 +33669,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 각 계의 정의에 부합하는 생물 예시 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 각 계의 정의에 부합하는 생물 예시 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r67-skill",
@@ -40176,7 +33688,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물 5계의 관계를 나타낸 모식도 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 5계의 관계를 나타낸 모식도 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r68-basic",
@@ -40195,7 +33707,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 핵막의 유무에 따른 생물 그룹 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 핵막의 유무에 따른 생물 그룹 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r68-skill",
@@ -40213,7 +33725,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 5계 분류 기준(핵, 세포벽, 광합성)의 종합적 적용)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 5계 분류 기준(핵, 세포벽, 광합성)의 종합적 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r68-adv",
@@ -40231,7 +33744,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물 5계의 상호 유연관계 및 진화적 관계 해석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 5계의 상호 유연관계 및 진화적 관계 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r69-basic",
@@ -40249,8 +33763,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 5계 분류 체계의 명칭과 각 계의 포함 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 5계 분류 체계의 명칭과 각 계의 포함 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r69-skill",
@@ -40269,7 +33782,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 식물계와 균계의 세포벽 유무 및 광합성 여부 대조)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물계와 균계의 세포벽 유무 및 광합성 여부 대조 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r69-adv",
@@ -40288,7 +33801,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 복합적인 분류 기준을 통한 생물의 '계' 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복합적인 분류 기준을 통한 생물의 '계' 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r70-basic",
@@ -40306,8 +33819,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 우리 주변 생물의 소속 계 연결하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 주변 생물의 소속 계 연결하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r70-skill",
@@ -40326,7 +33838,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 5계 분류 모식도(A~E)에서 각 기호가 의미하는 계 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 5계 분류 모식도(A~E)에서 각 기호가 의미하는 계 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r71-skill",
@@ -40345,7 +33857,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물 5계의 공통점과 차이점(세포 구조 분석))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 5계의 공통점과 차이점(세포 구조 분석) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r78-basic",
@@ -40364,7 +33876,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성의 의미와 중요성 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성의 의미와 중요성 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r78-skill",
@@ -40383,7 +33895,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물 다양성이 의식주에 미치는 영향 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 다양성이 의식주에 미치는 영향 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r78-adv",
@@ -40401,8 +33913,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: DDT 사용 등 인위적 환경 변화가 먹이 사슬에 미치는 연쇄적 영향)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ DDT 사용 등 인위적 환경 변화가 먹이 사슬에 미치는 연쇄적 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r79-basic",
@@ -40421,7 +33932,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성 감소를 일으키는 근본 원인 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성 감소를 일으키는 근본 원인 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r79-skill",
@@ -40440,7 +33951,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 서식지 파괴 원인과 보전 대책의 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서식지 파괴 원인과 보전 대책의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r79-adv",
@@ -40459,7 +33970,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 서식지 면적 감소와 종수 유지 비율의 상관관계 그래프 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서식지 면적 감소와 종수 유지 비율의 상관관계 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r80-basic",
@@ -40477,7 +33988,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성의 의미와 생태계 유지의 관계 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성의 의미와 생태계 유지의 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r80-skill",
@@ -40496,7 +34008,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 외래종의 정의 이해 및 사례 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외래종의 정의 이해 및 사례 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r80-adv",
@@ -40515,7 +34027,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 국제적 차원의 생물다양성 보전 정책(람사르 협약 등) 비판적 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 국제적 차원의 생물다양성 보전 정책(람사르 협약 등) 비판적 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r81-basic",
@@ -40533,7 +34045,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성 감소를 일으키는 원인 예시 구분)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성 감소를 일으키는 원인 예시 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r81-skill",
@@ -40552,7 +34065,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물에서 아이디어를 얻은 기술(생물 모방) 사례)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물에서 아이디어를 얻은 기술(생물 모방) 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r81-adv",
@@ -40571,7 +34084,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 도로 건설에 따른 서식지 고립 및 가장자리 효과 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 도로 건설에 따른 서식지 고립 및 가장자리 효과 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r82-basic",
@@ -40590,7 +34103,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성이 인간에게 제공하는 혜택 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성이 인간에게 제공하는 혜택 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r82-skill",
@@ -40608,8 +34121,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 멸종 위기 생물 복원 사업 및 종자 은행의 역할)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 멸종 위기 생물 복원 사업 및 종자 은행의 역할 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r82-adv",
@@ -40627,7 +34139,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 외래종(나일농어) 유입 전후의 생태계 평형 파괴 과정 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외래종(나일농어) 유입 전후의 생태계 평형 파괴 과정 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r83-basic",
@@ -40645,8 +34158,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성을 보전해야 하는 까닭 인식)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성을 보전해야 하는 까닭 인식 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r83-skill",
@@ -40664,8 +34176,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 서식지 단편화 시 가장자리 면적 변화의 특징 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서식지 단편화 시 가장자리 면적 변화의 특징 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r83-adv",
@@ -40684,7 +34195,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생태계 평형 파괴 시 먹이 관계의 변화와 생존 확률 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생태계 평형 파괴 시 먹이 관계의 변화와 생존 확률 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r84-basic",
@@ -40703,7 +34214,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성을 감소시키는 여러 가지 원인(남획, 서식지파괴, 외래종 유입))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성을 감소시키는 여러 가지 원인(남획, 서식지파괴, 외래종 유입) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r84-skill",
@@ -40722,7 +34233,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 먹이그물의 복잡성과 생태계 안정성의 관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 먹이그물의 복잡성과 생태계 안정성의 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r85-basic",
@@ -40741,7 +34252,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성 보전을 위한 실천 방안)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성 보전을 위한 실천 방안 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r85-skill",
@@ -40760,7 +34271,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물 자원의 구체적 활용 사례(섬유, 의약품 등) 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 자원의 구체적 활용 사례(섬유, 의약품 등) 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r86-basic",
@@ -40778,8 +34289,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성 보전을 위한 국가적·국제적 협력)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성 보전을 위한 국가적·국제적 협력 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r86-skill",
@@ -40797,8 +34307,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성 감소의 인위적 요인 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성 감소의 인위적 요인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r87-skill",
@@ -40816,8 +34325,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 남획이 해양 생물 생태계에 미치는 영향(기사 분석))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 남획이 해양 생물 생태계에 미치는 영향(기사 분석) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r88-skill",
@@ -40836,7 +34344,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 외래종 도입이 생태계 평형에 미치는 영향 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외래종 도입이 생태계 평형에 미치는 영향 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r89-skill",
@@ -40855,7 +34363,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성 감소 원인과 대책의 올바른 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성 감소 원인과 대책의 올바른 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r90-skill",
@@ -40874,7 +34382,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생태통로 설치의 목적과 보전 효과 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생태통로 설치의 목적과 보전 효과 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r91-skill",
@@ -40893,7 +34401,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성 보전의 가치와 생물의 권리 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성 보전의 가치와 생물의 권리 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r92-skill",
@@ -40912,7 +34420,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성 감소의 원인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성 감소의 원인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r93-basic",
@@ -40930,8 +34438,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성의 정의와 세 가지 요소(유전자, 종, 생태계) 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성의 정의와 세 가지 요소(유전자, 종, 생태계) 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r93-skill",
@@ -40950,7 +34457,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 외래종 도입이 토착 생물 생존에 미치는 부정적 영향 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외래종 도입이 토착 생물 생존에 미치는 부정적 영향 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r93-adv",
@@ -40969,7 +34476,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 서식지 분할과 생물 개체수의 변화 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서식지 분할과 생물 개체수의 변화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r94-basic",
@@ -40987,7 +34494,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성 감소를 유발하는 인위적 원인 파악)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성 감소를 유발하는 인위적 원인 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r94-skill",
@@ -41005,7 +34513,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물 자원의 활용 사례 및 보전의 가치 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 자원의 활용 사례 및 보전의 가치 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r94-adv",
@@ -41024,7 +34533,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 먹이그물 복잡성에 따른 생태계 평형 유지 기전)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 먹이그물 복잡성에 따른 생태계 평형 유지 기전 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r95-basic",
@@ -41043,7 +34552,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생물다양성 보전을 위한 국가 및 사회적 노력의 종류)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성 보전을 위한 국가 및 사회적 노력의 종류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r95-skill",
@@ -41062,7 +34571,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 먹이그물의 복잡성에 따른 생태계 평형 유지 기전 및 종 멸종의 영향 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 먹이그물의 복잡성에 따른 생태계 평형 유지 기전 및 종 멸종의 영향 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s1-r96-skill",
@@ -41081,7 +34590,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생태계 서비스(갯벌)의 가치 이해 및 보전 대책의 적절성 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생태계 서비스(갯벌)의 가치 이해 및 보전 대책의 적절성 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r3-basic",
@@ -41100,7 +34609,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열평형 현상의 예시 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열평형 현상의 예시 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r3-skill",
@@ -41119,7 +34628,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 입자의 움직임과 거리 데이터를 통한 온도 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자의 움직임과 거리 데이터를 통한 온도 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r3-adv",
@@ -41138,7 +34647,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 금속 막대 가열 실험을 통한 전도의 원리 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 금속 막대 가열 실험을 통한 전도의 원리 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r4-basic",
@@ -41157,7 +34666,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열이 이동하는 방식의 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열이 이동하는 방식의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r4-skill",
@@ -41176,7 +34685,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 입자 모형의 변화를 통한 열의 이동 방향 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모형의 변화를 통한 열의 이동 방향 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r4-adv",
@@ -41195,7 +34704,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열평형 도달 전후의 입자 운동 및 온도 변화 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열평형 도달 전후의 입자 운동 및 온도 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r5-basic",
@@ -41214,7 +34723,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 액체와 기체에서의 열 이동 방식인 대류의 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체와 기체에서의 열 이동 방식인 대류의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r5-skill",
@@ -41233,7 +34742,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 대류 현상에 의한 물의 흐름(순환) 모형 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대류 현상에 의한 물의 흐름(순환) 모형 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r5-adv",
@@ -41252,7 +34761,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화와 열의 출입 및 온도 관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 상태 변화와 열의 출입 및 온도 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r6-basic",
@@ -41271,7 +34780,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 매질 없이 직접 열이 이동하는 복사의 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 매질 없이 직접 열이 이동하는 복사의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r6-skill",
@@ -41290,7 +34799,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 가열에 따른 물질의 상태 변화와 입자 모형 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열에 따른 물질의 상태 변화와 입자 모형 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r6-adv",
@@ -41309,7 +34818,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 모형을 통해 입자의 직접 이동 유무에 따른 열 이동 방식 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모형을 통해 입자의 직접 이동 유무에 따른 열 이동 방식 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r7-basic",
@@ -41328,7 +34837,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질을 구성하는 입자의 기본 성질 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질을 구성하는 입자의 기본 성질 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r7-skill",
@@ -41347,7 +34856,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 주전자 속 물의 대류 현상과 입자 운동 방향 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주전자 속 물의 대류 현상과 입자 운동 방향 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r7-adv",
@@ -41366,7 +34875,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열평형 온도 결정 요인(처음 온도와 질량 등)의 데이터 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열평형 온도 결정 요인(처음 온도와 질량 등)의 데이터 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r8-basic",
@@ -41385,7 +34894,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 온도의 정의와 입자 운동의 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도의 정의와 입자 운동의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r8-skill",
@@ -41404,7 +34913,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 여러 물체 간 접촉 시 열의 이동 방향과 온도 서열 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 물체 간 접촉 시 열의 이동 방향과 온도 서열 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r8-adv",
@@ -41423,7 +34932,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열평형 도달 과정에서의 온도 변화와 입자 운동 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열평형 도달 과정에서의 온도 변화와 입자 운동 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r9-basic",
@@ -41441,7 +34950,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 입자 모형을 통한 온도 비교 및 상태 변화 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모형을 통한 온도 비교 및 상태 변화 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r9-skill",
@@ -41459,7 +34969,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 온도-시간 그래프를 통한 열평형 도달 과정 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도-시간 그래프를 통한 열평형 도달 과정 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r10-basic",
@@ -41478,7 +34988,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열의 이동 방향과 입자 운동의 변화 기초)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열의 이동 방향과 입자 운동의 변화 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r10-skill",
@@ -41497,7 +35007,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 실험 데이터를 이용한 열평형 시간 및 온도 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실험 데이터를 이용한 열평형 시간 및 온도 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r11-basic",
@@ -41515,7 +35025,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 종류에 따른 열의 전도 속도 차이)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 종류에 따른 열의 전도 속도 차이 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r11-skill",
@@ -41533,8 +35044,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열의 이동에 따른 입자 사이의 거리 변화와 이동한 열의 양 관계 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열의 이동에 따른 입자 사이의 거리 변화와 이동한 열의 양 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r12-skill",
@@ -41552,7 +35062,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 고체에서의 열의 이동 방식(전도)의 특징)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고체에서의 열의 이동 방식(전도)의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r13-skill",
@@ -41571,7 +35082,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 실생활 현상과 전도·대류·복사 방식 매칭하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실생활 현상과 전도·대류·복사 방식 매칭하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r14-skill",
@@ -41590,7 +35101,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 복사 에너지를 감지하는 열화상 카메라 원리 적용)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복사 에너지를 감지하는 열화상 카메라 원리 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r15-skill",
@@ -41608,7 +35119,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 한 상황에서 일어나는 여러 가지 열의 이동 방식 구분)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 한 상황에서 일어나는 여러 가지 열의 이동 방식 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r16-skill",
@@ -41627,7 +35139,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 온도 차에 따른 잉크 확산 속도 비교(입자 운동))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도 차에 따른 잉크 확산 속도 비교(입자 운동) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r17-skill",
@@ -41646,7 +35158,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 재질이 다른 이유를 열의 이동과 관련지어 설명)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 재질이 다른 이유를 열의 이동과 관련지어 설명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r18-basic",
@@ -41665,7 +35177,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 입자 운동 모형을 통한 온도의 변화 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 운동 모형을 통한 온도의 변화 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r18-skill",
@@ -41683,7 +35195,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 온도-시간 그래프를 통한 열평형 도달 과정 해석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도-시간 그래프를 통한 열평형 도달 과정 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r18-adv",
@@ -41701,8 +35214,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 온도-시간 그래프에서 열이 이동하는 속도의 변화 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도-시간 그래프에서 열이 이동하는 속도의 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r19-basic",
@@ -41721,7 +35233,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열의 이동과 열평형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열의 이동과 열평형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r19-skill",
@@ -41740,7 +35252,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 외부와의 열출입이 없는 실험 장치 내 열의 이동)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외부와의 열출입이 없는 실험 장치 내 열의 이동 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r19-adv",
@@ -41759,7 +35271,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열평형 온도와 처음 두 물체의 온도 평균값 관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열평형 온도와 처음 두 물체의 온도 평균값 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r20-basic",
@@ -41778,7 +35290,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열의 이동 방향을 이용한 물체 간의 온도 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열의 이동 방향을 이용한 물체 간의 온도 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r20-skill",
@@ -41796,7 +35308,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 잉크 확산 실험을 통한 온도와 입자 운동의 관계 도출)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 잉크 확산 실험을 통한 온도와 입자 운동의 관계 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r20-adv",
@@ -41815,7 +35328,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열평형 도달 시 입자 운동과 확산 속도의 평형 관계 고찰)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열평형 도달 시 입자 운동과 확산 속도의 평형 관계 고찰 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r21-skill",
@@ -41834,7 +35347,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 비유(책 전달하기)를 통한 열의 이동 방식 모형화)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비유(책 전달하기)를 통한 열의 이동 방식 모형화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r22-skill",
@@ -41853,7 +35366,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 물의 대류를 방해하는 상황에서의 온도 변화 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물의 대류를 방해하는 상황에서의 온도 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r28-basic",
@@ -41872,7 +35385,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 종류에 따른 비열의 차이 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 종류에 따른 비열의 차이 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r28-skill",
@@ -41891,7 +35404,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 가열 시간-온도 그래프를 통한 비열의 비 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 시간-온도 그래프를 통한 비열의 비 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r28-adv",
@@ -41910,7 +35423,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 질량과 가열 시간이 다른 복합 조건에서의 비열 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량과 가열 시간이 다른 복합 조건에서의 비열 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r29-basic",
@@ -41928,8 +35441,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열량의 정의와 단위 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열량의 정의와 단위 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r29-skill",
@@ -41948,7 +35460,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 비열 차이에 의한 해륙풍의 발생 원리 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비열 차이에 의한 해륙풍의 발생 원리 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r29-adv",
@@ -41966,8 +35478,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 액체의 열팽창 시 용기(플라스크)의 팽창 효과 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체의 열팽창 시 용기(플라스크)의 팽창 효과 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r30-basic",
@@ -41986,7 +35497,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 질량과 온도 변화에 따른 열량 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량과 온도 변화에 따른 열량 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r30-skill",
@@ -42005,7 +35516,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 고체의 종류에 따른 열팽창 정도 비교 실험)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고체의 종류에 따른 열팽창 정도 비교 실험 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r30-adv",
@@ -42024,7 +35535,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 양에 따른 필요 열량 비례 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 양에 따른 필요 열량 비례 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r31-basic",
@@ -42043,7 +35554,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 비열의 정의와 물질의 특성 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비열의 정의와 물질의 특성 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r31-skill",
@@ -42061,8 +35572,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열팽창을 고려한 구조물 설계 원리(다리, 철로))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열팽창을 고려한 구조물 설계 원리(다리, 철로) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r31-adv",
@@ -42081,7 +35591,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 네 가지 액체의 복합 열팽창 실험 결과 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 네 가지 액체의 복합 열팽창 실험 결과 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r32-basic",
@@ -42100,7 +35610,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 고체와 액체의 열팽창 현상 비교 → 열량 공식을 이용한 비열 계산 및 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고체와 액체의 열팽창 현상 비교 → 열량 공식을 이용한 비열 계산 및 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r32-skill",
@@ -42119,7 +35629,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 주어진 질량과 온도 변화에 필요한 열량 구하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주어진 질량과 온도 변화에 필요한 열량 구하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r32-adv",
@@ -42138,7 +35648,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 기울기가 다른 가열 그래프의 비열과 질량 상관관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기울기가 다른 가열 그래프의 비열과 질량 상관관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r33-basic",
@@ -42156,7 +35666,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열팽창의 정의와 입자 운동의 관계)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열팽창의 정의와 입자 운동의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r33-skill",
@@ -42174,8 +35685,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 비열 표 데이터를 활용한 물질의 온도 변화 추정 및 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비열 표 데이터를 활용한 물질의 온도 변화 추정 및 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r33-adv",
@@ -42194,7 +35704,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 바이메탈 가열 시 작동 회로 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 바이메탈 가열 시 작동 회로 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r34-basic",
@@ -42213,7 +35723,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 일상생활 속 비열과 관련된 현상 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 비열과 관련된 현상 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r34-skill",
@@ -42231,8 +35741,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 가열 시간-온도 그래프 해석(두 물질))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 시간-온도 그래프 해석(두 물질) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r35-basic",
@@ -42251,7 +35760,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 일상생활 속 열팽창과 관련된 현상 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 열팽창과 관련된 현상 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r35-skill",
@@ -42270,7 +35779,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 가열 시간-온도 그래프 해석(세 물질))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 시간-온도 그래프 해석(세 물질) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r36-basic",
@@ -42289,7 +35798,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 바이메탈의 기본 개념과 제작 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 바이메탈의 기본 개념과 제작 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r36-skill",
@@ -42308,7 +35817,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 열팽창 정도가 다른 두 물질의 휘어짐 예측)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열팽창 정도가 다른 두 물질의 휘어짐 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r37-skill",
@@ -42327,7 +35836,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 바이메탈의 온도 조절 장치 활용 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 바이메탈의 온도 조절 장치 활용 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r38-skill",
@@ -42345,8 +35854,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 비열 공식을 이용한 기본적인 비열 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비열 공식을 이용한 기본적인 비열 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r39-skill",
@@ -42365,7 +35873,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 표 데이터를 분석하여 비열 크기 비교하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 표 데이터를 분석하여 비열 크기 비교하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r40-skill",
@@ -42384,7 +35892,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 액체의 종류에 따른 열팽창 정도 비교 실험)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체의 종류에 따른 열팽창 정도 비교 실험 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r41-skill",
@@ -42403,7 +35911,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열평형 상태에서의 온도 변화 그래프 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열평형 상태에서의 온도 변화 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r42-skill",
@@ -42422,7 +35930,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 금속판과 종이의 열팽창 차이를 이용한 현상 분석 → 금속과 비금속(종이 등)의 열팽창 차이를 이용한 현상 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 금속판과 종이의 열팽창 차이를 이용한 현상 분석 → 금속과 비금속(종이 등)의 열팽창 차이를 이용한 현상 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r43-basic",
@@ -42440,8 +35948,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 비열의 정의와 단위에 대한 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비열의 정의와 단위에 대한 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r43-skill",
@@ -42460,7 +35967,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 비열 표를 이용한 물질별 열적 특성 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비열 표를 이용한 물질별 열적 특성 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r43-adv",
@@ -42479,7 +35986,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열팽창 수치 데이터를 활용한 바이메탈 조합 설계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열팽창 수치 데이터를 활용한 바이메탈 조합 설계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r44-basic",
@@ -42498,7 +36005,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 비열에 의해 나타나는 일상 현상 구분 → 비열 차이에 의한 모래와 물의 온도 특성)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비열에 의해 나타나는 일상 현상 구분 → 비열 차이에 의한 모래와 물의 온도 특성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r44-skill",
@@ -42516,8 +36023,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 가열 시간-온도 그래프 분석(열량과 비열의 비))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 시간-온도 그래프 분석(열량과 비열의 비) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r44-adv",
@@ -42536,7 +36042,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 시간-온도 데이터 표를 활용한 물질의 비열 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간-온도 데이터 표를 활용한 물질의 비열 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r45-basic",
@@ -42555,7 +36061,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 입자 운동의 관점에서 본 열팽창 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 운동의 관점에서 본 열팽창 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r45-skill",
@@ -42574,7 +36080,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 액체 가열 실험 장치를 이용한 비열 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체 가열 실험 장치를 이용한 비열 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r45-adv",
@@ -42593,7 +36099,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열평형에 도달한 두 물체의 온도 변화와 비열 비)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열평형에 도달한 두 물체의 온도 변화와 비열 비 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r46-skill",
@@ -42612,7 +36118,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 바이메탈 냉각 시 휘어지는 방향 판단)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 바이메탈 냉각 시 휘어지는 방향 판단 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s2-r47-skill",
@@ -42631,7 +36137,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열팽창과 수축을 활용한 문제 해결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열팽창과 수축을 활용한 문제 해결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r3-basic",
@@ -42650,7 +36156,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질을 구성하는 입자의 스스로 운동하는 성질 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질을 구성하는 입자의 스스로 운동하는 성질 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r3-skill",
@@ -42669,7 +36175,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 페놀프탈레인 용액의 색 변화를 통한 확산 방향 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 페놀프탈레인 용액의 색 변화를 통한 확산 방향 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r3-adv",
@@ -42687,7 +36193,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 증발과 끓음 모형의 입자 운동론적 차이점 심화 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증발과 끓음 모형의 입자 운동론적 차이점 심화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r4-basic",
@@ -42706,7 +36213,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 입자가 스스로 운동하기 때문에 나타나는 현상 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자가 스스로 운동하기 때문에 나타나는 현상 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r4-skill",
@@ -42725,7 +36232,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 환경 조건에 따른 증발량의 변화 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 환경 조건에 따른 증발량의 변화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r4-adv",
@@ -42744,7 +36251,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 전자저울을 이용한 증발 실험의 단계별 변인 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전자저울을 이용한 증발 실험의 단계별 변인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r5-basic",
@@ -42762,8 +36269,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 확산과 증발이 일어나는 근본적인 까닭 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 확산과 증발이 일어나는 근본적인 까닭 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r5-skill",
@@ -42781,7 +36287,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물속에서 퍼진 잉크 입자의 최종 분포 모형 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물속에서 퍼진 잉크 입자의 최종 분포 모형 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r5-adv",
@@ -42800,7 +36306,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기화 현상과 입자 운동의 상관관계 심화 해석 → 생활 속 복합 현상의 입자 운동 원인 종합 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기화 현상과 입자 운동의 상관관계 심화 해석 → 생활 속 복합 현상의 입자 운동 원인 종합 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r6-basic",
@@ -42819,7 +36325,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 확산 현상이 일어나는 다양한 실례 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 확산 현상이 일어나는 다양한 실례 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r6-skill",
@@ -42838,7 +36344,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 사례를 통한 입자의 운동(확산/증발) 매칭 → 확산과 증발 현상의 유형별 분류 및 예외 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 사례를 통한 입자의 운동(확산/증발) 매칭 → 확산과 증발 현상의 유형별 분류 및 예외 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r6-adv",
@@ -42857,7 +36363,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 시간 경과에 따른 액체의 질량 감소 데이터 정량 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간 경과에 따른 액체의 질량 감소 데이터 정량 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r7-basic",
@@ -42875,8 +36381,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 확산과 증발의 공통점(입자 운동)과 차이점 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 확산과 증발의 공통점(입자 운동)과 차이점 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r7-skill",
@@ -42894,7 +36399,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 표면에서 일어나는 증발의 입자론적 모형 해석 → 사례를 통한 입자의 운동(확산/증발) 매칭)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 표면에서 일어나는 증발의 입자론적 모형 해석 → 사례를 통한 입자의 운동(확산/증발) 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r7-adv",
@@ -42913,7 +36419,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 지시약의 점진적 변화를 통한 확산의 입자적 근거)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지시약의 점진적 변화를 통한 확산의 입자적 근거 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r8-basic",
@@ -42932,7 +36438,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 증발과 끓음의 예시 비교 → 일상생활에 일어나는 현상 중에서 확산과 증발 구분하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증발과 끓음의 예시 비교 → 일상생활에 일어나는 현상 중에서 확산과 증발 구분하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r8-skill",
@@ -42951,7 +36457,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 증발 시 입자 수와 입자 자체의 변화에 대한 오개념 수정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증발 시 입자 수와 입자 자체의 변화에 대한 오개념 수정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r8-adv",
@@ -42970,7 +36476,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 사회·환경 문제(새집 증후군)와 기체 확산의 연계 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 사회·환경 문제(새집 증후군)와 기체 확산의 연계 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r9-basic",
@@ -42988,7 +36494,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 확산의 정의와 일어나는 특징에 대한 기본 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 확산의 정의와 일어나는 특징에 대한 기본 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r9-skill",
@@ -43007,7 +36514,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 공기 입자와의 충돌이 기체 확산 속도에 주는 영향 → 입자 운동의 증거인 증발과 확산의 구분 및 특징 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 공기 입자와의 충돌이 기체 확산 속도에 주는 영향 → 입자 운동의 증거인 증발과 확산의 구분 및 특징 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r10-basic",
@@ -43026,7 +36533,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 증발의 정의와 일어나는 장소의 특징 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증발의 정의와 일어나는 장소의 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r10-skill",
@@ -43045,7 +36552,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 증발 속도에 영향을 주는 요인 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증발 속도에 영향을 주는 요인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r11-basic",
@@ -43063,7 +36570,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 일상 속 확산과 증발 현상의 사례 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상 속 확산과 증발 현상의 사례 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r11-skill",
@@ -43082,7 +36589,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 입자 모형을 통한 향수의 확산 과정 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모형을 통한 향수의 확산 과정 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r12-skill",
@@ -43101,7 +36608,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 액체 속 잉크 확산 실험의 관찰과 결과 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체 속 잉크 확산 실험의 관찰과 결과 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r13-skill",
@@ -43120,7 +36627,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 지시약의 색 변화를 통한 기체 입자의 확산 증명)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지시약의 색 변화를 통한 기체 입자의 확산 증명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r14-skill",
@@ -43138,7 +36645,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 증발에 따른 물질의 질량 변화 실험 데이터 해석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증발에 따른 물질의 질량 변화 실험 데이터 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r15-skill",
@@ -43157,7 +36665,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 표면에서 일어나는 증발의 입자론적 모형 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 표면에서 일어나는 증발의 입자론적 모형 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r16-skill",
@@ -43175,8 +36683,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 확산이 일어나는 방향성과 최종 도달 상태 예측)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 확산이 일어나는 방향성과 최종 도달 상태 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r17-skill",
@@ -43195,7 +36702,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상황 맥락에서 입자 운동 관련 현상 추출)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상황 맥락에서 입자 운동 관련 현상 추출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r18-basic",
@@ -43213,7 +36720,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 증발의 정의와 입자 운동 모형의 기본 해석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증발의 정의와 입자 운동 모형의 기본 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r18-skill",
@@ -43232,7 +36740,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 전자저울의 수치 변화를 통한 액체 증발 현상의 정량적 측정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전자저울의 수치 변화를 통한 액체 증발 현상의 정량적 측정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r18-adv",
@@ -43250,7 +36758,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 흰 연기 생성 위치를 이용한 서로 다른 기체의 확산 속도비 계산 → 서로 다른 기체의 확산 속도 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 흰 연기 생성 위치를 이용한 서로 다른 기체의 확산 속도비 계산 → 서로 다른 기체의 확산 속도 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r19-basic",
@@ -43268,8 +36777,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 확산의 정의와 물질을 이루는 입자의 기본 성질)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 확산의 정의와 물질을 이루는 입자의 기본 성질 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r19-skill",
@@ -43288,7 +36796,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 질량 감소에 따른 저울의 수평 변화 실험 결과 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량 감소에 따른 저울의 수평 변화 실험 결과 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r19-adv",
@@ -43307,7 +36815,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 닫힌 용기 내에서의 기체 확산 과정과 최종 평형 분포 상태 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 닫힌 용기 내에서의 기체 확산 과정과 최종 평형 분포 상태 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r20-basic",
@@ -43326,7 +36834,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 일상생활 속 증발 현상이 나타나는 다양한 실례 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 증발 현상이 나타나는 다양한 실례 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r20-skill",
@@ -43345,7 +36853,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 온도 변화가 입자의 증발 속도에 미치는 영향 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도 변화가 입자의 증발 속도에 미치는 영향 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r20-adv",
@@ -43363,8 +36871,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 여러 변인(질량, 온도, 거리)이 복합된 확산 및 증발 실험의 설계와 해석 → 반응 위치를 이용한 기체 입자의 운동 속도 관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 변인(질량, 온도, 거리)이 복합된 확산 및 증발 실험의 설계와 해석 → 반응 위치를 이용한 기체 입자의 운동 속도 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r21-skill",
@@ -43382,8 +36889,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 액체(물) 속에서의 잉크 확산 경로와 확산 속도 특징 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체(물) 속에서의 잉크 확산 경로와 확산 속도 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r22-skill",
@@ -43402,7 +36908,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 생활 속 복합적인 현상에서 증발과 확산의 원리 → 지시약 조각/종이를 이용한 기체 확산의 시각적 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생활 속 복합적인 현상에서 증발과 확산의 원리 → 지시약 조각/종이를 이용한 기체 확산의 시각적 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r28-basic",
@@ -43421,7 +36927,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 세 가지 상태에 대한 성질과 상태 변화에 따른 열에너지 출입 → 물질의 세 가지 상태에 대한 성질과 입자 배열의 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 세 가지 상태에 대한 성질과 상태 변화에 따른 열에너지 출입 → 물질의 세 가지 상태에 대한 성질과 입자 배열의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r28-skill",
@@ -43440,7 +36946,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 승화 현상의 예시와 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 승화 현상의 예시와 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r28-adv",
@@ -43459,7 +36965,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화와 열에너지의 흡수 및 방출 관계 → 상태 변화 전후 변하는 것과 변하지 않는 요소 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화와 열에너지의 흡수 및 방출 관계 → 상태 변화 전후 변하는 것과 변하지 않는 요소 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r29-basic",
@@ -43478,7 +36984,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 우리 주변의 물질을 세 가지 상태로 분류하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 주변의 물질을 세 가지 상태로 분류하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r29-skill",
@@ -43497,7 +37003,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화 전후의 질량 보존 법칙 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 전후의 질량 보존 법칙 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r29-adv",
@@ -43515,8 +37021,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 냉각 곡선 분석을 통한 상태 변화 구간 해석 → 감압 장치 속 아세톤의 상태 변화 실험 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 냉각 곡선 분석을 통한 상태 변화 구간 해석 → 감압 장치 속 아세톤의 상태 변화 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r30-basic",
@@ -43535,7 +37040,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 명칭(A~F) 익히기 → 물질의 상태 변화 종류 구분하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 상태 변화 명칭(A~F) 익히기 → 물질의 상태 변화 종류 구분하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r30-skill",
@@ -43554,7 +37059,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화에 따른 입자 사이의 거리 변화)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화에 따른 입자 사이의 거리 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r30-adv",
@@ -43573,7 +37078,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 얼음과 드라이아이스의 상태 변화 및 부피 팽창 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 얼음과 드라이아이스의 상태 변화 및 부피 팽창 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r31-basic",
@@ -43591,8 +37096,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 입자 배열의 규칙성 및 무질서도 비교 → 물질의 상태 변화에 따른 입자 배열과 운동의 변화 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 배열의 규칙성 및 무질서도 비교 → 물질의 상태 변화에 따른 입자 배열과 운동의 변화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r31-skill",
@@ -43610,7 +37114,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 안개와 이슬이 생기는 원리(액화) 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 안개와 이슬이 생기는 원리(액화) 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r31-adv",
@@ -43628,7 +37133,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 입자 모형을 통한 상태 변화 전후의 물리적 상태 추론 → 분류 흐름도를 활용한 물질의 상태 분류 조건 파악)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모형을 통한 상태 변화 전후의 물리적 상태 추론 → 분류 흐름도를 활용한 물질의 상태 분류 조건 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r32-basic",
@@ -43646,7 +37152,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 세 가지 상태에 대한 일반적인 성질)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 세 가지 상태에 대한 일반적인 성질 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r32-skill",
@@ -43664,7 +37171,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 고체 비누의 융해와 응고 시 질량 및 부피 변화)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고체 비누의 융해와 응고 시 질량 및 부피 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r32-adv",
@@ -43683,7 +37191,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 승화성 물질(아이오딘)의 상태 변화 실험 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 승화성 물질(아이오딘)의 상태 변화 실험 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r33-basic",
@@ -43702,7 +37210,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 입자 모형을 보고 물질의 상태 판단하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모형을 보고 물질의 상태 판단하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r33-skill",
@@ -43721,7 +37229,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 입자 모형을 통한 기화 현상의 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모형을 통한 기화 현상의 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r33-adv",
@@ -43740,7 +37248,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 끓는 물 실험과 염화 코발트 종이 반응의 인과 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 끓는 물 실험과 염화 코발트 종이 반응의 인과 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r34-basic",
@@ -43758,7 +37266,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화의 명칭 및 일상적 사례 연결)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화의 명칭 및 일상적 사례 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r34-skill",
@@ -43777,7 +37286,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 입자 간 거리와 운동 활발함의 상대적 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 간 거리와 운동 활발함의 상대적 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r35-basic",
@@ -43796,7 +37305,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 가열 또는 냉각 시 나타나는 상태 변화 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 또는 냉각 시 나타나는 상태 변화 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r35-skill",
@@ -43814,7 +37323,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화 모형의 미시적 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 모형의 미시적 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r36-basic",
@@ -43832,7 +37341,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화 전후 보존되는 물리량(성질, 질량) 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 전후 보존되는 물리량(성질, 질량) 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r36-skill",
@@ -43850,7 +37360,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체 상태 변화와 입자 거리 변화)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 상태 변화와 입자 거리 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r37-skill",
@@ -43868,8 +37379,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물의 3가지 상태 모형에 대한 세부 성질 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물의 3가지 상태 모형에 대한 세부 성질 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r38-skill",
@@ -43888,7 +37398,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 입자 운동이 둔해지는 상태 변화 사례 적용)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 운동이 둔해지는 상태 변화 사례 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r39-skill",
@@ -43907,7 +37417,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분류 기준을 이용한 상태 구분 흐름도)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분류 기준을 이용한 상태 구분 흐름도 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r40-skill",
@@ -43925,7 +37435,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물의 상태 변화 관찰 실험(시계 접시))"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물의 상태 변화 관찰 실험(시계 접시) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r41-skill",
@@ -43944,7 +37455,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 서로 다른 현상 속 공통된 상태 변화 원리 추출)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서로 다른 현상 속 공통된 상태 변화 원리 추출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r42-skill",
@@ -43963,7 +37474,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 양초의 연소 과정 속 단계별 상태 변화 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양초의 연소 과정 속 단계별 상태 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r43-basic",
@@ -43981,7 +37492,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 입자 모형을 통한 고체 상태의 일반적 성질)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모형을 통한 고체 상태의 일반적 성질 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r43-skill",
@@ -44000,7 +37512,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화의 명칭과 사례의 올바른 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화의 명칭과 사례의 올바른 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r43-adv",
@@ -44019,7 +37531,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화 전후 변하는 것과 변하지 않는 요소 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 전후 변하는 것과 변하지 않는 요소 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r44-basic",
@@ -44038,7 +37550,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 실온에서의 물질 상태(고체, 액체, 기체) 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실온에서의 물질 상태(고체, 액체, 기체) 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r44-skill",
@@ -44057,7 +37569,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 드라이아이스의 크기 변화와 승화 현상 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 드라이아이스의 크기 변화와 승화 현상 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r44-adv",
@@ -44076,7 +37588,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 드라이아이스의 승화와 액화의 형성 원리 복합 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 드라이아이스의 승화와 액화의 형성 원리 복합 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r45-basic",
@@ -44095,7 +37607,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물의 순환 과정 속 상태 변화 현상 구분 → 물질의 상태 변화와 입자 모형의 관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물의 순환 과정 속 상태 변화 현상 구분 → 물질의 상태 변화와 입자 모형의 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r45-skill",
@@ -44113,8 +37625,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 입자 모형(A, B)을 이용한 기화와 액화 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모형(A, B)을 이용한 기화와 액화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r46-skill",
@@ -44133,7 +37644,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 밀폐된 비닐봉지 속 상태 변화와 질량 보존)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밀폐된 비닐봉지 속 상태 변화와 질량 보존 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r47-skill",
@@ -44151,7 +37662,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 여러 일상 현상 속 공통적인 상태 변화 추출)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 일상 현상 속 공통적인 상태 변화 추출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r53-basic",
@@ -44170,7 +37682,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 열에너지 방출에 따른 입자 배열의 규칙성 변화 → 열에너지의 종류를 현상과 연결하여 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열에너지 방출에 따른 입자 배열의 규칙성 변화 → 열에너지의 종류를 현상과 연결하여 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r53-skill",
@@ -44189,7 +37701,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 액체 물질의 냉각 곡선 분석 및 상태 변화 구간 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체 물질의 냉각 곡선 분석 및 상태 변화 구간 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r53-adv",
@@ -44207,7 +37719,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 서로 다른 두 물질의 냉각 곡선 비교를 통한 특성 추론)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서로 다른 두 물질의 냉각 곡선 비교를 통한 특성 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r54-basic",
@@ -44226,7 +37739,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태별 입자 간 거리와 열에너지의 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 상태별 입자 간 거리와 열에너지의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r54-skill",
@@ -44244,8 +37757,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 두 가지 상태 변화의 공통점 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 가지 상태 변화의 공통점 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r54-adv",
@@ -44264,7 +37776,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 녹는점과 끓는점 데이터를 활용한 특정 온도에서의 상태 판정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 녹는점과 끓는점 데이터를 활용한 특정 온도에서의 상태 판정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r55-basic",
@@ -44283,7 +37795,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 열에너지 방출 시 일어나는 상태 변화의 종류 → 열에너지를 방출하는 상태 변화의 예)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열에너지 방출 시 일어나는 상태 변화의 종류 → 열에너지를 방출하는 상태 변화의 예 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r55-skill",
@@ -44301,7 +37813,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 액체 기화 시 주변 열에너지를 빼앗는 현상과 온도 변화)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체 기화 시 주변 열에너지를 빼앗는 현상과 온도 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r55-adv",
@@ -44319,7 +37831,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 질량 변화가 가열 및 냉각 곡선에 미치는 영향 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 질량 변화가 가열 및 냉각 곡선에 미치는 영향 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r56-basic",
@@ -44338,7 +37851,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화 입자 모델과 열에너지 출입의 관계 → 기체에서 고체로의 상태 변화(입자 모형)의 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 입자 모델과 열에너지 출입의 관계 → 기체에서 고체로의 상태 변화(입자 모형)의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r56-skill",
@@ -44357,7 +37870,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 다양한 일상적 상황에서 열에너지 출입 종류의 변별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다양한 일상적 상황에서 열에너지 출입 종류의 변별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r56-adv",
@@ -44375,7 +37888,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화 시의 열 출입과 입자 간 거리의 상관관계 통합 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 시의 열 출입과 입자 간 거리의 상관관계 통합 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r57-basic",
@@ -44394,7 +37908,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화에 따른 입자 운동의 활발함 변화 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화에 따른 입자 운동의 활발함 변화 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r57-skill",
@@ -44412,8 +37926,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 가열 실험 장치의 구조와 액체의 기화 현상 연계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 실험 장치의 구조와 액체의 기화 현상 연계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r57-adv",
@@ -44432,7 +37945,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화 곡선에서 구간별 입자 운동과 에너지 통합 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 곡선에서 구간별 입자 운동과 에너지 통합 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r58-basic",
@@ -44450,7 +37963,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 일상생활 속 상태 변화 사례의 에너지 출입 구분)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 상태 변화 사례의 에너지 출입 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r58-skill",
@@ -44469,7 +37983,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 승화 과정에서의 입자 배열 및 인력 변화 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 승화 과정에서의 입자 배열 및 인력 변화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r58-adv",
@@ -44487,7 +38001,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 에어컨과 증기난방의 장치별 상태 변화 과정 통합 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 에어컨과 증기난방의 장치별 상태 변화 과정 통합 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r59-basic",
@@ -44506,7 +38020,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화와 열에너지 출입의 기본 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화와 열에너지 출입의 기본 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r59-skill",
@@ -44525,7 +38039,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 생활 속 기화열 흡수 현상의 과학적 원리 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생활 속 기화열 흡수 현상의 과학적 원리 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r60-basic",
@@ -44544,7 +38058,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 입자 모형을 통한 열에너지 출입 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 상태 변화 입자 모형을 통한 열에너지 출입 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r60-skill",
@@ -44563,7 +38077,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 실제 사례를 통한 상태 변화의 비교와 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실제 사례를 통한 상태 변화의 비교와 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r61-basic",
@@ -44582,7 +38096,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화 시 주위 온도가 변하는 기초 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 시 주위 온도가 변하는 기초 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r61-skill",
@@ -44601,7 +38115,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 액체가 끓는 현상을 이용한 종이 냄비 가열 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체가 끓는 현상을 이용한 종이 냄비 가열 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r62-skill",
@@ -44620,7 +38134,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 액체 가열 실험 데이터(표)를 이용한 특징 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체 가열 실험 데이터(표)를 이용한 특징 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r63-skill",
@@ -44638,7 +38152,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 얼음의 가열 곡선 분석 및 상태 변화 구간 확인)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 얼음의 가열 곡선 분석 및 상태 변화 구간 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r64-skill",
@@ -44656,8 +38171,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화 구간에서 온도가 일정한 이유 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 구간에서 온도가 일정한 이유 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r65-skill",
@@ -44676,7 +38190,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 가열/냉각 그래프에서 두 가지 상태가 공존하는 시점 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열/냉각 그래프에서 두 가지 상태가 공존하는 시점 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r66-skill",
@@ -44695,7 +38209,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 가열/냉각 복합 온도 변화 그래프의 구간별 상태 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열/냉각 복합 온도 변화 그래프의 구간별 상태 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r67-skill",
@@ -44714,7 +38228,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 에어컨의 순환 과정에 따른 상태 변화와 열의 이동)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 에어컨의 순환 과정에 따른 상태 변화와 열의 이동 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r68-basic",
@@ -44732,7 +38246,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 가열 곡선에서의 구간별 상태 확인)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 곡선에서의 구간별 상태 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r68-skill",
@@ -44751,7 +38266,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 고체 물질의 가열 곡선 해석 및 녹는점 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고체 물질의 가열 곡선 해석 및 녹는점 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r68-adv",
@@ -44770,7 +38285,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 일상생활의 상태 변화 현상과 입자 모형의 상호 연계 및 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활의 상태 변화 현상과 입자 모형의 상호 연계 및 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r69-basic",
@@ -44788,8 +38303,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 열에너지 출입에 따른 입자 운동의 변화 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열에너지 출입에 따른 입자 운동의 변화 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r69-skill",
@@ -44808,7 +38322,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 액체 물질의 냉각 곡선 해석 및 어는점 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체 물질의 냉각 곡선 해석 및 어는점 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r69-adv",
@@ -44827,7 +38341,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 가열·냉각 복합 곡선 분석을 통한 상태 변화의 가역성과 열에너지 이동의 통합적 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열·냉각 복합 곡선 분석을 통한 상태 변화의 가역성과 열에너지 이동의 통합적 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r70-basic",
@@ -44846,7 +38360,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화 입자 모델과 에너지의 관계 인식)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 입자 모델과 에너지의 관계 인식 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r70-skill",
@@ -44865,7 +38379,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화 구간에서 온도가 유지되는 열적 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 구간에서 온도가 유지되는 열적 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r70-adv",
@@ -44883,7 +38397,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 가열 곡선 분석 및 상태 변화 구간의 특징 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 곡선 분석 및 상태 변화 구간의 특징 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중1-1-s3-r71-skill",
@@ -44902,609 +38416,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화 시 열에너지를 흡수하는 일상의 예)"
-      }
-    ]
-  },
-  {
-    "id": "sci-중1-2",
-    "subject": "science",
-    "course": "중1-2",
-    "types": [
-      {
-        "id": "sc-중1-2-0-1-1",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 탐구 (1)",
-        "typeName": "물질의 상태 변화 모형 만들기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 모형 만들기)"
-      },
-      {
-        "id": "sc-중1-2-0-1-2",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 탐구 (1)",
-        "typeName": "물질의 상태 변화 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 모형 만들기)"
-      },
-      {
-        "id": "sc-중1-2-0-1-3",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 탐구 (1)",
-        "typeName": "물질의 상태 변화 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 분류하기)"
-      },
-      {
-        "id": "sc-중1-2-0-1-4",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 탐구 (1)",
-        "typeName": "물질의 상태 변화 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-중1-2-0-1-5",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 탐구 (1)",
-        "typeName": "물질의 상태 변화 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 모형 만들기)"
-      },
-      {
-        "id": "sc-중1-2-0-2-1",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 변화 이해 (2)",
-        "typeName": "물질의 상태 변화 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 모형 만들기)"
-      },
-      {
-        "id": "sc-중1-2-0-2-2",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 변화 이해 (2)",
-        "typeName": "물질의 상태 변화 모형 만들기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 모형 만들기)"
-      },
-      {
-        "id": "sc-중1-2-0-2-3",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 변화 이해 (2)",
-        "typeName": "물질의 상태 변화 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 분류하기)"
-      },
-      {
-        "id": "sc-중1-2-0-3-1",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 탐구 (3)",
-        "typeName": "물질의 상태 변화 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 분류하기)"
-      },
-      {
-        "id": "sc-중1-2-0-3-2",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 탐구 (3)",
-        "typeName": "물질의 상태 변화 특징 비교하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 특징 비교하기)"
-      },
-      {
-        "id": "sc-중1-2-0-3-3",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 탐구 (3)",
-        "typeName": "물질의 상태 변화 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중1-2-0-3-4",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 탐구 (3)",
-        "typeName": "물질의 상태 변화 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 특징 비교하기)"
-      },
-      {
-        "id": "sc-중1-2-0-4-1",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 관찰 (4)",
-        "typeName": "물질의 상태 변화 모형 만들기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 모형 만들기)"
-      },
-      {
-        "id": "sc-중1-2-0-4-2",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 관찰 (4)",
-        "typeName": "물질의 상태 변화 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 특징 비교하기)"
-      },
-      {
-        "id": "sc-중1-2-0-4-3",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 관찰 (4)",
-        "typeName": "물질의 상태 변화 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-중1-2-0-4-4",
-        "majorUnit": "1단원-물질의 상태 변화",
-        "minorUnit": "물질의 상태 변화 관찰 (4)",
-        "typeName": "물질의 상태 변화 모형 만들기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화 모형 만들기)"
-      },
-      {
-        "id": "sc-중1-2-1-1-1",
-        "majorUnit": "2단원-빛과 파동",
-        "minorUnit": "빛과 파동 탐구 (1)",
-        "typeName": "빛과 파동 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 파동 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중1-2-1-1-2",
-        "majorUnit": "2단원-빛과 파동",
-        "minorUnit": "빛과 파동 탐구 (1)",
-        "typeName": "빛과 파동 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 파동 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중1-2-1-2-1",
-        "majorUnit": "2단원-빛과 파동",
-        "minorUnit": "빛과 파동 탐구 (2)",
-        "typeName": "빛과 파동 모형 만들기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 파동 모형 만들기)"
-      },
-      {
-        "id": "sc-중1-2-1-2-2",
-        "majorUnit": "2단원-빛과 파동",
-        "minorUnit": "빛과 파동 탐구 (2)",
-        "typeName": "빛과 파동 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 파동 분류하기)"
-      },
-      {
-        "id": "sc-중1-2-1-2-3",
-        "majorUnit": "2단원-빛과 파동",
-        "minorUnit": "빛과 파동 탐구 (2)",
-        "typeName": "빛과 파동 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 파동 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중1-2-1-2-4",
-        "majorUnit": "2단원-빛과 파동",
-        "minorUnit": "빛과 파동 탐구 (2)",
-        "typeName": "빛과 파동 분류하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 파동 분류하기)"
-      },
-      {
-        "id": "sc-중1-2-1-2-5",
-        "majorUnit": "2단원-빛과 파동",
-        "minorUnit": "빛과 파동 탐구 (2)",
-        "typeName": "빛과 파동 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 파동 모형 만들기)"
-      },
-      {
-        "id": "sc-중1-2-1-3-1",
-        "majorUnit": "2단원-빛과 파동",
-        "minorUnit": "빛과 파동 관찰 (3)",
-        "typeName": "빛과 파동 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 파동 분류하기)"
-      },
-      {
-        "id": "sc-중1-2-1-3-2",
-        "majorUnit": "2단원-빛과 파동",
-        "minorUnit": "빛과 파동 관찰 (3)",
-        "typeName": "빛과 파동 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 파동 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중1-2-1-3-3",
-        "majorUnit": "2단원-빛과 파동",
-        "minorUnit": "빛과 파동 관찰 (3)",
-        "typeName": "빛과 파동 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 파동 모형 만들기)"
-      },
-      {
-        "id": "sc-중1-2-1-3-4",
-        "majorUnit": "2단원-빛과 파동",
-        "minorUnit": "빛과 파동 관찰 (3)",
-        "typeName": "빛과 파동 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛과 파동 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-중1-2-2-1-1",
-        "majorUnit": "3단원-과학과 나의 미래",
-        "minorUnit": "과학과 나의 미래 특성 (1)",
-        "typeName": "과학과 나의 미래 분류하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학과 나의 미래 분류하기)"
-      },
-      {
-        "id": "sc-중1-2-2-1-2",
-        "majorUnit": "3단원-과학과 나의 미래",
-        "minorUnit": "과학과 나의 미래 특성 (1)",
-        "typeName": "과학과 나의 미래 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학과 나의 미래 분류하기)"
-      },
-      {
-        "id": "sc-중1-2-2-1-3",
-        "majorUnit": "3단원-과학과 나의 미래",
-        "minorUnit": "과학과 나의 미래 특성 (1)",
-        "typeName": "과학과 나의 미래 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학과 나의 미래 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중1-2-2-1-4",
-        "majorUnit": "3단원-과학과 나의 미래",
-        "minorUnit": "과학과 나의 미래 특성 (1)",
-        "typeName": "과학과 나의 미래 특징 비교하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학과 나의 미래 특징 비교하기)"
-      },
-      {
-        "id": "sc-중1-2-2-2-1",
-        "majorUnit": "3단원-과학과 나의 미래",
-        "minorUnit": "과학과 나의 미래 탐구 (2)",
-        "typeName": "과학과 나의 미래 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학과 나의 미래 분류하기)"
-      },
-      {
-        "id": "sc-중1-2-2-2-2",
-        "majorUnit": "3단원-과학과 나의 미래",
-        "minorUnit": "과학과 나의 미래 탐구 (2)",
-        "typeName": "과학과 나의 미래 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학과 나의 미래 모형 만들기)"
-      },
-      {
-        "id": "sc-중1-2-2-2-3",
-        "majorUnit": "3단원-과학과 나의 미래",
-        "minorUnit": "과학과 나의 미래 탐구 (2)",
-        "typeName": "과학과 나의 미래 현상 분석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학과 나의 미래 현상 분석하기)"
-      },
-      {
-        "id": "sc-중1-2-2-2-4",
-        "majorUnit": "3단원-과학과 나의 미래",
-        "minorUnit": "과학과 나의 미래 탐구 (2)",
-        "typeName": "과학과 나의 미래 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학과 나의 미래 분류하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 시 열에너지를 흡수하는 일상의 예 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       }
     ]
   },
@@ -45529,7 +38441,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 순물질과 혼합물의 개념적 정의 및 차이점 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 순물질과 혼합물의 개념적 정의 및 차이점 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r3-skill",
@@ -45548,7 +38461,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 혼합물의 농도 변화에 따른 밀도 차이의 활용)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혼합물의 농도 변화에 따른 밀도 차이의 활용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r3-adv",
@@ -45567,7 +38480,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 외부 압력(기압) 변화에 따른 조리 환경의 변화 원인 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외부 압력(기압) 변화에 따른 조리 환경의 변화 원인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r4-basic",
@@ -45585,7 +38498,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 우리 주변 물질을 순물질과 혼합물로 분류하기)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 주변 물질을 순물질과 혼합물로 분류하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r4-skill",
@@ -45603,7 +38517,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 고체 혼합물의 녹는점 변화와 수평 구간의 부재 해석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고체 혼합물의 녹는점 변화와 수평 구간의 부재 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r4-adv",
@@ -45622,7 +38537,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 압력, 물질의 양, 종류가 복합된 상황에서의 가열 곡선 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 압력, 물질의 양, 종류가 복합된 상황에서의 가열 곡선 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r5-basic",
@@ -45641,7 +38556,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 특성인 것과 특성이 아닌 것 구분하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 특성인 것과 특성이 아닌 것 구분하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r5-skill",
@@ -45660,7 +38575,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 실생활 속 혼합물의 특성 이용 사례)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실생활 속 혼합물의 특성 이용 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r5-adv",
@@ -45678,7 +38593,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 압력솥의 원리와 고산 지대 현상의 역관계 비교 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 압력솥의 원리와 고산 지대 현상의 역관계 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r6-basic",
@@ -45696,7 +38611,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 끓는점의 정의와 가열 곡선의 수평 구간 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 끓는점의 정의와 가열 곡선의 수평 구간 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r6-skill",
@@ -45714,7 +38629,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 녹는점∙끓는점 자료를 통한 실온에서의 상태 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 녹는점∙끓는점 자료를 통한 실온에서의 상태 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r6-adv",
@@ -45733,7 +38648,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분자 사이의 인력 세기와 끓는점/녹는점의 상관관계 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자 사이의 인력 세기와 끓는점/녹는점의 상관관계 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r7-basic",
@@ -45752,7 +38667,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 가열 곡선에서 시간에 따른 온도 변화의 기초 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 곡선에서 시간에 따른 온도 변화의 기초 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r7-skill",
@@ -45771,7 +38686,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 고체 물질의 가열 및 냉각 곡선에서 구간별 상태 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고체 물질의 가열 및 냉각 곡선에서 구간별 상태 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r7-adv",
@@ -45789,7 +38704,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 복합 상태 변화 구간(가열 및 냉각)에서의 입자 운동 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복합 상태 변화 구간(가열 및 냉각)에서의 입자 운동 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r8-basic",
@@ -45807,8 +38722,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화가 일어나는 동안 온도가 일정한 이유 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화가 일어나는 동안 온도가 일정한 이유 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r8-skill",
@@ -45827,7 +38741,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 어는점 내림 현상의 원리와 일상생활 속 응용 사례 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 어는점 내림 현상의 원리와 일상생활 속 응용 사례 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r8-adv",
@@ -45845,8 +38759,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 녹는점과 끓는점을 이용한 특정 온도(실온 등)에서의 물질 상태 예측)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 녹는점과 끓는점을 이용한 특정 온도(실온 등)에서의 물질 상태 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r9-basic",
@@ -45864,7 +38777,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 녹는점과 어는점의 개념 및 관계 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 녹는점과 어는점의 개념 및 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r9-skill",
@@ -45882,7 +38796,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 균일 혼합물과 불균일 혼합물의 성질 비교 및 구분)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 균일 혼합물과 불균일 혼합물의 성질 비교 및 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r10-basic",
@@ -45900,7 +38815,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 입자 모델의 기본 형태를 통한 물질 분류 기초)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모델의 기본 형태를 통한 물질 분류 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r10-skill",
@@ -45919,7 +38835,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 여러 가지 화합물과 혼합물 예시 구분하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 가지 화합물과 혼합물 예시 구분하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r11-basic",
@@ -45938,7 +38854,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물의 표준 끓는점과 어는점 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물의 표준 끓는점과 어는점 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r11-skill",
@@ -45957,7 +38873,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 특성이 양에 관계없이 일정함을 증명하는 자료 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 특성이 양에 관계없이 일정함을 증명하는 자료 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r12-skill",
@@ -45976,7 +38892,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 외부 압력 변화에 따른 끓는점의 변화 원리 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외부 압력 변화에 따른 끓는점의 변화 원리 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r13-skill",
@@ -45994,8 +38910,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 냉각 곡선에서 어는점이 나타나는 이유와 특징 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 냉각 곡선에서 어는점이 나타나는 이유와 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r14-skill",
@@ -46013,7 +38928,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 가열 시간에 따른 온도 변화율과 물질의 특성 관계)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 시간에 따른 온도 변화율과 물질의 특성 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r15-skill",
@@ -46032,7 +38948,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 액체 혼합물의 끓는점 오름 현상과 가열 곡선 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체 혼합물의 끓는점 오름 현상과 가열 곡선 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r16-skill",
@@ -46051,7 +38967,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 양(질량, 부피)이 끓는점에 미치는 영향 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 양(질량, 부피)이 끓는점에 미치는 영향 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r17-skill",
@@ -46069,7 +38985,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 특성을 이용한 순물질과 혼합물의 구별 방법)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 특성을 이용한 순물질과 혼합물의 구별 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r18-basic",
@@ -46088,7 +39005,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 색깔, 맛, 냄새 등 겉보기 성질을 이용한 물질 구별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 색깔, 맛, 냄새 등 겉보기 성질을 이용한 물질 구별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r18-skill",
@@ -46107,7 +39024,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 양에 관계없이 일정한 물질의 특성(세기 성질) 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양에 관계없이 일정한 물질의 특성(세기 성질) 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r18-adv",
@@ -46126,7 +39043,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 압력 변화에 따른 끓는점 변화의 원리와 실생활 적용)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 압력 변화에 따른 끓는점 변화의 원리와 실생활 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r19-basic",
@@ -46145,7 +39062,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 그래프에서 수평 구간(상태 변화 구간) 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 그래프에서 수평 구간(상태 변화 구간) 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r19-skill",
@@ -46164,7 +39081,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 혼합물의 특성: 성분 물질의 성질 유지 여부 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혼합물의 특성: 성분 물질의 성질 유지 여부 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r19-adv",
@@ -46183,7 +39100,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 고체 혼합물의 가열 곡선 특징 및 순물질과의 차이점)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고체 혼합물의 가열 곡선 특징 및 순물질과의 차이점 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r20-basic",
@@ -46202,7 +39119,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화 온도가 물질의 양과 불의 세기에 변하는지 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 온도가 물질의 양과 불의 세기에 변하는지 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r20-skill",
@@ -46221,7 +39138,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 혼합 비율에 따라 달라지는 혼합물의 물리적 성질(밀도, 끓는점))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혼합 비율에 따라 달라지는 혼합물의 물리적 성질(밀도, 끓는점) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r21-skill",
@@ -46240,7 +39157,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 가열 곡선에서 수평 구간이 나타나는 이유와 조건)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 곡선에서 수평 구간이 나타나는 이유와 조건 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r28-basic",
@@ -46258,8 +39175,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 밀도 비교를 통한 물질이 뜨고 가라앉음 기초)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밀도 비교를 통한 물질이 뜨고 가라앉음 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r28-skill",
@@ -46278,7 +39194,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 질량-부피 그래프의 기울기 해석을 통한 밀도 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량-부피 그래프의 기울기 해석을 통한 밀도 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r28-adv",
@@ -46296,7 +39212,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 용해도 곡선 위의 임의의 점에 대한 포화 상태 정밀 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 용해도 곡선 위의 임의의 점에 대한 포화 상태 정밀 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r29-basic",
@@ -46315,7 +39232,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 질량과 부피를 이용한 기초 밀도 공식 적용)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량과 부피를 이용한 기초 밀도 공식 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r29-skill",
@@ -46334,7 +39251,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 서로 섞이지 않는 액체층 사이의 물질 위치 예측)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서로 섞이지 않는 액체층 사이의 물질 위치 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r29-adv",
@@ -46353,7 +39270,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 특정 온도에서 포화 용액 제조를 위한 추가 용질 질량 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 온도에서 포화 용액 제조를 위한 추가 용질 질량 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r30-basic",
@@ -46371,7 +39288,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 온도와 압력이 기체 용해도에 미치는 영향)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도와 압력이 기체 용해도에 미치는 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r30-skill",
@@ -46390,7 +39308,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 용해도 곡선 상의 자료를 이용한 특정 온도 용질 양 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 용해도 곡선 상의 자료를 이용한 특정 온도 용질 양 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r30-adv",
@@ -46409,7 +39327,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 아르키메데스 원리를 활용한 금속 혼합물의 밀도 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 아르키메데스 원리를 활용한 금속 혼합물의 밀도 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r31-basic",
@@ -46428,7 +39346,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 용해도의 정의(용매 100g 기준)와 특징 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 용해도의 정의(용매 100g 기준)와 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r31-skill",
@@ -46447,7 +39365,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 냉각에 따른 용질의 석출 원리와 결정량 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 냉각에 따른 용질의 석출 원리와 결정량 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r31-adv",
@@ -46466,7 +39384,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 농도와 용매의 양이 변화할 때의 포화 상태 판단 및 석출량 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 농도와 용매의 양이 변화할 때의 포화 상태 판단 및 석출량 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r32-basic",
@@ -46484,7 +39402,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 부피의 정의와 올바른 측정 도구 및 단위 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 부피의 정의와 올바른 측정 도구 및 단위 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r32-skill",
@@ -46503,7 +39421,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 불포화 용액을 포화 용액으로 만드는 방법)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 불포화 용액을 포화 용액으로 만드는 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r32-adv",
@@ -46521,7 +39439,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 질량-부피 그래프의 기울기 분석을 통한 동일 물질 판별 및 밀도 비교)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량-부피 그래프의 기울기 분석을 통한 동일 물질 판별 및 밀도 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r33-basic",
@@ -46540,7 +39459,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 질량의 정의와 측정 장치 및 특징 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량의 정의와 측정 장치 및 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r33-skill",
@@ -46558,7 +39477,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 압력 변화에 따른 탄산음료 기포 발생 원리 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 압력 변화에 따른 탄산음료 기포 발생 원리 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r33-adv",
@@ -46576,7 +39495,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 온도와 압력의 복합적 변화에 따른 기체의 용해도 변화 원리 서술)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도와 압력의 복합적 변화에 따른 기체의 용해도 변화 원리 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r34-basic",
@@ -46594,8 +39514,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 눈금실린더를 이용한 액체의 부피 읽기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 눈금실린더를 이용한 액체의 부피 읽기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r34-skill",
@@ -46614,7 +39533,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 종류와 온도에 따른 고체 용해도의 변화 경향 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 종류와 온도에 따른 고체 용해도의 변화 경향 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r35-basic",
@@ -46633,7 +39552,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 용질, 용매, 용액 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 용질, 용매, 용액 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r35-skill",
@@ -46652,7 +39571,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 아르키메데스 원리를 이용한 부피 측정 및 순도 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 아르키메데스 원리를 이용한 부피 측정 및 순도 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r36-basic",
@@ -46671,7 +39590,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 포화 용액과 불포화 용액의 정의 및 상태 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 포화 용액과 불포화 용액의 정의 및 상태 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r36-skill",
@@ -46689,7 +39608,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 가스 누출 경보기를 통해 본 기체의 밀도 차이와 실생활 응용)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가스 누출 경보기를 통해 본 기체의 밀도 차이와 실생활 응용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r37-skill",
@@ -46707,7 +39627,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 용해도 곡선에서 점의 위치에 따른 용액의 포화/불포화 상태 해석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 용해도 곡선에서 점의 위치에 따른 용액의 포화/불포화 상태 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r38-skill",
@@ -46726,7 +39647,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 질량과 부피가 변해도 밀도는 변하지 않는 물질의 특성 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량과 부피가 변해도 밀도는 변하지 않는 물질의 특성 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r39-skill",
@@ -46744,7 +39665,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 잠수병, 탄산음료 등 기체의 용해도 관련 현상의 원인 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 잠수병, 탄산음료 등 기체의 용해도 관련 현상의 원인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r40-skill",
@@ -46763,7 +39685,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 눈금실린더를 이용한 불규칙한 고체의 부피 측정 및 밀도 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 눈금실린더를 이용한 불규칙한 고체의 부피 측정 및 밀도 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r41-skill",
@@ -46781,8 +39703,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 일상생활 속 밀도 현상의 올바른 예시와 원리 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 밀도 현상의 올바른 예시와 원리 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r42-skill",
@@ -46800,8 +39721,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 온도에 따른 기체 용해도 변화가 생태계(물고기)에 미치는 영향)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도에 따른 기체 용해도 변화가 생태계(물고기)에 미치는 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r43-basic",
@@ -46820,7 +39740,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 고체 용해도의 일반적인 특징 (온도 상승 시 증가))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고체 용해도의 일반적인 특징 (온도 상승 시 증가) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r43-skill",
@@ -46838,8 +39758,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 모양이 불규칙한 고체의 부피 측정법 (눈금 실린더 활용))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모양이 불규칙한 고체의 부피 측정법 (눈금 실린더 활용) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r43-adv",
@@ -46857,7 +39776,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 밀도 차이를 이용한 세 가지 이상 액체 혼합물의 층 분리 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밀도 차이를 이용한 세 가지 이상 액체 혼합물의 층 분리 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r44-basic",
@@ -46875,8 +39794,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체 용해도의 일반적인 특징 (온도, 압력 조건))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 용해도의 일반적인 특징 (온도, 압력 조건) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r44-skill",
@@ -46894,8 +39812,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 온도에 따른 용해도의 변화 양상과 물질별 곡선 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도에 따른 용해도의 변화 양상과 물질별 곡선 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r44-adv",
@@ -46913,8 +39830,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 온도에 따른 용해도 곡선에서의 석출량 계산 (냉각 시))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도에 따른 용해도 곡선에서의 석출량 계산 (냉각 시) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r45-skill",
@@ -46932,8 +39848,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체의 용해도와 온도의 반비례 관계 (사이다 실험 등))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체의 용해도와 온도의 반비례 관계 (사이다 실험 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r45-adv",
@@ -46952,7 +39867,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 외부 압력 변화에 따른 기체의 용해도와 기포 발생 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외부 압력 변화에 따른 기체의 용해도와 기포 발생 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r46-skill",
@@ -46970,7 +39885,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 압력과 기체 용해도의 비례 관계 (잠수병, 탄산음료 등))"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 압력과 기체 용해도의 비례 관계 (잠수병, 탄산음료 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r47-skill",
@@ -46988,8 +39904,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 용질, 용매, 용액의 질량 관계와 퍼센트 농도의 기초 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 용질, 용매, 용액의 질량 관계와 퍼센트 농도의 기초 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r48-skill",
@@ -47008,7 +39923,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 용해 시 부피와 질량의 변화(입자 사이의 빈공간 유추))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 용해 시 부피와 질량의 변화(입자 사이의 빈공간 유추) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r53-basic",
@@ -47027,7 +39942,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 밀도 차를 이용한 혼합물 분리의 실생활 예시 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밀도 차를 이용한 혼합물 분리의 실생활 예시 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r53-skill",
@@ -47046,7 +39961,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 고체 혼합물 분리를 위한 적절한 액체 매질(중간 밀도)선정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고체 혼합물 분리를 위한 적절한 액체 매질(중간 밀도)선정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r53-adv",
@@ -47064,8 +39979,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 용매의 질량이 100g이 아닐 때의 결정 석출량 복합 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 용매의 질량이 100g이 아닐 때의 결정 석출량 복합 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r54-basic",
@@ -47083,8 +39997,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 증류탑의 높이에 따른 온도 분포와 분리 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증류탑의 높이에 따른 온도 분포와 분리 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r54-skill",
@@ -47103,7 +40016,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 액체 혼합물 가열 곡선에서의 구간별 주성분 물질 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체 혼합물 가열 곡선에서의 구간별 주성분 물질 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r54-adv",
@@ -47122,7 +40035,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 혼합물의 조성비 변화가 증류 온도 및 분리 효율에 미치는 영향 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혼합물의 조성비 변화가 증류 온도 및 분리 효율에 미치는 영향 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r55-basic",
@@ -47141,7 +40054,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 끓는점 차이를 이용하는 분리 방법의 종류 구분형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 끓는점 차이를 이용하는 분리 방법의 종류 구분형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r55-skill",
@@ -47160,7 +40073,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 밀도 수치에 근거한 분별 깔때기 내 액체 층 위치 판정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밀도 수치에 근거한 분별 깔때기 내 액체 층 위치 판정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r55-adv",
@@ -47179,7 +40092,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 혼합물의 가열 곡선(증류) 구간별 성분 및 상태 변화 심층 분석형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혼합물의 가열 곡선(증류) 구간별 성분 및 상태 변화 심층 분석형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r56-basic",
@@ -47197,7 +40110,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 서로 섞이지 않는 두 액체 혼합물의 층 형성 원리 이해형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서로 섞이지 않는 두 액체 혼합물의 층 형성 원리 이해형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r56-skill",
@@ -47216,7 +40129,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 증류 장치 내 끓임쪽의 역할 및 온도계 설치 위치 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증류 장치 내 끓임쪽의 역할 및 온도계 설치 위치 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r56-adv",
@@ -47234,8 +40147,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분별 증류탑의 원리와 끓는점에 따른 성분 분출 순서 추론형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분별 증류탑의 원리와 끓는점에 따른 성분 분출 순서 추론형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r57-basic",
@@ -47253,8 +40165,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 생활 주변 혼합물 분리의 필요성과 간단한 예시 찾기형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생활 주변 혼합물 분리의 필요성과 간단한 예시 찾기형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r57-skill",
@@ -47273,7 +40184,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 증류 시 끓는점 차이에 따른 성분 물질 유출 순서 판단)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증류 시 끓는점 차이에 따른 성분 물질 유출 순서 판단 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r57-adv",
@@ -47291,7 +40202,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 온도 변화에 따른 결정 석출량의 정량적 계산)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도 변화에 따른 결정 석출량의 정량적 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r58-basic",
@@ -47310,7 +40222,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분별 깔때기를 이용한 액체 혼합물 분리의 기본 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분별 깔때기를 이용한 액체 혼합물 분리의 기본 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r58-skill",
@@ -47329,7 +40241,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 다단계 혼합물 분리 계통도의 논리적 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다단계 혼합물 분리 계통도의 논리적 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r58-adv",
@@ -47347,7 +40259,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 3종 이상의 복합 혼합물에 대한 전체 분리 공정 설계 및 증명)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 3종 이상의 복합 혼합물에 대한 전체 분리 공정 설계 및 증명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r59-basic",
@@ -47365,8 +40278,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 재결정(용해도 차이)의 정의와 분리 원리 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 재결정(용해도 차이)의 정의와 분리 원리 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r59-skill",
@@ -47384,8 +40296,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분별 깔때기를 이용한 서로 섞이지 않는 액체 분리 실전형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분별 깔때기를 이용한 서로 섞이지 않는 액체 분리 실전형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r60-basic",
@@ -47404,7 +40315,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 증류의 기본 개념과 실험 장치의 기초 명칭 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증류의 기본 개념과 실험 장치의 기초 명칭 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r60-skill",
@@ -47422,7 +40333,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 일상생활 속 밀도 차 분리 사례(키질, 사금 채취 등) 원리 적용형)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 밀도 차 분리 사례(키질, 사금 채취 등) 원리 적용형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r61-basic",
@@ -47441,7 +40353,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 거름 장치를 이용한 고체 불순물 제거와 기초 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거름 장치를 이용한 고체 불순물 제거와 기초 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r61-skill",
@@ -47459,8 +40371,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 증류 과정에서 온도 변화가 없는 구간의 과학적 이유 분석형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증류 과정에서 온도 변화가 없는 구간의 과학적 이유 분석형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r62-skill",
@@ -47478,7 +40389,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 온도에 따른 용해도 차를 이용한 재결정의 원리 및 조건 서술형)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도에 따른 용해도 차를 이용한 재결정의 원리 및 조건 서술형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r63-skill",
@@ -47497,7 +40409,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 거름(여과)과 증발을 이용한 고체 혼합물 분리 공정 분석형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거름(여과)과 증발을 이용한 고체 혼합물 분리 공정 분석형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r64-skill",
@@ -47516,7 +40428,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원유의 분별 증류 시 각 층에서 나오는 성분의 특징 연결형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원유의 분별 증류 시 각 층에서 나오는 성분의 특징 연결형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r65-skill",
@@ -47535,7 +40447,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 전통 소주 고릿의 원리와 증류 현상(기화/액화) 적용형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전통 소주 고릿의 원리와 증류 현상(기화/액화) 적용형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r66-skill",
@@ -47554,7 +40466,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 특성(끓는점, 밀도, 용해도)별 최적 분리 방법 매칭형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 특성(끓는점, 밀도, 용해도)별 최적 분리 방법 매칭형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r67-skill",
@@ -47572,8 +40484,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 바닷물에서 천일염을 얻는 과정과 관련 물질 특성 연결형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 바닷물에서 천일염을 얻는 과정과 관련 물질 특성 연결형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r68-basic",
@@ -47592,7 +40503,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 거름과 재결정의 공통점과 차이점 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거름과 재결정의 공통점과 차이점 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r68-skill",
@@ -47611,7 +40522,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 액체 혼합물을 가열할 때 끓는점이 낮은 물질이 먼저 나오는 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체 혼합물을 가열할 때 끓는점이 낮은 물질이 먼저 나오는 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r68-adv",
@@ -47629,8 +40540,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 증류 장치에서 온도계의 위치 및 냉각수 방향의 과학적 원리 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증류 장치에서 온도계의 위치 및 냉각수 방향의 과학적 원리 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r69-basic",
@@ -47649,7 +40559,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 크로마토그래피의 기본 원리와 장점 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 크로마토그래피의 기본 원리와 장점 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r69-skill",
@@ -47667,7 +40577,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 온도에 따른 용해도 차이가 큰 고체와 작은 고체의 분리법(재결정))"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도에 따른 용해도 차이가 큰 고체와 작은 고체의 분리법(재결정) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r69-adv",
@@ -47686,7 +40597,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 세 가지 이상의 액체 혼합물을 밀도와 용해도를 고려하여 단계별로 분리하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세 가지 이상의 액체 혼합물을 밀도와 용해도를 고려하여 단계별로 분리하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r70-basic",
@@ -47705,7 +40616,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 크로마토그래피 결과에서 성분 물질의 수 확인하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 크로마토그래피 결과에서 성분 물질의 수 확인하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r70-skill",
@@ -47724,7 +40635,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 크로마토그래피의 특징(소량, 단시간, 복잡한 혼합물 분리) 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 크로마토그래피의 특징(소량, 단시간, 복잡한 혼합물 분리) 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r70-adv",
@@ -47742,7 +40653,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 크로마토그래피에서 용매의 종류에 따른 성분 물질의 이동 거리 변화 해석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 크로마토그래피에서 용매의 종류에 따른 성분 물질의 이동 거리 변화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r71-skill",
@@ -47761,7 +40673,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 성분 물질이 용매를 따라 이동하는 속도 차이의 근거 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성분 물질이 용매를 따라 이동하는 속도 차이의 근거 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r72-skill",
@@ -47779,8 +40691,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 바닷물에서 식수 얻기, 원유의 분리 등 증류의 실생활 사례)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 바닷물에서 식수 얻기, 원유의 분리 등 증류의 실생활 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r73-skill",
@@ -47799,7 +40710,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 도핑 테스트, 합성 의약품 확인 등 크로마토그래피의 사례 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 도핑 테스트, 합성 의약품 확인 등 크로마토그래피의 사례 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s0-r74-skill",
@@ -47817,7 +40728,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 혼합물 분리 장치 중 끓는점 차를 이용한 가지 달린 플라스크 사용법)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혼합물 분리 장치 중 끓는점 차를 이용한 가지 달린 플라스크 사용법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r3-basic",
@@ -47836,7 +40748,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지권의 기초 정의(지각, 맨틀, 핵 포함)와 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지권의 기초 정의(지각, 맨틀, 핵 포함)와 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r3-skill",
@@ -47854,8 +40766,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구 내부 조사 방법 중 지진파 분석의 효과성 이해형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 내부 조사 방법 중 지진파 분석의 효과성 이해형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r3-adv",
@@ -47874,7 +40785,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지진파 분석 결과를 통한 지구 내부 물질의 상태 추론형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지진파 분석 결과를 통한 지구 내부 물질의 상태 추론형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r4-basic",
@@ -47892,8 +40803,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 모호면이 지각과 맨틀 사이의 경계임을 아는지 묻는 기초형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모호면이 지각과 맨틀 사이의 경계임을 아는지 묻는 기초형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r4-skill",
@@ -47912,7 +40822,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 수권과 기권 등 특정 권역 간의 상호작용 경로 판별형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수권과 기권 등 특정 권역 간의 상호작용 경로 판별형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r4-adv",
@@ -47931,7 +40841,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구계 각 권역의 상호작용에 대한 구체적 사례 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구계 각 권역의 상호작용에 대한 구체적 사례 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r5-basic",
@@ -47950,7 +40860,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 생물권이 지구의 모든 생명체를 포함한다는 개념 확인형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물권이 지구의 모든 생명체를 포함한다는 개념 확인형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r5-skill",
@@ -47969,7 +40879,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 맨틀의 부피 비중(약 80%)과 고체 상태의 유동성 이해형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 맨틀의 부피 비중(약 80%)과 고체 상태의 유동성 이해형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r5-adv",
@@ -47987,8 +40897,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구 내부 조사 방법의 원리(간접적 방법)와 한계점 심층 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 내부 조사 방법의 원리(간접적 방법)와 한계점 심층 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r6-basic",
@@ -48007,7 +40916,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기권이 여러 가지 기체로 이루어져 있다는 기초 사실 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기권이 여러 가지 기체로 이루어져 있다는 기초 사실 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r6-skill",
@@ -48025,7 +40934,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지권의 층상 구조 모식도에서 각 층의 명칭과 순서)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지권의 층상 구조 모식도에서 각 층의 명칭과 순서 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r6-adv",
@@ -48044,7 +40953,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지각의 두께에 따른 모호면의 깊이 변화 및 분포 특징 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지각의 두께에 따른 모호면의 깊이 변화 및 분포 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r7-basic",
@@ -48063,7 +40972,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 수권이 바다, 강, 호수 등으로 분포한다는 기본 지식 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수권이 바다, 강, 호수 등으로 분포한다는 기본 지식 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r7-skill",
@@ -48082,7 +40991,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구계 구성 요소의 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구계 구성 요소의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r7-adv",
@@ -48101,7 +41010,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구 내부 층상 구조별 물질의 상태와 밀도 차이에 따른 성질 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 내부 층상 구조별 물질의 상태와 밀도 차이에 따른 성질 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r8-basic",
@@ -48120,7 +41029,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구계 5가지 구성 요소(지, 수, 기, 생, 외) 명칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구계 5가지 구성 요소(지, 수, 기, 생, 외) 명칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r8-skill",
@@ -48138,7 +41047,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구 내부 층상 구조의 부피 비율과 깊이에 따른 구분)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 내부 층상 구조의 부피 비율과 깊이에 따른 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r8-adv",
@@ -48157,7 +41067,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구계 구성 요소의 독립성과 상호 의존성에 대한 비판적 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구계 구성 요소의 독립성과 상호 의존성에 대한 비판적 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r9-basic",
@@ -48176,7 +41086,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구 내부 구조 모형도에서 A~D 층의 이름)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 내부 구조 모형도에서 A~D 층의 이름 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r9-skill",
@@ -48194,7 +41104,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지권의 정의를 지표면과 지구 내부를 포함하여 정확히 서술)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지권의 정의를 지표면과 지구 내부를 포함하여 정확히 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r10-basic",
@@ -48212,8 +41123,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구계 요소들이 서로 영향을 주고받는다는 상호작용)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구계 요소들이 서로 영향을 주고받는다는 상호작용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r10-skill",
@@ -48232,7 +41142,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구 내부 구조를 가장 무거운 물질 순서대로 배열 및 특징 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 내부 구조를 가장 무거운 물질 순서대로 배열 및 특징 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r11-basic",
@@ -48250,8 +41160,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 시추, 운석 연구, 화산 분출물 조사 등 조사 방법)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시추, 운석 연구, 화산 분출물 조사 등 조사 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r11-skill",
@@ -48269,7 +41178,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구계 에너지 흐름과 물질 순환의 기초적 상호작용 파악)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구계 에너지 흐름과 물질 순환의 기초적 상호작용 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r12-skill",
@@ -48288,7 +41198,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 생물권의 분포 범위(지권, 수권, 기권 포함)와 특징 이해형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물권의 분포 범위(지권, 수권, 기권 포함)와 특징 이해형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r13-skill",
@@ -48307,7 +41217,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 대륙 지각과 해양 지각의 두께, 밀도, 성분 차이 비교형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대륙 지각과 해양 지각의 두께, 밀도, 성분 차이 비교형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r14-skill",
@@ -48325,8 +41235,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 모호로비치치 불연속면의 정의와 위치(지각-맨틀 경계) 확인형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모호로비치치 불연속면의 정의와 위치(지각-맨틀 경계) 확인형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r15-skill",
@@ -48345,7 +41254,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 수권의 구성(해수, 담수)과 분포 비율 및 특징 파악형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수권의 구성(해수, 담수)과 분포 비율 및 특징 파악형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r16-skill",
@@ -48364,7 +41273,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 외권과 지구계 내부 권역 간의 에너지 및 물질 영향 분석형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외권과 지구계 내부 권역 간의 에너지 및 물질 영향 분석형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r17-skill",
@@ -48383,7 +41292,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 핵(외핵, 내핵)의 밀도 특징과 철, 니켈 등 구성 물질 추론형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 핵(외핵, 내핵)의 밀도 특징과 철, 니켈 등 구성 물질 추론형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r18-basic",
@@ -48402,7 +41311,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지진파 그래프에서 속도가 갑자기 변하는 구간 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지진파 그래프에서 속도가 갑자기 변하는 구간 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r18-skill",
@@ -48421,7 +41330,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 대륙 지각과 해양 지각의 두께 및 성분(화강암질, 현무암질) 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대륙 지각과 해양 지각의 두께 및 성분(화강암질, 현무암질) 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r18-adv",
@@ -48439,8 +41348,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지진파(P파, S파)의 성질 차이를 이용한 외핵의 상태(액체) 추론 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지진파(P파, S파)의 성질 차이를 이용한 외핵의 상태(액체) 추론 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r19-basic",
@@ -48458,8 +41366,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 외핵의 상태가 액체임을 알려주는 지진파의 특징(S파 통과 불가))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외핵의 상태가 액체임을 알려주는 지진파의 특징(S파 통과 불가) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r19-skill",
@@ -48478,7 +41385,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 외핵과 내핵을 구성하는 주요 성분(철, 니켈)과 밀도 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외핵과 내핵을 구성하는 주요 성분(철, 니켈)과 밀도 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r19-adv",
@@ -48496,7 +41403,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구계 각 권역 간 상호작용의 에너지원과 물질 순환 경로 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구계 각 권역 간 상호작용의 에너지원과 물질 순환 경로 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r20-skill",
@@ -48515,7 +41423,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 외권이 지구계의 다른 요소들에 미치는 영향(태양 에너지 등))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외권이 지구계의 다른 요소들에 미치는 영향(태양 에너지 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r21-skill",
@@ -48534,7 +41442,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 수권의 분포(해수, 담수)와 각 요소의 특성 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수권의 분포(해수, 담수)와 각 요소의 특성 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r22-skill",
@@ -48552,8 +41460,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지진파의 굴절과 반사를 통한 내부 층상 구조 경계의 확인 과정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지진파의 굴절과 반사를 통한 내부 층상 구조 경계의 확인 과정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r28-basic",
@@ -48572,7 +41479,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화성암의 정의(마그마가 식어서 만들어진 암석) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화성암의 정의(마그마가 식어서 만들어진 암석) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r28-skill",
@@ -48591,7 +41498,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 퇴적물의 종류(자갈, 모래, 진흙 등)에 따른 퇴적암 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 퇴적물의 종류(자갈, 모래, 진흙 등)에 따른 퇴적암 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r28-adv",
@@ -48610,7 +41517,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 원래 암석과 변성암 사이의 성분 및 조직 변화 매칭 심층 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원래 암석과 변성암 사이의 성분 및 조직 변화 매칭 심층 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r29-basic",
@@ -48629,7 +41536,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 퇴적암의 정의와 주요 퇴적암 명칭 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 퇴적암의 정의와 주요 퇴적암 명칭 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r29-skill",
@@ -48648,7 +41555,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 편암과 편마암의 특징(줄무늬 모양 등) 구분 및 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 편암과 편마암의 특징(줄무늬 모양 등) 구분 및 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r29-adv",
@@ -48666,8 +41573,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 암석의 순환 과정을 통한 지구 환경 변화와 암석의 끊임없는 변화 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석의 순환 과정을 통한 지구 환경 변화와 암석의 끊임없는 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r30-basic",
@@ -48685,7 +41591,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 암석을 분류하는 기준(생성 과정)에 대한 기본 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석을 분류하는 기준(생성 과정)에 대한 기본 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r30-skill",
@@ -48703,7 +41609,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 심성암과 화산암의 대표 암석 종류 및 특징(밝기, 입자 크기) 연결)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 심성암과 화산암의 대표 암석 종류 및 특징(밝기, 입자 크기) 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r30-adv",
@@ -48721,7 +41628,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 암석의 순환 모식도에서 각 과정(A~C)에 작용하는 환경적 요인 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석의 순환 모식도에서 각 과정(A~C)에 작용하는 환경적 요인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r31-basic",
@@ -48740,7 +41648,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 퇴적물의 정의와 퇴적암이 만들어지는 장소(바다, 호수 밑 등) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 퇴적물의 정의와 퇴적암이 만들어지는 장소(바다, 호수 밑 등) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r31-skill",
@@ -48759,7 +41667,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 암석의 순환 모식도에서 각 화살표에 해당하는 작용(냉각, 변성 등) 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석의 순환 모식도에서 각 화살표에 해당하는 작용(냉각, 변성 등) 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r31-adv",
@@ -48777,7 +41685,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화성암의 생성 장소에 따른 냉각 속도와 결정 크기 인과관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화성암의 생성 장소에 따른 냉각 속도와 결정 크기 인과관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r32-basic",
@@ -48795,8 +41703,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 암석의 순환 개념과 모든 암석은 서로 다른 암석으로 변할 수 있다는 인지)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석의 순환 개념과 모든 암석은 서로 다른 암석으로 변할 수 있다는 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r32-skill",
@@ -48814,8 +41721,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 풍화가 잘 일어나는 조건(표면적 변화 등)에 대한 실험적 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 풍화가 잘 일어나는 조건(표면적 변화 등)에 대한 실험적 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r32-adv",
@@ -48834,7 +41740,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 변성암의 엽리 형성 원리와 압력의 방향 관계 분석 및 실험 설계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 변성암의 엽리 형성 원리와 압력의 방향 관계 분석 및 실험 설계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r33-basic",
@@ -48853,7 +41759,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 대표적인 퇴적암(역암, 사암, 셰일)의 명칭 및 구성 입자 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대표적인 퇴적암(역암, 사암, 셰일)의 명칭 및 구성 입자 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r33-skill",
@@ -48871,8 +41777,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 암석을 구성하는 광물의 색과 암석 전체의 밝기 관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석을 구성하는 광물의 색과 암석 전체의 밝기 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r33-adv",
@@ -48891,7 +41796,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 암석 분류 키를 이용한 여러 암석의 특징별 체계적 분류 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석 분류 키를 이용한 여러 암석의 특징별 체계적 분류 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r34-basic",
@@ -48909,7 +41814,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 암석의 생성 과정에 따른 3대 분류(화성암, 퇴적암, 변성암) 인지)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석의 생성 과정에 따른 3대 분류(화성암, 퇴적암, 변성암) 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r34-skill",
@@ -48928,7 +41834,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 해안으로부터의 거리에 따른 퇴적물의 수평적 분포 및 퇴적암 생성 위치 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 해안으로부터의 거리에 따른 퇴적물의 수평적 분포 및 퇴적암 생성 위치 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r35-basic",
@@ -48947,7 +41853,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 변성암의 정의(열과 압력을 받아 성질 변화) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 변성암의 정의(열과 압력을 받아 성질 변화) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r35-skill",
@@ -48966,7 +41872,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 층리와 엽리의 외관상 특징 및 생성 원리 차이점 비교 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 층리와 엽리의 외관상 특징 및 생성 원리 차이점 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r36-basic",
@@ -48984,8 +41890,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 마그마가 지하 깊은 곳에서 만들어지는 암석(심성암) 명칭 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마그마가 지하 깊은 곳에서 만들어지는 암석(심성암) 명칭 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r36-skill",
@@ -49004,7 +41909,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화강암과 현무암의 색과 알갱이 크기를 결정짓는 구성 광물 및 냉각 속도 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화강암과 현무암의 색과 알갱이 크기를 결정짓는 구성 광물 및 냉각 속도 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r37-skill",
@@ -49022,8 +41927,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화석이 발견될 수 있는 암석의 종류와 그 보존 환경에 대한 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화석이 발견될 수 있는 암석의 종류와 그 보존 환경에 대한 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r38-skill",
@@ -49041,7 +41945,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 원래의 암석이 열과 압력을 받아 변성암으로 변하는 일대일 매칭 관계)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원래의 암석이 열과 압력을 받아 변성암으로 변하는 일대일 매칭 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r39-skill",
@@ -49060,7 +41965,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화성암의 분류(결정 크기와 암석의 색) 도표 해석 및 암석 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화성암의 분류(결정 크기와 암석의 색) 도표 해석 및 암석 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r40-skill",
@@ -49078,7 +41983,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 퇴적암의 형성 과정(운반-퇴적-다져짐-굳어짐) 순서 배열)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 퇴적암의 형성 과정(운반-퇴적-다져짐-굳어짐) 순서 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r41-skill",
@@ -49097,7 +42003,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화석과 층리가 나타나는 암석의 종류와 특징 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화석과 층리가 나타나는 암석의 종류와 특징 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r42-skill",
@@ -49115,8 +42021,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 염산 반응 유무를 통한 석회암과 대리암의 공통 성분 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 염산 반응 유무를 통한 석회암과 대리암의 공통 성분 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r43-basic",
@@ -49134,8 +42039,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화강암과 현무암의 색깔(밝고 어두움) 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화강암과 현무암의 색깔(밝고 어두움) 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r43-skill",
@@ -49154,7 +42058,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 알갱이의 크기와 암석의 색을 기준으로 한 화성암의 체계적 분류)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 알갱이의 크기와 암석의 색을 기준으로 한 화성암의 체계적 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r43-adv",
@@ -49173,7 +42077,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 퇴적물의 압축 및 교결 작용을 통한 속성 작용의 상세 과정 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 퇴적물의 압축 및 교결 작용을 통한 속성 작용의 상세 과정 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r44-basic",
@@ -49192,7 +42096,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화석이 발견될 수 있는 암석의 종류 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화석이 발견될 수 있는 암석의 종류 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r44-skill",
@@ -49211,7 +42115,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 현무암의 구멍이 생기는 이유와 냉각 환경 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 현무암의 구멍이 생기는 이유와 냉각 환경 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r44-adv",
@@ -49229,7 +42133,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 변성 과정에서 작용하는 열과 압력의 세기에 따른 조직 변화 추론)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 변성 과정에서 작용하는 열과 압력의 세기에 따른 조직 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r45-basic",
@@ -49248,7 +42153,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화성암의 알갱이 크기를 결정하는 핵심 요인(냉각 속도) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화성암의 알갱이 크기를 결정하는 핵심 요인(냉각 속도) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r45-skill",
@@ -49266,7 +42171,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 퇴적 환경(해안, 호수, 심해 등)에 따른 퇴적암의 특징 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 퇴적 환경(해안, 호수, 심해 등)에 따른 퇴적암의 특징 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r45-adv",
@@ -49284,8 +42189,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화학적 성분(SiO₂ 함량 등)에 따른 화성암의 색깔 변화 원리 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학적 성분(SiO₂ 함량 등)에 따른 화성암의 색깔 변화 원리 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r46-skill",
@@ -49304,7 +42208,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 반려암, 유문암, 안산암 등 주요 화성암의 개별 특징 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 반려암, 유문암, 안산암 등 주요 화성암의 개별 특징 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r47-skill",
@@ -49323,7 +42227,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화강암과 편마암의 결정 크기 및 조직 차이 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화강암과 편마암의 결정 크기 및 조직 차이 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r53-basic",
@@ -49342,7 +42246,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 조암 광물의 정의와 주요 광물 종류 명칭 인지)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 조암 광물의 정의와 주요 광물 종류 명칭 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r53-skill",
@@ -49360,8 +42264,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 조흔색을 이용한 흑운모와 자철석의 명확한 구분법 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 조흔색을 이용한 흑운모와 자철석의 명확한 구분법 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r53-adv",
@@ -49380,7 +42283,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 조암 광물의 부피비와 각 광물의 특징(색, 용도)을 결합한 종합 판단)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 조암 광물의 부피비와 각 광물의 특징(색, 용도)을 결합한 종합 판단 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r54-basic",
@@ -49399,7 +42302,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 조흔색의 정의(광물 가루의 색)와 측정 도구 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 조흔색의 정의(광물 가루의 색)와 측정 도구 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r54-skill",
@@ -49417,8 +42320,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 생명 활동이 가장 활발한 토양층(표토)의 위치와 특징 인지)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생명 활동이 가장 활발한 토양층(표토)의 위치와 특징 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r54-adv",
@@ -49436,8 +42338,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 광물의 여러 특성(조흔색, 자성, 염산 반응)을 종합하여 특정 광물을 감정하는 서술형)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광물의 여러 특성(조흔색, 자성, 염산 반응)을 종합하여 특정 광물을 감정하는 서술형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r55-basic",
@@ -49456,7 +42357,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 자철석이 자성을 띠고 방해석이 염산 반응을 한다는 기본 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자철석이 자성을 띠고 방해석이 염산 반응을 한다는 기본 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r55-skill",
@@ -49475,7 +42376,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 암석을 이루는 광물의 종류와 비율에 따른 암석 특징 변화 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석을 이루는 광물의 종류와 비율에 따른 암석 특징 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r55-adv",
@@ -49493,7 +42394,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 광물 분류 체계(Flow chart)의 논리적 구성 및 질문 설계)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광물 분류 체계(Flow chart)의 논리적 구성 및 질문 설계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r56-basic",
@@ -49511,7 +42413,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 풍화의 정의와 암석이 토양으로 변하는 현상의 기본 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 풍화의 정의와 암석이 토양으로 변하는 현상의 기본 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r56-skill",
@@ -49530,7 +42433,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 조흔색을 이용한 겉보기 색이 유사한 광물(흑운모, 자철석 등)의 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 조흔색을 이용한 겉보기 색이 유사한 광물(흑운모, 자철석 등)의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r56-adv",
@@ -49549,7 +42452,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 상대적 굳기 비교 데이터를 활용한 광물 간 순서 추론 및 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상대적 굳기 비교 데이터를 활용한 광물 간 순서 추론 및 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r57-basic",
@@ -49567,8 +42470,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 토양이 생성되는 데 매우 긴 시간이 걸린다는 기초 사실 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 토양이 생성되는 데 매우 긴 시간이 걸린다는 기초 사실 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r57-skill",
@@ -49586,7 +42488,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 물의 동결 작용에 의한 풍화 원리와 부피 팽창 특징 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물의 동결 작용에 의한 풍화 원리와 부피 팽창 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r57-adv",
@@ -49605,7 +42508,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 겉보기 색이 유사한 광물(금, 황동석 등)의 조흔색을 이용한 감별 원리 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 겉보기 색이 유사한 광물(금, 황동석 등)의 조흔색을 이용한 감별 원리 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r58-basic",
@@ -49624,7 +42527,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 암석이 잘게 부서질수록 풍화가 잘 일어난다는 기본 원리 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석이 잘게 부서질수록 풍화가 잘 일어난다는 기본 원리 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r58-skill",
@@ -49642,7 +42545,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 생물(이끼, 나무뿌리)에 의한 풍화 사례와 그 영향 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물(이끼, 나무뿌리)에 의한 풍화 사례와 그 영향 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r58-adv",
@@ -49660,7 +42564,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 토양의 단면 구조별 생성 원인과 물질 이동의 인과관계 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 토양의 단면 구조별 생성 원인과 물질 이동의 인과관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r59-basic",
@@ -49679,7 +42584,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지각-암석-광물 사이의 포함 관계 및 정의 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지각-암석-광물 사이의 포함 관계 및 정의 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r59-skill",
@@ -49697,7 +42602,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지하수가 석회암을 녹여 동굴을 만드는 화학적 풍화 사례 인지)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지하수가 석회암을 녹여 동굴을 만드는 화학적 풍화 사례 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r60-basic",
@@ -49716,7 +42622,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 광물의 특성(색, 조흔색, 굳기, 자성, 염산 반응) 종류 나열)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광물의 특성(색, 조흔색, 굳기, 자성, 염산 반응) 종류 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r60-skill",
@@ -49735,7 +42641,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 조암 광물의 색(밝은색/어두운색)에 따른 그룹 분류 및 특징 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 조암 광물의 색(밝은색/어두운색)에 따른 그룹 분류 및 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r61-basic",
@@ -49753,8 +42659,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 성숙한 토양이 하나의 층이 아닌 여러 층으로 되어 있다는 사실 인지)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성숙한 토양이 하나의 층이 아닌 여러 층으로 되어 있다는 사실 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r61-skill",
@@ -49772,8 +42677,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 자성(쇠붙이 반응)을 가진 광물의 종류와 특징 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자성(쇠붙이 반응)을 가진 광물의 종류와 특징 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r62-skill",
@@ -49791,8 +42695,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 염산 반응 유무를 통해 방해석을 감정하는 실험적 원리 적용)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 염산 반응 유무를 통해 방해석을 감정하는 실험적 원리 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r63-skill",
@@ -49811,7 +42714,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 석영과 방해석의 굳기 차이를 이용한 긁기 실험 결과 예측)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 석영과 방해석의 굳기 차이를 이용한 긁기 실험 결과 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r64-skill",
@@ -49829,8 +42732,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 성숙한 토양의 층상 구조(A~D층) 명칭과 각 층의 물리적 상태 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성숙한 토양의 층상 구조(A~D층) 명칭과 각 층의 물리적 상태 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r65-skill",
@@ -49849,7 +42751,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 장석의 특징(조암 광물 중 최대 비중, 흰색/분홍색) 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 장석의 특징(조암 광물 중 최대 비중, 흰색/분홍색) 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r66-skill",
@@ -49867,7 +42769,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 광물 특성 중 질량이 변별력이 없는 이유에 대한 과학적 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광물 특성 중 질량이 변별력이 없는 이유에 대한 과학적 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r67-skill",
@@ -49886,7 +42788,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 조암 광물의 부피비에서 장석과 석영이 차지하는 비중 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 조암 광물의 부피비에서 장석과 석영이 차지하는 비중 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r68-basic",
@@ -49904,7 +42806,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 광물의 특성이 될 수 있는 것과 없는 것 구분)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광물의 특성이 될 수 있는 것과 없는 것 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r68-skill",
@@ -49923,7 +42826,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 금과 황동석, 황철석을 조흔색으로 구분하는 방법)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 금과 황동석, 황철석을 조흔색으로 구분하는 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r68-adv",
@@ -49942,7 +42845,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 철과 마그네슘 함량에 따른 조암 광물의 색과 밀도 상관관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 철과 마그네슘 함량에 따른 조암 광물의 색과 밀도 상관관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r69-basic",
@@ -49961,7 +42864,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 광물의 굳기를 비교할 때 '긁어보기' 방법 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광물의 굳기를 비교할 때 '긁어보기' 방법 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r69-skill",
@@ -49980,7 +42883,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 모스 굳기계를 이용한 광물의 상대적인 단단함 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모스 굳기계를 이용한 광물의 상대적인 단단함 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r69-adv",
@@ -49998,8 +42901,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 풍화 작용의 물리적·화학적 요인이 토양 입자 크기에 미치는 영향)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 풍화 작용의 물리적·화학적 요인이 토양 입자 크기에 미치는 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r70-basic",
@@ -50017,7 +42919,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 토양의 정의와 구성 요소(모래, 점토, 유기물 등))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 토양의 정의와 구성 요소(모래, 점토, 유기물 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r70-skill",
@@ -50036,7 +42938,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 풍화 작용의 주요 원인(물, 공기, 생물 등)별 사례 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 풍화 작용의 주요 원인(물, 공기, 생물 등)별 사례 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r70-adv",
@@ -50055,7 +42957,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 암석의 풍화 속도에 영향을 주는 요인(표면적, 기후 등) 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석의 풍화 속도에 영향을 주는 요인(표면적, 기후 등) 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r71-skill",
@@ -50074,7 +42976,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 토양의 층상 구조(기반암, 모질물, 표토, 심토) 명칭과 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 토양의 층상 구조(기반암, 모질물, 표토, 심토) 명칭과 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r72-skill",
@@ -50092,7 +42994,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 심토가 표토보다 나중에 형성되는 이유 이해\t15 (가~라 순서))"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 심토가 표토보다 나중에 형성되는 이유 이해\t15 (가~라 순서) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r78-basic",
@@ -50110,7 +43013,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 판의 정의(지각과 맨틀 상부를 포함한 암석권) 명칭 확인)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 판의 정의(지각과 맨틀 상부를 포함한 암석권) 명칭 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r78-skill",
@@ -50129,7 +43033,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 대륙의 이동 모습(판게아→현재)을 시대순으로 정확히 배열하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대륙의 이동 모습(판게아→현재)을 시대순으로 정확히 배열하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r78-adv",
@@ -50147,8 +43051,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 판의 구조(지각+상부 맨틀 일부)와 두께 차이에 따른 대륙판/해양판 심층 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 판의 구조(지각+상부 맨틀 일부)와 두께 차이에 따른 대륙판/해양판 심층 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r79-basic",
@@ -50167,7 +43070,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 태평양 가장자리가 전 세계에서 지각 변동이 가장 활발한 지역임을 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태평양 가장자리가 전 세계에서 지각 변동이 가장 활발한 지역임을 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r79-skill",
@@ -50186,7 +43089,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 남아메리카와 아프리카 해안선의 일치성을 통한 대륙 이동의 증거 제시)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 남아메리카와 아프리카 해안선의 일치성을 통한 대륙 이동의 증거 제시 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r79-adv",
@@ -50205,7 +43108,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 과거 대륙 분포(판게아)에서 현재로 변하는 과정의 시간적/공간적 변화 논리적 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과거 대륙 분포(판게아)에서 현재로 변하는 과정의 시간적/공간적 변화 논리적 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r80-basic",
@@ -50223,8 +43126,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지진 피해를 최소화하기 위한 기본적인 안전 수칙 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지진 피해를 최소화하기 위한 기본적인 안전 수칙 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r80-skill",
@@ -50242,7 +43144,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 북아메리카와 유럽의 산맥 연결성을 통한 지질 구조의 연속성 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 북아메리카와 유럽의 산맥 연결성을 통한 지질 구조의 연속성 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r80-adv",
@@ -50261,7 +43164,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 규모와 진도의 차이점을 이용한 지진 세기 비교 및 데이터 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 규모와 진도의 차이점을 이용한 지진 세기 비교 및 데이터 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r81-basic",
@@ -50279,7 +43182,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 대륙 이동설의 제창자(베게너)와 기본 개념 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대륙 이동설의 제창자(베게너)와 기본 개념 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r81-skill",
@@ -50298,7 +43201,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 빙하의 흔적 이동 방향을 통해 과거 대륙이 남극 중심이었음을 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빙하의 흔적 이동 방향을 통해 과거 대륙이 남극 중심이었음을 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r81-adv",
@@ -50317,7 +43220,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 대륙 이동설의 4대 증거를 구체적인 지명 및 사례와 연결하여 서술하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대륙 이동설의 4대 증거를 구체적인 지명 및 사례와 연결하여 서술하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r82-basic",
@@ -50336,7 +43239,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 판게아의 정의(과거 하나로 모여 있던 거대 대륙) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 판게아의 정의(과거 하나로 모여 있던 거대 대륙) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r82-skill",
@@ -50355,7 +43258,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 판 하부(맨틀)의 움직임에 따라 그 위의 대륙이 함께 이동하는 원리 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 판 하부(맨틀)의 움직임에 따라 그 위의 대륙이 함께 이동하는 원리 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r82-adv",
@@ -50374,7 +43277,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 베게너의 대륙 이동설이 발표 당시 인정받지 못한 결정적 이유 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 베게너의 대륙 이동설이 발표 당시 인정받지 못한 결정적 이유 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r83-basic",
@@ -50393,7 +43296,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구 표면이 여러 개의 크고 작은 판으로 이루어져 있다는 사실 인지)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 표면이 여러 개의 크고 작은 판으로 이루어져 있다는 사실 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r83-skill",
@@ -50411,7 +43314,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 빙하의 이동 흔적을 통한 과거 대륙의 위치와 기후 환경 추론)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빙하의 이동 흔적을 통한 과거 대륙의 위치와 기후 환경 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r83-adv",
@@ -50430,7 +43334,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 판의 경계, 화산대, 지진대가 대체로 일치하는 근본적인 원리 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 판의 경계, 화산대, 지진대가 대체로 일치하는 근본적인 원리 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r84-basic",
@@ -50449,7 +43353,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화산대와 지진대의 정의 및 명칭 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화산대와 지진대의 정의 및 명칭 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r84-skill",
@@ -50467,8 +43371,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화산 활동이 지구 전체 환경(기온 저하 등)에 미치는 영향 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화산 활동이 지구 전체 환경(기온 저하 등)에 미치는 영향 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r85-basic",
@@ -50487,7 +43390,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 판이 1년에 수 cm 정도로 매우 느리게 이동한다는 기초 지식)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 판이 1년에 수 cm 정도로 매우 느리게 이동한다는 기초 지식 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r85-skill",
@@ -50506,7 +43409,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 판의 경계와 대륙의 주변부, 해양의 중앙부 등 위치적 상관관계 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 판의 경계와 대륙의 주변부, 해양의 중앙부 등 위치적 상관관계 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r86-basic",
@@ -50525,7 +43428,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 우리나라는 판의 안쪽에 위치하여 지각 변동이 비교적 적음을 인지)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리나라는 판의 안쪽에 위치하여 지각 변동이 비교적 적음을 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r86-skill",
@@ -50543,7 +43446,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지진이 전 세계적으로 고르게 발생하는지 여부 판별)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지진이 전 세계적으로 고르게 발생하는지 여부 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r87-skill",
@@ -50562,7 +43466,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 판의 구조 모식도(지표~깊이 100km)에서 각 부분의 명칭과 상태 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 판의 구조 모식도(지표~깊이 100km)에서 각 부분의 명칭과 상태 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r88-skill",
@@ -50581,7 +43485,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 대륙판과 해양판의 두께 및 물리적 성질 차이 비교 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대륙판과 해양판의 두께 및 물리적 성질 차이 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r89-skill",
@@ -50600,7 +43504,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 전 세계 판의 경계 지도를 보고 주요 판(태평양판, 유라시아판 등) 식별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전 세계 판의 경계 지도를 보고 주요 판(태평양판, 유라시아판 등) 식별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r90-skill",
@@ -50618,7 +43522,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화산 활동과 지진이 발생하는 특정 구역(띠 모양)의 지리적 특징 해석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화산 활동과 지진이 발생하는 특정 구역(띠 모양)의 지리적 특징 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r91-skill",
@@ -50637,7 +43542,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 불의 고리(환태평양 변동대)'의 특징과 지각 변동의 집중도 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 불의 고리(환태평양 변동대)'의 특징과 지각 변동의 집중도 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r92-skill",
@@ -50656,7 +43561,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 판의 이동이 대륙 분포를 변화시키는 원동력으로서의 역할 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 판의 이동이 대륙 분포를 변화시키는 원동력으로서의 역할 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r93-basic",
@@ -50674,7 +43579,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 대륙 이동설을 주장한 과학자(베게너)와 정의 알기)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대륙 이동설을 주장한 과학자(베게너)와 정의 알기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r93-skill",
@@ -50693,7 +43599,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 대륙 이동설의 4대 증거(해안선, 화석, 산맥, 빙하) 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대륙 이동설의 4대 증거(해안선, 화석, 산맥, 빙하) 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r93-adv",
@@ -50712,7 +43618,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 전 세계 지진대와 화산대의 분포 일치성에 대한 역학적 근거 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전 세계 지진대와 화산대의 분포 일치성에 대한 역학적 근거 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r94-basic",
@@ -50730,8 +43636,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 진원과 진앙의 위치적 차이 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진원과 진앙의 위치적 차이 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r94-skill",
@@ -50750,7 +43655,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 판의 정의와 구조(지각+맨틀 상부) 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 판의 정의와 구조(지각+맨틀 상부) 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r94-adv",
@@ -50768,8 +43673,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 맨틀 대류와 판의 이동을 연결하여 지구 내부 에너지의 흐름 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 맨틀 대류와 판의 이동을 연결하여 지구 내부 에너지의 흐름 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r95-basic",
@@ -50787,8 +43691,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화산 분출물의 종류(용암, 화산 가스, 화산쇄설물))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화산 분출물의 종류(용암, 화산 가스, 화산쇄설물) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r95-skill",
@@ -50806,7 +43709,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화산 활동의 장단점 및 실생활에 미치는 영향)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화산 활동의 장단점 및 실생활에 미치는 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r96-skill",
@@ -50824,7 +43727,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 화산대와 지진대가 주로 판의 경계와 일치하는 이유 설명)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화산대와 지진대가 주로 판의 경계와 일치하는 이유 설명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s1-r97-skill",
@@ -50842,8 +43746,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 판게아 형성 시기와 분리 과정의 시간적 흐름 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 판게아 형성 시기와 분리 과정의 시간적 흐름 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r3-basic",
@@ -50862,7 +43765,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 입사광선, 반사광선, 법선의 명칭 정의)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입사광선, 반사광선, 법선의 명칭 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r3-skill",
@@ -50881,7 +43784,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 입사각과 반사각의 크기 관계 (반사의 법칙))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입사각과 반사각의 크기 관계 (반사의 법칙) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r3-adv",
@@ -50899,7 +43802,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 두 개의 평면거울에 의한 다중 반사와 각도 계산)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 개의 평면거울에 의한 다중 반사와 각도 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r4-basic",
@@ -50917,7 +43821,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛의 굴절 현상의 기본 정의)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 굴절 현상의 기본 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r4-skill",
@@ -50936,7 +43840,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 입사각의 변화에 따른 반사각의 가변성)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입사각의 변화에 따른 반사각의 가변성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r4-adv",
@@ -50954,7 +43858,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 평면거울을 통해 관찰자와 떨어져 있는 물체를 볼 때의 거리와 상의 성질)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평면거울을 통해 관찰자와 떨어져 있는 물체를 볼 때의 거리와 상의 성질 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r5-basic",
@@ -50973,7 +43878,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 시각이 성립하기 위해 빛이 들어와야 하는 기관(눈))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시각이 성립하기 위해 빛이 들어와야 하는 기관(눈) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r5-skill",
@@ -50991,7 +43896,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 공기와 물의 경계면에서 발생하는 빛의 굴절 현상)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 공기와 물의 경계면에서 발생하는 빛의 굴절 현상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r5-adv",
@@ -51010,7 +43916,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 평면거울에서 물체와 상 사이의 거리 관계 계산하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평면거울에서 물체와 상 사이의 거리 관계 계산하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r6-basic",
@@ -51029,7 +43935,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 평면거울과 물체 사이의 거리 개념 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평면거울과 물체 사이의 거리 개념 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r6-skill",
@@ -51048,7 +43954,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛의 반사 법칙을 이용한 입사각 추론 (90도-A))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 반사 법칙을 이용한 입사각 추론 (90도-A) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r6-adv",
@@ -51067,7 +43973,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛의 반사 법칙과 굴절의 기초 원리 비교 및 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 반사 법칙과 굴절의 기초 원리 비교 및 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r7-basic",
@@ -51086,7 +43992,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛의 굴절 현상의 정의와 원인 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 굴절 현상의 정의와 원인 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r7-skill",
@@ -51104,7 +44010,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 평면거울에 의한 상의 대칭 구조 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평면거울에 의한 상의 대칭 구조 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r7-adv",
@@ -51123,7 +44030,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 전신 거울에서 물체를 보는 최적의 반사 지점 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전신 거울에서 물체를 보는 최적의 반사 지점 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r8-basic",
@@ -51141,8 +44048,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 광원의 정의 및 종류 구별하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광원의 정의 및 종류 구별하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r8-skill",
@@ -51161,7 +44067,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 입사각과 반사각의 크기 관계를 이용한 각도 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입사각과 반사각의 크기 관계를 이용한 각도 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r8-adv",
@@ -51180,7 +44086,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 일상 생활 속 빛의 경로(광원-물체-반사-눈) 서술형 응용)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상 생활 속 빛의 경로(광원-물체-반사-눈) 서술형 응용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r9-basic",
@@ -51199,7 +44105,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 반사 법칙: 입사각 = 반사각)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 반사 법칙: 입사각 = 반사각 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r9-skill",
@@ -51218,7 +44124,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 굴절 현상으로 인해 나타나는 물체의 위치 변화(떠 보임) 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 굴절 현상으로 인해 나타나는 물체의 위치 변화(떠 보임) 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r10-basic",
@@ -51237,7 +44143,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 물체를 보는 과정의 기본 단계 (광원-반사-눈))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체를 보는 과정의 기본 단계 (광원-반사-눈) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r10-skill",
@@ -51255,8 +44161,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 평면거울 상의 생성 원리(반사 광선의 연장선 교점) 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평면거울 상의 생성 원리(반사 광선의 연장선 교점) 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r11-basic",
@@ -51275,7 +44180,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 평면거울에서 상이 생기는 과정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평면거울에서 상이 생기는 과정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r11-skill",
@@ -51294,7 +44199,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 눈으로 들어오는 빛의 최종 경로와 시각 형성 과정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 눈으로 들어오는 빛의 최종 경로와 시각 형성 과정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r12-skill",
@@ -51313,7 +44218,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 스스로 빛을 내는 광원과 반사해서 보이는 물체의 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 스스로 빛을 내는 광원과 반사해서 보이는 물체의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r13-skill",
@@ -51332,7 +44237,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 평면거울과 상 사이의 거리 계산 (대칭성))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평면거울과 상 사이의 거리 계산 (대칭성) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r14-skill",
@@ -51350,7 +44255,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 거울로부터 물체가 멀어질 때 상의 변화 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거울로부터 물체가 멀어질 때 상의 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r15-skill",
@@ -51369,7 +44275,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 평면거울에 비친 상의 특징 (좌우 반전과 크기))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평면거울에 비친 상의 특징 (좌우 반전과 크기) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r16-skill",
@@ -51388,7 +44294,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 입사각의 크기에 따른 굴절각의 변화 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입사각의 크기에 따른 굴절각의 변화 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r17-skill",
@@ -51407,7 +44313,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 어두운 방에서 물체를 보기 위한 조건 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 어두운 방에서 물체를 보기 위한 조건 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r18-basic",
@@ -51425,7 +44331,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛의 정의와 직진, 반사, 굴절 등 기본 성질의 구분)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 정의와 직진, 반사, 굴절 등 기본 성질의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r18-skill",
@@ -51444,7 +44351,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 광원과 광원이 아닌 물체를 보는 과정의 차이점 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광원과 광원이 아닌 물체를 보는 과정의 차이점 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r18-adv",
@@ -51463,7 +44370,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛의 반사와 굴절이 함께 일어날 때의 각도 관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 반사와 굴절이 함께 일어날 때의 각도 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r19-basic",
@@ -51482,7 +44389,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 매질의 밀도 차이에 따른 빛의 굴절 방향(기초))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 매질의 밀도 차이에 따른 빛의 굴절 방향(기초) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r19-skill",
@@ -51501,7 +44408,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 정반사와 난반사의 공통점(반사 법칙 성립)과 차이점 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정반사와 난반사의 공통점(반사 법칙 성립)과 차이점 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r19-adv",
@@ -51519,8 +44426,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛의 굴절에 의한 물체의 실제 위치와 보이는 위치의 정밀 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 굴절에 의한 물체의 실제 위치와 보이는 위치의 정밀 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r20-basic",
@@ -51539,7 +44445,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 우리 주변에서 거울을 이용하는 기구(잠망경 등) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 주변에서 거울을 이용하는 기구(잠망경 등) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r20-skill",
@@ -51557,7 +44463,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛의 굴절 원인(매질에 따른 빛의 속력 차이) 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 굴절 원인(매질에 따른 빛의 속력 차이) 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r20-adv",
@@ -51576,7 +44483,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 서로 수직인 두 평면거울에 의한 반사와 빛의 경로 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서로 수직인 두 평면거울에 의한 반사와 빛의 경로 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r21-skill",
@@ -51594,7 +44501,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 신기루나 웅덩이의 물 등 대기 중 빛의 굴절 사례 해석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 신기루나 웅덩이의 물 등 대기 중 빛의 굴절 사례 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r21-adv",
@@ -51613,7 +44521,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 입사각 변화에 따른 굴절각의 변화율 및 임계각의 개념 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입사각 변화에 따른 굴절각의 변화율 및 임계각의 개념 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r22-skill",
@@ -51632,7 +44540,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 평면거울에 의한 상의 특징과 위치 관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평면거울에 의한 상의 특징과 위치 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r23-skill",
@@ -51651,7 +44559,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 입사각 변화에 따른 반사각과 굴절각의 상관관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입사각 변화에 따른 반사각과 굴절각의 상관관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r24-skill",
@@ -51670,7 +44578,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 굴절이 일어나지 않는 특수한 경우(법선 방향 입사) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 굴절이 일어나지 않는 특수한 경우(법선 방향 입사) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r28-basic",
@@ -51689,7 +44597,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 볼록 거울과 오목 거울의 빛 반사 모습(퍼짐/모임) 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 볼록 거울과 오목 거울의 빛 반사 모습(퍼짐/모임) 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r28-skill",
@@ -51708,7 +44616,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 오목 거울과 볼록 거울에 의한 상의 특징 비교 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오목 거울과 볼록 거울에 의한 상의 특징 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r28-adv",
@@ -51727,7 +44635,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 물체와 거울 사이의 거리에 따른 상의 변화 추론 및 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체와 거울 사이의 거리에 따른 상의 변화 추론 및 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r29-basic",
@@ -51745,8 +44653,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 볼록 거울에서 항상 생기는 상의 특징(작고 바로 선 상))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 볼록 거울에서 항상 생기는 상의 특징(작고 바로 선 상) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r29-skill",
@@ -51765,7 +44672,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 오목 렌즈와 볼록 렌즈의 빛 진행 경로 및 상의 특징 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오목 렌즈와 볼록 렌즈의 빛 진행 경로 및 상의 특징 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r29-adv",
@@ -51784,7 +44691,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 조명 색의 변화에 따른 물체의 색 변화 원리 분석 및 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 조명 색의 변화에 따른 물체의 색 변화 원리 분석 및 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r30-basic",
@@ -51803,7 +44710,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 물체의 색을 결정하는 요인(반사되는 빛의 색))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체의 색을 결정하는 요인(반사되는 빛의 색) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r30-skill",
@@ -51822,7 +44729,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 백색광 및 단색광 조명 아래에서 물체의 색 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 백색광 및 단색광 조명 아래에서 물체의 색 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r30-adv",
@@ -51840,7 +44747,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 스마트 기기 화면의 화소(RGB)와 색 합성의 상관관계 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 스마트 기기 화면의 화소(RGB)와 색 합성의 상관관계 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r31-basic",
@@ -51859,7 +44766,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛의 합성을 이용한 장치(전광판, 영상 장치 등)의 예시)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 합성을 이용한 장치(전광판, 영상 장치 등)의 예시 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r31-skill",
@@ -51878,7 +44785,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛의 합성과 물감의 혼합 차이점 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 합성과 물감의 혼합 차이점 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r31-adv",
@@ -51897,7 +44804,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 오목거울과 볼록렌즈에 의한 상의 특징 및 공통점 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오목거울과 볼록렌즈에 의한 상의 특징 및 공통점 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r32-basic",
@@ -51916,7 +44823,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 두 가지 빛을 합성했을 때 나타나는 색(이차색))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 가지 빛을 합성했을 때 나타나는 색(이차색) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r32-skill",
@@ -51935,7 +44842,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 조명 색에 따른 무대 의상이나 물체의 색 변화 예측)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 조명 색에 따른 무대 의상이나 물체의 색 변화 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r32-adv",
@@ -51954,7 +44861,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 물체가 거울/렌즈에서 멀어질 때 상의 크기 변화 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체가 거울/렌즈에서 멀어질 때 상의 크기 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r33-basic",
@@ -51973,7 +44880,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 불투명한 물체의 색이 결정되는 원리(반사))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 불투명한 물체의 색이 결정되는 원리(반사) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r33-skill",
@@ -51992,7 +44899,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 색팽이를 빠르게 돌릴 때 나타나는 빛의 합성 현상)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 색팽이를 빠르게 돌릴 때 나타나는 빛의 합성 현상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r33-adv",
@@ -52010,8 +44917,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 관찰되는 물체의 색을 통해 조명이나 물체의 원래 색 역추적)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 관찰되는 물체의 색을 통해 조명이나 물체의 원래 색 역추적 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r34-basic",
@@ -52030,7 +44936,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛의 삼원색(빨강, 초록, 파랑)의 종류)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 삼원색(빨강, 초록, 파랑)의 종류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r34-skill",
@@ -52048,8 +44954,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 볼록 렌즈에서 물체의 위치에 따라 상이 거꾸로 보이는 조건)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 볼록 렌즈에서 물체의 위치에 따라 상이 거꾸로 보이는 조건 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r35-basic",
@@ -52068,7 +44973,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛의 삼원색과 빛의 합성(색상 구분))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 삼원색과 빛의 합성(색상 구분) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r35-skill",
@@ -52086,8 +44991,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 오목거울: 가까이 있는 물체의 확대된 상 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오목거울: 가까이 있는 물체의 확대된 상 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r36-basic",
@@ -52106,7 +45010,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 볼록 렌즈와 오목 렌즈의 형태적 특징 및 명칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 볼록 렌즈와 오목 렌즈의 형태적 특징 및 명칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r36-skill",
@@ -52124,8 +45028,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 볼록거울: 거리에 상관없이 항상 작고 똑바른 상)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 볼록거울: 거리에 상관없이 항상 작고 똑바른 상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r37-skill",
@@ -52144,7 +45047,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 볼록렌즈: 가까운 물체의 확대된 똑바른 상)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 볼록렌즈: 가까운 물체의 확대된 똑바른 상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r38-skill",
@@ -52162,8 +45065,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 오목렌즈: 거리에 상관없이 항상 작고 똑바른 상)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오목렌즈: 거리에 상관없이 항상 작고 똑바른 상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r39-skill",
@@ -52181,8 +45083,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 노란색 사과가 노란색으로 보이는 이유(반사광 분석))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 노란색 사과가 노란색으로 보이는 이유(반사광 분석) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r40-skill",
@@ -52201,7 +45102,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 특정 색 조명 아래에서 물체가 검은색으로 보이는 경우)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 색 조명 아래에서 물체가 검은색으로 보이는 경우 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r41-skill",
@@ -52220,7 +45121,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 근시 교정용 안경과 돋보기에 사용되는 렌즈의 종류 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 근시 교정용 안경과 돋보기에 사용되는 렌즈의 종류 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r42-skill",
@@ -52238,8 +45139,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 컴퓨터 및 스마트폰 화면의 화소 구성과 색 생성 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 컴퓨터 및 스마트폰 화면의 화소 구성과 색 생성 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r43-basic",
@@ -52258,7 +45158,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 물체의 색이 보이는 이유(빛의 반사) 기초 개념 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체의 색이 보이는 이유(빛의 반사) 기초 개념 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r43-skill",
@@ -52277,7 +45177,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 오목거울의 특징과 실생활 이용 사례(화장 거울, 성화 채화경 등))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오목거울의 특징과 실생활 이용 사례(화장 거울, 성화 채화경 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r43-adv",
@@ -52296,7 +45196,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛의 경로 분석을 통한 거울과 렌즈의 종류 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 경로 분석을 통한 거울과 렌즈의 종류 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r44-basic",
@@ -52315,7 +45215,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 검은색 물체와 흰색 물체의 빛 흡수/반사 차이 알기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 검은색 물체와 흰색 물체의 빛 흡수/반사 차이 알기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r44-skill",
@@ -52333,7 +45233,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 볼록거울의 특징과 실생활 이용 사례(편의점 거울, 자동차 사이드미러 등))"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 볼록거울의 특징과 실생활 이용 사례(편의점 거울, 자동차 사이드미러 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r44-adv",
@@ -52352,7 +45253,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 다양한 색의 조명 아래에서 물체가 보이는 색의 조합 원리 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다양한 색의 조명 아래에서 물체가 보이는 색의 조합 원리 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r45-skill",
@@ -52371,7 +45272,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛의 삼원색(빨강, 초록, 파랑)과 합성 시 나타나는 색(노랑, 청록, 자홍))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 삼원색(빨강, 초록, 파랑)과 합성 시 나타나는 색(노랑, 청록, 자홍) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r45-adv",
@@ -52390,7 +45291,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빛의 삼원색 합성을 이용한 영상 장치(화소)의 색 표현 원리 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 삼원색 합성을 이용한 영상 장치(화소)의 색 표현 원리 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r46-skill",
@@ -52408,8 +45309,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 렌즈를 이용한 시력 교정(근시와 원시))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 렌즈를 이용한 시력 교정(근시와 원시) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r47-skill",
@@ -52427,8 +45327,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 물체의 원래 색과 특정 조명 아래에서의 색 비교 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체의 원래 색과 특정 조명 아래에서의 색 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r53-basic",
@@ -52447,7 +45346,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 소리의 전달 매질(고체, 액체, 기체)의 존재 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리의 전달 매질(고체, 액체, 기체)의 존재 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r53-skill",
@@ -52466,7 +45365,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 매질의 종류에 따른 파동 전파의 매개체 확인(물결파, 소리 등))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 매질의 종류에 따른 파동 전파의 매개체 확인(물결파, 소리 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r53-adv",
@@ -52485,7 +45384,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 파동의 전파 시 매질의 실제 이동 여부 및 에너지 전달 원리 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동의 전파 시 매질의 실제 이동 여부 및 에너지 전달 원리 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r54-basic",
@@ -52504,7 +45403,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 소리의 발생과 전달 과정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리의 발생과 전달 과정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r54-skill",
@@ -52522,7 +45421,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 시간에 따른 매질의 진동 횟수를 이용한 주기 및 진동수 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간에 따른 매질의 진동 횟수를 이용한 주기 및 진동수 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r54-adv",
@@ -52541,7 +45440,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 진폭, 파장, 주기를 이용한 파동의 물리량 복합 계산 및 그래프 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진폭, 파장, 주기를 이용한 파동의 물리량 복합 계산 및 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r55-basic",
@@ -52559,7 +45458,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 진폭의 정의(진동 중심에서 마루나 골까지의 거리))"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진폭의 정의(진동 중심에서 마루나 골까지의 거리) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r55-skill",
@@ -52578,7 +45478,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 파동의 구성 요소와 진행 특성 분석(파장, 진동 방향, 매질의 이동 방향))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동의 구성 요소와 진행 특성 분석(파장, 진동 방향, 매질의 이동 방향) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r55-adv",
@@ -52596,8 +45496,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 시간-위치 그래프와 거리-위치 그래프를 혼합한 파동의 요소(주기, 파장) 도출)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간-위치 그래프와 거리-위치 그래프를 혼합한 파동의 요소(주기, 파장) 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r56-basic",
@@ -52615,8 +45514,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 파동의 전파와 매질의 진동)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동의 전파와 매질의 진동 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r56-skill",
@@ -52635,7 +45533,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 소리의 높낮이를 결정하는 물리량(진동수)과 파형 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리의 높낮이를 결정하는 물리량(진동수)과 파형 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r56-adv",
@@ -52654,7 +45552,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빨대 피리 등 악기의 길이에 따른 소리의 높낮이 변화 원리 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빨대 피리 등 악기의 길이에 따른 소리의 높낮이 변화 원리 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r57-basic",
@@ -52672,7 +45570,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 실생활 속의 파동 사례(물결파, 소리, 지진파 등) 나열)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실생활 속의 파동 사례(물결파, 소리, 지진파 등) 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r57-skill",
@@ -52691,7 +45590,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 같은 음이지만 다른 악기 소리가 나는 원리(맵시) 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 같은 음이지만 다른 악기 소리가 나는 원리(맵시) 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r57-adv",
@@ -52710,7 +45609,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 소리의 3요소(세기, 높낮이, 맵시)와 파형의 특징을 연계한 비교 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리의 3요소(세기, 높낮이, 맵시)와 파형의 특징을 연계한 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r58-basic",
@@ -52728,7 +45627,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 파동의 정의와 발생 원인(진동) 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동의 정의와 발생 원인(진동) 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r58-skill",
@@ -52746,8 +45646,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 소리를 내는 힘의 세기에 따른 파동의 물리량(진폭, 진동수, 파장) 변화 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리를 내는 힘의 세기에 따른 파동의 물리량(진폭, 진동수, 파장) 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r58-adv",
@@ -52766,7 +45665,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 소리의 세기와 높낮이에 따른 파형의 특징 비교 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리의 세기와 높낮이에 따른 파형의 특징 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r59-basic",
@@ -52785,7 +45684,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 파동을 전달하는 물질인 '매질'의 용어 정의)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동을 전달하는 물질인 '매질'의 용어 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r59-skill",
@@ -52804,7 +45703,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 파동의 위치-거리 그래프 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동의 위치-거리 그래프 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r60-basic",
@@ -52823,7 +45722,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 파동의 구성 요소(마루, 골, 진폭, 파장) 명칭 익히기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동의 구성 요소(마루, 골, 진폭, 파장) 명칭 익히기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r60-skill",
@@ -52842,7 +45741,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 그래프를 통한 진폭, 파장, 주기, 진동수의 정량적 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 그래프를 통한 진폭, 파장, 주기, 진동수의 정량적 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r61-basic",
@@ -52860,7 +45759,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 소리의 3요소 기본 용어 구분하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리의 3요소 기본 용어 구분하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r61-skill",
@@ -52878,8 +45777,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 파동의 이동과 그래프의 시간적 변화 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동의 이동과 그래프의 시간적 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r62-skill",
@@ -52898,7 +45796,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 실의 길이나 물의 양에 따른 소리의 높낮이 실험 결과 예측)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실의 길이나 물의 양에 따른 소리의 높낮이 실험 결과 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r63-skill",
@@ -52917,7 +45815,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 파동의 마루, 골의 위치, 진폭, 파장을 그림에서 정확히 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동의 마루, 골의 위치, 진폭, 파장을 그림에서 정확히 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r64-skill",
@@ -52936,7 +45834,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 소리의 요소와 실생활 사례의 연결 및 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리의 요소와 실생활 사례의 연결 및 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r65-skill",
@@ -52955,7 +45853,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 같은 높낮이의 소리라도 파형이 다르면 다른 악기임을 구별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 같은 높낮이의 소리라도 파형이 다르면 다른 악기임을 구별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r66-skill",
@@ -52974,7 +45872,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 파동의 발생 조건 변화에 따른 진폭과 진동수의 관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동의 발생 조건 변화에 따른 진폭과 진동수의 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r67-skill",
@@ -52992,7 +45890,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 소리의 특성)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리의 특성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r68-basic",
@@ -53011,7 +45909,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 파동과 매질의 정의 알기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동과 매질의 정의 알기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r68-skill",
@@ -53030,7 +45928,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 진폭과 소리의 세기(큰 소리 vs 작은 소리)의 관계 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진폭과 소리의 세기(큰 소리 vs 작은 소리)의 관계 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r68-adv",
@@ -53049,7 +45947,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 매질의 이동 없이 에너지만 전달되는 파동의 역학적 원리 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 매질의 이동 없이 에너지만 전달되는 파동의 역학적 원리 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r69-basic",
@@ -53067,8 +45965,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 파동 그래프에서 평형 위치로부터의 최대 변위(진폭) 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동 그래프에서 평형 위치로부터의 최대 변위(진폭) 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r69-skill",
@@ -53087,7 +45984,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 진동수와 소리의 높낮이(높은 소리 vs 낮은 소리)의 관계 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진동수와 소리의 높낮이(높은 소리 vs 낮은 소리)의 관계 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r69-adv",
@@ -53106,7 +46003,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 곤충의 날갯짓 횟수를 통해 소리의 진동수와 높낮이의 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 곤충의 날갯짓 횟수를 통해 소리의 진동수와 높낮이의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r70-basic",
@@ -53125,7 +46022,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 소리를 시각적으로 보여주는 장치(오실로스코프)의 파형 관찰)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리를 시각적으로 보여주는 장치(오실로스코프)의 파형 관찰 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r70-skill",
@@ -53144,7 +46041,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 물컵 악기나 실로폰에서 물의 양과 소리 높낮이의 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물컵 악기나 실로폰에서 물의 양과 소리 높낮이의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r71-skill",
@@ -53162,7 +46059,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 진동수(Hz)의 정의와 주기(T)와의 역수 관계 계산)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진동수(Hz)의 정의와 주기(T)와의 역수 관계 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r72-skill",
@@ -53180,7 +46078,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 진공 상태에서 소리가 전달되지 않는 이유(매질의 유무))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진공 상태에서 소리가 전달되지 않는 이유(매질의 유무) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r73-skill",
@@ -53199,7 +46097,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 자의 길이에 따른 진동수와 소리의 높낮이 관계 실험 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자의 길이에 따른 진동수와 소리의 높낮이 관계 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s2-r74-skill",
@@ -53218,7 +46116,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 파동의 전파 시 매질 위의 한 점이 위아래로만 움직이는 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동의 전파 시 매질 위의 한 점이 위아래로만 움직이는 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r3-basic",
@@ -53237,7 +46135,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 우리 주변의 원소 이용 사례(수소, 산소, 금 등))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 주변의 원소 이용 사례(수소, 산소, 금 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r3-skill",
@@ -53256,7 +46154,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 아리스토텔레스의 4원소설과 탈레스의 1원소설 차이점)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 아리스토텔레스의 4원소설과 탈레스의 1원소설 차이점 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r3-adv",
@@ -53274,8 +46172,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 선 스펙트럼의 겹침 현상을 이용한 혼합물 속 원소 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 선 스펙트럼의 겹침 현상을 이용한 혼합물 속 원소 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r4-basic",
@@ -53294,7 +46191,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분광기를 이용한 관찰 방법 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분광기를 이용한 관찰 방법 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r4-skill",
@@ -53313,7 +46210,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 라부아지에 실험에서 수소와 산소가 발생하는 원리 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 라부아지에 실험에서 수소와 산소가 발생하는 원리 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r4-adv",
@@ -53332,7 +46229,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 불꽃 반응과 스펙트럼의 특징을 비교하여 실험의 한계점 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 불꽃 반응과 스펙트럼의 특징을 비교하여 실험의 한계점 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r5-basic",
@@ -53350,7 +46247,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원소는 화학적 방법으로 더 이상 분해되지 않는다는 성질 인지)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원소는 화학적 방법으로 더 이상 분해되지 않는다는 성질 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r5-skill",
@@ -53369,7 +46267,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 리튬과 스트론튬처럼 불꽃색이 비슷한 원소의 구별 방법)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 리튬과 스트론튬처럼 불꽃색이 비슷한 원소의 구별 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r5-adv",
@@ -53388,7 +46286,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 여러 원소가 혼합된 물질의 선 스펙트럼 비교 및 포함 원소 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 원소가 혼합된 물질의 선 스펙트럼 비교 및 포함 원소 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r6-basic",
@@ -53407,7 +46305,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원소의 정의(물질을 이루는 기본 성분) 익히기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원소의 정의(물질을 이루는 기본 성분) 익히기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r6-skill",
@@ -53426,7 +46324,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 특정 원소의 스펙트럼이 혼합물에 반드시 포함되는지 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 원소의 스펙트럼이 혼합물에 반드시 포함되는지 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r6-adv",
@@ -53444,7 +46342,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 불꽃 반응 색이 비슷한 원소(Li, Sr)를 스펙트럼으로 구별하는 원리)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 불꽃 반응 색이 비슷한 원소(Li, Sr)를 스펙트럼으로 구별하는 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r7-basic",
@@ -53462,8 +46361,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 불꽃 반응의 기본 정의와 실험 방법)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 불꽃 반응의 기본 정의와 실험 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r7-skill",
@@ -53481,7 +46379,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 보일이 제시한 현대적 원소 개념의 역사적 의미)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 보일이 제시한 현대적 원소 개념의 역사적 의미 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r7-adv",
@@ -53499,7 +46398,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 라부아지에의 물 분해 실험을 통한 원소 개념의 현대적 재 정의)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 라부아지에의 물 분해 실험을 통한 원소 개념의 현대적 재 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r8-basic",
@@ -53518,7 +46418,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 주요 금속 원소의 불꽃색 암기(나트륨-노란색 등))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주요 금속 원소의 불꽃색 암기(나트륨-노란색 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r8-skill",
@@ -53536,7 +46436,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물이 원소가 아닌 화합물임을 증명하는 실험 결과 해석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물이 원소가 아닌 화합물임을 증명하는 실험 결과 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r8-adv",
@@ -53555,7 +46456,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 미지의 물질을 확인하기 위한 체계적인 탐구 과정 설계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 미지의 물질을 확인하기 위한 체계적인 탐구 과정 설계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r9-basic",
@@ -53574,7 +46475,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 스펙트럼의 정의 및 종류(연속, 선))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 스펙트럼의 정의 및 종류(연속, 선) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r9-skill",
@@ -53592,7 +46493,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 종류가 달라도 포함된 금속 원소가 같으면 불꽃색이 같음을 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 종류가 달라도 포함된 금속 원소가 같으면 불꽃색이 같음을 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r10-basic",
@@ -53611,7 +46513,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 라부아지에가 분해한 물질(물) 명칭 알기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 라부아지에가 분해한 물질(물) 명칭 알기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r10-skill",
@@ -53630,7 +46532,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 선 스펙트럼의 겹침 현상을 통해 혼합물 성분 모두 확인하)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 선 스펙트럼의 겹침 현상을 통해 혼합물 성분 모두 확인하 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r11-basic",
@@ -53648,7 +46550,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 현재까지 알려진 원소의 가짓수와 생성 기원(자연/인공))"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 현재까지 알려진 원소의 가짓수와 생성 기원(자연/인공) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r11-skill",
@@ -53667,7 +46570,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질관의 변천 순서(탈레스→아리스토텔레스→보일→라부아지에) 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질관의 변천 순서(탈레스→아리스토텔레스→보일→라부아지에) 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r12-skill",
@@ -53685,8 +46588,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원소의 이용 사례와 해당 원소의 특징 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원소의 이용 사례와 해당 원소의 특징 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r13-skill",
@@ -53705,7 +46607,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 실생활 물질(소금, 물, 설탕 등) 속 포함된 원소 종류 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실생활 물질(소금, 물, 설탕 등) 속 포함된 원소 종류 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r14-skill",
@@ -53724,7 +46626,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 선 스펙트럼의 선 위치, 굵기, 개수가 의미하는 바 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 선 스펙트럼의 선 위치, 굵기, 개수가 의미하는 바 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r15-skill",
@@ -53742,7 +46644,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 금속 원소의 종류에 따른 고유한 불꽃 반응 색 매칭)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 금속 원소의 종류에 따른 고유한 불꽃 반응 색 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r16-skill",
@@ -53760,8 +46663,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 연속 스펙트럼과 선 스펙트럼의 발생 조건 차이)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연속 스펙트럼과 선 스펙트럼의 발생 조건 차이 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r17-skill",
@@ -53779,7 +46681,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 불꽃 반응 실험의 장점(간편함, 적은 양 등) 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 불꽃 반응 실험의 장점(간편함, 적은 양 등) 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r18-basic",
@@ -53798,7 +46700,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물의 전기 분해 실험의 결과물(수소, 산소) 이름 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물의 전기 분해 실험의 결과물(수소, 산소) 이름 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r18-skill",
@@ -53817,7 +46719,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 라부아지에 실험에서 냉각수와 철관의 질량 변화를 통한 성분 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 라부아지에 실험에서 냉각수와 철관의 질량 변화를 통한 성분 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r18-adv",
@@ -53836,7 +46738,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 구성 성분을 확인하기 위한 불꽃 반응과 스펙트럼의 상호 보완성)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 구성 성분을 확인하기 위한 불꽃 반응과 스펙트럼의 상호 보완성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r19-basic",
@@ -53854,7 +46756,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분광기로 본 선 스펙트럼의 모양 특징(띠 모양) 확인)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분광기로 본 선 스펙트럼의 모양 특징(띠 모양) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r19-skill",
@@ -53872,7 +46775,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 불꽃 반응 실험 시 묽은 염산으로 니크롬선을 씻는 이유 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 불꽃 반응 실험 시 묽은 염산으로 니크롬선을 씻는 이유 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r20-skill",
@@ -53891,7 +46795,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원소와 화합물의 용어 정의 및 예시 구별하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원소와 화합물의 용어 정의 및 예시 구별하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r21-skill",
@@ -53910,7 +46814,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 아리스토텔레스의 4원소설과 데모크리토스의 입자설 논쟁 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 아리스토텔레스의 4원소설과 데모크리토스의 입자설 논쟁 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r22-skill",
@@ -53929,7 +46833,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 보일의 원소 정의(더 이상 분해되지 않는 물질)의 현대적 의미)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 보일의 원소 정의(더 이상 분해되지 않는 물질)의 현대적 의미 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r23-skill",
@@ -53948,7 +46852,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 미지의 물질 속 금속 원소 유무를 불꽃색으로 판별하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 미지의 물질 속 금속 원소 유무를 불꽃색으로 판별하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r24-skill",
@@ -53967,7 +46871,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 태양의 스펙트럼 분석을 통한 우주 구성 원소 유추의 기초)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양의 스펙트럼 분석을 통한 우주 구성 원소 유추의 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r28-basic",
@@ -53985,7 +46889,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학식의 기본 표기법과 원소 기호 읽기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학식의 기본 표기법과 원소 기호 읽기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r28-skill",
@@ -54003,8 +46907,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분자가 원자로 나누어질 때 성질이 변하는 이유 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자가 원자로 나누어질 때 성질이 변하는 이유 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r28-adv",
@@ -54023,7 +46926,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자의 구조(양성자 수)를 보고 원소의 종류 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자의 구조(양성자 수)를 보고 원소의 종류 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r29-basic",
@@ -54042,7 +46945,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 우리 주변에서 볼 수 있는 분자의 예시 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 주변에서 볼 수 있는 분자의 예시 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r29-skill",
@@ -54060,8 +46963,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분자 모형을 보고 구성 원소의 종류 파악하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자 모형을 보고 구성 원소의 종류 파악하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r29-adv",
@@ -54080,7 +46982,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 상태 변화나 반응 시 분자가 유지되는 성질과 물질의 특성 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 상태 변화나 반응 시 분자가 유지되는 성질과 물질의 특성 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r30-basic",
@@ -54099,7 +47001,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자의 내부 구조(원자핵, 전자) 명칭 알기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자의 내부 구조(원자핵, 전자) 명칭 알기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r30-skill",
@@ -54118,7 +47020,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물(H₂O) 분자의 모형 분석 및 구성 원자비 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물(H₂O) 분자의 모형 분석 및 구성 원자비 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r30-adv",
@@ -54136,7 +47038,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자 내부의 (+)전하량과 (-)전하량의 관계를 통한 전기적 중성 원리 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자 내부의 (+)전하량과 (-)전하량의 관계를 통한 전기적 중성 원리 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r31-basic",
@@ -54154,7 +47056,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 오늘날의 원소 기호를 제안한 과학자(베르셀리우스) 인식)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오늘날의 원소 기호를 제안한 과학자(베르셀리우스) 인식 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r31-skill",
@@ -54173,7 +47076,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학식에서 원자의 개수를 나타내는 숫자의 의미)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학식에서 원자의 개수를 나타내는 숫자의 의미 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r31-adv",
@@ -54191,7 +47094,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분자 모델을 보고 성분 원소의 종류와 원자의 총 개수 복합 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자 모델을 보고 성분 원소의 종류와 원자의 총 개수 복합 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r32-basic",
@@ -54209,7 +47112,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질을 이루는 기본 입자로서의 원자 개념)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질을 이루는 기본 입자로서의 원자 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r32-skill",
@@ -54228,7 +47132,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 전자와 원자핵의 상대적 위치 및 운동 상태 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전자와 원자핵의 상대적 위치 및 운동 상태 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r32-adv",
@@ -54247,7 +47151,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물의 전기 분해 실험 분석을 통한 성분 원소 확인 및 기체의 성질 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물의 전기 분해 실험 분석을 통한 성분 원소 확인 및 기체의 성질 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r33-basic",
@@ -54265,8 +47169,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 성질을 가지는 최소 단위인 분자의 정의)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 성질을 가지는 최소 단위인 분자의 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r33-skill",
@@ -54285,7 +47188,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원소와 화합물의 구분 및 분류)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원소와 화합물의 구분 및 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r33-adv",
@@ -54303,8 +47206,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자와 분자의 공통점과 차이점을 입자 관점에서 논리적으로 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자와 분자의 공통점과 차이점을 입자 관점에서 논리적으로 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r34-basic",
@@ -54323,7 +47225,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자의 중심에 위치한 (+)전하를 띤 원자핵 인식)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자의 중심에 위치한 (+)전하를 띤 원자핵 인식 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r34-skill",
@@ -54341,8 +47243,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 일원자 분자(He, Ne 등)의 존재 방식과 특징 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일원자 분자(He, Ne 등)의 존재 방식과 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r35-basic",
@@ -54360,8 +47261,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자핵 주위를 움직이는 (-)전하를 띤 전자 인식)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자핵 주위를 움직이는 (-)전하를 띤 전자 인식 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r35-skill",
@@ -54379,8 +47279,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 라부아지에의 물 분해 실험과 원소의 개념)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 라부아지에의 물 분해 실험과 원소의 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r36-basic",
@@ -54398,8 +47297,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자가 전기적으로 중성인 원리(전하량의 합=0))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자가 전기적으로 중성인 원리(전하량의 합=0) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r36-skill",
@@ -54418,7 +47316,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기호로 나타낸 물질 구성 정보(원자 종류와 수)의 진위 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기호로 나타낸 물질 구성 정보(원자 종류와 수)의 진위 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r37-skill",
@@ -54437,7 +47335,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 독립된 입자로 존재하며 물질의 성질을 나타내는 '분자'의 특성 적용)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 독립된 입자로 존재하며 물질의 성질을 나타내는 '분자'의 특성 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r38-skill",
@@ -54455,8 +47353,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 주요 원소 기호(수소, 탄소, 질소, 산소, 구리, 철 등)의 정확한 명칭 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주요 원소 기호(수소, 탄소, 질소, 산소, 구리, 철 등)의 정확한 명칭 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r39-skill",
@@ -54475,7 +47372,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분자 모형을 보고 구성 원자의 총 개수 계산하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자 모형을 보고 구성 원자의 총 개수 계산하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r40-skill",
@@ -54494,7 +47391,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 동일한 원소로 구성된 서로 다른 분자(CO, CO₂) 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동일한 원소로 구성된 서로 다른 분자(CO, CO₂) 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r41-skill",
@@ -54513,7 +47410,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분자 모형을 화학식(기호와 첨자)으로 정확히 변환)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자 모형을 화학식(기호와 첨자)으로 정확히 변환 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r42-skill",
@@ -54531,8 +47428,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자 모형에서 양성자 수와 전자 수의 일치 여부 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자 모형에서 양성자 수와 전자 수의 일치 여부 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r43-basic",
@@ -54550,8 +47446,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분자의 정의와 기본 개념 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자의 정의와 기본 개념 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r43-skill",
@@ -54569,8 +47464,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자 기호의 유래와 베르셀리우스의 표기법 규칙 적용)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자 기호의 유래와 베르셀리우스의 표기법 규칙 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r43-adv",
@@ -54589,7 +47483,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자 모형의 변천 과정과 각 모형이 설명할 수 있는 사실 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자 모형의 변천 과정과 각 모형이 설명할 수 있는 사실 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r44-basic",
@@ -54608,7 +47502,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자 모형 그림에서 각 부분의 명칭 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자 모형 그림에서 각 부분의 명칭 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r44-skill",
@@ -54627,7 +47521,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분자 모델(모형)을 보고 알맞은 분자식으로 변환하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자 모델(모형)을 보고 알맞은 분자식으로 변환하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r44-adv",
@@ -54646,7 +47540,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 같은 종류의 원자로 구성된 서로 다른 분자(예: O₂와 O₃)의 특징 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 같은 종류의 원자로 구성된 서로 다른 분자(예: O₂와 O₃)의 특징 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r45-basic",
@@ -54665,7 +47559,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자는 화학 변화 시 종류가 변하지 않는다는 기초 성질 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자는 화학 변화 시 종류가 변하지 않는다는 기초 성질 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r45-skill",
@@ -54684,7 +47578,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자와 분자의 공통점과 차이점(성질 유무) 명확히 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자와 분자의 공통점과 차이점(성질 유무) 명확히 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r46-skill",
@@ -54703,7 +47597,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 흐름도를 통한 원소, 화합물, 분자 분류)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 흐름도를 통한 원소, 화합물, 분자 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r47-skill",
@@ -54721,7 +47615,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분자 모형을 통해 화합물과 원소(홑원소 물질) 구분하기)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자 모형을 통해 화합물과 원소(홑원소 물질) 구분하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r48-skill",
@@ -54739,7 +47634,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 암모니아, 메테인, 염화 수소 등 주요 분자식 암기 및 확인)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암모니아, 메테인, 염화 수소 등 주요 분자식 암기 및 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r53-basic",
@@ -54757,7 +47653,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 전해질과 비전해질 수용액의 전류 흐름 차이 인지)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전해질과 비전해질 수용액의 전류 흐름 차이 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r53-skill",
@@ -54775,8 +47672,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온 형성 식의 해석과 원소별 이온 종류 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온 형성 식의 해석과 원소별 이온 종류 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r53-adv",
@@ -54794,7 +47690,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온의 전하와 이동 방향을 전해질 수용액 실험과 연결하여 해석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온의 전하와 이동 방향을 전해질 수용액 실험과 연결하여 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r54-basic",
@@ -54813,7 +47710,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온의 정의(전하를 띠는 입자) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온의 정의(전하를 띠는 입자) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r54-skill",
@@ -54832,7 +47729,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온 수의 상대적 비율을 통해 원자 전하량과 전자 수 관계 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온 수의 상대적 비율을 통해 원자 전하량과 전자 수 관계 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r54-adv",
@@ -54851,7 +47748,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온의 결합과 화합물의 화학식 구성)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온의 결합과 화합물의 화학식 구성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r55-basic",
@@ -54870,7 +47767,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 양이온과 음이온의 생성 정의(전자 잃음/얻음))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양이온과 음이온의 생성 정의(전자 잃음/얻음) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r55-skill",
@@ -54889,7 +47786,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온의 전하가 중성이 아닌 이유를 전자 이동으로 설명)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온의 전하가 중성이 아닌 이유를 전자 이동으로 설명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r55-adv",
@@ -54908,7 +47805,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온화 과정과 수용액에서 이온의 이동 모형 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온화 과정과 수용액에서 이온의 이동 모형 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r56-basic",
@@ -54927,7 +47824,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 주요 단원자 이온 기호(Na+, Cl-, Cu2+ 등) 읽기 및 쓰기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주요 단원자 이온 기호(Na+, Cl-, Cu2+ 등) 읽기 및 쓰기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r56-skill",
@@ -54946,7 +47843,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 수용액에 전류를 흘려줄 때 전극으로 이동하는 이온의 종류 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수용액에 전류를 흘려줄 때 전극으로 이동하는 이온의 종류 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r56-adv",
@@ -54965,7 +47862,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자가 전자를 잃거나 얻어 이온이 될 때의 전하량 변화 원리 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자가 전자를 잃거나 얻어 이온이 될 때의 전하량 변화 원리 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r57-basic",
@@ -54984,7 +47881,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온 모형의 해석과 이온의 형성)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온 모형의 해석과 이온의 형성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r57-skill",
@@ -55003,7 +47900,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 색깔을 띠는 이온(Cu2+, MnO4-)의 이동을 통한 전하 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 색깔을 띠는 이온(Cu2+, MnO4-)의 이동을 통한 전하 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r57-adv",
@@ -55021,8 +47918,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 색깔을 띠는 이온의 이동 실험 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 색깔을 띠는 이온의 이동 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r58-basic",
@@ -55040,8 +47936,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 전류가 흐를 때 이온의 이동 방향 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전류가 흐를 때 이온의 이동 방향 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r58-skill",
@@ -55060,7 +47955,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자핵의 전하량과 전자 수를 비교하여 양이온과 음이온 구별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자핵의 전하량과 전자 수를 비교하여 양이온과 음이온 구별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r58-adv",
@@ -55079,7 +47974,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 앙금이 생성되지 않는 이온(알짜 이온 vs 구경꾼 이온)의 존재 논리적 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 앙금이 생성되지 않는 이온(알짜 이온 vs 구경꾼 이온)의 존재 논리적 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r59-basic",
@@ -55098,7 +47993,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온식의 오른쪽 위에 표시하는 숫자의 의미 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온식의 오른쪽 위에 표시하는 숫자의 의미 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r59-skill",
@@ -55117,7 +48012,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온 모형을 보고 해당 이온의 이온식 올바르게 쓰기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온 모형을 보고 해당 이온의 이온식 올바르게 쓰기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r60-basic",
@@ -55135,7 +48030,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자핵의 전하는 이온 형성 시에도 변하지 않음을 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자핵의 전하는 이온 형성 시에도 변하지 않음을 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r60-skill",
@@ -55154,7 +48049,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 다원자 이온(질산, 탄산, 수산화 이온 등)의 기호와 명칭 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다원자 이온(질산, 탄산, 수산화 이온 등)의 기호와 명칭 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r61-basic",
@@ -55172,7 +48067,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온의 색깔 유무 확인 (구리 이온-파란색 등))"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온의 색깔 유무 확인 (구리 이온-파란색 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r61-skill",
@@ -55191,7 +48087,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온의 이동과 앙금 생성 반응을 통한 이온의 전하 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온의 이동과 앙금 생성 반응을 통한 이온의 전하 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r62-skill",
@@ -55210,7 +48106,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온의 형성 과정 모형 분석 및 특징 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온의 형성 과정 모형 분석 및 특징 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r63-skill",
@@ -55229,7 +48125,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 양성자 수와 전자 수의 관계를 통한 원자와 이온의 구별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양성자 수와 전자 수의 관계를 통한 원자와 이온의 구별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r64-skill",
@@ -55248,7 +48144,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 염화 은(AgCl) 생성 반응을 통한 염화 이온(Cl-)의 검출 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 염화 은(AgCl) 생성 반응을 통한 염화 이온(Cl-)의 검출 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r65-skill",
@@ -55266,8 +48162,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 양이온과 음이온의 명칭 명명법(‘~이온’, ‘~화 이온’)의 올바른 적용)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양이온과 음이온의 명칭 명명법(‘~이온’, ‘~화 이온’)의 올바른 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r66-skill",
@@ -55286,7 +48181,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 전해질 수용액에 전류가 흐르는 원인을 이온의 이동과 결부하여 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전해질 수용액에 전류가 흐르는 원인을 이온의 이동과 결부하여 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r67-skill",
@@ -55305,7 +48200,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 수용액의 전기 전도성을 이용한 이온의 존재 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수용액의 전기 전도성을 이용한 이온의 존재 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r68-basic",
@@ -55324,7 +48219,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 양이온과 음이온의 명칭 부르는 법(‘~이온’, ‘~화 이온’))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양이온과 음이온의 명칭 부르는 법(‘~이온’, ‘~화 이온’) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r68-skill",
@@ -55343,7 +48238,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온 이름과 이온식을 정확하게 연결하기(다원자 이온 포함))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온 이름과 이온식을 정확하게 연결하기(다원자 이온 포함) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r68-adv",
@@ -55362,7 +48257,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자핵의 (+)전하량과 전자 수의 관계를 통한 이온의 전하량 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자핵의 (+)전하량과 전자 수의 관계를 통한 이온의 전하량 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r69-basic",
@@ -55381,7 +48276,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온 모형에서 (+)전하와 (-)전하의 개수 세기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온 모형에서 (+)전하와 (-)전하의 개수 세기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r69-skill",
@@ -55400,7 +48295,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 전원 장치를 연결한 수용액에서 이온의 이동 방향(인력) 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전원 장치를 연결한 수용액에서 이온의 이동 방향(인력) 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r69-adv",
@@ -55419,7 +48314,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 양성자 수와 전자 수의 비율을 이용한 이온의 판별 및 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양성자 수와 전자 수의 비율을 이용한 이온의 판별 및 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r70-basic",
@@ -55438,7 +48333,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 전해질과 비전해질 수용액의 전기 전도성 비교 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전해질과 비전해질 수용액의 전기 전도성 비교 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r70-skill",
@@ -55457,7 +48352,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 과망가니즈산 이온과 구리 이온의 색깔을 이용한 이동 확인 실험)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과망가니즈산 이온과 구리 이온의 색깔을 이용한 이동 확인 실험 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r70-adv",
@@ -55475,7 +48370,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 전자 이동에 따른 이온의 종류 및 화합물의 결합 비 추론)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전자 이동에 따른 이온의 종류 및 화합물의 결합 비 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r71-skill",
@@ -55494,7 +48390,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자와 이온의 입자 모형 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자와 이온의 입자 모형 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r72-skill",
@@ -55512,7 +48408,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 이온 형성 식의 해석과 이온의 성질 및 화합물 형성)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온 형성 식의 해석과 이온의 성질 및 화합물 형성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중2-1-s3-r73-skill",
@@ -55530,660 +48427,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자 번호와 이온식을 이용한 입자의 구성 및 이온 결합 화합물의 형성)"
-      }
-    ]
-  },
-  {
-    "id": "sci-중2-2",
-    "subject": "science",
-    "course": "중2-2",
-    "types": [
-      {
-        "id": "sc-중2-2-0-1-1",
-        "majorUnit": "1단원-동물과 에너지",
-        "minorUnit": "동물과 에너지 변화 이해 (1)",
-        "typeName": "동물과 에너지 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 동물과 에너지 분류하기)"
-      },
-      {
-        "id": "sc-중2-2-0-1-2",
-        "majorUnit": "1단원-동물과 에너지",
-        "minorUnit": "동물과 에너지 변화 이해 (1)",
-        "typeName": "동물과 에너지 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 동물과 에너지 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중2-2-0-2-1",
-        "majorUnit": "1단원-동물과 에너지",
-        "minorUnit": "동물과 에너지 변화 이해 (2)",
-        "typeName": "동물과 에너지 분류하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 동물과 에너지 분류하기)"
-      },
-      {
-        "id": "sc-중2-2-0-2-2",
-        "majorUnit": "1단원-동물과 에너지",
-        "minorUnit": "동물과 에너지 변화 이해 (2)",
-        "typeName": "동물과 에너지 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 동물과 에너지 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-중2-2-0-2-3",
-        "majorUnit": "1단원-동물과 에너지",
-        "minorUnit": "동물과 에너지 변화 이해 (2)",
-        "typeName": "동물과 에너지 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 동물과 에너지 모형 만들기)"
-      },
-      {
-        "id": "sc-중2-2-0-2-4",
-        "majorUnit": "1단원-동물과 에너지",
-        "minorUnit": "동물과 에너지 변화 이해 (2)",
-        "typeName": "동물과 에너지 특징 비교하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 동물과 에너지 특징 비교하기)"
-      },
-      {
-        "id": "sc-중2-2-0-3-1",
-        "majorUnit": "1단원-동물과 에너지",
-        "minorUnit": "동물과 에너지 관찰 (3)",
-        "typeName": "동물과 에너지 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 동물과 에너지 분류하기)"
-      },
-      {
-        "id": "sc-중2-2-0-3-2",
-        "majorUnit": "1단원-동물과 에너지",
-        "minorUnit": "동물과 에너지 관찰 (3)",
-        "typeName": "동물과 에너지 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 동물과 에너지 현상 분석하기)"
-      },
-      {
-        "id": "sc-중2-2-0-3-3",
-        "majorUnit": "1단원-동물과 에너지",
-        "minorUnit": "동물과 에너지 관찰 (3)",
-        "typeName": "동물과 에너지 특징 비교하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 동물과 에너지 특징 비교하기)"
-      },
-      {
-        "id": "sc-중2-2-0-3-4",
-        "majorUnit": "1단원-동물과 에너지",
-        "minorUnit": "동물과 에너지 관찰 (3)",
-        "typeName": "동물과 에너지 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 동물과 에너지 모형 만들기)"
-      },
-      {
-        "id": "sc-중2-2-0-3-5",
-        "majorUnit": "1단원-동물과 에너지",
-        "minorUnit": "동물과 에너지 관찰 (3)",
-        "typeName": "동물과 에너지 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 동물과 에너지 현상 분석하기)"
-      },
-      {
-        "id": "sc-중2-2-0-4-1",
-        "majorUnit": "1단원-동물과 에너지",
-        "minorUnit": "동물과 에너지 탐구 (4)",
-        "typeName": "동물과 에너지 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 동물과 에너지 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중2-2-0-4-2",
-        "majorUnit": "1단원-동물과 에너지",
-        "minorUnit": "동물과 에너지 탐구 (4)",
-        "typeName": "동물과 에너지 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 동물과 에너지 분류하기)"
-      },
-      {
-        "id": "sc-중2-2-0-4-3",
-        "majorUnit": "1단원-동물과 에너지",
-        "minorUnit": "동물과 에너지 탐구 (4)",
-        "typeName": "동물과 에너지 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 동물과 에너지 분류하기)"
-      },
-      {
-        "id": "sc-중2-2-0-4-4",
-        "majorUnit": "1단원-동물과 에너지",
-        "minorUnit": "동물과 에너지 탐구 (4)",
-        "typeName": "동물과 에너지 모형 만들기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 동물과 에너지 모형 만들기)"
-      },
-      {
-        "id": "sc-중2-2-1-1-1",
-        "majorUnit": "2단원-물질의 특성",
-        "minorUnit": "물질의 특성 탐구 (1)",
-        "typeName": "물질의 특성 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 특성 특징 비교하기)"
-      },
-      {
-        "id": "sc-중2-2-1-1-2",
-        "majorUnit": "2단원-물질의 특성",
-        "minorUnit": "물질의 특성 탐구 (1)",
-        "typeName": "물질의 특성 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 특성 분류하기)"
-      },
-      {
-        "id": "sc-중2-2-1-1-3",
-        "majorUnit": "2단원-물질의 특성",
-        "minorUnit": "물질의 특성 탐구 (1)",
-        "typeName": "물질의 특성 현상 분석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 특성 현상 분석하기)"
-      },
-      {
-        "id": "sc-중2-2-1-1-4",
-        "majorUnit": "2단원-물질의 특성",
-        "minorUnit": "물질의 특성 탐구 (1)",
-        "typeName": "물질의 특성 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 특성 특징 비교하기)"
-      },
-      {
-        "id": "sc-중2-2-1-1-5",
-        "majorUnit": "2단원-물질의 특성",
-        "minorUnit": "물질의 특성 탐구 (1)",
-        "typeName": "물질의 특성 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 특성 모형 만들기)"
-      },
-      {
-        "id": "sc-중2-2-1-2-1",
-        "majorUnit": "2단원-물질의 특성",
-        "minorUnit": "물질의 특성 탐구 (2)",
-        "typeName": "물질의 특성 현상 분석하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 특성 현상 분석하기)"
-      },
-      {
-        "id": "sc-중2-2-1-2-2",
-        "majorUnit": "2단원-물질의 특성",
-        "minorUnit": "물질의 특성 탐구 (2)",
-        "typeName": "물질의 특성 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 특성 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중2-2-1-2-3",
-        "majorUnit": "2단원-물질의 특성",
-        "minorUnit": "물질의 특성 탐구 (2)",
-        "typeName": "물질의 특성 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 특성 분류하기)"
-      },
-      {
-        "id": "sc-중2-2-2-1-1",
-        "majorUnit": "3단원-수권과 해수의 순환",
-        "minorUnit": "수권과 해수의 순환 변화 이해 (1)",
-        "typeName": "수권과 해수의 순환 특징 비교하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 수권과 해수의 순환 특징 비교하기)"
-      },
-      {
-        "id": "sc-중2-2-2-1-2",
-        "majorUnit": "3단원-수권과 해수의 순환",
-        "minorUnit": "수권과 해수의 순환 변화 이해 (1)",
-        "typeName": "수권과 해수의 순환 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 수권과 해수의 순환 특징 비교하기)"
-      },
-      {
-        "id": "sc-중2-2-2-1-3",
-        "majorUnit": "3단원-수권과 해수의 순환",
-        "minorUnit": "수권과 해수의 순환 변화 이해 (1)",
-        "typeName": "수권과 해수의 순환 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 수권과 해수의 순환 현상 분석하기)"
-      },
-      {
-        "id": "sc-중2-2-2-1-4",
-        "majorUnit": "3단원-수권과 해수의 순환",
-        "minorUnit": "수권과 해수의 순환 변화 이해 (1)",
-        "typeName": "수권과 해수의 순환 특징 비교하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 수권과 해수의 순환 특징 비교하기)"
-      },
-      {
-        "id": "sc-중2-2-2-2-1",
-        "majorUnit": "3단원-수권과 해수의 순환",
-        "minorUnit": "수권과 해수의 순환 변화 이해 (2)",
-        "typeName": "수권과 해수의 순환 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 수권과 해수의 순환 특징 비교하기)"
-      },
-      {
-        "id": "sc-중2-2-2-2-2",
-        "majorUnit": "3단원-수권과 해수의 순환",
-        "minorUnit": "수권과 해수의 순환 변화 이해 (2)",
-        "typeName": "수권과 해수의 순환 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 수권과 해수의 순환 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-중2-2-2-3-1",
-        "majorUnit": "3단원-수권과 해수의 순환",
-        "minorUnit": "수권과 해수의 순환 특성 (3)",
-        "typeName": "수권과 해수의 순환 현상 분석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 수권과 해수의 순환 현상 분석하기)"
-      },
-      {
-        "id": "sc-중2-2-2-3-2",
-        "majorUnit": "3단원-수권과 해수의 순환",
-        "minorUnit": "수권과 해수의 순환 특성 (3)",
-        "typeName": "수권과 해수의 순환 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 수권과 해수의 순환 모형 만들기)"
-      },
-      {
-        "id": "sc-중2-2-2-3-3",
-        "majorUnit": "3단원-수권과 해수의 순환",
-        "minorUnit": "수권과 해수의 순환 특성 (3)",
-        "typeName": "수권과 해수의 순환 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 수권과 해수의 순환 특징 비교하기)"
-      },
-      {
-        "id": "sc-중2-2-3-1-1",
-        "majorUnit": "4단원-열과 우리 생활",
-        "minorUnit": "열과 우리 생활 관찰 (1)",
-        "typeName": "열과 우리 생활 분류하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열과 우리 생활 분류하기)"
-      },
-      {
-        "id": "sc-중2-2-3-1-2",
-        "majorUnit": "4단원-열과 우리 생활",
-        "minorUnit": "열과 우리 생활 관찰 (1)",
-        "typeName": "열과 우리 생활 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열과 우리 생활 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-중2-2-3-1-3",
-        "majorUnit": "4단원-열과 우리 생활",
-        "minorUnit": "열과 우리 생활 관찰 (1)",
-        "typeName": "열과 우리 생활 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열과 우리 생활 모형 만들기)"
-      },
-      {
-        "id": "sc-중2-2-3-2-1",
-        "majorUnit": "4단원-열과 우리 생활",
-        "minorUnit": "열과 우리 생활 관찰 (2)",
-        "typeName": "열과 우리 생활 모형 만들기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열과 우리 생활 모형 만들기)"
-      },
-      {
-        "id": "sc-중2-2-3-2-2",
-        "majorUnit": "4단원-열과 우리 생활",
-        "minorUnit": "열과 우리 생활 관찰 (2)",
-        "typeName": "열과 우리 생활 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열과 우리 생활 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중2-2-3-2-3",
-        "majorUnit": "4단원-열과 우리 생활",
-        "minorUnit": "열과 우리 생활 관찰 (2)",
-        "typeName": "열과 우리 생활 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 열과 우리 생활 실험 결과 해석하기)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자 번호와 이온식을 이용한 입자의 구성 및 이온 결합 화합물의 형성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       }
     ]
   },
@@ -56209,7 +48454,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물리 변화의 정의와 대표 사례)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물리 변화의 정의와 대표 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r3-skill",
@@ -56227,7 +48472,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 실생활 사례에서의 물리 변화와 화학 변화 분류)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실생활 사례에서의 물리 변화와 화학 변화 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r3-adv",
@@ -56245,8 +48491,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 변화 시 보존되는 요소와 변하는 요소의 심층 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 변화 시 보존되는 요소와 변하는 요소의 심층 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r4-basic",
@@ -56265,7 +48510,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 변화의 정의와 대표 사례)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 변화의 정의와 대표 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r4-skill",
@@ -56284,7 +48529,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 철 가루와 황 가루의 혼합 및 화합 실험 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 철 가루와 황 가루의 혼합 및 화합 실험 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r4-adv",
@@ -56303,7 +48548,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 반응식을 통한 질량 및 입자 수 관계의 정량적 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응식을 통한 질량 및 입자 수 관계의 정량적 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r5-basic",
@@ -56322,7 +48567,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학식의 의미와 계수의 위치(숫자 표기) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학식의 의미와 계수의 위치(숫자 표기) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r5-skill",
@@ -56341,7 +48586,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화와 확산 현상의 물리적 특성 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화와 확산 현상의 물리적 특성 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r5-adv",
@@ -56360,7 +48605,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 미지의 물질 X가 포함된 화학 반응식의 계수 맞추기 및 원소 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 미지의 물질 X가 포함된 화학 반응식의 계수 맞추기 및 원소 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r6-basic",
@@ -56378,7 +48623,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 반응 전후 원자의 종류와 개수 보존 법칙)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응 전후 원자의 종류와 개수 보존 법칙 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r6-skill",
@@ -56397,7 +48643,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질의 색깔, 맛, 냄새 변화와 화학적 성질)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 색깔, 맛, 냄새 변화와 화학적 성질 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r6-adv",
@@ -56416,7 +48662,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 반응식의 계수비와 분자 수비, 부피비의 상관관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응식의 계수비와 분자 수비, 부피비의 상관관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r7-basic",
@@ -56435,7 +48681,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 변화 시 원자의 배열 변화 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 변화 시 원자의 배열 변화 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r7-skill",
@@ -56454,7 +48700,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 실험 결과(기체 발생 여부)를 통한 물질 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실험 결과(기체 발생 여부)를 통한 물질 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r7-adv",
@@ -56473,7 +48719,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물질 변화의 미시적 관점(원자/분자 배열) 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질 변화의 미시적 관점(원자/분자 배열) 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r8-basic",
@@ -56492,7 +48738,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 앙금이 생성되는 반응의 대표적인 사례 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 앙금이 생성되는 반응의 대표적인 사례 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r8-skill",
@@ -56510,8 +48756,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 반응 시 변하는 것(분자 배열)과 변하지 않는 것(원자 배열) 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응 시 변하는 것(분자 배열)과 변하지 않는 것(원자 배열) 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r8-adv",
@@ -56530,7 +48775,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 입자 모형을 통한 화학 반응식의 계수비 도출)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모형을 통한 화학 반응식의 계수비 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r9-basic",
@@ -56549,7 +48794,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 반응의 정의와 반응물, 생성물의 개념)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응의 정의와 반응물, 생성물의 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r9-skill",
@@ -56567,8 +48812,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 과산화 수소의 분해 반응식과 촉매(이산화 망가니즈)의 역할 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과산화 수소의 분해 반응식과 촉매(이산화 망가니즈)의 역할 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r10-basic",
@@ -56586,8 +48830,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 연소 반응의 정의와 산소와의 결합 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연소 반응의 정의와 산소와의 결합 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r10-skill",
@@ -56606,7 +48849,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 설탕의 용해와 설탕의 연소(가열) 차이점 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 설탕의 용해와 설탕의 연소(가열) 차이점 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r11-basic",
@@ -56625,7 +48868,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 우리 주변에서 볼 수 있는 화학 변화의 단순 명칭 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 주변에서 볼 수 있는 화학 변화의 단순 명칭 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r11-skill",
@@ -56644,7 +48887,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 염화 수소 생성 반응의 원자 재배열 과정 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 염화 수소 생성 반응의 원자 재배열 과정 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r12-skill",
@@ -56662,7 +48905,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물 전기 분해 반응의 입자 모델과 화학 반응식 매칭)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물 전기 분해 반응의 입자 모델과 화학 반응식 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r13-skill",
@@ -56681,7 +48925,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 앙금 생성 및 기체 발생을 통한 화학 변화 판단)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 앙금 생성 및 기체 발생을 통한 화학 변화 판단 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r14-skill",
@@ -56700,7 +48944,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 반응식에서 화살표와 계수의 의미 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응식에서 화살표와 계수의 의미 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r15-skill",
@@ -56719,7 +48963,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 메테인의 연소 반응식과 환경적 의미 (메테인의 연소 반응식 분석 및 계수 맞추기))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 메테인의 연소 반응식과 환경적 의미 (메테인의 연소 반응식 분석 및 계수 맞추기) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r16-skill",
@@ -56738,7 +48982,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 암모니아 생성 반응의 입자 수 비 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암모니아 생성 반응의 입자 수 비 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r17-skill",
@@ -56757,7 +49001,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 반응식으로 알 수 없는 정보(입자의 크기 등) 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응식으로 알 수 없는 정보(입자의 크기 등) 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r18-basic",
@@ -56775,7 +49019,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 일상생활 속 물리 변화 사례 찾기)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 물리 변화 사례 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r18-skill",
@@ -56794,7 +49039,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 마그네슘 리본의 물리 변화(구부리기) 실험 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마그네슘 리본의 물리 변화(구부리기) 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r18-adv",
@@ -56813,7 +49058,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 제철 과정(용광로)의 문장 정보를 화학 반응식으로 변환)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 제철 과정(용광로)의 문장 정보를 화학 반응식으로 변환 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r19-basic",
@@ -56832,7 +49077,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 일상생활 속 화학 변화 사례 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 화학 변화 사례 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r19-skill",
@@ -56850,8 +49095,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 마그네슘 리본의 화학 변화(태우기) 실험 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마그네슘 리본의 화학 변화(태우기) 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r19-adv",
@@ -56870,7 +49114,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 여러 가지 복합 화학 반응의 계수 합(a+b+c) 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 가지 복합 화학 반응의 계수 합(a+b+c) 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r20-basic",
@@ -56889,7 +49133,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 상태 변화와 물리 변화의 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화와 물리 변화의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r20-skill",
@@ -56908,7 +49152,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분자 모형을 통한 물리 변화(기화) 과정 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자 모형을 통한 물리 변화(기화) 과정 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r20-adv",
@@ -56926,8 +49170,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 잘못된 화학 반응식의 오류 찾기 및 수정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 잘못된 화학 반응식의 오류 찾기 및 수정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r21-basic",
@@ -56946,7 +49189,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학식의 기본 표기법 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학식의 기본 표기법 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r21-skill",
@@ -56965,7 +49208,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자 배열의 변화와 새로운 분자 생성의 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자 배열의 변화와 새로운 분자 생성의 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r21-adv",
@@ -56984,7 +49227,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 베이킹파우더의 열분해와 기체 생성 원리 논술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 베이킹파우더의 열분해와 기체 생성 원리 논술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r22-skill",
@@ -57002,7 +49245,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 암모니아 생성 반응의 모형과 반응식 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암모니아 생성 반응의 모형과 반응식 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r23-skill",
@@ -57021,7 +49264,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 혼합물(질소+수소)과 화합물(암모니아)의 차이)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혼합물(질소+수소)과 화합물(암모니아)의 차이 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r24-skill",
@@ -57040,7 +49283,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 물리 변화와 화학 변화의 차이를 입자 관점에서 설명하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물리 변화와 화학 변화의 차이를 입자 관점에서 설명하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r28-basic",
@@ -57059,7 +49302,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체 발생 시 뚜껑을 열었을 때의 질량 변화 현상)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 발생 시 뚜껑을 열었을 때의 질량 변화 현상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r28-skill",
@@ -57078,7 +49321,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 과산화 수소 분해 반응에서의 질량 보존 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과산화 수소 분해 반응에서의 질량 보존 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r28-adv",
@@ -57097,7 +49340,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 성분 원소의 상대적 질량비를 이용한 분자식 및 화학식 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성분 원소의 상대적 질량비를 이용한 분자식 및 화학식 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r29-basic",
@@ -57116,7 +49359,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 금속 가열 시 산소와의 결합에 따른 질량 변화 기초)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 금속 가열 시 산소와의 결합에 따른 질량 변화 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r29-skill",
@@ -57134,7 +49377,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 산화 구리(II) 생성 시 반응물의 질량 변화와 생성량의 관계)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 산화 구리(II) 생성 시 반응물의 질량 변화와 생성량의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r29-adv",
@@ -57153,7 +49397,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 그래프 분석을 통한 특정 질량의 생성물 생성 시 필요한 반응물 역산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 그래프 분석을 통한 특정 질량의 생성물 생성 시 필요한 반응물 역산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r30-basic",
@@ -57171,7 +49415,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 간단한 분자 모형에서 원자의 종류와 개수 확인)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 간단한 분자 모형에서 원자의 종류와 개수 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r30-skill",
@@ -57190,7 +49435,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 반응 전후 원자의 종류와 개수 불변을 이용한 미지의 질량 구하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 반응 전후 원자의 종류와 개수 불변을 이용한 미지의 질량 구하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r30-adv",
@@ -57209,7 +49454,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 밀폐 용기와 열린 용기에서의 기체 발생 반응 질량 변화 논리 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밀폐 용기와 열린 용기에서의 기체 발생 반응 질량 변화 논리 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r31-basic",
@@ -57228,7 +49473,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체 발생 반응에서 닫힌 용기일 때 질량이 보존됨을 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 발생 반응에서 닫힌 용기일 때 질량이 보존됨을 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r31-skill",
@@ -57247,7 +49492,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 금속 연소 시 결합하는 산소의 질량을 그래프에서 찾아내기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 금속 연소 시 결합하는 산소의 질량을 그래프에서 찾아내기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r31-adv",
@@ -57266,7 +49511,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 반응물 중 하나가 남는 경우의 일정 성분비 법칙 적용 및 남은 양 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 반응물 중 하나가 남는 경우의 일정 성분비 법칙 적용 및 남은 양 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r32-basic",
@@ -57284,7 +49529,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화합물 내 성분 원소의 질량비가 항상 일정함을 암기 및 확인)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화합물 내 성분 원소의 질량비가 항상 일정함을 암기 및 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r32-skill",
@@ -57302,8 +49548,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화합물 생성 시 성분 원소 간 일정한 질량비가 성립하는 이유 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화합물 생성 시 성분 원소 간 일정한 질량비가 성립하는 이유 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r32-adv",
@@ -57322,7 +49567,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 여러 가지 화합물(산화 구리, 산화 마그네슘 등)의 질량비 비교 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 가지 화합물(산화 구리, 산화 마그네슘 등)의 질량비 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r33-basic",
@@ -57341,7 +49586,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 볼트(B)와 너트(N) 모형에서 화합물의 화학식(BN₂등) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 볼트(B)와 너트(N) 모형에서 화합물의 화학식(BN₂등) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r33-skill",
@@ -57360,7 +49605,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 볼트와 너트를 이용한 화합물 모형에서 일정 성분비 법칙 도출)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 볼트와 너트를 이용한 화합물 모형에서 일정 성분비 법칙 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r33-adv",
@@ -57379,7 +49624,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화합물 모델(볼트와 너트)을 이용한 두 법칙의 통합 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화합물 모델(볼트와 너트)을 이용한 두 법칙의 통합 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r34-basic",
@@ -57398,7 +49643,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 질량 보존 법칙의 정의와 성립 범위(물리/화학 변화))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량 보존 법칙의 정의와 성립 범위(물리/화학 변화) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r34-skill",
@@ -57417,7 +49662,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 수소와 산소가 반응하여 수증기가 될 때의 질량비(1:8) 관계 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수소와 산소가 반응하여 수증기가 될 때의 질량비(1:8) 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r35-basic",
@@ -57435,7 +49680,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 앙금 생성 반응에서의 질량 보존 기초 개념)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 앙금 생성 반응에서의 질량 보존 기초 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r35-skill",
@@ -57454,7 +49700,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 원자 모형의 개수 변화를 통해 반응물과 생성물의 질량 관계 유추)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자 모형의 개수 변화를 통해 반응물과 생성물의 질량 관계 유추 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r36-basic",
@@ -57472,7 +49718,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 일정 성분비 법칙의 정의와 성립 조건)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일정 성분비 법칙의 정의와 성립 조건 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r36-skill",
@@ -57491,7 +49738,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체 발생 반응(탄산 칼슘+염산)의 용기 조건별 질량 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 발생 반응(탄산 칼슘+염산)의 용기 조건별 질량 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r37-skill",
@@ -57510,7 +49757,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 금속의 연소 반응(강철솜, 마그네슘) 시 질량 증가 원인 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 금속의 연소 반응(강철솜, 마그네슘) 시 질량 증가 원인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r38-skill",
@@ -57529,7 +49776,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 앙금 생성 반응(염화 나트륨+질산 은)의 질량 보존 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 앙금 생성 반응(염화 나트륨+질산 은)의 질량 보존 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r39-skill",
@@ -57547,7 +49794,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 반응 시 질량이 보존되는 근본적 이유(원자 수준) 설명)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응 시 질량이 보존되는 근본적 이유(원자 수준) 설명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r40-skill",
@@ -57565,7 +49812,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화합물과 혼합물(암모니아수 등)의 일정 성분비 법칙 성립 여부 판별)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화합물과 혼합물(암모니아수 등)의 일정 성분비 법칙 성립 여부 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r41-skill",
@@ -57584,7 +49832,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 구리와 산소의 반응 그래프를 이용한 화합물 내 질량비 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 구리와 산소의 반응 그래프를 이용한 화합물 내 질량비 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r42-skill",
@@ -57603,7 +49851,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 마그네슘과 산소의 반응 데이터를 이용한 질량비 도출)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마그네슘과 산소의 반응 데이터를 이용한 질량비 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r43-basic",
@@ -57622,7 +49870,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 일정 성분비 법칙이 성립하는 반응 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일정 성분비 법칙이 성립하는 반응 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r43-skill",
@@ -57641,7 +49889,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 탄산 칼슘과 묽은 염산 반응의 질량 측정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 탄산 칼슘과 묽은 염산 반응의 질량 측정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r43-adv",
@@ -57660,7 +49908,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 수소와 산소의 반응을 이용한 물 162g 생성 시 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수소와 산소의 반응을 이용한 물 162g 생성 시 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r44-basic",
@@ -57679,7 +49927,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화합물과 혼합물의 질량비 특징 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화합물과 혼합물의 질량비 특징 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r44-skill",
@@ -57698,7 +49946,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 열린 용기에서의 질량 감소 원인 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열린 용기에서의 질량 감소 원인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r44-adv",
@@ -57717,7 +49965,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 두 종류의 화합물(A, B) 질량 관계 비교 및 화학식 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 종류의 화합물(A, B) 질량 관계 비교 및 화학식 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r45-basic",
@@ -57736,7 +49984,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 분자 모형을 통한 질량 보존 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자 모형을 통한 질량 보존 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r45-skill",
@@ -57755,7 +50003,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 일정 성분비 법칙을 이용한 남는 반응물 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일정 성분비 법칙을 이용한 남는 반응물 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r45-adv",
@@ -57773,8 +50021,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 금속 가루 연소 시 질량이 일정해지는 구간의 의미 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 금속 가루 연소 시 질량이 일정해지는 구간의 의미 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r53-basic",
@@ -57793,7 +50040,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체 반응 법칙의 정의와 성립 조건(온도, 압력))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 반응 법칙의 정의와 성립 조건(온도, 압력) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r53-skill",
@@ -57812,7 +50059,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 같은 온도와 압력에서 같은 부피 속 기체의 분자 수 관계 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 같은 온도와 압력에서 같은 부피 속 기체의 분자 수 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r53-adv",
@@ -57831,7 +50078,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체 반응 법칙과 아보가드로 법칙의 통합적 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 반응 법칙과 아보가드로 법칙의 통합적 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r54-basic",
@@ -57849,8 +50096,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체 분자 모형을 보고 반응물과 생성물 구분하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 분자 모형을 보고 반응물과 생성물 구분하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r54-skill",
@@ -57869,7 +50115,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 질소 산화물 생성 반응에서의 부피 관계와 화학 반응식 도출)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질소 산화물 생성 반응에서의 부피 관계와 화학 반응식 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r54-adv",
@@ -57887,7 +50133,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 입자 모형의 모순점(원자가 쪼개지는 현상)과 분자설의 필요성)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모형의 모순점(원자가 쪼개지는 현상)과 분자설의 필요성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r55-basic",
@@ -57905,8 +50151,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체 반응 법칙이 성립하는 물질의 상태(기체) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 반응 법칙이 성립하는 물질의 상태(기체) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r55-skill",
@@ -57924,8 +50169,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 특정 부피의 기체를 얻기 위해 필요한 반응 기체의 최소 부피 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 부피의 기체를 얻기 위해 필요한 반응 기체의 최소 부피 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r55-adv",
@@ -57944,7 +50188,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 반응에서 방출 또는 흡수되는 에너지를 실생활 열에너지 활용과 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응에서 방출 또는 흡수되는 에너지를 실생활 열에너지 활용과 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r56-basic",
@@ -57963,7 +50207,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 발열 반응과 흡열 반응의 기본 개념 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 발열 반응과 흡열 반응의 기본 개념 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r56-skill",
@@ -57982,7 +50226,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 일상생활 속 발열 반응과 흡열 반응의 적절한 활용 사례 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 발열 반응과 흡열 반응의 적절한 활용 사례 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r56-adv",
@@ -58001,7 +50245,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 반응 전후 기체 부피 관계를 통한 남는 기체 종류와 양 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 반응 전후 기체 부피 관계를 통한 남는 기체 종류와 양 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r57-basic",
@@ -58020,7 +50264,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체 분자 모형에서 각 기체의 부피 칸 수 세기 기초)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 분자 모형에서 각 기체의 부피 칸 수 세기 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r57-skill",
@@ -58039,7 +50283,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 탄산수소 나트륨의 열분해 및 광합성 반응의 에너지 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 탄산수소 나트륨의 열분해 및 광합성 반응의 에너지 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r57-adv",
@@ -58057,8 +50301,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 반응식의 계수비와 기체의 부피비 및 분자 수 비의 상관관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응식의 계수비와 기체의 부피비 및 분자 수 비의 상관관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r58-basic",
@@ -58076,7 +50319,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 반응에서 에너지를 활용하는 예시(연료 등) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응에서 에너지를 활용하는 예시(연료 등) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r58-skill",
@@ -58094,7 +50337,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체 반응 시 원자의 종류와 개수가 보존되는 법칙 확인)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 반응 시 원자의 종류와 개수가 보존되는 법칙 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r58-adv",
@@ -58113,7 +50357,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 수산화 바륨과 염화 암모늄 반응의 에너지 흡수 및 주변 온도 변화 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수산화 바륨과 염화 암모늄 반응의 에너지 흡수 및 주변 온도 변화 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r59-basic",
@@ -58132,7 +50376,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 발열 반응의 기초 정의와 대표적 사례(연소 등))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 발열 반응의 기초 정의와 대표적 사례(연소 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r59-skill",
@@ -58150,8 +50394,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 질소와 수소가 반응하여 암모니아가 될 때의 부피비(1:3:2) 적용)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질소와 수소가 반응하여 암모니아가 될 때의 부피비(1:3:2) 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r60-basic",
@@ -58169,7 +50412,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 흡열 반응의 기초 정의와 대표적 사례(분해 등))"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 흡열 반응의 기초 정의와 대표적 사례(분해 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r60-skill",
@@ -58188,7 +50432,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 반응식의 계수를 통해 기체 상태 물질의 부피비 예측하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응식의 계수를 통해 기체 상태 물질의 부피비 예측하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r61-basic",
@@ -58206,7 +50450,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체 반응 시 부피비가 정수비로 나타나는 현상 확인)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 반응 시 부피비가 정수비로 나타나는 현상 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r61-skill",
@@ -58224,7 +50469,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 질소와 수소가 반응하여 암모니아가 될 때의 부피비(1:3:2) 적용)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질소와 수소가 반응하여 암모니아가 될 때의 부피비(1:3:2) 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r62-skill",
@@ -58242,7 +50488,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 아보가드로 법칙에 따른 같은 부피 속 분자 수 관계 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 아보가드로 법칙에 따른 같은 부피 속 분자 수 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r63-skill",
@@ -58260,8 +50506,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 산화 칼슘과 물의 반응을 이용한 음식 데우기 원리 설명)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 산화 칼슘과 물의 반응을 이용한 음식 데우기 원리 설명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r64-skill",
@@ -58280,7 +50525,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 수소와 산소의 반응 부피비(2:1:2)를 이용한 수증기 생성량 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수소와 산소의 반응 부피비(2:1:2)를 이용한 수증기 생성량 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r65-skill",
@@ -58299,7 +50544,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 금속과 산소의 반응(철 가루 손난로) 시 온도 상승 원인 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 금속과 산소의 반응(철 가루 손난로) 시 온도 상승 원인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r66-skill",
@@ -58317,8 +50562,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 질산 암모늄과 물의 반응을 이용한 냉질찜 팩의 원리 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질산 암모늄과 물의 반응을 이용한 냉질찜 팩의 원리 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r67-skill",
@@ -58337,7 +50581,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 반응물과 생성물의 에너지 차이에 따른 주변 환경 변화 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 반응물과 생성물의 에너지 차이에 따른 주변 환경 변화 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r68-basic",
@@ -58355,8 +50599,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체 반응에서 계수비와 부피비의 관계 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 반응에서 계수비와 부피비의 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r68-skill",
@@ -58375,7 +50618,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 수증기 생성 반응의 분자 모형과 부피비 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수증기 생성 반응의 분자 모형과 부피비 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r68-adv",
@@ -58394,7 +50637,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 미지의 기체 화합물 생성 시 반응물과 생성물의 부피비 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 미지의 기체 화합물 생성 시 반응물과 생성물의 부피비 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r69-basic",
@@ -58412,8 +50655,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 화학 반응에서 에너지 출입이 일어나는 이유)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응에서 에너지 출입이 일어나는 이유 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r69-skill",
@@ -58431,7 +50673,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 암모니아 생성 반응의 분자 모형과 부피비 해석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암모니아 생성 반응의 분자 모형과 부피비 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r69-adv",
@@ -58450,7 +50693,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 질산 암모늄과 물의 반응을 이용한 간이 냉장고 원리 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질산 암모늄과 물의 반응을 이용한 간이 냉장고 원리 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r70-basic",
@@ -58469,7 +50712,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 실생활 속 열에너지 활용 사례 (손난로, 냉찜질팩 등))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실생활 속 열에너지 활용 사례 (손난로, 냉찜질팩 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r70-skill",
@@ -58487,7 +50730,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 염화 수소 생성 반응에서의 부피 관계 도출)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 염화 수소 생성 반응에서의 부피 관계 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r70-adv",
@@ -58505,7 +50749,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 입자 모형을 보고 반응 전후의 분자 수 변화와 부피비 연결)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모형을 보고 반응 전후의 분자 수 변화와 부피비 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r71-skill",
@@ -58524,7 +50769,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체 반응 법칙이 고체나 액체에서 성립하지 않는 까닭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 반응 법칙이 고체나 액체에서 성립하지 않는 까닭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s0-r72-skill",
@@ -58543,7 +50788,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 발열 반응과 흡열 반응을 입자의 에너지 수준으로 설명하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 발열 반응과 흡열 반응을 입자의 에너지 수준으로 설명하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r3-basic",
@@ -58562,7 +50807,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 대류권에서 기상 현상이 나타나는 이유 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대류권에서 기상 현상이 나타나는 이유 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r3-skill",
@@ -58580,7 +50825,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 높이에 따른 기온 변화 그래프에서 오존층의 역할 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 높이에 따른 기온 변화 그래프에서 오존층의 역할 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r3-adv",
@@ -58599,7 +50845,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구 온난화가 지구 전체 에너지 균형에 미치는 영향 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 온난화가 지구 전체 에너지 균형에 미치는 영향 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r4-basic",
@@ -58618,7 +50864,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 온실 효과를 일으키는 주요 기체 명칭 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온실 효과를 일으키는 주요 기체 명칭 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r4-skill",
@@ -58637,7 +50883,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구 복사 평형 실험에서 전등과의 거리에 따른 평형 온도 변화)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 복사 평형 실험에서 전등과의 거리에 따른 평형 온도 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r4-adv",
@@ -58655,7 +50901,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기권의 층상 구조 형성과 복사 에너지의 상관관계 추론)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기권의 층상 구조 형성과 복사 에너지의 상관관계 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r5-basic",
@@ -58674,7 +50921,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구 온난화의 정의와 주요 현상(기온 상승 등))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 온난화의 정의와 주요 현상(기온 상승 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r5-skill",
@@ -58693,7 +50940,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 복사 에너지의 정의와 물체의 온도에 따른 방출 특성 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복사 에너지의 정의와 물체의 온도에 따른 방출 특성 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r5-adv",
@@ -58712,7 +50959,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 복사 평형 실험 그래프에서의 시간에 따른 온도 변화 정밀 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복사 평형 실험 그래프에서의 시간에 따른 온도 변화 정밀 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r6-basic",
@@ -58731,7 +50978,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 복사 에너지의 정의와 물체가 에너지를 내보내는 방식 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복사 에너지의 정의와 물체가 에너지를 내보내는 방식 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r6-skill",
@@ -58750,7 +50997,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 오존층의 위치와 역할이 기권의 층상 구조 형성에 미치는 영향 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오존층의 위치와 역할이 기권의 층상 구조 형성에 미치는 영향 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r6-adv",
@@ -58769,7 +51016,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구의 위도별 복사 에너지 불균형과 에너지 이동 메커니즘)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구의 위도별 복사 에너지 불균형과 에너지 이동 메커니즘 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r7-basic",
@@ -58788,7 +51035,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기권이 존재할 때 지구 기온이 높게 유지되는 이유(온실 효과))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기권이 존재할 때 지구 기온이 높게 유지되는 이유(온실 효과) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r7-skill",
@@ -58806,8 +51053,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구 온난화의 원인(이산화 탄소 등)과 평균 기온 상승의 상관관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 온난화의 원인(이산화 탄소 등)과 평균 기온 상승의 상관관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r7-adv",
@@ -58825,7 +51071,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 대기 유무에 따른 달과 지구의 복사 평형 상태 비교)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대기 유무에 따른 달과 지구의 복사 평형 상태 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r8-basic",
@@ -58844,7 +51091,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구 복사 에너지의 방출 주체와 에너지 형태 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 복사 에너지의 방출 주체와 에너지 형태 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r8-skill",
@@ -58863,7 +51110,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구 온난화 방지를 위한 실천적 방안 및 국제적 노력)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 온난화 방지를 위한 실천적 방안 및 국제적 노력 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r8-adv",
@@ -58881,7 +51128,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 온실 기체 농도 변화에 따른 지구 복사 평형 온도 상승 원리 서술)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온실 기체 농도 변화에 따른 지구 복사 평형 온도 상승 원리 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r9-basic",
@@ -58900,7 +51148,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기권의 정의와 높이에 따른 4층 구조 명칭 익히기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기권의 정의와 높이에 따른 4층 구조 명칭 익히기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r9-skill",
@@ -58919,7 +51167,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기권의 각 층(대류권~외권)별 물리적 특징 및 기온 변화 이유)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기권의 각 층(대류권~외권)별 물리적 특징 및 기온 변화 이유 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r10-basic",
@@ -58938,7 +51186,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 복사 평형의 정의와 에너지 출입 관계 기초)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복사 평형의 정의와 에너지 출입 관계 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r10-skill",
@@ -58957,7 +51205,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 전등과 검은색 알루미늄 컵 실험의 장치별 역할 및 변인 통제)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전등과 검은색 알루미늄 컵 실험의 장치별 역할 및 변인 통제 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r11-basic",
@@ -58976,7 +51224,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 오존층의 위치와 자외선 차단 역할 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오존층의 위치와 자외선 차단 역할 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r11-skill",
@@ -58995,7 +51243,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구 복사 평형 수치(100:70:70) 데이터 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 복사 평형 수치(100:70:70) 데이터 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r12-skill",
@@ -59014,7 +51262,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지구 온난화로 인한 해수면 상승 및 빙하 면적 변화 추이 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 온난화로 인한 해수면 상승 및 빙하 면적 변화 추이 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r13-skill",
@@ -59033,7 +51281,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 대기 대순환과 해류를 통한 위도별 에너지 수송 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대기 대순환과 해류를 통한 위도별 에너지 수송 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r14-skill",
@@ -59052,7 +51300,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 복사 평형 도달 전과 도달 후의 흡수/방출 에너지 양 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복사 평형 도달 전과 도달 후의 흡수/방출 에너지 양 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r15-skill",
@@ -59070,8 +51318,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 중간권과 대류권의 공통점(대류 현상) 및 차이점(기상 현상) 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 중간권과 대류권의 공통점(대류 현상) 및 차이점(기상 현상) 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r16-skill",
@@ -59090,7 +51337,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 성층권과 열권의 기온 상승 원인(태양 에너지 흡수 등) 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성층권과 열권의 기온 상승 원인(태양 에너지 흡수 등) 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r17-skill",
@@ -59108,8 +51355,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 온실 기체의 종류와 각 기체가 온난화에 기여하는 특성)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온실 기체의 종류와 각 기체가 온난화에 기여하는 특성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r18-basic",
@@ -59128,7 +51374,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 높이에 따른 기온 분포를 기준으로 한 기권 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 높이에 따른 기온 분포를 기준으로 한 기권 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r18-skill",
@@ -59147,7 +51393,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기권의 각 층 중 대류가 일어나는 층(대류권, 중간권) 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기권의 각 층 중 대류가 일어나는 층(대류권, 중간권) 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r18-adv",
@@ -59165,7 +51411,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기권의 안정한 층(B)과 불안정한 층(A, C)의 대류 특성 비교)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기권의 안정한 층(B)과 불안정한 층(A, C)의 대류 특성 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r19-basic",
@@ -59183,7 +51430,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 대류권(A층)의 정의와 특징 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대류권(A층)의 정의와 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r19-skill",
@@ -59202,7 +51450,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 달과 지구의 복사 평형 차이 비교 (대기 유무))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 달과 지구의 복사 평형 차이 비교 (대기 유무) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r19-adv",
@@ -59221,7 +51469,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 대기가 있는 지구 모형(유리판 설치)에서의 온실 효과 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대기가 있는 지구 모형(유리판 설치)에서의 온실 효과 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r20-basic",
@@ -59239,7 +51487,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 성층권(B층)의 정의와 특징 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성층권(B층)의 정의와 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r20-skill",
@@ -59257,8 +51506,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 열권에서 밤낮의 기온 차가 매우 큰 이유 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열권에서 밤낮의 기온 차가 매우 큰 이유 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r20-adv",
@@ -59277,7 +51525,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 온실 기체 증가에 따른 지구 복사 에너지 방출량(E)의 변화 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온실 기체 증가에 따른 지구 복사 에너지 방출량(E)의 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r28-basic",
@@ -59296,7 +51544,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 이슬, 안개, 구름의 공통점과 차이점 기초 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이슬, 안개, 구름의 공통점과 차이점 기초 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r28-skill",
@@ -59314,8 +51562,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지표의 부등 가열 및 산 사면을 타고 오르는 공기의 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지표의 부등 가열 및 산 사면을 타고 오르는 공기의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r28-adv",
@@ -59334,7 +51581,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 포화 수증기량 곡선 해석을 통한 냉각 시 이슬점과 응결량 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 포화 수증기량 곡선 해석을 통한 냉각 시 이슬점과 응결량 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r29-basic",
@@ -59353,7 +51600,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 포화 수증기량과 이슬점의 정의)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 포화 수증기량과 이슬점의 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r29-skill",
@@ -59372,7 +51619,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 저위도와 중위도 지역의 강수 과정 차이점 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 저위도와 중위도 지역의 강수 과정 차이점 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r29-adv",
@@ -59391,7 +51638,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기온 변화에 따른 상대 습도와 이슬점의 상관관계 역학 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기온 변화에 따른 상대 습도와 이슬점의 상관관계 역학 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r30-basic",
@@ -59409,7 +51656,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 상대 습도의 정의와 단위 확인)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상대 습도의 정의와 단위 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r30-skill",
@@ -59428,7 +51676,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 중위도 및 고위도 지역의 강수 과정(빙정설)과 눈/비의 형성)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 중위도 및 고위도 지역의 강수 과정(빙정설)과 눈/비의 형성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r30-adv",
@@ -59447,7 +51695,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 단열 팽창 원리를 이용한 구름 생성 과정의 단계적 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단열 팽창 원리를 이용한 구름 생성 과정의 단계적 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r31-basic",
@@ -59465,7 +51713,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 단열 변화(단열 팽창/단열 압축)의 기초 개념)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단열 변화(단열 팽창/단열 압축)의 기초 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r31-skill",
@@ -59483,7 +51732,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 온도 변화가 없을 때 수증기 공급에 의한 포화 상태 도달 과정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도 변화가 없을 때 수증기 공급에 의한 포화 상태 도달 과정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r31-adv",
@@ -59502,7 +51751,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 위도에 따른 강수 이론(병합설 vs 빙정설)의 구체적 과정 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 위도에 따른 강수 이론(병합설 vs 빙정설)의 구체적 과정 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r32-basic",
@@ -59521,7 +51770,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 구름의 생성 위치와 구성 물질(물방울/빙정) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 구름의 생성 위치와 구성 물질(물방울/빙정) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r32-skill",
@@ -59539,7 +51788,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 포화 상태, 불포화 상태, 과포화 상태의 구분 및 상태 변화)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 포화 상태, 불포화 상태, 과포화 상태의 구분 및 상태 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r32-adv",
@@ -59557,8 +51807,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 공기의 상승 조건에 따른 구름의 모양(적운형/층운형) 결정 요인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 공기의 상승 조건에 따른 구름의 모양(적운형/층운형) 결정 요인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r33-basic",
@@ -59576,8 +51825,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 강수 이론 중 '병합설'의 기초 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 강수 이론 중 '병합설'의 기초 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r33-skill",
@@ -59596,7 +51844,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기온과 포화 수증기량의 비례 관계 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기온과 포화 수증기량의 비례 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r33-adv",
@@ -59615,7 +51863,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 실내외 환경 변화에 따른 이슬 맺힘 현상의 논리적 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실내외 환경 변화에 따른 이슬 맺힘 현상의 논리적 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r34-basic",
@@ -59634,7 +51882,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 강수 이론 중 '빙정설'의 기초 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 강수 이론 중 '빙정설'의 기초 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r34-skill",
@@ -59653,7 +51901,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 현재 수증기량과 이슬점의 관계 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 현재 수증기량과 이슬점의 관계 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r35-basic",
@@ -59672,7 +51920,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기온이 높을수록 포화 수증기량이 많아지는 현상 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기온이 높을수록 포화 수증기량이 많아지는 현상 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r35-skill",
@@ -59691,7 +51939,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 상대 습도 공식에 따른 온도별 습도 변화 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상대 습도 공식에 따른 온도별 습도 변화 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r36-basic",
@@ -59709,8 +51957,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 하루 중 습도가 가장 낮은 시간대와 그 이유)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 하루 중 습도가 가장 낮은 시간대와 그 이유 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r36-skill",
@@ -59729,7 +51976,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 맑은 날 하루 동안의 기온, 상대 습도, 이슬점 변화 그래프 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 맑은 날 하루 동안의 기온, 상대 습도, 이슬점 변화 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r37-skill",
@@ -59748,7 +51995,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 구름 발생 장치 실험(펌프질)을 통한 기온과 압력의 변화 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 구름 발생 장치 실험(펌프질)을 통한 기온과 압력의 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r38-skill",
@@ -59766,8 +52013,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 수증기 응결을 돕는 응결핵의 역할과 사례)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수증기 응결을 돕는 응결핵의 역할과 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r39-skill",
@@ -59786,7 +52032,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 적운형 구름과 층운형 구름의 특징 비교(상승 기류 세기))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 적운형 구름과 층운형 구름의 특징 비교(상승 기류 세기) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r40-skill",
@@ -59805,7 +52051,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 공기가 상승하여 구름이 만들어지는 다양한 사례 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 공기가 상승하여 구름이 만들어지는 다양한 사례 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r41-skill",
@@ -59824,7 +52070,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 특정 기온에서 공기 1kg에 들어 있는 수증기량 산출)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 기온에서 공기 1kg에 들어 있는 수증기량 산출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r42-skill",
@@ -59843,7 +52089,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 냉장고에서 꺼낸 음료수 병 표면의 변화 원인 설명)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 냉장고에서 꺼낸 음료수 병 표면의 변화 원인 설명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r43-basic",
@@ -59861,8 +52107,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 증발과 응결의 정의 및 사례 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증발과 응결의 정의 및 사례 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r43-skill",
@@ -59881,7 +52126,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 포화 수증기량 곡선 그래프 해석 (A~E점 비교))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 포화 수증기량 곡선 그래프 해석 (A~E점 비교) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r43-adv",
@@ -59900,7 +52145,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 포화 수증기량 곡선을 이용한 공기 혼합 시 응결 여부 판단)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 포화 수증기량 곡선을 이용한 공기 혼합 시 응결 여부 판단 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r44-basic",
@@ -59918,7 +52163,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 포화 상태, 불포화 상태, 과포화 상태의 구분)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 포화 상태, 불포화 상태, 과포화 상태의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r44-skill",
@@ -59936,8 +52182,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 특정 온도에서의 냉각에 따른 응결량 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 온도에서의 냉각에 따른 응결량 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r44-adv",
@@ -59955,8 +52200,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 고도에 따른 기온 하강과 이슬점 도달(구름 생성 높이) 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고도에 따른 기온 하강과 이슬점 도달(구름 생성 높이) 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r45-basic",
@@ -59975,7 +52219,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 구름의 생성 과정 순서 나열)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 구름의 생성 과정 순서 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r45-skill",
@@ -59994,7 +52238,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 건습구 습도계를 이용한 실제 습도 읽기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 건습구 습도계를 이용한 실제 습도 읽기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r45-adv",
@@ -60013,7 +52257,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 인공 강수의 원리 및 드라이아이스/요오드화 은의 역할 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 인공 강수의 원리 및 드라이아이스/요오드화 은의 역할 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r46-skill",
@@ -60032,7 +52276,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 병합설이 일어나는 저위도 및 여름철 강수 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 병합설이 일어나는 저위도 및 여름철 강수 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r46-adv",
@@ -60051,7 +52295,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 두 기온 조건에서 응결되는 수증기량의 차이 비교 및 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 기온 조건에서 응결되는 수증기량의 차이 비교 및 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r47-skill",
@@ -60070,7 +52314,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 빙정설에서 수증기 응결과 얼음 알갱이 성장 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빙정설에서 수증기 응결과 얼음 알갱이 성장 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r48-skill",
@@ -60089,7 +52333,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 포화 수증기량 곡선에서 불포화 공기를 포화시키는 방법)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 포화 수증기량 곡선에서 불포화 공기를 포화시키는 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r53-basic",
@@ -60108,7 +52352,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기압의 정의와 측정 단위(hPa) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기압의 정의와 측정 단위(hPa) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r53-skill",
@@ -60127,7 +52371,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 토리첼리 실험 시 유리관 내부가 진공일 때와 아닐 때의 차이점)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 토리첼리 실험 시 유리관 내부가 진공일 때와 아닐 때의 차이점 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r53-adv",
@@ -60146,7 +52390,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 토리첼리 실험에서 수은 기둥 높이 변화 요인 분석(진공, 굵기, 기울기))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 토리첼리 실험에서 수은 기둥 높이 변화 요인 분석(진공, 굵기, 기울기) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r54-basic",
@@ -60165,7 +52409,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 토리첼리 실험의 목적과 수은 사용 이유 기초)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 토리첼리 실험의 목적과 수은 사용 이유 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r54-skill",
@@ -60183,8 +52427,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 고도가 올라감에 따라 기압이 낮아지는 현상과 신체 변화 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고도가 올라감에 따라 기압이 낮아지는 현상과 신체 변화 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r54-adv",
@@ -60203,7 +52446,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 고도 및 장소 변화에 따른 기압 변화의 입자 모델 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고도 및 장소 변화에 따른 기압 변화의 입자 모델 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r55-basic",
@@ -60221,7 +52464,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 높이 올라갈수록 기압이 낮아지는 이유 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 높이 올라갈수록 기압이 낮아지는 이유 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r55-skill",
@@ -60239,8 +52482,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기압의 정의와 모든 방향에서 작용하는 기압의 특징 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기압의 정의와 모든 방향에서 작용하는 기압의 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r55-adv",
@@ -60259,7 +52501,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지표의 부등 가열에 따른 수직 기류와 지표면 기압 형성의 인과 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지표의 부등 가열에 따른 수직 기류와 지표면 기압 형성의 인과 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r56-basic",
@@ -60278,7 +52520,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 바람이 부는 근본적인 원인(기압 차) 인식)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 바람이 부는 근본적인 원인(기압 차) 인식 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r56-skill",
@@ -60297,7 +52539,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 1기압의 다양한 단위 환산(cmHg, hPa, 물 기둥 높이))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 1기압의 다양한 단위 환산(cmHg, hPa, 물 기둥 높이) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r56-adv",
@@ -60316,7 +52558,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 비열 차이를 이용한 육지와 바다의 기온-기압-바람 방향 통합 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비열 차이를 이용한 육지와 바다의 기온-기압-바람 방향 통합 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r57-basic",
@@ -60335,7 +52577,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 바람의 방향(풍향)을 읽는 방법과 표기법)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 바람의 방향(풍향)을 읽는 방법과 표기법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r57-skill",
@@ -60353,8 +52595,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 고무막을 씌운 시험관 실험을 통한 기압의 작용 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고무막을 씌운 시험관 실험을 통한 기압의 작용 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r57-adv",
@@ -60372,7 +52613,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 계절별 대륙과 해양의 기압 배치 및 우리나라 계절풍의 원리 서술)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 계절별 대륙과 해양의 기압 배치 및 우리나라 계절풍의 원리 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r58-basic",
@@ -60391,7 +52633,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 낮에 바다에서 육지로 부는 바람(해풍)의 명칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 낮에 바다에서 육지로 부는 바람(해풍)의 명칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r58-skill",
@@ -60410,7 +52652,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기압 차에 의해 발생하는 바람의 정의와 발생 원인 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기압 차에 의해 발생하는 바람의 정의와 발생 원인 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r58-adv",
@@ -60429,7 +52671,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기압 차에 의한 공기의 이동과 에너지 평형의 관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기압 차에 의한 공기의 이동과 에너지 평형의 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r59-basic",
@@ -60448,7 +52690,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 겨울철 우리나라에 부는 계절풍의 풍향(북서풍) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 겨울철 우리나라에 부는 계절풍의 풍향(북서풍) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r59-skill",
@@ -60467,7 +52709,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 등압선 면에서 기압이 높은 곳과 낮은 곳의 바람 방향 결정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등압선 면에서 기압이 높은 곳과 낮은 곳의 바람 방향 결정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r60-basic",
@@ -60486,7 +52728,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기온이 높은 곳과 낮은 곳의 기압 배치 기초)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기온이 높은 곳과 낮은 곳의 기압 배치 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r60-skill",
@@ -60505,7 +52747,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 모래와 물의 가열 실험(전등 이용)을 통한 기온과 기압 관계 도출)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모래와 물의 가열 실험(전등 이용)을 통한 기온과 기압 관계 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r61-basic",
@@ -60523,7 +52765,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기압의 작용 방향이 모든 방향임을 나타내는 사례 확인)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기압의 작용 방향이 모든 방향임을 나타내는 사례 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r61-skill",
@@ -60542,7 +52785,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 낮과 밤의 온도 차에 따른 해풍과 육풍의 발생 시각과 방향)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 낮과 밤의 온도 차에 따른 해풍과 육풍의 발생 시각과 방향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r62-skill",
@@ -60560,7 +52803,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 여름철과 겨울철 우리나라 주변의 고기압, 저기압 위치 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여름철과 겨울철 우리나라 주변의 고기압, 저기압 위치 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r63-skill",
@@ -60579,7 +52822,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기압 차가 클수록 바람의 세기가 강해지는 원리 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기압 차가 클수록 바람의 세기가 강해지는 원리 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r64-skill",
@@ -60598,7 +52841,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지표면의 온도 차이가 기압 차이를 만드는 단계적 과정 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지표면의 온도 차이가 기압 차이를 만드는 단계적 과정 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r65-skill",
@@ -60617,7 +52860,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 해륙풍과 계절풍의 공통점(비열 차이)과 차이점(주기) 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 해륙풍과 계절풍의 공통점(비열 차이)과 차이점(주기) 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r66-skill",
@@ -60636,7 +52879,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 수은 대신 물이나 다른 액체로 실험할 때의 기둥 높이 예측)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수은 대신 물이나 다른 액체로 실험할 때의 기둥 높이 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r67-skill",
@@ -60655,7 +52898,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 1기압 하에서 기압의 크기를 실생활 사례(빨대 등)와 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 1기압 하에서 기압의 크기를 실생활 사례(빨대 등)와 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r68-basic",
@@ -60674,7 +52917,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 지표면의 가열/냉각에 따른 기온과 기압의 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지표면의 가열/냉각에 따른 기온과 기압의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r68-skill",
@@ -60692,7 +52935,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 수은 기둥 실험에서 유리관의 굵기나 기울기 변화 영향)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수은 기둥 실험에서 유리관의 굵기나 기울기 변화 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r68-adv",
@@ -60711,7 +52955,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 고기압과 저기압 지역에서의 날씨 변화(구름 생성 등) 예측)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고기압과 저기압 지역에서의 날씨 변화(구름 생성 등) 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r69-basic",
@@ -60730,7 +52974,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 해풍과 육풍의 발생 시간대 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 해풍과 육풍의 발생 시간대 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r69-skill",
@@ -60748,8 +52992,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 장소(높이)에 따른 기압 변화와 수은 기둥 높이 예측)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 장소(높이)에 따른 기압 변화와 수은 기둥 높이 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r69-adv",
@@ -60767,7 +53010,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 상층풍과 지상풍의 흐름을 연결한 대류 순환 체계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상층풍과 지상풍의 흐름을 연결한 대류 순환 체계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r70-basic",
@@ -60785,8 +53028,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 계절풍의 정의와 발생 주기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 계절풍의 정의와 발생 주기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r70-skill",
@@ -60805,7 +53047,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 공기 덩어리의 하강(고기압)과 상승(저기압) 원인 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 공기 덩어리의 하강(고기압)과 상승(저기압) 원인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r70-adv",
@@ -60823,7 +53065,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 등압선 분포를 보고 특정 지점의 풍향과 풍속 비교 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등압선 분포를 보고 특정 지점의 풍향과 풍속 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r71-basic",
@@ -60841,8 +53084,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기압 측정 장치의 종류와 용도)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기압 측정 장치의 종류와 용도 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r71-skill",
@@ -60860,7 +53102,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 등압선 그리기 규칙과 기압 수치 판독)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등압선 그리기 규칙과 기압 수치 판독 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r72-skill",
@@ -60879,7 +53122,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 우리나라 겨울철 계절풍의 특징과 풍향(북서풍))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리나라 겨울철 계절풍의 특징과 풍향(북서풍) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r73-skill",
@@ -60898,7 +53141,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 우리나라 여름철 계절풍의 특징과 풍향(남동풍))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리나라 여름철 계절풍의 특징과 풍향(남동풍) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r74-skill",
@@ -60916,7 +53159,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 높이에 따른 기압의 변화 원인 설명)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 높이에 따른 기압의 변화 원인 설명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r78-basic",
@@ -60935,7 +53179,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 우리나라 계절별 대표적인 날씨 특징 연결하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리나라 계절별 대표적인 날씨 특징 연결하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r78-skill",
@@ -60953,8 +53197,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 이동 속도가 빠른 한랭 전선과 느린 온난 전선의 특징 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이동 속도가 빠른 한랭 전선과 느린 온난 전선의 특징 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r78-adv",
@@ -60973,7 +53216,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 온대 저기압 통과 시 관측소의 기온, 기압, 풍향 변화 시계열 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온대 저기압 통과 시 관측소의 기온, 기압, 풍향 변화 시계열 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r79-basic",
@@ -60992,7 +53235,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기단이 이동하면서 하층이 가열되거나 냉각되는 사례 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기단이 이동하면서 하층이 가열되거나 냉각되는 사례 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r79-skill",
@@ -61011,7 +53254,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 겨울철 한파와 폭설을 일으키는 시베리아 기단의 확장 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 겨울철 한파와 폭설을 일으키는 시베리아 기단의 확장 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r79-adv",
@@ -61029,7 +53272,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 한랭 전선과 온난 전선의 수직 단면 구조 및 구름·강수 구역 비교)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 한랭 전선과 온난 전선의 수직 단면 구조 및 구름·강수 구역 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r80-basic",
@@ -61048,7 +53292,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기단의 정의와 기단 성질을 결정하는 요인(발원지))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기단의 정의와 기단 성질을 결정하는 요인(발원지) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r80-skill",
@@ -61067,7 +53311,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 일기도의 등압선 간격과 풍속의 상관관계 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일기도의 등압선 간격과 풍속의 상관관계 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r80-adv",
@@ -61086,7 +53330,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 일기 기호 해석을 통한 특정 지역의 현재 날씨 및 단기 예보 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일기 기호 해석을 통한 특정 지역의 현재 날씨 및 단기 예보 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r81-basic",
@@ -61105,7 +53349,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 전선 종류별 기호(반원, 삼각형) 모양 익히기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전선 종류별 기호(반원, 삼각형) 모양 익히기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r81-skill",
@@ -61124,7 +53368,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 우리나라에 영향을 주는 4대 기단의 명칭과 발생지별 성질(기온, 습도))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리나라에 영향을 주는 4대 기단의 명칭과 발생지별 성질(기온, 습도) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r81-adv",
@@ -61142,8 +53386,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 우리나라 주변 기단의 성질 변화(변질)와 그에 따른 기상 현상 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리나라 주변 기단의 성질 변화(변질)와 그에 따른 기상 현상 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r82-basic",
@@ -61161,7 +53404,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 고기압과 저기압의 정의 및 중심 기압 비교)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고기압과 저기압의 정의 및 중심 기압 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r82-skill",
@@ -61179,8 +53423,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 전선의 정의와 성질이 다른 두 기단이 만날 때의 경계면(전선면) 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전선의 정의와 성질이 다른 두 기단이 만날 때의 경계면(전선면) 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r82-adv",
@@ -61198,7 +53441,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 계절별 일기도의 특징(서고동저, 남고북저 등)과 기압 배치 원리 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 계절별 일기도의 특징(서고동저, 남고북저 등)과 기압 배치 원리 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r83-basic",
@@ -61216,7 +53459,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 일기도의 정의와 일기도에 나타나는 선(등압선)의 의미)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일기도의 정의와 일기도에 나타나는 선(등압선)의 의미 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r83-skill",
@@ -61235,7 +53479,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 세력이 비슷한 두 기단이 맞서 정체 전선(장마 전선)이 형성되는 과정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세력이 비슷한 두 기단이 맞서 정체 전선(장마 전선)이 형성되는 과정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r83-adv",
@@ -61254,7 +53498,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 전선면의 기울기와 공기 상승 속도에 따른 강수 강도 인과 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전선면의 기울기와 공기 상승 속도에 따른 강수 강도 인과 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r84-basic",
@@ -61273,7 +53517,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 전선 통과 후 나타나는 기온의 일반적인 변화 방향)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전선 통과 후 나타나는 기온의 일반적인 변화 방향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r84-skill",
@@ -61292,7 +53536,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 북반구 고기압과 저기압에서의 공기 회전 방향 및 수직 기류 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 북반구 고기압과 저기압에서의 공기 회전 방향 및 수직 기류 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r85-basic",
@@ -61311,7 +53555,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 구름의 종류(적운형, 층운형)와 전선의 관계 기초)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 구름의 종류(적운형, 층운형)와 전선의 관계 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r85-skill",
@@ -61329,7 +53573,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 온대 저기압의 중심을 기준으로 한 전선 배치와 구름의 분포 범위)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온대 저기압의 중심을 기준으로 한 전선 배치와 구름의 분포 범위 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r86-basic",
@@ -61347,8 +53592,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 바람이 기압이 높은 곳에서 낮은 곳으로 분다는 기초 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 바람이 기압이 높은 곳에서 낮은 곳으로 분다는 기초 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r86-skill",
@@ -61366,8 +53610,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 봄·가을철 양쯔강 기단 및 이동성 고기압이 날씨에 미치는 영향)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 봄·가을철 양쯔강 기단 및 이동성 고기압이 날씨에 미치는 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r87-skill",
@@ -61385,8 +53628,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 한여름 무더위와 열대야의 원인이 되는 기단의 특징 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 한여름 무더위와 열대야의 원인이 되는 기단의 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r88-skill",
@@ -61405,7 +53647,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 초여름 오호츠크해 기단의 영향과 장마 전선의 북상 과정)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 초여름 오호츠크해 기단의 영향과 장마 전선의 북상 과정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r89-skill",
@@ -61424,7 +53666,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 저기압 중심에서 날씨가 흐리고 비가 오는 이유를 공기 상승과 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 저기압 중심에서 날씨가 흐리고 비가 오는 이유를 공기 상승과 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r90-skill",
@@ -61442,8 +53684,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 일기 기호의 구성 요소(구름 양, 풍향, 풍속, 기온 등) 판독 능력)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일기 기호의 구성 요소(구름 양, 풍향, 풍속, 기온 등) 판독 능력 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r91-skill",
@@ -61461,7 +53702,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 폐색 전선이 형성되는 과정(한랭 전선이 온난 전선을 앞지를 때) 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 폐색 전선이 형성되는 과정(한랭 전선이 온난 전선을 앞지를 때) 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r92-skill",
@@ -61479,8 +53721,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 편서풍의 영향으로 인한 우리나라 날씨의 이동 방향(서→동) 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 편서풍의 영향으로 인한 우리나라 날씨의 이동 방향(서→동) 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r93-basic",
@@ -61499,7 +53740,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 우리나라에 영향을 주는 4개 기단의 명칭과 성질)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리나라에 영향을 주는 4개 기단의 명칭과 성질 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r93-skill",
@@ -61518,7 +53759,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 전선 통과 전후의 기온, 기압, 풍향 변화 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전선 통과 전후의 기온, 기압, 풍향 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r93-adv",
@@ -61536,7 +53777,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 온대 저기압의 발달 단계에 따른 전선 배치 추론)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온대 저기압의 발달 단계에 따른 전선 배치 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r94-basic",
@@ -61555,7 +53797,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 고기압과 저기압의 중심 기류 방향(북반구))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고기압과 저기압의 중심 기류 방향(북반구) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r94-skill",
@@ -61574,7 +53816,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 이동성 고기압과 정체성 고기압의 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이동성 고기압과 정체성 고기압의 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r94-adv",
@@ -61593,7 +53835,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 기상 위성 영상(가시/적외)을 통한 구름의 높이와 두께 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기상 위성 영상(가시/적외)을 통한 구름의 높이와 두께 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r95-basic",
@@ -61611,8 +53853,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 고기압과 저기압에서의 기본적인 날씨 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고기압과 저기압에서의 기본적인 날씨 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r95-skill",
@@ -61630,8 +53871,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 일기 예보가 작성되는 과정 순서 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일기 예보가 작성되는 과정 순서 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r96-skill",
@@ -61649,7 +53889,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 수조를 이용한 전선 형성 모델 실험 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수조를 이용한 전선 형성 모델 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r97-skill",
@@ -61668,7 +53908,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 전선면에서 구름이 생성되는 원리 설명)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전선면에서 구름이 생성되는 원리 설명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s1-r98-skill",
@@ -61686,7 +53926,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 온대 저기압 통과 시 풍향이 변하는 이유)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온대 저기압 통과 시 풍향이 변하는 이유 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r3-basic",
@@ -61704,7 +53944,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 속력의 정의와 공식(이동 거리 / 걸린 시간))"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 속력의 정의와 공식(이동 거리 / 걸린 시간) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r3-skill",
@@ -61723,7 +53964,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 중력이 작용할 때 물체의 운동 방향과 속력 변화 방향 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 중력이 작용할 때 물체의 운동 방향과 속력 변화 방향 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r3-adv",
@@ -61742,7 +53983,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 시간-속력 그래프의 면적을 이용한 이동 거리 및 평균 속력 정밀 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간-속력 그래프의 면적을 이용한 이동 거리 및 평균 속력 정밀 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r4-basic",
@@ -61761,7 +54002,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 등속 운동의 정의와 대표적인 특징)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등속 운동의 정의와 대표적인 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r4-skill",
@@ -61780,7 +54021,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 종이테이프 타점 분석을 통한 물체의 속력 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 종이테이프 타점 분석을 통한 물체의 속력 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r4-adv",
@@ -61799,7 +54040,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 다중 노출 사진 분석을 통한 물체의 이동 거리 및 속력 변화 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다중 노출 사진 분석을 통한 물체의 이동 거리 및 속력 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r5-basic",
@@ -61818,7 +54059,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 자유 낙하 운동의 정의와 조건(공기 저항 무시))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 운동의 정의와 조건(공기 저항 무시) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r5-skill",
@@ -61837,7 +54078,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 물체의 질량 변화가 자유 낙하 속력 변화에 미치는 영향(진공))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체의 질량 변화가 자유 낙하 속력 변화에 미치는 영향(진공) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r5-adv",
@@ -61855,8 +54096,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 자유 낙하 운동과 등속 운동의 물리량(속력, 힘) 비교 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 운동과 등속 운동의 물리량(속력, 힘) 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r6-basic",
@@ -61875,7 +54115,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 중력 가속도 상수의 의미 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 중력 가속도 상수의 의미 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r6-skill",
@@ -61894,7 +54134,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 시간-속력 그래프에서 등속 운동과 속력이 변하는 운동 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간-속력 그래프에서 등속 운동과 속력이 변하는 운동 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r6-adv",
@@ -61913,7 +54153,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 질량이 다른 두 물체의 자유 낙하 실험 데이터 해석(진공 vs 공기))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량이 다른 두 물체의 자유 낙하 실험 데이터 해석(진공 vs 공기) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r7-basic",
@@ -61931,7 +54171,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 시간-이동 거리 그래프의 기본 형태 그리기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간-이동 거리 그래프의 기본 형태 그리기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r7-skill",
@@ -61950,7 +54190,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 1초마다 속력이 9.8m/s씩 증가하는 규칙을 이용한 나중 속력 구하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 1초마다 속력이 9.8m/s씩 증가하는 규칙을 이용한 나중 속력 구하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r7-adv",
@@ -61968,8 +54208,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 속력이 변하는 운동에서 단위 시간당 속력 변화량(가속도 개념) 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 속력이 변하는 운동에서 단위 시간당 속력 변화량(가속도 개념) 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r8-basic",
@@ -61988,7 +54227,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 시간-속력 그래프의 기본 형태 그리기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간-속력 그래프의 기본 형태 그리기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r8-skill",
@@ -62007,7 +54246,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 평균 속력의 정의를 이용한 전체 이동 구간의 속력 산출)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평균 속력의 정의를 이용한 전체 이동 구간의 속력 산출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r8-adv",
@@ -62025,7 +54264,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 운동 상태에 따른 시간-이동 거리 및 시간-속력 그래프의 상호 변환)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 운동 상태에 따른 시간-이동 거리 및 시간-속력 그래프의 상호 변환 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r9-basic",
@@ -62044,7 +54284,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 등속 운동 시 시간에 따른 이동 거리의 비례 관계 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등속 운동 시 시간에 따른 이동 거리의 비례 관계 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r9-skill",
@@ -62063,7 +54303,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 단위 환산(m/s ↔ km/h)을 포함한 물체의 속력 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단위 환산(m/s ↔ km/h)을 포함한 물체의 속력 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r10-basic",
@@ -62082,7 +54322,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 자유 낙하 운동에서 힘(중력)의 작용 여부 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 운동에서 힘(중력)의 작용 여부 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r10-skill",
@@ -62100,8 +54340,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 시간-이동 거리 그래프에서 기울기의 의미(속력) 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간-이동 거리 그래프에서 기울기의 의미(속력) 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r11-basic",
@@ -62119,8 +54358,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 여러 가지 물체의 속력 읽기 및 크기 비교 기초)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 가지 물체의 속력 읽기 및 크기 비교 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r11-skill",
@@ -62139,7 +54377,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 등속 운동하는 물체의 시간별 위치 변화 데이터 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등속 운동하는 물체의 시간별 위치 변화 데이터 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r12-skill",
@@ -62157,7 +54395,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 자유 낙하 운동 시 시간에 비례하여 증가하는 속력 관계 파악)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 운동 시 시간에 비례하여 증가하는 속력 관계 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r13-skill",
@@ -62175,8 +54414,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 공기 저항이 있을 때 물체의 낙하 운동 특징 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 공기 저항이 있을 때 물체의 낙하 운동 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r14-skill",
@@ -62195,7 +54433,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 쇠구슬과 깃털의 낙하 실험을 통한 중력의 효과 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 쇠구슬과 깃털의 낙하 실험을 통한 중력의 효과 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r15-skill",
@@ -62213,7 +54451,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 자유 낙하 운동의 시간-속력 그래프 면적을 통한 낙하 거리 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 운동의 시간-속력 그래프 면적을 통한 낙하 거리 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r16-skill",
@@ -62231,8 +54469,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 일상생활 속 등속 운동의 사례(에스컬레이터 등) 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 등속 운동의 사례(에스컬레이터 등) 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r17-skill",
@@ -62251,7 +54488,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 다중 노출 사진에서 물체 사이의 간격 변화와 속력의 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다중 노출 사진에서 물체 사이의 간격 변화와 속력의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r18-basic",
@@ -62270,7 +54507,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 물체의 운동 정의 (위치와 시간의 관계))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체의 운동 정의 (위치와 시간의 관계) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r18-skill",
@@ -62289,7 +54526,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 고속도로 구간 단속의 원리와 평균 속력 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고속도로 구간 단속의 원리와 평균 속력 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r18-adv",
@@ -62308,7 +54545,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 구간별로 속력이 변하는 운동의 전체 평균 속력 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 구간별로 속력이 변하는 운동의 전체 평균 속력 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r19-basic",
@@ -62326,7 +54563,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 실생활 속 등속 운동의 사례 찾기)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실생활 속 등속 운동의 사례 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r19-skill",
@@ -62345,7 +54583,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 공기 저항이 낙하 운동(깃털과 구슬)에 미치는 영향 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 공기 저항이 낙하 운동(깃털과 구슬)에 미치는 영향 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r19-adv",
@@ -62364,7 +54602,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 속력이 일정하게 증가/유지/감소하는 복합 그래프 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 속력이 일정하게 증가/유지/감소하는 복합 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r20-basic",
@@ -62383,7 +54621,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 진공과 공기 중에서의 낙하 현상 기초)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진공과 공기 중에서의 낙하 현상 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r20-skill",
@@ -62402,7 +54640,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 질량이 서로 다른 두 물체의 낙하 속력 변화 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량이 서로 다른 두 물체의 낙하 속력 변화 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r21-basic",
@@ -62421,7 +54659,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 시간기록계 테이프의 기본 해석 방법)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간기록계 테이프의 기본 해석 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r21-skill",
@@ -62439,8 +54677,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 진공 중 낙하 시 질량과 도달 시간의 관계 설명)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진공 중 낙하 시 질량과 도달 시간의 관계 설명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r28-basic",
@@ -62458,7 +54695,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 우리 주변에서 일과 에너지가 전환되는 단순 사례 찾기)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 주변에서 일과 에너지가 전환되는 단순 사례 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r28-skill",
@@ -62477,7 +54715,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 일의 양이 주어진 경우 작용한 힘의 크기 역산하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일의 양이 주어진 경우 작용한 힘의 크기 역산하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r28-adv",
@@ -62496,7 +54734,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 수평 이동과 수직 이동이 복합된 상황에서의 총 일의 양 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수평 이동과 수직 이동이 복합된 상황에서의 총 일의 양 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r29-basic",
@@ -62515,7 +54753,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 과학에서의 일의 정의와 단위(J) 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학에서의 일의 정의와 단위(J) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r29-skill",
@@ -62533,7 +54771,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 실험 장치(자, 나무 도막)를 활용한 위치 에너지 측정 원리 이해)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실험 장치(자, 나무 도막)를 활용한 위치 에너지 측정 원리 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r29-adv",
@@ -62552,7 +54791,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 일-에너지 정리를 이용한 물체의 나중 속력 및 에너지 변화 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일-에너지 정리를 이용한 물체의 나중 속력 및 에너지 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r30-basic",
@@ -62571,7 +54810,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 일의 양이 0이 되는 세 가지 경우(힘, 이동 거리, 방향) 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일의 양이 0이 되는 세 가지 경우(힘, 이동 거리, 방향) 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r30-skill",
@@ -62590,7 +54829,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 마찰력이 있는 수평면에서 물체를 끌 때 작용한 힘과 일의 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마찰력이 있는 수평면에서 물체를 끌 때 작용한 힘과 일의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r30-adv",
@@ -62609,7 +54848,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 위치 에너지가 일로 전환되는 과정(말뚝 박기 실험)의 정량 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 위치 에너지가 일로 전환되는 과정(말뚝 박기 실험)의 정량 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r31-basic",
@@ -62628,7 +54867,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 중력에 의한 위치 에너지의 정의와 결정 요인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 중력에 의한 위치 에너지의 정의와 결정 요인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r31-skill",
@@ -62647,7 +54886,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 정지 상태에서 출발한 물체가 받은 일과 나중 운동 에너지의 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정지 상태에서 출발한 물체가 받은 일과 나중 운동 에너지의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r31-adv",
@@ -62665,8 +54904,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 질량과 속력이 동시에 변할 때 두 물체의 운동 에너지 비(Ratio) 구하기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량과 속력이 동시에 변할 때 두 물체의 운동 에너지 비(Ratio) 구하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r32-basic",
@@ -62685,7 +54923,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 운동 에너지의 정의와 결정 요인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 운동 에너지의 정의와 결정 요인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r32-skill",
@@ -62703,7 +54941,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 힘의 방향과 이동 방향의 관계를 통한 '과학에서의 일' 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 힘의 방향과 이동 방향의 관계를 통한 '과학에서의 일' 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r32-adv",
@@ -62722,7 +54960,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 제동 거리 데이터를 분석하여 속력과 운동 에너지의 제곱 비례 관계 도출)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 제동 거리 데이터를 분석하여 속력과 운동 에너지의 제곱 비례 관계 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r33-basic",
@@ -62741,7 +54979,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 일과 에너지의 상호 전환성 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일과 에너지의 상호 전환성 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r33-skill",
@@ -62760,7 +54998,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 힘-이동 거리 그래프에서 면적을 이용한 일의 양 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 힘-이동 거리 그래프에서 면적을 이용한 일의 양 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r33-adv",
@@ -62779,7 +55017,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 빗면에서의 위치 에너지 감소량과 나무 도막이 받은 일의 양 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빗면에서의 위치 에너지 감소량과 나무 도막이 받은 일의 양 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r34-basic",
@@ -62798,7 +55036,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 무게(N)와 질량(kg)의 관계 및 단위 환산 기초)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 무게(N)와 질량(kg)의 관계 및 단위 환산 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r34-skill",
@@ -62817,7 +55055,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 기준면에 따른 중력에 의한 위치 에너지 값의 변화 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기준면에 따른 중력에 의한 위치 에너지 값의 변화 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r35-basic",
@@ -62836,7 +55074,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 정지해 있는 물체의 운동 에너지 값 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정지해 있는 물체의 운동 에너지 값 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r35-skill",
@@ -62854,8 +55092,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 질량과 높이에 따른 위치 에너지의 비례 관계 그래프 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량과 높이에 따른 위치 에너지의 비례 관계 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r36-basic",
@@ -62874,7 +55111,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 위치 에너지가 최대인 지점과 최소인 지점 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 위치 에너지가 최대인 지점과 최소인 지점 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r36-skill",
@@ -62893,7 +55130,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 운동 에너지 공식($\\frac{1}{2}mv^2$)을 이용한 정량적 수치 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 운동 에너지 공식($\\frac{1}{2}mv^2$)을 이용한 정량적 수치 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r37-skill",
@@ -62912,7 +55149,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 운동 에너지와 질량, 속력의 관계를 나타낸 그래프 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 운동 에너지와 질량, 속력의 관계를 나타낸 그래프 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r38-skill",
@@ -62930,8 +55167,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 수레의 충돌 실험을 통한 운동 에너지와 이동 거리(s)의 관계 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수레의 충돌 실험을 통한 운동 에너지와 이동 거리(s)의 관계 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r39-skill",
@@ -62950,7 +55186,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 자유 낙하하는 물체에서 중력이 한 일과 운동 에너지 증가량의 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하하는 물체에서 중력이 한 일과 운동 에너지 증가량의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r40-skill",
@@ -62968,7 +55204,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 물체를 일정한 속력으로 들어 올릴 때 필요한 힘(무게) 계산)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체를 일정한 속력으로 들어 올릴 때 필요한 힘(무게) 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r41-skill",
@@ -62986,7 +55223,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 위치 에너지의 정의를 이용한 특정 높이에서의 에너지 산출)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 위치 에너지의 정의를 이용한 특정 높이에서의 에너지 산출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r42-skill",
@@ -63004,8 +55242,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 속력이 2배, 3배 증가할 때 제동 거리가 4배, 9배 증가하는 원리 적용)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 속력이 2배, 3배 증가할 때 제동 거리가 4배, 9배 증가하는 원리 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r43-basic",
@@ -63023,8 +55260,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 중력에 대해 한 일의 양 계산 기초)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 중력에 대해 한 일의 양 계산 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r43-skill",
@@ -63042,8 +55278,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 질량과 속력에 따른 운동 에너지의 관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량과 속력에 따른 운동 에너지의 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r43-adv",
@@ -63062,7 +55297,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 마찰이 있는 바닥에서 물체를 끌어당길 때 알짜힘이 한 일 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마찰이 있는 바닥에서 물체를 끌어당길 때 알짜힘이 한 일 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r44-basic",
@@ -63081,7 +55316,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 중력이 물체에 한 일의 양(낙하 시) 기초)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 중력이 물체에 한 일의 양(낙하 시) 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r44-skill",
@@ -63099,7 +55334,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 낙하하는 물체의 위치 에너지 감소량과 운동 에너지 증가량 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 낙하하는 물체의 위치 에너지 감소량과 운동 에너지 증가량 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r44-adv",
@@ -63118,7 +55353,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 속력이 v에서 2v로 변할 때 필요한 추가적인 일의 양 계산)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 속력이 v에서 2v로 변할 때 필요한 추가적인 일의 양 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r45-skill",
@@ -63137,7 +55372,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 여러 가지 에너지의 종류(전기, 빛, 열 등)와 사례 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 가지 에너지의 종류(전기, 빛, 열 등)와 사례 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r45-adv",
@@ -63155,7 +55390,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 비스듬한 면(빗면)을 따라 물체를 끌어올릴 때의 일과 에너지 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비스듬한 면(빗면)을 따라 물체를 끌어올릴 때의 일과 에너지 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r46-skill",
@@ -63174,7 +55409,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 수직 방향으로 던져 올린 물체의 에너지 전환 과정 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수직 방향으로 던져 올린 물체의 에너지 전환 과정 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s2-r47-skill",
@@ -63193,7 +55428,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 일이 에너지가 되거나 에너지가 일이 되는 사례 설명)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일이 에너지가 되거나 에너지가 일이 되는 사례 설명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r3-basic",
@@ -63212,7 +55447,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 감각 기관에서 뇌로 자극을 전달하는 통로(감각 신경) 인식)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 감각 기관에서 뇌로 자극을 전달하는 통로(감각 신경) 인식 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r3-skill",
@@ -63231,7 +55466,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 귓속뼈의 진동 증폭 작용과 달팽이관의 청각 세포 자극 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 귓속뼈의 진동 증폭 작용과 달팽이관의 청각 세포 자극 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r3-adv",
@@ -63250,7 +55485,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 소리 전달 경로에서 각 매질의 상태 변화와 귓속뼈의 진동 증폭 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리 전달 경로에서 각 매질의 상태 변화와 귓속뼈의 진동 증폭 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r4-basic",
@@ -63269,7 +55504,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 평형 감각의 정의와 우리 몸의 자세 유지 기능 인식)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평형 감각의 정의와 우리 몸의 자세 유지 기능 인식 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r4-skill",
@@ -63288,7 +55523,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 후각 세포가 자극을 받아들이는 상태(기체 물질) 및 전달 경로)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 후각 세포가 자극을 받아들이는 상태(기체 물질) 및 전달 경로 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r4-adv",
@@ -63307,7 +55542,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체의 거리 변화에 따른 수정체 두께와 모양체 근육의 상호작용 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체의 거리 변화에 따른 수정체 두께와 모양체 근육의 상호작용 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r5-basic",
@@ -63326,7 +55561,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 시각, 청각, 후각, 미각, 피부 감각의 정의와 자극원 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시각, 청각, 후각, 미각, 피부 감각의 정의와 자극원 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r5-skill",
@@ -63345,7 +55580,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 귀의 구조 중 청각과 관련 없는 평형 감각 기관(반고리관, 전정 기관) 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 귀의 구조 중 청각과 관련 없는 평형 감각 기관(반고리관, 전정 기관) 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r5-adv",
@@ -63364,7 +55599,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 밝기 변화에 따른 홍채의 면적 변화와 동공 크기 조절의 인과 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밝기 변화에 따른 홍채의 면적 변화와 동공 크기 조절의 인과 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r6-basic",
@@ -63382,7 +55617,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 눈의 구조 중 빛의 양을 조절하는 부분 찾기)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 눈의 구조 중 빛의 양을 조절하는 부분 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r6-skill",
@@ -63401,7 +55637,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 고막의 진동이 귓속뼈를 거쳐 달팽이관으로 전달되는 순서 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고막의 진동이 귓속뼈를 거쳐 달팽이관으로 전달되는 순서 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r6-adv",
@@ -63420,7 +55656,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 반고리관과 전정 기관의 자극 원리(회전 vs 기울어짐) 비교 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 반고리관과 전정 기관의 자극 원리(회전 vs 기울어짐) 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r7-basic",
@@ -63438,7 +55674,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혀에서 맛을 느끼는 부위(맛봉오리) 확인)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혀에서 맛을 느끼는 부위(맛봉오리) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r7-skill",
@@ -63456,8 +55693,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 눈의 구조 명칭과 각 부분(각막, 수정체, 망막 등)의 기능 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 눈의 구조 명칭과 각 부분(각막, 수정체, 망막 등)의 기능 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r7-adv",
@@ -63476,7 +55712,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 피부 감각점의 분포 농도 차이에 따른 예민도 실험 데이터 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 피부 감각점의 분포 농도 차이에 따른 예민도 실험 데이터 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r8-basic",
@@ -63494,7 +55730,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 피부 감각점 중 가장 많이 분포하는 감각점(통점) 확인)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 피부 감각점 중 가장 많이 분포하는 감각점(통점) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r8-skill",
@@ -63513,7 +55750,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 망막에 상이 맺히는 원리와 시각 신경의 자극 전달 경로 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 망막에 상이 맺히는 원리와 시각 신경의 자극 전달 경로 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r8-adv",
@@ -63532,7 +55769,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 후각의 특징(예민성, 피로성)이 생존에 주는 의미와 메커니즘 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 후각의 특징(예민성, 피로성)이 생존에 주는 의미와 메커니즘 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r9-basic",
@@ -63551,7 +55788,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 수정체의 두께가 변하는 상황(멀리 볼 때/가까이 볼 때) 기초 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수정체의 두께가 변하는 상황(멀리 볼 때/가까이 볼 때) 기초 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r9-skill",
@@ -63570,7 +55807,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 맹점의 정의와 맹점에 상이 맺힐 때 나타나는 현상 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 맹점의 정의와 맹점에 상이 맺힐 때 나타나는 현상 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r10-basic",
@@ -63588,8 +55825,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 고막의 위치와 소리에 의한 진동 역할 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고막의 위치와 소리에 의한 진동 역할 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r10-skill",
@@ -63608,7 +55844,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 귀 인두관(유스타키오관)을 통한 귀 내부와 외부의 압력 평형 조절)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 귀 인두관(유스타키오관)을 통한 귀 내부와 외부의 압력 평형 조절 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r11-basic",
@@ -63627,7 +55863,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 화학 반응식 또는 물질의 성질에 대한 설명으로 올읅 것을 보기에서 모두 고르시오.\n\n(유형: 기체 물질과 액체 물질에 반응하는 감각 기관 기초 분류)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 물질과 액체 물질에 반응하는 감각 기관 기초 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r11-skill",
@@ -63645,8 +55881,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 맛의 종류(단, 신, 짠, 쓴, 감칠맛)와 매운맛·떫은맛의 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 맛의 종류(단, 신, 짠, 쓴, 감칠맛)와 매운맛·떫은맛의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r12-skill",
@@ -63665,7 +55900,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 피부 감각의 종류(통, 압, 촉, 냉, 온각)와 자극의 종류 연결)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 피부 감각의 종류(통, 압, 촉, 냉, 온각)와 자극의 종류 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r13-skill",
@@ -63683,8 +55918,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 온도 변화에 따른 냉각과 온각의 상대적 인식 원리(상대적 변화))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도 변화에 따른 냉각과 온각의 상대적 인식 원리(상대적 변화) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r14-skill",
@@ -63702,8 +55936,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 특정 감각 기관의 기능 상실 시 나타날 수 있는 증상 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 감각 기관의 기능 상실 시 나타날 수 있는 증상 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r15-skill",
@@ -63722,7 +55955,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 종합적인 감각 전달 경로(자극→감각 기관→감각 신경→뇌) 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 종합적인 감각 전달 경로(자극→감각 기관→감각 신경→뇌) 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r16-skill",
@@ -63741,7 +55974,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 눈의 조절 작용 실험(구멍 뚫린 카드 등)을 통한 동공 변화 관찰)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 눈의 조절 작용 실험(구멍 뚫린 카드 등)을 통한 동공 변화 관찰 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r17-skill",
@@ -63759,7 +55992,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 후각과 미각의 상호작용(코를 막고 음식 먹기 실험) 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 후각과 미각의 상호작용(코를 막고 음식 먹기 실험) 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r18-basic",
@@ -63778,7 +56012,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 귀의 구조와 각 명칭의 기능 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 귀의 구조와 각 명칭의 기능 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r18-skill",
@@ -63796,7 +56030,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 밝기에 따른 동공의 크기 조절 원리(홍채) 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밝기에 따른 동공의 크기 조절 원리(홍채) 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r18-adv",
@@ -63814,8 +56048,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 밝기와 거리 변화가 동시에 일어날 때 홍채와 수정체의 변화 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밝기와 거리 변화가 동시에 일어날 때 홍채와 수정체의 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r19-basic",
@@ -63834,7 +56067,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 코의 구조와 후각의 특징(예민성, 피로))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 코의 구조와 후각의 특징(예민성, 피로) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r19-skill",
@@ -63853,7 +56086,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 물체와의 거리에 따른 수정체 두께 조절 원리(섬모체) 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체와의 거리에 따른 수정체 두께 조절 원리(섬모체) 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r19-adv",
@@ -63871,7 +56104,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 맹점의 위치 확인 실험과 망막의 상 형성 관계 심화 분석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 맹점의 위치 확인 실험과 망막의 상 형성 관계 심화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r20-basic",
@@ -63890,7 +56124,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혀의 구조와 맛의 종류(단, 신, 짠, 쓴, 감칠맛))"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혀의 구조와 맛의 종류(단, 신, 짠, 쓴, 감칠맛) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r20-skill",
@@ -63909,7 +56143,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 후각의 특징 중 쉽게 피로해짐의 의미 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 후각의 특징 중 쉽게 피로해짐의 의미 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r20-adv",
@@ -63927,7 +56161,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 감각 기관의 기능 상실 시 다른 감각으로의 보완 메커니즘 추론)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 감각 기관의 기능 상실 시 다른 감각으로의 보완 메커니즘 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r21-basic",
@@ -63946,7 +56181,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 시각의 성립 경로 순서 나열)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시각의 성립 경로 순서 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r21-skill",
@@ -63965,7 +56200,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 피부 감각점의 분포 밀도와 예민함의 관계)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 피부 감각점의 분포 밀도와 예민함의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r22-basic",
@@ -63983,8 +56218,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 청각의 성립 경로 순서 나열)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 청각의 성립 경로 순서 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r22-skill",
@@ -64003,7 +56237,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 어두운 곳에서 밝은 곳으로 나갈 때의 눈의 변화 설명)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 어두운 곳에서 밝은 곳으로 나갈 때의 눈의 변화 설명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r28-basic",
@@ -64022,7 +56256,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 뇌의 5가지 주요 부위 위치 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 뇌의 5가지 주요 부위 위치 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r28-skill",
@@ -64041,7 +56275,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 중추 신경계와 말초 신경계(해부학적/기능적 구분)의 특징 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 중추 신경계와 말초 신경계(해부학적/기능적 구분)의 특징 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r28-adv",
@@ -64060,7 +56294,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혈당량 조절 메커니즘에서 인슐린과 글루카곤의 길항 작용 데이터 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈당량 조절 메커니즘에서 인슐린과 글루카곤의 길항 작용 데이터 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r29-basic",
@@ -64079,7 +56313,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 자극에서 반응까지의 일반적인 전달 순서 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자극에서 반응까지의 일반적인 전달 순서 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r29-skill",
@@ -64098,7 +56332,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 척수 반사(무릎 반사, 뜨거운 것 피하기)의 경로와 생존적 의미)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 척수 반사(무릎 반사, 뜨거운 것 피하기)의 경로와 생존적 의미 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r29-adv",
@@ -64117,7 +56351,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 체온 조절 과정에서 근육 떨림과 혈관 수축/확장의 인과 관계 서술)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 체온 조절 과정에서 근육 떨림과 혈관 수축/확장의 인과 관계 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r30-basic",
@@ -64136,7 +56370,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 항상성의 정의와 조절되는 요소(체온, 혈당 등) 인식)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 항상성의 정의와 조절되는 요소(체온, 혈당 등) 인식 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r30-skill",
@@ -64155,7 +56389,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 자율 신경계(교감 신경, 부교감 신경)의 길항 작용과 심장 박동 조절)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자율 신경계(교감 신경, 부교감 신경)의 길항 작용과 심장 박동 조절 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r30-adv",
@@ -64174,7 +56408,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 길항 작용을 통한 교감 신경과 부교감 신경의 내장 기관 조절 메커니즘 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 길항 작용을 통한 교감 신경과 부교감 신경의 내장 기관 조절 메커니즘 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r31-basic",
@@ -64193,7 +56427,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 중추 신경계에 속하는 기관(뇌, 척수) 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 중추 신경계에 속하는 기관(뇌, 척수) 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r31-skill",
@@ -64212,7 +56446,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 내분비샘의 종류와 각 샘에서 분비되는 호르몬 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 내분비샘의 종류와 각 샘에서 분비되는 호르몬 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r31-adv",
@@ -64231,7 +56465,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 의식적인 반응과 무의식적 반응(반사)의 중추 및 전달 경로 비교 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 의식적인 반응과 무의식적 반응(반사)의 중추 및 전달 경로 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r32-basic",
@@ -64249,7 +56483,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 신경계의 정의와 중추 신경계, 말초 신경계의 기초 분류)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 신경계의 정의와 중추 신경계, 말초 신경계의 기초 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r32-skill",
@@ -64268,7 +56503,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 감각 뉴런, 연합 뉴런, 운동 뉴런의 연결 구조 및 역할 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 감각 뉴런, 연합 뉴런, 운동 뉴런의 연결 구조 및 역할 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r32-adv",
@@ -64286,8 +56521,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 신경계와 호르몬의 특징(전달 속도, 지속성, 범위) 비교 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 신경계와 호르몬의 특징(전달 속도, 지속성, 범위) 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r33-basic",
@@ -64305,8 +56539,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 혈당량을 낮추는 유일한 호르몬인 인슐린의 명칭 확인)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈당량을 낮추는 유일한 호르몬인 인슐린의 명칭 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r33-skill",
@@ -64325,7 +56558,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 항상성 유리를 위한 신경계와 호르몬의 협력 관계 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 항상성 유리를 위한 신경계와 호르몬의 협력 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r33-adv",
@@ -64344,7 +56577,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 호르몬 분비 이상에 따른 결핍증과 과다증의 질병적 특징 심화 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 호르몬 분비 이상에 따른 결핍증과 과다증의 질병적 특징 심화 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r34-basic",
@@ -64362,7 +56595,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 무조건 반사의 대표적 사례(재채기, 딸꾹질, 동공 반사 등) 찾기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 무조건 반사의 대표적 사례(재채기, 딸꾹질, 동공 반사 등) 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r34-skill",
@@ -64381,7 +56614,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 기능에 따른 뉴런의 종류(감각, 연합, 운동 뉴런)와 연결 순서 판별)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기능에 따른 뉴런의 종류(감각, 연합, 운동 뉴런)와 연결 순서 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r35-basic",
@@ -64399,7 +56632,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 뉴런의 정의와 기본 구조 명칭 확인)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 뉴런의 정의와 기본 구조 명칭 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r35-skill",
@@ -64417,7 +56651,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 뇌의 각 부분(대뇌, 간뇌, 중간뇌, 소뇌, 연수)의 위치와 담당 기능 매칭)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 뇌의 각 부분(대뇌, 간뇌, 중간뇌, 소뇌, 연수)의 위치와 담당 기능 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r36-basic",
@@ -64435,7 +56670,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 호르몬의 기본 정의와 전달 수단(혈액) 확인)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 호르몬의 기본 정의와 전달 수단(혈액) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r36-skill",
@@ -64454,7 +56690,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 말초 신경계의 구성(항상성을 유지하는 자율 신경 중심) 파악)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 말초 신경계의 구성(항상성을 유지하는 자율 신경 중심) 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r37-skill",
@@ -64472,8 +56708,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 신경계와 호르몬의 특성(전달 매체, 속도, 지속성) 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 신경계와 호르몬의 특성(전달 매체, 속도, 지속성) 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r38-skill",
@@ -64492,7 +56727,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 약물 오남용이 신경계에 미치는 영향과 조절 이상 사례)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 약물 오남용이 신경계에 미치는 영향과 조절 이상 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r39-skill",
@@ -64511,7 +56746,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 뉴런의 구조(신경 세포체, 가지 돌기, 축삭 돌기)와 자극 전달 방향 이해)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 뉴런의 구조(신경 세포체, 가지 돌기, 축삭 돌기)와 자극 전달 방향 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r40-skill",
@@ -64529,7 +56764,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 아드레날린(에피네프린)이 신체 변화(심박, 혈당)에 미치는 영향)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 아드레날린(에피네프린)이 신체 변화(심박, 혈당)에 미치는 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r41-skill",
@@ -64547,8 +56782,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 식사 후와 운동 중의 혈당량 변화 추이 및 조절 과정 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식사 후와 운동 중의 혈당량 변화 추이 및 조절 과정 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r42-skill",
@@ -64567,7 +56801,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "오투+완자",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 더울 때와 추울 때의 신체 반응(땀, 열 발생량) 차이점 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 더울 때와 추울 때의 신체 반응(땀, 열 발생량) 차이점 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r43-basic",
@@ -64586,7 +56820,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 대뇌, 간뇌, 중간뇌, 소뇌, 연수의 기능 매칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대뇌, 간뇌, 중간뇌, 소뇌, 연수의 기능 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r43-skill",
@@ -64605,7 +56839,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 무릎 반사와 같은 무의식적 반응(척수 반사) 경로 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 무릎 반사와 같은 무의식적 반응(척수 반사) 경로 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r43-adv",
@@ -64624,7 +56858,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 혈당량 변화 그래프(식사/운동)를 통한 인슐린 농도 추이 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈당량 변화 그래프(식사/운동)를 통한 인슐린 농도 추이 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r44-basic",
@@ -64643,7 +56877,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 주요 내분비샘의 위치와 분비되는 호르몬 명칭)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주요 내분비샘의 위치와 분비되는 호르몬 명칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r44-skill",
@@ -64661,7 +56895,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 연수와 중간뇌가 중추인 무의식적 반응 사례 구분)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연수와 중간뇌가 중추인 무의식적 반응 사례 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r44-adv",
@@ -64679,8 +56913,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 피드백 원리를 이용한 티록신 농도 조절의 인과관계 분석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 피드백 원리를 이용한 티록신 농도 조절의 인과관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r45-basic",
@@ -64699,7 +56932,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 생장 호르몬과 갑상샘 자극 호르몬의 기능)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생장 호르몬과 갑상샘 자극 호르몬의 기능 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r45-skill",
@@ -64718,7 +56951,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 의식적 반응과 무의식적 반응의 전달 경로 차이점 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 의식적 반응과 무의식적 반응의 전달 경로 차이점 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r45-adv",
@@ -64737,7 +56970,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 척수 손상 환자가 뜨거운 것을 만졌을 때 일어나는 반응과 느끼는 과정 추론)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 척수 손상 환자가 뜨거운 것을 만졌을 때 일어나는 반응과 느끼는 과정 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r46-basic",
@@ -64755,8 +56988,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 호르몬과 신경의 신호 전달 방식 비교)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 호르몬과 신경의 신호 전달 방식 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r46-skill",
@@ -64775,7 +57007,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 자극 반응 실험(자 떨어뜨리기)을 통한 반응 시간 해석)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자극 반응 실험(자 떨어뜨리기)을 통한 반응 시간 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r47-skill",
@@ -64793,7 +57025,8 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 호르몬 농도 변화에 따른 표적 기관의 반응 해석)"
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 호르몬 농도 변화에 따른 표적 기관의 반응 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r48-skill",
@@ -64812,7 +57045,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 자율 신경(교감/부감교감 신경)의 길항 작용 원리)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자율 신경(교감/부감교감 신경)의 길항 작용 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
         "id": "sc-중3-1-s3-r49-skill",
@@ -64831,728 +57064,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         },
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 신경계와 호르몬의 신호 전달 속도 및 지속성 차이)"
-      }
-    ]
-  },
-  {
-    "id": "sci-중3-2",
-    "subject": "science",
-    "course": "중3-2",
-    "types": [
-      {
-        "id": "sc-중3-2-0-1-1",
-        "majorUnit": "1단원-생식과 유전",
-        "minorUnit": "생식과 유전 탐구 (1)",
-        "typeName": "생식과 유전 분류하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생식과 유전 분류하기)"
-      },
-      {
-        "id": "sc-중3-2-0-1-2",
-        "majorUnit": "1단원-생식과 유전",
-        "minorUnit": "생식과 유전 탐구 (1)",
-        "typeName": "생식과 유전 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생식과 유전 분류하기)"
-      },
-      {
-        "id": "sc-중3-2-0-1-3",
-        "majorUnit": "1단원-생식과 유전",
-        "minorUnit": "생식과 유전 탐구 (1)",
-        "typeName": "생식과 유전 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생식과 유전 현상 분석하기)"
-      },
-      {
-        "id": "sc-중3-2-0-1-4",
-        "majorUnit": "1단원-생식과 유전",
-        "minorUnit": "생식과 유전 탐구 (1)",
-        "typeName": "생식과 유전 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생식과 유전 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중3-2-0-1-5",
-        "majorUnit": "1단원-생식과 유전",
-        "minorUnit": "생식과 유전 탐구 (1)",
-        "typeName": "생식과 유전 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생식과 유전 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-중3-2-0-2-1",
-        "majorUnit": "1단원-생식과 유전",
-        "minorUnit": "생식과 유전 탐구 (2)",
-        "typeName": "생식과 유전 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생식과 유전 분류하기)"
-      },
-      {
-        "id": "sc-중3-2-0-2-2",
-        "majorUnit": "1단원-생식과 유전",
-        "minorUnit": "생식과 유전 탐구 (2)",
-        "typeName": "생식과 유전 분류하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생식과 유전 분류하기)"
-      },
-      {
-        "id": "sc-중3-2-0-2-3",
-        "majorUnit": "1단원-생식과 유전",
-        "minorUnit": "생식과 유전 탐구 (2)",
-        "typeName": "생식과 유전 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생식과 유전 현상 분석하기)"
-      },
-      {
-        "id": "sc-중3-2-0-2-4",
-        "majorUnit": "1단원-생식과 유전",
-        "minorUnit": "생식과 유전 탐구 (2)",
-        "typeName": "생식과 유전 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생식과 유전 모형 만들기)"
-      },
-      {
-        "id": "sc-중3-2-0-3-1",
-        "majorUnit": "1단원-생식과 유전",
-        "minorUnit": "생식과 유전 특성 (3)",
-        "typeName": "생식과 유전 현상 분석하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생식과 유전 현상 분석하기)"
-      },
-      {
-        "id": "sc-중3-2-0-3-2",
-        "majorUnit": "1단원-생식과 유전",
-        "minorUnit": "생식과 유전 특성 (3)",
-        "typeName": "생식과 유전 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생식과 유전 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중3-2-0-3-3",
-        "majorUnit": "1단원-생식과 유전",
-        "minorUnit": "생식과 유전 특성 (3)",
-        "typeName": "생식과 유전 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생식과 유전 특징 비교하기)"
-      },
-      {
-        "id": "sc-중3-2-0-3-4",
-        "majorUnit": "1단원-생식과 유전",
-        "minorUnit": "생식과 유전 특성 (3)",
-        "typeName": "생식과 유전 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 생명 활동 현상 또는 생물의 구성에 대한 설명으로 가장 올바른 것을 고르시오.\n\n(유형: 생식과 유전 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중3-2-1-1-1",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 변화 이해 (1)",
-        "typeName": "에너지 전환과 보존 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 특징 비교하기)"
-      },
-      {
-        "id": "sc-중3-2-1-1-2",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 변화 이해 (1)",
-        "typeName": "에너지 전환과 보존 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 모형 만들기)"
-      },
-      {
-        "id": "sc-중3-2-1-1-3",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 변화 이해 (1)",
-        "typeName": "에너지 전환과 보존 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중3-2-1-1-4",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 변화 이해 (1)",
-        "typeName": "에너지 전환과 보존 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 현상 분석하기)"
-      },
-      {
-        "id": "sc-중3-2-1-2-1",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 탐구 (2)",
-        "typeName": "에너지 전환과 보존 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 특징 비교하기)"
-      },
-      {
-        "id": "sc-중3-2-1-2-2",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 탐구 (2)",
-        "typeName": "에너지 전환과 보존 모형 만들기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 모형 만들기)"
-      },
-      {
-        "id": "sc-중3-2-1-2-3",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 탐구 (2)",
-        "typeName": "에너지 전환과 보존 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 현상 분석하기)"
-      },
-      {
-        "id": "sc-중3-2-1-2-4",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 탐구 (2)",
-        "typeName": "에너지 전환과 보존 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 모형 만들기)"
-      },
-      {
-        "id": "sc-중3-2-1-2-5",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 탐구 (2)",
-        "typeName": "에너지 전환과 보존 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중3-2-1-3-1",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 탐구 (3)",
-        "typeName": "에너지 전환과 보존 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-중3-2-1-3-2",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 탐구 (3)",
-        "typeName": "에너지 전환과 보존 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중3-2-1-3-3",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 탐구 (3)",
-        "typeName": "에너지 전환과 보존 모형 만들기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 모형 만들기)"
-      },
-      {
-        "id": "sc-중3-2-1-3-4",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 탐구 (3)",
-        "typeName": "에너지 전환과 보존 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-중3-2-1-3-5",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 탐구 (3)",
-        "typeName": "에너지 전환과 보존 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 2
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 현상 분석하기)"
-      },
-      {
-        "id": "sc-중3-2-1-4-1",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 탐구 (4)",
-        "typeName": "에너지 전환과 보존 모형 만들기",
-        "difficultyCount": {
-          "basic": 5,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 모형 만들기)"
-      },
-      {
-        "id": "sc-중3-2-1-4-2",
-        "majorUnit": "2단원-에너지 전환과 보존",
-        "minorUnit": "에너지 전환과 보존 탐구 (4)",
-        "typeName": "에너지 전환과 보존 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 물리 법칙 및 실험 사황에 대한 질문을 읽고, 알맞은 답을 구하시오.\n\n(유형: 에너지 전환과 보존 분류하기)"
-      },
-      {
-        "id": "sc-중3-2-2-1-1",
-        "majorUnit": "3단원-별과 우주",
-        "minorUnit": "별과 우주 탐구 (1)",
-        "typeName": "별과 우주 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 별과 우주 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중3-2-2-1-2",
-        "majorUnit": "3단원-별과 우주",
-        "minorUnit": "별과 우주 탐구 (1)",
-        "typeName": "별과 우주 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 4,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 별과 우주 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중3-2-2-2-1",
-        "majorUnit": "3단원-별과 우주",
-        "minorUnit": "별과 우주 관찰 (2)",
-        "typeName": "별과 우주 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 별과 우주 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-중3-2-2-2-2",
-        "majorUnit": "3단원-별과 우주",
-        "minorUnit": "별과 우주 관찰 (2)",
-        "typeName": "별과 우주 현상 분석하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 별과 우주 현상 분석하기)"
-      },
-      {
-        "id": "sc-중3-2-2-2-3",
-        "majorUnit": "3단원-별과 우주",
-        "minorUnit": "별과 우주 관찰 (2)",
-        "typeName": "별과 우주 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 지구과학 현상에 대한 설명 중 가장 올치 않은 것을 고르시오.\n\n(유형: 별과 우주 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중3-2-3-1-1",
-        "majorUnit": "4단원-과학기술과 인류문명",
-        "minorUnit": "과학기술과 인류문명 특성 (1)",
-        "typeName": "과학기술과 인류문명 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학기술과 인류문명 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중3-2-3-1-2",
-        "majorUnit": "4단원-과학기술과 인류문명",
-        "minorUnit": "과학기술과 인류문명 특성 (1)",
-        "typeName": "과학기술과 인류문명 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학기술과 인류문명 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중3-2-3-1-3",
-        "majorUnit": "4단원-과학기술과 인류문명",
-        "minorUnit": "과학기술과 인류문명 특성 (1)",
-        "typeName": "과학기술과 인류문명 실험 결과 해석하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 2,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학기술과 인류문명 실험 결과 해석하기)"
-      },
-      {
-        "id": "sc-중3-2-3-1-4",
-        "majorUnit": "4단원-과학기술과 인류문명",
-        "minorUnit": "과학기술과 인류문명 특성 (1)",
-        "typeName": "과학기술과 인류문명 특징 비교하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 4,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 2,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학기술과 인류문명 특징 비교하기)"
-      },
-      {
-        "id": "sc-중3-2-3-2-1",
-        "majorUnit": "4단원-과학기술과 인류문명",
-        "minorUnit": "과학기술과 인류문명 탐구 (2)",
-        "typeName": "과학기술과 인류문명 일상생활 적용하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학기술과 인류문명 일상생활 적용하기)"
-      },
-      {
-        "id": "sc-중3-2-3-2-2",
-        "majorUnit": "4단원-과학기술과 인류문명",
-        "minorUnit": "과학기술과 인류문명 탐구 (2)",
-        "typeName": "과학기술과 인류문명 분류하기",
-        "difficultyCount": {
-          "basic": 3,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 1,
-          "intermediate": 0,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학기술과 인류문명 분류하기)"
-      },
-      {
-        "id": "sc-중3-2-3-2-3",
-        "majorUnit": "4단원-과학기술과 인류문명",
-        "minorUnit": "과학기술과 인류문명 탐구 (2)",
-        "typeName": "과학기술과 인류문명 분류하기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 3,
-          "advanced": 0
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 1,
-          "advanced": 0
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학기술과 인류문명 분류하기)"
-      },
-      {
-        "id": "sc-중3-2-3-2-4",
-        "majorUnit": "4단원-과학기술과 인류문명",
-        "minorUnit": "과학기술과 인류문명 탐구 (2)",
-        "typeName": "과학기술과 인류문명 모형 만들기",
-        "difficultyCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 3
-        },
-        "importantCount": {
-          "basic": 0,
-          "intermediate": 0,
-          "advanced": 1
-        },
-        "sampleQuestion": "다음 과학적 개념 및 현상에 대한 올바른 설명을 보기에서 고르시오.\n\n(유형: 과학기술과 인류문명 모형 만들기)"
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 신경계와 호르몬의 신호 전달 속도 및 지속성 차이 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       }
     ]
   }

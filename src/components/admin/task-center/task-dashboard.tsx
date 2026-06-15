@@ -76,6 +76,10 @@ export default function TaskDashboard() {
   const [perPage, setPerPage] = React.useState(20);
   const [helpOpen, setHelpOpen] = React.useState(false);
 
+  if (!mounted) {
+    return <div className="min-h-screen bg-[#f4f6f9]" />;
+  }
+
   const subjectTasks = tasks.filter(t => t.subject === currentSubject);
 
   // 상태별 건수
@@ -229,7 +233,7 @@ export default function TaskDashboard() {
                     <span className="text-lg">{cfg.icon}</span>
                     <p className="text-sm font-bold text-foreground">{cfg.label}</p>
                   </div>
-                  <p className={`text-2xl font-extrabold leading-none ${cfg.numCls}`}>{mounted ? count.toLocaleString() : ""}</p>
+                  <p className={`text-2xl font-extrabold leading-none ${cfg.numCls}`}>{count.toLocaleString()}</p>
                 </div>
                 <p className="text-[11px] text-muted-foreground/80">{cfg.subText}</p>
               </button>
@@ -314,7 +318,7 @@ export default function TaskDashboard() {
                 <RotateCcw className="h-3.5 w-3.5" /> 초기화
               </Button>
               <span className="text-sm text-muted-foreground ml-2 whitespace-nowrap">
-                조회 건수: <span className="font-semibold text-foreground">{mounted ? `${filtered.length}건` : ""}</span>
+                조회 건수: <span className="font-semibold text-foreground">{filtered.length}</span>건
               </span>
             </div>
           </div>
@@ -325,7 +329,7 @@ export default function TaskDashboard() {
 
         {/* ── 페이징 ──────────────────────────────────── */}
         <div className="flex items-center justify-between">
-          <p className="text-sm text-muted-foreground">{mounted ? `총 ${filtered.length}건` : ""}</p>
+          <p className="text-sm text-muted-foreground">총 {filtered.length}건</p>
           <div className="flex items-center gap-1">
             <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1} className="w-8 h-8 rounded-lg text-sm hover:bg-muted disabled:opacity-40">‹</button>
             {pageNums.map(n => <PaginationBtn key={n} n={n} active={n === page} />)}

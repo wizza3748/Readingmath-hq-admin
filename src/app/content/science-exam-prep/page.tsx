@@ -969,31 +969,25 @@ export default function ScienceExamPrepPage() {
 
       {/* ===== 타이틀 영역 (과제 센터 스타일) ===== */}
       <div className="w-full px-6 pt-[76px] pb-1 z-10">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between pb-2">
-          <div>
-            <div className="flex items-center gap-3">
-              <h1 className={`text-3xl font-extrabold tracking-tight ${isDark ? "text-white" : "text-slate-900"}`}>시험 대비</h1>
-              <Link href="/content/math-exam-prep">
-                <span className={`px-3 py-0.5 ${isDark ? 'bg-gradient-to-r from-[#06b6d4]/20 to-[#0891b2]/20 text-[#22d3ee] border-[#06b6d4]/30 shadow-[0_0_15px_rgba(6,182,212,0.15)]' : 'bg-cyan-50 text-[#0891b2] border-[#a5f3fc]'} text-[12px] font-black rounded-full border cursor-pointer hover:opacity-80 transition-opacity`}>과학</span>
-              </Link>
-            </div>
-          </div>
+        <div className="flex flex-wrap items-center gap-3.5 pb-2">
+          <h1 className={`text-3xl font-extrabold tracking-tight ${isDark ? "text-white" : "text-slate-900"}`}>시험 대비</h1>
+          <Link href="/content/math-exam-prep">
+            <span className={`px-3 py-0.5 ${isDark ? 'bg-gradient-to-r from-[#06b6d4]/20 to-[#0891b2]/20 text-[#22d3ee] border-[#06b6d4]/30 shadow-[0_0_15px_rgba(6,182,212,0.15)]' : 'bg-cyan-50 text-[#0891b2] border-[#a5f3fc]'} text-[12px] font-black rounded-full border cursor-pointer hover:opacity-80 transition-opacity`}>과학</span>
+          </Link>
 
           {/* 데이터 초기화 버튼 (과제 센터 스타일과 100% 동일) */}
-          <div className="mt-4 md:mt-0 flex items-center">
-            <button
-              onClick={handleResetData}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-[12.5px] font-extrabold shadow-sm transition-all active:scale-95 cursor-pointer ${
-                isDark 
-                  ? 'bg-white/[0.02] border-white/[0.08] text-[#94a3b8] hover:text-white hover:bg-white/[0.06]' 
-                  : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-              }`}
-              title="진행 기록 및 성취도 초기화"
-            >
-              <RotateCcw className="h-3.5 w-3.5" />
-              <span>데이터 초기화</span>
-            </button>
-          </div>
+          <button
+            onClick={handleResetData}
+            className={`flex items-center gap-1 px-3 py-0.5 rounded-full border text-[12px] font-black shadow-sm transition-all active:scale-95 cursor-pointer ${
+              isDark 
+                ? 'bg-white/[0.02] border-white/[0.08] text-[#94a3b8] hover:text-white hover:bg-white/[0.06]' 
+                : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+            }`}
+            title="진행 기록 및 성취도 초기화"
+          >
+            <RotateCcw className="h-3 w-3" />
+            <span>데이터 초기화</span>
+          </button>
         </div>
       </div>
 
