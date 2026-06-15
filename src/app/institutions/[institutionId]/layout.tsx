@@ -125,10 +125,8 @@ function BasicInfo({ institution, loading }: { institution: Institution | null, 
 
 export default function InstitutionDetailLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: { institutionId: string };
 }) {
   const router = useRouter();
   const pathname = usePathname();

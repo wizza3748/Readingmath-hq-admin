@@ -70,7 +70,7 @@ export default function ScienceHomePage() {
                             자유 모드
                         </div>
                     </Link>
-                    <Link href="/content/exam-prep" className="h-[40px] flex items-center">
+                    <Link href="/content/science-exam-prep" className="h-[40px] flex items-center">
                         <div className="text-[#5c7797] hover:text-white px-5 py-1.5 text-[15px] font-bold min-w-[95px] text-center cursor-pointer transition-colors select-none">
                             시험 대비
                         </div>

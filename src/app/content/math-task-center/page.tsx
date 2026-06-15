@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
     HelpCircle,
     Siren,
@@ -24,6 +25,7 @@ import {
 import { getStoredTasks, updateTaskStatus, Task } from "@/utils/taskStorage";
 
 export default function MathTaskCenterPage() {
+    const router = useRouter();
     const [tasks, setTasks] = useState<Task[]>([]);
     const [isDarkMode, setIsDarkMode] = useState(false); // 기본 테마는 라이트 모드 (false)
     const observerRef = React.useRef<HTMLDivElement | null>(null);
@@ -137,8 +139,10 @@ export default function MathTaskCenterPage() {
     const confirmStartTask = () => {
         if (selectedTask) {
             updateTaskStatus(selectedTask.id, "ongoing");
+            const taskId = selectedTask.id;
             setStartModalOpen(false);
             setSelectedTask(null);
+            router.push(`/content/math-task-center/${taskId}/solve`);
         }
     };
 
@@ -200,9 +204,9 @@ export default function MathTaskCenterPage() {
                     <div className={`${isDarkMode ? 'text-[#94a3b8] hover:text-white' : 'text-slate-600 hover:text-slate-900'} px-5 py-2 text-[14px] font-bold min-w-[90px] text-center cursor-pointer transition-all duration-200 hover:-translate-y-[1px] select-none h-[44px] flex items-center`}>
                         자유 모드
                     </div>
-                    <div className={`${isDarkMode ? 'text-[#94a3b8] hover:text-white' : 'text-slate-600 hover:text-slate-900'} px-5 py-2 text-[14px] font-bold min-w-[90px] text-center cursor-pointer transition-all duration-200 hover:-translate-y-[1px] select-none h-[44px] flex items-center`}>
+                    <Link href="/content/math-exam-prep" className={`${isDarkMode ? 'text-[#94a3b8] hover:text-white' : 'text-slate-600 hover:text-slate-900'} px-5 py-2 text-[14px] font-bold min-w-[90px] text-center cursor-pointer transition-all duration-200 hover:-translate-y-[1px] select-none h-[44px] flex items-center`}>
                         시험 대비
-                    </div>
+                    </Link>
                     
                     <div className={`relative ${isDarkMode ? 'bg-[#f59e0b] shadow-[0_-4px_20px_rgba(245,158,11,0.25)] border-[#fbbf24]/30' : 'bg-[#f59e0b] shadow-[0_-4px_15px_rgba(245,158,11,0.15)] border-[#fbbf24]/50'} text-white px-6 h-[44px] rounded-t-[12px] rounded-b-none text-[14px] font-black flex items-center justify-center min-w-[95px] select-none border-t border-x`}>
                         <span>과제 센터</span>
@@ -231,7 +235,9 @@ export default function MathTaskCenterPage() {
                     <div>
                         <div className="flex items-center gap-3">
                             <h1 className={`text-3xl font-extrabold tracking-tight ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>과제 센터</h1>
-                            <span className={`px-3 py-0.5 ${isDarkMode ? 'bg-[#fbbf24]/10 text-[#fbbf24] border-[#fbbf24]/20 shadow-[0_0_15px_rgba(251,191,36,0.15)]' : 'bg-amber-50 text-amber-700 border-amber-200'} text-[12px] font-black rounded-full border`}>수학</span>
+                            <Link href="/content/science-task-center">
+                                <span className={`px-3 py-0.5 ${isDarkMode ? 'bg-[#fbbf24]/10 text-[#fbbf24] border-[#fbbf24]/20 shadow-[0_0_15px_rgba(251,191,36,0.15)]' : 'bg-amber-50 text-amber-700 border-amber-200'} text-[12px] font-black rounded-full border cursor-pointer hover:opacity-80 transition-opacity`}>수학</span>
+                            </Link>
                         </div>
                         <p className={`text-[14.5px] ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-600'} mt-2 font-medium`}>수학과제를 확인하고 풀이할 수 있습니다.</p>
                     </div>
@@ -261,7 +267,7 @@ export default function MathTaskCenterPage() {
                             <div
                                 className={`w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 transform shadow-sm ${
                                     isDarkMode ? 'translate-x-8 bg-[#334155]' : 'translate-x-0 bg-white'
-                                }`}
+                                    }`}
                             >
                                 {isDarkMode ? (
                                     <span className="text-[12px] select-none">🌙</span>
@@ -499,7 +505,7 @@ export default function MathTaskCenterPage() {
                                     </div>
 
                                     {/* 우측 액션 영역 */}
-                                    <div className="flex items-center justify-between sm:justify-end sm:self-center gap-5 shrink-0 w-full sm:w-auto border-t sm:border-t-0 pt-4 sm:pt-0 mt-4 sm:mt-0 border-slate-100 dark:border-white/[0.05]">
+                                    <div className="flex items-center justify-end sm:self-center gap-5 shrink-0 w-full sm:w-auto border-t sm:border-t-0 pt-4 sm:pt-0 mt-4 sm:mt-0 border-slate-100 dark:border-white/[0.05]">
                                         {/* 점수 영역 */}
                                         <div className="flex flex-col items-start sm:items-end">
                                             <span className={`inline-block px-2.5 py-0.5 ${isDarkMode ? 'bg-emerald-500/10 text-[#34d399] border-[#34d399]/20 shadow-[0_0_10px_rgba(52,211,153,0.1)]' : 'bg-emerald-50 text-emerald-600 border border-emerald-200'} text-[11px] font-extrabold rounded-full mb-1`}>
@@ -511,11 +517,12 @@ export default function MathTaskCenterPage() {
                                         </div>
 
                                         {/* 결과 보기 버튼 */}
-                                        <button 
+                                        <Link
+                                            href={`/content/math-task-center/${task.id}/result`}
                                             className={`px-5 py-2.5 ${isDarkMode ? 'bg-white/[0.03] text-[#cbd5e1] border-white/[0.08] hover:bg-white/[0.08] hover:text-white' : 'bg-white border border-blue-200 text-blue-600 hover:bg-blue-50'} text-[12.5px] font-extrabold rounded-xl shadow-sm transition-all active:scale-95 flex items-center gap-1 group/btn`}
                                         >
                                             결과 보기 <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                             ))}
@@ -616,37 +623,41 @@ export default function MathTaskCenterPage() {
 
                         <div className="flex flex-col items-center text-center mt-4">
                             <div className={`p-4 ${isDarkMode ? 'bg-indigo-500/10 border-indigo-500/20 shadow-[0_0_25px_rgba(99,102,241,0.15)]' : 'bg-indigo-50 border border-indigo-200'} rounded-full mb-5`}>
-                                <PlayCircle className="h-7 w-7 text-indigo-400" />
+                                <ClipboardList className="h-7 w-7 text-indigo-500" />
                             </div>
                             
                             <h3 className={`text-[19px] font-black ${isDarkMode ? 'text-white' : 'text-slate-900'} tracking-tight mb-2.5`}>
-                                과제를 계속 풀까요?
+                                이어서 풀이할까요?
                             </h3>
                             
                             <p className={`text-[14px] ${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-600'} leading-relaxed break-keep mb-7`}>
-                                이전에 진행하던 과제 풀이 화면으로 이동하여<br />
-                                저장되어 있던 답안에 이어 풀기를 계속합니다.
+                                기존에 풀던 문제들이 자동으로 저장되어 있습니다.<br />
+                                마지막으로 푼 문항부터 다시 시작합니다.
                             </p>
 
                             <div className="w-full grid grid-cols-2 gap-3.5">
                                 <button
                                     onClick={() => { setContinueModalOpen(false); setSelectedTask(null); }}
-                                    className={`py-3.5 ${isDarkMode ? 'bg-white/[0.03] text-[#cbd5e1] border-white/[0.08] hover:bg-white/[0.08]' : 'bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-200'} text-[13.5px] font-extrabold rounded-xl shadow-md active:scale-95`}
+                                    className={`py-3.5 ${isDarkMode ? 'bg-white/[0.03] text-[#cbd5e1] border-white/[0.08] hover:bg-white/[0.08]' : 'bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-200'} text-[13.5px] font-extrabold rounded-xl transition-all active:scale-95 shadow-sm`}
                                 >
                                     취소
                                 </button>
-                                <button
-                                    onClick={() => { setContinueModalOpen(false); setSelectedTask(null); }}
-                                    className={`py-3.5 ${isDarkMode ? 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white' : 'bg-indigo-600 hover:bg-indigo-700 text-white'} text-[13.5px] font-extrabold rounded-xl shadow-lg active:scale-95`}
+                                <Link 
+                                    href={`/content/math-task-center/${selectedTask.id}/solve`}
+                                    className="w-full"
                                 >
-                                    계속 풀기
-                                </button>
+                                    <button
+                                        onClick={() => { setContinueModalOpen(false); }}
+                                        className={`w-full py-3.5 ${isDarkMode ? 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 hover:shadow-[0_0_20px_rgba(99,102,241,0.35)]' : 'bg-indigo-600 hover:bg-indigo-700 text-white'} text-[13.5px] font-extrabold rounded-xl shadow-lg transition-all active:scale-95`}
+                                    >
+                                        이어서 풀기
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
             )}
-
         </div>
     );
 }

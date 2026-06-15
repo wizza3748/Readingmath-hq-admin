@@ -21,7 +21,7 @@ export default function DiagnosticTestDetailPage() {
   const params = useParams();
   const testId = params.testId as string;
   const { toast } = useToast();
-  const { firestore } = useFirebase() ?? {};
+  const { firestore } = useFirebase() ?? { firestore: null };
   const { test, setTest, loading } = useDiagnosticTest(firestore, testId);
   const [questions, setQuestions] = React.useState<Question[]>([]);
   const [isModalOpen, setIsModalOpen] = React.useState(false);

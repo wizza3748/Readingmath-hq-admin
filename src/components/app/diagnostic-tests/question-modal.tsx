@@ -79,11 +79,12 @@ const formSchema = z.object({
     solution: z.string().optional(),
     problemSolving: z.string().optional(),
     isReviewed: z.boolean().default(false),
+    questionType: z.enum(['객관식', '서술형']),
 }).superRefine((data, ctx) => {
     // refinement logic
 });
 
-type FormValues = z.infer<typeof formSchema> & { questionType: '객관식' | '서술형' };
+type FormValues = z.infer<typeof formSchema>;
 
 const generateCircledNumber = (num: number) => {
     return `①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳`[num - 1] || String(num);

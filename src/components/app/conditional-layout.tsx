@@ -22,7 +22,9 @@ export default function ConditionalLayout({
         pathname?.startsWith("/content/science-home") || 
         pathname?.startsWith("/content/math-home") ||
         pathname?.startsWith("/content/science-task-center") ||
-        pathname?.startsWith("/content/math-task-center");
+        pathname?.startsWith("/content/math-task-center") ||
+        pathname?.startsWith("/content/math-exam-prep") ||
+        pathname?.startsWith("/content/science-exam-prep");
 
     if (isStandalone) {
         return (

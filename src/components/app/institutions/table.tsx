@@ -105,8 +105,8 @@ const columns: ColumnDef<Institution>[] = [
     accessorKey: "serviceStatus",
     header: "서비스 상태",
     cell: ({ row }) => (
-      <Badge variant={serviceStatusVariant[row.getValue("serviceStatus")]}>
-        {row.getValue("serviceStatus")}
+      <Badge variant={serviceStatusVariant[row.original.serviceStatus]}>
+        {row.original.serviceStatus}
       </Badge>
     ),
   },

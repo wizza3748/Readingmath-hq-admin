@@ -109,8 +109,8 @@ const columns: ColumnDef<DiagnosticTest>[] = [
     accessorKey: 'status',
     header: '상태',
     cell: ({ row }) => (
-        <Badge variant={statusVariant[row.getValue('status')]}>
-            {row.getValue('status')}
+        <Badge variant={statusVariant[row.original.status]}>
+            {row.original.status}
         </Badge>
     ),
   },

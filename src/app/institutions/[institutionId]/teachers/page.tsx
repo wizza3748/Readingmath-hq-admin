@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
-export default function TeachersPage() {
+export default function TeachersPage({ params }: { params: Promise<{ institutionId: string }> }) {
   return (
     <Card>
       <CardHeader>

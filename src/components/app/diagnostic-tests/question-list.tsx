@@ -329,7 +329,7 @@ export function QuestionList({ testId }: { testId: string }) {
           onOpenChange={setIsModalOpen}
           testId={testId}
           question={editingQuestion}
-          questionType={editingQuestion.questionType}
+          questionType={editingQuestion.questionType as '객관식' | '서술형'}
           onClose={handleCloseModal}
         />
       )}

@@ -13,6 +13,7 @@ export interface Task {
     correctProblems?: number;
     submittedAt?: string;
     updatedAt?: string;
+    course?: string;
 }
 
 const DEFAULT_TASKS: Task[] = [
@@ -362,11 +363,11 @@ export function getLatestUnstartedTask(subject: "math" | "science"): Task | null
     return [...unstarted].sort((a, b) => new Date(b.assignedAt).getTime() - new Date(a.assignedAt).getTime())[0];
 }
 
-export function updateTaskStatus(taskId: string, newStatus: Task["status"]): Task[] {
+export function updateTaskStatus(taskId: string, newStatus: Task["status"], extraUpdates?: Partial<Task>): Task[] {
     const tasks = getStoredTasks();
     const updated = tasks.map(t => {
         if (t.id === taskId) {
-            const updates: Partial<Task> = { status: newStatus };
+            const updates: Partial<Task> = { status: newStatus, ...extraUpdates };
             if (newStatus === "ongoing") {
                 updates.updatedAt = new Date().toISOString();
                 if (t.solvedProblems === undefined) {
@@ -374,7 +375,7 @@ export function updateTaskStatus(taskId: string, newStatus: Task["status"]): Tas
                 }
             } else if (newStatus === "submitted") {
                 updates.submittedAt = new Date().toISOString();
-                if (t.score === undefined) {
+                if (updates.score === undefined && t.score === undefined) {
                     updates.score = 100;
                     updates.correctProblems = t.totalProblems;
                 }

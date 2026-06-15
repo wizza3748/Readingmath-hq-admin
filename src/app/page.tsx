@@ -86,7 +86,6 @@ const agencyWorkItems: WorkItem[] = [
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-383",
     title: "[기관] 선생님별 담당 반 설정",
     internalUrl: "/admin/teacher-list",
-    isNew: true,
   },
   {
     id: "RM-237",
@@ -100,8 +99,8 @@ const frontWorkItems: WorkItem[] = [
   {
     id: "RM-362",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-362",
-    title: "[프론트] 시험대비 기능 개선 및 성취도 반영 로직 수정",
-    internalUrl: "/front/exam-prep-improvement",
+    title: "[프론트] 시험 대비 v2",
+    internalUrl: "/content/math-exam-prep",
     isNew: true,
   },
   {
