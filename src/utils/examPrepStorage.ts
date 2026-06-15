@@ -202,10 +202,13 @@ export function getCombinedTypeHistory(typeId: string, subject: "math" | "scienc
       // [추가 준수 조건] 
       // - 유형 ID가 같은 문항 풀이 결과만 포함 (유형명/난이도/중요여부 대체 매칭 금지)
       // - 유형 ID가 확인되지 않는 과제 센터 풀이 결과는 이력에 포함하지 않음
-      if (q.typeId && q.typeId === typeId) {
+      const qDifficulty = q.difficulty === "basic" ? "basic" : q.difficulty === "advanced" ? "advanced" : "skill";
+      const qFullTypeId = q.typeId ? `${q.typeId}-${qDifficulty}` : "";
+
+      if (qFullTypeId && qFullTypeId === typeId) {
         combined.push({
           id: `task-${task.id}-${detail.questionIndex}`,
-          typeId: q.typeId,
+          typeId: qFullTypeId,
           questionId: q.id,
           path: "과제 센터",
           isCorrect: detail.status === "correct",

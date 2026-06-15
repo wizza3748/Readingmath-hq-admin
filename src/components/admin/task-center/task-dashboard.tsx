@@ -40,7 +40,28 @@ const STATUS_CARD_CFG = [
 export default function TaskDashboard() {
   const router = useRouter();
   const { toast } = useToast();
-  const { tasks, currentSubject, setCurrentSubject } = useTaskCenterStore();
+  const { tasks, currentSubject, setCurrentSubject, resetToDefault } = useTaskCenterStore();
+
+  const handleResetData = () => {
+    resetToDefault();
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("readingmath_admin_tasks");
+      localStorage.removeItem("readingmath_student_tasks");
+      localStorage.removeItem("readingmath_tasks_seed_version");
+      localStorage.removeItem("readingmath_examprep_history_v1");
+      if (window.__readingmath_tasks__) {
+        delete window.__readingmath_tasks__;
+      }
+      toast({ title: "모든 데이터가 기본 상태로 초기화되었습니다." });
+      window.location.reload();
+    }
+  };
+
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // ── 필터 상태 ──────────────────────────────────────
   const [statusFilter, setStatusFilter] = React.useState<TaskStatus | "all">("all");
@@ -156,6 +177,9 @@ export default function TaskDashboard() {
           <Button variant="outline" size="sm" onClick={() => setHelpOpen(true)} className="h-7 text-xs px-2.5 gap-1.5 bg-white border-gray-200 text-muted-foreground hover:text-foreground">
             <HelpCircle className="h-3.5 w-3.5" /> 이용 안내
           </Button>
+          <Button variant="outline" size="sm" onClick={handleResetData} className="h-7 text-xs px-2.5 gap-1.5 bg-white border-gray-200 text-muted-foreground hover:text-foreground">
+            <RotateCcw className="h-3.5 w-3.5" /> 데이터 초기화
+          </Button>
         </div>
       </div>
 
@@ -205,7 +229,7 @@ export default function TaskDashboard() {
                     <span className="text-lg">{cfg.icon}</span>
                     <p className="text-sm font-bold text-foreground">{cfg.label}</p>
                   </div>
-                  <p className={`text-2xl font-extrabold leading-none ${cfg.numCls}`}>{count.toLocaleString()}</p>
+                  <p className={`text-2xl font-extrabold leading-none ${cfg.numCls}`}>{mounted ? count.toLocaleString() : ""}</p>
                 </div>
                 <p className="text-[11px] text-muted-foreground/80">{cfg.subText}</p>
               </button>
@@ -290,7 +314,7 @@ export default function TaskDashboard() {
                 <RotateCcw className="h-3.5 w-3.5" /> 초기화
               </Button>
               <span className="text-sm text-muted-foreground ml-2 whitespace-nowrap">
-                조회 건수: <span className="font-semibold text-foreground">{filtered.length}건</span>
+                조회 건수: <span className="font-semibold text-foreground">{mounted ? `${filtered.length}건` : ""}</span>
               </span>
             </div>
           </div>
@@ -301,7 +325,7 @@ export default function TaskDashboard() {
 
         {/* ── 페이징 ──────────────────────────────────── */}
         <div className="flex items-center justify-between">
-          <p className="text-sm text-muted-foreground">총 {filtered.length}건</p>
+          <p className="text-sm text-muted-foreground">{mounted ? `총 ${filtered.length}건` : ""}</p>
           <div className="flex items-center gap-1">
             <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1} className="w-8 h-8 rounded-lg text-sm hover:bg-muted disabled:opacity-40">‹</button>
             {pageNums.map(n => <PaginationBtn key={n} n={n} active={n === page} />)}

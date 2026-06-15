@@ -13,6 +13,7 @@ export interface Question {
   choiceHtmls?: string[];
   answerKey?: number[]; // 선지형 정답 (1-based index 배열)
   correctAnswer?: string; // 입력형 정답값
+  typeId?: string; // 유형 ID
   typeName?: string; // 유형명 (예: "기본 도형의 이해")
   difficulty?: "basic" | "intermediate" | "advanced"; // 난이도
   explanationHtml?: string; // 해설 HTML (수식 포함)
@@ -56,8 +57,16 @@ export function getQuestionsByTaskId(taskId: string): Question[] {
   // taskStorage 에 기록된 totalProblems 갯수 조회
   const tasks = getStoredTasks();
   const task = tasks.find((t) => matchStoredIdWithAdminId(t.id, taskId) || matchStoredIdWithAdminId(taskId, t.id));
-  // 관리자 목데이터에서도 항상 조회 (유형/난이도 정보 획득 목적)
-  const adminTask = INITIAL_TASKS.find((t) => matchStoredIdWithAdminId(taskId, t.id) || matchStoredIdWithAdminId(t.id, taskId));
+  let adminTask = INITIAL_TASKS.find((t) => matchStoredIdWithAdminId(taskId, t.id) || matchStoredIdWithAdminId(t.id, taskId));
+  if (!adminTask) {
+    try {
+      const { useTaskCenterStore } = require("./task-center-store");
+      const dynamicTasks = useTaskCenterStore.getState().tasks;
+      adminTask = dynamicTasks.find((t: any) => matchStoredIdWithAdminId(taskId, t.id) || matchStoredIdWithAdminId(t.id, taskId));
+    } catch (e) {
+      console.warn("Failed to load dynamic tasks from useTaskCenterStore", e);
+    }
+  }
 
   console.log("DEBUG: getQuestionsByTaskId", {
     taskId,
@@ -77,12 +86,12 @@ export function getQuestionsByTaskId(taskId: string): Question[] {
   // 유형별 문항 배분 정보 (관리자 목데이터의 selectedTypes 기준)
   // 각 selectedType의 problemCount 만큼 문항에 typeName/difficulty 할당
   const selectedTypes = adminTask?.selectedTypes ?? [];
-  const typePerQuestion: Array<{ typeName: string; difficulty: "basic" | "intermediate" | "advanced" }> = [];
+  const typePerQuestion: Array<{ typeId: string; typeName: string; difficulty: "basic" | "intermediate" | "advanced" }> = [];
   if (selectedTypes.length > 0) {
     for (const st of selectedTypes) {
       const count = st.problemCount ?? 1;
       for (let k = 0; k < count; k++) {
-        typePerQuestion.push({ typeName: st.typeName, difficulty: st.difficulty });
+        typePerQuestion.push({ typeId: st.typeId, typeName: st.typeName, difficulty: st.difficulty });
       }
     }
   }
@@ -167,6 +176,7 @@ export function getQuestionsByTaskId(taskId: string): Question[] {
       choiceHtmls,
       answerKey,
       correctAnswer,
+      typeId: typeInfo?.typeId,
       typeName: typeInfo?.typeName,
       difficulty: typeInfo?.difficulty,
       explanationHtml: sample.explanation ? convertDollarToParentheses(sample.explanation) : undefined,

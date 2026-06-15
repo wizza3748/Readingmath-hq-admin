@@ -19,10 +19,24 @@ interface TaskCenterStore {
   duplicateTask: (taskId: string) => TaskItem;
   assignStudents: (taskId: string, classGroups: string[], individualIds: string[]) => void;
   endTask: (taskId: string) => void;
+  resetToDefault: () => void;
 }
 
+const getInitialAdminTasks = (): TaskItem[] => {
+  if (typeof window === "undefined") return INITIAL_TASKS;
+  const saved = localStorage.getItem("readingmath_admin_tasks");
+  if (saved) {
+    try {
+      return JSON.parse(saved);
+    } catch (e) {
+      return INITIAL_TASKS;
+    }
+  }
+  return INITIAL_TASKS;
+};
+
 export const useTaskCenterStore = create<TaskCenterStore>((set, get) => ({
-  tasks: INITIAL_TASKS,
+  tasks: getInitialAdminTasks(),
   currentSubject: "math",
 
   setCurrentSubject: (subject) => set({ currentSubject: subject }),
@@ -118,4 +132,61 @@ export const useTaskCenterStore = create<TaskCenterStore>((set, get) => ({
       }),
     }));
   },
+  resetToDefault: () => set({ tasks: INITIAL_TASKS, currentSubject: "math" }),
 }));
+
+if (typeof window !== "undefined") {
+  useTaskCenterStore.subscribe((state) => {
+    localStorage.setItem("readingmath_admin_tasks", JSON.stringify(state.tasks));
+    const { getStoredTasks } = require("@/utils/taskStorage");
+    const studentTasks = [...getStoredTasks()];
+    
+    let isChanged = false;
+    
+    state.tasks.forEach((taskItem) => {
+      const isStaticMock = INITIAL_TASKS.some(t => t.id === taskItem.id);
+      if (isStaticMock) return;
+
+      const existingIndex = studentTasks.findIndex(t => t.id === taskItem.id);
+      
+      if (taskItem.status === "published" || taskItem.status === "ended") {
+        const mappedTask = {
+          id: taskItem.id,
+          subject: taskItem.subject,
+          title: taskItem.name,
+          status: existingIndex >= 0 ? studentTasks[existingIndex].status : "notStarted",
+          assignedAt: taskItem.createdAt,
+          unitDisplayName: taskItem.selectedTypes[0]?.majorUnit ?? "혼합 단원",
+          totalProblems: taskItem.totalProblems,
+          course: taskItem.course,
+          solvedProblems: existingIndex >= 0 ? studentTasks[existingIndex].solvedProblems : undefined,
+          score: existingIndex >= 0 ? studentTasks[existingIndex].score : undefined,
+          correctProblems: existingIndex >= 0 ? studentTasks[existingIndex].correctProblems : undefined,
+          submittedAt: existingIndex >= 0 ? studentTasks[existingIndex].submittedAt : undefined,
+          updatedAt: existingIndex >= 0 ? studentTasks[existingIndex].updatedAt : undefined
+        };
+        
+        const existingStr = existingIndex >= 0 ? JSON.stringify(studentTasks[existingIndex]) : "";
+        const mappedStr = JSON.stringify(mappedTask);
+        
+        if (existingStr !== mappedStr) {
+          if (existingIndex >= 0) {
+            studentTasks[existingIndex] = mappedTask;
+          } else {
+            studentTasks.unshift(mappedTask);
+          }
+          isChanged = true;
+        }
+      } else if (taskItem.status === "draft" && existingIndex >= 0) {
+        studentTasks.splice(existingIndex, 1);
+        isChanged = true;
+      }
+    });
+    
+    if (isChanged) {
+      window.__readingmath_tasks__ = studentTasks;
+      localStorage.setItem("readingmath_student_tasks", JSON.stringify(studentTasks));
+      window.dispatchEvent(new Event("task-status-changed"));
+    }
+  });
+}

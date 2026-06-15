@@ -88,22 +88,7 @@ function getSortedMinorsInfo(task: TaskItem) {
 }
 
 function getDisplayTaskName(task: TaskItem): string {
-  if (!task.createdAt) return task.name;
-  const targetDate = new Date(task.createdAt);
-  const yyyy = targetDate.getFullYear();
-  const mm = String(targetDate.getMonth() + 1).padStart(2, "0");
-  const dd = String(targetDate.getDate()).padStart(2, "0");
-  const dateStr = `${yyyy}-${mm}-${dd}`;
-  
-  const info = getSortedMinorsInfo(task);
-  if (info.totalCount === 0) {
-    return task.name;
-  }
-  
-  const base = info.firstMinor;
-  return info.totalCount <= 1 
-    ? `${dateStr} | ${base}` 
-    : `${dateStr} | ${base} 외 ${info.totalCount - 1}건`;
+  return task.name;
 }
 
 function UnitPopover({ items, label }: { items: string[]; label: string }) {
@@ -262,11 +247,11 @@ export function TaskTable({ tasks }: Props) {
           <thead>
             <tr className="border-b border-slate-200 bg-slate-50/75">
               {[
-                { k: "id" as SortKey, label: "고유번호" },
-                { k: "name" as SortKey, label: "과제명" },
-                { k: "course" as SortKey, label: "학습과정" },
-              ].map(({ k, label }) => (
-                <th key={k} className="py-3 px-3 text-left font-semibold text-muted-foreground text-xs">
+                { k: "id" as SortKey, label: "고유번호", widthCls: "w-[120px] min-w-[120px]" },
+                { k: "name" as SortKey, label: "과제명", widthCls: "w-[320px] min-w-[320px]" },
+                { k: "course" as SortKey, label: "학습과정", widthCls: "w-[100px]" },
+              ].map(({ k, label, widthCls }) => (
+                <th key={k} className={`py-3 px-3 text-left font-semibold text-muted-foreground text-xs ${widthCls || ""}`}>
                   <SortBtn k={k} label={label} />
                 </th>
               ))}
@@ -298,14 +283,14 @@ export function TaskTable({ tasks }: Props) {
 
               return (
                 <tr key={task.id} className="border-b border-slate-100 last:border-0 hover:bg-slate-50/40 transition-colors duration-150">
-                  <td className="py-3 px-3 text-slate-400 font-mono text-[11px]">{task.id}</td>
-                  <td className="py-3 px-3 max-w-[200px]">
+                  <td className="py-3 px-3 text-slate-400 font-mono text-[11px] w-[120px] truncate">{task.id}</td>
+                  <td className="py-3 px-3 max-w-[320px] w-[320px]">
                     <button
                       onClick={() => router.push(`/admin/task-center/${task.id}`)}
                       className="text-indigo-600 hover:text-indigo-800 hover:underline font-semibold truncate block w-full text-left transition-colors duration-150"
                       title={getDisplayTaskName(task)}
                     >
-                      {getDisplayTaskName(task).length > 20 ? getDisplayTaskName(task).slice(0, 20) + "…" : getDisplayTaskName(task)}
+                      {getDisplayTaskName(task).length > 35 ? getDisplayTaskName(task).slice(0, 35) + "…" : getDisplayTaskName(task)}
                     </button>
                   </td>
                   <td className="py-3 px-3 whitespace-nowrap font-semibold text-slate-700">{task.course}</td>

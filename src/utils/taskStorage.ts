@@ -337,10 +337,18 @@ declare global {
 export function getStoredTasks(): Task[] {
     if (typeof window === "undefined") return DEFAULT_TASKS;
     
-    // 새로고침 시에는 window.__readingmath_tasks__가 없어지므로 매번 DEFAULT_TASKS의 새로운 복제본으로 초기화됩니다.
-    // 이로써 사용자가 브라우저 새로고침(F5)을 누르면 즉시 미시작 과제 1개인 초기 상태로 돌아옵니다.
     if (!window.__readingmath_tasks__) {
-        window.__readingmath_tasks__ = JSON.parse(JSON.stringify(DEFAULT_TASKS));
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+            try {
+                window.__readingmath_tasks__ = JSON.parse(saved);
+            } catch (e) {
+                window.__readingmath_tasks__ = JSON.parse(JSON.stringify(DEFAULT_TASKS));
+            }
+        } else {
+            window.__readingmath_tasks__ = JSON.parse(JSON.stringify(DEFAULT_TASKS));
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(window.__readingmath_tasks__));
+        }
     }
     
     return window.__readingmath_tasks__ || DEFAULT_TASKS;
@@ -349,6 +357,7 @@ export function getStoredTasks(): Task[] {
 export function saveStoredTasks(tasks: Task[]): void {
     if (typeof window === "undefined") return;
     window.__readingmath_tasks__ = tasks;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
 }
 
 export function getUnstartedTasks(subject: "math" | "science"): Task[] {

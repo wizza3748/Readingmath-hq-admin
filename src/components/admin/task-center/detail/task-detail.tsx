@@ -116,7 +116,8 @@ export default function TaskDetail({ taskId }: Props) {
   React.useEffect(() => {
     if (normalizedExistingTask) {
       const autoName = getAutoTaskName(normalizedExistingTask.selectedTypes, normalizedExistingTask.createdAt);
-      setName(autoName || normalizedExistingTask.name);
+      const isManual = normalizedExistingTask.name !== autoName;
+      setName(isManual ? normalizedExistingTask.name : (autoName || normalizedExistingTask.name));
       setSelectedTypes(normalizedExistingTask.selectedTypes);
       setCheckedTypeIds(Array.from(new Set(normalizedExistingTask.selectedTypes.map(t => t.typeId))));
       setProblemMode(normalizedExistingTask.problemMode);
@@ -124,7 +125,6 @@ export default function TaskDetail({ taskId }: Props) {
       setOnlyImportant(normalizedExistingTask.onlyImportant ?? false);
       setOnlyImportantType(normalizedExistingTask.onlyImportantType ?? false);
       
-      const isManual = normalizedExistingTask.name !== autoName;
       setNameManuallyEdited(isManual);
 
       savedSnapshot.current = JSON.stringify({
