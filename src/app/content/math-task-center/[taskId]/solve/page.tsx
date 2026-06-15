@@ -202,17 +202,30 @@ export default function MathSolvePage(props: PageProps) {
         updateTaskStatus(taskId, "ongoing");
       }
     } else if (isPreview) {
-      // 미리보기 모드: 관리자 목데이터에서 task 정보 조회
+      // 미리보기 모드: 관리자 목데이터 및 localStorage에서 task 정보 조회
       const adminTask = INITIAL_TASKS.find((t) => t.id === taskId);
-      if (adminTask) {
+      let localAdminTask = null;
+      if (typeof window !== "undefined") {
+        const saved = localStorage.getItem("readingmath_admin_tasks");
+        if (saved) {
+          try {
+            const adminTasks = JSON.parse(saved);
+            localAdminTask = adminTasks.find((t: any) => t.id === taskId);
+          } catch (e) {
+            console.error(e);
+          }
+        }
+      }
+      const targetAdmin = adminTask || localAdminTask;
+      if (targetAdmin) {
         const previewTask: Task = {
-          id: adminTask.id,
-          subject: adminTask.subject,
-          title: adminTask.name,
+          id: targetAdmin.id,
+          subject: targetAdmin.subject,
+          title: targetAdmin.name,
           status: "notStarted",
-          assignedAt: adminTask.createdAt,
-          totalProblems: adminTask.totalProblems,
-          course: adminTask.course,
+          assignedAt: targetAdmin.createdAt,
+          totalProblems: targetAdmin.totalProblems,
+          course: targetAdmin.course,
         };
         setTask(previewTask);
       } else {
@@ -993,6 +1006,14 @@ export default function MathSolvePage(props: PageProps) {
         </div>
 
         <div className="flex items-center space-x-3">
+          {isPreview && (
+            <button
+              onClick={() => router.push(`/content/math-task-center/${taskId}/explanation?preview=true`)}
+              className="flex items-center space-x-1.5 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-bold text-white hover:bg-indigo-700 shadow-md shadow-indigo-500/10 active:scale-95 transition"
+            >
+              <span>전체 해설 보기</span>
+            </button>
+          )}
           {currentIdx < questions.length - 1 ? (
             <button
               onClick={() => setCurrentIdx(currentIdx + 1)}

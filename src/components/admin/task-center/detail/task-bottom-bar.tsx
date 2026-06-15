@@ -65,8 +65,17 @@ export function TaskBottomBar({ task, isCreate, isSaving, totalProblems, onSave,
           )}
 
           {/* 미리보기 - draft, published, ended */}
-          {!isCreate && (
-            <Button variant="outline" size="sm" onClick={() => toast({ title: "준비중입니다!" })} disabled={totalProblems === 0} className="gap-2">
+          {!isCreate && task && (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                const folder = task.subject === "science" ? "science-task-center" : "math-task-center";
+                window.open(`/content/${folder}/${task.id}/solve?preview=true`, "_blank");
+              }}
+              disabled={totalProblems === 0}
+              className="gap-2"
+            >
               <Eye className="h-4 w-4" /> 미리보기
             </Button>
           )}

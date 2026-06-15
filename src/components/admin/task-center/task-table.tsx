@@ -328,7 +328,10 @@ export function TaskTable({ tasks }: Props) {
                     <div className="flex items-center gap-1.5 justify-start">
                       <button
                         title="미리보기"
-                        onClick={() => toast({ title: "준비중입니다!" })}
+                        onClick={() => {
+                          const folder = task.subject === "science" ? "science-task-center" : "math-task-center";
+                          window.open(`/content/${folder}/${task.id}/solve?preview=true`, "_blank");
+                        }}
                         className="px-2.5 py-1 text-xs font-medium bg-white border border-border rounded-md hover:bg-muted text-foreground shadow-sm transition-colors"
                       >
                         미리보기

@@ -134,22 +134,61 @@ export default function ScienceExplanationPage(props: PageProps) {
     let currentTask = taskList.find((t) => t.id === taskId);
     if (!currentTask && isPreview) {
       const adminTask = INITIAL_TASKS.find((t) => t.id === taskId);
-      if (adminTask) {
+      let localAdminTask = null;
+      if (typeof window !== "undefined") {
+        const saved = localStorage.getItem("readingmath_admin_tasks");
+        if (saved) {
+          try {
+            const adminTasks = JSON.parse(saved);
+            localAdminTask = adminTasks.find((t: any) => t.id === taskId);
+          } catch (e) {
+            console.error(e);
+          }
+        }
+      }
+      const targetAdmin = adminTask || localAdminTask;
+      if (targetAdmin) {
         currentTask = {
-          id: adminTask.id,
-          subject: adminTask.subject,
-          title: adminTask.name,
+          id: targetAdmin.id,
+          subject: targetAdmin.subject,
+          title: targetAdmin.name,
           status: "submitted",
-          assignedAt: adminTask.createdAt,
-          totalProblems: adminTask.totalProblems,
-          course: adminTask.course,
+          assignedAt: targetAdmin.createdAt,
+          totalProblems: targetAdmin.totalProblems,
+          course: targetAdmin.course,
+        };
+      } else {
+        currentTask = {
+          id: taskId,
+          subject: "science",
+          title: "미리보기 과제",
+          status: "submitted",
+          assignedAt: new Date().toISOString(),
+          totalProblems: qList.length,
         };
       }
     }
     setTask(currentTask || null);
 
     let result = getTaskResult(taskId);
-    if (!result && currentTask && currentTask.status === "submitted") {
+    if (!result && isPreview) {
+      const gradingDetails: GradingDetail[] = qList.map((q, idx) => ({
+        questionIndex: idx,
+        status: "correct",
+        submittedAnswer: q.type === "choice" ? q.answerKey : q.correctAnswer,
+        correctAnswer: q.type === "choice" ? q.answerKey : q.correctAnswer,
+      }));
+
+      result = {
+        taskId,
+        score: 100,
+        correctCount: qList.length,
+        incorrectCount: 0,
+        unenteredCount: 0,
+        submittedAt: new Date().toISOString(),
+        gradingDetails,
+      };
+    } else if (!result && currentTask && currentTask.status === "submitted") {
       const correctCount = currentTask.correctProblems ?? currentTask.totalProblems;
       const gradingDetails: GradingDetail[] = qList.map((q, idx) => {
         const isCorrect = idx < correctCount;
@@ -192,11 +231,19 @@ export default function ScienceExplanationPage(props: PageProps) {
   };
 
   const handleExit = () => {
-    router.push("/content/science-task-center");
+    if (isPreview) {
+      window.close();
+    } else {
+      router.push("/content/science-task-center");
+    }
   };
 
   const handleBackToResult = () => {
-    router.push(`/content/science-task-center/${taskId}/result${isPreview ? "?preview=true" : ""}`);
+    if (isPreview) {
+      router.push(`/content/science-task-center/${taskId}/solve?preview=true`);
+    } else {
+      router.push(`/content/science-task-center/${taskId}/result${isPreview ? "?preview=true" : ""}`);
+    }
   };
 
   const handleReportSubmit = () => {
