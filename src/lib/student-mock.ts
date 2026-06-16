@@ -59,115 +59,179 @@ export function getAssignedTeacherMap(teachers: Teacher[]): Record<string, strin
 
 export const INITIAL_STUDENTS: Student[] = [
   {
-    id: "student-3845",
-    seq: 3845,
-    name: "김네스토오",
-    pinNumber: "",
-    loginId: "test12345",
-    parentPhone: "01036983748",
-    serviceType: "combo",
-    grade: "초등 4",
-    semester: "2학기",
-    classId: "class-1", // 대표선생님반 소속
-    serviceStatus: "in_use",
-    serviceEndDate: "",
-    createdAt: "2026-01-06",
-    recommendCode: "",
-  },
-  {
-    id: "student-3273",
-    seq: 3273,
-    name: "육학생",
+    id: "s1",
+    seq: 1,
+    name: "김민준",
     pinNumber: "1234",
-    loginId: "",
-    parentPhone: "01012345678",
-    serviceType: "combo",
-    grade: "초등 4",
-    semester: "1학기",
-    classId: "class-2", // 그냥선생님반 소속 (3명 중 1)
-    serviceStatus: "in_use",
-    serviceEndDate: "",
-    createdAt: "2025-12-17",
-    recommendCode: "REC-ALPHA",
-  },
-  {
-    id: "student-3200",
-    seq: 3200,
-    name: "오학생",
-    pinNumber: "",
-    loginId: "",
-    parentPhone: "01012345678",
-    serviceType: "combo",
-    grade: "미정",
-    semester: "",
-    classId: "class-2", // 그냥선생님반 소속 (3명 중 2)
-    serviceStatus: "in_use",
-    serviceEndDate: "",
-    createdAt: "2025-12-17",
-    recommendCode: "",
-  },
-  {
-    id: "student-3199",
-    seq: 3199,
-    name: "사학생",
-    pinNumber: "",
-    loginId: "",
-    parentPhone: "01012345678",
-    serviceType: "combo",
-    grade: "미정",
-    semester: "",
-    classId: "class-1", // 대표선생님반 소속
-    serviceStatus: "in_use",
-    serviceEndDate: "",
-    createdAt: "2025-12-17",
-    recommendCode: "",
-  },
-  {
-    id: "student-3198",
-    seq: 3198,
-    name: "삼학생",
-    pinNumber: "",
-    loginId: "",
-    parentPhone: "01012345678",
-    serviceType: "combo",
-    grade: "미정",
-    semester: "",
-    classId: "class-1", // 대표선생님반 소속
-    serviceStatus: "in_use",
-    serviceEndDate: "",
-    createdAt: "2025-12-17",
-    recommendCode: "REC-BETA",
-  },
-  {
-    id: "student-3197",
-    seq: 3197,
-    name: "이학생",
-    pinNumber: "1234",
-    loginId: "",
-    parentPhone: "01012345578",
-    serviceType: "combo",
-    grade: "초등 3",
-    semester: "1학기",
-    classId: "class-2", // 그냥선생님반 소속 (3명 중 3)
-    serviceStatus: "in_use",
-    serviceEndDate: "",
-    createdAt: "2025-12-17",
-    recommendCode: "",
-  },
-  {
-    id: "student-3196",
-    seq: 3196,
-    name: "진리딩",
-    pinNumber: "1234",
-    loginId: "",
-    parentPhone: "01036983748",
+    loginId: "minjun1",
+    parentPhone: "01011112222",
     serviceType: "combo",
     grade: "중등 1",
     semester: "1학기",
-    classId: "class-1", // 대표선생님반 소속
+    classId: "class-1",
     serviceStatus: "in_use",
-    serviceEndDate: "",
-    createdAt: "2025-12-17",
+    serviceEndDate: "2027-12-31",
+    createdAt: "2026-01-01",
+    recommendCode: "",
+  },
+  {
+    id: "s2",
+    seq: 2,
+    name: "이서연",
+    pinNumber: "1234",
+    loginId: "seoyeon2",
+    parentPhone: "01022223333",
+    serviceType: "combo",
+    grade: "중등 1",
+    semester: "1학기",
+    classId: "class-1",
+    serviceStatus: "in_use",
+    serviceEndDate: "2027-12-31",
+    createdAt: "2026-01-01",
+    recommendCode: "",
+  },
+  {
+    id: "s3",
+    seq: 3,
+    name: "박지호",
+    pinNumber: "1234",
+    loginId: "jiho3",
+    parentPhone: "01033334444",
+    serviceType: "combo",
+    grade: "중등 2",
+    semester: "1학기",
+    classId: "class-2",
+    serviceStatus: "in_use",
+    serviceEndDate: "2027-12-31",
+    createdAt: "2026-01-01",
+    recommendCode: "",
+  },
+  {
+    id: "s4",
+    seq: 4,
+    name: "최수아",
+    pinNumber: "1234",
+    loginId: "sua4",
+    parentPhone: "01044445555",
+    serviceType: "combo",
+    grade: "중등 2",
+    semester: "1학기",
+    classId: "class-2",
+    serviceStatus: "in_use",
+    serviceEndDate: "2027-12-31",
+    createdAt: "2026-01-01",
+    recommendCode: "",
+  },
+  {
+    id: "s5",
+    seq: 5,
+    name: "정우진",
+    pinNumber: "1234",
+    loginId: "woojin5",
+    parentPhone: "01055556666",
+    serviceType: "combo",
+    grade: "중등 2",
+    semester: "2학기",
+    classId: "class-2",
+    serviceStatus: "in_use",
+    serviceEndDate: "2027-12-31",
+    createdAt: "2026-01-01",
+    recommendCode: "",
+  },
+  {
+    id: "s6",
+    seq: 6,
+    name: "한소율",
+    pinNumber: "1234",
+    loginId: "soyul6",
+    parentPhone: "01066667777",
+    serviceType: "combo",
+    grade: "중등 3",
+    semester: "1학기",
+    classId: "class-3",
+    serviceStatus: "in_use",
+    serviceEndDate: "2027-12-31",
+    createdAt: "2026-01-01",
+    recommendCode: "",
+  },
+  {
+    id: "s7",
+    seq: 7,
+    name: "윤태양",
+    pinNumber: "1234",
+    loginId: "taeyang7",
+    parentPhone: "01077778888",
+    serviceType: "combo",
+    grade: "중등 3",
+    semester: "2학기",
+    classId: "class-3",
+    serviceStatus: "in_use",
+    serviceEndDate: "2027-12-31",
+    createdAt: "2026-01-01",
+    recommendCode: "",
+  },
+  {
+    id: "s8",
+    seq: 8,
+    name: "강다은",
+    pinNumber: "1234",
+    loginId: "daeun8",
+    parentPhone: "01088889999",
+    serviceType: "combo",
+    grade: "중등 1",
+    semester: "1학기",
+    classId: "class-1",
+    serviceStatus: "suspended",
+    serviceEndDate: "2027-12-31",
+    createdAt: "2026-01-01",
+    recommendCode: "",
+  },
+  {
+    id: "s9",
+    seq: 9,
+    name: "임현우",
+    pinNumber: "1234",
+    loginId: "hyunwoo9",
+    parentPhone: "01099990000",
+    serviceType: "combo",
+    grade: "중등 2",
+    semester: "1학기",
+    classId: "class-2",
+    serviceStatus: "suspended",
+    serviceEndDate: "2027-12-31",
+    createdAt: "2026-01-01",
+    recommendCode: "",
+  },
+  {
+    id: "s10",
+    seq: 10,
+    name: "오지민",
+    pinNumber: "1234",
+    loginId: "jimin10",
+    parentPhone: "01012341234",
+    serviceType: "combo",
+    grade: "중등 1",
+    semester: "1학기",
+    classId: null,
+    serviceStatus: "before_use",
+    serviceEndDate: "2027-12-31",
+    createdAt: "2026-01-01",
+    recommendCode: "",
+  },
+  {
+    id: "s11",
+    seq: 11,
+    name: "신예린",
+    pinNumber: "1234",
+    loginId: "yerin11",
+    parentPhone: "01043214321",
+    serviceType: "combo",
+    grade: "중등 1",
+    semester: "1학기",
+    classId: null,
+    serviceStatus: "in_use",
+    serviceEndDate: "2027-12-31",
+    createdAt: "2026-01-01",
     recommendCode: "",
   },
 ];
@@ -185,35 +249,13 @@ export function getStoredStudents(): Student[] {
   }
   try {
     const parsed = JSON.parse(stored) as Student[];
-    let changed = false;
-    const updated = parsed.map(s => {
-      let isUpdated = false;
-      if (s.serviceStatus !== "in_use") {
-        s.serviceStatus = "in_use";
-        isUpdated = true;
-      }
-      
-      const name = s.name;
-      let targetClass = s.classId;
-      if (name === "육학생" || name === "오학생" || name === "이학생") {
-        targetClass = "class-2";
-      } else {
-        targetClass = "class-1";
-      }
-      
-      if (s.classId !== targetClass) {
-        s.classId = targetClass;
-        isUpdated = true;
-      }
-      
-      if (isUpdated) changed = true;
-      return s;
-    });
-    
-    if (changed) {
-      localStorage.setItem(STUDENT_STORAGE_KEY, JSON.stringify(updated));
+    // 만약 구버전 학생 데이터(예: "student-" 로 시작하는 ID)가 있거나, 학기(semester) 정보가 누락/비정상일 경우 자동 마이그레이션
+    const hasLegacyData = parsed.some(s => s.id.startsWith("student-") || !s.hasOwnProperty("semester") || !s.semester || s.semester === "-");
+    if (hasLegacyData) {
+      localStorage.setItem(STUDENT_STORAGE_KEY, JSON.stringify(INITIAL_STUDENTS));
+      return INITIAL_STUDENTS;
     }
-    return updated;
+    return parsed;
   } catch (e) {
     return INITIAL_STUDENTS;
   }

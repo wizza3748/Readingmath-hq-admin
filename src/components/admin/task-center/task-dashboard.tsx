@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useTaskCenterStore } from "@/lib/task-center-store";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -39,8 +39,17 @@ const STATUS_CARD_CFG = [
 
 export default function TaskDashboard() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { toast } = useToast();
   const { tasks, currentSubject, setCurrentSubject, resetToDefault } = useTaskCenterStore();
+
+  const subjectParam = searchParams.get("subject");
+
+  React.useEffect(() => {
+    if (subjectParam === "math" || subjectParam === "science") {
+      setCurrentSubject(subjectParam);
+    }
+  }, [subjectParam, setCurrentSubject]);
 
   const handleResetData = () => {
     resetToDefault();
@@ -85,8 +94,24 @@ export default function TaskDashboard() {
   // 상태별 건수
   const countByStatus = (s: TaskStatus) => subjectTasks.filter(t => t.status === s).length;
 
-  // 학습과정 목록
-  const courses = Array.from(new Set(subjectTasks.map(t => t.course))).sort();
+  // 학습과정 목록 (초등 3-1 ~ 중등 3-2 순으로 정렬)
+  const courses = Array.from(new Set(subjectTasks.map(t => t.course))).sort((a, b) => {
+    const aIsCho = a.startsWith("초");
+    const bIsCho = b.startsWith("초");
+    if (aIsCho !== bIsCho) {
+      return aIsCho ? -1 : 1;
+    }
+    const aGradeMatch = a.match(/\d/);
+    const bGradeMatch = b.match(/\d/);
+    const aGrade = aGradeMatch ? parseInt(aGradeMatch[0], 10) : 0;
+    const bGrade = bGradeMatch ? parseInt(bGradeMatch[0], 10) : 0;
+    if (aGrade !== bGrade) {
+      return aGrade - bGrade;
+    }
+    const aSemester = a.includes("-2") ? 2 : 1;
+    const bSemester = b.includes("-2") ? 2 : 1;
+    return aSemester - bSemester;
+  });
 
   // 필터링
   const filtered = subjectTasks.filter(t => {
@@ -206,8 +231,8 @@ export default function TaskDashboard() {
             ))}
           </div>
           <div className="flex items-center gap-2 pb-2">
-            <Button variant="outline" size="sm" onClick={() => toast({ title: "준비중입니다!" })} className="gap-2 bg-white">
-              <BarChart2 className="h-4 w-4" /> 월별 과제 현황
+            <Button variant="outline" size="sm" onClick={() => router.push(`/admin/task-center/status?subject=${currentSubject}`)} className="gap-2 bg-white">
+              <BarChart2 className="h-4 w-4" /> 과제 현황
             </Button>
             <Button size="sm" onClick={() => router.push(`/admin/task-center/create?subject=${currentSubject}`)} className="gap-2 bg-primary hover:bg-primary/90">
               <Plus className="h-4 w-4" /> 과제 생성

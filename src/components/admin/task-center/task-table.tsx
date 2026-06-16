@@ -197,10 +197,31 @@ export function TaskTable({ tasks }: Props) {
   };
 
   const sorted = [...tasks].sort((a, b) => {
+    if (sortKey === "course") {
+      const aIsCho = a.course.startsWith("초");
+      const bIsCho = b.course.startsWith("초");
+      if (aIsCho !== bIsCho) {
+        const diff = aIsCho ? -1 : 1;
+        return sortDir === "asc" ? diff : -diff;
+      }
+      const aGradeMatch = a.course.match(/\d/);
+      const bGradeMatch = b.course.match(/\d/);
+      const aGrade = aGradeMatch ? parseInt(aGradeMatch[0], 10) : 0;
+      const bGrade = bGradeMatch ? parseInt(bGradeMatch[0], 10) : 0;
+      if (aGrade !== bGrade) {
+        const diff = aGrade - bGrade;
+        return sortDir === "asc" ? diff : -diff;
+      }
+      const aSemester = a.course.includes("-2") ? 2 : 1;
+      const bSemester = b.course.includes("-2") ? 2 : 1;
+      const diff = aSemester - bSemester;
+      return sortDir === "asc" ? diff : -diff;
+    }
+
     let va: number | string = 0, vb: number | string = 0;
     const completedA = a.assignedStudents.filter(s => s.status === "submitted");
     const completedB = b.assignedStudents.filter(s => s.status === "submitted");
-    switch (sortKey) {
+    switch (sortKey as string) {
       case "id": va = a.id; vb = b.id; break;
       case "name": va = getDisplayTaskName(a); vb = getDisplayTaskName(b); break;
       case "course": va = a.course; vb = b.course; break;

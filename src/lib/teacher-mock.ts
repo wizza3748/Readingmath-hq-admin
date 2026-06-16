@@ -74,7 +74,7 @@ export const MOCK_TEACHERS: Teacher[] = [
     email: "",
     createdAt: "2025-12-17T08:48:00",
     assignedClasses: [
-      { id: "class-2", name: "그냥선생님반", studentCount: 3 },
+      { id: "class-2", name: "중2반", studentCount: 3 },
     ],
   },
   {
@@ -88,16 +88,16 @@ export const MOCK_TEACHERS: Teacher[] = [
     email: "",
     createdAt: "2025-12-17T08:36:27",
     assignedClasses: [
-      { id: "class-1", name: "대표선생님반", studentCount: 4 },
+      { id: "class-1", name: "중1반", studentCount: 4 },
     ],
   },
 ];
 
 // ── 전체 반 목록 ──────────────────────────────────────────────
 export const ALL_CLASSES_INITIAL: ClassInfo[] = [
-  { id: "class-1", name: "대표선생님반", studentCount: 4 },
-  { id: "class-2", name: "그냥선생님반", studentCount: 3 },
-  { id: "class-3", name: "초5C반", studentCount: 0 },
+  { id: "class-1", name: "중1반", studentCount: 4 },
+  { id: "class-2", name: "중2반", studentCount: 3 },
+  { id: "class-3", name: "중3반", studentCount: 0 },
   { id: "class-4", name: "중1A반", studentCount: 0 },
   { id: "class-5", name: "중2B반", studentCount: 0 },
   { id: "class-6", name: "고1A반", studentCount: 0 },
@@ -127,13 +127,15 @@ export function getStoredClasses(): ClassInfo[] {
       
       if (c.id === "class-1") {
         if (c.studentCount !== 4) { count = 4; changed = true; }
-        if (c.name === "초3A반") { name = "대표선생님반"; changed = true; }
+        if (c.name === "초3A반" || c.name === "대표선생님반") { name = "중1반"; changed = true; }
       }
       else if (c.id === "class-2") {
         if (c.studentCount !== 3) { count = 3; changed = true; }
-        if (c.name === "초4B반") { name = "그냥선생님반"; changed = true; }
+        if (c.name === "초4B반" || c.name === "그냥선생님반") { name = "중2반"; changed = true; }
       }
-      else if (c.id === "class-3" && c.studentCount !== 0) { count = 0; changed = true; }
+      else if (c.id === "class-3") {
+        if (c.name === "초5C반") { name = "중3반"; changed = true; }
+      }
       
       return { ...c, name, studentCount: count };
     });
@@ -171,12 +173,12 @@ export function getStoredTeachers(): Teacher[] {
       if (t.id === "teacher-34") {
         const isNameDiff = t.name !== "진원장";
         const class1 = t.assignedClasses.find(c => c.id === "class-1");
-        const isClass1Invalid = !class1 || class1.studentCount !== 4 || class1.name === "초3A반";
+        const isClass1Invalid = !class1 || class1.studentCount !== 4 || class1.name === "초3A반" || class1.name === "대표선생님반";
         const hasExtraClasses = t.assignedClasses.length !== 1;
         
         if (isNameDiff || isClass1Invalid || hasExtraClasses) {
           changed = true;
-          const currentName = (class1 && class1.name !== "초3A반") ? class1.name : "대표선생님반";
+          const currentName = (class1 && class1.name !== "초3A반" && class1.name !== "대표선생님반") ? class1.name : "중1반";
           return {
             ...t,
             name: "진원장",
@@ -191,12 +193,12 @@ export function getStoredTeachers(): Teacher[] {
       if (t.id === "teacher-35") {
         const isNameDiff = t.name !== "진선생";
         const class2 = t.assignedClasses.find(c => c.id === "class-2");
-        const isClass2Invalid = !class2 || class2.studentCount !== 3 || class2.name === "초4B반";
+        const isClass2Invalid = !class2 || class2.studentCount !== 3 || class2.name === "초4B반" || class2.name === "그냥선생님반";
         const hasExtraClasses = t.assignedClasses.length !== 1;
         
         if (isNameDiff || isClass2Invalid || hasExtraClasses) {
           changed = true;
-          const currentName = (class2 && class2.name !== "초4B반") ? class2.name : "그냥선생님반";
+          const currentName = (class2 && class2.name !== "초4B반" && class2.name !== "그냥선생님반") ? class2.name : "중2반";
           return {
             ...t,
             name: "진선생",
