@@ -1185,13 +1185,18 @@ export default function TaskStatusPage() {
                             isHovered ? "bg-primary/5" : "hover:bg-primary/5"
                           )}
                         >
-                          <span className="text-[9px] font-medium leading-none mb-0.5">
-                            {format(day, "eee", { locale: ko })}
+                          <span
+                            className={cn(
+                              "text-[9px] font-medium leading-none mb-0.5",
+                              isToday(day) ? "text-[#f59e0b] font-bold" : "text-slate-500"
+                            )}
+                          >
+                            {isToday(day) ? "오늘" : format(day, "eee", { locale: ko })}
                           </span>
                           <span
                             className={cn(
-                              "text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center",
-                              isToday(day) && "ring-1 ring-primary/40 text-primary font-extrabold"
+                              "text-xs font-bold w-5 h-5 flex items-center justify-center",
+                              isToday(day) && "text-[#f59e0b] font-extrabold"
                             )}
                           >
                             {format(day, "d")}
