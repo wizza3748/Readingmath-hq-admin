@@ -847,6 +847,15 @@ export default function TaskStatusPage() {
     return currentTeacher?.role === "representative" ? "principal" : "teacher";
   }, [currentTeacher]);
 
+  // representative(대표선생님)가 가장 왼쪽에 오도록 정렬
+  const sortedTeachers = useMemo(() => {
+    return [...dbTeachers].sort((a, b) => {
+      if (a.role === "representative" && b.role !== "representative") return -1;
+      if (a.role !== "representative" && b.role === "representative") return 1;
+      return a.seq - b.seq;
+    });
+  }, [dbTeachers]);
+
   const teacherClassIds = useMemo(() => {
     if (!currentTeacher || currentTeacher.role === "principal") return [];
     return (currentTeacher.assignedClasses || []).map((ac: any) => ac.id);
@@ -1130,7 +1139,7 @@ export default function TaskStatusPage() {
             <span className="text-[10px] font-semibold text-amber-600 uppercase tracking-wider">
               프로토타입
             </span>
-            {dbTeachers.map((t) => (
+            {sortedTeachers.map((t) => (
               <button
                 key={t.id}
                 onClick={() => {
