@@ -1173,11 +1173,11 @@ export default function TaskStatusPage() {
                       return (
                         <button
                           key={dk}
-                          onClick={() => !future && setSelectedDate(dk)}
-                          onMouseEnter={() => !future && setHoveredDate(dk)}
-                          onMouseLeave={() => !future && setHoveredDate(null)}
-                          disabled={future}
-                          title={future ? undefined : "일별 과제 현황 보기"}
+                          onClick={() => !isDimmed && setSelectedDate(dk)}
+                          onMouseEnter={() => !isDimmed && setHoveredDate(dk)}
+                          onMouseLeave={() => !isDimmed && setHoveredDate(null)}
+                          disabled={isDimmed}
+                          title={isDimmed ? undefined : "일별 과제 현황 보기"}
                           className={cn(
                             "h-full flex flex-col items-center justify-center transition-colors relative pb-1.5",
                             isDimmed
@@ -1319,18 +1319,21 @@ export default function TaskStatusPage() {
                         {daysInMonth.map((day) => {
                           const dk = format(day, "yyyy-MM-dd");
                           const cellData = matrixData[dk]?.studentResults[student.id];
-                          const future = isFuture(day) && !isToday(day);
+                          const isTodayDate = isToday(day);
+                          const future = isFuture(day) && !isTodayDate;
+                          const hasData = (matrixData[dk]?.participantCount ?? 0) > 0;
                           const isHovered = hoveredDate === dk;
+                          const isDimmed = (future || !hasData) && !isTodayDate;
                           return (
                             <button
                               key={dk}
-                              onClick={() => !future && setSelectedDate(dk)}
-                              onMouseEnter={() => !future && setHoveredDate(dk)}
-                              onMouseLeave={() => !future && setHoveredDate(null)}
-                              disabled={future}
+                              onClick={() => !isDimmed && setSelectedDate(dk)}
+                              onMouseEnter={() => !isDimmed && setHoveredDate(dk)}
+                              onMouseLeave={() => !isDimmed && setHoveredDate(null)}
+                              disabled={isDimmed}
                               className={cn(
                                 "h-full flex items-center justify-center text-xs transition-colors relative",
-                                future
+                                isDimmed
                                   ? "opacity-0 cursor-default"
                                   : "cursor-pointer",
                                 isHovered && "bg-primary/5"
@@ -1380,14 +1383,14 @@ export default function TaskStatusPage() {
                   return (
                     <button
                       key={dk}
-                      onClick={() => !future && setSelectedDate(dk)}
-                      onMouseEnter={() => !future && setHoveredDate(dk)}
-                      onMouseLeave={() => !future && setHoveredDate(null)}
-                      disabled={future}
+                      onClick={() => !isDimmed && setSelectedDate(dk)}
+                      onMouseEnter={() => !isDimmed && setHoveredDate(dk)}
+                      onMouseLeave={() => !isDimmed && setHoveredDate(null)}
+                      disabled={isDimmed}
                       className={cn(
                         "h-12 flex flex-col items-center justify-center transition-colors relative pb-2 min-w-0 w-full rounded-lg",
                         isDimmed ? "opacity-20" : "",
-                        future ? "cursor-default" : "cursor-pointer",
+                        isDimmed ? "cursor-default" : "cursor-pointer",
                         isHovered ? "bg-slate-100/50" : "bg-transparent"
                       )}
                     >
