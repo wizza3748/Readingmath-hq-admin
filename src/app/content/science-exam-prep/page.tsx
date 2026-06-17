@@ -353,6 +353,14 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark }: DetailPanelPro
               "px-2.5 py-1 rounded-full text-xs font-bold",
               isDark ? "bg-slate-700 text-slate-300" : "bg-slate-100 text-slate-600"
             )}>{diffLabel[type.difficulty]}</span>
+            {type.textbook && (
+              <span className={cn(
+                "px-2.5 py-1 rounded-full text-xs font-bold border",
+                isDark ? "bg-slate-800/40 border-slate-700 text-slate-400" : "bg-slate-50 border-slate-200 text-slate-500"
+              )}>
+                {type.textbook}
+              </span>
+            )}
           </div>
 
           {/* 유형명 */}
