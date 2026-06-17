@@ -917,7 +917,6 @@ export default function TaskStatusPage() {
 
   const filteredStudents = useMemo(() => {
     return students.filter((s) => {
-      if (s.status === "free") return false;
       if (s.status === "stopped" && !showStopped) return false;
       if (roleMode === "teacher") {
         if (s.classId === null) return false;
