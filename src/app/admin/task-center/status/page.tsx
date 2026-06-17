@@ -50,7 +50,7 @@ import {
   MOCK_EXAM_PREP_HISTORY,
 } from "./mockData";
 import { getStoredStudents } from "@/lib/student-mock";
-import { getStoredClasses } from "@/lib/teacher-mock";
+import { getStoredClasses, getStoredTeachers } from "@/lib/teacher-mock";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 헬퍼
@@ -799,8 +799,6 @@ export default function TaskStatusPage() {
   const [classFilter, setClassFilter] = useState<string>("all");
   const [selectedMonth, setSelectedMonth] = useState<Date>(startOfMonth(new Date()));
   const [showStopped, setShowStopped] = useState(false);
-  // 프로토타입 검증용 역할 토글 (운영 고정 UI 아님)
-  const [roleMode, setRoleMode] = useState<"principal" | "teacher">("principal");
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [hoveredDate, setHoveredDate] = useState<string | null>(null);
   const [activeDetailResult, setActiveDetailResult] = useState<{
@@ -811,11 +809,38 @@ export default function TaskStatusPage() {
   // 로컬 스토리지 실시간 동기화 상태 선언
   const [dbStudents, setDbStudents] = useState<any[]>([]);
   const [dbClasses, setDbClasses] = useState<any[]>([]);
+  const [dbTeachers, setDbTeachers] = useState<any[]>([]);
+  
+  // 현재 선택된 선생님 ID (디폴트: 진원장)
+  const [selectedTeacherId, setSelectedTeacherId] = useState<string>("teacher-34");
 
   useEffect(() => {
     setDbStudents(getStoredStudents());
     setDbClasses(getStoredClasses());
+    const teachers = getStoredTeachers();
+    setDbTeachers(teachers);
+    if (teachers.length > 0) {
+      const hasJin = teachers.some(t => t.id === "teacher-34");
+      if (hasJin) {
+        setSelectedTeacherId("teacher-34");
+      } else {
+        setSelectedTeacherId(teachers[0].id);
+      }
+    }
   }, []);
+
+  const currentTeacher = useMemo(() => {
+    return dbTeachers.find((t) => t.id === selectedTeacherId) || null;
+  }, [dbTeachers, selectedTeacherId]);
+
+  const roleMode = useMemo(() => {
+    return currentTeacher?.role === "principal" ? "principal" : "teacher";
+  }, [currentTeacher]);
+
+  const teacherClassIds = useMemo(() => {
+    if (!currentTeacher || currentTeacher.role === "principal") return [];
+    return (currentTeacher.assignedClasses || []).map((ac: any) => ac.id);
+  }, [currentTeacher]);
 
   const classes = useMemo(() => {
     return dbClasses;
@@ -864,7 +889,7 @@ export default function TaskStatusPage() {
     if (roleMode === "teacher") {
       return [
         { id: "all", name: "전체" },
-        ...(classes.filter((c) => ["class-2"].includes(c.id))),
+        ...classes.filter((c) => teacherClassIds.includes(c.id)),
       ];
     }
     return [
@@ -872,7 +897,7 @@ export default function TaskStatusPage() {
       ...classes,
       { id: "unassigned", name: "반 미지정" },
     ];
-  }, [roleMode, classes]);
+  }, [roleMode, classes, teacherClassIds]);
 
   const filteredStudents = useMemo(() => {
     return students.filter((s) => {
@@ -880,13 +905,13 @@ export default function TaskStatusPage() {
       if (s.status === "stopped" && !showStopped) return false;
       if (roleMode === "teacher") {
         if (s.classId === null) return false;
-        if (!["class-2"].includes(s.classId)) return false;
+        if (!teacherClassIds.includes(s.classId)) return false;
       }
       if (classFilter === "unassigned") return s.classId === null;
       if (classFilter !== "all") return s.classId === classFilter;
       return true;
     });
-  }, [roleMode, classFilter, showStopped, students]);
+  }, [roleMode, classFilter, showStopped, students, teacherClassIds]);
 
   const selectedDayTasks = useMemo(() => {
     if (!selectedDate) return [];
@@ -1098,34 +1123,23 @@ export default function TaskStatusPage() {
             <span className="text-[10px] font-semibold text-amber-600 uppercase tracking-wider">
               프로토타입
             </span>
-            <button
-              onClick={() => {
-                setRoleMode("principal");
-                setClassFilter("all");
-              }}
-              className={cn(
-                "px-2.5 py-0.5 text-xs font-medium rounded-md transition-all",
-                roleMode === "principal"
-                  ? "bg-amber-500 text-white"
-                  : "bg-white text-amber-700 border border-amber-200 hover:bg-amber-50"
-              )}
-            >
-              대표선생님
-            </button>
-            <button
-              onClick={() => {
-                setRoleMode("teacher");
-                setClassFilter("all");
-              }}
-              className={cn(
-                "px-2.5 py-0.5 text-xs font-medium rounded-md transition-all",
-                roleMode === "teacher"
-                  ? "bg-amber-500 text-white"
-                  : "bg-white text-amber-700 border border-amber-200 hover:bg-amber-50"
-              )}
-            >
-              일반선생님
-            </button>
+            {dbTeachers.map((t) => (
+              <button
+                key={t.id}
+                onClick={() => {
+                  setSelectedTeacherId(t.id);
+                  setClassFilter("all");
+                }}
+                className={cn(
+                  "px-2.5 py-0.5 text-xs font-medium rounded-md transition-all",
+                  selectedTeacherId === t.id
+                    ? "bg-amber-500 text-white"
+                    : "bg-white text-amber-700 border border-amber-200 hover:bg-amber-50"
+                )}
+              >
+                {t.name}
+              </button>
+            ))}
           </div>
         </div>
       </div>
