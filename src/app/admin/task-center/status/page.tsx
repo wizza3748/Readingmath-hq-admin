@@ -1164,10 +1164,11 @@ export default function TaskStatusPage() {
                   >
                     {daysInMonth.map((day) => {
                       const dk = format(day, "yyyy-MM-dd");
-                      const future = isFuture(day) && !isToday(day);
+                      const isTodayDate = isToday(day);
+                      const future = isFuture(day) && !isTodayDate;
                       const hasData = (matrixData[dk]?.participantCount ?? 0) > 0;
                       const isHovered = hoveredDate === dk;
-                      const isDimmed = future || !hasData;
+                      const isDimmed = (future || !hasData) && !isTodayDate;
 
                       return (
                         <button
@@ -1374,7 +1375,7 @@ export default function TaskStatusPage() {
                   const future = isFuture(day) && !isTodayDate;
                   const hasData = (matrixData[dk]?.participantCount ?? 0) > 0;
                   const isHovered = hoveredDate === dk;
-                  const isDimmed = future || (!hasData && !isSelected);
+                  const isDimmed = future || (!hasData && !isSelected && !isTodayDate);
 
                   return (
                     <button
