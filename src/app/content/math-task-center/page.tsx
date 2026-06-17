@@ -201,8 +201,10 @@ export default function MathTaskCenterPage() {
                             기본 모드
                         </div>
                     </Link>
-                    <div className={`${isDarkMode ? 'text-[#94a3b8] hover:text-white' : 'text-slate-600 hover:text-slate-900'} px-5 py-2 text-[14px] font-bold min-w-[90px] text-center cursor-pointer transition-all duration-200 hover:-translate-y-[1px] select-none h-[44px] flex items-center`}>
-                        자유 모드
+                    <div className="h-[44px] flex items-center">
+                        <div className={`${isDarkMode ? 'text-[#94a3b8]' : 'text-slate-600'} px-5 py-2 text-[14px] font-bold min-w-[90px] text-center select-none cursor-default`}>
+                            자유 모드
+                        </div>
                     </div>
                     <Link href="/content/math-exam-prep" className={`${isDarkMode ? 'text-[#94a3b8] hover:text-white' : 'text-slate-600 hover:text-slate-900'} px-5 py-2 text-[14px] font-bold min-w-[90px] text-center cursor-pointer transition-all duration-200 hover:-translate-y-[1px] select-none h-[44px] flex items-center`}>
                         시험 대비

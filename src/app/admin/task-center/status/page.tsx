@@ -1164,10 +1164,10 @@ export default function TaskStatusPage() {
                   >
                     {daysInMonth.map((day) => {
                       const dk = format(day, "yyyy-MM-dd");
-                      const isWeekend = [0, 6].includes(day.getDay());
                       const future = isFuture(day) && !isToday(day);
                       const hasData = (matrixData[dk]?.participantCount ?? 0) > 0;
                       const isHovered = hoveredDate === dk;
+                      const isDimmed = future || !hasData;
 
                       return (
                         <button
@@ -1179,11 +1179,10 @@ export default function TaskStatusPage() {
                           title={future ? undefined : "일별 과제 현황 보기"}
                           className={cn(
                             "h-full flex flex-col items-center justify-center transition-colors relative pb-1.5",
-                            future
+                            isDimmed
                               ? "opacity-20 cursor-default"
                               : "cursor-pointer",
-                            isHovered ? "bg-primary/5" : "hover:bg-primary/5",
-                            isWeekend && "text-rose-400"
+                            isHovered ? "bg-primary/5" : "hover:bg-primary/5"
                           )}
                         >
                           <span className="text-[9px] font-medium leading-none mb-0.5">
@@ -1197,10 +1196,6 @@ export default function TaskStatusPage() {
                           >
                             {format(day, "d")}
                           </span>
-                          {/* 과제 결과가 있는 날짜 점 표시 */}
-                          {hasData && (
-                            <div className="absolute bottom-1 w-1 h-1 rounded-full bg-primary" />
-                          )}
                         </button>
                       );
                     })}
@@ -1359,7 +1354,7 @@ export default function TaskStatusPage() {
           /* ───── 상세 모드 ───── */
           <div className="space-y-5 w-full max-w-full h-full min-h-0 flex flex-col overflow-hidden">
             {/* 날짜 보조 스트립 카드 */}
-            <div className="pb-3 border-b border-slate-200 w-full max-w-full overflow-hidden shrink-0 bg-transparent">
+            <div className="pb-0 border-b border-slate-200 w-full max-w-full overflow-hidden shrink-0 bg-transparent">
               <div
                 ref={dateStripRef}
                 className="grid gap-0.5 w-full"
@@ -1370,10 +1365,11 @@ export default function TaskStatusPage() {
                 {daysInMonth.map((day) => {
                   const dk = format(day, "yyyy-MM-dd");
                   const isSelected = dk === selectedDate;
-                  const future = isFuture(day) && !isToday(day);
-                  const weekend = [0, 6].includes(day.getDay());
+                  const isTodayDate = isToday(day);
+                  const future = isFuture(day) && !isTodayDate;
                   const hasData = (matrixData[dk]?.participantCount ?? 0) > 0;
                   const isHovered = hoveredDate === dk;
+                  const isDimmed = future || (!hasData && !isSelected);
 
                   return (
                     <button
@@ -1384,29 +1380,36 @@ export default function TaskStatusPage() {
                       disabled={future}
                       className={cn(
                         "h-12 flex flex-col items-center justify-center transition-colors relative pb-2 min-w-0 w-full rounded-lg",
-                        future ? "opacity-20 cursor-default" : "cursor-pointer",
-                        isHovered ? "bg-primary/5" : "hover:bg-primary/5",
-                        weekend && !isSelected && "text-rose-400"
+                        isDimmed ? "opacity-20" : "",
+                        future ? "cursor-default" : "cursor-pointer",
+                        isHovered ? "bg-slate-100/50" : "bg-transparent"
                       )}
                     >
-                      <span className="text-[9px] font-medium leading-none mb-1 text-slate-500">
-                        {format(day, "eee", { locale: ko })}
+                      <span className={cn(
+                        "text-[9px] leading-none mb-1.5 transition-colors",
+                        isSelected 
+                          ? "text-[#f59e0b] font-bold" 
+                          : isTodayDate 
+                          ? "text-blue-500 font-bold" 
+                          : "text-slate-500 font-medium"
+                      )}>
+                        {isTodayDate ? "오늘" : format(day, "eee", { locale: ko })}
                       </span>
                       <span
                         className={cn(
-                          "text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center transition-all",
-                          isSelected
-                            ? "ring-1 ring-primary text-primary font-extrabold bg-primary/5 shadow-sm"
-                            : isToday(day)
-                            ? "ring-1 ring-primary/40 text-primary font-extrabold"
-                            : "text-slate-800"
+                          "text-xs transition-all",
+                          isSelected 
+                            ? "text-[#f59e0b] font-extrabold text-sm" 
+                            : isTodayDate 
+                            ? "text-slate-800 font-bold" 
+                            : "text-slate-700 font-semibold"
                         )}
                       >
                         {format(day, "d")}
                       </span>
-                      {/* 과제 결과가 있는 날짜 점 표시 */}
-                      {hasData && (
-                        <div className="absolute bottom-1 w-1 h-1 rounded-full bg-primary" />
+                      {/* 하단 오렌지색 두꺼운 밑줄 표시 */}
+                      {isSelected && (
+                        <div className="absolute bottom-0 left-1 right-1 h-[3px] bg-[#f59e0b] rounded-t-full" />
                       )}
                     </button>
                   );

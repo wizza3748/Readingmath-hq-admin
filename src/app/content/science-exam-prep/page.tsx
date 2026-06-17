@@ -5,8 +5,10 @@ import {
   ChevronDown, ChevronUp, RotateCcw, Star, X,
   HelpCircle, Moon, Sun, Info, Crown, Check,
   BookOpen, ChevronRight, Play, Zap,
+  Siren, Megaphone, Menu,
 } from "lucide-react";
 import Link from "next/link";
+import { getStoredTasks, Task } from "@/utils/taskStorage";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getCombinedTypeHistory, evaluateAchievementStatus } from "@/utils/examPrepStorage";
 import { cn } from "@/lib/utils";
@@ -549,6 +551,21 @@ export default function ScienceExamPrepPage() {
   const [showGuide, setShowGuide] = useState(false);
   const guideRef = useRef<HTMLDivElement>(null);
 
+  const [tasks, setTasks] = useState<Task[]>([]);
+  useEffect(() => {
+    setTasks(getStoredTasks());
+    const handleChanged = () => {
+      setTasks(getStoredTasks());
+    };
+    window.addEventListener("task-status-changed", handleChanged);
+    return () => {
+      window.removeEventListener("task-status-changed", handleChanged);
+    };
+  }, []);
+
+  const scienceTasks = tasks.filter(t => t.subject === "science");
+  const unstartedCount = scienceTasks.filter(t => t.status === "notStarted").length;
+
   const [refreshTrigger, setRefreshTrigger] = useState(0);
 
   const handleResetData = () => {
@@ -944,16 +961,21 @@ export default function ScienceExamPrepPage() {
               기본 모드
             </div>
           </Link>
-          <div className={`${tabTextStyle} px-5 py-2 text-[14px] font-bold min-w-[90px] text-center cursor-pointer transition-all duration-200 hover:-translate-y-[1px] select-none h-[44px] flex items-center`}>
-            자유 모드
+          <div className="h-[44px] flex items-center">
+            <div className={`${isDark ? "text-[#94a3b8]" : "text-slate-600"} px-5 py-2 text-[14px] font-bold min-w-[90px] text-center select-none cursor-default`}>
+              자유 모드
+            </div>
           </div>
           {/* 시험 대비 - 활성 탭 */}
           <div className={`relative bg-[#0084ff] shadow-[0_-4px_20px_rgba(0,132,255,0.25)] border-[#38bdf8]/35 text-white px-6 h-[44px] rounded-t-[12px] rounded-b-none text-[14px] font-black flex items-center justify-center min-w-[95px] select-none border-t border-x`}>
             <span>시험 대비</span>
           </div>
           <Link href="/content/science-task-center" className="h-[44px] flex items-center">
-            <div className={`${tabTextStyle} px-5 py-2 text-[14px] font-bold min-w-[90px] text-center cursor-pointer transition-all duration-200 hover:-translate-y-[1px] select-none`}>
-              과제 센터
+            <div className={`relative ${tabTextStyle} px-5 py-2 text-[14px] font-bold min-w-[90px] text-center cursor-pointer transition-all duration-200 hover:-translate-y-[1px] select-none`}>
+              <span>과제 센터</span>
+              {unstartedCount > 0 && (
+                <span className="absolute top-[10px] right-[2px] h-2 w-2 bg-[#ef4444] rounded-full animate-pulse" />
+              )}
             </div>
           </Link>
         </div>
@@ -961,9 +983,12 @@ export default function ScienceExamPrepPage() {
         {/* 우측 아이콘 */}
         <div className={`flex items-center gap-[20px] ${isDark ? "text-[#94a3b8]" : "text-slate-500"}`}>
           <HelpCircle className={`h-[20px] w-[20px] ${isDark ? "hover:text-white" : "hover:text-slate-900"} transition-colors cursor-pointer`} />
-          <button onClick={() => setIsDark(v => !v)} className={`${isDark ? "hover:text-white" : "hover:text-slate-900"} transition-colors cursor-pointer`}>
-            {isDark ? <Sun className="h-[20px] w-[20px] text-amber-400" /> : <Moon className="h-[20px] w-[20px]" />}
-          </button>
+          <div className="relative cursor-pointer group">
+            <Siren className={`h-[20px] w-[20px] ${isDark ? "hover:text-white" : "hover:text-slate-900"} transition-colors`} />
+            <span className="absolute top-0 right-0 h-1.5 w-1.5 bg-[#ef4444] rounded-full animate-pulse" />
+          </div>
+          <Megaphone className={`h-[20px] w-[20px] ${isDark ? "hover:text-white" : "hover:text-slate-900"} transition-colors cursor-pointer`} />
+          <Menu className={`h-[20px] w-[20px] ${isDark ? "hover:text-white" : "hover:text-slate-900"} transition-colors cursor-pointer`} />
         </div>
       </header>
 

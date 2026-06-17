@@ -36,7 +36,7 @@ export default function MathHomePage() {
     return (
         <div className="relative min-h-screen w-full overflow-hidden bg-[#081324] font-sans select-none text-white">
             {/* 1. Global Navigation Bar (GNB) */}
-            <header className="fixed top-0 left-0 right-0 h-[48px] bg-[#091527] border-b border-[#142338] z-50 flex items-center justify-between px-5 shadow-md">
+            <header className="fixed top-0 left-0 right-0 h-[56px] bg-[#091527] border-b border-[#142338] z-50 flex items-center justify-between px-5 shadow-md">
                 {/* Left: 진리딩 로고 (클릭 시 일감보드로 이동) */}
                 <Link href="/" className="flex items-center gap-2 cursor-pointer flex-shrink-0 min-w-[130px]">
                     <svg viewBox="0 0 100 100" className="h-6 w-6 flex-shrink-0" xmlns="http://www.w3.org/2000/svg">
@@ -65,11 +65,11 @@ export default function MathHomePage() {
                     <div className="bg-[#0084ff] text-white px-6 h-[40px] rounded-t-[10px] rounded-b-none text-[15px] font-black flex items-center justify-center cursor-pointer min-w-[95px] transition-all hover:bg-[#0074e0] select-none">
                         기본 모드
                     </div>
-                    <Link href="/content/exam-prep/common-curriculum" className="h-[40px] flex items-center">
-                        <div className="text-[#5c7797] hover:text-white px-5 py-1.5 text-[15px] font-bold min-w-[95px] text-center cursor-pointer transition-colors select-none">
+                    <div className="h-[40px] flex items-center">
+                        <div className="text-[#5c7797] px-5 py-1.5 text-[15px] font-bold min-w-[95px] text-center select-none cursor-default">
                             자유 모드
                         </div>
-                    </Link>
+                    </div>
                     <Link href="/content/math-exam-prep" className="h-[40px] flex items-center">
                         <div className="text-[#5c7797] hover:text-white px-5 py-1.5 text-[15px] font-bold min-w-[95px] text-center cursor-pointer transition-colors select-none">
                             시험 대비
@@ -98,7 +98,7 @@ export default function MathHomePage() {
             </header>
 
             {/* 2. Floating Info Badges */}
-            <div className="absolute top-[62px] right-6 z-40 flex items-center gap-2.5">
+            <div className="absolute top-[70px] right-6 z-40 flex items-center gap-2.5">
                 {/* Badge 1: 학기 표시 배지 */}
                 <div className="bg-white hover:bg-slate-50 shadow-[0_2px_10px_rgba(0,0,0,0.12)] pl-[18px] pr-5 py-2.5 rounded-full flex items-center gap-2.5 cursor-pointer transition-all duration-200 select-none">
                     <span className="text-[15px] leading-none">🪐</span>
@@ -118,7 +118,7 @@ export default function MathHomePage() {
 
             {/* 2-1. 과제 알림 카드 (배지 row 아래 분리 배치) */}
             {unstartedCount > 0 && latestUnstartedTask && (
-                <Link href="/content/math-task-center" className="absolute top-[112px] right-6 z-40 block">
+                <Link href="/content/math-task-center" className="absolute top-[120px] right-6 z-40 block">
                     <div className="w-[264px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.55),0_4px_20px_rgba(245,158,11,0.25)] cursor-pointer transition-all duration-200 hover:shadow-[0_24px_70px_rgba(0,0,0,0.65)] hover:-translate-y-1 select-none task-card-enter overflow-hidden">
                         <div className="px-4 pt-3.5 pb-4">
                             {/* 헤더: 도트 + 타이틀 + 과제 풀기 버튼 */}
@@ -158,7 +158,7 @@ export default function MathHomePage() {
             )}
 
             {/* 3. Hero Content Area */}
-            <main className="relative h-screen w-full flex flex-col items-center justify-end pb-[7vh] pt-[48px]">
+            <main className="relative h-screen w-full flex flex-col items-center justify-end pb-[7vh] pt-[56px]">
                 {/* Background Image (수학 홈 이미지) */}
                 <div className="absolute inset-0 z-0">
                     <div
