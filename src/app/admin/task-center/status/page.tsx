@@ -820,11 +820,21 @@ export default function TaskStatusPage() {
     const teachers = getStoredTeachers();
     setDbTeachers(teachers);
     if (teachers.length > 0) {
-      const hasJin = teachers.some(t => t.id === "teacher-34");
-      if (hasJin) {
+      const jin = teachers.find(t => t.id === "teacher-34");
+      if (jin) {
         setSelectedTeacherId("teacher-34");
+        setClassFilter("all");
       } else {
-        setSelectedTeacherId(teachers[0].id);
+        const firstT = teachers[0];
+        setSelectedTeacherId(firstT.id);
+        if (firstT.role === "representative") {
+          setClassFilter("all");
+        } else {
+          const firstClassId = firstT.assignedClasses && firstT.assignedClasses.length > 0
+            ? firstT.assignedClasses[0].id
+            : "all";
+          setClassFilter(firstClassId);
+        }
       }
     }
   }, []);
@@ -834,7 +844,7 @@ export default function TaskStatusPage() {
   }, [dbTeachers, selectedTeacherId]);
 
   const roleMode = useMemo(() => {
-    return currentTeacher?.role === "principal" ? "principal" : "teacher";
+    return currentTeacher?.role === "representative" ? "principal" : "teacher";
   }, [currentTeacher]);
 
   const teacherClassIds = useMemo(() => {
@@ -887,10 +897,7 @@ export default function TaskStatusPage() {
 
   const classOptions = useMemo(() => {
     if (roleMode === "teacher") {
-      return [
-        { id: "all", name: "전체" },
-        ...classes.filter((c) => teacherClassIds.includes(c.id)),
-      ];
+      return classes.filter((c) => teacherClassIds.includes(c.id));
     }
     return [
       { id: "all", name: "전체" },
@@ -1128,7 +1135,14 @@ export default function TaskStatusPage() {
                 key={t.id}
                 onClick={() => {
                   setSelectedTeacherId(t.id);
-                  setClassFilter("all");
+                  if (t.role === "representative") {
+                    setClassFilter("all");
+                  } else {
+                    const firstClassId = t.assignedClasses && t.assignedClasses.length > 0
+                      ? t.assignedClasses[0].id
+                      : "all";
+                    setClassFilter(firstClassId);
+                  }
                 }}
                 className={cn(
                   "px-2.5 py-0.5 text-xs font-medium rounded-md transition-all",
