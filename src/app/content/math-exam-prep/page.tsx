@@ -595,7 +595,7 @@ export default function MathExamPrepPage() {
     let bigUnitIndex = 0;
     let subUnitIndex = 0;
 
-    rawCurriculum.types.forEach(type => {
+    rawCurriculum.types.forEach((type, idx) => {
       // 대단원 파싱 (예: "1단원-덧셈과 뺄셈")
       let badge = "";
       let bigUnitName = type.majorUnit;
@@ -645,13 +645,14 @@ export default function MathExamPrepPage() {
       }
 
       const hash = hashString(type.id);
+      const isTypeImportant = idx === 1 || idx === 5;
 
       if (type.difficultyCount.basic > 0) {
         subUnit.basicTypes.push({
           id: `${type.id}-basic`,
           name: type.typeName,
           difficulty: "basic",
-          isImportant: type.importantCount.basic > 0,
+          isImportant: isTypeImportant || type.importantCount.basic > 0,
           textbook: MATH_TEXTBOOKS[hash % MATH_TEXTBOOKS.length],
           status: evaluateAchievementStatus(`${type.id}-basic`, "math"),
           videoUrl: type.videoUrl,
@@ -664,7 +665,7 @@ export default function MathExamPrepPage() {
           id: `${type.id}-skill`,
           name: type.typeName,
           difficulty: "skill",
-          isImportant: type.importantCount.intermediate > 0,
+          isImportant: isTypeImportant || type.importantCount.intermediate > 0,
           textbook: MATH_TEXTBOOKS[(hash + 1) % MATH_TEXTBOOKS.length],
           status: evaluateAchievementStatus(`${type.id}-skill`, "math"),
           videoUrl: type.videoUrl,
@@ -677,7 +678,7 @@ export default function MathExamPrepPage() {
           id: `${type.id}-advanced`,
           name: type.typeName,
           difficulty: "advanced",
-          isImportant: type.importantCount.advanced > 0,
+          isImportant: isTypeImportant || type.importantCount.advanced > 0,
           textbook: MATH_TEXTBOOKS[(hash + 2) % MATH_TEXTBOOKS.length],
           status: evaluateAchievementStatus(`${type.id}-advanced`, "math"),
           videoUrl: type.videoUrl,
