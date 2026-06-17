@@ -26589,7 +26589,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-7",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(1) 소수와 합성수",
-        "typeName": "거듭제곱의 대소 관계 및 규칙성 찾기",
+        "typeName": "거듭제곱의 대소 관계 및 규칙성 찾기 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -26607,7 +26607,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-8",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(1) 소수와 합성수",
-        "typeName": "거듭제곱의 대소 관계 및 규칙성 찾기",
+        "typeName": "거듭제곱의 대소 관계 및 규칙성 찾기 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -26625,7 +26625,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-9",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(1) 소수와 합성수",
-        "typeName": "거듭제곱의 대소 관계 및 규칙성 찾기",
+        "typeName": "거듭제곱의 대소 관계 및 규칙성 찾기 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -26643,7 +26643,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-10",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(1) 소수와 합성수",
-        "typeName": "거듭제곱의 대소 관계 및 규칙성 찾기",
+        "typeName": "거듭제곱의 대소 관계 및 규칙성 찾기 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -26661,7 +26661,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-11",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(1) 소수와 합성수",
-        "typeName": "거듭제곱의 대소 관계 및 규칙성 찾기",
+        "typeName": "거듭제곱의 대소 관계 및 규칙성 찾기 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -26841,7 +26841,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-21",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(2) 소인수분해, 소인수분해를 이용하여 약수 구하기",
-        "typeName": "약수의 개수와 약수의 총합을 이용한 고난도 문제",
+        "typeName": "약수의 개수와 약수의 총합을 이용한 고난도 문제 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -26859,7 +26859,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-22",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(2) 소인수분해, 소인수분해를 이용하여 약수 구하기",
-        "typeName": "약수의 개수와 약수의 총합을 이용한 고난도 문제",
+        "typeName": "약수의 개수와 약수의 총합을 이용한 고난도 문제 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -26877,7 +26877,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-23",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(2) 소인수분해, 소인수분해를 이용하여 약수 구하기",
-        "typeName": "약수의 개수와 약수의 총합을 이용한 고난도 문제",
+        "typeName": "약수의 개수와 약수의 총합을 이용한 고난도 문제 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -26895,7 +26895,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-24",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(2) 소인수분해, 소인수분해를 이용하여 약수 구하기",
-        "typeName": "약수의 개수와 약수의 총합을 이용한 고난도 문제",
+        "typeName": "약수의 개수와 약수의 총합을 이용한 고난도 문제 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -26913,7 +26913,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-25",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(2) 소인수분해, 소인수분해를 이용하여 약수 구하기",
-        "typeName": "약수의 개수와 약수의 총합을 이용한 고난도 문제",
+        "typeName": "약수의 개수와 약수의 총합을 이용한 고난도 문제 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27093,7 +27093,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-35",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(3) 공약수와 최대공약수",
-        "typeName": "최대공약수의 활용 (조 나누기 및 구성원 계산)",
+        "typeName": "최대공약수의 활용 (조 나누기 및 구성원 계산) - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27111,7 +27111,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-36",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(3) 공약수와 최대공약수",
-        "typeName": "최대공약수의 활용 (조 나누기 및 구성원 계산)",
+        "typeName": "최대공약수의 활용 (조 나누기 및 구성원 계산) - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27129,7 +27129,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-37",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(3) 공약수와 최대공약수",
-        "typeName": "최대공약수의 활용 (조 나누기 및 구성원 계산)",
+        "typeName": "최대공약수의 활용 (조 나누기 및 구성원 계산) - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27147,7 +27147,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-38",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(3) 공약수와 최대공약수",
-        "typeName": "최대공약수의 활용 (조 나누기 및 구성원 계산)",
+        "typeName": "최대공약수의 활용 (조 나누기 및 구성원 계산) - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27165,7 +27165,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-39",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(3) 공약수와 최대공약수",
-        "typeName": "최대공약수의 활용 (조 나누기 및 구성원 계산)",
+        "typeName": "최대공약수의 활용 (조 나누기 및 구성원 계산) - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27345,7 +27345,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-49",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(4) 공배수와 최소공배수",
-        "typeName": "최대공약수와 최소공배수 활용 (톱니바퀴 연계 및 주기성 복합)",
+        "typeName": "최대공약수와 최소공배수 활용 (톱니바퀴 연계 및 주기성 복합) - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27363,7 +27363,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-50",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(4) 공배수와 최소공배수",
-        "typeName": "최대공약수와 최소공배수 활용 (톱니바퀴 연계 및 주기성 복합)",
+        "typeName": "최대공약수와 최소공배수 활용 (톱니바퀴 연계 및 주기성 복합) - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27381,7 +27381,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-51",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(4) 공배수와 최소공배수",
-        "typeName": "최대공약수와 최소공배수 활용 (톱니바퀴 연계 및 주기성 복합)",
+        "typeName": "최대공약수와 최소공배수 활용 (톱니바퀴 연계 및 주기성 복합) - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27399,7 +27399,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-52",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(4) 공배수와 최소공배수",
-        "typeName": "최대공약수와 최소공배수 활용 (톱니바퀴 연계 및 주기성 복합)",
+        "typeName": "최대공약수와 최소공배수 활용 (톱니바퀴 연계 및 주기성 복합) - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27417,7 +27417,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-53",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(4) 공배수와 최소공배수",
-        "typeName": "최대공약수와 최소공배수 활용 (톱니바퀴 연계 및 주기성 복합)",
+        "typeName": "최대공약수와 최소공배수 활용 (톱니바퀴 연계 및 주기성 복합) - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27435,7 +27435,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-54",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(4) 공배수와 최소공배수",
-        "typeName": "최대공약수와 최소공배수 활용 (톱니바퀴 연계 및 주기성 복합)",
+        "typeName": "최대공약수와 최소공배수 활용 (톱니바퀴 연계 및 주기성 복합) - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27471,7 +27471,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-1",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(1) 양수와 음수, 정수와 유리수",
-        "typeName": "정수와 유리수의 분류 구조 및 개념 판별",
+        "typeName": "정수와 유리수의 분류 구조 및 개념 판별 - 유형 3",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27489,7 +27489,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-2",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(1) 양수와 음수, 정수와 유리수",
-        "typeName": "정수와 유리수의 분류 구조 및 개념 판별",
+        "typeName": "정수와 유리수의 분류 구조 및 개념 판별 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27507,7 +27507,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-3",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(1) 양수와 음수, 정수와 유리수",
-        "typeName": "정수와 유리수의 분류 구조 및 개념 판별",
+        "typeName": "정수와 유리수의 분류 구조 및 개념 판별 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27525,7 +27525,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-4",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(1) 양수와 음수, 정수와 유리수",
-        "typeName": "정수와 유리수의 분류 구조 및 개념 판별",
+        "typeName": "정수와 유리수의 분류 구조 및 개념 판별 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27543,7 +27543,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-5",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(1) 양수와 음수, 정수와 유리수",
-        "typeName": "정수와 유리수의 분류 구조 및 개념 판별",
+        "typeName": "정수와 유리수의 분류 구조 및 개념 판별 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27669,7 +27669,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-12",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(2) 수직선과 절댓값",
-        "typeName": "절댓값 기호를 포함한 수직선 위 거리 조건 심화 해석",
+        "typeName": "절댓값 기호를 포함한 수직선 위 거리 조건 심화 해석 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27687,7 +27687,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-13",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(2) 수직선과 절댓값",
-        "typeName": "절댓값 기호를 포함한 수직선 위 거리 조건 심화 해석",
+        "typeName": "절댓값 기호를 포함한 수직선 위 거리 조건 심화 해석 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27705,7 +27705,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-14",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(2) 수직선과 절댓값",
-        "typeName": "절댓값 기호를 포함한 수직선 위 거리 조건 심화 해석",
+        "typeName": "절댓값 기호를 포함한 수직선 위 거리 조건 심화 해석 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27723,7 +27723,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-15",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(2) 수직선과 절댓값",
-        "typeName": "절댓값 기호를 포함한 수직선 위 거리 조건 심화 해석",
+        "typeName": "절댓값 기호를 포함한 수직선 위 거리 조건 심화 해석 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27741,7 +27741,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-16",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(2) 수직선과 절댓값",
-        "typeName": "절댓값 기호를 포함한 수직선 위 거리 조건 심화 해석",
+        "typeName": "절댓값 기호를 포함한 수직선 위 거리 조건 심화 해석 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27777,7 +27777,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-18",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(3) 수의 대소 관계, 부등호의 사용",
-        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값",
+        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값 - 유형 2",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27795,7 +27795,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-19",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(3) 수의 대소 관계, 부등호의 사용",
-        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값",
+        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값 - 유형 3",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27813,7 +27813,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-20",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(3) 수의 대소 관계, 부등호의 사용",
-        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값",
+        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27831,7 +27831,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-21",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(3) 수의 대소 관계, 부등호의 사용",
-        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값",
+        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27849,7 +27849,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-22",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(3) 수의 대소 관계, 부등호의 사용",
-        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값",
+        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27867,7 +27867,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-23",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(3) 수의 대소 관계, 부등호의 사용",
-        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값",
+        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27885,7 +27885,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-24",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(3) 수의 대소 관계, 부등호의 사용",
-        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값",
+        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27903,7 +27903,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-25",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(3) 수의 대소 관계, 부등호의 사용",
-        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값",
+        "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28011,7 +28011,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-31",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(4) 유리수의 덧셈과 뺄셈",
-        "typeName": "유리수의 덧셈과 뺄셈 기호의 추상화 및 기호 법칙 연산",
+        "typeName": "유리수의 덧셈과 뺄셈 기호의 추상화 및 기호 법칙 연산 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28029,7 +28029,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-32",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(4) 유리수의 덧셈과 뺄셈",
-        "typeName": "유리수의 덧셈과 뺄셈 기호의 추상화 및 기호 법칙 연산",
+        "typeName": "유리수의 덧셈과 뺄셈 기호의 추상화 및 기호 법칙 연산 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28047,7 +28047,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-33",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(4) 유리수의 덧셈과 뺄셈",
-        "typeName": "유리수의 덧셈과 뺄셈 기호의 추상화 및 기호 법칙 연산",
+        "typeName": "유리수의 덧셈과 뺄셈 기호의 추상화 및 기호 법칙 연산 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28065,7 +28065,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-34",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(4) 유리수의 덧셈과 뺄셈",
-        "typeName": "유리수의 덧셈과 뺄셈 기호의 추상화 및 기호 법칙 연산",
+        "typeName": "유리수의 덧셈과 뺄셈 기호의 추상화 및 기호 법칙 연산 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28083,7 +28083,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-35",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(4) 유리수의 덧셈과 뺄셈",
-        "typeName": "유리수의 덧셈과 뺄셈 기호의 추상화 및 기호 법칙 연산",
+        "typeName": "유리수의 덧셈과 뺄셈 기호의 추상화 및 기호 법칙 연산 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28209,7 +28209,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-42",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(5) 유리수의 곱셈과 나눗셈",
-        "typeName": "곱셈과 나눗셈의 혼합 계산 및 부호 판별",
+        "typeName": "곱셈과 나눗셈의 혼합 계산 및 부호 판별 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28227,7 +28227,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-43",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(5) 유리수의 곱셈과 나눗셈",
-        "typeName": "곱셈과 나눗셈의 혼합 계산 및 부호 판별",
+        "typeName": "곱셈과 나눗셈의 혼합 계산 및 부호 판별 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28245,7 +28245,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-44",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(5) 유리수의 곱셈과 나눗셈",
-        "typeName": "곱셈과 나눗셈의 혼합 계산 및 부호 판별",
+        "typeName": "곱셈과 나눗셈의 혼합 계산 및 부호 판별 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28263,7 +28263,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-45",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(5) 유리수의 곱셈과 나눗셈",
-        "typeName": "곱셈과 나눗셈의 혼합 계산 및 부호 판별",
+        "typeName": "곱셈과 나눗셈의 혼합 계산 및 부호 판별 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28281,7 +28281,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-46",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(5) 유리수의 곱셈과 나눗셈",
-        "typeName": "곱셈과 나눗셈의 혼합 계산 및 부호 판별",
+        "typeName": "곱셈과 나눗셈의 혼합 계산 및 부호 판별 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28353,7 +28353,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-50",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(6) 덧셈, 뺄셈, 곱셈, 나눗셈의 혼합계산, 유리수 계산의 활용",
-        "typeName": "바르게 계산한 식을 세워 미지수 구하기",
+        "typeName": "바르게 계산한 식을 세워 미지수 구하기 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28371,7 +28371,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-51",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(6) 덧셈, 뺄셈, 곱셈, 나눗셈의 혼합계산, 유리수 계산의 활용",
-        "typeName": "바르게 계산한 식을 세워 미지수 구하기",
+        "typeName": "바르게 계산한 식을 세워 미지수 구하기 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28389,7 +28389,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-52",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(6) 덧셈, 뺄셈, 곱셈, 나눗셈의 혼합계산, 유리수 계산의 활용",
-        "typeName": "바르게 계산한 식을 세워 미지수 구하기",
+        "typeName": "바르게 계산한 식을 세워 미지수 구하기 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28407,7 +28407,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-53",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(6) 덧셈, 뺄셈, 곱셈, 나눗셈의 혼합계산, 유리수 계산의 활용",
-        "typeName": "바르게 계산한 식을 세워 미지수 구하기",
+        "typeName": "바르게 계산한 식을 세워 미지수 구하기 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28425,7 +28425,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-1-54",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(6) 덧셈, 뺄셈, 곱셈, 나눗셈의 혼합계산, 유리수 계산의 활용",
-        "typeName": "바르게 계산한 식을 세워 미지수 구하기",
+        "typeName": "바르게 계산한 식을 세워 미지수 구하기 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28569,7 +28569,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-7",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(1) 문자를 사용한 식, 식의 값",
-        "typeName": "조건 조건식(비례식 등)을 활용한 시차 대입과 식의 값",
+        "typeName": "조건 조건식(비례식 등)을 활용한 시차 대입과 식의 값 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28587,7 +28587,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-8",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(1) 문자를 사용한 식, 식의 값",
-        "typeName": "조건 조건식(비례식 등)을 활용한 시차 대입과 식의 값",
+        "typeName": "조건 조건식(비례식 등)을 활용한 시차 대입과 식의 값 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28605,7 +28605,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-9",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(1) 문자를 사용한 식, 식의 값",
-        "typeName": "조건 조건식(비례식 등)을 활용한 시차 대입과 식의 값",
+        "typeName": "조건 조건식(비례식 등)을 활용한 시차 대입과 식의 값 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28623,7 +28623,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-10",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(1) 문자를 사용한 식, 식의 값",
-        "typeName": "조건 조건식(비례식 등)을 활용한 시차 대입과 식의 값",
+        "typeName": "조건 조건식(비례식 등)을 활용한 시차 대입과 식의 값 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28641,7 +28641,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-11",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(1) 문자를 사용한 식, 식의 값",
-        "typeName": "조건 조건식(비례식 등)을 활용한 시차 대입과 식의 값",
+        "typeName": "조건 조건식(비례식 등)을 활용한 시차 대입과 식의 값 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28785,7 +28785,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-19",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(2) 다항식과 일차식, 일차식의 사칙계산",
-        "typeName": "일차식의 정의 조건과 미지수 결정 (최고차항 계수 복합)",
+        "typeName": "일차식의 정의 조건과 미지수 결정 (최고차항 계수 복합) - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28803,7 +28803,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-20",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(2) 다항식과 일차식, 일차식의 사칙계산",
-        "typeName": "일차식의 정의 조건과 미지수 결정 (최고차항 계수 복합)",
+        "typeName": "일차식의 정의 조건과 미지수 결정 (최고차항 계수 복합) - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28821,7 +28821,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-21",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(2) 다항식과 일차식, 일차식의 사칙계산",
-        "typeName": "일차식의 정의 조건과 미지수 결정 (최고차항 계수 복합)",
+        "typeName": "일차식의 정의 조건과 미지수 결정 (최고차항 계수 복합) - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28839,7 +28839,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-22",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(2) 다항식과 일차식, 일차식의 사칙계산",
-        "typeName": "일차식의 정의 조건과 미지수 결정 (최고차항 계수 복합)",
+        "typeName": "일차식의 정의 조건과 미지수 결정 (최고차항 계수 복합) - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28857,7 +28857,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-23",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(2) 다항식과 일차식, 일차식의 사칙계산",
-        "typeName": "일차식의 정의 조건과 미지수 결정 (최고차항 계수 복합)",
+        "typeName": "일차식의 정의 조건과 미지수 결정 (최고차항 계수 복합) - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28965,7 +28965,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-29",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(3) 방정식과 그 해, 등식의 성질",
-        "typeName": "방정식과 항등식의 엄밀한 조건 구분 및 다중 미지수 탐색",
+        "typeName": "방정식과 항등식의 엄밀한 조건 구분 및 다중 미지수 탐색 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28983,7 +28983,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-30",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(3) 방정식과 그 해, 등식의 성질",
-        "typeName": "방정식과 항등식의 엄밀한 조건 구분 및 다중 미지수 탐색",
+        "typeName": "방정식과 항등식의 엄밀한 조건 구분 및 다중 미지수 탐색 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29001,7 +29001,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-31",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(3) 방정식과 그 해, 등식의 성질",
-        "typeName": "방정식과 항등식의 엄밀한 조건 구분 및 다중 미지수 탐색",
+        "typeName": "방정식과 항등식의 엄밀한 조건 구분 및 다중 미지수 탐색 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29019,7 +29019,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-32",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(3) 방정식과 그 해, 등식의 성질",
-        "typeName": "방정식과 항등식의 엄밀한 조건 구분 및 다중 미지수 탐색",
+        "typeName": "방정식과 항등식의 엄밀한 조건 구분 및 다중 미지수 탐색 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29037,7 +29037,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-33",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(3) 방정식과 그 해, 등식의 성질",
-        "typeName": "방정식과 항등식의 엄밀한 조건 구분 및 다중 미지수 탐색",
+        "typeName": "방정식과 항등식의 엄밀한 조건 구분 및 다중 미지수 탐색 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29181,7 +29181,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-41",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(4) 일차방정식의 풀이",
-        "typeName": "특수 기호 연산 약속을 포함한 고난도 일차방정식",
+        "typeName": "특수 기호 연산 약속을 포함한 고난도 일차방정식 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29199,7 +29199,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-42",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(4) 일차방정식의 풀이",
-        "typeName": "특수 기호 연산 약속을 포함한 고난도 일차방정식",
+        "typeName": "특수 기호 연산 약속을 포함한 고난도 일차방정식 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29217,7 +29217,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-43",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(4) 일차방정식의 풀이",
-        "typeName": "특수 기호 연산 약속을 포함한 고난도 일차방정식",
+        "typeName": "특수 기호 연산 약속을 포함한 고난도 일차방정식 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29235,7 +29235,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-44",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(4) 일차방정식의 풀이",
-        "typeName": "특수 기호 연산 약속을 포함한 고난도 일차방정식",
+        "typeName": "특수 기호 연산 약속을 포함한 고난도 일차방정식 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29253,7 +29253,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-45",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(4) 일차방정식의 풀이",
-        "typeName": "특수 기호 연산 약속을 포함한 고난도 일차방정식",
+        "typeName": "특수 기호 연산 약속을 포함한 고난도 일차방정식 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29451,7 +29451,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-56",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(5) 일차방정식의 활용 문제",
-        "typeName": "일차방정식의 활용 (일의 양 및 파이프/물탱크 채우기 심화)",
+        "typeName": "일차방정식의 활용 (일의 양 및 파이프/물탱크 채우기 심화) - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29469,7 +29469,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-57",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(5) 일차방정식의 활용 문제",
-        "typeName": "일차방정식의 활용 (일의 양 및 파이프/물탱크 채우기 심화)",
+        "typeName": "일차방정식의 활용 (일의 양 및 파이프/물탱크 채우기 심화) - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29487,7 +29487,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-58",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(5) 일차방정식의 활용 문제",
-        "typeName": "일차방정식의 활용 (일의 양 및 파이프/물탱크 채우기 심화)",
+        "typeName": "일차방정식의 활용 (일의 양 및 파이프/물탱크 채우기 심화) - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29505,7 +29505,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-59",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(5) 일차방정식의 활용 문제",
-        "typeName": "일차방정식의 활용 (일의 양 및 파이프/물탱크 채우기 심화)",
+        "typeName": "일차방정식의 활용 (일의 양 및 파이프/물탱크 채우기 심화) - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29523,7 +29523,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-60",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(5) 일차방정식의 활용 문제",
-        "typeName": "일차방정식의 활용 (일의 양 및 파이프/물탱크 채우기 심화)",
+        "typeName": "일차방정식의 활용 (일의 양 및 파이프/물탱크 채우기 심화) - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29649,7 +29649,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-6",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(1) 순서쌍과 좌표평면, 사분면",
-        "typeName": "대칭이동(x축, y축, 원점) 및 회전이동을 통한 좌표 추적",
+        "typeName": "대칭이동(x축, y축, 원점) 및 회전이동을 통한 좌표 추적 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29667,7 +29667,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-7",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(1) 순서쌍과 좌표평면, 사분면",
-        "typeName": "대칭이동(x축, y축, 원점) 및 회전이동을 통한 좌표 추적",
+        "typeName": "대칭이동(x축, y축, 원점) 및 회전이동을 통한 좌표 추적 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29685,7 +29685,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-8",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(1) 순서쌍과 좌표평면, 사분면",
-        "typeName": "대칭이동(x축, y축, 원점) 및 회전이동을 통한 좌표 추적",
+        "typeName": "대칭이동(x축, y축, 원점) 및 회전이동을 통한 좌표 추적 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29703,7 +29703,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-9",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(1) 순서쌍과 좌표평면, 사분면",
-        "typeName": "대칭이동(x축, y축, 원점) 및 회전이동을 통한 좌표 추적",
+        "typeName": "대칭이동(x축, y축, 원점) 및 회전이동을 통한 좌표 추적 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29721,7 +29721,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-10",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(1) 순서쌍과 좌표평면, 사분면",
-        "typeName": "대칭이동(x축, y축, 원점) 및 회전이동을 통한 좌표 추적",
+        "typeName": "대칭이동(x축, y축, 원점) 및 회전이동을 통한 좌표 추적 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29775,7 +29775,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-13",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(2) 그래프",
-        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도)",
+        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도) - 유형 3",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29793,7 +29793,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-14",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(2) 그래프",
-        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도)",
+        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도) - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29811,7 +29811,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-15",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(2) 그래프",
-        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도)",
+        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도) - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29829,7 +29829,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-16",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(2) 그래프",
-        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도)",
+        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도) - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29847,7 +29847,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-17",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(2) 그래프",
-        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도)",
+        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도) - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29865,7 +29865,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-18",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(2) 그래프",
-        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도)",
+        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도) - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29883,7 +29883,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-19",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(2) 그래프",
-        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도)",
+        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도) - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29901,7 +29901,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-20",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(2) 그래프",
-        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도)",
+        "typeName": "상황에 알맞은 그래프 모양 추론 (물 채우기 등 최고난도) - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30027,7 +30027,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-27",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(3) 정비례",
-        "typeName": "정비례 관계를 이용한 실생활 문장제 활용 및 도형 분할",
+        "typeName": "정비례 관계를 이용한 실생활 문장제 활용 및 도형 분할 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30045,7 +30045,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-28",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(3) 정비례",
-        "typeName": "정비례 관계를 이용한 실생활 문장제 활용 및 도형 분할",
+        "typeName": "정비례 관계를 이용한 실생활 문장제 활용 및 도형 분할 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30063,7 +30063,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-29",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(3) 정비례",
-        "typeName": "정비례 관계를 이용한 실생활 문장제 활용 및 도형 분할",
+        "typeName": "정비례 관계를 이용한 실생활 문장제 활용 및 도형 분할 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30081,7 +30081,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-30",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(3) 정비례",
-        "typeName": "정비례 관계를 이용한 실생활 문장제 활용 및 도형 분할",
+        "typeName": "정비례 관계를 이용한 실생활 문장제 활용 및 도형 분할 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30099,7 +30099,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-31",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(3) 정비례",
-        "typeName": "정비례 관계를 이용한 실생활 문장제 활용 및 도형 분할",
+        "typeName": "정비례 관계를 이용한 실생활 문장제 활용 및 도형 분할 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30243,7 +30243,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-39",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(4) 반비례",
-        "typeName": "반비례 관계를 이용한 실생활 문장제 활용",
+        "typeName": "반비례 관계를 이용한 실생활 문장제 활용 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30261,7 +30261,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-40",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(4) 반비례",
-        "typeName": "반비례 관계를 이용한 실생활 문장제 활용",
+        "typeName": "반비례 관계를 이용한 실생활 문장제 활용 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30279,7 +30279,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-41",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(4) 반비례",
-        "typeName": "반비례 관계를 이용한 실생활 문장제 활용",
+        "typeName": "반비례 관계를 이용한 실생활 문장제 활용 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30297,7 +30297,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-42",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(4) 반비례",
-        "typeName": "반비례 관계를 이용한 실생활 문장제 활용",
+        "typeName": "반비례 관계를 이용한 실생활 문장제 활용 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30315,7 +30315,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-43",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(4) 반비례",
-        "typeName": "반비례 관계를 이용한 실생활 문장제 활용",
+        "typeName": "반비례 관계를 이용한 실생활 문장제 활용 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30333,7 +30333,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-44",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(4) 반비례",
-        "typeName": "반비례 관계를 이용한 실생활 문장제 활용",
+        "typeName": "반비례 관계를 이용한 실생활 문장제 활용 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30351,7 +30351,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-3-45",
         "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(4) 반비례",
-        "typeName": "반비례 관계를 이용한 실생활 문장제 활용",
+        "typeName": "반비례 관계를 이용한 실생활 문장제 활용 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30412,7 +30412,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-2",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(1) 점, 선, 면",
-        "typeName": "선분의 중점의 성질과 분할 조건식을 이용한 길이 계산",
+        "typeName": "선분의 중점의 성질과 분할 조건식을 이용한 길이 계산 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30430,7 +30430,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-3",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(1) 점, 선, 면",
-        "typeName": "선분의 중점의 성질과 분할 조건식을 이용한 길이 계산",
+        "typeName": "선분의 중점의 성질과 분할 조건식을 이용한 길이 계산 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30448,7 +30448,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-4",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(1) 점, 선, 면",
-        "typeName": "선분의 중점의 성질과 분할 조건식을 이용한 길이 계산",
+        "typeName": "선분의 중점의 성질과 분할 조건식을 이용한 길이 계산 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30466,7 +30466,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-5",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(1) 점, 선, 면",
-        "typeName": "선분의 중점의 성질과 분할 조건식을 이용한 길이 계산",
+        "typeName": "선분의 중점의 성질과 분할 조건식을 이용한 길이 계산 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30484,7 +30484,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-6",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(1) 점, 선, 면",
-        "typeName": "선분의 중점의 성질과 분할 조건식을 이용한 길이 계산",
+        "typeName": "선분의 중점의 성질과 분할 조건식을 이용한 길이 계산 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30574,7 +30574,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-11",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(2) 각",
-        "typeName": "시침과 분침이 이루는 각의 크기 및 n분 후의 심화 연산 (시계 문제)",
+        "typeName": "시침과 분침이 이루는 각의 크기 및 n분 후의 심화 연산 (시계 문제) - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30592,7 +30592,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-12",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(2) 각",
-        "typeName": "시침과 분침이 이루는 각의 크기 및 n분 후의 심화 연산 (시계 문제)",
+        "typeName": "시침과 분침이 이루는 각의 크기 및 n분 후의 심화 연산 (시계 문제) - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30610,7 +30610,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-13",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(2) 각",
-        "typeName": "시침과 분침이 이루는 각의 크기 및 n분 후의 심화 연산 (시계 문제)",
+        "typeName": "시침과 분침이 이루는 각의 크기 및 n분 후의 심화 연산 (시계 문제) - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30628,7 +30628,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-14",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(2) 각",
-        "typeName": "시침과 분침이 이루는 각의 크기 및 n분 후의 심화 연산 (시계 문제)",
+        "typeName": "시침과 분침이 이루는 각의 크기 및 n분 후의 심화 연산 (시계 문제) - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30646,7 +30646,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-15",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(2) 각",
-        "typeName": "시침과 분침이 이루는 각의 크기 및 n분 후의 심화 연산 (시계 문제)",
+        "typeName": "시침과 분침이 이루는 각의 크기 및 n분 후의 심화 연산 (시계 문제) - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30754,7 +30754,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-21",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(3) 점, 직선, 평면의 위치 관계",
-        "typeName": "공간에서 위치 관계에 대한 설명 중 참·거짓 엄밀한 논리 증명",
+        "typeName": "공간에서 위치 관계에 대한 설명 중 참·거짓 엄밀한 논리 증명 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30772,7 +30772,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-22",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(3) 점, 직선, 평면의 위치 관계",
-        "typeName": "공간에서 위치 관계에 대한 설명 중 참·거짓 엄밀한 논리 증명",
+        "typeName": "공간에서 위치 관계에 대한 설명 중 참·거짓 엄밀한 논리 증명 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30790,7 +30790,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-23",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(3) 점, 직선, 평면의 위치 관계",
-        "typeName": "공간에서 위치 관계에 대한 설명 중 참·거짓 엄밀한 논리 증명",
+        "typeName": "공간에서 위치 관계에 대한 설명 중 참·거짓 엄밀한 논리 증명 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30808,7 +30808,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-24",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(3) 점, 직선, 평면의 위치 관계",
-        "typeName": "공간에서 위치 관계에 대한 설명 중 참·거짓 엄밀한 논리 증명",
+        "typeName": "공간에서 위치 관계에 대한 설명 중 참·거짓 엄밀한 논리 증명 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30826,7 +30826,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-25",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(3) 점, 직선, 평면의 위치 관계",
-        "typeName": "공간에서 위치 관계에 대한 설명 중 참·거짓 엄밀한 논리 증명",
+        "typeName": "공간에서 위치 관계에 대한 설명 중 참·거짓 엄밀한 논리 증명 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30916,7 +30916,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-30",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(4) 평행선의 성질",
-        "typeName": "종이 접기 도형에서의 평행선의 성질과 이등변삼각형 융합 응용",
+        "typeName": "종이 접기 도형에서의 평행선의 성질과 이등변삼각형 융합 응용 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30934,7 +30934,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-31",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(4) 평행선의 성질",
-        "typeName": "종이 접기 도형에서의 평행선의 성질과 이등변삼각형 융합 응용",
+        "typeName": "종이 접기 도형에서의 평행선의 성질과 이등변삼각형 융합 응용 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30952,7 +30952,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-32",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(4) 평행선의 성질",
-        "typeName": "종이 접기 도형에서의 평행선의 성질과 이등변삼각형 융합 응용",
+        "typeName": "종이 접기 도형에서의 평행선의 성질과 이등변삼각형 융합 응용 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30970,7 +30970,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-33",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(4) 평행선의 성질",
-        "typeName": "종이 접기 도형에서의 평행선의 성질과 이등변삼각형 융합 응용",
+        "typeName": "종이 접기 도형에서의 평행선의 성질과 이등변삼각형 융합 응용 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30988,7 +30988,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-34",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(4) 평행선의 성질",
-        "typeName": "종이 접기 도형에서의 평행선의 성질과 이등변삼각형 융합 응용",
+        "typeName": "종이 접기 도형에서의 평행선의 성질과 이등변삼각형 융합 응용 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31096,7 +31096,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-40",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(5) 삼각의 작도",
-        "typeName": "삼각형이 하나로 정해지는 조건 및 조건 경계면을 만족하는 개수 논리 추론",
+        "typeName": "삼각형이 하나로 정해지는 조건 및 조건 경계면을 만족하는 개수 논리 추론 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31114,7 +31114,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-41",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(5) 삼각의 작도",
-        "typeName": "삼각형이 하나로 정해지는 조건 및 조건 경계면을 만족하는 개수 논리 추론",
+        "typeName": "삼각형이 하나로 정해지는 조건 및 조건 경계면을 만족하는 개수 논리 추론 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31132,7 +31132,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-42",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(5) 삼각의 작도",
-        "typeName": "삼각형이 하나로 정해지는 조건 및 조건 경계면을 만족하는 개수 논리 추론",
+        "typeName": "삼각형이 하나로 정해지는 조건 및 조건 경계면을 만족하는 개수 논리 추론 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31150,7 +31150,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-43",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(5) 삼각의 작도",
-        "typeName": "삼각형이 하나로 정해지는 조건 및 조건 경계면을 만족하는 개수 논리 추론",
+        "typeName": "삼각형이 하나로 정해지는 조건 및 조건 경계면을 만족하는 개수 논리 추론 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31168,7 +31168,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-44",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(5) 삼각의 작도",
-        "typeName": "삼각형이 하나로 정해지는 조건 및 조건 경계면을 만족하는 개수 논리 추론",
+        "typeName": "삼각형이 하나로 정해지는 조건 및 조건 경계면을 만족하는 개수 논리 추론 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31240,7 +31240,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-48",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(6) 삼각형의 합동",
-        "typeName": "정삼각형·정사각형 다각형 합동 조건을 활용한 연계 각도 고난도 증명",
+        "typeName": "정삼각형·정사각형 다각형 합동 조건을 활용한 연계 각도 고난도 증명 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31258,7 +31258,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-49",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(6) 삼각형의 합동",
-        "typeName": "정삼각형·정사각형 다각형 합동 조건을 활용한 연계 각도 고난도 증명",
+        "typeName": "정삼각형·정사각형 다각형 합동 조건을 활용한 연계 각도 고난도 증명 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31276,7 +31276,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-50",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(6) 삼각형의 합동",
-        "typeName": "정삼각형·정사각형 다각형 합동 조건을 활용한 연계 각도 고난도 증명",
+        "typeName": "정삼각형·정사각형 다각형 합동 조건을 활용한 연계 각도 고난도 증명 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31294,7 +31294,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-51",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(6) 삼각형의 합동",
-        "typeName": "정삼각형·정사각형 다각형 합동 조건을 활용한 연계 각도 고난도 증명",
+        "typeName": "정삼각형·정사각형 다각형 합동 조건을 활용한 연계 각도 고난도 증명 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31312,7 +31312,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-52",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(6) 삼각형의 합동",
-        "typeName": "정삼각형·정사각형 다각형 합동 조건을 활용한 연계 각도 고난도 증명",
+        "typeName": "정삼각형·정사각형 다각형 합동 조건을 활용한 연계 각도 고난도 증명 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31456,7 +31456,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-7",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(1) 다각형, 삼각형의 내각과 외각",
-        "typeName": "다중 교차된 별 모양 도형(Starlike)의 각의 총합 계산",
+        "typeName": "다중 교차된 별 모양 도형(Starlike)의 각의 총합 계산 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31474,7 +31474,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-8",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(1) 다각형, 삼각형의 내각과 외각",
-        "typeName": "다중 교차된 별 모양 도형(Starlike)의 각의 총합 계산",
+        "typeName": "다중 교차된 별 모양 도형(Starlike)의 각의 총합 계산 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31492,7 +31492,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-9",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(1) 다각형, 삼각형의 내각과 외각",
-        "typeName": "다중 교차된 별 모양 도형(Starlike)의 각의 총합 계산",
+        "typeName": "다중 교차된 별 모양 도형(Starlike)의 각의 총합 계산 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31510,7 +31510,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-10",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(1) 다각형, 삼각형의 내각과 외각",
-        "typeName": "다중 교차된 별 모양 도형(Starlike)의 각의 총합 계산",
+        "typeName": "다중 교차된 별 모양 도형(Starlike)의 각의 총합 계산 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31528,7 +31528,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-11",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(1) 다각형, 삼각형의 내각과 외각",
-        "typeName": "다중 교차된 별 모양 도형(Starlike)의 각의 총합 계산",
+        "typeName": "다중 교차된 별 모양 도형(Starlike)의 각의 총합 계산 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31636,7 +31636,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-17",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(2) 다각형의 내각과 외각의 크기",
-        "typeName": "정다각형을 이어 붙이거나 겹쳤을 때 발생하는 사이각 추정",
+        "typeName": "정다각형을 이어 붙이거나 겹쳤을 때 발생하는 사이각 추정 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31654,7 +31654,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-18",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(2) 다각형의 내각과 외각의 크기",
-        "typeName": "정다각형을 이어 붙이거나 겹쳤을 때 발생하는 사이각 추정",
+        "typeName": "정다각형을 이어 붙이거나 겹쳤을 때 발생하는 사이각 추정 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31672,7 +31672,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-19",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(2) 다각형의 내각과 외각의 크기",
-        "typeName": "정다각형을 이어 붙이거나 겹쳤을 때 발생하는 사이각 추정",
+        "typeName": "정다각형을 이어 붙이거나 겹쳤을 때 발생하는 사이각 추정 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31690,7 +31690,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-20",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(2) 다각형의 내각과 외각의 크기",
-        "typeName": "정다각형을 이어 붙이거나 겹쳤을 때 발생하는 사이각 추정",
+        "typeName": "정다각형을 이어 붙이거나 겹쳤을 때 발생하는 사이각 추정 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31708,7 +31708,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-21",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(2) 다각형의 내각과 외각의 크기",
-        "typeName": "정다각형을 이어 붙이거나 겹쳤을 때 발생하는 사이각 추정",
+        "typeName": "정다각형을 이어 붙이거나 겹쳤을 때 발생하는 사이각 추정 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31834,7 +31834,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-28",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(3) 원과 부채꼴",
-        "typeName": "곡선으로 둘러싸인 복잡한 기하학적 도형의 역산 추론",
+        "typeName": "곡선으로 둘러싸인 복잡한 기하학적 도형의 역산 추론 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31852,7 +31852,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-29",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(3) 원과 부채꼴",
-        "typeName": "곡선으로 둘러싸인 복잡한 기하학적 도형의 역산 추론",
+        "typeName": "곡선으로 둘러싸인 복잡한 기하학적 도형의 역산 추론 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31870,7 +31870,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-30",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(3) 원과 부채꼴",
-        "typeName": "곡선으로 둘러싸인 복잡한 기하학적 도형의 역산 추론",
+        "typeName": "곡선으로 둘러싸인 복잡한 기하학적 도형의 역산 추론 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31888,7 +31888,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-31",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(3) 원과 부채꼴",
-        "typeName": "곡선으로 둘러싸인 복잡한 기하학적 도형의 역산 추론",
+        "typeName": "곡선으로 둘러싸인 복잡한 기하학적 도형의 역산 추론 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -31906,7 +31906,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-32",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(3) 원과 부채꼴",
-        "typeName": "곡선으로 둘러싸인 복잡한 기하학적 도형의 역산 추론",
+        "typeName": "곡선으로 둘러싸인 복잡한 기하학적 도형의 역산 추론 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32050,7 +32050,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-40",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(4) 부채꼴의 호의 길이와 넓이",
-        "typeName": "색칠한 평면도형의 넓이 심화 (히포크라테스의 초승달 및 대칭 이동)",
+        "typeName": "색칠한 평면도형의 넓이 심화 (히포크라테스의 초승달 및 대칭 이동) - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32068,7 +32068,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-41",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(4) 부채꼴의 호의 길이와 넓이",
-        "typeName": "색칠한 평면도형의 넓이 심화 (히포크라테스의 초승달 및 대칭 이동)",
+        "typeName": "색칠한 평면도형의 넓이 심화 (히포크라테스의 초승달 및 대칭 이동) - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32086,7 +32086,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-42",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(4) 부채꼴의 호의 길이와 넓이",
-        "typeName": "색칠한 평면도형의 넓이 심화 (히포크라테스의 초승달 및 대칭 이동)",
+        "typeName": "색칠한 평면도형의 넓이 심화 (히포크라테스의 초승달 및 대칭 이동) - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32104,7 +32104,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-43",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(4) 부채꼴의 호의 길이와 넓이",
-        "typeName": "색칠한 평면도형의 넓이 심화 (히포크라테스의 초승달 및 대칭 이동)",
+        "typeName": "색칠한 평면도형의 넓이 심화 (히포크라테스의 초승달 및 대칭 이동) - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32122,7 +32122,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-44",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(4) 부채꼴의 호의 길이와 넓이",
-        "typeName": "색칠한 평면도형의 넓이 심화 (히포크라테스의 초승달 및 대칭 이동)",
+        "typeName": "색칠한 평면도형의 넓이 심화 (히포크라테스의 초승달 및 대칭 이동) - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32248,7 +32248,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-6",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(1) 다면체",
-        "typeName": "정다면체의 전개도 분석 (마주보는 면, 공유 꼭짓점 및 입체 거리 측정)",
+        "typeName": "정다면체의 전개도 분석 (마주보는 면, 공유 꼭짓점 및 입체 거리 측정) - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32266,7 +32266,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-7",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(1) 다면체",
-        "typeName": "정다면체의 전개도 분석 (마주보는 면, 공유 꼭짓점 및 입체 거리 측정)",
+        "typeName": "정다면체의 전개도 분석 (마주보는 면, 공유 꼭짓점 및 입체 거리 측정) - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32284,7 +32284,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-8",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(1) 다면체",
-        "typeName": "정다면체의 전개도 분석 (마주보는 면, 공유 꼭짓점 및 입체 거리 측정)",
+        "typeName": "정다면체의 전개도 분석 (마주보는 면, 공유 꼭짓점 및 입체 거리 측정) - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32302,7 +32302,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-9",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(1) 다면체",
-        "typeName": "정다면체의 전개도 분석 (마주보는 면, 공유 꼭짓점 및 입체 거리 측정)",
+        "typeName": "정다면체의 전개도 분석 (마주보는 면, 공유 꼭짓점 및 입체 거리 측정) - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32320,7 +32320,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-10",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(1) 다면체",
-        "typeName": "정다면체의 전개도 분석 (마주보는 면, 공유 꼭짓점 및 입체 거리 측정)",
+        "typeName": "정다면체의 전개도 분석 (마주보는 면, 공유 꼭짓점 및 입체 거리 측정) - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32392,7 +32392,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-14",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(2) 회전체",
-        "typeName": "회전체의 전개도 분석 (호의 길이, 옆면 넓이 요소의 역산 계산)",
+        "typeName": "회전체의 전개도 분석 (호의 길이, 옆면 넓이 요소의 역산 계산) - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32410,7 +32410,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-15",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(2) 회전체",
-        "typeName": "회전체의 전개도 분석 (호의 길이, 옆면 넓이 요소의 역산 계산)",
+        "typeName": "회전체의 전개도 분석 (호의 길이, 옆면 넓이 요소의 역산 계산) - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32428,7 +32428,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-16",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(2) 회전체",
-        "typeName": "회전체의 전개도 분석 (호의 길이, 옆면 넓이 요소의 역산 계산)",
+        "typeName": "회전체의 전개도 분석 (호의 길이, 옆면 넓이 요소의 역산 계산) - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32446,7 +32446,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-17",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(2) 회전체",
-        "typeName": "회전체의 전개도 분석 (호의 길이, 옆면 넓이 요소의 역산 계산)",
+        "typeName": "회전체의 전개도 분석 (호의 길이, 옆면 넓이 요소의 역산 계산) - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32464,7 +32464,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-18",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(2) 회전체",
-        "typeName": "회전체의 전개도 분석 (호의 길이, 옆면 넓이 요소의 역산 계산)",
+        "typeName": "회전체의 전개도 분석 (호의 길이, 옆면 넓이 요소의 역산 계산) - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32536,7 +32536,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-22",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(3) 기둥의 겉넓이와 부피",
-        "typeName": "구멍이 뚫리거나 일부분을 잘라낸 입체기둥의 겉넓이와 부피",
+        "typeName": "구멍이 뚫리거나 일부분을 잘라낸 입체기둥의 겉넓이와 부피 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32554,7 +32554,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-23",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(3) 기둥의 겉넓이와 부피",
-        "typeName": "구멍이 뚫리거나 일부분을 잘라낸 입체기둥의 겉넓이와 부피",
+        "typeName": "구멍이 뚫리거나 일부분을 잘라낸 입체기둥의 겉넓이와 부피 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32572,7 +32572,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-24",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(3) 기둥의 겉넓이와 부피",
-        "typeName": "구멍이 뚫리거나 일부분을 잘라낸 입체기둥의 겉넓이와 부피",
+        "typeName": "구멍이 뚫리거나 일부분을 잘라낸 입체기둥의 겉넓이와 부피 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32590,7 +32590,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-25",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(3) 기둥의 겉넓이와 부피",
-        "typeName": "구멍이 뚫리거나 일부분을 잘라낸 입체기둥의 겉넓이와 부피",
+        "typeName": "구멍이 뚫리거나 일부분을 잘라낸 입체기둥의 겉넓이와 부피 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32608,7 +32608,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-26",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(3) 기둥의 겉넓이와 부피",
-        "typeName": "구멍이 뚫리거나 일부분을 잘라낸 입체기둥의 겉넓이와 부피",
+        "typeName": "구멍이 뚫리거나 일부분을 잘라낸 입체기둥의 겉넓이와 부피 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32698,7 +32698,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-31",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(4) 뿔의 겉넓이와 부피",
-        "typeName": "원뿔의 표면을 움직이는 최단 거리 구하기 (전개도 활용)",
+        "typeName": "원뿔의 표면을 움직이는 최단 거리 구하기 (전개도 활용) - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32716,7 +32716,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-32",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(4) 뿔의 겉넓이와 부피",
-        "typeName": "원뿔의 표면을 움직이는 최단 거리 구하기 (전개도 활용)",
+        "typeName": "원뿔의 표면을 움직이는 최단 거리 구하기 (전개도 활용) - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32734,7 +32734,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-33",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(4) 뿔의 겉넓이와 부피",
-        "typeName": "원뿔의 표면을 움직이는 최단 거리 구하기 (전개도 활용)",
+        "typeName": "원뿔의 표면을 움직이는 최단 거리 구하기 (전개도 활용) - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32752,7 +32752,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-34",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(4) 뿔의 겉넓이와 부피",
-        "typeName": "원뿔의 표면을 움직이는 최단 거리 구하기 (전개도 활용)",
+        "typeName": "원뿔의 표면을 움직이는 최단 거리 구하기 (전개도 활용) - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32770,7 +32770,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-35",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(4) 뿔의 겉넓이와 부피",
-        "typeName": "원뿔의 표면을 움직이는 최단 거리 구하기 (전개도 활용)",
+        "typeName": "원뿔의 표면을 움직이는 최단 거리 구하기 (전개도 활용) - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32860,7 +32860,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-40",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(5) 구의 겉넓이와 부피",
-        "typeName": "원기둥, 원뿔, 구의 부피 사이의 비(Ratio) 관계 및 내접 응용",
+        "typeName": "원기둥, 원뿔, 구의 부피 사이의 비(Ratio) 관계 및 내접 응용 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32878,7 +32878,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-41",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(5) 구의 겉넓이와 부피",
-        "typeName": "원기둥, 원뿔, 구의 부피 사이의 비(Ratio) 관계 및 내접 응용",
+        "typeName": "원기둥, 원뿔, 구의 부피 사이의 비(Ratio) 관계 및 내접 응용 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32896,7 +32896,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-42",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(5) 구의 겉넓이와 부피",
-        "typeName": "원기둥, 원뿔, 구의 부피 사이의 비(Ratio) 관계 및 내접 응용",
+        "typeName": "원기둥, 원뿔, 구의 부피 사이의 비(Ratio) 관계 및 내접 응용 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32914,7 +32914,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-43",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(5) 구의 겉넓이와 부피",
-        "typeName": "원기둥, 원뿔, 구의 부피 사이의 비(Ratio) 관계 및 내접 응용",
+        "typeName": "원기둥, 원뿔, 구의 부피 사이의 비(Ratio) 관계 및 내접 응용 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32932,7 +32932,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-44",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(5) 구의 겉넓이와 부피",
-        "typeName": "원기둥, 원뿔, 구의 부피 사이의 비(Ratio) 관계 및 내접 응용",
+        "typeName": "원기둥, 원뿔, 구의 부피 사이의 비(Ratio) 관계 및 내접 응용 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32986,7 +32986,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-2",
         "majorUnit": "4단원 통계",
         "minorUnit": "(1) 대푯값",
-        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화 분석",
+        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화 분석 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33004,7 +33004,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-3",
         "majorUnit": "4단원 통계",
         "minorUnit": "(1) 대푯값",
-        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화 분석",
+        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화 분석 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33022,7 +33022,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-4",
         "majorUnit": "4단원 통계",
         "minorUnit": "(1) 대푯값",
-        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화 분석",
+        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화 분석 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33040,7 +33040,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-5",
         "majorUnit": "4단원 통계",
         "minorUnit": "(1) 대푯값",
-        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화 분석",
+        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화 분석 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33058,7 +33058,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-6",
         "majorUnit": "4단원 통계",
         "minorUnit": "(1) 대푯값",
-        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화 분석",
+        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화 분석 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33112,7 +33112,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-9",
         "majorUnit": "4단원 통계",
         "minorUnit": "(2) 줄기와 잎 그림",
-        "typeName": "줄기와 잎 그림을 이용한 백분율 연산 및 복합 미지수 유추",
+        "typeName": "줄기와 잎 그림을 이용한 백분율 연산 및 복합 미지수 유추 - 유형 3",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33130,7 +33130,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-10",
         "majorUnit": "4단원 통계",
         "minorUnit": "(2) 줄기와 잎 그림",
-        "typeName": "줄기와 잎 그림을 이용한 백분율 연산 및 복합 미지수 유추",
+        "typeName": "줄기와 잎 그림을 이용한 백분율 연산 및 복합 미지수 유추 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33148,7 +33148,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-11",
         "majorUnit": "4단원 통계",
         "minorUnit": "(2) 줄기와 잎 그림",
-        "typeName": "줄기와 잎 그림을 이용한 백분율 연산 및 복합 미지수 유추",
+        "typeName": "줄기와 잎 그림을 이용한 백분율 연산 및 복합 미지수 유추 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33166,7 +33166,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-12",
         "majorUnit": "4단원 통계",
         "minorUnit": "(2) 줄기와 잎 그림",
-        "typeName": "줄기와 잎 그림을 이용한 백분율 연산 및 복합 미지수 유추",
+        "typeName": "줄기와 잎 그림을 이용한 백분율 연산 및 복합 미지수 유추 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33184,7 +33184,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-13",
         "majorUnit": "4단원 통계",
         "minorUnit": "(2) 줄기와 잎 그림",
-        "typeName": "줄기와 잎 그림을 이용한 백분율 연산 및 복합 미지수 유추",
+        "typeName": "줄기와 잎 그림을 이용한 백분율 연산 및 복합 미지수 유추 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33238,7 +33238,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-16",
         "majorUnit": "4단원 통계",
         "minorUnit": "(3) 도수분포표",
-        "typeName": "도수분포표에서 변수가 미지수 형태로 주어진 식의 값 구하기",
+        "typeName": "도수분포표에서 변수가 미지수 형태로 주어진 식의 값 구하기 - 유형 3",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33256,7 +33256,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-17",
         "majorUnit": "4단원 통계",
         "minorUnit": "(3) 도수분포표",
-        "typeName": "도수분포표에서 변수가 미지수 형태로 주어진 식의 값 구하기",
+        "typeName": "도수분포표에서 변수가 미지수 형태로 주어진 식의 값 구하기 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33274,7 +33274,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-18",
         "majorUnit": "4단원 통계",
         "minorUnit": "(3) 도수분포표",
-        "typeName": "도수분포표에서 변수가 미지수 형태로 주어진 식의 값 구하기",
+        "typeName": "도수분포표에서 변수가 미지수 형태로 주어진 식의 값 구하기 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33292,7 +33292,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-19",
         "majorUnit": "4단원 통계",
         "minorUnit": "(3) 도수분포표",
-        "typeName": "도수분포표에서 변수가 미지수 형태로 주어진 식의 값 구하기",
+        "typeName": "도수분포표에서 변수가 미지수 형태로 주어진 식의 값 구하기 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33310,7 +33310,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-20",
         "majorUnit": "4단원 통계",
         "minorUnit": "(3) 도수분포표",
-        "typeName": "도수분포표에서 변수가 미지수 형태로 주어진 식의 값 구하기",
+        "typeName": "도수분포표에서 변수가 미지수 형태로 주어진 식의 값 구하기 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33400,7 +33400,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-25",
         "majorUnit": "4단원 통계",
         "minorUnit": "(4) 히스토그램과 도수분포다각형",
-        "typeName": "두 집단의 도수분포다각형 비교 해석 및 분포 특성 다단계 추론",
+        "typeName": "두 집단의 도수분포다각형 비교 해석 및 분포 특성 다단계 추론 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33418,7 +33418,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-26",
         "majorUnit": "4단원 통계",
         "minorUnit": "(4) 히스토그램과 도수분포다각형",
-        "typeName": "두 집단의 도수분포다각형 비교 해석 및 분포 특성 다단계 추론",
+        "typeName": "두 집단의 도수분포다각형 비교 해석 및 분포 특성 다단계 추론 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33436,7 +33436,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-27",
         "majorUnit": "4단원 통계",
         "minorUnit": "(4) 히스토그램과 도수분포다각형",
-        "typeName": "두 집단의 도수분포다각형 비교 해석 및 분포 특성 다단계 추론",
+        "typeName": "두 집단의 도수분포다각형 비교 해석 및 분포 특성 다단계 추론 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33454,7 +33454,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-28",
         "majorUnit": "4단원 통계",
         "minorUnit": "(4) 히스토그램과 도수분포다각형",
-        "typeName": "두 집단의 도수분포다각형 비교 해석 및 분포 특성 다단계 추론",
+        "typeName": "두 집단의 도수분포다각형 비교 해석 및 분포 특성 다단계 추론 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33472,7 +33472,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-29",
         "majorUnit": "4단원 통계",
         "minorUnit": "(4) 히스토그램과 도수분포다각형",
-        "typeName": "두 집단의 도수분포다각형 비교 해석 및 분포 특성 다단계 추론",
+        "typeName": "두 집단의 도수분포다각형 비교 해석 및 분포 특성 다단계 추론 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33544,7 +33544,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-33",
         "majorUnit": "4단원 통계",
         "minorUnit": "(5) 상대도수와 그 그래프",
-        "typeName": "상대도수 분포 그래프(상대도수 다각형) 해석 및 찢어진 그래프 복원",
+        "typeName": "상대도수 분포 그래프(상대도수 다각형) 해석 및 찢어진 그래프 복원 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33562,7 +33562,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-34",
         "majorUnit": "4단원 통계",
         "minorUnit": "(5) 상대도수와 그 그래프",
-        "typeName": "상대도수 분포 그래프(상대도수 다각형) 해석 및 찢어진 그래프 복원",
+        "typeName": "상대도수 분포 그래프(상대도수 다각형) 해석 및 찢어진 그래프 복원 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33580,7 +33580,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-35",
         "majorUnit": "4단원 통계",
         "minorUnit": "(5) 상대도수와 그 그래프",
-        "typeName": "상대도수 분포 그래프(상대도수 다각형) 해석 및 찢어진 그래프 복원",
+        "typeName": "상대도수 분포 그래프(상대도수 다각형) 해석 및 찢어진 그래프 복원 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33598,7 +33598,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-36",
         "majorUnit": "4단원 통계",
         "minorUnit": "(5) 상대도수와 그 그래프",
-        "typeName": "상대도수 분포 그래프(상대도수 다각형) 해석 및 찢어진 그래프 복원",
+        "typeName": "상대도수 분포 그래프(상대도수 다각형) 해석 및 찢어진 그래프 복원 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33616,7 +33616,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-3-37",
         "majorUnit": "4단원 통계",
         "minorUnit": "(5) 상대도수와 그 그래프",
-        "typeName": "상대도수 분포 그래프(상대도수 다각형) 해석 및 찢어진 그래프 복원",
+        "typeName": "상대도수 분포 그래프(상대도수 다각형) 해석 및 찢어진 그래프 복원 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33749,7 +33749,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-6",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(1) 유리수의 소수 표현",
-        "typeName": "분수가 순환소수로만 나타내어질 조건과 미지수 구하기",
+        "typeName": "분수가 순환소수로만 나타내어질 조건과 미지수 구하기 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33767,7 +33767,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-7",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(1) 유리수의 소수 표현",
-        "typeName": "분수가 순환소수로만 나타내어질 조건과 미지수 구하기",
+        "typeName": "분수가 순환소수로만 나타내어질 조건과 미지수 구하기 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33785,7 +33785,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-8",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(1) 유리수의 소수 표현",
-        "typeName": "분수가 순환소수로만 나타내어질 조건과 미지수 구하기",
+        "typeName": "분수가 순환소수로만 나타내어질 조건과 미지수 구하기 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33803,7 +33803,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-9",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(1) 유리수의 소수 표현",
-        "typeName": "분수가 순환소수로만 나타내어질 조건과 미지수 구하기",
+        "typeName": "분수가 순환소수로만 나타내어질 조건과 미지수 구하기 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33821,7 +33821,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-10",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(1) 유리수의 소수 표현",
-        "typeName": "분수가 순환소수로만 나타내어질 조건과 미지수 구하기",
+        "typeName": "분수가 순환소수로만 나타내어질 조건과 미지수 구하기 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33947,7 +33947,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-17",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(2) 순환소수의 분수 표현",
-        "typeName": "순환소수의 대소 관계 및 유리수의 성질 판정",
+        "typeName": "순환소수의 대소 관계 및 유리수의 성질 판정 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33965,7 +33965,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-18",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(2) 순환소수의 분수 표현",
-        "typeName": "순환소수의 대소 관계 및 유리수의 성질 판정",
+        "typeName": "순환소수의 대소 관계 및 유리수의 성질 판정 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33983,7 +33983,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-19",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(2) 순환소수의 분수 표현",
-        "typeName": "순환소수의 대소 관계 및 유리수의 성질 판정",
+        "typeName": "순환소수의 대소 관계 및 유리수의 성질 판정 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34001,7 +34001,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-20",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(2) 순환소수의 분수 표현",
-        "typeName": "순환소수의 대소 관계 및 유리수의 성질 판정",
+        "typeName": "순환소수의 대소 관계 및 유리수의 성질 판정 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34019,7 +34019,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-21",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(2) 순환소수의 분수 표현",
-        "typeName": "순환소수의 대소 관계 및 유리수의 성질 판정",
+        "typeName": "순환소수의 대소 관계 및 유리수의 성질 판정 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34199,7 +34199,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-31",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(3) 지수법칙",
-        "typeName": "몇 자리 자연수인지 구하기 및 큰 수의 대소 관계 비교",
+        "typeName": "몇 자리 자연수인지 구하기 및 큰 수의 대소 관계 비교 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34217,7 +34217,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-32",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(3) 지수법칙",
-        "typeName": "몇 자리 자연수인지 구하기 및 큰 수의 대소 관계 비교",
+        "typeName": "몇 자리 자연수인지 구하기 및 큰 수의 대소 관계 비교 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34235,7 +34235,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-33",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(3) 지수법칙",
-        "typeName": "몇 자리 자연수인지 구하기 및 큰 수의 대소 관계 비교",
+        "typeName": "몇 자리 자연수인지 구하기 및 큰 수의 대소 관계 비교 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34253,7 +34253,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-34",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(3) 지수법칙",
-        "typeName": "몇 자리 자연수인지 구하기 및 큰 수의 대소 관계 비교",
+        "typeName": "몇 자리 자연수인지 구하기 및 큰 수의 대소 관계 비교 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34271,7 +34271,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-35",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(3) 지수법칙",
-        "typeName": "몇 자리 자연수인지 구하기 및 큰 수의 대소 관계 비교",
+        "typeName": "몇 자리 자연수인지 구하기 및 큰 수의 대소 관계 비교 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34343,7 +34343,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-39",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(4) 단항식의 곱셈과 나눗셈",
-        "typeName": "단항식의 계산 기하학적 활용 (도형의 부피와 넓이 고난도)",
+        "typeName": "단항식의 계산 기하학적 활용 (도형의 부피와 넓이 고난도) - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34361,7 +34361,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-40",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(4) 단항식의 곱셈과 나눗셈",
-        "typeName": "단항식의 계산 기하학적 활용 (도형의 부피와 넓이 고난도)",
+        "typeName": "단항식의 계산 기하학적 활용 (도형의 부피와 넓이 고난도) - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34379,7 +34379,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-41",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(4) 단항식의 곱셈과 나눗셈",
-        "typeName": "단항식의 계산 기하학적 활용 (도형의 부피와 넓이 고난도)",
+        "typeName": "단항식의 계산 기하학적 활용 (도형의 부피와 넓이 고난도) - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34397,7 +34397,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-42",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(4) 단항식의 곱셈과 나눗셈",
-        "typeName": "단항식의 계산 기하학적 활용 (도형의 부피와 넓이 고난도)",
+        "typeName": "단항식의 계산 기하학적 활용 (도형의 부피와 넓이 고난도) - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34415,7 +34415,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-43",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(4) 단항식의 곱셈과 나눗셈",
-        "typeName": "단항식의 계산 기하학적 활용 (도형의 부피와 넓이 고난도)",
+        "typeName": "단항식의 계산 기하학적 활용 (도형의 부피와 넓이 고난도) - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34595,7 +34595,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-53",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(5) 다항식의 덧셈과 뺄셈, 곱셈과 나눗셈",
-        "typeName": "비례식이 주어진 경우의 등식 변형 및 시각적 변형 구하기",
+        "typeName": "비례식이 주어진 경우의 등식 변형 및 시각적 변형 구하기 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34613,7 +34613,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-54",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(5) 다항식의 덧셈과 뺄셈, 곱셈과 나눗셈",
-        "typeName": "비례식이 주어진 경우의 등식 변형 및 시각적 변형 구하기",
+        "typeName": "비례식이 주어진 경우의 등식 변형 및 시각적 변형 구하기 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34631,7 +34631,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-55",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(5) 다항식의 덧셈과 뺄셈, 곱셈과 나눗셈",
-        "typeName": "비례식이 주어진 경우의 등식 변형 및 시각적 변형 구하기",
+        "typeName": "비례식이 주어진 경우의 등식 변형 및 시각적 변형 구하기 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34649,7 +34649,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-56",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(5) 다항식의 덧셈과 뺄셈, 곱셈과 나눗셈",
-        "typeName": "비례식이 주어진 경우의 등식 변형 및 시각적 변형 구하기",
+        "typeName": "비례식이 주어진 경우의 등식 변형 및 시각적 변형 구하기 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34667,7 +34667,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-0-57",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(5) 다항식의 덧셈과 뺄셈, 곱셈과 나눗셈",
-        "typeName": "비례식이 주어진 경우의 등식 변형 및 시각적 변형 구하기",
+        "typeName": "비례식이 주어진 경우의 등식 변형 및 시각적 변형 구하기 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34739,7 +34739,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-3",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(1) 부등식",
-        "typeName": "미지수의 범위가 주어질 때 식의 값의 범위 구하기 (절댓값 포함)",
+        "typeName": "미지수의 범위가 주어질 때 식의 값의 범위 구하기 (절댓값 포함) - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34757,7 +34757,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-4",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(1) 부등식",
-        "typeName": "미지수의 범위가 주어질 때 식의 값의 범위 구하기 (절댓값 포함)",
+        "typeName": "미지수의 범위가 주어질 때 식의 값의 범위 구하기 (절댓값 포함) - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34775,7 +34775,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-5",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(1) 부등식",
-        "typeName": "미지수의 범위가 주어질 때 식의 값의 범위 구하기 (절댓값 포함)",
+        "typeName": "미지수의 범위가 주어질 때 식의 값의 범위 구하기 (절댓값 포함) - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34793,7 +34793,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-6",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(1) 부등식",
-        "typeName": "미지수의 범위가 주어질 때 식의 값의 범위 구하기 (절댓값 포함)",
+        "typeName": "미지수의 범위가 주어질 때 식의 값의 범위 구하기 (절댓값 포함) - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34811,7 +34811,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-7",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(1) 부등식",
-        "typeName": "미지수의 범위가 주어질 때 식의 값의 범위 구하기 (절댓값 포함)",
+        "typeName": "미지수의 범위가 주어질 때 식의 값의 범위 구하기 (절댓값 포함) - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34937,7 +34937,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-14",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(2) 일차부등식",
-        "typeName": "두 일차부등식의 해가 서로 같을 조건",
+        "typeName": "두 일차부등식의 해가 서로 같을 조건 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34955,7 +34955,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-15",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(2) 일차부등식",
-        "typeName": "두 일차부등식의 해가 서로 같을 조건",
+        "typeName": "두 일차부등식의 해가 서로 같을 조건 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34973,7 +34973,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-16",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(2) 일차부등식",
-        "typeName": "두 일차부등식의 해가 서로 같을 조건",
+        "typeName": "두 일차부등식의 해가 서로 같을 조건 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34991,7 +34991,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-17",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(2) 일차부등식",
-        "typeName": "두 일차부등식의 해가 서로 같을 조건",
+        "typeName": "두 일차부등식의 해가 서로 같을 조건 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35009,7 +35009,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-18",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(2) 일차부등식",
-        "typeName": "두 일차부등식의 해가 서로 같을 조건",
+        "typeName": "두 일차부등식의 해가 서로 같을 조건 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35099,7 +35099,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-23",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(3) 일차부등식의 활용(1)",
-        "typeName": "일차부등식의 활용 - 사다리꼴 및 직사각형 등 도형 문장제",
+        "typeName": "일차부등식의 활용 - 사다리꼴 및 직사각형 등 도형 문장제 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35117,7 +35117,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-24",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(3) 일차부등식의 활용(1)",
-        "typeName": "일차부등식의 활용 - 사다리꼴 및 직사각형 등 도형 문장제",
+        "typeName": "일차부등식의 활용 - 사다리꼴 및 직사각형 등 도형 문장제 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35135,7 +35135,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-25",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(3) 일차부등식의 활용(1)",
-        "typeName": "일차부등식의 활용 - 사다리꼴 및 직사각형 등 도형 문장제",
+        "typeName": "일차부등식의 활용 - 사다리꼴 및 직사각형 등 도형 문장제 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35153,7 +35153,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-26",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(3) 일차부등식의 활용(1)",
-        "typeName": "일차부등식의 활용 - 사다리꼴 및 직사각형 등 도형 문장제",
+        "typeName": "일차부등식의 활용 - 사다리꼴 및 직사각형 등 도형 문장제 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35171,7 +35171,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-27",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(3) 일차부등식의 활용(1)",
-        "typeName": "일차부등식의 활용 - 사다리꼴 및 직사각형 등 도형 문장제",
+        "typeName": "일차부등식의 활용 - 사다리꼴 및 직사각형 등 도형 문장제 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35243,7 +35243,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-31",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(4) 일차부등식의 활용(2)",
-        "typeName": "일차부등식의 활용 - 소금물의 농도 혼합 및 증발 심화",
+        "typeName": "일차부등식의 활용 - 소금물의 농도 혼합 및 증발 심화 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35261,7 +35261,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-32",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(4) 일차부등식의 활용(2)",
-        "typeName": "일차부등식의 활용 - 소금물의 농도 혼합 및 증발 심화",
+        "typeName": "일차부등식의 활용 - 소금물의 농도 혼합 및 증발 심화 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35279,7 +35279,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-33",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(4) 일차부등식의 활용(2)",
-        "typeName": "일차부등식의 활용 - 소금물의 농도 혼합 및 증발 심화",
+        "typeName": "일차부등식의 활용 - 소금물의 농도 혼합 및 증발 심화 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35297,7 +35297,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-34",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(4) 일차부등식의 활용(2)",
-        "typeName": "일차부등식의 활용 - 소금물의 농도 혼합 및 증발 심화",
+        "typeName": "일차부등식의 활용 - 소금물의 농도 혼합 및 증발 심화 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35315,7 +35315,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-35",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(4) 일차부등식의 활용(2)",
-        "typeName": "일차부등식의 활용 - 소금물의 농도 혼합 및 증발 심화",
+        "typeName": "일차부등식의 활용 - 소금물의 농도 혼합 및 증발 심화 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35441,7 +35441,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-6",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(1) 연립방정식",
-        "typeName": "가감법을 이용하여 미지수 소거 시 필요한 최소공배수 식 찾기",
+        "typeName": "가감법을 이용하여 미지수 소거 시 필요한 최소공배수 식 찾기 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35459,7 +35459,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-7",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(1) 연립방정식",
-        "typeName": "가감법을 이용하여 미지수 소거 시 필요한 최소공배수 식 찾기",
+        "typeName": "가감법을 이용하여 미지수 소거 시 필요한 최소공배수 식 찾기 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35477,7 +35477,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-8",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(1) 연립방정식",
-        "typeName": "가감법을 이용하여 미지수 소거 시 필요한 최소공배수 식 찾기",
+        "typeName": "가감법을 이용하여 미지수 소거 시 필요한 최소공배수 식 찾기 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35495,7 +35495,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-9",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(1) 연립방정식",
-        "typeName": "가감법을 이용하여 미지수 소거 시 필요한 최소공배수 식 찾기",
+        "typeName": "가감법을 이용하여 미지수 소거 시 필요한 최소공배수 식 찾기 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35513,7 +35513,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-10",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(1) 연립방정식",
-        "typeName": "가감법을 이용하여 미지수 소거 시 필요한 최소공배수 식 찾기",
+        "typeName": "가감법을 이용하여 미지수 소거 시 필요한 최소공배수 식 찾기 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35657,7 +35657,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-18",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(2) 여러 가지 연립방정식의 풀이",
-        "typeName": "잘못 보고 푸는 문항 및 두 연립방정식의 해가 같은 조건",
+        "typeName": "잘못 보고 푸는 문항 및 두 연립방정식의 해가 같은 조건 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35675,7 +35675,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-19",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(2) 여러 가지 연립방정식의 풀이",
-        "typeName": "잘못 보고 푸는 문항 및 두 연립방정식의 해가 같은 조건",
+        "typeName": "잘못 보고 푸는 문항 및 두 연립방정식의 해가 같은 조건 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35693,7 +35693,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-20",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(2) 여러 가지 연립방정식의 풀이",
-        "typeName": "잘못 보고 푸는 문항 및 두 연립방정식의 해가 같은 조건",
+        "typeName": "잘못 보고 푸는 문항 및 두 연립방정식의 해가 같은 조건 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35711,7 +35711,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-21",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(2) 여러 가지 연립방정식의 풀이",
-        "typeName": "잘못 보고 푸는 문항 및 두 연립방정식의 해가 같은 조건",
+        "typeName": "잘못 보고 푸는 문항 및 두 연립방정식의 해가 같은 조건 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35729,7 +35729,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-22",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(2) 여러 가지 연립방정식의 풀이",
-        "typeName": "잘못 보고 푸는 문항 및 두 연립방정식의 해가 같은 조건",
+        "typeName": "잘못 보고 푸는 문항 및 두 연립방정식의 해가 같은 조건 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35801,7 +35801,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-26",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(3) 연립방정식의 활용(1)",
-        "typeName": "연립방정식의 활용 - 처음 수와 자릿수를 바꾼 수의 관계",
+        "typeName": "연립방정식의 활용 - 처음 수와 자릿수를 바꾼 수의 관계 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35819,7 +35819,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-27",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(3) 연립방정식의 활용(1)",
-        "typeName": "연립방정식의 활용 - 처음 수와 자릿수를 바꾼 수의 관계",
+        "typeName": "연립방정식의 활용 - 처음 수와 자릿수를 바꾼 수의 관계 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35837,7 +35837,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-28",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(3) 연립방정식의 활용(1)",
-        "typeName": "연립방정식의 활용 - 처음 수와 자릿수를 바꾼 수의 관계",
+        "typeName": "연립방정식의 활용 - 처음 수와 자릿수를 바꾼 수의 관계 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35855,7 +35855,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-29",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(3) 연립방정식의 활용(1)",
-        "typeName": "연립방정식의 활용 - 처음 수와 자릿수를 바꾼 수의 관계",
+        "typeName": "연립방정식의 활용 - 처음 수와 자릿수를 바꾼 수의 관계 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35873,7 +35873,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-30",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(3) 연립방정식의 활용(1)",
-        "typeName": "연립방정식의 활용 - 처음 수와 자릿수를 바꾼 수의 관계",
+        "typeName": "연립방정식의 활용 - 처음 수와 자릿수를 바꾼 수의 관계 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35963,7 +35963,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-35",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(4) 연립방정식의 활용(2)",
-        "typeName": "연립일차방정식의 활용 - 증감률 및 비율에 관한 문제",
+        "typeName": "연립일차방정식의 활용 - 증감률 및 비율에 관한 문제 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35981,7 +35981,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-36",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(4) 연립방정식의 활용(2)",
-        "typeName": "연립일차방정식의 활용 - 증감률 및 비율에 관한 문제",
+        "typeName": "연립일차방정식의 활용 - 증감률 및 비율에 관한 문제 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35999,7 +35999,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-37",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(4) 연립방정식의 활용(2)",
-        "typeName": "연립일차방정식의 활용 - 증감률 및 비율에 관한 문제",
+        "typeName": "연립일차방정식의 활용 - 증감률 및 비율에 관한 문제 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36017,7 +36017,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-38",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(4) 연립방정식의 활용(2)",
-        "typeName": "연립일차방정식의 활용 - 증감률 및 비율에 관한 문제",
+        "typeName": "연립일차방정식의 활용 - 증감률 및 비율에 관한 문제 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36035,7 +36035,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-2-39",
         "majorUnit": "3단원 방정식",
         "minorUnit": "(4) 연립방정식의 활용(2)",
-        "typeName": "연립일차방정식의 활용 - 증감률 및 비율에 관한 문제",
+        "typeName": "연립일차방정식의 활용 - 증감률 및 비율에 관한 문제 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36089,7 +36089,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-2",
         "majorUnit": "4단원 함수",
         "minorUnit": "(1) 함수, 일차함수의 뜻",
-        "typeName": "일차함수의 뜻과 판정 및 식을 전개했을 때의 성립 조건",
+        "typeName": "일차함수의 뜻과 판정 및 식을 전개했을 때의 성립 조건 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36107,7 +36107,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-3",
         "majorUnit": "4단원 함수",
         "minorUnit": "(1) 함수, 일차함수의 뜻",
-        "typeName": "일차함수의 뜻과 판정 및 식을 전개했을 때의 성립 조건",
+        "typeName": "일차함수의 뜻과 판정 및 식을 전개했을 때의 성립 조건 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36125,7 +36125,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-4",
         "majorUnit": "4단원 함수",
         "minorUnit": "(1) 함수, 일차함수의 뜻",
-        "typeName": "일차함수의 뜻과 판정 및 식을 전개했을 때의 성립 조건",
+        "typeName": "일차함수의 뜻과 판정 및 식을 전개했을 때의 성립 조건 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36143,7 +36143,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-5",
         "majorUnit": "4단원 함수",
         "minorUnit": "(1) 함수, 일차함수의 뜻",
-        "typeName": "일차함수의 뜻과 판정 및 식을 전개했을 때의 성립 조건",
+        "typeName": "일차함수의 뜻과 판정 및 식을 전개했을 때의 성립 조건 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36161,7 +36161,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-6",
         "majorUnit": "4단원 함수",
         "minorUnit": "(1) 함수, 일차함수의 뜻",
-        "typeName": "일차함수의 뜻과 판정 및 식을 전개했을 때의 성립 조건",
+        "typeName": "일차함수의 뜻과 판정 및 식을 전개했을 때의 성립 조건 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36215,7 +36215,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-9",
         "majorUnit": "4단원 함수",
         "minorUnit": "(2) 일차함수와 그 그래프",
-        "typeName": "일차함수의 x절편, y절편 연산 및 축과 만나는 좌표 구하기",
+        "typeName": "일차함수의 x절편, y절편 연산 및 축과 만나는 좌표 구하기 - 유형 3",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36233,7 +36233,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-10",
         "majorUnit": "4단원 함수",
         "minorUnit": "(2) 일차함수와 그 그래프",
-        "typeName": "일차함수의 x절편, y절편 연산 및 축과 만나는 좌표 구하기",
+        "typeName": "일차함수의 x절편, y절편 연산 및 축과 만나는 좌표 구하기 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36251,7 +36251,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-11",
         "majorUnit": "4단원 함수",
         "minorUnit": "(2) 일차함수와 그 그래프",
-        "typeName": "일차함수의 x절편, y절편 연산 및 축과 만나는 좌표 구하기",
+        "typeName": "일차함수의 x절편, y절편 연산 및 축과 만나는 좌표 구하기 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36269,7 +36269,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-12",
         "majorUnit": "4단원 함수",
         "minorUnit": "(2) 일차함수와 그 그래프",
-        "typeName": "일차함수의 x절편, y절편 연산 및 축과 만나는 좌표 구하기",
+        "typeName": "일차함수의 x절편, y절편 연산 및 축과 만나는 좌표 구하기 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36287,7 +36287,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-13",
         "majorUnit": "4단원 함수",
         "minorUnit": "(2) 일차함수와 그 그래프",
-        "typeName": "일차함수의 x절편, y절편 연산 및 축과 만나는 좌표 구하기",
+        "typeName": "일차함수의 x절편, y절편 연산 및 축과 만나는 좌표 구하기 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36413,7 +36413,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-20",
         "majorUnit": "4단원 함수",
         "minorUnit": "(3) 일차함수의 그래프의 성질",
-        "typeName": "세 직선이 한 점에서 만날 조건 또는 삼각형을 이루지 않을 조건 심화",
+        "typeName": "세 직선이 한 점에서 만날 조건 또는 삼각형을 이루지 않을 조건 심화 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36431,7 +36431,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-21",
         "majorUnit": "4단원 함수",
         "minorUnit": "(3) 일차함수의 그래프의 성질",
-        "typeName": "세 직선이 한 점에서 만날 조건 또는 삼각형을 이루지 않을 조건 심화",
+        "typeName": "세 직선이 한 점에서 만날 조건 또는 삼각형을 이루지 않을 조건 심화 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36449,7 +36449,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-22",
         "majorUnit": "4단원 함수",
         "minorUnit": "(3) 일차함수의 그래프의 성질",
-        "typeName": "세 직선이 한 점에서 만날 조건 또는 삼각형을 이루지 않을 조건 심화",
+        "typeName": "세 직선이 한 점에서 만날 조건 또는 삼각형을 이루지 않을 조건 심화 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36467,7 +36467,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-23",
         "majorUnit": "4단원 함수",
         "minorUnit": "(3) 일차함수의 그래프의 성질",
-        "typeName": "세 직선이 한 점에서 만날 조건 또는 삼각형을 이루지 않을 조건 심화",
+        "typeName": "세 직선이 한 점에서 만날 조건 또는 삼각형을 이루지 않을 조건 심화 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36485,7 +36485,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-24",
         "majorUnit": "4단원 함수",
         "minorUnit": "(3) 일차함수의 그래프의 성질",
-        "typeName": "세 직선이 한 점에서 만날 조건 또는 삼각형을 이루지 않을 조건 심화",
+        "typeName": "세 직선이 한 점에서 만날 조건 또는 삼각형을 이루지 않을 조건 심화 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36539,7 +36539,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-27",
         "majorUnit": "4단원 함수",
         "minorUnit": "(4) 일차함수의 식 구하기",
-        "typeName": "서로 다른 두 점이 주어지는 일차함수의 식 도출 기법",
+        "typeName": "서로 다른 두 점이 주어지는 일차함수의 식 도출 기법 - 유형 3",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36557,7 +36557,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-28",
         "majorUnit": "4단원 함수",
         "minorUnit": "(4) 일차함수의 식 구하기",
-        "typeName": "서로 다른 두 점이 주어지는 일차함수의 식 도출 기법",
+        "typeName": "서로 다른 두 점이 주어지는 일차함수의 식 도출 기법 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36575,7 +36575,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-29",
         "majorUnit": "4단원 함수",
         "minorUnit": "(4) 일차함수의 식 구하기",
-        "typeName": "서로 다른 두 점이 주어지는 일차함수의 식 도출 기법",
+        "typeName": "서로 다른 두 점이 주어지는 일차함수의 식 도출 기법 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36593,7 +36593,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-30",
         "majorUnit": "4단원 함수",
         "minorUnit": "(4) 일차함수의 식 구하기",
-        "typeName": "서로 다른 두 점이 주어지는 일차함수의 식 도출 기법",
+        "typeName": "서로 다른 두 점이 주어지는 일차함수의 식 도출 기법 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36611,7 +36611,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-31",
         "majorUnit": "4단원 함수",
         "minorUnit": "(4) 일차함수의 식 구하기",
-        "typeName": "서로 다른 두 점이 주어지는 일차함수의 식 도출 기법",
+        "typeName": "서로 다른 두 점이 주어지는 일차함수의 식 도출 기법 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36683,7 +36683,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-35",
         "majorUnit": "4단원 함수",
         "minorUnit": "(5) 일차함수의 활용",
-        "typeName": "일차함수의 활용 - 도형 위를 움직이는 점(동점)과 넓이의 변화 관계",
+        "typeName": "일차함수의 활용 - 도형 위를 움직이는 점(동점)과 넓이의 변화 관계 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36701,7 +36701,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-36",
         "majorUnit": "4단원 함수",
         "minorUnit": "(5) 일차함수의 활용",
-        "typeName": "일차함수의 활용 - 도형 위를 움직이는 점(동점)과 넓이의 변화 관계",
+        "typeName": "일차함수의 활용 - 도형 위를 움직이는 점(동점)과 넓이의 변화 관계 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36719,7 +36719,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-37",
         "majorUnit": "4단원 함수",
         "minorUnit": "(5) 일차함수의 활용",
-        "typeName": "일차함수의 활용 - 도형 위를 움직이는 점(동점)과 넓이의 변화 관계",
+        "typeName": "일차함수의 활용 - 도형 위를 움직이는 점(동점)과 넓이의 변화 관계 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36737,7 +36737,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-38",
         "majorUnit": "4단원 함수",
         "minorUnit": "(5) 일차함수의 활용",
-        "typeName": "일차함수의 활용 - 도형 위를 움직이는 점(동점)과 넓이의 변화 관계",
+        "typeName": "일차함수의 활용 - 도형 위를 움직이는 점(동점)과 넓이의 변화 관계 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36755,7 +36755,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-39",
         "majorUnit": "4단원 함수",
         "minorUnit": "(5) 일차함수의 활용",
-        "typeName": "일차함수의 활용 - 도형 위를 움직이는 점(동점)과 넓이의 변화 관계",
+        "typeName": "일차함수의 활용 - 도형 위를 움직이는 점(동점)과 넓이의 변화 관계 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36827,7 +36827,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-43",
         "majorUnit": "4단원 함수",
         "minorUnit": "(6) 일차함수의 그래프와 일차방정식",
-        "typeName": "직선들로 둘러싸인 기하학적 도형의 넓이와 좌표 변형 계산",
+        "typeName": "직선들로 둘러싸인 기하학적 도형의 넓이와 좌표 변형 계산 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36845,7 +36845,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-44",
         "majorUnit": "4단원 함수",
         "minorUnit": "(6) 일차함수의 그래프와 일차방정식",
-        "typeName": "직선들로 둘러싸인 기하학적 도형의 넓이와 좌표 변형 계산",
+        "typeName": "직선들로 둘러싸인 기하학적 도형의 넓이와 좌표 변형 계산 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36863,7 +36863,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-45",
         "majorUnit": "4단원 함수",
         "minorUnit": "(6) 일차함수의 그래프와 일차방정식",
-        "typeName": "직선들로 둘러싸인 기하학적 도형의 넓이와 좌표 변형 계산",
+        "typeName": "직선들로 둘러싸인 기하학적 도형의 넓이와 좌표 변형 계산 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36881,7 +36881,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-46",
         "majorUnit": "4단원 함수",
         "minorUnit": "(6) 일차함수의 그래프와 일차방정식",
-        "typeName": "직선들로 둘러싸인 기하학적 도형의 넓이와 좌표 변형 계산",
+        "typeName": "직선들로 둘러싸인 기하학적 도형의 넓이와 좌표 변형 계산 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36899,7 +36899,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-47",
         "majorUnit": "4단원 함수",
         "minorUnit": "(6) 일차함수의 그래프와 일차방정식",
-        "typeName": "직선들로 둘러싸인 기하학적 도형의 넓이와 좌표 변형 계산",
+        "typeName": "직선들로 둘러싸인 기하학적 도형의 넓이와 좌표 변형 계산 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36971,7 +36971,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-51",
         "majorUnit": "4단원 함수",
         "minorUnit": "(7) 일차함수의 그래프와 연립방정식",
-        "typeName": "연립방정식의 특수한 해(무수히 많거나 없다)와 직선의 위치 관계 심화",
+        "typeName": "연립방정식의 특수한 해(무수히 많거나 없다)와 직선의 위치 관계 심화 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36989,7 +36989,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-52",
         "majorUnit": "4단원 함수",
         "minorUnit": "(7) 일차함수의 그래프와 연립방정식",
-        "typeName": "연립방정식의 특수한 해(무수히 많거나 없다)와 직선의 위치 관계 심화",
+        "typeName": "연립방정식의 특수한 해(무수히 많거나 없다)와 직선의 위치 관계 심화 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37007,7 +37007,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-53",
         "majorUnit": "4단원 함수",
         "minorUnit": "(7) 일차함수의 그래프와 연립방정식",
-        "typeName": "연립방정식의 특수한 해(무수히 많거나 없다)와 직선의 위치 관계 심화",
+        "typeName": "연립방정식의 특수한 해(무수히 많거나 없다)와 직선의 위치 관계 심화 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37025,7 +37025,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-54",
         "majorUnit": "4단원 함수",
         "minorUnit": "(7) 일차함수의 그래프와 연립방정식",
-        "typeName": "연립방정식의 특수한 해(무수히 많거나 없다)와 직선의 위치 관계 심화",
+        "typeName": "연립방정식의 특수한 해(무수히 많거나 없다)와 직선의 위치 관계 심화 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37043,7 +37043,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-3-55",
         "majorUnit": "4단원 함수",
         "minorUnit": "(7) 일차함수의 그래프와 연립방정식",
-        "typeName": "연립방정식의 특수한 해(무수히 많거나 없다)와 직선의 위치 관계 심화",
+        "typeName": "연립방정식의 특수한 해(무수히 많거나 없다)와 직선의 위치 관계 심화 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37230,7 +37230,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-9",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(1) 이등변삼각형의 성질",
-        "typeName": "삼각형의 두 내각의 이등분선과 외각의 복합 심화 문제",
+        "typeName": "삼각형의 두 내각의 이등분선과 외각의 복합 심화 문제 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37248,7 +37248,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-10",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(1) 이등변삼각형의 성질",
-        "typeName": "삼각형의 두 내각의 이등분선과 외각의 복합 심화 문제",
+        "typeName": "삼각형의 두 내각의 이등분선과 외각의 복합 심화 문제 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37266,7 +37266,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-11",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(1) 이등변삼각형의 성질",
-        "typeName": "삼각형의 두 내각의 이등분선과 외각의 복합 심화 문제",
+        "typeName": "삼각형의 두 내각의 이등분선과 외각의 복합 심화 문제 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37284,7 +37284,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-12",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(1) 이등변삼각형의 성질",
-        "typeName": "삼각형의 두 내각의 이등분선과 외각의 복합 심화 문제",
+        "typeName": "삼각형의 두 내각의 이등분선과 외각의 복합 심화 문제 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37302,7 +37302,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-13",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(1) 이등변삼각형의 성질",
-        "typeName": "삼각형의 두 내각의 이등분선과 외각의 복합 심화 문제",
+        "typeName": "삼각형의 두 내각의 이등분선과 외각의 복합 심화 문제 - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37500,7 +37500,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-24",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(2) 직각삼각형의 합동 조건",
-        "typeName": "정사각형 내부에서의 직각삼각형 합동 조건의 복합 응용",
+        "typeName": "정사각형 내부에서의 직각삼각형 합동 조건의 복합 응용 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37518,7 +37518,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-25",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(2) 직각삼각형의 합동 조건",
-        "typeName": "정사각형 내부에서의 직각삼각형 합동 조건의 복합 응용",
+        "typeName": "정사각형 내부에서의 직각삼각형 합동 조건의 복합 응용 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37536,7 +37536,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-26",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(2) 직각삼각형의 합동 조건",
-        "typeName": "정사각형 내부에서의 직각삼각형 합동 조건의 복합 응용",
+        "typeName": "정사각형 내부에서의 직각삼각형 합동 조건의 복합 응용 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37554,7 +37554,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-27",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(2) 직각삼각형의 합동 조건",
-        "typeName": "정사각형 내부에서의 직각삼각형 합동 조건의 복합 응용",
+        "typeName": "정사각형 내부에서의 직각삼각형 합동 조건의 복합 응용 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37572,7 +37572,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-28",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(2) 직각삼각형의 합동 조건",
-        "typeName": "정사각형 내부에서의 직각삼각형 합동 조건의 복합 응용",
+        "typeName": "정사각형 내부에서의 직각삼각형 합동 조건의 복합 응용 - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37770,7 +37770,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-39",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(3) 삼각형의 외심",
-        "typeName": "둔각삼각형의 외심의 위치와 외부 각도의 복합 심화 문제",
+        "typeName": "둔각삼각형의 외심의 위치와 외부 각도의 복합 심화 문제 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37788,7 +37788,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-40",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(3) 삼각형의 외심",
-        "typeName": "둔각삼각형의 외심의 위치와 외부 각도의 복합 심화 문제",
+        "typeName": "둔각삼각형의 외심의 위치와 외부 각도의 복합 심화 문제 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37806,7 +37806,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-41",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(3) 삼각형의 외심",
-        "typeName": "둔각삼각형의 외심의 위치와 외부 각도의 복합 심화 문제",
+        "typeName": "둔각삼각형의 외심의 위치와 외부 각도의 복합 심화 문제 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37824,7 +37824,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-42",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(3) 삼각형의 외심",
-        "typeName": "둔각삼각형의 외심의 위치와 외부 각도의 복합 심화 문제",
+        "typeName": "둔각삼각형의 외심의 위치와 외부 각도의 복합 심화 문제 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37842,7 +37842,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-43",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(3) 삼각형의 외심",
-        "typeName": "둔각삼각형의 외심의 위치와 외부 각도의 복합 심화 문제",
+        "typeName": "둔각삼각형의 외심의 위치와 외부 각도의 복합 심화 문제 - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38040,7 +38040,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-54",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(4) 삼각형의 내심",
-        "typeName": "직각삼각형에서의 내접원과 외접원의 반지름을 활용한 복합 계산",
+        "typeName": "직각삼각형에서의 내접원과 외접원의 반지름을 활용한 복합 계산 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38058,7 +38058,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-55",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(4) 삼각형의 내심",
-        "typeName": "직각삼각형에서의 내접원과 외접원의 반지름을 활용한 복합 계산",
+        "typeName": "직각삼각형에서의 내접원과 외접원의 반지름을 활용한 복합 계산 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38076,7 +38076,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-56",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(4) 삼각형의 내심",
-        "typeName": "직각삼각형에서의 내접원과 외접원의 반지름을 활용한 복합 계산",
+        "typeName": "직각삼각형에서의 내접원과 외접원의 반지름을 활용한 복합 계산 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38094,7 +38094,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-57",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(4) 삼각형의 내심",
-        "typeName": "직각삼각형에서의 내접원과 외접원의 반지름을 활용한 복합 계산",
+        "typeName": "직각삼각형에서의 내접원과 외접원의 반지름을 활용한 복합 계산 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38112,7 +38112,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-58",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(4) 삼각형의 내심",
-        "typeName": "직각삼각형에서의 내접원과 외접원의 반지름을 활용한 복합 계산",
+        "typeName": "직각삼각형에서의 내접원과 외접원의 반지름을 활용한 복합 계산 - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38202,7 +38202,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-63",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(5) 평행사변형",
-        "typeName": "평행사변형과 넓이 (내부의 한 점 및 삼등분선)",
+        "typeName": "평행사변형과 넓이 (내부의 한 점 및 삼등분선) - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38220,7 +38220,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-64",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(5) 평행사변형",
-        "typeName": "평행사변형과 넓이 (내부의 한 점 및 삼등분선)",
+        "typeName": "평행사변형과 넓이 (내부의 한 점 및 삼등분선) - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38238,7 +38238,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-65",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(5) 평행사변형",
-        "typeName": "평행사변형과 넓이 (내부의 한 점 및 삼등분선)",
+        "typeName": "평행사변형과 넓이 (내부의 한 점 및 삼등분선) - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38256,7 +38256,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-66",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(5) 평행사변형",
-        "typeName": "평행사변형과 넓이 (내부의 한 점 및 삼등분선)",
+        "typeName": "평행사변형과 넓이 (내부의 한 점 및 삼등분선) - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38274,7 +38274,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-67",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(5) 평행사변형",
-        "typeName": "평행사변형과 넓이 (내부의 한 점 및 삼등분선)",
+        "typeName": "평행사변형과 넓이 (내부의 한 점 및 삼등분선) - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38346,7 +38346,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-71",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(6) 직사각형, 마름모, 정사각형",
-        "typeName": "정사각형의 성질과 다른 사각형과의 관계",
+        "typeName": "정사각형의 성질과 다른 사각형과의 관계 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38364,7 +38364,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-72",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(6) 직사각형, 마름모, 정사각형",
-        "typeName": "정사각형의 성질과 다른 사각형과의 관계",
+        "typeName": "정사각형의 성질과 다른 사각형과의 관계 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38382,7 +38382,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-73",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(6) 직사각형, 마름모, 정사각형",
-        "typeName": "정사각형의 성질과 다른 사각형과의 관계",
+        "typeName": "정사각형의 성질과 다른 사각형과의 관계 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38400,7 +38400,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-74",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(6) 직사각형, 마름모, 정사각형",
-        "typeName": "정사각형의 성질과 다른 사각형과의 관계",
+        "typeName": "정사각형의 성질과 다른 사각형과의 관계 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38418,7 +38418,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-75",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(6) 직사각형, 마름모, 정사각형",
-        "typeName": "정사각형의 성질과 다른 사각형과의 관계",
+        "typeName": "정사각형의 성질과 다른 사각형과의 관계 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38508,7 +38508,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-80",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(7) 여러 가지 사각형",
-        "typeName": "사각형 내부의 각의 이등분선과 기하학적 고난도 증명",
+        "typeName": "사각형 내부의 각의 이등분선과 기하학적 고난도 증명 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38526,7 +38526,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-81",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(7) 여러 가지 사각형",
-        "typeName": "사각형 내부의 각의 이등분선과 기하학적 고난도 증명",
+        "typeName": "사각형 내부의 각의 이등분선과 기하학적 고난도 증명 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38544,7 +38544,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-82",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(7) 여러 가지 사각형",
-        "typeName": "사각형 내부의 각의 이등분선과 기하학적 고난도 증명",
+        "typeName": "사각형 내부의 각의 이등분선과 기하학적 고난도 증명 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38562,7 +38562,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-83",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(7) 여러 가지 사각형",
-        "typeName": "사각형 내부의 각의 이등분선과 기하학적 고난도 증명",
+        "typeName": "사각형 내부의 각의 이등분선과 기하학적 고난도 증명 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38580,7 +38580,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-0-84",
         "majorUnit": "1단원 도형의 성질",
         "minorUnit": "(7) 여러 가지 사각형",
-        "typeName": "사각형 내부의 각의 이등분선과 기하학적 고난도 증명",
+        "typeName": "사각형 내부의 각의 이등분선과 기하학적 고난도 증명 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38616,7 +38616,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-1",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(1) 닮은 도형",
-        "typeName": "입체도형에서의 닮음의 성질과 모서리의 길이 구하기",
+        "typeName": "입체도형에서의 닮음의 성질과 모서리의 길이 구하기 - 유형 3",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38634,7 +38634,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-2",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(1) 닮은 도형",
-        "typeName": "입체도형에서의 닮음의 성질과 모서리의 길이 구하기",
+        "typeName": "입체도형에서의 닮음의 성질과 모서리의 길이 구하기 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38652,7 +38652,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-3",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(1) 닮은 도형",
-        "typeName": "입체도형에서의 닮음의 성질과 모서리의 길이 구하기",
+        "typeName": "입체도형에서의 닮음의 성질과 모서리의 길이 구하기 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38670,7 +38670,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-4",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(1) 닮은 도형",
-        "typeName": "입체도형에서의 닮음의 성질과 모서리의 길이 구하기",
+        "typeName": "입체도형에서의 닮음의 성질과 모서리의 길이 구하기 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38688,7 +38688,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-5",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(1) 닮은 도형",
-        "typeName": "입체도형에서의 닮음의 성질과 모서리의 길이 구하기",
+        "typeName": "입체도형에서의 닮음의 성질과 모서리의 길이 구하기 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38886,7 +38886,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-16",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(2) 삼각형의 닮은 조건",
-        "typeName": "직각삼각형 내부의 닮음을 활용한 최적화된 넓이 증명",
+        "typeName": "직각삼각형 내부의 닮음을 활용한 최적화된 넓이 증명 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38904,7 +38904,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-17",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(2) 삼각형의 닮은 조건",
-        "typeName": "직각삼각형 내부의 닮음을 활용한 최적화된 넓이 증명",
+        "typeName": "직각삼각형 내부의 닮음을 활용한 최적화된 넓이 증명 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38922,7 +38922,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-18",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(2) 삼각형의 닮은 조건",
-        "typeName": "직각삼각형 내부의 닮음을 활용한 최적화된 넓이 증명",
+        "typeName": "직각삼각형 내부의 닮음을 활용한 최적화된 넓이 증명 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38940,7 +38940,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-19",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(2) 삼각형의 닮은 조건",
-        "typeName": "직각삼각형 내부의 닮음을 활용한 최적화된 넓이 증명",
+        "typeName": "직각삼각형 내부의 닮음을 활용한 최적화된 넓이 증명 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -38958,7 +38958,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-20",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(2) 삼각형의 닮은 조건",
-        "typeName": "직각삼각형 내부의 닮음을 활용한 최적화된 넓이 증명",
+        "typeName": "직각삼각형 내부의 닮음을 활용한 최적화된 넓이 증명 - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39156,7 +39156,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-31",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(3) 평행선과 선분의 길이의 비",
-        "typeName": "수직인 세 직선 사이의 평행선과 선분의 비 (크로스형)",
+        "typeName": "수직인 세 직선 사이의 평행선과 선분의 비 (크로스형) - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39174,7 +39174,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-32",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(3) 평행선과 선분의 길이의 비",
-        "typeName": "수직인 세 직선 사이의 평행선과 선분의 비 (크로스형)",
+        "typeName": "수직인 세 직선 사이의 평행선과 선분의 비 (크로스형) - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39192,7 +39192,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-33",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(3) 평행선과 선분의 길이의 비",
-        "typeName": "수직인 세 직선 사이의 평행선과 선분의 비 (크로스형)",
+        "typeName": "수직인 세 직선 사이의 평행선과 선분의 비 (크로스형) - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39210,7 +39210,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-34",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(3) 평행선과 선분의 길이의 비",
-        "typeName": "수직인 세 직선 사이의 평행선과 선분의 비 (크로스형)",
+        "typeName": "수직인 세 직선 사이의 평행선과 선분의 비 (크로스형) - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39228,7 +39228,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-35",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(3) 평행선과 선분의 길이의 비",
-        "typeName": "수직인 세 직선 사이의 평행선과 선분의 비 (크로스형)",
+        "typeName": "수직인 세 직선 사이의 평행선과 선분의 비 (크로스형) - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39336,7 +39336,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-41",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(4) 삼각형의 무게중심",
-        "typeName": "무게중심과 중단원 심화 연계 모래시계형 닮음의 응용",
+        "typeName": "무게중심과 중단원 심화 연계 모래시계형 닮음의 응용 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39354,7 +39354,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-42",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(4) 삼각형의 무게중심",
-        "typeName": "무게중심과 중단원 심화 연계 모래시계형 닮음의 응용",
+        "typeName": "무게중심과 중단원 심화 연계 모래시계형 닮음의 응용 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39372,7 +39372,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-43",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(4) 삼각형의 무게중심",
-        "typeName": "무게중심과 중단원 심화 연계 모래시계형 닮음의 응용",
+        "typeName": "무게중심과 중단원 심화 연계 모래시계형 닮음의 응용 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39390,7 +39390,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-44",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(4) 삼각형의 무게중심",
-        "typeName": "무게중심과 중단원 심화 연계 모래시계형 닮음의 응용",
+        "typeName": "무게중심과 중단원 심화 연계 모래시계형 닮음의 응용 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39408,7 +39408,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-45",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(4) 삼각형의 무게중심",
-        "typeName": "무게중심과 중단원 심화 연계 모래시계형 닮음의 응용",
+        "typeName": "무게중심과 중단원 심화 연계 모래시계형 닮음의 응용 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39480,7 +39480,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-49",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(5) 닮은 도형의 넓이와 부피",
-        "typeName": "닮음비의 실생활 문장제 및 수면의 높이 응용",
+        "typeName": "닮음비의 실생활 문장제 및 수면의 높이 응용 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39498,7 +39498,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-50",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(5) 닮은 도형의 넓이와 부피",
-        "typeName": "닮음비의 실생활 문장제 및 수면의 높이 응용",
+        "typeName": "닮음비의 실생활 문장제 및 수면의 높이 응용 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39516,7 +39516,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-51",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(5) 닮은 도형의 넓이와 부피",
-        "typeName": "닮음비의 실생활 문장제 및 수면의 높이 응용",
+        "typeName": "닮음비의 실생활 문장제 및 수면의 높이 응용 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39534,7 +39534,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-52",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(5) 닮은 도형의 넓이와 부피",
-        "typeName": "닮음비의 실생활 문장제 및 수면의 높이 응용",
+        "typeName": "닮음비의 실생활 문장제 및 수면의 높이 응용 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39552,7 +39552,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-53",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(5) 닮은 도형의 넓이와 부피",
-        "typeName": "닮음비의 실생활 문장제 및 수면의 높이 응용",
+        "typeName": "닮음비의 실생활 문장제 및 수면의 높이 응용 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39624,7 +39624,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-57",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(6) 피타고라스 정리",
-        "typeName": "삼각형의 세 변의 길이에 따른 모양 판정",
+        "typeName": "삼각형의 세 변의 길이에 따른 모양 판정 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39642,7 +39642,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-58",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(6) 피타고라스 정리",
-        "typeName": "삼각형의 세 변의 길이에 따른 모양 판정",
+        "typeName": "삼각형의 세 변의 길이에 따른 모양 판정 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39660,7 +39660,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-59",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(6) 피타고라스 정리",
-        "typeName": "삼각형의 세 변의 길이에 따른 모양 판정",
+        "typeName": "삼각형의 세 변의 길이에 따른 모양 판정 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39678,7 +39678,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-60",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(6) 피타고라스 정리",
-        "typeName": "삼각형의 세 변의 길이에 따른 모양 판정",
+        "typeName": "삼각형의 세 변의 길이에 따른 모양 판정 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39696,7 +39696,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-61",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(6) 피타고라스 정리",
-        "typeName": "삼각형의 세 변의 길이에 따른 모양 판정",
+        "typeName": "삼각형의 세 변의 길이에 따른 모양 판정 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39786,7 +39786,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-66",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(7) 피타고라스 정리의 활용",
-        "typeName": "입체도형에서의 최단 거리 구하기 (전개도 활용)",
+        "typeName": "입체도형에서의 최단 거리 구하기 (전개도 활용) - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39804,7 +39804,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-67",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(7) 피타고라스 정리의 활용",
-        "typeName": "입체도형에서의 최단 거리 구하기 (전개도 활용)",
+        "typeName": "입체도형에서의 최단 거리 구하기 (전개도 활용) - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39822,7 +39822,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-68",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(7) 피타고라스 정리의 활용",
-        "typeName": "입체도형에서의 최단 거리 구하기 (전개도 활용)",
+        "typeName": "입체도형에서의 최단 거리 구하기 (전개도 활용) - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39840,7 +39840,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-69",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(7) 피타고라스 정리의 활용",
-        "typeName": "입체도형에서의 최단 거리 구하기 (전개도 활용)",
+        "typeName": "입체도형에서의 최단 거리 구하기 (전개도 활용) - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39858,7 +39858,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-70",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(7) 피타고라스 정리의 활용",
-        "typeName": "입체도형에서의 최단 거리 구하기 (전개도 활용)",
+        "typeName": "입체도형에서의 최단 거리 구하기 (전개도 활용) - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39948,7 +39948,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-4",
         "majorUnit": "3단원 확률",
         "minorUnit": "(1) 경우의 수-합의 법칙, 곱의 법칙",
-        "typeName": "도로망에서의 이동 경로의 수 구하기 (우회 경로 포함)",
+        "typeName": "도로망에서의 이동 경로의 수 구하기 (우회 경로 포함) - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39966,7 +39966,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-5",
         "majorUnit": "3단원 확률",
         "minorUnit": "(1) 경우의 수-합의 법칙, 곱의 법칙",
-        "typeName": "도로망에서의 이동 경로의 수 구하기 (우회 경로 포함)",
+        "typeName": "도로망에서의 이동 경로의 수 구하기 (우회 경로 포함) - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -39984,7 +39984,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-6",
         "majorUnit": "3단원 확률",
         "minorUnit": "(1) 경우의 수-합의 법칙, 곱의 법칙",
-        "typeName": "도로망에서의 이동 경로의 수 구하기 (우회 경로 포함)",
+        "typeName": "도로망에서의 이동 경로의 수 구하기 (우회 경로 포함) - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40002,7 +40002,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-7",
         "majorUnit": "3단원 확률",
         "minorUnit": "(1) 경우의 수-합의 법칙, 곱의 법칙",
-        "typeName": "도로망에서의 이동 경로의 수 구하기 (우회 경로 포함)",
+        "typeName": "도로망에서의 이동 경로의 수 구하기 (우회 경로 포함) - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40020,7 +40020,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-8",
         "majorUnit": "3단원 확률",
         "minorUnit": "(1) 경우의 수-합의 법칙, 곱의 법칙",
-        "typeName": "도로망에서의 이동 경로의 수 구하기 (우회 경로 포함)",
+        "typeName": "도로망에서의 이동 경로의 수 구하기 (우회 경로 포함) - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40110,7 +40110,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-13",
         "majorUnit": "3단원 확률",
         "minorUnit": "(2) 여러 가지 경우의 수",
-        "typeName": "색칠하기와 교란순열(완전순열)의 경우의 수 추론",
+        "typeName": "색칠하기와 교란순열(완전순열)의 경우의 수 추론 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40128,7 +40128,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-14",
         "majorUnit": "3단원 확률",
         "minorUnit": "(2) 여러 가지 경우의 수",
-        "typeName": "색칠하기와 교란순열(완전순열)의 경우의 수 추론",
+        "typeName": "색칠하기와 교란순열(완전순열)의 경우의 수 추론 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40146,7 +40146,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-15",
         "majorUnit": "3단원 확률",
         "minorUnit": "(2) 여러 가지 경우의 수",
-        "typeName": "색칠하기와 교란순열(완전순열)의 경우의 수 추론",
+        "typeName": "색칠하기와 교란순열(완전순열)의 경우의 수 추론 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40164,7 +40164,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-16",
         "majorUnit": "3단원 확률",
         "minorUnit": "(2) 여러 가지 경우의 수",
-        "typeName": "색칠하기와 교란순열(완전순열)의 경우의 수 추론",
+        "typeName": "색칠하기와 교란순열(완전순열)의 경우의 수 추론 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40182,7 +40182,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-17",
         "majorUnit": "3단원 확률",
         "minorUnit": "(2) 여러 가지 경우의 수",
-        "typeName": "색칠하기와 교란순열(완전순열)의 경우의 수 추론",
+        "typeName": "색칠하기와 교란순열(완전순열)의 경우의 수 추론 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40236,7 +40236,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-20",
         "majorUnit": "3단원 확률",
         "minorUnit": "(3) 확률의 뜻과 성질",
-        "typeName": "어떤 사건이 일어나지 않을 확률 (여사건과 '적어도' 조건)",
+        "typeName": "어떤 사건이 일어나지 않을 확률 (여사건과 '적어도' 조건) - 유형 3",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40254,7 +40254,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-21",
         "majorUnit": "3단원 확률",
         "minorUnit": "(3) 확률의 뜻과 성질",
-        "typeName": "어떤 사건이 일어나지 않을 확률 (여사건과 '적어도' 조건)",
+        "typeName": "어떤 사건이 일어나지 않을 확률 (여사건과 '적어도' 조건) - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40272,7 +40272,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-22",
         "majorUnit": "3단원 확률",
         "minorUnit": "(3) 확률의 뜻과 성질",
-        "typeName": "어떤 사건이 일어나지 않을 확률 (여사건과 '적어도' 조건)",
+        "typeName": "어떤 사건이 일어나지 않을 확률 (여사건과 '적어도' 조건) - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40290,7 +40290,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-23",
         "majorUnit": "3단원 확률",
         "minorUnit": "(3) 확률의 뜻과 성질",
-        "typeName": "어떤 사건이 일어나지 않을 확률 (여사건과 '적어도' 조건)",
+        "typeName": "어떤 사건이 일어나지 않을 확률 (여사건과 '적어도' 조건) - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40308,7 +40308,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-24",
         "majorUnit": "3단원 확률",
         "minorUnit": "(3) 확률의 뜻과 성질",
-        "typeName": "어떤 사건이 일어나지 않을 확률 (여사건과 '적어도' 조건)",
+        "typeName": "어떤 사건이 일어나지 않을 확률 (여사건과 '적어도' 조건) - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40434,7 +40434,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-31",
         "majorUnit": "3단원 확률",
         "minorUnit": "(4) 확률의 계산",
-        "typeName": "좌표평면 위에서 점의 이동과 동전/주사위 확률의 연계",
+        "typeName": "좌표평면 위에서 점의 이동과 동전/주사위 확률의 연계 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40452,7 +40452,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-32",
         "majorUnit": "3단원 확률",
         "minorUnit": "(4) 확률의 계산",
-        "typeName": "좌표평면 위에서 점의 이동과 동전/주사위 확률의 연계",
+        "typeName": "좌표평면 위에서 점의 이동과 동전/주사위 확률의 연계 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40470,7 +40470,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-33",
         "majorUnit": "3단원 확률",
         "minorUnit": "(4) 확률의 계산",
-        "typeName": "좌표평면 위에서 점의 이동과 동전/주사위 확률의 연계",
+        "typeName": "좌표평면 위에서 점의 이동과 동전/주사위 확률의 연계 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40488,7 +40488,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-34",
         "majorUnit": "3단원 확률",
         "minorUnit": "(4) 확률의 계산",
-        "typeName": "좌표평면 위에서 점의 이동과 동전/주사위 확률의 연계",
+        "typeName": "좌표평면 위에서 점의 이동과 동전/주사위 확률의 연계 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40506,7 +40506,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-2-35",
         "majorUnit": "3단원 확률",
         "minorUnit": "(4) 확률의 계산",
-        "typeName": "좌표평면 위에서 점의 이동과 동전/주사위 확률의 연계",
+        "typeName": "좌표평면 위에서 점의 이동과 동전/주사위 확률의 연계 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40891,7 +40891,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-20",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(1) 제곱근의 뜻과 성질",
-        "typeName": "부등식을 만족시키는 정수/자연수의 개수 구하기",
+        "typeName": "부등식을 만족시키는 정수/자연수의 개수 구하기 - 유형 22",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40909,7 +40909,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-21",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(1) 제곱근의 뜻과 성질",
-        "typeName": "부등식을 만족시키는 정수/자연수의 개수 구하기",
+        "typeName": "부등식을 만족시키는 정수/자연수의 개수 구하기 - 유형 23",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40927,7 +40927,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-22",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(1) 제곱근의 뜻과 성질",
-        "typeName": "부등식을 만족시키는 정수/자연수의 개수 구하기",
+        "typeName": "부등식을 만족시키는 정수/자연수의 개수 구하기 - 유형 24",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40945,7 +40945,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-23",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(1) 제곱근의 뜻과 성질",
-        "typeName": "부등식을 만족시키는 정수/자연수의 개수 구하기",
+        "typeName": "부등식을 만족시키는 정수/자연수의 개수 구하기 - 유형 25",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -40963,7 +40963,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-24",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(1) 제곱근의 뜻과 성질",
-        "typeName": "부등식을 만족시키는 정수/자연수의 개수 구하기",
+        "typeName": "부등식을 만족시키는 정수/자연수의 개수 구하기 - 유형 26",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -41053,7 +41053,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-29",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(2) 무리수와 실수",
-        "typeName": "특정 범위 내에서 복수의 제곱근식이 모두 무리수가 되는 개수 카운팅",
+        "typeName": "특정 범위 내에서 복수의 제곱근식이 모두 무리수가 되는 개수 카운팅 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -41071,7 +41071,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-30",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(2) 무리수와 실수",
-        "typeName": "특정 범위 내에서 복수의 제곱근식이 모두 무리수가 되는 개수 카운팅",
+        "typeName": "특정 범위 내에서 복수의 제곱근식이 모두 무리수가 되는 개수 카운팅 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -41089,7 +41089,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-31",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(2) 무리수와 실수",
-        "typeName": "특정 범위 내에서 복수의 제곱근식이 모두 무리수가 되는 개수 카운팅",
+        "typeName": "특정 범위 내에서 복수의 제곱근식이 모두 무리수가 되는 개수 카운팅 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -41107,7 +41107,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-32",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(2) 무리수와 실수",
-        "typeName": "특정 범위 내에서 복수의 제곱근식이 모두 무리수가 되는 개수 카운팅",
+        "typeName": "특정 범위 내에서 복수의 제곱근식이 모두 무리수가 되는 개수 카운팅 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -41125,7 +41125,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-33",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(2) 무리수와 실수",
-        "typeName": "특정 범위 내에서 복수의 제곱근식이 모두 무리수가 되는 개수 카운팅",
+        "typeName": "특정 범위 내에서 복수의 제곱근식이 모두 무리수가 되는 개수 카운팅 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -41215,7 +41215,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-38",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(3) 실수와 수직선, 실수의 대소 관계",
-        "typeName": "수직선 위 자연수 제곱근 점의 개수 규칙성 추론 (<a,b>=n)",
+        "typeName": "수직선 위 자연수 제곱근 점의 개수 규칙성 추론 (<a,b>=n) - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -41233,7 +41233,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-39",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(3) 실수와 수직선, 실수의 대소 관계",
-        "typeName": "수직선 위 자연수 제곱근 점의 개수 규칙성 추론 (<a,b>=n)",
+        "typeName": "수직선 위 자연수 제곱근 점의 개수 규칙성 추론 (<a,b>=n) - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -41251,7 +41251,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-40",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(3) 실수와 수직선, 실수의 대소 관계",
-        "typeName": "수직선 위 자연수 제곱근 점의 개수 규칙성 추론 (<a,b>=n)",
+        "typeName": "수직선 위 자연수 제곱근 점의 개수 규칙성 추론 (<a,b>=n) - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -41269,7 +41269,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-41",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(3) 실수와 수직선, 실수의 대소 관계",
-        "typeName": "수직선 위 자연수 제곱근 점의 개수 규칙성 추론 (<a,b>=n)",
+        "typeName": "수직선 위 자연수 제곱근 점의 개수 규칙성 추론 (<a,b>=n) - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -41287,7 +41287,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-42",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(3) 실수와 수직선, 실수의 대소 관계",
-        "typeName": "수직선 위 자연수 제곱근 점의 개수 규칙성 추론 (<a,b>=n)",
+        "typeName": "수직선 위 자연수 제곱근 점의 개수 규칙성 추론 (<a,b>=n) - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -41467,7 +41467,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-52",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(4) 제곱근의 곱셈과 나눗셈",
-        "typeName": "분모의 유리화 (단항식)",
+        "typeName": "분모의 유리화 (단항식) - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -41485,7 +41485,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-53",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(4) 제곱근의 곱셈과 나눗셈",
-        "typeName": "분모의 유리화 (단항식)",
+        "typeName": "분모의 유리화 (단항식) - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -41503,7 +41503,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-54",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(4) 제곱근의 곱셈과 나눗셈",
-        "typeName": "분모의 유리화 (단항식)",
+        "typeName": "분모의 유리화 (단항식) - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -41521,7 +41521,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-55",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(4) 제곱근의 곱셈과 나눗셈",
-        "typeName": "분모의 유리화 (단항식)",
+        "typeName": "분모의 유리화 (단항식) - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -41539,7 +41539,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-56",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(4) 제곱근의 곱셈과 나눗셈",
-        "typeName": "분모의 유리화 (단항식)",
+        "typeName": "분모의 유리화 (단항식) - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42187,7 +42187,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-92",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
-        "typeName": "0<x<1 범위 조건 하에서 다항 근호 식들의 크기 순서 판별 및 연산",
+        "typeName": "0<x<1 범위 조건 하에서 다항 근호 식들의 크기 순서 판별 및 연산 - 유형 21",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42205,7 +42205,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-93",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
-        "typeName": "0<x<1 범위 조건 하에서 다항 근호 식들의 크기 순서 판별 및 연산",
+        "typeName": "0<x<1 범위 조건 하에서 다항 근호 식들의 크기 순서 판별 및 연산 - 유형 22",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42223,7 +42223,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-94",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
-        "typeName": "0<x<1 범위 조건 하에서 다항 근호 식들의 크기 순서 판별 및 연산",
+        "typeName": "0<x<1 범위 조건 하에서 다항 근호 식들의 크기 순서 판별 및 연산 - 유형 23",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42241,7 +42241,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-95",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
-        "typeName": "0<x<1 범위 조건 하에서 다항 근호 식들의 크기 순서 판별 및 연산",
+        "typeName": "0<x<1 범위 조건 하에서 다항 근호 식들의 크기 순서 판별 및 연산 - 유형 24",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42259,7 +42259,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-0-96",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
-        "typeName": "0<x<1 범위 조건 하에서 다항 근호 식들의 크기 순서 판별 및 연산",
+        "typeName": "0<x<1 범위 조건 하에서 다항 근호 식들의 크기 순서 판별 및 연산 - 유형 25",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42493,7 +42493,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-12",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(1) 다항식과 다항식의 곱셈, 곱셈 공식",
-        "typeName": "계수가 분수인 두 일차식의 전개와 계수의 합 계산",
+        "typeName": "계수가 분수인 두 일차식의 전개와 계수의 합 계산 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42511,7 +42511,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-13",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(1) 다항식과 다항식의 곱셈, 곱셈 공식",
-        "typeName": "계수가 분수인 두 일차식의 전개와 계수의 합 계산",
+        "typeName": "계수가 분수인 두 일차식의 전개와 계수의 합 계산 - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42529,7 +42529,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-14",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(1) 다항식과 다항식의 곱셈, 곱셈 공식",
-        "typeName": "계수가 분수인 두 일차식의 전개와 계수의 합 계산",
+        "typeName": "계수가 분수인 두 일차식의 전개와 계수의 합 계산 - 유형 16",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42547,7 +42547,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-15",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(1) 다항식과 다항식의 곱셈, 곱셈 공식",
-        "typeName": "계수가 분수인 두 일차식의 전개와 계수의 합 계산",
+        "typeName": "계수가 분수인 두 일차식의 전개와 계수의 합 계산 - 유형 17",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42565,7 +42565,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-16",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(1) 다항식과 다항식의 곱셈, 곱셈 공식",
-        "typeName": "계수가 분수인 두 일차식의 전개와 계수의 합 계산",
+        "typeName": "계수가 분수인 두 일차식의 전개와 계수의 합 계산 - 유형 18",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42655,7 +42655,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-21",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(2) 곱셈 공식 활용",
-        "typeName": "곱셈 공식을 이용한 분모의 유리화 (두 항을 포함한 분모)",
+        "typeName": "곱셈 공식을 이용한 분모의 유리화 (두 항을 포함한 분모) - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42673,7 +42673,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-22",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(2) 곱셈 공식 활용",
-        "typeName": "곱셈 공식을 이용한 분모의 유리화 (두 항을 포함한 분모)",
+        "typeName": "곱셈 공식을 이용한 분모의 유리화 (두 항을 포함한 분모) - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42691,7 +42691,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-23",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(2) 곱셈 공식 활용",
-        "typeName": "곱셈 공식을 이용한 분모의 유리화 (두 항을 포함한 분모)",
+        "typeName": "곱셈 공식을 이용한 분모의 유리화 (두 항을 포함한 분모) - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42709,7 +42709,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-24",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(2) 곱셈 공식 활용",
-        "typeName": "곱셈 공식을 이용한 분모의 유리화 (두 항을 포함한 분모)",
+        "typeName": "곱셈 공식을 이용한 분모의 유리화 (두 항을 포함한 분모) - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42727,7 +42727,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-25",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(2) 곱셈 공식 활용",
-        "typeName": "곱셈 공식을 이용한 분모의 유리화 (두 항을 포함한 분모)",
+        "typeName": "곱셈 공식을 이용한 분모의 유리화 (두 항을 포함한 분모) - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42835,7 +42835,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-31",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(3) 곱셈 공식의 변형",
-        "typeName": "길이의 변화를 반영한 직사각형 모양 도형의 넓이 전개 활용",
+        "typeName": "길이의 변화를 반영한 직사각형 모양 도형의 넓이 전개 활용 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42853,7 +42853,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-32",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(3) 곱셈 공식의 변형",
-        "typeName": "길이의 변화를 반영한 직사각형 모양 도형의 넓이 전개 활용",
+        "typeName": "길이의 변화를 반영한 직사각형 모양 도형의 넓이 전개 활용 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42871,7 +42871,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-33",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(3) 곱셈 공식의 변형",
-        "typeName": "길이의 변화를 반영한 직사각형 모양 도형의 넓이 전개 활용",
+        "typeName": "길이의 변화를 반영한 직사각형 모양 도형의 넓이 전개 활용 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42889,7 +42889,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-34",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(3) 곱셈 공식의 변형",
-        "typeName": "길이의 변화를 반영한 직사각형 모양 도형의 넓이 전개 활용",
+        "typeName": "길이의 변화를 반영한 직사각형 모양 도형의 넓이 전개 활용 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -42907,7 +42907,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-35",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(3) 곱셈 공식의 변형",
-        "typeName": "길이의 변화를 반영한 직사각형 모양 도형의 넓이 전개 활용",
+        "typeName": "길이의 변화를 반영한 직사각형 모양 도형의 넓이 전개 활용 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43231,7 +43231,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-53",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(4) 인수분해",
-        "typeName": "어떤 항을 잘못 보고 인수분해한 결과로부터 처음 다항식 복원하기",
+        "typeName": "어떤 항을 잘못 보고 인수분해한 결과로부터 처음 다항식 복원하기 - 유형 18",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43249,7 +43249,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-54",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(4) 인수분해",
-        "typeName": "어떤 항을 잘못 보고 인수분해한 결과로부터 처음 다항식 복원하기",
+        "typeName": "어떤 항을 잘못 보고 인수분해한 결과로부터 처음 다항식 복원하기 - 유형 19",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43267,7 +43267,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-55",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(4) 인수분해",
-        "typeName": "어떤 항을 잘못 보고 인수분해한 결과로부터 처음 다항식 복원하기",
+        "typeName": "어떤 항을 잘못 보고 인수분해한 결과로부터 처음 다항식 복원하기 - 유형 20",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43285,7 +43285,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-56",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(4) 인수분해",
-        "typeName": "어떤 항을 잘못 보고 인수분해한 결과로부터 처음 다항식 복원하기",
+        "typeName": "어떤 항을 잘못 보고 인수분해한 결과로부터 처음 다항식 복원하기 - 유형 21",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43303,7 +43303,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-57",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(4) 인수분해",
-        "typeName": "어떤 항을 잘못 보고 인수분해한 결과로부터 처음 다항식 복원하기",
+        "typeName": "어떤 항을 잘못 보고 인수분해한 결과로부터 처음 다항식 복원하기 - 유형 22",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43483,7 +43483,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-67",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(5) 인수분해 공식의 활용",
-        "typeName": "도형의 넓이와 길이에 관한 인수분해 공식의 기하학적 활용",
+        "typeName": "도형의 넓이와 길이에 관한 인수분해 공식의 기하학적 활용 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43501,7 +43501,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-68",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(5) 인수분해 공식의 활용",
-        "typeName": "도형의 넓이와 길이에 관한 인수분해 공식의 기하학적 활용",
+        "typeName": "도형의 넓이와 길이에 관한 인수분해 공식의 기하학적 활용 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43519,7 +43519,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-69",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(5) 인수분해 공식의 활용",
-        "typeName": "도형의 넓이와 길이에 관한 인수분해 공식의 기하학적 활용",
+        "typeName": "도형의 넓이와 길이에 관한 인수분해 공식의 기하학적 활용 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43537,7 +43537,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-70",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(5) 인수분해 공식의 활용",
-        "typeName": "도형의 넓이와 길이에 관한 인수분해 공식의 기하학적 활용",
+        "typeName": "도형의 넓이와 길이에 관한 인수분해 공식의 기하학적 활용 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43555,7 +43555,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-71",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(5) 인수분해 공식의 활용",
-        "typeName": "도형의 넓이와 길이에 관한 인수분해 공식의 기하학적 활용",
+        "typeName": "도형의 넓이와 길이에 관한 인수분해 공식의 기하학적 활용 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43717,7 +43717,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-8",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(1) 이차방정식과 그 해, 인수분해를 이용한 이차방정식의 풀이",
-        "typeName": "두 이차방정식의 공통인 해(공통근)를 구하여 상수의 값 탐색",
+        "typeName": "두 이차방정식의 공통인 해(공통근)를 구하여 상수의 값 탐색 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43735,7 +43735,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-9",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(1) 이차방정식과 그 해, 인수분해를 이용한 이차방정식의 풀이",
-        "typeName": "두 이차방정식의 공통인 해(공통근)를 구하여 상수의 값 탐색",
+        "typeName": "두 이차방정식의 공통인 해(공통근)를 구하여 상수의 값 탐색 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43753,7 +43753,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-10",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(1) 이차방정식과 그 해, 인수분해를 이용한 이차방정식의 풀이",
-        "typeName": "두 이차방정식의 공통인 해(공통근)를 구하여 상수의 값 탐색",
+        "typeName": "두 이차방정식의 공통인 해(공통근)를 구하여 상수의 값 탐색 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43771,7 +43771,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-11",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(1) 이차방정식과 그 해, 인수분해를 이용한 이차방정식의 풀이",
-        "typeName": "두 이차방정식의 공통인 해(공통근)를 구하여 상수의 값 탐색",
+        "typeName": "두 이차방정식의 공통인 해(공통근)를 구하여 상수의 값 탐색 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43789,7 +43789,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-12",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(1) 이차방정식과 그 해, 인수분해를 이용한 이차방정식의 풀이",
-        "typeName": "두 이차방정식의 공통인 해(공통근)를 구하여 상수의 값 탐색",
+        "typeName": "두 이차방정식의 공통인 해(공통근)를 구하여 상수의 값 탐색 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43915,7 +43915,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-19",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(2) 이차방정식의 중근, 제곱근을 이용한 이차방정식의 풀이",
-        "typeName": "이차방정식을 완전제곱식 형태로 변형하는 과정의 대수적 추론",
+        "typeName": "이차방정식을 완전제곱식 형태로 변형하는 과정의 대수적 추론 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43933,7 +43933,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-20",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(2) 이차방정식의 중근, 제곱근을 이용한 이차방정식의 풀이",
-        "typeName": "이차방정식을 완전제곱식 형태로 변형하는 과정의 대수적 추론",
+        "typeName": "이차방정식을 완전제곱식 형태로 변형하는 과정의 대수적 추론 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43951,7 +43951,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-21",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(2) 이차방정식의 중근, 제곱근을 이용한 이차방정식의 풀이",
-        "typeName": "이차방정식을 완전제곱식 형태로 변형하는 과정의 대수적 추론",
+        "typeName": "이차방정식을 완전제곱식 형태로 변형하는 과정의 대수적 추론 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43969,7 +43969,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-22",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(2) 이차방정식의 중근, 제곱근을 이용한 이차방정식의 풀이",
-        "typeName": "이차방정식을 완전제곱식 형태로 변형하는 과정의 대수적 추론",
+        "typeName": "이차방정식을 완전제곱식 형태로 변형하는 과정의 대수적 추론 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -43987,7 +43987,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-23",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(2) 이차방정식의 중근, 제곱근을 이용한 이차방정식의 풀이",
-        "typeName": "이차방정식을 완전제곱식 형태로 변형하는 과정의 대수적 추론",
+        "typeName": "이차방정식을 완전제곱식 형태로 변형하는 과정의 대수적 추론 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44041,7 +44041,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-26",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(3) 이차방정식의 근의 공식",
-        "typeName": "근의 공식을 이용한 무리수 해 도출과 미지수 계수 비교",
+        "typeName": "근의 공식을 이용한 무리수 해 도출과 미지수 계수 비교 - 유형 3",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44059,7 +44059,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-27",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(3) 이차방정식의 근의 공식",
-        "typeName": "근의 공식을 이용한 무리수 해 도출과 미지수 계수 비교",
+        "typeName": "근의 공식을 이용한 무리수 해 도출과 미지수 계수 비교 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44077,7 +44077,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-28",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(3) 이차방정식의 근의 공식",
-        "typeName": "근의 공식을 이용한 무리수 해 도출과 미지수 계수 비교",
+        "typeName": "근의 공식을 이용한 무리수 해 도출과 미지수 계수 비교 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44095,7 +44095,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-29",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(3) 이차방정식의 근의 공식",
-        "typeName": "근의 공식을 이용한 무리수 해 도출과 미지수 계수 비교",
+        "typeName": "근의 공식을 이용한 무리수 해 도출과 미지수 계수 비교 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44113,7 +44113,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-30",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(3) 이차방정식의 근의 공식",
-        "typeName": "근의 공식을 이용한 무리수 해 도출과 미지수 계수 비교",
+        "typeName": "근의 공식을 이용한 무리수 해 도출과 미지수 계수 비교 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44167,7 +44167,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-33",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(4) 복잡한 이차방정식의 풀이",
-        "typeName": "괄호 전개 및 공통 덩어리 치환이 필요한 복잡한 식의 풀이",
+        "typeName": "괄호 전개 및 공통 덩어리 치환이 필요한 복잡한 식의 풀이 - 유형 3",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44185,7 +44185,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-34",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(4) 복잡한 이차방정식의 풀이",
-        "typeName": "괄호 전개 및 공통 덩어리 치환이 필요한 복잡한 식의 풀이",
+        "typeName": "괄호 전개 및 공통 덩어리 치환이 필요한 복잡한 식의 풀이 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44203,7 +44203,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-35",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(4) 복잡한 이차방정식의 풀이",
-        "typeName": "괄호 전개 및 공통 덩어리 치환이 필요한 복잡한 식의 풀이",
+        "typeName": "괄호 전개 및 공통 덩어리 치환이 필요한 복잡한 식의 풀이 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44221,7 +44221,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-36",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(4) 복잡한 이차방정식의 풀이",
-        "typeName": "괄호 전개 및 공통 덩어리 치환이 필요한 복잡한 식의 풀이",
+        "typeName": "괄호 전개 및 공통 덩어리 치환이 필요한 복잡한 식의 풀이 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44239,7 +44239,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-37",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(4) 복잡한 이차방정식의 풀이",
-        "typeName": "괄호 전개 및 공통 덩어리 치환이 필요한 복잡한 식의 풀이",
+        "typeName": "괄호 전개 및 공통 덩어리 치환이 필요한 복잡한 식의 풀이 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44275,7 +44275,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-39",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 2",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44293,7 +44293,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-40",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 3",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44311,7 +44311,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-41",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44329,7 +44329,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-42",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44347,7 +44347,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-43",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44365,7 +44365,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-44",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44383,7 +44383,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-45",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44401,7 +44401,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-46",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44419,7 +44419,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-47",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44437,7 +44437,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-48",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44455,7 +44455,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-49",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44473,7 +44473,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-50",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44491,7 +44491,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-51",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44509,7 +44509,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-52",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44527,7 +44527,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-53",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 16",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44545,7 +44545,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-54",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 17",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44563,7 +44563,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-55",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 18",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44581,7 +44581,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-56",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 19",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44599,7 +44599,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-57",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 20",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44617,7 +44617,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-58",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 21",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44635,7 +44635,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-59",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 22",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44653,7 +44653,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-60",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 23",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44671,7 +44671,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-61",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 24",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44689,7 +44689,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-62",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(5) 이차방정식의 근의 판별, 이차방정식 구하기",
-        "typeName": "해당하는 유형 없음. 확인필요",
+        "typeName": "해당하는 유형 없음. 확인필요 - 유형 25",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44887,7 +44887,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-73",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(6) 이차방정식의 활용",
-        "typeName": "일정한 폭의 길을 뺀 면적 또는 원의 반지름 활용 도형 복합 기하 활용",
+        "typeName": "일정한 폭의 길을 뺀 면적 또는 원의 반지름 활용 도형 복합 기하 활용 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44905,7 +44905,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-74",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(6) 이차방정식의 활용",
-        "typeName": "일정한 폭의 길을 뺀 면적 또는 원의 반지름 활용 도형 복합 기하 활용",
+        "typeName": "일정한 폭의 길을 뺀 면적 또는 원의 반지름 활용 도형 복합 기하 활용 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44923,7 +44923,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-75",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(6) 이차방정식의 활용",
-        "typeName": "일정한 폭의 길을 뺀 면적 또는 원의 반지름 활용 도형 복합 기하 활용",
+        "typeName": "일정한 폭의 길을 뺀 면적 또는 원의 반지름 활용 도형 복합 기하 활용 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44941,7 +44941,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-76",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(6) 이차방정식의 활용",
-        "typeName": "일정한 폭의 길을 뺀 면적 또는 원의 반지름 활용 도형 복합 기하 활용",
+        "typeName": "일정한 폭의 길을 뺀 면적 또는 원의 반지름 활용 도형 복합 기하 활용 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -44959,7 +44959,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-2-77",
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(6) 이차방정식의 활용",
-        "typeName": "일정한 폭의 길을 뺀 면적 또는 원의 반지름 활용 도형 복합 기하 활용",
+        "typeName": "일정한 폭의 길을 뺀 면적 또는 원의 반지름 활용 도형 복합 기하 활용 - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45211,7 +45211,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-13",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(1) 이차함수의 뜻, 이차함수의 그래프(기본형)",
-        "typeName": "이차함수 포물선 그래프와 선분의 교점 조건 기하학적 해석",
+        "typeName": "이차함수 포물선 그래프와 선분의 교점 조건 기하학적 해석 - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45229,7 +45229,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-14",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(1) 이차함수의 뜻, 이차함수의 그래프(기본형)",
-        "typeName": "이차함수 포물선 그래프와 선분의 교점 조건 기하학적 해석",
+        "typeName": "이차함수 포물선 그래프와 선분의 교점 조건 기하학적 해석 - 유형 16",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45247,7 +45247,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-15",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(1) 이차함수의 뜻, 이차함수의 그래프(기본형)",
-        "typeName": "이차함수 포물선 그래프와 선분의 교점 조건 기하학적 해석",
+        "typeName": "이차함수 포물선 그래프와 선분의 교점 조건 기하학적 해석 - 유형 17",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45265,7 +45265,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-16",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(1) 이차함수의 뜻, 이차함수의 그래프(기본형)",
-        "typeName": "이차함수 포물선 그래프와 선분의 교점 조건 기하학적 해석",
+        "typeName": "이차함수 포물선 그래프와 선분의 교점 조건 기하학적 해석 - 유형 18",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45283,7 +45283,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-17",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(1) 이차함수의 뜻, 이차함수의 그래프(기본형)",
-        "typeName": "이차함수 포물선 그래프와 선분의 교점 조건 기하학적 해석",
+        "typeName": "이차함수 포물선 그래프와 선분의 교점 조건 기하학적 해석 - 유형 19",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45373,7 +45373,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-22",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(2) 이차함수 그래프의 평행이동",
-        "typeName": "포물선의 평행이동 및 축의 대칭성을 이용한 좌표 간 대수적 관계 구하기",
+        "typeName": "포물선의 평행이동 및 축의 대칭성을 이용한 좌표 간 대수적 관계 구하기 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45391,7 +45391,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-23",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(2) 이차함수 그래프의 평행이동",
-        "typeName": "포물선의 평행이동 및 축의 대칭성을 이용한 좌표 간 대수적 관계 구하기",
+        "typeName": "포물선의 평행이동 및 축의 대칭성을 이용한 좌표 간 대수적 관계 구하기 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45409,7 +45409,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-24",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(2) 이차함수 그래프의 평행이동",
-        "typeName": "포물선의 평행이동 및 축의 대칭성을 이용한 좌표 간 대수적 관계 구하기",
+        "typeName": "포물선의 평행이동 및 축의 대칭성을 이용한 좌표 간 대수적 관계 구하기 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45427,7 +45427,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-25",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(2) 이차함수 그래프의 평행이동",
-        "typeName": "포물선의 평행이동 및 축의 대칭성을 이용한 좌표 간 대수적 관계 구하기",
+        "typeName": "포물선의 평행이동 및 축의 대칭성을 이용한 좌표 간 대수적 관계 구하기 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45445,7 +45445,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-26",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(2) 이차함수 그래프의 평행이동",
-        "typeName": "포물선의 평행이동 및 축의 대칭성을 이용한 좌표 간 대수적 관계 구하기",
+        "typeName": "포물선의 평행이동 및 축의 대칭성을 이용한 좌표 간 대수적 관계 구하기 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45625,7 +45625,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-36",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(3) 이차함수의 표준형과 그 그래프",
-        "typeName": "이차함수 표준형 그래프의 꼭짓점 이동에 의한 평행사변형 넓이 기하 활용",
+        "typeName": "이차함수 표준형 그래프의 꼭짓점 이동에 의한 평행사변형 넓이 기하 활용 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45643,7 +45643,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-37",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(3) 이차함수의 표준형과 그 그래프",
-        "typeName": "이차함수 표준형 그래프의 꼭짓점 이동에 의한 평행사변형 넓이 기하 활용",
+        "typeName": "이차함수 표준형 그래프의 꼭짓점 이동에 의한 평행사변형 넓이 기하 활용 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45661,7 +45661,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-38",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(3) 이차함수의 표준형과 그 그래프",
-        "typeName": "이차함수 표준형 그래프의 꼭짓점 이동에 의한 평행사변형 넓이 기하 활용",
+        "typeName": "이차함수 표준형 그래프의 꼭짓점 이동에 의한 평행사변형 넓이 기하 활용 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45679,7 +45679,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-39",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(3) 이차함수의 표준형과 그 그래프",
-        "typeName": "이차함수 표준형 그래프의 꼭짓점 이동에 의한 평행사변형 넓이 기하 활용",
+        "typeName": "이차함수 표준형 그래프의 꼭짓점 이동에 의한 평행사변형 넓이 기하 활용 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45697,7 +45697,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-40",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(3) 이차함수의 표준형과 그 그래프",
-        "typeName": "이차함수 표준형 그래프의 꼭짓점 이동에 의한 평행사변형 넓이 기하 활용",
+        "typeName": "이차함수 표준형 그래프의 꼭짓점 이동에 의한 평행사변형 넓이 기하 활용 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45895,7 +45895,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-51",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(4) 이차함수의 일반형과 그 그래프",
-        "typeName": "일반형 계수 부호 판별 고난도 (a+b+c, 4a−2b+c 등 복합 기하 판단)",
+        "typeName": "일반형 계수 부호 판별 고난도 (a+b+c, 4a−2b+c 등 복합 기하 판단) - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45913,7 +45913,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-52",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(4) 이차함수의 일반형과 그 그래프",
-        "typeName": "일반형 계수 부호 판별 고난도 (a+b+c, 4a−2b+c 등 복합 기하 판단)",
+        "typeName": "일반형 계수 부호 판별 고난도 (a+b+c, 4a−2b+c 등 복합 기하 판단) - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45931,7 +45931,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-53",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(4) 이차함수의 일반형과 그 그래프",
-        "typeName": "일반형 계수 부호 판별 고난도 (a+b+c, 4a−2b+c 등 복합 기하 판단)",
+        "typeName": "일반형 계수 부호 판별 고난도 (a+b+c, 4a−2b+c 등 복합 기하 판단) - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45949,7 +45949,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-54",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(4) 이차함수의 일반형과 그 그래프",
-        "typeName": "일반형 계수 부호 판별 고난도 (a+b+c, 4a−2b+c 등 복합 기하 판단)",
+        "typeName": "일반형 계수 부호 판별 고난도 (a+b+c, 4a−2b+c 등 복합 기하 판단) - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -45967,7 +45967,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-55",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(4) 이차함수의 일반형과 그 그래프",
-        "typeName": "일반형 계수 부호 판별 고난도 (a+b+c, 4a−2b+c 등 복합 기하 판단)",
+        "typeName": "일반형 계수 부호 판별 고난도 (a+b+c, 4a−2b+c 등 복합 기하 판단) - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -46273,7 +46273,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-72",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(5) 이차함수의 식과 활용",
-        "typeName": "도형 기하 복합: 선분 길이 변화에 따른 내접 사각형 또는 원의 넓이 합의 최솟값",
+        "typeName": "도형 기하 복합: 선분 길이 변화에 따른 내접 사각형 또는 원의 넓이 합의 최솟값 - 유형 17",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -46291,7 +46291,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-73",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(5) 이차함수의 식과 활용",
-        "typeName": "도형 기하 복합: 선분 길이 변화에 따른 내접 사각형 또는 원의 넓이 합의 최솟값",
+        "typeName": "도형 기하 복합: 선분 길이 변화에 따른 내접 사각형 또는 원의 넓이 합의 최솟값 - 유형 18",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -46309,7 +46309,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-3-74",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(5) 이차함수의 식과 활용",
-        "typeName": "도형 기하 복합: 선분 길이 변화에 따른 내접 사각형 또는 원의 넓이 합의 최솟값",
+        "typeName": "도형 기하 복합: 선분 길이 변화에 따른 내접 사각형 또는 원의 넓이 합의 최솟값 - 유형 19",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -46568,7 +46568,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-13",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(1) 삼각비",
-        "typeName": "삼각비 성질을 활용한 다각형(오각형/육각형) 내부 각의 분할",
+        "typeName": "삼각비 성질을 활용한 다각형(오각형/육각형) 내부 각의 분할 - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -46586,7 +46586,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-14",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(1) 삼각비",
-        "typeName": "삼각비 성질을 활용한 다각형(오각형/육각형) 내부 각의 분할",
+        "typeName": "삼각비 성질을 활용한 다각형(오각형/육각형) 내부 각의 분할 - 유형 16",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -46604,7 +46604,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-15",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(1) 삼각비",
-        "typeName": "삼각비 성질을 활용한 다각형(오각형/육각형) 내부 각의 분할",
+        "typeName": "삼각비 성질을 활용한 다각형(오각형/육각형) 내부 각의 분할 - 유형 17",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -46622,7 +46622,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-16",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(1) 삼각비",
-        "typeName": "삼각비 성질을 활용한 다각형(오각형/육각형) 내부 각의 분할",
+        "typeName": "삼각비 성질을 활용한 다각형(오각형/육각형) 내부 각의 분할 - 유형 18",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -46640,7 +46640,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-17",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(1) 삼각비",
-        "typeName": "삼각비 성질을 활용한 다각형(오각형/육각형) 내부 각의 분할",
+        "typeName": "삼각비 성질을 활용한 다각형(오각형/육각형) 내부 각의 분할 - 유형 19",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -46820,7 +46820,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-27",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(2)  특수한 각의 삼각비",
-        "typeName": "특수각 성질을 이용한 좌표평면 위 선분의 자취 및 교점 추정",
+        "typeName": "특수각 성질을 이용한 좌표평면 위 선분의 자취 및 교점 추정 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -46838,7 +46838,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-28",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(2)  특수한 각의 삼각비",
-        "typeName": "특수각 성질을 이용한 좌표평면 위 선분의 자취 및 교점 추정",
+        "typeName": "특수각 성질을 이용한 좌표평면 위 선분의 자취 및 교점 추정 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -46856,7 +46856,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-29",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(2)  특수한 각의 삼각비",
-        "typeName": "특수각 성질을 이용한 좌표평면 위 선분의 자취 및 교점 추정",
+        "typeName": "특수각 성질을 이용한 좌표평면 위 선분의 자취 및 교점 추정 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -46874,7 +46874,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-30",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(2)  특수한 각의 삼각비",
-        "typeName": "특수각 성질을 이용한 좌표평면 위 선분의 자취 및 교점 추정",
+        "typeName": "특수각 성질을 이용한 좌표평면 위 선분의 자취 및 교점 추정 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -46892,7 +46892,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-31",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(2)  특수한 각의 삼각비",
-        "typeName": "특수각 성질을 이용한 좌표평면 위 선분의 자취 및 교점 추정",
+        "typeName": "특수각 성질을 이용한 좌표평면 위 선분의 자취 및 교점 추정 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47054,7 +47054,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-40",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(3) 예각의 삼각비의 값",
-        "typeName": "삼각비 표 데이터의 인위적 변형 및 실생활 수치 변동성 추정",
+        "typeName": "삼각비 표 데이터의 인위적 변형 및 실생활 수치 변동성 추정 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47072,7 +47072,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-41",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(3) 예각의 삼각비의 값",
-        "typeName": "삼각비 표 데이터의 인위적 변형 및 실생활 수치 변동성 추정",
+        "typeName": "삼각비 표 데이터의 인위적 변형 및 실생활 수치 변동성 추정 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47090,7 +47090,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-42",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(3) 예각의 삼각비의 값",
-        "typeName": "삼각비 표 데이터의 인위적 변형 및 실생활 수치 변동성 추정",
+        "typeName": "삼각비 표 데이터의 인위적 변형 및 실생활 수치 변동성 추정 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47108,7 +47108,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-43",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(3) 예각의 삼각비의 값",
-        "typeName": "삼각비 표 데이터의 인위적 변형 및 실생활 수치 변동성 추정",
+        "typeName": "삼각비 표 데이터의 인위적 변형 및 실생활 수치 변동성 추정 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47126,7 +47126,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-44",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(3) 예각의 삼각비의 값",
-        "typeName": "삼각비 표 데이터의 인위적 변형 및 실생활 수치 변동성 추정",
+        "typeName": "삼각비 표 데이터의 인위적 변형 및 실생활 수치 변동성 추정 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47324,7 +47324,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-55",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(4) 삼각비의 활용(1)",
-        "typeName": "호수 및 강의 폭을 구하기 위해 축측 직각삼각형 구조를 다루는 문항",
+        "typeName": "호수 및 강의 폭을 구하기 위해 축측 직각삼각형 구조를 다루는 문항 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47342,7 +47342,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-56",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(4) 삼각비의 활용(1)",
-        "typeName": "호수 및 강의 폭을 구하기 위해 축측 직각삼각형 구조를 다루는 문항",
+        "typeName": "호수 및 강의 폭을 구하기 위해 축측 직각삼각형 구조를 다루는 문항 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47360,7 +47360,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-57",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(4) 삼각비의 활용(1)",
-        "typeName": "호수 및 강의 폭을 구하기 위해 축측 직각삼각형 구조를 다루는 문항",
+        "typeName": "호수 및 강의 폭을 구하기 위해 축측 직각삼각형 구조를 다루는 문항 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47378,7 +47378,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-58",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(4) 삼각비의 활용(1)",
-        "typeName": "호수 및 강의 폭을 구하기 위해 축측 직각삼각형 구조를 다루는 문항",
+        "typeName": "호수 및 강의 폭을 구하기 위해 축측 직각삼각형 구조를 다루는 문항 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47396,7 +47396,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-59",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(4) 삼각비의 활용(1)",
-        "typeName": "호수 및 강의 폭을 구하기 위해 축측 직각삼각형 구조를 다루는 문항",
+        "typeName": "호수 및 강의 폭을 구하기 위해 축측 직각삼각형 구조를 다루는 문항 - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47684,7 +47684,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-75",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(5) 삼각비의 활용(2)",
-        "typeName": "원의 현과 호로 둘러싸인 활꼴 또는 조각 부채꼴의 기하학적 넓이",
+        "typeName": "원의 현과 호로 둘러싸인 활꼴 또는 조각 부채꼴의 기하학적 넓이 - 유형 16",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47702,7 +47702,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-76",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(5) 삼각비의 활용(2)",
-        "typeName": "원의 현과 호로 둘러싸인 활꼴 또는 조각 부채꼴의 기하학적 넓이",
+        "typeName": "원의 현과 호로 둘러싸인 활꼴 또는 조각 부채꼴의 기하학적 넓이 - 유형 17",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47720,7 +47720,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-77",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(5) 삼각비의 활용(2)",
-        "typeName": "원의 현과 호로 둘러싸인 활꼴 또는 조각 부채꼴의 기하학적 넓이",
+        "typeName": "원의 현과 호로 둘러싸인 활꼴 또는 조각 부채꼴의 기하학적 넓이 - 유형 18",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47738,7 +47738,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-78",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(5) 삼각비의 활용(2)",
-        "typeName": "원의 현과 호로 둘러싸인 활꼴 또는 조각 부채꼴의 기하학적 넓이",
+        "typeName": "원의 현과 호로 둘러싸인 활꼴 또는 조각 부채꼴의 기하학적 넓이 - 유형 19",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47756,7 +47756,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-79",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(5) 삼각비의 활용(2)",
-        "typeName": "원의 현과 호로 둘러싸인 활꼴 또는 조각 부채꼴의 기하학적 넓이",
+        "typeName": "원의 현과 호로 둘러싸인 활꼴 또는 조각 부채꼴의 기하학적 넓이 - 유형 20",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47900,7 +47900,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-7",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(1) 원의 현",
-        "typeName": "원의 중심과 현의 성질을 기하 삼각형의 외심 성질 및 면적 공식과 연계하는 문항",
+        "typeName": "원의 중심과 현의 성질을 기하 삼각형의 외심 성질 및 면적 공식과 연계하는 문항 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47918,7 +47918,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-8",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(1) 원의 현",
-        "typeName": "원의 중심과 현의 성질을 기하 삼각형의 외심 성질 및 면적 공식과 연계하는 문항",
+        "typeName": "원의 중심과 현의 성질을 기하 삼각형의 외심 성질 및 면적 공식과 연계하는 문항 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47936,7 +47936,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-9",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(1) 원의 현",
-        "typeName": "원의 중심과 현의 성질을 기하 삼각형의 외심 성질 및 면적 공식과 연계하는 문항",
+        "typeName": "원의 중심과 현의 성질을 기하 삼각형의 외심 성질 및 면적 공식과 연계하는 문항 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47954,7 +47954,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-10",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(1) 원의 현",
-        "typeName": "원의 중심과 현의 성질을 기하 삼각형의 외심 성질 및 면적 공식과 연계하는 문항",
+        "typeName": "원의 중심과 현의 성질을 기하 삼각형의 외심 성질 및 면적 공식과 연계하는 문항 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -47972,7 +47972,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-11",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(1) 원의 현",
-        "typeName": "원의 중심과 현의 성질을 기하 삼각형의 외심 성질 및 면적 공식과 연계하는 문항",
+        "typeName": "원의 중심과 현의 성질을 기하 삼각형의 외심 성질 및 면적 공식과 연계하는 문항 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -48170,7 +48170,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-22",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(2) 원의 접선(1)",
-        "typeName": "접선 성질과 좌표평면 위 원의 중심점 사이의 거리 공식을 결합한 대수 연계",
+        "typeName": "접선 성질과 좌표평면 위 원의 중심점 사이의 거리 공식을 결합한 대수 연계 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -48188,7 +48188,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-23",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(2) 원의 접선(1)",
-        "typeName": "접선 성질과 좌표평면 위 원의 중심점 사이의 거리 공식을 결합한 대수 연계",
+        "typeName": "접선 성질과 좌표평면 위 원의 중심점 사이의 거리 공식을 결합한 대수 연계 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -48206,7 +48206,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-24",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(2) 원의 접선(1)",
-        "typeName": "접선 성질과 좌표평면 위 원의 중심점 사이의 거리 공식을 결합한 대수 연계",
+        "typeName": "접선 성질과 좌표평면 위 원의 중심점 사이의 거리 공식을 결합한 대수 연계 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -48224,7 +48224,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-25",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(2) 원의 접선(1)",
-        "typeName": "접선 성질과 좌표평면 위 원의 중심점 사이의 거리 공식을 결합한 대수 연계",
+        "typeName": "접선 성질과 좌표평면 위 원의 중심점 사이의 거리 공식을 결합한 대수 연계 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -48242,7 +48242,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-26",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(2) 원의 접선(1)",
-        "typeName": "접선 성질과 좌표평면 위 원의 중심점 사이의 거리 공식을 결합한 대수 연계",
+        "typeName": "접선 성질과 좌표평면 위 원의 중심점 사이의 거리 공식을 결합한 대수 연계 - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -48440,7 +48440,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-37",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(3) 원의 접선(2)",
-        "typeName": "원에 외접하는 원과 사각형 내부에서의 최적 분할면적 공통 접선 최고난도 변형",
+        "typeName": "원에 외접하는 원과 사각형 내부에서의 최적 분할면적 공통 접선 최고난도 변형 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -48458,7 +48458,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-38",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(3) 원의 접선(2)",
-        "typeName": "원에 외접하는 원과 사각형 내부에서의 최적 분할면적 공통 접선 최고난도 변형",
+        "typeName": "원에 외접하는 원과 사각형 내부에서의 최적 분할면적 공통 접선 최고난도 변형 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -48476,7 +48476,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-39",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(3) 원의 접선(2)",
-        "typeName": "원에 외접하는 원과 사각형 내부에서의 최적 분할면적 공통 접선 최고난도 변형",
+        "typeName": "원에 외접하는 원과 사각형 내부에서의 최적 분할면적 공통 접선 최고난도 변형 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -48494,7 +48494,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-40",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(3) 원의 접선(2)",
-        "typeName": "원에 외접하는 원과 사각형 내부에서의 최적 분할면적 공통 접선 최고난도 변형",
+        "typeName": "원에 외접하는 원과 사각형 내부에서의 최적 분할면적 공통 접선 최고난도 변형 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -48512,7 +48512,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-41",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(3) 원의 접선(2)",
-        "typeName": "원에 외접하는 원과 사각형 내부에서의 최적 분할면적 공통 접선 최고난도 변형",
+        "typeName": "원에 외접하는 원과 사각형 내부에서의 최적 분할면적 공통 접선 최고난도 변형 - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -48836,7 +48836,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-59",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(4) 원주각",
-        "typeName": "원의 지름과 현이 이루는 예각 조건에서 피타고라스 정리와 원주각 복합 기하",
+        "typeName": "원의 지름과 현이 이루는 예각 조건에서 피타고라스 정리와 원주각 복합 기하 - 유형 18",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -48854,7 +48854,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-60",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(4) 원주각",
-        "typeName": "원의 지름과 현이 이루는 예각 조건에서 피타고라스 정리와 원주각 복합 기하",
+        "typeName": "원의 지름과 현이 이루는 예각 조건에서 피타고라스 정리와 원주각 복합 기하 - 유형 19",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -48872,7 +48872,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-61",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(4) 원주각",
-        "typeName": "원의 지름과 현이 이루는 예각 조건에서 피타고라스 정리와 원주각 복합 기하",
+        "typeName": "원의 지름과 현이 이루는 예각 조건에서 피타고라스 정리와 원주각 복합 기하 - 유형 20",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -48890,7 +48890,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-62",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(4) 원주각",
-        "typeName": "원의 지름과 현이 이루는 예각 조건에서 피타고라스 정리와 원주각 복합 기하",
+        "typeName": "원의 지름과 현이 이루는 예각 조건에서 피타고라스 정리와 원주각 복합 기하 - 유형 21",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -48908,7 +48908,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-63",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(4) 원주각",
-        "typeName": "원의 지름과 현이 이루는 예각 조건에서 피타고라스 정리와 원주각 복합 기하",
+        "typeName": "원의 지름과 현이 이루는 예각 조건에서 피타고라스 정리와 원주각 복합 기하 - 유형 22",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49160,7 +49160,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-77",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(5) 원에 내접하는 사각형",
-        "typeName": "평행선 조건(엇각, 동위각)이 추가된 원 내접 사각형의 등변사다리꼴 유도",
+        "typeName": "평행선 조건(엇각, 동위각)이 추가된 원 내접 사각형의 등변사다리꼴 유도 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49178,7 +49178,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-78",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(5) 원에 내접하는 사각형",
-        "typeName": "평행선 조건(엇각, 동위각)이 추가된 원 내접 사각형의 등변사다리꼴 유도",
+        "typeName": "평행선 조건(엇각, 동위각)이 추가된 원 내접 사각형의 등변사다리꼴 유도 - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49196,7 +49196,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-79",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(5) 원에 내접하는 사각형",
-        "typeName": "평행선 조건(엇각, 동위각)이 추가된 원 내접 사각형의 등변사다리꼴 유도",
+        "typeName": "평행선 조건(엇각, 동위각)이 추가된 원 내접 사각형의 등변사다리꼴 유도 - 유형 16",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49214,7 +49214,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-80",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(5) 원에 내접하는 사각형",
-        "typeName": "평행선 조건(엇각, 동위각)이 추가된 원 내접 사각형의 등변사다리꼴 유도",
+        "typeName": "평행선 조건(엇각, 동위각)이 추가된 원 내접 사각형의 등변사다리꼴 유도 - 유형 17",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49232,7 +49232,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-81",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(5) 원에 내접하는 사각형",
-        "typeName": "평행선 조건(엇각, 동위각)이 추가된 원 내접 사각형의 등변사다리꼴 유도",
+        "typeName": "평행선 조건(엇각, 동위각)이 추가된 원 내접 사각형의 등변사다리꼴 유도 - 유형 18",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49448,7 +49448,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-93",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(6) 원의 접선과 현이 이루는 각",
-        "typeName": "접선과 현이 이루는 각 정의를 원 밖의 임의 사각형 변의 연장선에 역투영하기",
+        "typeName": "접선과 현이 이루는 각 정의를 원 밖의 임의 사각형 변의 연장선에 역투영하기 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49466,7 +49466,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-94",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(6) 원의 접선과 현이 이루는 각",
-        "typeName": "접선과 현이 이루는 각 정의를 원 밖의 임의 사각형 변의 연장선에 역투영하기",
+        "typeName": "접선과 현이 이루는 각 정의를 원 밖의 임의 사각형 변의 연장선에 역투영하기 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49484,7 +49484,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-95",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(6) 원의 접선과 현이 이루는 각",
-        "typeName": "접선과 현이 이루는 각 정의를 원 밖의 임의 사각형 변의 연장선에 역투영하기",
+        "typeName": "접선과 현이 이루는 각 정의를 원 밖의 임의 사각형 변의 연장선에 역투영하기 - 유형 14",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49502,7 +49502,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-96",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(6) 원의 접선과 현이 이루는 각",
-        "typeName": "접선과 현이 이루는 각 정의를 원 밖의 임의 사각형 변의 연장선에 역투영하기",
+        "typeName": "접선과 현이 이루는 각 정의를 원 밖의 임의 사각형 변의 연장선에 역투영하기 - 유형 15",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49520,7 +49520,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-97",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(6) 원의 접선과 현이 이루는 각",
-        "typeName": "접선과 현이 이루는 각 정의를 원 밖의 임의 사각형 변의 연장선에 역투영하기",
+        "typeName": "접선과 현이 이루는 각 정의를 원 밖의 임의 사각형 변의 연장선에 역투영하기 - 유형 16",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49574,7 +49574,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-2",
         "majorUnit": "3단원 통계",
         "minorUnit": "(1) 대푯값",
-        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화",
+        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화 - 유형 4",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49592,7 +49592,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-3",
         "majorUnit": "3단원 통계",
         "minorUnit": "(1) 대푯값",
-        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화",
+        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화 - 유형 5",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49610,7 +49610,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-4",
         "majorUnit": "3단원 통계",
         "minorUnit": "(1) 대푯값",
-        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화",
+        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화 - 유형 6",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49628,7 +49628,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-5",
         "majorUnit": "3단원 통계",
         "minorUnit": "(1) 대푯값",
-        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화",
+        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화 - 유형 7",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49646,7 +49646,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-6",
         "majorUnit": "3단원 통계",
         "minorUnit": "(1) 대푯값",
-        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화",
+        "typeName": "자료의 변형/오차 수정 및 추가·제외에 따른 대푯값 변화 - 유형 8",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49970,7 +49970,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-24",
         "majorUnit": "3단원 통계",
         "minorUnit": "(2) 산포도",
-        "typeName": "기하학적 도형(삼각형 변의 길이 등) 데이터 변량을 산포도 공식과 결합하는 문항",
+        "typeName": "기하학적 도형(삼각형 변의 길이 등) 데이터 변량을 산포도 공식과 결합하는 문항 - 유형 18",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -49988,7 +49988,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-25",
         "majorUnit": "3단원 통계",
         "minorUnit": "(2) 산포도",
-        "typeName": "기하학적 도형(삼각형 변의 길이 등) 데이터 변량을 산포도 공식과 결합하는 문항",
+        "typeName": "기하학적 도형(삼각형 변의 길이 등) 데이터 변량을 산포도 공식과 결합하는 문항 - 유형 19",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -50006,7 +50006,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-26",
         "majorUnit": "3단원 통계",
         "minorUnit": "(2) 산포도",
-        "typeName": "기하학적 도형(삼각형 변의 길이 등) 데이터 변량을 산포도 공식과 결합하는 문항",
+        "typeName": "기하학적 도형(삼각형 변의 길이 등) 데이터 변량을 산포도 공식과 결합하는 문항 - 유형 20",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -50024,7 +50024,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-27",
         "majorUnit": "3단원 통계",
         "minorUnit": "(2) 산포도",
-        "typeName": "기하학적 도형(삼각형 변의 길이 등) 데이터 변량을 산포도 공식과 결합하는 문항",
+        "typeName": "기하학적 도형(삼각형 변의 길이 등) 데이터 변량을 산포도 공식과 결합하는 문항 - 유형 21",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -50042,7 +50042,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-28",
         "majorUnit": "3단원 통계",
         "minorUnit": "(2) 산포도",
-        "typeName": "기하학적 도형(삼각형 변의 길이 등) 데이터 변량을 산포도 공식과 결합하는 문항",
+        "typeName": "기하학적 도형(삼각형 변의 길이 등) 데이터 변량을 산포도 공식과 결합하는 문항 - 유형 22",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -50204,7 +50204,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-37",
         "majorUnit": "3단원 통계",
         "minorUnit": "(3) 산점도와 상관관계",
-        "typeName": "산점도 격자 공간의 데이터 분포 특성을 다중 서술형 보기와 종합하여 진위 연계 판단",
+        "typeName": "산점도 격자 공간의 데이터 분포 특성을 다중 서술형 보기와 종합하여 진위 연계 판단 - 유형 9",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -50222,7 +50222,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-38",
         "majorUnit": "3단원 통계",
         "minorUnit": "(3) 산점도와 상관관계",
-        "typeName": "산점도 격자 공간의 데이터 분포 특성을 다중 서술형 보기와 종합하여 진위 연계 판단",
+        "typeName": "산점도 격자 공간의 데이터 분포 특성을 다중 서술형 보기와 종합하여 진위 연계 판단 - 유형 10",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -50240,7 +50240,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-39",
         "majorUnit": "3단원 통계",
         "minorUnit": "(3) 산점도와 상관관계",
-        "typeName": "산점도 격자 공간의 데이터 분포 특성을 다중 서술형 보기와 종합하여 진위 연계 판단",
+        "typeName": "산점도 격자 공간의 데이터 분포 특성을 다중 서술형 보기와 종합하여 진위 연계 판단 - 유형 11",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -50258,7 +50258,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-40",
         "majorUnit": "3단원 통계",
         "minorUnit": "(3) 산점도와 상관관계",
-        "typeName": "산점도 격자 공간의 데이터 분포 특성을 다중 서술형 보기와 종합하여 진위 연계 판단",
+        "typeName": "산점도 격자 공간의 데이터 분포 특성을 다중 서술형 보기와 종합하여 진위 연계 판단 - 유형 12",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -50276,7 +50276,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-41",
         "majorUnit": "3단원 통계",
         "minorUnit": "(3) 산점도와 상관관계",
-        "typeName": "산점도 격자 공간의 데이터 분포 특성을 다중 서술형 보기와 종합하여 진위 연계 판단",
+        "typeName": "산점도 격자 공간의 데이터 분포 특성을 다중 서술형 보기와 종합하여 진위 연계 판단 - 유형 13",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
