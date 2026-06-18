@@ -272,7 +272,7 @@ function TypeChip({ type, isSelected, onClick, isDark, isHighlighted, isTaskResu
       )}
       {isTaskResultHighlight && (
         <span className="absolute -top-2.5 px-1 py-0.5 rounded bg-red-500 text-[8px] font-black text-white whitespace-nowrap shadow-sm z-20">
-          과제 반영
+          과제
         </span>
       )}
     </div>
@@ -582,6 +582,16 @@ const safeDecode = (val: string | null) => {
   }
 };
 
+const safeExtractGradeSemester = (typeId: string | null): string | null => {
+  if (!typeId) return null;
+  const decoded = safeDecode(typeId);
+  const match = decoded.match(/((?:초|중)\d-\d)/);
+  if (match && match[1]) {
+    return match[1];
+  }
+  return null;
+};
+
 export default function ScienceExamPrepPage() {
   const [isDark, setIsDark] = useState(false);
   const [selectedGradeTerm, setSelectedGradeTerm] = useState("중1-1");
@@ -790,13 +800,7 @@ export default function ScienceExamPrepPage() {
     return () => window.removeEventListener("examprep-history-updated", handleUpdate);
   }, []);
 
-  // 쿼리 파라미터 gradeTerm 수신 시 selectedGradeTerm 상태 동기화 로직 추가
-  useEffect(() => {
-    const termQuery = searchParams.get("gradeTerm");
-    if (termQuery) {
-      setSelectedGradeTerm(termQuery);
-    }
-  }, [searchParams]);
+
 
   // refreshTrigger가 변경될 때 selectedInfo.type 데이터 동기화
   useEffect(() => {
@@ -817,14 +821,26 @@ export default function ScienceExamPrepPage() {
   // 쿼리 파라미터 selectedTypeId에 기반한 자동 패널 오픈 로직
   useEffect(() => {
     if (selectedTypeIdQuery) {
+      const decodedTypeId = safeDecode(selectedTypeIdQuery);
       for (const bu of curriculum) {
         for (const su of bu.subUnits) {
-          const foundType = [...su.basicTypes, ...su.skillTypes, ...su.advancedTypes].find(t => t.id === selectedTypeIdQuery);
+          const foundType = [...su.basicTypes, ...su.skillTypes, ...su.advancedTypes].find(t => t.id === decodedTypeId);
           if (foundType) {
             setSelectedInfo({
               type: foundType,
               bigUnit: bu,
               subUnit: su
+            });
+            // 해당 유형이 포함된 단원 아코디언 펼침 상태 반영
+            setOpenBigUnits(prev => {
+              const next = new Set(prev);
+              next.add(bu.id);
+              return next;
+            });
+            setOpenSubUnits(prev => {
+              const next = new Set(prev);
+              next.add(su.id);
+              return next;
             });
             return;
           }
@@ -833,17 +849,32 @@ export default function ScienceExamPrepPage() {
     }
   }, [selectedTypeIdQuery, curriculum]);
 
-  // 1단계: 과제 결과 진입 시 학기/필터/배너 설정 (safeDecode 활용)
+  // 1단계: 진입 조건 감지 및 학기/필터/배너 설정 (safeDecode 및 safeExtractGradeSemester 활용)
   useEffect(() => {
     const fromTaskResult = searchParams.get("fromTaskResult") === "true";
     const source = searchParams.get("source");
     const gradeSemesterQuery = searchParams.get("gradeSemester");
+    const gradeTermQuery = searchParams.get("gradeTerm");
+    const selectedTypeIdQuery = searchParams.get("selectedTypeId");
 
-    if (fromTaskResult && source === "task-center" && gradeSemesterQuery) {
-      const gradeSemester = safeDecode(gradeSemesterQuery);
-      if (gradeSemester && selectedGradeTerm !== gradeSemester) {
-        setSelectedGradeTerm(gradeSemester);
+    // 우선순위 1: gradeSemester 혹은 gradeTerm 쿼리 값
+    let targetGradeTerm = safeDecode(gradeSemesterQuery || gradeTermQuery);
+
+    // 우선순위 2: selectedTypeId에서 추출한 학습과정
+    if (!targetGradeTerm && selectedTypeIdQuery) {
+      const extracted = safeExtractGradeSemester(selectedTypeIdQuery);
+      if (extracted) {
+        targetGradeTerm = extracted;
       }
+    }
+
+    // 우선순위 3: targetGradeTerm이 있는 경우에만 selectedGradeTerm 업데이트 (기존 selectedGradeTerm 유지)
+    if (targetGradeTerm && selectedGradeTerm !== targetGradeTerm) {
+      setSelectedGradeTerm(targetGradeTerm);
+    }
+
+    // 과제 센터 유입인 경우 필터 초기화 및 배너 활성화
+    if (fromTaskResult && source === "task-center") {
       setSelectedTextbooks(new Set());
       setSelectedStatuses(new Set());
       setOnlyImportant(false);
