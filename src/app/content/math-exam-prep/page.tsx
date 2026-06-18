@@ -237,9 +237,10 @@ interface TypeChipProps {
   onClick: () => void;
   isDark: boolean;
   isHighlighted?: boolean;
+  isTaskResultHighlight?: boolean;
 }
 
-function TypeChip({ type, isSelected, onClick, isDark, isHighlighted }: TypeChipProps) {
+function TypeChip({ type, isSelected, onClick, isDark, isHighlighted, isTaskResultHighlight }: TypeChipProps) {
   const cfg = ACHIEVEMENT_CONFIG[type.status];
   const selColor = type.status === "none" ? "#64748b" : 
     type.status === "undetermined" ? "#6b7280" :
@@ -272,6 +273,11 @@ function TypeChip({ type, isSelected, onClick, isDark, isHighlighted }: TypeChip
             type.status === "undetermined" ? "text-slate-600" : "text-white/80"
           )}
         />
+      )}
+      {isTaskResultHighlight && (
+        <span className="absolute -top-2.5 px-1 py-0.5 rounded bg-red-500 text-[8px] font-black text-white whitespace-nowrap shadow-sm z-20">
+          과제 반영
+        </span>
       )}
     </div>
   );
@@ -568,6 +574,15 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark, gradeTerm }: Det
   );
 }
 
+const safeDecode = (val: string | null) => {
+  if (!val) return "";
+  try {
+    return decodeURIComponent(val);
+  } catch (e) {
+    return val;
+  }
+};
+
 // =========================================================================
 // MAIN PAGE
 // =========================================================================
@@ -579,6 +594,9 @@ export default function MathExamPrepPage() {
   const [onlyImportant, setOnlyImportant] = useState(false);
   const [showGuide, setShowGuide] = useState(false);
   const guideRef = useRef<HTMLDivElement>(null);
+
+  const [taskResultHighlightIds, setTaskResultHighlightIds] = useState<string[]>([]);
+  const [showBanner, setShowBanner] = useState(false);
 
   const [tasks, setTasks] = useState<Task[]>([]);
   useEffect(() => {
@@ -813,23 +831,48 @@ export default function MathExamPrepPage() {
     }
   }, [selectedTypeIdQuery, curriculum]);
 
-  // 과제 결과 화면으로부터의 유입 처리 (학년-학기 변경, 아코디언 자동 개폐, 3초 강조 설정)
+  // 1단계: 과제 결과 진입 시 학기/필터/배너 설정 (safeDecode 활용)
   useEffect(() => {
+    const fromTaskResult = searchParams.get("fromTaskResult") === "true";
     const source = searchParams.get("source");
-    const gradeSemester = searchParams.get("gradeSemester");
-    const highlightTypeIdsStr = searchParams.get("highlightTypeIds");
+    const gradeSemesterQuery = searchParams.get("gradeSemester");
 
-    if (source === "task-center") {
-      if (gradeSemester) {
+    if (fromTaskResult && source === "task-center" && gradeSemesterQuery) {
+      const gradeSemester = safeDecode(gradeSemesterQuery);
+      if (gradeSemester && selectedGradeTerm !== gradeSemester) {
         setSelectedGradeTerm(gradeSemester);
       }
       setSelectedTextbooks(new Set());
       setSelectedStatuses(new Set());
       setOnlyImportant(false);
+      setShowBanner(true);
+    }
+  }, [searchParams]);
 
-      if (highlightTypeIdsStr && curriculum.length > 0) {
-        const targetIds = highlightTypeIdsStr.split(",").map(id => id.trim()).filter(Boolean);
-        
+  // 2단계: 학기 일치 및 curriculum 로딩 완료 후 단원 펼침, 하이라이트 설정, 스크롤 이동
+  useEffect(() => {
+    const fromTaskResult = searchParams.get("fromTaskResult") === "true";
+    const source = searchParams.get("source");
+    const gradeSemesterQuery = searchParams.get("gradeSemester");
+    const highlightTypeIdsStr = searchParams.get("highlightTypeIds");
+
+    if (fromTaskResult && source === "task-center" && gradeSemesterQuery && highlightTypeIdsStr) {
+      const gradeSemester = safeDecode(gradeSemesterQuery);
+
+      if (selectedGradeTerm === gradeSemester && curriculum.length > 0) {
+        const decodedIds = safeDecode(highlightTypeIdsStr);
+        const targetIds = decodedIds.split(",").map(id => id.trim()).filter(Boolean);
+
+        setTaskResultHighlightIds(targetIds);
+
+        const normalize = (id: string) => id.replace(/-(basic|skill|advanced)$/, "");
+        const isTypeMatched = (typeId: string, targets: string[]) => {
+          return targets.some(tid => {
+            if (typeId === tid) return true;
+            return normalize(typeId) === normalize(tid);
+          });
+        };
+
         // 반영 대상 유형칩들이 포함된 단원만 열고 나머지는 닫음
         const toOpenBigUnits = new Set<string>();
         const toOpenSubUnits = new Set<string>();
@@ -840,8 +883,7 @@ export default function MathExamPrepPage() {
             const allTypes = [...su.basicTypes, ...su.skillTypes, ...su.advancedTypes];
             let hasMatched = false;
             allTypes.forEach(t => {
-              const rawId = t.id.replace(/-(basic|skill|advanced)$/, "");
-              if (targetIds.includes(rawId)) {
+              if (isTypeMatched(t.id, targetIds)) {
                 highlightIds.add(t.id);
                 hasMatched = true;
               }
@@ -853,46 +895,57 @@ export default function MathExamPrepPage() {
           });
         });
 
-        setOpenBigUnits(toOpenBigUnits);
-        setOpenSubUnits(toOpenSubUnits);
-        setHighlightingIds(highlightIds);
+        if (highlightIds.size > 0) {
+          setOpenBigUnits(toOpenBigUnits);
+          setOpenSubUnits(toOpenSubUnits);
+          setHighlightingIds(highlightIds);
 
-        // 3초 후 강조 표시 제거
-        const timer = setTimeout(() => {
-          setHighlightingIds(new Set());
-        }, 3000);
+          // 3초 후 강조 클래스 제거 (정적 배지는 유지)
+          const timer = setTimeout(() => {
+            setHighlightingIds(new Set());
+          }, 3000);
 
-        // 첫 번째 반영 대상 유형칩으로 스크롤 이동
-        let firstTargetId: string | null = null;
-        for (const bu of curriculum) {
-          for (const su of bu.subUnits) {
-            const allTypes = [...su.basicTypes, ...su.skillTypes, ...su.advancedTypes];
-            const found = allTypes.find(t => targetIds.includes(t.id.replace(/-(basic|skill|advanced)$/, "")));
-            if (found) {
-              firstTargetId = found.id;
-              break;
+          // 첫 번째 반영 대상 유형칩으로 스크롤 이동
+          let firstTargetId: string | null = null;
+          for (const bu of curriculum) {
+            for (const su of bu.subUnits) {
+              const allTypes = [...su.basicTypes, ...su.skillTypes, ...su.advancedTypes];
+              const found = allTypes.find(t => highlightIds.has(t.id));
+              if (found) {
+                firstTargetId = found.id;
+                break;
+              }
             }
+            if (firstTargetId) break;
           }
-          if (firstTargetId) break;
-        }
 
-        if (firstTargetId) {
-          const scrollTimer = setTimeout(() => {
-            const el = document.getElementById(`type-chip-${firstTargetId}`);
-            if (el) {
-              el.scrollIntoView({ behavior: "smooth", block: "center" });
-            }
-          }, 300);
+          let scrollTimer: NodeJS.Timeout;
+          if (firstTargetId) {
+            scrollTimer = setTimeout(() => {
+              try {
+                const el = document.getElementById(`type-chip-${firstTargetId}`);
+                if (el) {
+                  el.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
+              } catch (e) {
+                // 스크롤 실패 시 화면 오류 무시
+              }
+            }, 300);
+          }
+
           return () => {
             clearTimeout(timer);
-            clearTimeout(scrollTimer);
+            if (scrollTimer) clearTimeout(scrollTimer);
           };
         }
-
-        return () => clearTimeout(timer);
       }
     }
-  }, [searchParams, curriculum]);
+  }, [searchParams, curriculum, selectedGradeTerm]);
+
+  // 배너 닫기 처리 (배너만 비노출, 배지 및 아코디언은 유지)
+  const handleCloseBanner = () => {
+    setShowBanner(false);
+  };
 
   // 상세 패널이 열려 있을 때 body 스크롤 차단 (이중 스크롤바 방지)
   useEffect(() => {
@@ -946,13 +999,31 @@ export default function MathExamPrepPage() {
 
   // 필터링된 커리큘럼
   const filtered = useMemo(() => {
+    const fromTaskResult = searchParams.get("fromTaskResult") === "true";
+    const source = searchParams.get("source");
+    const gradeSemesterQuery = searchParams.get("gradeSemester");
+
     return curriculum.map(bu => ({
       ...bu,
       subUnits: bu.subUnits.map(su => {
-        const f = (t: TypeData) =>
-          (selectedTextbooks.size === 0 || selectedTextbooks.has(t.textbook)) &&
-          (selectedStatuses.size === 0 || selectedStatuses.has(t.status)) &&
-          (!onlyImportant || t.isImportant);
+        const f = (t: TypeData) => {
+          // fromTaskResult=true 진입 상태에서만 적용
+          if (fromTaskResult && source === "task-center" && gradeSemesterQuery) {
+            const decodedGradeSemester = safeDecode(gradeSemesterQuery);
+            if (selectedGradeTerm === decodedGradeSemester) {
+              const normalize = (id: string) => id.replace(/-(basic|skill|advanced)$/, "");
+              const isTaskResultHighlight = taskResultHighlightIds.some(tid => {
+                if (t.id === tid) return true;
+                return normalize(t.id) === normalize(tid);
+              });
+              if (isTaskResultHighlight) return true;
+            }
+          }
+
+          return (selectedTextbooks.size === 0 || selectedTextbooks.has(t.textbook)) &&
+            (selectedStatuses.size === 0 || selectedStatuses.has(t.status)) &&
+            (!onlyImportant || t.isImportant);
+        };
         return {
           ...su,
           basicTypes: su.basicTypes.filter(f),
@@ -961,7 +1032,7 @@ export default function MathExamPrepPage() {
         };
       }).filter(su => su.basicTypes.length > 0 || su.skillTypes.length > 0 || su.advancedTypes.length > 0),
     })).filter(bu => bu.subUnits.length > 0);
-  }, [curriculum, selectedTextbooks, selectedStatuses, onlyImportant]);
+  }, [curriculum, selectedTextbooks, selectedStatuses, onlyImportant, taskResultHighlightIds, searchParams, selectedGradeTerm]);
 
 
   // 테마 (과제 센터 스타일에 맞춤)
@@ -1222,6 +1293,33 @@ export default function MathExamPrepPage() {
 
       {/* ===== 메인 콘텐츠 ===== */}
       <main className="w-full px-6 pt-5 pb-32 flex flex-col gap-3">
+        {showBanner && (
+          <div className={cn(
+            "flex items-center justify-between px-5 py-4 rounded-2xl border shadow-sm transition-all animate-in fade-in slide-in-from-top-4 duration-300",
+            isDark 
+              ? "bg-blue-950/40 border-blue-900/60 text-blue-200" 
+              : "bg-blue-50 border-blue-200 text-blue-800"
+          )}>
+            <div className="flex items-center gap-3">
+              <Info className="w-5 h-5 shrink-0 text-blue-500" />
+              <div className="text-sm font-bold leading-normal">
+                <div>과제 결과가 시험 대비에 반영되었습니다.</div>
+                <div className={cn("text-xs font-semibold mt-0.5", isDark ? "text-blue-300/80" : "text-blue-600")}>
+                  반영된 유형을 확인해 보세요.
+                </div>
+              </div>
+            </div>
+            <button
+              onClick={handleCloseBanner}
+              className={cn(
+                "p-1.5 rounded-lg hover:bg-black/5 active:bg-black/10 transition-colors cursor-pointer",
+                isDark ? "hover:bg-white/5 active:bg-white/10" : ""
+              )}
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        )}
         {filtered.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-40 gap-4">
             <Info className={cn("w-12 h-12 opacity-20", textMuted)} />
@@ -1304,6 +1402,10 @@ export default function MathExamPrepPage() {
                                       isSelected={selectedInfo?.type.id === t.id}
                                       isDark={isDark}
                                       isHighlighted={highlightingIds.has(t.id)}
+                                      isTaskResultHighlight={
+                                        taskResultHighlightIds.includes(t.id) ||
+                                        taskResultHighlightIds.includes(t.id.replace(/-(basic|skill|advanced)$/, ""))
+                                      }
                                       onClick={() => {
                                         if (selectedInfo?.type.id === t.id) {
                                           setSelectedInfo(null);
