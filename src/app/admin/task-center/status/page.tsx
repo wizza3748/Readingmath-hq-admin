@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useRef, useEffect } from "react";
+import React, { useState, useMemo, useRef, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useTaskCenterStore } from "@/lib/task-center-store";
 import {
@@ -79,6 +79,14 @@ export function formatShortDateTime(iso: string): string {
     return "-";
   }
 }
+
+export type UIExamAchievementStatus =
+  | "none"
+  | "undecided"
+  | "relearn"
+  | "supplement"
+  | "understand"
+  | "master";
 
 // undecided <-> undetermined 변환 헬퍼
 export function toUIAchievement(status: string): UIExamAchievementStatus {
@@ -585,7 +593,7 @@ function StudentTaskDetailResultModal({
 // 메인 페이지
 // ─────────────────────────────────────────────────────────────────────────────
 
-export default function TaskStatusPage() {
+function TaskStatusPageContent() {
   const router = useRouter();
 
   const searchParams = useSearchParams();
@@ -1469,5 +1477,13 @@ export default function TaskStatusPage() {
         />
       )}
     </div>
+  );
+}
+
+export default function TaskStatusPage() {
+  return (
+    <Suspense fallback={<div className="p-6 text-center text-slate-500 font-bold">로딩 중...</div>}>
+      <TaskStatusPageContent />
+    </Suspense>
   );
 }

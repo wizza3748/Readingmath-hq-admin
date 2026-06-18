@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useEffect, useRef } from "react";
+import React, { useState, useMemo, useEffect, useRef, Suspense } from "react";
 import {
   ChevronDown, ChevronUp, RotateCcw, Star, X,
   HelpCircle, Moon, Sun, Info, Crown, Check,
@@ -592,7 +592,7 @@ const safeExtractGradeSemester = (typeId: string | null): string | null => {
   return null;
 };
 
-export default function ScienceExamPrepPage() {
+function ScienceExamPrepPageContent() {
   const [isDark, setIsDark] = useState(false);
   const [selectedGradeTerm, setSelectedGradeTerm] = useState("중1-1");
   const [selectedTextbooks, setSelectedTextbooks] = useState<Set<string>>(new Set());
@@ -1483,5 +1483,13 @@ export default function ScienceExamPrepPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function ScienceExamPrepPage() {
+  return (
+    <Suspense fallback={<div className="p-6 text-center text-slate-500 font-bold">로딩 중...</div>}>
+      <ScienceExamPrepPageContent />
+    </Suspense>
   );
 }
