@@ -10,7 +10,7 @@ import {
 import Link from "next/link";
 import { getStoredTasks, Task } from "@/utils/taskStorage";
 import { useRouter, useSearchParams } from "next/navigation";
-import { getCombinedTypeHistory, evaluateAchievementStatus } from "@/utils/examPrepStorage";
+import { getCombinedTypeHistory, evaluateAchievementStatus, getChallengeQuestionCount, SCIENCE_TYPE_TO_QUESTIONS } from "@/utils/examPrepStorage";
 import { cn } from "@/lib/utils";
 import { SCIENCE_CURRICULA } from "@/lib/task-center-mock";
 import "katex/dist/katex.min.css";
@@ -130,9 +130,9 @@ const ACHIEVEMENT_CONFIG: Record<AchievementStatus, AchievementInfo> = {
   },
   supplement: {
     label: "보충 필요", shortLabel: "보충", icon: "check",
-    chipBg: "bg-amber-400", chipBorder: "border-transparent", chipIconColor: "text-white",
-    filterIconColor: "text-amber-400", filterTextColor: "text-amber-600",
-    selBg: "bg-amber-400", selBorder: "border-amber-400", selText: "text-white",
+    chipBg: "bg-orange-500", chipBorder: "border-transparent", chipIconColor: "text-white",
+    filterIconColor: "text-orange-500", filterTextColor: "text-orange-600",
+    selBg: "bg-orange-500", selBorder: "border-orange-500", selText: "text-white",
     description: "이해도가 낮은 상태예요.",
     challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
   },
@@ -238,7 +238,7 @@ function TypeChip({ type, isSelected, onClick, isDark, isHighlighted }: TypeChip
   const selColor = type.status === "none" ? "#64748b" : 
     type.status === "undetermined" ? "#6b7280" :
     type.status === "relearn" ? "#ef4444" :
-    type.status === "supplement" ? "#f59e0b" :
+    type.status === "supplement" ? "#f97316" :
     type.status === "understand" ? "#22c55e" : "#16a34a";
 
   return (
@@ -286,6 +286,11 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark }: DetailPanelPro
   const diffLabel: Record<Difficulty, string> = { basic: "기본", skill: "실력", advanced: "심화" };
 
   const isPlayable = type.availableCount === undefined ? true : type.availableCount > 0;
+
+  // 도전 세션 문항 수 결정 및 pool 체크
+  const qCount = getChallengeQuestionCount(type.id, "science");
+  const questionPool = SCIENCE_TYPE_TO_QUESTIONS[type.id] || [];
+  const hasEnoughQuestions = questionPool.length >= qCount;
 
   useEffect(() => {
     if (!showRetryModal) return;
@@ -353,14 +358,6 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark }: DetailPanelPro
               "px-2.5 py-1 rounded-full text-xs font-bold",
               isDark ? "bg-slate-700 text-slate-300" : "bg-slate-100 text-slate-600"
             )}>{diffLabel[type.difficulty]}</span>
-            {type.textbook && (
-              <span className={cn(
-                "px-2.5 py-1 rounded-full text-xs font-bold border",
-                isDark ? "bg-slate-800/40 border-slate-700 text-slate-400" : "bg-slate-50 border-slate-200 text-slate-500"
-              )}>
-                {type.textbook}
-              </span>
-            )}
           </div>
 
           {/* 유형명 */}
@@ -376,7 +373,7 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark }: DetailPanelPro
         {/* 도전 버튼 */}
         <div className="flex flex-col gap-2">
           <button 
-            disabled={cfg.challengeLabel === "다시 도전" && !isPlayable}
+            disabled={!hasEnoughQuestions || (cfg.challengeLabel === "다시 도전" && !isPlayable)}
             onClick={() => {
               if (cfg.challengeLabel === "다시 도전") {
                 if (isPlayable) {
@@ -390,7 +387,7 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark }: DetailPanelPro
             className={cn(
               "w-full py-3 rounded-xl font-extrabold text-sm transition-all active:scale-95 shadow-lg flex items-center justify-center gap-2",
               cfg.challengeStyle,
-              cfg.challengeLabel === "다시 도전" && !isPlayable && "opacity-50 cursor-not-allowed pointer-events-none shadow-none"
+              (!hasEnoughQuestions || (cfg.challengeLabel === "다시 도전" && !isPlayable)) && "opacity-50 cursor-not-allowed pointer-events-none shadow-none"
             )}
           >
             {cfg.challengeLabel === "왕관 도전" && <Crown className="w-4 h-4" />}
@@ -398,6 +395,15 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark }: DetailPanelPro
             {cfg.challengeLabel === "초록 도전" && <Zap className="w-4 h-4" />}
             {cfg.challengeLabel}
           </button>
+
+          {/* 출제 예정 문항 수 및 부족 안내 문구 */}
+          <div className="text-center text-xs font-bold py-1">
+            {hasEnoughQuestions ? (
+              <span className={textMuted}>이번 도전은 {qCount}문항으로 진행돼요.</span>
+            ) : (
+              <span className="text-red-500">출제 가능 문항 없음</span>
+            )}
+          </div>
         </div>
 
         {/* 도전 버튼 아래 섹션들 (구분선 자동 관리) */}
@@ -435,31 +441,27 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark }: DetailPanelPro
           <div key="history" className="flex flex-col gap-2">
             <h4 className={cn("text-xs font-bold uppercase tracking-widest", textMuted)}>최근 풀이 이력</h4>
             {combinedHistory.length > 0 ? (
-              <div className="flex flex-col gap-1.5">
+              <div className="flex flex-col gap-2">
                 {combinedHistory.slice(0, 3).map((h, i) => (
                   <div key={i} className={cn(
-                    "flex items-center justify-between py-2 px-3 rounded-xl text-xs",
-                    subBg
+                    "flex items-center justify-between p-3 rounded-xl border text-xs shadow-sm",
+                    isDark ? "bg-slate-800/40 border-slate-700/50" : "bg-white border-slate-100"
                   )}>
-                    <div className="flex items-center gap-2.5">
-                      <div className={cn(
-                        "w-5 h-5 rounded-full flex items-center justify-center shrink-0",
-                        h.isCorrect ? "bg-green-100 text-green-600" : "bg-red-100 text-red-500"
-                      )}>
-                        {h.isCorrect
-                          ? <Check className="w-3 h-3 stroke-[3]" />
-                          : <X className="w-3 h-3 stroke-[3]" />
-                        }
-                      </div>
+                    <div className="flex items-center gap-2">
+                      {h.isCorrect ? (
+                        <Check className="w-4 h-4 text-green-500 stroke-[3]" />
+                      ) : (
+                        <X className="w-4 h-4 text-red-500 stroke-[3]" />
+                      )}
                       <div className="flex items-center gap-1.5">
                         <span className={cn("font-bold", textPrimary)}>{h.path}</span>
                         <span className={textMuted}>·</span>
-                        <span className={cn("font-medium", h.isCorrect ? "text-green-500" : "text-red-400")}>
+                        <span className={cn("font-bold", h.isCorrect ? "text-green-500" : "text-red-500")}>
                           {h.isCorrect ? "정답" : "오답"}
                         </span>
                       </div>
                     </div>
-                    <span className={textMuted}>{formatSolvedAt(h.solvedAt)}</span>
+                    <span className={cn("font-medium", textMuted)}>{formatSolvedAt(h.solvedAt)}</span>
                   </div>
                 ))}
               </div>
@@ -772,13 +774,13 @@ export default function ScienceExamPrepPage() {
     }
   }, [selectedTypeIdQuery, curriculum]);
 
-  // 과제 결과 화면으로부터의 유입 처리 (학년-학기 변경, 필터 초기화 및 3초 강조 설정)
+  // 과제 결과 화면으로부터의 유입 처리 (학년-학기 변경, 아코디언 자동 개폐, 3초 강조 설정)
   useEffect(() => {
-    const fromTaskResult = searchParams.get("fromTaskResult") === "true";
+    const source = searchParams.get("source");
     const gradeSemester = searchParams.get("gradeSemester");
     const highlightTypeIdsStr = searchParams.get("highlightTypeIds");
 
-    if (fromTaskResult) {
+    if (source === "task-center") {
       if (gradeSemester) {
         setSelectedGradeTerm(gradeSemester);
       }
@@ -786,51 +788,72 @@ export default function ScienceExamPrepPage() {
       setSelectedStatuses(new Set());
       setOnlyImportant(false);
 
-      if (highlightTypeIdsStr) {
-        const targetIds = highlightTypeIdsStr.split(",").map(id => id.trim());
-        setHighlightingIds(new Set(targetIds));
+      if (highlightTypeIdsStr && curriculum.length > 0) {
+        const targetIds = highlightTypeIdsStr.split(",").map(id => id.trim()).filter(Boolean);
+        
+        // 반영 대상 유형칩들이 포함된 단원만 열고 나머지는 닫음
+        const toOpenBigUnits = new Set<string>();
+        const toOpenSubUnits = new Set<string>();
+        const highlightIds = new Set<string>();
 
+        curriculum.forEach(bu => {
+          bu.subUnits.forEach(su => {
+            const allTypes = [...su.basicTypes, ...su.skillTypes, ...su.advancedTypes];
+            let hasMatched = false;
+            allTypes.forEach(t => {
+              const rawId = t.id.replace(/-(basic|skill|advanced)$/, "");
+              if (targetIds.includes(rawId)) {
+                highlightIds.add(t.id);
+                hasMatched = true;
+              }
+            });
+            if (hasMatched) {
+              toOpenBigUnits.add(bu.id);
+              toOpenSubUnits.add(su.id);
+            }
+          });
+        });
+
+        setOpenBigUnits(toOpenBigUnits);
+        setOpenSubUnits(toOpenSubUnits);
+        setHighlightingIds(highlightIds);
+
+        // 3초 후 강조 표시 제거
         const timer = setTimeout(() => {
           setHighlightingIds(new Set());
-        }, 6000);
+        }, 3000);
+
+        // 첫 번째 반영 대상 유형칩으로 스크롤 이동
+        let firstTargetId: string | null = null;
+        for (const bu of curriculum) {
+          for (const su of bu.subUnits) {
+            const allTypes = [...su.basicTypes, ...su.skillTypes, ...su.advancedTypes];
+            const found = allTypes.find(t => targetIds.includes(t.id.replace(/-(basic|skill|advanced)$/, "")));
+            if (found) {
+              firstTargetId = found.id;
+              break;
+            }
+          }
+          if (firstTargetId) break;
+        }
+
+        if (firstTargetId) {
+          const scrollTimer = setTimeout(() => {
+            const el = document.getElementById(`type-chip-${firstTargetId}`);
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+          }, 300);
+          return () => {
+            clearTimeout(timer);
+            clearTimeout(scrollTimer);
+          };
+        }
 
         return () => clearTimeout(timer);
       }
     }
-  }, [searchParams]);
-
-  // 첫 번째 반영 대상 유형칩으로 스크롤 이동
-  useEffect(() => {
-    const fromTaskResult = searchParams.get("fromTaskResult") === "true";
-    const highlightTypeIdsStr = searchParams.get("highlightTypeIds");
-
-    if (fromTaskResult && highlightTypeIdsStr && curriculum.length > 0) {
-      const targetIds = highlightTypeIdsStr.split(",").map(id => id.trim());
-      
-      let firstTargetId: string | null = null;
-      for (const bu of curriculum) {
-        for (const su of bu.subUnits) {
-          const allTypes = [...su.basicTypes, ...su.skillTypes, ...su.advancedTypes];
-          const found = allTypes.find(t => targetIds.includes(t.id));
-          if (found) {
-            firstTargetId = found.id;
-            break;
-          }
-        }
-        if (firstTargetId) break;
-      }
-
-      if (firstTargetId) {
-        const scrollTimer = setTimeout(() => {
-          const el = document.getElementById(`type-chip-${firstTargetId}`);
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth", block: "center" });
-          }
-        }, 200);
-        return () => clearTimeout(scrollTimer);
-      }
-    }
-  }, [curriculum, searchParams]);
+  }, [searchParams, curriculum]);
 
   // 상세 패널이 열려 있을 때 body 스크롤 차단 (이중 스크롤바 방지)
   useEffect(() => {

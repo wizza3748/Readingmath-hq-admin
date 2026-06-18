@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use, useEffect, useState, useRef, Suspense } from "react";
+import React, { use, useEffect, useState, useRef, Suspense, useMemo } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
   ChevronLeft,
@@ -22,7 +22,7 @@ import renderMathInElement from "katex/contrib/auto-render";
 
 import { SCIENCE_PRINT_SAMPLES } from "@/lib/task-print-sample-mock";
 import { SCIENCE_CURRICULA } from "@/lib/task-center-mock";
-import { SCIENCE_TYPE_TO_QUESTIONS, saveLocalPrepHistory, getCombinedTypeHistory, evaluateAchievementStatus } from "@/utils/examPrepStorage";
+import { SCIENCE_TYPE_TO_QUESTIONS, saveLocalPrepHistory, getCombinedTypeHistory, evaluateAchievementStatus, getChallengeQuestionCount } from "@/utils/examPrepStorage";
 
 function getYoutubeEmbedUrl(url?: string) {
   if (!url) return "";
@@ -272,13 +272,21 @@ function ScienceSolveContent() {
   };
 
   // --- State ---
-  const [questionSample, setQuestionSample] = useState<any>(undefined); // undefined: 로딩중, null: 없음
+  const [sessionQuestions, setSessionQuestions] = useState<any[]>([]);
+  const [currentIdx, setCurrentIdx] = useState<number>(0);
   const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
   const [inputText, setInputText] = useState<string>("");
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showExitModal, setShowExitModal] = useState<boolean>(false);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  
+  // 성취도 실시간 갱신 감지용 버전 상태
+  const [historyVersion, setHistoryVersion] = useState<number>(0);
+  
+  // 진입 차단(에러) 상태
+  const [isBlocked, setIsBlocked] = useState<boolean>(false);
+  const [qCount, setQCount] = useState<number>(2);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -287,20 +295,78 @@ function ScienceSolveContent() {
     }
   }, []);
 
+  // 세션 설정 및 진입 방어 검증
   useEffect(() => {
     if (!typeId) {
-      setQuestionSample(null);
+      setIsBlocked(true);
       return;
     }
-    const history = getCombinedTypeHistory(typeId, "science");
-    const questionIds = SCIENCE_TYPE_TO_QUESTIONS[typeId] || [];
-    const questionId = questionIds[history.length % 3] || questionIds[0];
-    const sample = SCIENCE_PRINT_SAMPLES.find((q) => q.id === questionId);
-    setQuestionSample(sample || null);
+
+    // 1. 도전 세션 문항 수 결정
+    const count = getChallengeQuestionCount(typeId, "science");
+    setQCount(count);
+
+    // 2. 후보 문항 pool 수집 (학년-학기, 과목 등은 SCIENCE_TYPE_TO_QUESTIONS 매핑 정의에서 고유 매핑되어 있으므로, 
+    //    유형 ID mt-x-x-x 에 연관된 basic, skill, advanced 난이도 풀을 합산하여 pool을 구성함)
+    const mappings = SCIENCE_TYPE_TO_QUESTIONS;
+    const poolIdsSet = new Set<string>();
+
+    [`${rawTypeId}-basic`, `${rawTypeId}-skill`, `${rawTypeId}-advanced`].forEach(key => {
+      const ids = mappings[key] || [];
+      ids.forEach(id => poolIdsSet.add(id));
+    });
+
+    const poolIds = Array.from(poolIdsSet);
+    const pool = poolIds
+      .map(id => SCIENCE_PRINT_SAMPLES.find(q => q.id === id))
+      .filter((q): q is any => !!q);
+
+    // 3. 진입 방어 검증
+    if (pool.length < count) {
+      setIsBlocked(true);
+      return;
+    }
+
+    // 4. 세션 문항 선정 (중복 없는 count개 구성)
+    // history.length에 따른 순환을 지원하여 매 도전마다 다른 문항이 나오도록 유도
+    const combinedHistory = getCombinedTypeHistory(typeId, "science");
+    const len = pool.length;
+    const startIdx = combinedHistory.length % len;
+    
+    const selected: any[] = [];
+    for (let i = 0; i < count; i++) {
+      const idx = (startIdx + i) % len;
+      selected.push(pool[idx]);
+    }
+
+    setSessionQuestions(selected);
+    setIsBlocked(false);
   }, [typeId]);
 
-  // 로딩 상태 처리
-  if (questionSample === undefined) {
+  const combinedHistory = useMemo(() => {
+    return getCombinedTypeHistory(typeId, "science");
+  }, [typeId, historyVersion]);
+
+  const currentStatus = useMemo(() => {
+    return evaluateAchievementStatus(typeId, "science");
+  }, [typeId, historyVersion]);
+
+  // 직접 진입 방어 에러 화면
+  if (isBlocked) {
+    return (
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col items-center justify-center p-6 text-center text-slate-800 dark:text-slate-200 animate-in fade-in duration-200">
+        <AlertCircle className="w-12 h-12 text-rose-500 mb-4 animate-bounce" />
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">출제 가능한 문항이 없어요.</h2>
+        <p className="text-gray-500 text-sm mb-6">해당 유형에 제공되는 문항 수가 부족하여 도전 세션을 시작할 수 없습니다.</p>
+        <Button onClick={() => router.push("/content/science-exam-prep")} className="font-bold bg-violet-600 hover:bg-violet-750 text-white rounded-xl px-6 h-12">
+          시험 대비 홈으로
+        </Button>
+      </div>
+    );
+  }
+
+  // 문항 로딩 대기
+  if (sessionQuestions.length === 0) {
     return (
       <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-center dark:bg-slate-950 text-slate-800 dark:text-slate-200">
         <Loader2 className="w-10 h-10 text-violet-600 animate-spin mb-2" />
@@ -309,26 +375,13 @@ function ScienceSolveContent() {
     );
   }
 
-  // 매칭되는 문항이 없는 경우 예외 처리 (미노출)
-  if (questionSample === null) {
-    return (
-      <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-center dark:bg-slate-950 text-slate-800 dark:text-slate-200">
-        <AlertCircle className="w-12 h-12 text-rose-500 mb-4 animate-bounce" />
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">문항을 불러올 수 없습니다.</h2>
-        <p className="text-gray-500 text-sm mb-6">선택한 유형 ID와 매칭되는 문항이 존재하지 않거나 준비 중입니다.</p>
-        <Button onClick={() => router.push("/content/science-exam-prep")} className="font-bold">
-          시험 대비 홈으로 이동
-        </Button>
-      </div>
-    );
-  }
-
-  const isChoiceType = questionSample.choices && questionSample.choices.length > 0;
+  const questionSample = sessionQuestions[currentIdx];
+  const isChoiceType = questionSample?.choices && questionSample.choices.length > 0;
   const isAnswered = isChoiceType ? selectedChoice !== null : inputText.trim() !== "";
 
   // 뒤로가기 클릭 시 이탈 방지 처리
   const handleBack = () => {
-    if (!isSubmitted) {
+    if (!isSubmitted || currentIdx < sessionQuestions.length - 1) {
       setShowExitModal(true);
     } else {
       router.push("/content/science-exam-prep");
@@ -337,7 +390,7 @@ function ScienceSolveContent() {
 
   // 답안 제출 채점 로직
   const handleSubmit = () => {
-    if (!isAnswered || isSubmitted) return;
+    if (!isAnswered || isSubmitted || !questionSample) return;
 
     let correct = false;
     let submittedAnsText = "";
@@ -347,14 +400,12 @@ function ScienceSolveContent() {
         const selectedVal = questionSample.choices[selectedChoice];
         submittedAnsText = selectedVal;
         
-        // 정답 비교 (선지 텍스트 또는 1-based index)
         const clean = (s: string) => s.replace(/[\$\s\(\)\\]/g, "");
         const cleanAnswer = clean(questionSample.answer);
         
         if (clean(selectedVal) === cleanAnswer) {
           correct = true;
         } else {
-          // 혹시 answer가 "1", "2" 와 같은 숫자이고 index와 매칭되는지
           const matchIdx = questionSample.choices.indexOf(questionSample.answer);
           if (matchIdx === selectedChoice) {
             correct = true;
@@ -377,7 +428,7 @@ function ScienceSolveContent() {
     setIsCorrect(correct);
     setIsSubmitted(true);
 
-    // [이력 저장] 시험 대비 풀이 이력 생성
+    // [이력 저장] 신규 저장 시 submitted: true 세팅
     saveLocalPrepHistory({
       typeId,
       questionId: questionSample.id,
@@ -386,6 +437,17 @@ function ScienceSolveContent() {
       submittedAnswer: submittedAnsText,
       solvedAt: new Date().toISOString()
     });
+
+    // 성취도 재판정 연동을 위한 버전 상태 갱신
+    setHistoryVersion(v => v + 1);
+  };
+
+  const handleNext = () => {
+    setSelectedChoice(null);
+    setInputText("");
+    setIsSubmitted(false);
+    setIsCorrect(null);
+    setCurrentIdx(prev => prev + 1);
   };
 
   const handleKeypadPress = (key: string) => {
@@ -423,13 +485,19 @@ function ScienceSolveContent() {
             className="rounded-full p-2 text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-850 transition-colors"
             title="뒤로가기"
           >
-            <ChevronLeft className="h-6 h-6 stroke-[2.5]" />
+            <ChevronLeft className="h-6 w-6 stroke-[2.5]" />
           </button>
           <span className="h-4 w-px bg-slate-200 dark:bg-slate-800" />
           {/* 유형명 주요 제목으로 노출 */}
           <h1 className="text-[17px] font-black text-slate-900 dark:text-white leading-none">
             {typeName || "유형 문항 풀이"}
           </h1>
+        </div>
+        <div className="flex items-center gap-2">
+          {/* 상단 문항 진행률 표시 */}
+          <span className="text-sm font-extrabold text-slate-500 dark:text-slate-400">
+            {currentIdx + 1} / {sessionQuestions.length}
+          </span>
         </div>
       </header>
 
@@ -623,7 +691,7 @@ function ScienceSolveContent() {
                   {/* 현재 성취도 상태 */}
                   <span className="capitalize">
                     {(() => {
-                      const status = evaluateAchievementStatus(typeId, "science");
+                      const status = currentStatus;
                       const statusLabels: Record<string, string> = {
                         none: "미진행",
                         undetermined: "미판정",
@@ -696,39 +764,38 @@ function ScienceSolveContent() {
             <>
               <div className="border-t border-slate-200 dark:border-slate-800" />
               <div className="flex flex-col gap-2">
-                <h4 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest font-bold font-bold">최근 풀이 이력</h4>
-                {(() => {
-                  const combinedHistory = getCombinedTypeHistory(typeId, "science");
-                  return combinedHistory.length > 0 ? (
-                    <div className="flex flex-col gap-1.5">
-                      {combinedHistory.slice(0, 3).map((h, i) => (
-                        <div key={i} className="flex items-center justify-between py-2 px-3 rounded-xl text-xs bg-slate-100 dark:bg-slate-800/50">
-                          <div className="flex items-center gap-2.5">
-                            <div className={cn(
-                              "w-5 h-5 rounded-full flex items-center justify-center shrink-0",
-                              h.isCorrect ? "bg-green-100 text-green-600 dark:bg-green-950/40 dark:text-green-400" : "bg-red-100 text-red-500 dark:bg-red-950/40 dark:text-red-400"
-                            )}>
-                              {h.isCorrect ? <Check className="w-3 h-3 stroke-[3]" /> : <X className="w-3 h-3 stroke-[3]" />}
-                            </div>
-                            <div className="flex items-center gap-1.5">
-                              <span className="font-bold text-slate-750 dark:text-slate-350">{h.path}</span>
-                              <span className="text-slate-400 dark:text-slate-500">·</span>
-                              <span className={cn("font-medium", h.isCorrect ? "text-green-500" : "text-red-400")}>
-                                {h.isCorrect ? "정답" : "오답"}
-                              </span>
-                            </div>
+                <h4 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest font-bold">최근 풀이 이력</h4>
+                {combinedHistory.length > 0 ? (
+                  <div className="flex flex-col gap-2">
+                    {combinedHistory.slice(0, 3).map((h: any, i: number) => (
+                      <div key={i} className={cn(
+                        "flex items-center justify-between p-3 rounded-xl border text-xs shadow-sm",
+                        isDarkMode ? "bg-slate-800/40 border-slate-700/50" : "bg-white border-slate-100"
+                      )}>
+                        <div className="flex items-center gap-2">
+                          {h.isCorrect ? (
+                            <Check className="w-4 h-4 text-green-500 stroke-[3]" />
+                          ) : (
+                            <X className="w-4 h-4 text-red-500 stroke-[3]" />
+                          )}
+                          <div className="flex items-center gap-1.5">
+                            <span className="font-bold text-slate-750 dark:text-slate-350">{h.path}</span>
+                            <span className="text-slate-400 dark:text-slate-500">·</span>
+                            <span className={cn("font-bold", h.isCorrect ? "text-green-500" : "text-red-505")}>
+                              {h.isCorrect ? "정답" : "오답"}
+                            </span>
                           </div>
-                          <span className="text-slate-400 dark:text-slate-500">{formatSolvedAt(h.solvedAt)}</span>
                         </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="flex flex-col items-center py-8 gap-2.5 rounded-2xl bg-slate-50 dark:bg-slate-800/20 text-slate-400 dark:text-slate-650">
-                      <BookOpen className="w-8 h-8 opacity-40" />
-                      <span className="text-xs font-semibold">아직 풀이 이력이 없어요</span>
-                    </div>
-                  );
-                })()}
+                        <span className="text-slate-400 dark:text-slate-500">{formatSolvedAt(h.solvedAt)}</span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="flex flex-col items-center py-8 gap-2.5 rounded-2xl bg-slate-50 dark:bg-slate-800/20 text-slate-400 dark:text-slate-650">
+                    <BookOpen className="w-8 h-8 opacity-40" />
+                    <span className="text-xs font-semibold">아직 풀이 이력이 없어요</span>
+                  </div>
+                )}
               </div>
             </>
 
@@ -769,23 +836,33 @@ function ScienceSolveContent() {
               제출하기
             </Button>
           ) : (
-            <div className="flex items-center gap-3">
+            currentIdx < sessionQuestions.length - 1 ? (
               <Button
-                onClick={() => router.push("/content/science-exam-prep")}
-                variant="outline"
-                className="px-6 h-12 md:h-13 font-bold border-slate-300 dark:border-slate-700 rounded-xl"
+                onClick={handleNext}
+                className="px-8 h-12 md:h-13 font-black bg-violet-600 hover:bg-violet-750 text-white rounded-xl shadow-md"
               >
-                <Home className="w-4 h-4 mr-2" />
-                시험 대비 홈으로
-              </Button>
-              <Button
-                onClick={() => router.push(`/content/science-exam-prep?selectedTypeId=${encodeURIComponent(typeId)}`)}
-                className="px-6 h-12 md:h-13 font-black bg-violet-600 hover:bg-violet-750 text-white rounded-xl shadow-md"
-              >
-                유형 상세로
+                다음 문제
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-            </div>
+            ) : (
+              <div className="flex items-center gap-3">
+                <Button
+                  onClick={() => router.push("/content/science-exam-prep")}
+                  variant="outline"
+                  className="px-6 h-12 md:h-13 font-bold border-slate-300 dark:border-slate-700 rounded-xl"
+                >
+                  <Home className="w-4 h-4 mr-2" />
+                  시험 대비 홈으로
+                </Button>
+                <Button
+                  onClick={() => router.push(`/content/science-exam-prep?selectedTypeId=${encodeURIComponent(typeId)}`)}
+                  className="px-6 h-12 md:h-13 font-black bg-violet-600 hover:bg-violet-750 text-white rounded-xl shadow-md"
+                >
+                  유형 상세로
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
+            )
           )}
         </div>
       </footer>

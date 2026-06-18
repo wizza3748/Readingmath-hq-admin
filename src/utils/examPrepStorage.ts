@@ -17,6 +17,7 @@ export interface ExamPrepHistoryItem {
   isCorrect: boolean;
   submittedAnswer: string;
   solvedAt: string; // ISO String
+  submitted?: boolean;
 }
 
 const HISTORY_STORAGE_KEY = "readingmath_examprep_history_v1";
@@ -167,6 +168,7 @@ export function saveLocalPrepHistory(item: Omit<ExamPrepHistoryItem, "id">): voi
   const newItem: ExamPrepHistoryItem = {
     ...item,
     id: `prep-${item.typeId}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+    submitted: true,
   };
   history.push(newItem);
   localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(history));
@@ -181,7 +183,11 @@ export function getCombinedTypeHistory(typeId: string, subject: "math" | "scienc
 
   // 1. 시험 대비 전용 실제 이력 수집 (유형 ID 일치 조건)
   const localHistory = getLocalPrepHistory();
-  const actualHistory = localHistory.filter((item) => item.typeId === typeId);
+  const actualHistory = localHistory.filter((item) => {
+    if (item.typeId !== typeId) return false;
+    if (item.submitted === false) return false;
+    return true;
+  });
   combined.push(...actualHistory);
 
   // 2. 과제 센터 풀이 이력 수집 (읽기 전용 참조)
@@ -264,5 +270,23 @@ export function evaluateAchievementStatus(typeId: string, subject: "math" | "sci
 
   // 6. 최신 2문제 중 정답 1개, 오답 1개 -> 보충 필요
   return "supplement";
+}
+
+// 도전 세션 출제 문항 수 결정 함수
+export function getChallengeQuestionCount(typeId: string, subject: "math" | "science"): number {
+  const history = getCombinedTypeHistory(typeId, subject);
+  const status = evaluateAchievementStatus(typeId, subject);
+
+  if (status === "none") return 2;
+  if (status === "undetermined") {
+    return history[0]?.isCorrect ? 1 : 2;
+  }
+  if (status === "relearn") return 2;
+  if (status === "supplement") {
+    return history[0]?.isCorrect ? 1 : 2;
+  }
+  if (status === "understand") return 1;
+  if (status === "master") return 1;
+  return 2; // 기본값
 }
 
