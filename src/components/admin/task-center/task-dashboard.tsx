@@ -301,8 +301,8 @@ export default function TaskDashboard() {
             <div>
               <p className="text-xs font-semibold text-muted-foreground mb-1.5">구성 방식</p>
               <div className="flex gap-1">
-                {(["all", "same", "individual"] as const).map(m => (
-                  <SegBtn key={m} label={m === "all" ? "전체" : m === "same" ? "동일" : "학생별"} active={modeFilter === m} onClick={() => { setModeFilter(m); setPage(1); }} />
+                {(["all", "same", "individual", "relearn"] as const).map(m => (
+                  <SegBtn key={m} label={m === "all" ? "전체" : m === "same" ? "동일" : m === "individual" ? "학생별" : "재학습"} active={modeFilter === m} onClick={() => { setModeFilter(m); setPage(1); }} />
                 ))}
               </div>
             </div>
