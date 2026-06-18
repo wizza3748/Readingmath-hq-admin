@@ -1221,7 +1221,7 @@ export default function ScienceSolvePage(props: PageProps) {
               <span>전체 해설 보기</span>
             </button>
           )}
-          {currentIdx < questions.length - 1 ? (
+          {currentIdx < questions.length - 1 && (
             <button
               onClick={() => setCurrentIdx(currentIdx + 1)}
               className="flex items-center space-x-1 rounded-xl bg-emerald-600 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-700 shadow-md shadow-emerald-500/10 active:scale-95 transition"
@@ -1229,15 +1229,14 @@ export default function ScienceSolvePage(props: PageProps) {
               <span>다음</span>
               <ChevronRight className="h-4 w-4" />
             </button>
-          ) : (
-            !isPreview && (
-              <button
-                onClick={handleSubmitClick}
-                className="flex items-center space-x-1 rounded-xl bg-emerald-600 px-6 py-3 text-sm font-bold text-white hover:bg-emerald-700 shadow-md shadow-emerald-500/10 active:scale-95 transition"
-              >
-                <span>제출하기</span>
-              </button>
-            )
+          )}
+          {!isPreview && (
+            <button
+              onClick={handleSubmitClick}
+              className="flex items-center space-x-1 rounded-xl bg-emerald-600 px-6 py-3 text-sm font-bold text-white hover:bg-emerald-700 shadow-md shadow-emerald-500/10 active:scale-95 transition"
+            >
+              <span>제출하기</span>
+            </button>
           )}
         </div>
       </footer>
