@@ -969,7 +969,7 @@ function ScienceSolveContent() {
             ) : (
               <div className="flex items-center gap-3">
                 <Button
-                  onClick={() => router.push("/content/science-exam-prep")}
+                  onClick={() => router.push(`/content/science-exam-prep?gradeTerm=${encodeURIComponent(detectedGradeTerm)}`)}
                   variant="outline"
                   className="px-6 h-12 md:h-13 font-bold border-slate-300 dark:border-slate-700 rounded-xl"
                 >
