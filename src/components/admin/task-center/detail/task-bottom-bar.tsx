@@ -121,12 +121,36 @@ export function TaskBottomBar({ task, isCreate, isSaving, totalProblems, onSave,
     setEndOpen(false);
   };
 
-  // 출력 버튼 비활성:
-  // 1) 동일 문제 출제 + 저장된 문제 수 0개
-  // 2) 학생별 문제 출제 + 배정 학생 0명
-  const isPrintDisabled =
-    (task?.problemMode === "same" && totalProblems === 0) ||
-    (task?.problemMode === "individual" && (task?.assignedStudents?.length ?? 0) === 0);
+  const printStatus = React.useMemo(() => {
+    if (!task) return { disabled: true, reason: "" };
+
+    const activeStudents = (task.assignedStudents || []).filter(
+      s => s.status !== ("canceled" as any)
+    );
+
+    if (task.problemMode === "same") {
+      if (totalProblems === 0) {
+        return { disabled: true, reason: "출력할 문제가 없습니다." };
+      }
+    }
+
+    if (task.problemMode === "individual") {
+      if (activeStudents.length === 0) {
+        return { disabled: true, reason: "학생별 문제 출제 과제는 배정 후 출력할 수 있습니다." };
+      }
+    }
+
+    if (task.problemMode === "relearn") {
+      const printableStudentsCount = activeStudents.filter(
+        s => s.assignedQuestionIds && s.assignedQuestionIds.length > 0
+      ).length;
+      if (printableStudentsCount === 0) {
+        return { disabled: true, reason: "학생별 재학습 유형 출제 과제는 배정 후 출력할 수 있습니다." };
+      }
+    }
+
+    return { disabled: false, reason: "" };
+  }, [task, totalProblems]);
 
   return (
     <>
@@ -162,15 +186,17 @@ export function TaskBottomBar({ task, isCreate, isSaving, totalProblems, onSave,
 
           {/* 출력 - draft, published, ended */}
           {!isCreate && task && (
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => router.push(`/admin/task-center/${task.id}/print`)}
-              disabled={isPrintDisabled}
-              className="gap-2"
-            >
-              <Printer className="h-4 w-4" /> 출력
-            </Button>
+            <div title={printStatus.disabled ? printStatus.reason : undefined}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => router.push(`/admin/task-center/${task.id}/print`)}
+                disabled={printStatus.disabled}
+                className="gap-2"
+              >
+                <Printer className="h-4 w-4" /> 출력
+              </Button>
+            </div>
           )}
 
           {/* 종료 - published */}
