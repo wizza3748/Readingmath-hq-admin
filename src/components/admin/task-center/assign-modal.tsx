@@ -238,7 +238,6 @@ export function AssignModal({
         }
 
         handleToggleClassAssign(false, cls);
-        setCurrentClass("전체");
       }
     } else {
       // 다른 반 탭을 누름 -> 단일 배정 전환 시도
@@ -376,8 +375,8 @@ export function AssignModal({
 
   // 배정 적용 버튼 비활성화 판단
   const isClassModeEmpty = assignMode === "class_mode" && currentClass !== "전체" && allStudents.filter(s => s.classGroup === currentClass && isStudentSelectable(s.studentId)).length === 0;
-  const isIndividualModeEmpty = assignMode === "individual_mode" && finalSelectedIds.size === 0;
-  const isDisabledApplyButton = isClassModeEmpty || isIndividualModeEmpty || finalSelectedIds.size === 0;
+  const isIndividualModeEmpty = assignMode === "individual_mode" && finalSelectedIds.size === 0 && assignedCount === 0;
+  const isDisabledApplyButton = isClassModeEmpty || isIndividualModeEmpty || (finalSelectedIds.size === 0 && assignedCount === 0);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -587,16 +586,24 @@ export function AssignModal({
                         .filter(s => s.classGroup === currentClass)
                         .map(s => {
                           const assignable = isStudentSelectable(s.studentId);
+                          const selected = isSelected(s.studentId, s.classGroup);
                           return (
                             <div
                               key={s.studentId}
-                              className={`px-3 py-1.5 rounded-lg border flex items-center gap-2 text-xs font-bold transition-all duration-150 ${
+                              onClick={() => {
+                                if (assignable) {
+                                  toggleStudent(s.studentId, s.classGroup);
+                                }
+                              }}
+                              className={`px-3 py-1.5 rounded-lg border flex items-center gap-2 text-xs font-bold transition-all duration-150 cursor-pointer ${
                                 assignable
-                                  ? "bg-slate-50/80 border-slate-200/60 text-slate-700 hover:bg-slate-100"
+                                  ? selected
+                                    ? "bg-indigo-50 border-indigo-200 text-indigo-700 hover:bg-indigo-100/70"
+                                    : "bg-slate-50 border-slate-200 text-slate-400 hover:bg-slate-100"
                                   : "bg-slate-100/50 border-slate-200/40 text-slate-400 opacity-60"
                               }`}
                             >
-                              <div className={`h-1.5 w-1.5 rounded-full ${assignable ? "bg-indigo-500" : "bg-slate-300"}`} />
+                              <div className={`h-1.5 w-1.5 rounded-full ${selected && assignable ? "bg-indigo-500" : "bg-slate-300"}`} />
                               <span>{s.studentName}</span>
                               {isRelearnMode && (
                                 <span className={`text-[9px] px-1 py-0.2 rounded border ${
