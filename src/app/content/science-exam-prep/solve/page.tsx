@@ -23,7 +23,7 @@ import renderMathInElement from "katex/contrib/auto-render";
 
 import { SCIENCE_PRINT_SAMPLES } from "@/lib/task-print-sample-mock";
 import { SCIENCE_CURRICULA } from "@/lib/task-center-mock";
-import { SCIENCE_TYPE_TO_QUESTIONS, saveLocalPrepHistory, getCombinedTypeHistory, evaluateAchievementStatus, getChallengeQuestionCount } from "@/utils/examPrepStorage";
+import { SCIENCE_TYPE_TO_QUESTIONS, saveLocalPrepHistory, getCombinedTypeHistory, evaluateAchievementStatus, getChallengeQuestionCount, getDailyAttemptsCount, recordDailyAttempt, isDailyAttemptAllowed } from "@/utils/examPrepStorage";
 
 function getYoutubeEmbedUrl(url?: string) {
   if (!url) return "";
@@ -199,10 +199,15 @@ function ScienceSolveContent() {
   const difficulty = typeId.endsWith("-basic") ? "basic" : typeId.endsWith("-skill") ? "skill" : "advanced";
 
   let foundType: any = null;
+  let detectedGradeTerm = searchParams.get("gradeTerm") || "";
+
   for (const course of SCIENCE_CURRICULA) {
     for (const type of course.types) {
       if (type.id === rawTypeId) {
         foundType = type;
+        if (!detectedGradeTerm) {
+          detectedGradeTerm = course.course; // 예: "중등 1-1"
+        }
         break;
       }
     }
@@ -362,7 +367,9 @@ function ScienceSolveContent() {
   
   // 진입 차단(에러) 상태
   const [isBlocked, setIsBlocked] = useState<boolean>(false);
+  const [isAttemptLimitBlocked, setIsAttemptLimitBlocked] = useState<boolean>(false);
   const [qCount, setQCount] = useState<number>(2);
+  const hasRecordedAttempt = useRef<boolean>(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -397,9 +404,16 @@ function ScienceSolveContent() {
       .map(id => SCIENCE_PRINT_SAMPLES.find(q => q.id === id))
       .filter((q): q is any => !!q);
 
-    // 3. 진입 방어 검증
+    // 3. 진입 방어 검증 (문항 풀 검증)
     if (pool.length < count) {
       setIsBlocked(true);
+      return;
+    }
+
+    // 3.5 일일 도전 제한 검증
+    const attemptParams = { subject: "science" as const, gradeTerm: detectedGradeTerm, typeId };
+    if (!isDailyAttemptAllowed(attemptParams)) {
+      setIsAttemptLimitBlocked(true);
       return;
     }
 
@@ -415,8 +429,15 @@ function ScienceSolveContent() {
       selected.push(pool[idx]);
     }
 
+    // 5. 도전 세션 생성 확정 시점에 도전 횟수 1회 기록 (중복 방지 적용)
+    if (!hasRecordedAttempt.current) {
+      recordDailyAttempt(attemptParams);
+      hasRecordedAttempt.current = true;
+    }
+
     setSessionQuestions(selected);
     setIsBlocked(false);
+    setIsAttemptLimitBlocked(false);
   }, [typeId]);
 
   const combinedHistory = useMemo(() => {
@@ -428,13 +449,22 @@ function ScienceSolveContent() {
   }, [typeId, historyVersion]);
 
   // 직접 진입 방어 에러 화면
-  if (isBlocked) {
+  if (isBlocked || isAttemptLimitBlocked) {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col items-center justify-center p-6 text-center text-slate-800 dark:text-slate-200 animate-in fade-in duration-200">
         <AlertCircle className="w-12 h-12 text-rose-500 mb-4 animate-bounce" />
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">출제 가능한 문항이 없어요.</h2>
-        <p className="text-gray-500 text-sm mb-6">해당 유형에 제공되는 문항 수가 부족하여 도전 세션을 시작할 수 없습니다.</p>
-        <Button onClick={() => router.push("/content/science-exam-prep")} className="font-bold bg-violet-600 hover:bg-violet-750 text-white rounded-xl px-6 h-12">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+          {isBlocked ? "출제 가능한 문항이 없어요." : "오늘 이 유형의 도전 횟수를 모두 사용했어요."}
+        </h2>
+        <p className="text-gray-500 text-sm mb-6">
+          {isBlocked 
+            ? "해당 유형에 제공되는 문항 수가 부족하여 도전 세션을 시작할 수 없습니다." 
+            : "유형별 일일 도전 제한 횟수(2회)를 모두 소진하셨습니다."}
+        </p>
+        <Button 
+          onClick={() => router.push(`/content/science-exam-prep?selectedTypeId=${encodeURIComponent(typeId)}`)} 
+          className="font-bold bg-violet-600 hover:bg-violet-750 text-white rounded-xl px-6 h-12"
+        >
           시험 대비 홈으로
         </Button>
       </div>

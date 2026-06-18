@@ -290,3 +290,66 @@ export function getChallengeQuestionCount(typeId: string, subject: "math" | "sci
   return 2; // 기본값
 }
 
+const DAILY_ATTEMPTS_KEY = "readingmath_examprep_daily_attempts_v1";
+
+export function getKstDateString(): string {
+  const utc = new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000;
+  const kst = new Date(utc + 9 * 60 * 60 * 1000);
+  const y = kst.getFullYear();
+  const m = String(kst.getMonth() + 1).padStart(2, "0");
+  const d = String(kst.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+
+interface AttemptParams {
+  studentId?: string;
+  subject: "math" | "science";
+  gradeTerm: string;
+  typeId: string;
+}
+
+function getAttemptStorageKey(params: AttemptParams, dateStr: string): string {
+  const sId = params.studentId || "default_student";
+  return `${sId}:${params.subject}:${params.gradeTerm}:${params.typeId}:${dateStr}`;
+}
+
+export function getDailyAttemptsCount(params: AttemptParams): number {
+  if (typeof window === "undefined") return 0;
+  const saved = localStorage.getItem(DAILY_ATTEMPTS_KEY);
+  if (!saved) return 0;
+  try {
+    const attemptsMap = JSON.parse(saved);
+    const dateStr = getKstDateString();
+    const key = getAttemptStorageKey(params, dateStr);
+    return attemptsMap[key] || 0;
+  } catch (e) {
+    console.error("Failed to parse daily attempts count", e);
+    return 0;
+  }
+}
+
+export function isDailyAttemptAllowed(params: AttemptParams): boolean {
+  return getDailyAttemptsCount(params) < 2;
+}
+
+export function recordDailyAttempt(params: AttemptParams): void {
+  if (typeof window === "undefined") return;
+  const dateStr = getKstDateString();
+  const key = getAttemptStorageKey(params, dateStr);
+  
+  let attemptsMap: Record<string, number> = {};
+  const saved = localStorage.getItem(DAILY_ATTEMPTS_KEY);
+  if (saved) {
+    try {
+      attemptsMap = JSON.parse(saved);
+    } catch (e) {
+      console.error("Failed to parse daily attempts map", e);
+    }
+  }
+  
+  attemptsMap[key] = (attemptsMap[key] || 0) + 1;
+  localStorage.setItem(DAILY_ATTEMPTS_KEY, JSON.stringify(attemptsMap));
+  
+  window.dispatchEvent(new Event("examprep-history-updated"));
+}
+

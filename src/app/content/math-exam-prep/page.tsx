@@ -10,7 +10,7 @@ import {
 import Link from "next/link";
 import { getStoredTasks, Task } from "@/utils/taskStorage";
 import { useRouter, useSearchParams } from "next/navigation";
-import { getCombinedTypeHistory, evaluateAchievementStatus, getChallengeQuestionCount, MATH_TYPE_TO_QUESTIONS } from "@/utils/examPrepStorage";
+import { getCombinedTypeHistory, evaluateAchievementStatus, getChallengeQuestionCount, MATH_TYPE_TO_QUESTIONS, getDailyAttemptsCount, isDailyAttemptAllowed } from "@/utils/examPrepStorage";
 import { cn } from "@/lib/utils";
 import { MATH_CURRICULA } from "@/lib/task-center-mock";
 import "katex/dist/katex.min.css";
@@ -281,9 +281,10 @@ interface DetailPanelProps {
   subUnit: SubUnit;
   onClose: () => void;
   isDark: boolean;
+  gradeTerm: string;
 }
 
-function DetailPanel({ type, bigUnit, subUnit, onClose, isDark }: DetailPanelProps) {
+function DetailPanel({ type, bigUnit, subUnit, onClose, isDark, gradeTerm }: DetailPanelProps) {
   const router = useRouter();
   const [showRetryModal, setShowRetryModal] = useState(false);
   const cfg = ACHIEVEMENT_CONFIG[type.status];
@@ -295,6 +296,14 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark }: DetailPanelPro
   const qCount = getChallengeQuestionCount(type.id, "math");
   const questionPool = MATH_TYPE_TO_QUESTIONS[type.id] || [];
   const hasEnoughQuestions = questionPool.length >= qCount;
+
+  // 일일 도전 제한 체크 추가
+  const attemptParams = { subject: "math" as const, gradeTerm, typeId: type.id };
+  const dailyAttemptsCount = getDailyAttemptsCount(attemptParams);
+  const isAttemptAllowed = dailyAttemptsCount < 2;
+
+  // 최종 도전 버튼 활성화 조건
+  const isChallengeEnabled = hasEnoughQuestions && isAttemptAllowed;
 
   useEffect(() => {
     if (!showRetryModal) return;
@@ -377,7 +386,7 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark }: DetailPanelPro
         {/* 도전 버튼 */}
         <div className="flex flex-col gap-2">
           <button 
-            disabled={!hasEnoughQuestions || (cfg.challengeLabel === "다시 도전" && !isPlayable)}
+            disabled={!isChallengeEnabled || (cfg.challengeLabel === "다시 도전" && !isPlayable)}
             onClick={() => {
               if (cfg.challengeLabel === "다시 도전") {
                 if (isPlayable) {
@@ -385,13 +394,13 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark }: DetailPanelPro
                 }
               } else {
                 onClose();
-                router.push(`/content/math-exam-prep/solve?typeId=${encodeURIComponent(type.id)}&name=${encodeURIComponent(type.name)}`);
+                router.push(`/content/math-exam-prep/solve?typeId=${encodeURIComponent(type.id)}&name=${encodeURIComponent(type.name)}&gradeTerm=${encodeURIComponent(gradeTerm)}`);
               }
             }}
             className={cn(
               "w-full py-3 rounded-xl font-extrabold text-sm transition-all active:scale-95 shadow-lg flex items-center justify-center gap-2",
               cfg.challengeStyle,
-              (!hasEnoughQuestions || (cfg.challengeLabel === "다시 도전" && !isPlayable)) && "opacity-50 cursor-not-allowed pointer-events-none shadow-none"
+              (!isChallengeEnabled || (cfg.challengeLabel === "다시 도전" && !isPlayable)) && "opacity-50 cursor-not-allowed pointer-events-none shadow-none"
             )}
           >
             {cfg.challengeLabel === "왕관 도전" && <Crown className="w-4 h-4" />}
@@ -402,10 +411,12 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark }: DetailPanelPro
           
           {/* 출제 예정 문항 수 및 부족 안내 문구 */}
           <div className="text-center text-xs font-bold py-1">
-            {hasEnoughQuestions ? (
-              <span className={textMuted}>이번 도전은 {qCount}문항으로 진행돼요.</span>
+            {!hasEnoughQuestions ? (
+              <span className="text-red-500">출제 가능한 문항이 없어요.</span>
+            ) : !isAttemptAllowed ? (
+              <span className="text-red-500">오늘 이 유형의 도전 횟수를 모두 사용했어요.</span>
             ) : (
-              <span className="text-red-500">출제 가능 문항 없음</span>
+              <span className={textMuted}>이번 도전은 {qCount}문항으로 진행돼요.</span>
             )}
           </div>
         </div>
@@ -530,7 +541,7 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark }: DetailPanelPro
                 onClick={() => {
                   setShowRetryModal(false);
                   onClose();
-                  router.push(`/content/math-exam-prep/solve?typeId=${encodeURIComponent(type.id)}&name=${encodeURIComponent(type.name)}`);
+                  router.push(`/content/math-exam-prep/solve?typeId=${encodeURIComponent(type.id)}&name=${encodeURIComponent(type.name)}&gradeTerm=${encodeURIComponent(gradeTerm)}`);
                 }}
                 className={cn(
                   "py-3 rounded-xl font-extrabold text-[12.5px] transition-all active:scale-95 shadow-lg flex items-center justify-center gap-1.5",
@@ -1302,6 +1313,7 @@ export default function MathExamPrepPage() {
             subUnit={selectedInfo.subUnit}
             onClose={() => setSelectedInfo(null)}
             isDark={isDark}
+            gradeTerm={selectedGradeTerm}
           />
         )}
       </div>
