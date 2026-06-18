@@ -89,7 +89,9 @@ export default function PrintSettingPanel({
     let candidates = activeStudents;
     if (task.problemMode === "relearn") {
       candidates = activeStudents.filter(
-        s => (s as any).assignedQuestionIds && (s as any).assignedQuestionIds.length > 0
+        s => 
+          ((s as any).assignedQuestionIds && (s as any).assignedQuestionIds.length > 0) ||
+          ((s.problemCount ?? 0) > 0)
       );
     }
     

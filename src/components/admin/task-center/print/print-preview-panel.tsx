@@ -475,7 +475,9 @@ export default function PrintPreviewPanel({
     let candidates = activeStudents;
     if (task.problemMode === "relearn") {
       candidates = activeStudents.filter(
-        s => (s as any).assignedQuestionIds && (s as any).assignedQuestionIds.length > 0
+        s => 
+          ((s as any).assignedQuestionIds && (s as any).assignedQuestionIds.length > 0) ||
+          ((s.problemCount ?? 0) > 0)
       );
     }
     if (printTarget === "selected") {
@@ -492,7 +494,9 @@ export default function PrintPreviewPanel({
     let candidates = activeStudents;
     if (task.problemMode === "relearn") {
       candidates = activeStudents.filter(
-        s => (s as any).assignedQuestionIds && (s as any).assignedQuestionIds.length > 0
+        s => 
+          ((s as any).assignedQuestionIds && (s as any).assignedQuestionIds.length > 0) ||
+          ((s.problemCount ?? 0) > 0)
       );
     }
     if (printTarget === "selected") {

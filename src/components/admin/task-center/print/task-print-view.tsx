@@ -51,7 +51,9 @@ export default function TaskPrintView({ taskId }: Props) {
     const base = task.assignedStudents.filter(s => s.status !== ("canceled" as any));
     if (task.problemMode === "relearn") {
       return base.filter(
-        s => (s as any).assignedQuestionIds && (s as any).assignedQuestionIds.length > 0
+        s => 
+          ((s as any).assignedQuestionIds && (s as any).assignedQuestionIds.length > 0) ||
+          ((s.problemCount ?? 0) > 0)
       );
     }
     return base;
@@ -163,7 +165,7 @@ export default function TaskPrintView({ taskId }: Props) {
           <div className="flex flex-col shrink-0">
             <span className="text-gray-500 text-xs mb-1 whitespace-nowrap">문제 구성 방식</span>
             <span className="font-medium text-gray-900">
-              {task.problemMode === "same" ? "동일 문제 출제" : "학생별 문제 출제"}
+              {task.problemMode === "same" ? "동일 문제 출제" : task.problemMode === "relearn" ? "학생별 재학습 유형 출제" : "학생별 문제 출제"}
             </span>
           </div>
           <div className="flex flex-col shrink-0">
