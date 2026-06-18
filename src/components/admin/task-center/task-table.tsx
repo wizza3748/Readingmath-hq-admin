@@ -11,6 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 import { ConfirmDialog } from "./confirm-dialog";
 import { useTaskCenterStore } from "@/lib/task-center-store";
 import { getStoredClasses } from "@/lib/teacher-mock";
+import { evaluateStudentAchievement } from "@/utils/examPrepStorage";
 
 type SortKey = "id" | "name" | "course" | "typeCount" | "problemCount" | "createdAt" | "assignedCount" | "completedCount" | "avgScore";
 type SortDir = "asc" | "desc";
@@ -191,6 +192,38 @@ export function TaskTable({ tasks }: Props) {
     setMounted(true);
   }, []);
 
+  const isStudentSelectable = React.useCallback((studentId: string, taskItem: TaskItem) => {
+    if (taskItem.problemMode !== "relearn") return true;
+    if (!taskItem.selectedTypes || taskItem.selectedTypes.length === 0) return false;
+    
+    return taskItem.selectedTypes.some(t => {
+      const cleanTypeId = t.typeId.replace(/-(basic|skill|advanced)$/, "");
+      const status = evaluateStudentAchievement(studentId, cleanTypeId, taskItem.subject || "math");
+      return status === "relearn";
+    });
+  }, []);
+
+  const getPreviewStatus = React.useCallback((taskItem: TaskItem) => {
+    if (taskItem.totalProblems === 0) {
+      return { disabled: true, reason: "미리보기할 문제가 없습니다." };
+    }
+    const activeStudents = (taskItem.assignedStudents || []).filter(s => s.status !== "canceled");
+
+    if (taskItem.problemMode === "individual") {
+      if (activeStudents.length === 0) {
+        return { disabled: true, reason: "학생별 문제 출제 과제는 배정 후 미리보기할 수 있습니다." };
+      }
+    }
+
+    if (taskItem.problemMode === "relearn") {
+      const selectableStudentsCount = activeStudents.filter(s => isStudentSelectable(s.studentId, taskItem)).length;
+      if (selectableStudentsCount === 0) {
+        return { disabled: true, reason: "학생별 재학습 유형 출제 과제는 배정 후 미리보기할 수 있습니다." };
+      }
+    }
+    return { disabled: false, reason: "" };
+  }, [isStudentSelectable]);
+
   const toggleSort = (key: SortKey) => {
     if (sortKey === key) setSortDir(d => d === "asc" ? "desc" : "asc");
     else { setSortKey(key); setSortDir("desc"); }
@@ -358,16 +391,26 @@ export function TaskTable({ tasks }: Props) {
                   </td>
                   <td className="py-3 px-3">
                     <div className="flex items-center gap-1.5 justify-start">
-                      <button
-                        title="미리보기"
-                        onClick={() => {
-                          const folder = task.subject === "science" ? "science-task-center" : "math-task-center";
-                          window.open(`/content/${folder}/${task.id}/solve?preview=true`, "_blank");
-                        }}
-                        className="px-2.5 py-1 text-xs font-medium bg-white border border-border rounded-md hover:bg-muted text-foreground shadow-sm transition-colors"
-                      >
-                        미리보기
-                      </button>
+                      {(() => {
+                        const previewStatus = getPreviewStatus(task);
+                        return (
+                          <button
+                            title={previewStatus.disabled ? previewStatus.reason : "미리보기"}
+                            disabled={previewStatus.disabled}
+                            onClick={() => {
+                              const folder = task.subject === "science" ? "science-task-center" : "math-task-center";
+                              if (task.problemMode === "same") {
+                                window.open(`/content/${folder}/${task.id}/solve?preview=true`, "_blank");
+                              } else {
+                                router.push(`/admin/task-center/${task.id}`);
+                              }
+                            }}
+                            className="px-2.5 py-1 text-xs font-medium bg-white border border-border rounded-md hover:bg-muted text-foreground shadow-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                          >
+                            미리보기
+                          </button>
+                        );
+                      })()}
                       <button
                         title="복제"
                         onClick={() => setDuplicateTarget(task)}
