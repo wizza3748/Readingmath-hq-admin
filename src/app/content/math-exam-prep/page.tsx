@@ -130,9 +130,9 @@ const ACHIEVEMENT_CONFIG: Record<AchievementStatus, AchievementInfo> = {
   },
   supplement: {
     label: "보충 필요", shortLabel: "보충", icon: "check",
-    chipBg: "bg-orange-500", chipBorder: "border-transparent", chipIconColor: "text-white",
-    filterIconColor: "text-orange-500", filterTextColor: "text-orange-600",
-    selBg: "bg-orange-500", selBorder: "border-orange-500", selText: "text-white",
+    chipBg: "bg-yellow-500", chipBorder: "border-transparent", chipIconColor: "text-white",
+    filterIconColor: "text-yellow-500", filterTextColor: "text-yellow-600",
+    selBg: "bg-yellow-500", selBorder: "border-yellow-500", selText: "text-white",
     description: "이해도가 낮은 상태예요.",
     challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
   },
@@ -242,7 +242,7 @@ function TypeChip({ type, isSelected, onClick, isDark, isHighlighted }: TypeChip
   const selColor = type.status === "none" ? "#64748b" : 
     type.status === "undetermined" ? "#6b7280" :
     type.status === "relearn" ? "#ef4444" :
-    type.status === "supplement" ? "#f97316" :
+    type.status === "supplement" ? "#eab308" :
     type.status === "understand" ? "#22c55e" : "#16a34a";
 
   return (
@@ -1087,13 +1087,11 @@ export default function MathExamPrepPage() {
                 className={cn(
                   "h-7 px-2.5 text-xs font-bold rounded-full border transition-all flex items-center gap-1",
                   sel
-                    ? cn(cfg.selBg, "border-transparent", cfg.selText)
-                    : isDark
-                      ? "bg-slate-700 border-slate-600 text-slate-300 hover:bg-slate-600"
-                      : cn("bg-white border-slate-200 hover:bg-slate-50", cfg.filterTextColor)
+                    ? "bg-blue-600 border-blue-600 text-white"
+                    : chipDefault
                 )}>
                 <AchievementIcon status={status} className={cn("w-3 h-3", sel ? "text-white stroke-white" : cfg.filterIconColor)} />
-                <span>{cfg.shortLabel}</span>
+                <span className={sel ? "text-white" : cfg.filterTextColor}>{cfg.shortLabel}</span>
               </button>
             );
           })}

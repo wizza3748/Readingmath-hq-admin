@@ -12,7 +12,8 @@ import {
   Home,
   ArrowRight,
   Star,
-  BookOpen
+  BookOpen,
+  Crown
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -53,6 +54,81 @@ const formatSolvedAt = (isoString: string) => {
   const ss = String(date.getSeconds()).padStart(2, "0");
   return `${y}. ${m}. ${d}. ${hh}:${mm}:${ss}`;
 };
+
+interface AchievementInfo {
+  label: string;
+  shortLabel: string;
+  icon: "crown" | "check" | "question";
+  chipBg: string;
+  chipBorder: string;
+  chipIconColor: string;
+  filterIconColor: string;
+  filterTextColor: string;
+  selBg: string;
+  selBorder: string;
+  selText: string;
+  description: string;
+  challengeLabel: string;
+  challengeStyle: string;
+}
+
+const ACHIEVEMENT_CONFIG: Record<string, AchievementInfo> = {
+  none: {
+    label: "미진행", shortLabel: "미진행", icon: "question",
+    chipBg: "bg-white", chipBorder: "border border-slate-200", chipIconColor: "text-slate-300",
+    filterIconColor: "text-slate-300", filterTextColor: "text-slate-500",
+    selBg: "bg-slate-700", selBorder: "border-slate-700", selText: "text-white",
+    description: "아직 학습을 시작하지 않았어요.",
+    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
+  },
+  undetermined: {
+    label: "미판정", shortLabel: "미판정", icon: "question",
+    chipBg: "bg-slate-300", chipBorder: "border-transparent", chipIconColor: "text-slate-500",
+    filterIconColor: "text-slate-500", filterTextColor: "text-slate-600",
+    selBg: "bg-slate-500", selBorder: "border-slate-500", selText: "text-white",
+    description: "학습량이 부족해요.",
+    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
+  },
+  relearn: {
+    label: "재학습 필요", shortLabel: "재학습", icon: "check",
+    chipBg: "bg-red-500", chipBorder: "border-transparent", chipIconColor: "text-white",
+    filterIconColor: "text-red-500", filterTextColor: "text-red-600",
+    selBg: "bg-red-500", selBorder: "border-red-500", selText: "text-white",
+    description: "전혀 이해하지 못하고 있어요.",
+    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
+  },
+  supplement: {
+    label: "보충 필요", shortLabel: "보충", icon: "check",
+    chipBg: "bg-yellow-500", chipBorder: "border-transparent", chipIconColor: "text-white",
+    filterIconColor: "text-yellow-500", filterTextColor: "text-yellow-600",
+    selBg: "bg-yellow-500", selBorder: "border-yellow-500", selText: "text-white",
+    description: "이해도가 낮은 상태예요.",
+    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
+  },
+  understand: {
+    label: "유형 이해", shortLabel: "이해", icon: "check",
+    chipBg: "bg-green-400", chipBorder: "border-transparent", chipIconColor: "text-white",
+    filterIconColor: "text-green-500", filterTextColor: "text-green-600",
+    selBg: "bg-green-500", selBorder: "border-green-500", selText: "text-white",
+    description: "충분히 이해하여 문제를 풀 수 있어요.",
+    challengeLabel: "왕관 도전", challengeStyle: "bg-violet-600 hover:bg-violet-700 text-white shadow-violet-500/30",
+  },
+  master: {
+    label: "유형 정복", shortLabel: "정복", icon: "crown",
+    chipBg: "bg-green-600", chipBorder: "border-transparent", chipIconColor: "text-white",
+    filterIconColor: "text-green-700", filterTextColor: "text-green-700",
+    selBg: "bg-green-700", selBorder: "border-green-700", selText: "text-white",
+    description: "완전히 이해하고 있어요.",
+    challengeLabel: "다시 도전", challengeStyle: "bg-slate-500 hover:bg-slate-600 text-white shadow-slate-500/30",
+  },
+};
+
+function AchievementIcon({ status, className }: { status: string; className?: string }) {
+  const cfg = ACHIEVEMENT_CONFIG[status];
+  if (!cfg) return null;
+  if (cfg.icon === "crown") return <Crown className={cn("stroke-[2]", className)} />;
+  if (cfg.icon === "check") return <Check className={cn("stroke-[3]", className)} />;
+}
 
 // KaTeX 수식 렌더링 컴포넌트
 function ProblemRenderer({ html }: { html: string }) {
@@ -654,8 +730,13 @@ function MathSolveContent() {
               {/* 배지 행 */}
               <div className="flex items-center gap-2 flex-wrap">
                 <div className={cn(
-                  "flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-violet-100 text-violet-700 dark:bg-violet-950/40 dark:text-violet-300"
+                  "flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold",
+                  ACHIEVEMENT_CONFIG[currentStatus]?.chipBg || "bg-violet-100",
+                  ACHIEVEMENT_CONFIG[currentStatus]?.chipBorder || "",
+                  ACHIEVEMENT_CONFIG[currentStatus]?.chipIconColor || "text-violet-700",
+                  currentStatus === "none" && "border"
                 )}>
+                  <AchievementIcon status={currentStatus} className="w-3 h-3" />
                   {/* 현재 성취도 상태 */}
                   <span className="capitalize">
                     {(() => {
