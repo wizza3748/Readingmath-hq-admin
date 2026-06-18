@@ -262,6 +262,10 @@ export default function TaskDetail({ taskId }: Props) {
     } else {
       setPrioritizeUnsolved(false);
     }
+    if (mode === "relearn") {
+      setOnlyImportant(false);
+      setOnlyImportantType(false);
+    }
   };
 
   const handleTypeProblemCountChange = (typeId: string, difficulty: Difficulty, count: number) => {

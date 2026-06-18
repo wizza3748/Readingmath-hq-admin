@@ -26,7 +26,12 @@ export function PrintModal({ open, onOpenChange, task }: PrintModalProps) {
   const [selectedIds, setSelectedIds] = React.useState<Set<string>>(new Set());
 
   const isSameMode = task.problemMode === "same";
+  const isRelearnMode = task.problemMode === "relearn";
   const students = task.assignedStudents;
+
+  const isExcludedStudent = React.useCallback((s: StudentAssignment) => {
+    return isRelearnMode && s.problemCount === 0;
+  }, [isRelearnMode]);
 
   React.useEffect(() => {
     if (open) setSelectedIds(new Set());
@@ -46,7 +51,8 @@ export function PrintModal({ open, onOpenChange, task }: PrintModalProps) {
     onOpenChange(false);
   };
 
-  const getStatusClass = (status: string) => {
+  const getStatusClass = (status: string, isExcluded?: boolean) => {
+    if (isExcluded) return "bg-slate-100 text-slate-400 border-slate-200";
     switch (status) {
       case "submitted": return "bg-emerald-50 text-emerald-700 border-emerald-200";
       case "timeout": return "bg-orange-50 text-orange-700 border-orange-200";
@@ -73,7 +79,7 @@ export function PrintModal({ open, onOpenChange, task }: PrintModalProps) {
               <span className="font-bold text-slate-700">{task.name}</span>
             </div>
             <Badge variant="outline" className="text-xs bg-white border-slate-200 text-slate-600 font-semibold shadow-xs">
-              {task.problemMode === "same" ? "동일 문제 출제" : "학생별 문제 출제"}
+              {task.problemMode === "same" ? "동일 문제 출제" : task.problemMode === "relearn" ? "학생별 재학습 유형 출제" : "학생별 문제 출제"}
             </Badge>
           </div>
 
@@ -108,9 +114,9 @@ export function PrintModal({ open, onOpenChange, task }: PrintModalProps) {
                       <tr>
                         <th className="w-10 py-2.5 px-3">
                           <Checkbox
-                            checked={students.length > 0 && students.every((s) => selectedIds.has(s.studentId))}
+                            checked={students.length > 0 && students.filter(s => !isExcludedStudent(s)).every((s) => selectedIds.has(s.studentId))}
                             onCheckedChange={(checked) => {
-                              if (checked) setSelectedIds(new Set(students.map((s) => s.studentId)));
+                              if (checked) setSelectedIds(new Set(students.filter(s => !isExcludedStudent(s)).map((s) => s.studentId)));
                               else setSelectedIds(new Set());
                             }}
                           />
@@ -123,38 +129,50 @@ export function PrintModal({ open, onOpenChange, task }: PrintModalProps) {
                       </tr>
                     </thead>
                     <tbody>
-                      {students.map((s) => (
-                        <tr
-                          key={s.studentId}
-                          className="border-b border-slate-100 last:border-b-0 hover:bg-slate-50/50 transition-colors duration-150 cursor-pointer"
-                          onClick={() => toggleStudent(s.studentId)}
-                        >
-                          <td className="py-2.5 px-3">
-                            <Checkbox
-                              checked={selectedIds.has(s.studentId)}
-                              onCheckedChange={() => toggleStudent(s.studentId)}
-                              onClick={(e) => e.stopPropagation()}
-                            />
-                          </td>
-                          <td className="py-2.5 px-3 font-medium">{s.studentName}</td>
-                          <td className="py-2.5 px-3 text-muted-foreground">{s.classGroup}</td>
-                          <td className="py-2.5 px-3 text-right">{s.problemCount ?? task.totalProblems}문항</td>
-                          <td className="py-2.5 px-3">
-                            <Badge variant="outline" className={`text-xs ${getStatusClass(s.status)}`}>
-                              {getStudentTaskStatusLabel(s.status)}
-                            </Badge>
-                          </td>
-                          <td className="py-2.5 px-3">
-                            {s.printStatus === "printed" ? (
-                              <span className="flex items-center gap-1 text-xs text-emerald-600">
-                                <CheckCircle2 className="h-3.5 w-3.5" /> 출력완료
-                              </span>
-                            ) : (
-                              <span className="text-xs text-muted-foreground">미출력</span>
-                            )}
-                          </td>
-                        </tr>
-                      ))}
+                      {students.map((s) => {
+                        const isExcluded = isExcludedStudent(s);
+                        return (
+                          <tr
+                            key={s.studentId}
+                            className={`border-b border-slate-100 last:border-b-0 hover:bg-slate-50/50 transition-colors duration-150 ${isExcluded ? "opacity-65 cursor-not-allowed bg-slate-50/30" : "cursor-pointer"}`}
+                            onClick={() => {
+                              if (isExcluded) return;
+                              toggleStudent(s.studentId);
+                            }}
+                          >
+                            <td className="py-2.5 px-3">
+                              <Checkbox
+                                checked={selectedIds.has(s.studentId)}
+                                disabled={isExcluded}
+                                onCheckedChange={() => {
+                                  if (isExcluded) return;
+                                  toggleStudent(s.studentId);
+                                }}
+                                onClick={(e) => e.stopPropagation()}
+                              />
+                            </td>
+                            <td className="py-2.5 px-3 font-medium">{s.studentName}</td>
+                            <td className="py-2.5 px-3 text-muted-foreground">{s.classGroup}</td>
+                            <td className="py-2.5 px-3 text-right">{isExcluded ? "0문항" : `${s.problemCount ?? task.totalProblems}문항`}</td>
+                            <td className="py-2.5 px-3">
+                              <Badge variant="outline" className={`text-xs ${getStatusClass(s.status, isExcluded)}`}>
+                                {isExcluded ? "출제 대상 없음" : getStudentTaskStatusLabel(s.status)}
+                              </Badge>
+                            </td>
+                            <td className="py-2.5 px-3">
+                              {isExcluded ? (
+                                <span className="text-xs text-muted-foreground">-</span>
+                              ) : s.printStatus === "printed" ? (
+                                <span className="flex items-center gap-1 text-xs text-emerald-600">
+                                  <CheckCircle2 className="h-3.5 w-3.5" /> 출력완료
+                                </span>
+                              ) : (
+                                <span className="text-xs text-muted-foreground">미출력</span>
+                              )}
+                            </td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>
@@ -168,7 +186,14 @@ export function PrintModal({ open, onOpenChange, task }: PrintModalProps) {
             <Button variant="outline" onClick={() => onOpenChange(false)}>취소</Button>
             <Button
               variant="outline"
-              onClick={handlePrint}
+              onClick={() => {
+                const printableIds = students.filter(s => !isExcludedStudent(s)).map(s => s.studentId);
+                if (printableIds.length === 0) {
+                  toast({ title: "출력 가능한 학생이 없습니다.", variant: "destructive" });
+                  return;
+                }
+                handlePrint();
+              }}
               className="gap-2"
             >
               <Printer className="h-4 w-4" />

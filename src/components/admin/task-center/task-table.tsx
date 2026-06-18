@@ -319,12 +319,23 @@ export function TaskTable({ tasks }: Props) {
                     <UnitPopover items={unitItems} label={unitLabel} />
                   </td>
                   <td className="py-3 px-3"><TypeCountPopover task={task} /></td>
-                  <td className="py-3 px-3 whitespace-nowrap">{task.totalProblems}문항</td>
+                  <td className="py-3 px-3 whitespace-nowrap">
+                    {task.problemMode === "relearn"
+                      ? (task.status === "published" || task.status === "ended" ? "학생별 상이" : "배정 시 확정")
+                      : `${task.totalProblems}문항`
+                    }
+                  </td>
                   <td className="py-3 px-3"><DifficultyBadges difficulties={task.difficulties} /></td>
                   <td className="py-3 px-3">
                     {mounted ? (
-                      <span className={`inline-flex w-fit whitespace-nowrap px-2 py-0.5 rounded-full text-[11px] font-medium border ${task.problemMode === "same" ? "bg-teal-50 text-teal-700 border-teal-200" : "bg-indigo-50 text-indigo-700 border-indigo-200"}`}>
-                        {task.problemMode === "same" ? "동일" : "학생별"}
+                      <span className={`inline-flex w-fit whitespace-nowrap px-2 py-0.5 rounded-full text-[11px] font-medium border ${
+                        task.problemMode === "same" 
+                          ? "bg-teal-50 text-teal-700 border-teal-200" 
+                          : task.problemMode === "relearn"
+                          ? "bg-rose-50 text-rose-700 border-rose-200"
+                          : "bg-indigo-50 text-indigo-700 border-indigo-200"
+                      }`}>
+                        {task.problemMode === "same" ? "동일" : task.problemMode === "relearn" ? "재학습" : "학생별"}
                       </span>
                     ) : ""}
                   </td>

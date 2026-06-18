@@ -657,6 +657,26 @@ export const MOCK_EXAM_PREP_HISTORY: MockExamPrepHistory[] = [
     typeName: "과학적 탐구 방법의 단계 구분",
     solvedAt: "2026-06-12T10:00:00", problemCount: 4, correctCount: 3,
   },
+  {
+    studentId: "s1", typeId: "mt-중1-1-0-1-1-basic",
+    typeName: "소인수분해 문장제 해결하기",
+    solvedAt: "2026-06-17T10:00:00", problemCount: 2, correctCount: 0,
+  },
+  {
+    studentId: "s3", typeId: "mt-중1-1-0-1-1-basic",
+    typeName: "소인수분해 문장제 해결하기",
+    solvedAt: "2026-06-17T10:00:00", problemCount: 2, correctCount: 0,
+  },
+  {
+    studentId: "s5", typeId: "mt-중1-1-0-1-1-basic",
+    typeName: "소인수분해 문장제 해결하기",
+    solvedAt: "2026-06-17T10:00:00", problemCount: 2, correctCount: 0,
+  },
+  {
+    studentId: "s6", typeId: "mt-중1-1-0-1-1-basic",
+    typeName: "소인수분해 문장제 해결하기",
+    solvedAt: "2026-06-17T10:00:00", problemCount: 2, correctCount: 0,
+  },
 ];
 
 // ── 실시간 유형명 매핑 보정 ──────────────────────────────────────────────────────

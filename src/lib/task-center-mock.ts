@@ -6,7 +6,7 @@ export type Subject = "math" | "science";
 export type TaskStatus = "draft" | "published" | "ended";
 export type StudentTaskStatus = "not_started" | "in_progress" | "submitted";
 export type Difficulty = "basic" | "intermediate" | "advanced";
-export type ProblemMode = "same" | "individual";
+export type ProblemMode = "same" | "individual" | "relearn";
 
 export interface CurriculumType {
   id: string;

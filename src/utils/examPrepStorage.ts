@@ -4,6 +4,7 @@ import { getStoredTasks } from "./taskStorage";
 import { getTaskResult } from "./taskResultStorage";
 import { getQuestionsByTaskId } from "../lib/task-solve-mock";
 import { MATH_CURRICULA, SCIENCE_CURRICULA } from "../lib/task-center-mock";
+import { MOCK_TASK_RESULTS, MOCK_EXAM_PREP_HISTORY } from "@/app/admin/task-center/status/mockData";
 
 // 성취도 상태 타입
 export type ExamAchievementStatus = "none" | "undetermined" | "relearn" | "supplement" | "understand" | "master";
@@ -351,5 +352,199 @@ export function recordDailyAttempt(params: AttemptParams): void {
   localStorage.setItem(DAILY_ATTEMPTS_KEY, JSON.stringify(attemptsMap));
   
   window.dispatchEvent(new Event("examprep-history-updated"));
+}
+
+// 특정 학생의 특정 유형의 통합 이력 가져오기 (공용)
+function normalizeTypeIdForMatch(id: string): string {
+  const clean = id.replace(/-(basic|skill|advanced)$/, "");
+  // mockData.ts의 잘못된 ID 규격을 실제 커리큘럼 ID로 매핑
+  if (clean === "mt-중1-1-0-1-1") return "mt-중1-1-0-0";
+  if (clean === "mt-중1-1-0-2-1") return "mt-중1-1-0-1";
+  if (clean === "mt-중1-1-0-2-2") return "mt-중1-1-0-2";
+  if (clean === "mt-중1-1-0-2-3") return "mt-중1-1-0-3";
+  return clean;
+}
+
+export function getStudentTypeHistory(
+  studentId: string,
+  typeId: string,
+  subject: "math" | "science"
+) {
+  const taskCenterList: {
+    path: "과제 센터" | "시험 대비";
+    solvedAt: string;
+    isCorrect: boolean;
+    correctCount: number;
+    problemCount: number;
+  }[] = [];
+
+  MOCK_TASK_RESULTS.forEach((r) => {
+    if (r.studentId !== studentId || r.subject !== subject) return;
+    const tr = r.typeResults.find((t) => {
+      return normalizeTypeIdForMatch(t.typeId) === normalizeTypeIdForMatch(typeId);
+    });
+    if (!tr) return;
+
+    const solvedAt = r.submittedAt || r.lastSolvedAt || "";
+    const correctTotal = tr.correctCount;
+    const incorrectTotal = tr.incorrectCount + tr.unenteredCount;
+
+    if (correctTotal === 4 && incorrectTotal === 1) {
+      const pattern = [true, true, false, true, true];
+      pattern.forEach((isCorrect) => {
+        taskCenterList.push({
+          path: "과제 센터",
+          solvedAt,
+          isCorrect,
+          correctCount: isCorrect ? 1 : 0,
+          problemCount: 1,
+        });
+      });
+    } else if (correctTotal === 3 && incorrectTotal === 2) {
+      const pattern = [true, false, true, false, true];
+      pattern.forEach((isCorrect) => {
+        taskCenterList.push({
+          path: "과제 센터",
+          solvedAt,
+          isCorrect,
+          correctCount: isCorrect ? 1 : 0,
+          problemCount: 1,
+        });
+      });
+    } else if (correctTotal === 2 && incorrectTotal === 1) {
+      const pattern = [true, false, true];
+      pattern.forEach((isCorrect) => {
+        taskCenterList.push({
+          path: "과제 센터",
+          solvedAt,
+          isCorrect,
+          correctCount: isCorrect ? 1 : 0,
+          problemCount: 1,
+        });
+      });
+    } else {
+      for (let i = 0; i < correctTotal; i++) {
+        taskCenterList.push({
+          path: "과제 센터",
+          solvedAt,
+          isCorrect: true,
+          correctCount: 1,
+          problemCount: 1,
+        });
+      }
+      for (let i = 0; i < incorrectTotal; i++) {
+        taskCenterList.push({
+          path: "과제 센터",
+          solvedAt,
+          isCorrect: false,
+          correctCount: 0,
+          problemCount: 1,
+        });
+      }
+    }
+  });
+
+  const examPrepList: {
+    path: "과제 센터" | "시험 대비";
+    solvedAt: string;
+    isCorrect: boolean;
+    correctCount: number;
+    problemCount: number;
+  }[] = [];
+
+  MOCK_EXAM_PREP_HISTORY.forEach((h) => {
+    if (h.studentId !== studentId || normalizeTypeIdForMatch(h.typeId) !== normalizeTypeIdForMatch(typeId)) return;
+
+    const correctTotal = h.correctCount;
+    const incorrectTotal = h.problemCount - h.correctCount;
+
+    if (correctTotal === 4 && incorrectTotal === 1) {
+      const pattern = [true, true, false, true, true];
+      pattern.forEach((isCorrect) => {
+        examPrepList.push({
+          path: "시험 대비",
+          solvedAt: h.solvedAt,
+          isCorrect,
+          correctCount: isCorrect ? 1 : 0,
+          problemCount: 1,
+        });
+      });
+    } else if (correctTotal === 3 && incorrectTotal === 2) {
+      const pattern = [true, false, true, false, true];
+      pattern.forEach((isCorrect) => {
+        examPrepList.push({
+          path: "시험 대비",
+          solvedAt: h.solvedAt,
+          isCorrect,
+          correctCount: isCorrect ? 1 : 0,
+          problemCount: 1,
+        });
+      });
+    } else if (correctTotal === 2 && incorrectTotal === 1) {
+      const pattern = [true, false, true];
+      pattern.forEach((isCorrect) => {
+        examPrepList.push({
+          path: "시험 대비",
+          solvedAt: h.solvedAt,
+          isCorrect,
+          correctCount: isCorrect ? 1 : 0,
+          problemCount: 1,
+        });
+      });
+    } else {
+      for (let i = 0; i < correctTotal; i++) {
+        examPrepList.push({
+          path: "시험 대비",
+          solvedAt: h.solvedAt,
+          isCorrect: true,
+          correctCount: 1,
+          problemCount: 1,
+        });
+      }
+      for (let i = 0; i < incorrectTotal; i++) {
+        examPrepList.push({
+          path: "시험 대비",
+          solvedAt: h.solvedAt,
+          isCorrect: false,
+          correctCount: 0,
+          problemCount: 1,
+        });
+      }
+    }
+  });
+
+  return [...taskCenterList, ...examPrepList].sort(
+    (a, b) => new Date(b.solvedAt).getTime() - new Date(a.solvedAt).getTime()
+  );
+}
+
+// 특정 학생의 특정 유형 성취도 판정 정책 (공용)
+export function evaluateStudentAchievement(
+  studentId: string,
+  typeId: string,
+  subject: "math" | "science"
+): ExamAchievementStatus {
+  const history = getStudentTypeHistory(studentId, typeId, subject);
+
+  if (history.length === 0) {
+    return "none";
+  }
+  if (history.length === 1) {
+    return "undetermined";
+  }
+
+  const isCorrect0 = history[0].isCorrect;
+  const isCorrect1 = history[1].isCorrect;
+
+  if (history.length >= 3 && isCorrect0 && isCorrect1 && history[2].isCorrect) {
+    return "master";
+  }
+  if (isCorrect0 && isCorrect1) {
+    return "understand";
+  }
+  if (!isCorrect0 && !isCorrect1) {
+    return "relearn";
+  }
+  return "supplement";
 }
 

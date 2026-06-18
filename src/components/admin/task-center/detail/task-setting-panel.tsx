@@ -41,14 +41,14 @@ interface Props {
   taskId?: string;
   name: string;
   selectedTypes: SelectedType[];
-  problemMode: "same" | "individual";
+  problemMode: "same" | "individual" | "relearn";
   prioritizeUnsolved: boolean;
   onlyImportant: boolean;
   onlyImportantType: boolean;
   readonly?: boolean;
   onNameChange: (v: string) => void;
   onTypeProblemCountChange: (typeId: string, difficulty: Difficulty, count: number) => void;
-  onProblemModeChange: (v: "same" | "individual") => void;
+  onProblemModeChange: (v: "same" | "individual" | "relearn") => void;
   onOnlyImportantChange: (v: boolean) => void;
   onOnlyImportantTypeChange: (v: boolean) => void;
   onQuickSetAll: (count: number) => void;
@@ -203,14 +203,18 @@ export function TaskSettingPanel({
                   id="onlyImportantType"
                   type="checkbox"
                   checked={onlyImportantType}
-                  disabled={readonly}
+                  disabled={readonly || problemMode === "relearn"}
                   onChange={e => onOnlyImportantTypeChange(e.target.checked)}
                   className="h-3.5 w-3.5 accent-primary rounded border-gray-300 cursor-pointer disabled:cursor-not-allowed"
                 />
                 <label
                   htmlFor="onlyImportantType"
                   className={`text-[11px] font-bold cursor-pointer whitespace-nowrap ${
-                    onlyImportantType ? "text-amber-600" : "text-muted-foreground hover:text-foreground"
+                    problemMode === "relearn"
+                      ? "text-muted-foreground opacity-50 cursor-not-allowed"
+                      : onlyImportantType
+                      ? "text-amber-600"
+                      : "text-muted-foreground hover:text-foreground"
                   } transition-colors`}
                 >
                   중요 유형만 출제
@@ -223,14 +227,18 @@ export function TaskSettingPanel({
                   id="onlyImportant"
                   type="checkbox"
                   checked={onlyImportant}
-                  disabled={readonly || hasNoImportantProblems}
+                  disabled={readonly || hasNoImportantProblems || problemMode === "relearn"}
                   onChange={e => onOnlyImportantChange(e.target.checked)}
                   className="h-3.5 w-3.5 accent-primary rounded border-gray-300 cursor-pointer disabled:cursor-not-allowed"
                 />
                 <label 
                   htmlFor="onlyImportant" 
                   className={`text-[11px] font-bold cursor-pointer whitespace-nowrap ${
-                    onlyImportant ? "text-blue-600" : "text-muted-foreground hover:text-foreground"
+                    problemMode === "relearn"
+                      ? "text-muted-foreground opacity-50 cursor-not-allowed"
+                      : onlyImportant
+                      ? "text-blue-600"
+                      : "text-muted-foreground hover:text-foreground"
                   } transition-colors`}
                 >
                   중요 문제만 출제
@@ -306,31 +314,9 @@ export function TaskSettingPanel({
         <div>
           <div className="flex items-center gap-1.5 mb-3">
             <p className="text-sm font-bold text-foreground">문제 구성 방식</p>
-            <TooltipProvider delayDuration={0}>
-              <Tooltip open={tooltipOpen} onOpenChange={setTooltipOpen}>
-                <TooltipTrigger asChild>
-                  <button type="button" className="text-muted-foreground hover:text-foreground transition-colors p-0.5">
-                    <Info className="h-4 w-4" />
-                  </button>
-                </TooltipTrigger>
-                <TooltipContent side="top" align="start" className="max-w-[300px] p-3 space-y-2.5 bg-white border-border shadow-lg z-[60]">
-                  <div className="space-y-1">
-                    <p className="text-xs font-bold text-blue-600">동일 문제 출제</p>
-                    <p className="text-xs text-muted-foreground leading-relaxed">모든 학생에게 같은 문제가 출제됩니다.</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-xs font-bold text-blue-600">학생별 문제 출제</p>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
-                      학생별 풀이 이력을 기준으로 미풀이 문제가 우선 구성됩니다.<br/>
-                      후보 문제가 적은 경우 학생 간 동일 문제가 포함될 수 있습니다.
-                    </p>
-                  </div>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
           </div>
           <div className="flex gap-2">
-            {(["same", "individual"] as const).map(m => (
+            {(["same", "individual", "relearn"] as const).map(m => (
               <Button
                 key={m}
                 variant={problemMode === m ? "default" : "outline"}
@@ -342,19 +328,27 @@ export function TaskSettingPanel({
                 disabled={readonly}
                 onClick={() => {
                   onProblemModeChange(m);
-                  setTooltipOpen(false);
                 }}
               >
-                {m === "same" ? "동일 문제 출제" : "학생별 문제 출제"}
+                {m === "same" ? "동일 문제 출제" : m === "individual" ? "학생별 문제 출제" : "학생별 재학습 유형 출제"}
               </Button>
             ))}
           </div>
-          <div className="space-y-1 mt-2 px-1">
-            <p className="text-[11px] text-muted-foreground leading-relaxed">
-              • {problemMode === "same" ? "모든 학생이 같은 문제를 풉니다." : "학생별 풀이 이력을 기준으로 문제가 구성됩니다."}
-            </p>
+          <div className="space-y-1 mt-2 px-1 text-[11px] text-muted-foreground leading-relaxed">
+            {problemMode === "same" && (
+              <p>• 모든 학생에게 같은 문제가 출제됩니다.</p>
+            )}
             {problemMode === "individual" && (
-              <p className="text-[11px] text-muted-foreground">• 학생 간 동일 문제가 포함될 수 있습니다.</p>
+              <>
+                <p>• 학생별 풀이 이력을 기준으로 배정 시 문제가 구성됩니다.</p>
+                <p>• 학생 간 동일 문제가 포함될 수 있습니다.</p>
+              </>
+            )}
+            {problemMode === "relearn" && (
+              <>
+                <p>• 학생별 시험 대비 성취도에서 재학습 필요 상태인 유형만 출제됩니다. (빨강 표시 유형)</p>
+                <p>• 학생별 출제 문항 수는 배정 시 확정됩니다.</p>
+              </>
             )}
           </div>
         </div>

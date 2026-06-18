@@ -18,6 +18,7 @@ import {
   getAdaptedSampleStudents
 } from "@/lib/task-center-mock";
 import { getStoredTeachers, getStoredClasses } from "@/lib/teacher-mock";
+import { evaluateStudentAchievement } from "@/utils/examPrepStorage";
 import { Search, Users, UserCheck, Info, X } from "lucide-react";
 
 const getMappedClassName = (name: string): string => {
@@ -54,6 +55,20 @@ export function AssignModal({
   const [individualIds, setIndividualIds] = React.useState<Set<string>>(new Set());
   const [currentClass, setCurrentClass] = React.useState<string>("전체");
   const [searchName, setSearchName] = React.useState("");
+
+  const isRelearnMode = task?.problemMode === "relearn";
+
+  const isStudentSelectable = React.useCallback((studentId: string) => {
+    if (!task) return false;
+    if (task.problemMode !== "relearn") return true;
+    if (!task.selectedTypes || task.selectedTypes.length === 0) return false;
+    
+    return task.selectedTypes.some(t => {
+      const cleanTypeId = t.typeId.replace(/-(basic|skill|advanced)$/, "");
+      const status = evaluateStudentAchievement(studentId, cleanTypeId, task.subject || "math");
+      return status === "relearn";
+    });
+  }, [task]);
 
   // 권한별 동적 반 리스트와 학생 목록
   const [classesList, setClassesList] = React.useState<string[]>([]);
@@ -260,21 +275,6 @@ export function AssignModal({
       .sort((a, b) => a.studentName.localeCompare(b.studentName));
   }, [allStudents, currentClass, searchName]);
 
-  // 반 전체 선택/해제 가능 여부 계산
-  const { canDeselectClass } = React.useMemo(() => {
-    if (currentClass === "전체") return { canSelectClass: false, canDeselectClass: false };
-    
-    const classStudents = allStudents.filter(s => s.classGroup === currentClass);
-    const canDeselect = classStudents.some(s => {
-      const selected = isSelected(s.studentId, s.classGroup);
-      const status = getStudentTaskStatus(s.studentId);
-      const isLocked = status && status !== "not_started";
-      return selected && !isLocked;
-    });
-
-    return { canSelectClass: false, canDeselectClass: canDeselect };
-  }, [currentClass, allStudents, selectedClasses, individualIds, task.assignedStudents]);
-
   // 집계 데이터
   const assignedCount = task.assignedStudents.length;
   const completedCount = task.assignedStudents.filter(s => s.status === "submitted").length;
@@ -285,14 +285,21 @@ export function AssignModal({
   const hasStarted = completedCount > 0 || inProgressCount > 0;
   
   // 선택 요약 데이터 (이름 매핑 기반으로 중복 카운팅 방지)
-  const totalSelectedIds = new Set([
-    ...Array.from(individualIds),
-    ...allStudents.filter(s => selectedClasses.has(s.classGroup)).map(s => s.studentId),
-    ...task.assignedStudents.filter(s => s.status !== "not_started").map(s => {
-      const realStudent = allStudents.find(real => real.studentName === s.studentName);
-      return realStudent ? realStudent.studentId : s.studentId;
-    })
-  ]);
+  const finalSelectedIds = React.useMemo(() => {
+    const ids = new Set([
+      ...Array.from(individualIds),
+      ...allStudents.filter(s => selectedClasses.has(s.classGroup)).map(s => s.studentId),
+      ...task.assignedStudents.filter(s => s.status !== "not_started").map(s => {
+        const realStudent = allStudents.find(real => real.studentName === s.studentName);
+        return realStudent ? realStudent.studentId : s.studentId;
+      })
+    ]);
+
+    if (isRelearnMode) {
+      return new Set(Array.from(ids).filter(id => isStudentSelectable(id)));
+    }
+    return ids;
+  }, [individualIds, selectedClasses, allStudents, task.assignedStudents, isRelearnMode, isStudentSelectable]);
 
   const selectedClassesArray = Array.from(selectedClasses);
   const selectedClassesText = selectedClassesArray.length === 0 ? "-" :
@@ -326,9 +333,11 @@ export function AssignModal({
   const selectableFilteredStudents = React.useMemo(() => {
     return filteredStudents.filter(s => {
       const status = getStudentTaskStatus(s.studentId);
-      return !status || status === "not_started";
+      const isNotStarted = !status || status === "not_started";
+      const isSelectable = !isRelearnMode || isStudentSelectable(s.studentId);
+      return isNotStarted && isSelectable;
     });
-  }, [filteredStudents, task.assignedStudents]);
+  }, [filteredStudents, task.assignedStudents, isRelearnMode, isStudentSelectable]);
 
   const allSelectableSelected = React.useMemo(() => {
     return selectableFilteredStudents.length > 0 && 
@@ -365,6 +374,11 @@ export function AssignModal({
     }
   };
 
+  // 배정 적용 버튼 비활성화 판단
+  const isClassModeEmpty = assignMode === "class_mode" && currentClass !== "전체" && allStudents.filter(s => s.classGroup === currentClass && isStudentSelectable(s.studentId)).length === 0;
+  const isIndividualModeEmpty = assignMode === "individual_mode" && finalSelectedIds.size === 0;
+  const isDisabledApplyButton = isClassModeEmpty || isIndividualModeEmpty || finalSelectedIds.size === 0;
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-[960px] h-[680px] max-h-[90vh] flex flex-col p-0 overflow-hidden rounded-2xl border border-slate-200 shadow-2xl">
@@ -385,15 +399,22 @@ export function AssignModal({
             <div className="flex items-center gap-3 text-slate-400 shrink-0">
               <span>학습과정 <strong className="text-slate-700 font-extrabold">{task.course}</strong></span>
               <span className="text-slate-300 font-light">·</span>
-              <span>문제 수 <strong className="text-slate-700 font-extrabold">{task.totalProblems}문항</strong></span>
+              <span>문제 수 <strong className="text-slate-700 font-extrabold">
+                {isRelearnMode
+                  ? (task.status === "published" || task.status === "ended" ? "학생별 상이" : "배정 시 확정")
+                  : `${task.totalProblems}문항`
+                }
+              </strong></span>
               <span className="text-slate-300 font-light">·</span>
-              <span className="text-slate-600 font-bold bg-slate-100/80 px-1.5 py-0.5 rounded border border-slate-200/30">{task.problemMode === "same" ? "동일 문제" : "학생별 문제"}</span>
+              <span className="text-slate-600 font-bold bg-slate-100/80 px-1.5 py-0.5 rounded border border-slate-200/30">
+                {task.problemMode === "same" ? "동일 문제" : task.problemMode === "individual" ? "학생별 문제" : "학생별 재학습 유형"}
+              </span>
             </div>
           </div>
 
           {/* 배정 현황 영역 (이미 배정된 학생이 있는 경우에만 상단 정보 바로 밑에 얇고 단정하게 렌더링) */}
           {assignedCount > 0 && (
-            <div className="px-6 py-3 border-b border-slate-200/40 bg-slate-50/50 grid grid-cols-4 gap-3 shrink-0">
+            <div className={`px-6 py-3 border-b border-slate-200/40 bg-slate-50/50 grid ${isRelearnMode ? "grid-cols-5" : "grid-cols-4"} gap-3 shrink-0`}>
               <div className="bg-white px-3 py-2.5 rounded-lg border border-slate-200 flex items-center justify-between shadow-xs">
                 <span className="text-[10px] font-bold text-slate-500">배정 학생</span>
                 <span className="text-sm font-black text-blue-600">{assignedCount}명</span>
@@ -410,6 +431,19 @@ export function AssignModal({
                 <span className="text-[10px] font-bold text-slate-500">진행중 학생</span>
                 <span className="text-sm font-black text-amber-600">{inProgressCount}명</span>
               </div>
+              {isRelearnMode && (
+                <div className="bg-white px-3 py-2.5 rounded-lg border border-slate-200 flex items-center justify-between shadow-xs">
+                  <span className="text-[10px] font-bold text-slate-500">배정 제외</span>
+                  <span className="text-sm font-black text-rose-500">
+                    {allStudents.filter(s => {
+                      if (assignMode === "class_mode" && currentClass !== "전체") {
+                        return s.classGroup === currentClass && !isStudentSelectable(s.studentId);
+                      }
+                      return !isStudentSelectable(s.studentId);
+                    }).length}명
+                  </span>
+                </div>
+              )}
             </div>
           )}
 
@@ -526,21 +560,57 @@ export function AssignModal({
                       {currentClass} 소속 학생 명단
                     </span>
                     <span className="text-[11px] font-bold text-slate-500">
-                      총 <span className="font-black text-indigo-600">{allStudents.filter(s => s.classGroup === currentClass).length}</span>명
+                      {isRelearnMode ? (
+                        <>
+                          총 <span className="font-black text-slate-700">{allStudents.filter(s => s.classGroup === currentClass).length}</span>명
+                          <span className="mx-1 text-slate-300">·</span>
+                          배정 가능 <span className="font-black text-indigo-600">{allStudents.filter(s => s.classGroup === currentClass && isStudentSelectable(s.studentId)).length}</span>명
+                          <span className="mx-1 text-slate-300">·</span>
+                          배정 제외 <span className="font-black text-rose-500">{allStudents.filter(s => s.classGroup === currentClass && !isStudentSelectable(s.studentId)).length}</span>명
+                        </>
+                      ) : (
+                        <>
+                          총 <span className="font-black text-indigo-600">{allStudents.filter(s => s.classGroup === currentClass).length}</span>명
+                        </>
+                      )}
                     </span>
                   </div>
                   <div className="flex flex-wrap gap-2.5">
-                    {allStudents
-                      .filter(s => s.classGroup === currentClass)
-                      .map(s => (
-                        <div
-                          key={s.studentId}
-                          className="bg-slate-50/80 px-3.5 py-2 rounded-lg border border-slate-200/60 flex items-center gap-2 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors"
-                        >
-                          <div className="h-1.5 w-1.5 rounded-full bg-indigo-500" />
-                          {s.studentName}
-                        </div>
-                      ))}
+                    {allStudents.filter(s => s.classGroup === currentClass).length > 0 && 
+                     isRelearnMode && 
+                     allStudents.filter(s => s.classGroup === currentClass && isStudentSelectable(s.studentId)).length === 0 ? (
+                      <span className="text-xs text-slate-400 font-bold italic py-4 w-full text-center">
+                        재학습 필요 유형이 있는 학생이 없습니다.
+                      </span>
+                    ) : (
+                      allStudents
+                        .filter(s => s.classGroup === currentClass)
+                        .map(s => {
+                          const assignable = isStudentSelectable(s.studentId);
+                          return (
+                            <div
+                              key={s.studentId}
+                              className={`px-3 py-1.5 rounded-lg border flex items-center gap-2 text-xs font-bold transition-all duration-150 ${
+                                assignable
+                                  ? "bg-slate-50/80 border-slate-200/60 text-slate-700 hover:bg-slate-100"
+                                  : "bg-slate-100/50 border-slate-200/40 text-slate-400 opacity-60"
+                              }`}
+                            >
+                              <div className={`h-1.5 w-1.5 rounded-full ${assignable ? "bg-indigo-500" : "bg-slate-300"}`} />
+                              <span>{s.studentName}</span>
+                              {isRelearnMode && (
+                                <span className={`text-[9px] px-1 py-0.2 rounded border ${
+                                  assignable
+                                    ? "bg-blue-50 text-blue-600 border-blue-100/60"
+                                    : "bg-slate-100 text-slate-400 border-slate-200"
+                                }`}>
+                                  {assignable ? "배정 가능" : "출제 대상 없음"}
+                                </span>
+                              )}
+                            </div>
+                          );
+                        })
+                    )}
                     {allStudents.filter(s => s.classGroup === currentClass).length === 0 && (
                       <span className="text-xs text-slate-400 italic py-2">이 반에 소속된 학생이 아직 없습니다.</span>
                     )}
@@ -622,19 +692,27 @@ export function AssignModal({
                               {searchName.trim() ? "검색 결과가 없습니다." : "학생 데이터가 없습니다."}
                             </td>
                           </tr>
+                        ) : isRelearnMode && filteredStudents.filter(s => isStudentSelectable(s.studentId)).length === 0 ? (
+                          <tr>
+                            <td colSpan={5} className="py-12 text-center text-xs font-bold text-slate-400 italic">
+                              재학습 필요 유형이 있는 학생이 없습니다.
+                            </td>
+                          </tr>
                         ) : (
                           filteredStudents.map(s => {
+                            const assignable = isStudentSelectable(s.studentId);
                             const selected = isSelected(s.studentId, s.classGroup);
                             const status = getStudentTaskStatus(s.studentId);
                             const isLocked = status && status !== "not_started";
                             const isClassSelected = selectedClasses.has(s.classGroup);
-                            const isDisabled = isLocked || isClassSelected;
-                            const assignType = isClassSelected ? "반 배정" :
+                            const isDisabled = isLocked || isClassSelected || (isRelearnMode && !assignable);
+                            const assignType = (isRelearnMode && !assignable) ? "출제 대상 없음" :
+                                             isClassSelected ? "반 배정" :
                                              individualIds.has(s.studentId) ? "개별 배정" :
                                              isLocked ? "개별 배정" : "-";
 
                             return (
-                              <tr key={s.studentId} className={`hover:bg-slate-50/50 border-b border-slate-100 last:border-0 transition-colors duration-150 ${selected ? "bg-purple-50/30" : ""}`}>
+                              <tr key={s.studentId} className={`hover:bg-slate-50/50 border-b border-slate-100 last:border-0 transition-colors duration-150 ${(isRelearnMode && !assignable) ? "bg-slate-50/30 opacity-70" : selected ? "bg-purple-50/30" : ""}`}>
                                 <td className="py-3 px-4">
                                   <Checkbox
                                     checked={selected}
@@ -651,6 +729,7 @@ export function AssignModal({
                                 </td>
                                 <td className="py-3 px-4 text-center">
                                   <span className={`text-[10px] font-black px-2 py-0.5 rounded border ${
+                                    assignType === "출제 대상 없음" ? "bg-slate-100 text-slate-400 border-slate-200" :
                                     assignType === "반 배정" ? "bg-blue-50 text-blue-600 border-blue-100" :
                                     assignType === "개별 배정" ? "bg-purple-50 text-purple-600 border-purple-100" :
                                     "bg-transparent text-transparent border-transparent"
@@ -677,8 +756,12 @@ export function AssignModal({
             <Button variant="outline" onClick={() => onOpenChange(false)} className="h-10 px-6 font-black text-slate-500">
               취소
             </Button>
-            <Button onClick={handleApply} className="h-10 px-8 font-black shadow-lg shadow-primary/20">
-              배정 적용 {totalSelectedIds.size > 0 && `(${totalSelectedIds.size}명)`}
+            <Button 
+              onClick={handleApply} 
+              disabled={isDisabledApplyButton}
+              className="h-10 px-8 font-black shadow-lg shadow-primary/20"
+            >
+              배정 적용 {finalSelectedIds.size > 0 && `(${finalSelectedIds.size}명)`}
             </Button>
           </div>
         ) : (

@@ -8,6 +8,7 @@ import {
   StudentAssignment,
   getAdaptedSampleStudents,
 } from "./task-center-mock";
+import { evaluateStudentAchievement } from "@/utils/examPrepStorage";
 
 interface TaskCenterStore {
   tasks: TaskItem[];
@@ -97,13 +98,27 @@ export const useTaskCenterStore = create<TaskCenterStore>((set, get) => ({
             .filter(id => !lockedIds.has(id))
             .map(id => {
               const student = allStudents.find(s => s.studentId === id);
+              
+              let pCount = t.totalProblems;
+              if (t.problemMode === "relearn") {
+                const subject = t.subject || "math";
+                pCount = (t.selectedTypes || []).reduce((sum, typeItem) => {
+                  const cleanId = typeItem.typeId.replace(/-(basic|skill|advanced)$/, "");
+                  const state = evaluateStudentAchievement(id, cleanId, subject);
+                  if (state === "relearn") {
+                    return sum + typeItem.problemCount;
+                  }
+                  return sum;
+                }, 0);
+              }
+
               return {
                 studentId: id,
                 studentName: student?.studentName ?? id,
                 classGroup: student?.classGroup ?? "",
                 status: "not_started" as const,
                 printStatus: "not_printed" as const,
-                problemCount: t.totalProblems,
+                problemCount: pCount,
               };
             })
         ];

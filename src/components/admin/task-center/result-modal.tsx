@@ -16,6 +16,7 @@ import {
   getStudentTaskStatusLabel 
 } from "@/lib/task-center-mock";
 import { getStoredClasses } from "@/lib/teacher-mock";
+import { evaluateStudentAchievement } from "@/utils/examPrepStorage";
 import * as XLSX from "xlsx";
 import { BarChart3, Search, ChevronRight, CheckCircle2, XCircle, Users, Info, Download } from "lucide-react";
 
@@ -118,13 +119,23 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
   const mockDetail = React.useMemo(() => {
     if (!selectedStudent || selectedStudent.status !== "submitted") return null;
     
+    // relearn 모드일 때 해당 학생에게 출제된 유형만 필터링
+    const studentSelectedTypes = (() => {
+      if (task.problemMode !== "relearn") return task.selectedTypes;
+      const subject = task.subject || "math";
+      return task.selectedTypes.filter(t => {
+        const cleanId = t.typeId.replace(/-(basic|skill|advanced)$/, "");
+        return evaluateStudentAchievement(selectedStudent.studentId, cleanId, subject) === "relearn";
+      });
+    })();
+
     const questions: { id: number; typeId: string; typeName: string; difficulty: string; isCorrect: boolean; studentAnswer: string; correctAnswer: string }[] = [];
     let qIdx = 1;
-    const targetCorrectCount = selectedStudent.correctCount ?? Math.round((selectedStudent.score || 0) / 100 * (selectedStudent.totalCount || task.totalProblems));
+    const targetCorrectCount = selectedStudent.correctCount ?? Math.round((selectedStudent.score || 0) / 100 * (selectedStudent.totalCount || selectedStudent.problemCount || task.totalProblems));
     let remainingCorrect = targetCorrectCount;
-    const totalQ = task.selectedTypes.reduce((acc, t) => acc + t.problemCount, 0);
+    const totalQ = studentSelectedTypes.reduce((acc, t) => acc + t.problemCount, 0);
 
-    for (const type of task.selectedTypes) {
+    for (const type of studentSelectedTypes) {
       for (let i = 0; i < type.problemCount; i++) {
         const prob = remainingCorrect / (totalQ - (qIdx - 1));
         const isCorrect = Math.random() < prob && remainingCorrect > 0;
@@ -144,7 +155,7 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
     
     return {
       questions,
-      typeStats: task.selectedTypes.map(t => {
+      typeStats: studentSelectedTypes.map(t => {
         // typeName이 중복될 수 있으므로 typeId로 정확히 필터링
         const typeQuestions = questions.filter(q => q.typeId === t.typeId);
         // 정답 수가 문항 수를 초과하지 않도록 보정
@@ -160,7 +171,7 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
         };
       })
     };
-  }, [selectedStudentId, task.selectedTypes, task.totalProblems, selectedStudent]);
+  }, [selectedStudentId, task.selectedTypes, task.totalProblems, task.problemMode, task.subject, selectedStudent]);
 
   // 유형별 요약 로직 (평균 정답수·평균 점수 100점 초과 및 문항수 초과 방지 보정)
   const typeSummaries = task.selectedTypes.map(type => {
@@ -206,8 +217,8 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
     rows.push(["▣ 과제 기본 정보"]);
     rows.push(["과제명", task.name]);
     rows.push(["학습과정", task.course]);
-    rows.push(["문제 수", `${task.totalProblems}문항`]);
-    rows.push(["문제 구성 방식", task.problemMode === "same" ? "동일 문제" : "학생별 문제"]);
+    rows.push(["문제 수", task.problemMode === "relearn" ? "학생별 상이" : `${task.totalProblems}문항`]);
+    rows.push(["문제 구성 방식", task.problemMode === "same" ? "동일 문제" : task.problemMode === "relearn" ? "학생별 재학습 유형" : "학생별 문제"]);
     rows.push(["배정 대상", isClassTask ? `반 배정 (${assignedClassName})` : `개별 학생 배정 (${totalCount}명)`]);
     rows.push(["배정 학생 수", `${totalCount}명`]);
     rows.push(["제출완료 학생 수", `${completedCount}명`]);
@@ -224,7 +235,7 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
     assignedStudents.forEach(s => {
       const assignType = (task.assignedClasses || []).includes(s.classGroup) ? "반 배정" : "개별 배정";
       const isCompleted = s.status === "submitted";
-      const total = s.totalCount ?? task.totalProblems;
+      const total = s.problemCount ?? s.totalCount ?? task.totalProblems;
       const correct = s.correctCount ?? (s.score !== undefined ? Math.round((s.score / 100) * total) : 0);
       rows.push([
         s.studentName,
@@ -284,9 +295,13 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
             <div className="flex items-center gap-3 text-slate-400 shrink-0">
               <span>학습과정 <strong className="text-slate-700 font-extrabold">{task.course}</strong></span>
               <span className="text-slate-300 font-light">·</span>
-              <span>문제 수 <strong className="text-slate-700 font-extrabold">{task.totalProblems}문항</strong></span>
+              <span>문제 수 <strong className="text-slate-700 font-extrabold">
+                {task.problemMode === "relearn" ? "학생별 상이" : `${task.totalProblems}문항`}
+              </strong></span>
               <span className="text-slate-300 font-light">·</span>
-              <span className="text-slate-600 font-bold bg-slate-100/80 px-1.5 py-0.5 rounded border border-slate-200/30">{task.problemMode === "same" ? "동일 문제" : "학생별 문제"}</span>
+              <span className="text-slate-600 font-bold bg-slate-100/80 px-1.5 py-0.5 rounded border border-slate-200/30">
+                {task.problemMode === "same" ? "동일 문제" : task.problemMode === "relearn" ? "학생별 재학습 유형" : "학생별 문제"}
+              </span>
             </div>
           </div>
 
@@ -419,7 +434,7 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
                       filteredStudents.map(s => {
                         const isCompleted = s.status === "submitted";
                         const assignType = (task.assignedClasses || []).includes(s.classGroup) ? "반 배정" : "개별 배정";
-                        const total = s.totalCount ?? task.totalProblems;
+                        const total = s.problemCount ?? s.totalCount ?? task.totalProblems;
                         const correct = s.correctCount ?? (s.score !== undefined ? Math.round((s.score / 100) * total) : 0);
                         
                         return (
