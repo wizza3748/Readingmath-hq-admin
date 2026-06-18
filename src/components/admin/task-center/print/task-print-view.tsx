@@ -48,13 +48,20 @@ export default function TaskPrintView({ taskId }: Props) {
 
   const activeStudents = React.useMemo(() => {
     if (!task) return [];
-    return task.assignedStudents.filter(s => s.status !== ("canceled" as any));
+    const base = task.assignedStudents.filter(s => s.status !== ("canceled" as any));
+    if (task.problemMode === "relearn") {
+      return base.filter(
+        s => (s as any).assignedQuestionIds && (s as any).assignedQuestionIds.length > 0
+      );
+    }
+    return base;
   }, [task]);
 
   // Handle initialization of preview student
   React.useEffect(() => {
     if (!task) return;
-    if (task.problemMode === "individual" && printType === "student") {
+    const isIndividualOrRelearn = task.problemMode === "individual" || task.problemMode === "relearn";
+    if (isIndividualOrRelearn && printType === "student") {
       if (printTarget === "all" && activeStudents.length > 0) {
         setPreviewStudentId(activeStudents[0].studentId);
       } else if (printTarget === "selected" && selectedStudentIds.length > 0) {
@@ -100,14 +107,19 @@ export default function TaskPrintView({ taskId }: Props) {
 
   // Block logic
   let blockMessage = "";
-  if (task.status === "draft" && task.problemMode === "individual") {
-    blockMessage = "학생별 문제 출제 과제는 배정 후 출력할 수 있습니다.";
+  const isIndividualOrRelearn = task.problemMode === "individual" || task.problemMode === "relearn";
+  const defaultBlockMsg = task.problemMode === "relearn"
+    ? "학생별 재학습 유형 출제 과제는 배정 후 출력할 수 있습니다."
+    : "학생별 문제 출제 과제는 배정 후 출력할 수 있습니다.";
+
+  if (task.status === "draft" && isIndividualOrRelearn) {
+    blockMessage = defaultBlockMsg;
   } else if (task.totalProblems === 0) {
     blockMessage = "출력할 문제가 없습니다.";
-  } else if (task.problemMode === "individual" && printType === "student" && printTarget === "selected" && selectedStudentIds.length === 0) {
+  } else if (isIndividualOrRelearn && printType === "student" && printTarget === "selected" && selectedStudentIds.length === 0) {
     blockMessage = "출력할 학생을 선택해 주세요.";
-  } else if (task.problemMode === "individual" && activeStudents.length === 0) {
-    blockMessage = "학생별 문제 출제 과제는 배정 후 출력할 수 있습니다.";
+  } else if (isIndividualOrRelearn && activeStudents.length === 0) {
+    blockMessage = defaultBlockMsg;
   }
   
   const isBlocked = blockMessage !== "";

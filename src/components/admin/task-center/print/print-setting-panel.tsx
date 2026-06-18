@@ -71,10 +71,10 @@ export default function PrintSettingPanel({
   activeStudents
 }: Props) {
   
-  const isIndividual = task.problemMode === "individual";
-  const showPrintTarget = isIndividual;
+  const isIndividualOrRelearn = task.problemMode === "individual" || task.problemMode === "relearn";
+  const showPrintTarget = isIndividualOrRelearn;
   const showStudentSelect = showPrintTarget && printTarget === "selected";
-  const showPreviewStudent = isIndividual;
+  const showPreviewStudent = isIndividualOrRelearn;
 
   const getStudentSummary = () => {
     if (selectedStudentIds.length === 0) return "선택된 학생이 없습니다.";
@@ -83,9 +83,21 @@ export default function PrintSettingPanel({
     return `${firstStudent?.studentName || "학생"} 외 ${selectedStudentIds.length - 1}명`;
   };
 
-  const previewStudentOptions = showPreviewStudent 
-    ? (printTarget === "all" ? activeStudents : activeStudents.filter(s => selectedStudentIds.includes(s.studentId)))
-    : [];
+  const previewStudentOptions = React.useMemo(() => {
+    if (!showPreviewStudent) return [];
+    
+    let candidates = activeStudents;
+    if (task.problemMode === "relearn") {
+      candidates = activeStudents.filter(
+        s => (s as any).assignedQuestionIds && (s as any).assignedQuestionIds.length > 0
+      );
+    }
+    
+    if (printTarget === "selected") {
+      return candidates.filter(s => selectedStudentIds.includes(s.studentId));
+    }
+    return candidates;
+  }, [showPreviewStudent, task.problemMode, activeStudents, printTarget, selectedStudentIds]);
 
   return (
     <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5 flex flex-col gap-6">

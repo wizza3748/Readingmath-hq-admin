@@ -468,23 +468,37 @@ export default function PrintPreviewPanel({
 
   // Determine target students for accumulated printing
   const targetStudents = React.useMemo(() => {
-    if (task.problemMode !== "individual") {
+    if (task.problemMode !== "individual" && task.problemMode !== "relearn") {
       // 동일 문제 출제인 경우: 단일 출력
       return [null];
     }
-    if (printTarget === "selected") {
-      return activeStudents.filter(s => selectedStudentIds.includes(s.studentId));
+    let candidates = activeStudents;
+    if (task.problemMode === "relearn") {
+      candidates = activeStudents.filter(
+        s => (s as any).assignedQuestionIds && (s as any).assignedQuestionIds.length > 0
+      );
     }
-    return activeStudents; // 전체 학생
+    if (printTarget === "selected") {
+      return candidates.filter(s => selectedStudentIds.includes(s.studentId));
+    }
+    return candidates; // 전체 학생
   }, [task.problemMode, printTarget, selectedStudentIds, activeStudents]);
 
   // Preview Student options for the top control bar select
   const previewStudentOptions = React.useMemo(() => {
-    if (task.problemMode !== "individual" || activeStudents.length === 0) return [];
-    if (printTarget === "selected") {
-      return activeStudents.filter(s => selectedStudentIds.includes(s.studentId));
+    const isIndividualOrRelearn = task.problemMode === "individual" || task.problemMode === "relearn";
+    if (!isIndividualOrRelearn || activeStudents.length === 0) return [];
+    
+    let candidates = activeStudents;
+    if (task.problemMode === "relearn") {
+      candidates = activeStudents.filter(
+        s => (s as any).assignedQuestionIds && (s as any).assignedQuestionIds.length > 0
+      );
     }
-    return activeStudents;
+    if (printTarget === "selected") {
+      return candidates.filter(s => selectedStudentIds.includes(s.studentId));
+    }
+    return candidates;
   }, [task.problemMode, printTarget, activeStudents, selectedStudentIds]);
 
   let gridColsClass = "grid-cols-2"; // 항상 2단
@@ -936,7 +950,7 @@ export default function PrintPreviewPanel({
         </div>
         <div className="flex items-center gap-3.5 ml-auto">
           {/* 미리보기 학생 select */}
-          {task.problemMode === "individual" && previewStudentOptions.length > 0 && (
+          {(task.problemMode === "individual" || task.problemMode === "relearn") && previewStudentOptions.length > 0 && (
             <div className="flex items-center gap-1.5">
               <span className="text-xs text-gray-500 font-semibold whitespace-nowrap">미리보기 학생</span>
               <select
