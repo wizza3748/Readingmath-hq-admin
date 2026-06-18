@@ -167,7 +167,7 @@ const PageHeader = ({ task, color, showClass, showName, showDate, showUnit, show
               <span className="truncate max-w-[200px]" title={classText}>반: {classText}</span>
             )}
             {showName && (
-              <span className="shrink-0">이름: {task.problemMode === "individual" && previewStudent?.studentName ? previewStudent.studentName : "__________"}</span>
+              <span className="shrink-0">이름: {(task.problemMode === "individual" || task.problemMode === "relearn") && previewStudent?.studentName ? previewStudent.studentName : "__________"}</span>
             )}
             {showDate && (
               <span className="shrink-0">날짜: {new Date().toLocaleDateString('ko-KR')}</span>
