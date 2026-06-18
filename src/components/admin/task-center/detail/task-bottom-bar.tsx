@@ -142,7 +142,7 @@ export function TaskBottomBar({ task, isCreate, isSaving, totalProblems, onSave,
 
     if (task.problemMode === "relearn") {
       const printableStudentsCount = activeStudents.filter(
-        s => s.assignedQuestionIds && s.assignedQuestionIds.length > 0
+        s => isStudentSelectable(s.studentId)
       ).length;
       if (printableStudentsCount === 0) {
         return { disabled: true, reason: "학생별 재학습 유형 출제 과제는 배정 후 출력할 수 있습니다." };
@@ -150,7 +150,7 @@ export function TaskBottomBar({ task, isCreate, isSaving, totalProblems, onSave,
     }
 
     return { disabled: false, reason: "" };
-  }, [task, totalProblems]);
+  }, [task, totalProblems, isStudentSelectable]);
 
   return (
     <>
