@@ -16,6 +16,8 @@ import { MATH_CURRICULA } from "@/lib/task-center-mock";
 import "katex/dist/katex.min.css";
 import renderMathInElement from "katex/contrib/auto-render";
 
+const DAILY_ATTEMPTS_KEY = "readingmath_examprep_daily_attempts_v1";
+
 function MathRenderer({ text, className }: { text: string; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -600,7 +602,9 @@ export default function MathExamPrepPage() {
       localStorage.removeItem("readingmath_student_tasks");
       localStorage.removeItem("readingmath_tasks_seed_version");
       localStorage.removeItem("readingmath_examprep_history_v1");
-      window.location.reload();
+      localStorage.removeItem(DAILY_ATTEMPTS_KEY);
+      sessionStorage.clear();
+      window.dispatchEvent(new Event("examprep-history-updated"));
     }
   };
   const searchParams = useSearchParams();
@@ -773,6 +777,22 @@ export default function MathExamPrepPage() {
       setSelectedGradeTerm(termQuery);
     }
   }, [searchParams]);
+
+  // refreshTrigger가 변경될 때 selectedInfo.type 데이터 동기화
+  useEffect(() => {
+    if (selectedInfo) {
+      const targetId = selectedInfo.type.id;
+      for (const bu of curriculum) {
+        for (const su of bu.subUnits) {
+          const foundType = [...su.basicTypes, ...su.skillTypes, ...su.advancedTypes].find(t => t.id === targetId);
+          if (foundType) {
+            setSelectedInfo(prev => prev ? { ...prev, type: foundType } : null);
+            return;
+          }
+        }
+      }
+    }
+  }, [refreshTrigger, curriculum]);
 
   // 쿼리 파라미터 selectedTypeId에 기반한 자동 패널 오픈 로직
   useEffect(() => {
