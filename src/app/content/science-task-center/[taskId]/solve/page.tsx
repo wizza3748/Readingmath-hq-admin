@@ -987,7 +987,7 @@ export default function ScienceSolvePage(props: PageProps) {
               </div>
             ) : (
               /* 신규 <답안표 입력 카드> */
-              <div className="flex flex-col h-full border border-gray-200 dark:border-gray-800 rounded-2xl bg-gray-50/50 dark:bg-gray-900/30 overflow-hidden">
+              <div className="flex flex-col h-full border border-gray-200 dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 overflow-hidden">
                 {/* 카드 헤더 */}
                 <div className="p-4 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex items-center justify-between">
                   <div className="space-y-1">
@@ -1008,7 +1008,7 @@ export default function ScienceSolvePage(props: PageProps) {
                 </div>
 
                 {/* 문항 목록 리스트 (스크롤 영역) */}
-                <div className="flex-1 overflow-y-auto p-4 space-y-3">
+                <div className="flex-1 overflow-y-auto px-4 py-2 space-y-1 bg-white dark:bg-gray-900">
                   {questions.map((q, idx) => {
                     const isFilled = isQuestionAnswered(idx);
                     const currentAns = answers.find((a) => a.questionIndex === idx);
@@ -1017,34 +1017,25 @@ export default function ScienceSolvePage(props: PageProps) {
                     return (
                       <div 
                         key={idx} 
-                        className={`p-3 rounded-xl border bg-white dark:bg-gray-900 flex flex-col gap-2.5 transition-all duration-150 ${
-                          isActiveInput ? "border-emerald-500 dark:border-emerald-750 ring-2 ring-emerald-500/20" : "border-gray-250/50 dark:border-gray-800"
+                        className={`flex items-center justify-between py-2 border-b border-gray-100 dark:border-gray-800/60 transition-all duration-150 ${
+                          isActiveInput ? "bg-emerald-50/30 dark:bg-emerald-950/20 px-2 rounded-lg border-l-2 border-l-emerald-500" : ""
                         }`}
                       >
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <span className="text-xs font-bold text-gray-400 dark:text-gray-500">
-                              {String(idx + 1).padStart(2, "0")}
-                            </span>
-                            <span className="text-[11px] font-bold text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded">
-                              {q.type === "choice" ? "선지형" : "입력형"}
-                            </span>
-                          </div>
-                          {/* 상태 뱃지 */}
-                          <span className={`px-2 py-0.5 rounded text-[11px] font-bold ${
-                            isFilled 
-                              ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300"
-                              : "bg-gray-100 text-gray-550 dark:bg-gray-800 dark:text-gray-455"
-                          }`}>
-                            {isFilled ? "입력" : "미입력"}
+                        {/* 문항 번호 및 유형 배지 */}
+                        <div className="flex items-center gap-1.5 shrink-0">
+                          <span className="text-xs font-extrabold text-gray-500 dark:text-gray-400">
+                            {String(idx + 1).padStart(2, "0")}
+                          </span>
+                          <span className="text-[9px] font-bold text-gray-400 dark:text-gray-500 border border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/40 px-1 py-0.2 rounded shrink-0">
+                            {q.type === "choice" ? "선지형" : "입력형"}
                           </span>
                         </div>
 
                         {/* 답안 입력 컨트롤 */}
-                        <div className="pt-0.5">
+                        <div className="flex-1 flex justify-center px-2 min-w-0">
                           {q.type === "choice" ? (
                             /* 선지형 */
-                            <div className="flex items-center gap-1.5">
+                            <div className="flex items-center gap-1">
                               {Array.from({ length: q.choiceHtmls?.length || 5 }).map((_, cIdx) => {
                                 const choiceNum = cIdx + 1;
                                 const isSelected = currentAns?.selectedChoices?.includes(choiceNum) || false;
@@ -1065,10 +1056,10 @@ export default function ScienceSolvePage(props: PageProps) {
                                         selectedChoices: selected,
                                       });
                                     }}
-                                    className={`h-7 w-7 rounded-full border text-[11px] font-bold flex items-center justify-center transition active:scale-95 ${
+                                    className={`h-6 w-6 rounded-full border text-[9px] font-bold flex items-center justify-center transition active:scale-95 ${
                                       isSelected
                                         ? "border-emerald-600 bg-emerald-600 text-white font-black"
-                                        : "border-gray-250 bg-white text-gray-650 dark:border-gray-750 dark:bg-gray-855 dark:text-gray-450 hover:bg-gray-50"
+                                        : "border-gray-200 bg-white text-gray-555 dark:border-gray-750 dark:bg-gray-855 dark:text-gray-455 hover:bg-gray-50"
                                     }`}
                                   >
                                     {["①", "②", "③", "④", "⑤"][cIdx] || choiceNum}
@@ -1078,82 +1069,92 @@ export default function ScienceSolvePage(props: PageProps) {
                             </div>
                           ) : (
                             /* 입력형 */
-                            <div className="space-y-2">
+                            <div className="w-full max-w-[80px]">
                               <input
                                 type="text"
                                 readOnly
                                 value={currentAns?.inputValue || ""}
                                 onClick={() => setActiveInputIdx(isActiveInput ? null : idx)}
-                                placeholder="터치하여 입력"
-                                className="w-full text-center rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm font-bold text-gray-800 focus:border-emerald-500 focus:outline-none dark:border-gray-800 dark:bg-gray-955 dark:text-white cursor-pointer hover:bg-gray-50/50"
+                                placeholder="입력"
+                                className="w-full text-center rounded border border-gray-200 bg-white px-1.5 py-0.5 text-xs font-bold text-gray-800 focus:border-emerald-500 focus:outline-none dark:border-gray-800 dark:bg-gray-955 dark:text-white cursor-pointer hover:bg-gray-50/50"
                               />
-                              
-                              {/* 입력형 인라인 키패드 */}
-                              {isActiveInput && (
-                                <div className="w-full bg-gray-100 dark:bg-gray-850 p-3 rounded-xl border border-gray-200/50 dark:border-gray-750/50 animate-in slide-in-from-top-2 duration-150">
-                                  <div className="grid grid-cols-5 gap-1.5">
-                                    {[
-                                      { label: "1", value: "1" },
-                                      { label: "2", value: "2" },
-                                      { label: "3", value: "3" },
-                                      { label: "4", value: "4" },
-                                      { label: "5", value: "5" },
-                                      
-                                      { label: "6", value: "6" },
-                                      { label: "7", value: "7" },
-                                      { label: "8", value: "8" },
-                                      { label: "9", value: "9" },
-                                      { label: "0", value: "0" },
-                                      
-                                      { label: ".", value: "." },
-                                      { label: "-", value: "-" },
-                                      { label: "+", value: "+" },
-                                      { label: "clear", value: "clear", cls: "bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs font-bold" },
-                                      { label: "⌫", value: "delete", cls: "bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs font-bold" },
-                                      
-                                      { label: "✓ 확인", value: "confirm", colSpan: 5, cls: "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm h-9 flex items-center justify-center rounded-lg shadow-sm" },
-                                    ].map((btn, i) => {
-                                      const gridCls = [
-                                        btn.colSpan ? `col-span-${btn.colSpan}` : "",
-                                        btn.cls || "bg-white hover:bg-gray-50 text-gray-800 dark:bg-gray-750 dark:hover:bg-gray-700 dark:text-gray-100 border border-gray-200/50 dark:border-gray-700/50",
-                                      ].join(" ");
-                                      return (
-                                        <button
-                                          key={i}
-                                          type="button"
-                                          onClick={() => handleAnswerSheetKeypad(btn.value, idx)}
-                                          className={`flex h-8 items-center justify-center rounded-lg text-xs font-bold shadow-sm transition active:scale-95 ${gridCls}`}
-                                          style={{
-                                            gridColumnEnd: btn.colSpan ? `span ${btn.colSpan}` : undefined
-                                          }}
-                                        >
-                                          {btn.label}
-                                        </button>
-                                      );
-                                    })}
-                                  </div>
-                                </div>
-                              )}
                             </div>
                           )}
+                        </div>
+
+                        {/* 입력 상태 표시 */}
+                        <div className="shrink-0 w-8 text-right">
+                          <span className={`text-[10px] font-bold ${
+                            isFilled 
+                              ? "text-emerald-600 dark:text-emerald-400 font-extrabold"
+                              : "text-gray-400 dark:text-gray-600"
+                          }`}>
+                            {isFilled ? "입력" : "미입력"}
+                          </span>
                         </div>
                       </div>
                     );
                   })}
                 </div>
 
-                {/* 카드 하단 닫기 버튼 */}
-                <div className="p-4 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-                  <button
-                    onClick={() => {
-                      setShowAnswerSheet(false);
-                      setActiveInputIdx(null);
-                    }}
-                    className="w-full py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:bg-gray-850 dark:hover:bg-gray-750 text-gray-600 dark:text-gray-300 font-extrabold text-sm transition-all active:scale-95 flex items-center justify-center gap-1.5"
-                  >
-                    닫기
-                  </button>
-                </div>
+                {/* 입력형 하단 고정 키패드 */}
+                {activeInputIdx !== null && (
+                  <div className="border-t border-gray-200 dark:border-gray-855 bg-gray-50/90 dark:bg-gray-900/95 p-3 shrink-0">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-[10px] font-black text-emerald-600 dark:text-emerald-400">
+                        선택 문항: {String(activeInputIdx + 1).padStart(2, "0")}번
+                      </span>
+                      <button
+                        onClick={() => setActiveInputIdx(null)}
+                        className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-0.5"
+                      >
+                        <X className="h-3.5 w-3.5" />
+                      </button>
+                    </div>
+
+                    <div className="grid grid-cols-5 gap-1">
+                      {[
+                        { label: "1", value: "1" },
+                        { label: "2", value: "2" },
+                        { label: "3", value: "3" },
+                        { label: "4", value: "4" },
+                        { label: "5", value: "5" },
+                        
+                        { label: "6", value: "6" },
+                        { label: "7", value: "7" },
+                        { label: "8", value: "8" },
+                        { label: "9", value: "9" },
+                        { label: "0", value: "0" },
+                        
+                        { label: ".", value: "." },
+                        { label: "-", value: "-" },
+                        { label: "+", value: "+" },
+                        { label: "clear", value: "clear", cls: "bg-white hover:bg-gray-55 text-gray-555 dark:bg-gray-850 dark:hover:bg-gray-700 dark:text-gray-400 text-[10px] font-bold border border-gray-200/50 dark:border-gray-700/50" },
+                        { label: "⌫", value: "delete", cls: "bg-white hover:bg-gray-55 text-gray-555 dark:bg-gray-855 dark:hover:bg-gray-700 dark:text-gray-400 text-[10px] font-bold border border-gray-200/50 dark:border-gray-700/50" },
+                        
+                        { label: "✓ 확인", value: "confirm", colSpan: 5, cls: "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs h-7 flex items-center justify-center rounded-lg shadow-sm" },
+                      ].map((btn, i) => {
+                        const gridCls = [
+                          btn.colSpan ? `col-span-${btn.colSpan}` : "",
+                          btn.cls || "bg-white hover:bg-gray-50 text-gray-800 dark:bg-gray-800 dark:hover:bg-gray-750 dark:text-gray-100 border border-gray-200/50 dark:border-gray-700/50",
+                        ].join(" ");
+                        return (
+                          <button
+                            key={i}
+                            type="button"
+                            onClick={() => handleAnswerSheetKeypad(btn.value, activeInputIdx)}
+                            className={`flex h-7 items-center justify-center rounded-lg text-[10px] font-bold shadow-sm transition active:scale-95 ${gridCls}`}
+                            style={{
+                              gridColumnEnd: btn.colSpan ? `span ${btn.colSpan}` : undefined
+                            }}
+                          >
+                            {btn.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </div>
