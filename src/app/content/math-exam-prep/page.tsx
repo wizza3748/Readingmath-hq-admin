@@ -394,7 +394,8 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark, gradeTerm }: Det
                 }
               } else {
                 onClose();
-                router.push(`/content/math-exam-prep/solve?typeId=${encodeURIComponent(type.id)}&name=${encodeURIComponent(type.name)}&gradeTerm=${encodeURIComponent(gradeTerm)}`);
+                const sessionId = Math.random().toString(36).substring(2, 10) + Date.now();
+                router.push(`/content/math-exam-prep/solve?typeId=${encodeURIComponent(type.id)}&name=${encodeURIComponent(type.name)}&gradeTerm=${encodeURIComponent(gradeTerm)}&sessionId=${sessionId}`);
               }
             }}
             className={cn(
@@ -541,7 +542,8 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark, gradeTerm }: Det
                 onClick={() => {
                   setShowRetryModal(false);
                   onClose();
-                  router.push(`/content/math-exam-prep/solve?typeId=${encodeURIComponent(type.id)}&name=${encodeURIComponent(type.name)}&gradeTerm=${encodeURIComponent(gradeTerm)}`);
+                  const sessionId = Math.random().toString(36).substring(2, 10) + Date.now();
+                  router.push(`/content/math-exam-prep/solve?typeId=${encodeURIComponent(type.id)}&name=${encodeURIComponent(type.name)}&gradeTerm=${encodeURIComponent(gradeTerm)}&sessionId=${sessionId}`);
                 }}
                 className={cn(
                   "py-3 rounded-xl font-extrabold text-[12.5px] transition-all active:scale-95 shadow-lg flex items-center justify-center gap-1.5",
@@ -763,6 +765,14 @@ export default function MathExamPrepPage() {
     window.addEventListener("examprep-history-updated", handleUpdate);
     return () => window.removeEventListener("examprep-history-updated", handleUpdate);
   }, []);
+
+  // 쿼리 파라미터 gradeTerm 수신 시 selectedGradeTerm 상태 동기화 로직 추가
+  useEffect(() => {
+    const termQuery = searchParams.get("gradeTerm");
+    if (termQuery) {
+      setSelectedGradeTerm(termQuery);
+    }
+  }, [searchParams]);
 
   // 쿼리 파라미터 selectedTypeId에 기반한 자동 패널 오픈 로직
   useEffect(() => {

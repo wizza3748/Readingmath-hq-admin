@@ -200,6 +200,7 @@ function ScienceSolveContent() {
 
   let foundType: any = null;
   let detectedGradeTerm = searchParams.get("gradeTerm") || "";
+  const sessionId = searchParams.get("sessionId") || `direct-${Date.now()}`;
 
   for (const course of SCIENCE_CURRICULA) {
     for (const type of course.types) {
@@ -410,10 +411,26 @@ function ScienceSolveContent() {
       return;
     }
 
-    // 3.5 일일 도전 제한 검증
+    // 3.5 일일 도전 제한 및 세션 상태 검증
     const attemptParams = { subject: "science" as const, gradeTerm: detectedGradeTerm, typeId };
+    const sessionKey = `examprep_recorded_${sessionId}`;
+    const questionKey = `examprep_questions_${sessionId}`;
+
+    const savedQuestionsStr = sessionStorage.getItem(questionKey);
+    if (savedQuestionsStr) {
+      try {
+        const savedQuestions = JSON.parse(savedQuestionsStr);
+        setSessionQuestions(savedQuestions);
+        setIsBlocked(false);
+        return;
+      } catch (e) {
+        console.error("Failed to parse saved questions", e);
+      }
+    }
+
+    // 신규 세션인데 도전 제한 횟수(2회) 도달 시 차단 및 홈 화면 리다이렉트
     if (!isDailyAttemptAllowed(attemptParams)) {
-      setIsAttemptLimitBlocked(true);
+      router.replace(`/content/science-exam-prep?selectedTypeId=${encodeURIComponent(typeId)}&gradeTerm=${encodeURIComponent(detectedGradeTerm)}`);
       return;
     }
 
@@ -429,15 +446,15 @@ function ScienceSolveContent() {
       selected.push(pool[idx]);
     }
 
-    // 5. 도전 세션 생성 확정 시점에 도전 횟수 1회 기록 (중복 방지 적용)
-    if (!hasRecordedAttempt.current) {
+    // 5. 도전 세션 생성 확정 시점에 도전 횟수 1회 기록 및 세션 정보 저장
+    if (!sessionStorage.getItem(sessionKey)) {
       recordDailyAttempt(attemptParams);
-      hasRecordedAttempt.current = true;
+      sessionStorage.setItem(sessionKey, "true");
     }
+    sessionStorage.setItem(questionKey, JSON.stringify(selected));
 
     setSessionQuestions(selected);
     setIsBlocked(false);
-    setIsAttemptLimitBlocked(false);
   }, [typeId]);
 
   const combinedHistory = useMemo(() => {
@@ -449,18 +466,12 @@ function ScienceSolveContent() {
   }, [typeId, historyVersion]);
 
   // 직접 진입 방어 에러 화면
-  if (isBlocked || isAttemptLimitBlocked) {
+  if (isBlocked) {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col items-center justify-center p-6 text-center text-slate-800 dark:text-slate-200 animate-in fade-in duration-200">
         <AlertCircle className="w-12 h-12 text-rose-500 mb-4 animate-bounce" />
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-          {isBlocked ? "출제 가능한 문항이 없어요." : "오늘 이 유형의 도전 횟수를 모두 사용했어요."}
-        </h2>
-        <p className="text-gray-500 text-sm mb-6">
-          {isBlocked 
-            ? "해당 유형에 제공되는 문항 수가 부족하여 도전 세션을 시작할 수 없습니다." 
-            : "유형별 일일 도전 제한 횟수(2회)를 모두 소진하셨습니다."}
-        </p>
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">출제 가능한 문항이 없어요.</h2>
+        <p className="text-gray-500 text-sm mb-6">해당 유형에 제공되는 문항 수가 부족하여 도전 세션을 시작할 수 없습니다.</p>
         <Button 
           onClick={() => router.push(`/content/science-exam-prep?selectedTypeId=${encodeURIComponent(typeId)}`)} 
           className="font-bold bg-violet-600 hover:bg-violet-750 text-white rounded-xl px-6 h-12"
