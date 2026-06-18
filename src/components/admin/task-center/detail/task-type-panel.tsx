@@ -248,6 +248,8 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
 
   const handleToggleCombo = (typeId: string, difficulty: Difficulty, type: CurriculumType) => {
     if (readonly) return;
+    if (onlyImportant && (type.importantCount?.[difficulty] ?? 0) === 0) return; // 중요 문제 없음 선택 제외
+
     const exists = selectedTypes.find(t => t.typeId === typeId && t.difficulty === difficulty);
 
     if (exists) {
@@ -255,7 +257,7 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
       onTypesChange(selectedTypes.filter(t => !(t.typeId === typeId && t.difficulty === difficulty)));
     } else {
       // ON 토글
-      const nextMultiplier = selectedTypes[0]?.problemCount ?? 1;
+      const nextMultiplier = onlyImportant ? 1 : (selectedTypes[0]?.problemCount ?? 1);
       
       // 조합 100개 / 총 문제 300개 한계 사전 검증
       if (selectedTypes.length + 1 > 100) {
@@ -294,6 +296,9 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
 
   const handleToggleTypeChecked = (type: CurriculumType) => {
     if (readonly) return;
+    const hasAnyImportant = (type.importantCount?.basic ?? 0) > 0 || (type.importantCount?.intermediate ?? 0) > 0 || (type.importantCount?.advanced ?? 0) > 0;
+    if (onlyImportant && !hasAnyImportant) return; // 유형 전체 중요 문제 없음 토글 제외
+
     const isChecked = checkedTypeIds.includes(type.id);
     if (isChecked) {
       // OFF: checkedTypeIds에서 소거 및 해당 유형의 모든 난이도 선택값 함께 해제
@@ -301,10 +306,14 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
       onTypesChange(selectedTypes.filter(t => t.typeId !== type.id));
     } else {
       // ON: checkedTypeIds에 추가하고, 현재 bulkDifficulties 중 ON인 모든 난이도를 자동 주입 (0문항 방지)
-      const nextMultiplier = selectedTypes[0]?.problemCount ?? 1;
-      const activeDiffs = subject === "science"
+      const nextMultiplier = onlyImportant ? 1 : (selectedTypes[0]?.problemCount ?? 1);
+      let activeDiffs = subject === "science"
         ? (["basic", "intermediate", "advanced"] as Difficulty[]).filter(d => (type.difficultyCount[d] || 0) > 0)
         : (["basic", "intermediate", "advanced"] as Difficulty[]).filter(d => bulkDifficulties[d]);
+      
+      if (onlyImportant) {
+        activeDiffs = activeDiffs.filter(d => (type.importantCount?.[d] ?? 0) > 0);
+      }
       
       const newEntries: SelectedType[] = activeDiffs.map(d => ({
         curriculumId: curriculum!.id,
@@ -341,9 +350,16 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
 
   const handleToggleMinorChecked = (minorUnit: string, types: CurriculumType[]) => {
     if (readonly) return;
+    
+    const filteredTypes = onlyImportant
+      ? types.filter(t => (t.importantCount?.basic ?? 0) > 0 || (t.importantCount?.intermediate ?? 0) > 0 || (t.importantCount?.advanced ?? 0) > 0)
+      : types;
+      
     const typeIds = types.map(t => t.id);
-    const checkedCount = types.filter(t => checkedTypeIds.includes(t.id)).length;
-    const isAllChecked = checkedCount === types.length;
+    const filteredTypeIds = filteredTypes.map(t => t.id);
+    
+    const checkedCount = filteredTypes.filter(t => checkedTypeIds.includes(t.id)).length;
+    const isAllChecked = checkedCount === filteredTypes.length;
 
     if (isAllChecked) {
       // 소단원 해제: 하위 모든 유형 ID 소거 및 관련 난이도 전체 해제
@@ -351,14 +367,18 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
       onTypesChange(selectedTypes.filter(t => !typeIds.includes(t.typeId)));
     } else {
       // 소단원 선택: 미체크 유형 추가, 현재 bulkDifficulties 중 ON 상태인 난이도를 일괄 자동 부여 (0문항 방지)
-      const nextMultiplier = selectedTypes[0]?.problemCount ?? 1;
+      const nextMultiplier = onlyImportant ? 1 : (selectedTypes[0]?.problemCount ?? 1);
       const toAdd: SelectedType[] = [];
 
-      types.forEach(t => {
+      filteredTypes.forEach(t => {
         if (checkedTypeIds.includes(t.id)) return;
-        const activeDiffs = subject === "science"
+        let activeDiffs = subject === "science"
           ? (["basic", "intermediate", "advanced"] as Difficulty[]).filter(d => (t.difficultyCount[d] || 0) > 0)
           : (["basic", "intermediate", "advanced"] as Difficulty[]).filter(d => bulkDifficulties[d]);
+
+        if (onlyImportant) {
+          activeDiffs = activeDiffs.filter(d => (t.importantCount?.[d] ?? 0) > 0);
+        }
 
         activeDiffs.forEach(d => {
           toAdd.push({
@@ -392,7 +412,7 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
         return;
       }
 
-      const toAddIds = typeIds.filter(id => !checkedTypeIds.includes(id));
+      const toAddIds = filteredTypeIds.filter(id => !checkedTypeIds.includes(id));
       onCheckedTypesChange([...checkedTypeIds, ...toAddIds]);
       onTypesChange(nextSelected);
     }
@@ -407,7 +427,7 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
     if (checkedTypeIds.length === 0) return;
 
     const status = getDifficultyStatus(diff);
-    const nextMultiplier = selectedTypes[0]?.problemCount ?? 1;
+    const nextMultiplier = onlyImportant ? 1 : (selectedTypes[0]?.problemCount ?? 1);
 
     let nextSelectedTypes = [...selectedTypes];
 
@@ -425,6 +445,7 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
         if (!type) return;
 
         if (subject === "science" && (type.difficultyCount[diff] || 0) === 0) return;
+        if (onlyImportant && (type.importantCount?.[diff] ?? 0) === 0) return; // 중요 문제 없음 선택 제외
 
         toAdd.push({
           curriculumId: curriculum!.id,
@@ -547,6 +568,7 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
                 onToggleMinorChecked={handleToggleMinorChecked}
                 onToggleMajorChecked={handleToggleMajorChecked}
                 readonly={readonly}
+                onlyImportant={onlyImportant}
               />
             )
           ) : (
@@ -640,17 +662,24 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
                               if ((type.difficultyCount[d] || 0) === 0) return null;
                               const isTypeImportant = type.importantCount.basic > 0 || type.importantCount.intermediate > 0 || type.importantCount.advanced > 0;
                               const isSelected = selectedCombos.includes(makeComboKey(type.id, d)) && (!onlyImportantType || isTypeImportant);
-                              const hasImportant = type.importantCount[d] > 0;
+                              const hasImportant = (type.importantCount?.[d] ?? 0) > 0;
+                              const isChipDisabled = onlyImportant && !hasImportant;
                               
                               const importantQuestionText = hasImportant ? "중요문제 있음" : "중요문제 없음";
-                              const tooltipDetailText = isTypeImportant 
+                              let tooltipDetailText = isTypeImportant 
                                 ? `중요유형 · ${importantQuestionText}` 
                                 : importantQuestionText;
+
+                              if (isChipDisabled) {
+                                tooltipDetailText += " (중요 문제만 출제 시 선택 불가)";
+                              }
                               
                               // 칩 스타일링: w-7 h-7 크기의 작고 예쁜 사각형 칩
                               let chipClass = "relative w-7 h-7 flex items-center justify-center rounded-lg border text-xs font-extrabold transition-all duration-150 select-none cursor-pointer ";
                               
-                              if (isSelected) {
+                              if (isChipDisabled) {
+                                chipClass += "bg-slate-100 border-slate-200 text-slate-300 opacity-40 cursor-not-allowed pointer-events-none ";
+                              } else if (isSelected) {
                                 if (d === "basic") {
                                   chipClass += "bg-slate-700 border-slate-700 text-white hover:bg-slate-800 shadow-2xs ";
                                 } else if (d === "intermediate") {
@@ -670,6 +699,7 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
                                         className={chipClass}
                                         onClick={() => {
                                           if (readonly) return;
+                                          if (isChipDisabled) return;
                                           if (onlyImportantType && !isTypeImportant) {
                                             toast({
                                               title: "중요 유형만 출제 필터가 켜져 있습니다.",

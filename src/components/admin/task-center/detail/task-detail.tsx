@@ -214,6 +214,13 @@ export default function TaskDetail({ taskId }: Props) {
   // 출제 범위(중요 문제만) 변경
   const handleOnlyImportantChange = (important: boolean) => {
     setOnlyImportant(important);
+    if (important) {
+      setSelectedTypes(prev =>
+        prev
+          .filter(t => (t.importantCount?.[t.difficulty] ?? 0) > 0)
+          .map(t => ({ ...t, problemCount: 1 }))
+      );
+    }
   };
 
   // 중요 유형만 출제 필터 변경
@@ -243,7 +250,7 @@ export default function TaskDetail({ taskId }: Props) {
   // 중요 문제만 출제 ON 시: 각 조합의 importantCount[difficulty] 를 초과하지 않도록 clamp
   const totalProblems = onlyImportant
     ? activeSelectedTypesForCalculation.reduce((s, t) => {
-        const importantMax = t.importantCount[t.difficulty];
+        const importantMax = t.importantCount?.[t.difficulty] ?? 0;
         return s + (importantMax > 0 ? Math.min(t.problemCount, importantMax) : 0);
       }, 0)
     : activeSelectedTypesForCalculation.reduce((s, t) => s + t.problemCount, 0);
@@ -258,11 +265,13 @@ export default function TaskDetail({ taskId }: Props) {
   };
 
   const handleTypeProblemCountChange = (typeId: string, difficulty: Difficulty, count: number) => {
+    if (onlyImportant) return;
     setSelectedTypes(prev => prev.map(t => (t.typeId === typeId && t.difficulty === difficulty) ? { ...t, problemCount: count } : t));
   };
 
   // multiplier(배수) 일괄 적용 방식으로 변경
   const handleQuickSetAll = (multiplier: number) => {
+    if (onlyImportant) return;
     if (selectedTypes.length === 0) return;
     
     const expectedTotal = selectedTypes.length * multiplier;
@@ -290,26 +299,47 @@ export default function TaskDetail({ taskId }: Props) {
 
     // 중요 문제 부족 상태 검사
     if (onlyImportant) {
-      const importantMax = activeTypesForCheck.reduce((sum, t) => sum + t.importantCount[t.difficulty], 0);
+      const importantMax = activeTypesForCheck.reduce((sum, t) => sum + (t.importantCount?.[t.difficulty] ?? 0), 0);
       if (importantMax === 0) {
         toast({ title: "선택한 유형·난이도에 중요 문제가 없습니다.", variant: "destructive" });
+        return;
+      }
+
+      // 저장 직전 방어 1. 중요 문제 수 0개 조합 저장 금지
+      const hasZeroImportant = selectedTypes.some(t => (t.importantCount?.[t.difficulty] ?? 0) === 0);
+      if (hasZeroImportant) {
+        toast({ title: "선택한 유형·난이도 중 중요 문제가 없는 항목이 있습니다.", variant: "destructive" });
+        return;
+      }
+
+      // 저장 직전 방어 3. 문제 수 1 초과 저장 금지
+      const hasOverOne = selectedTypes.some(t => t.problemCount > 1);
+      if (hasOverOne) {
+        toast({ title: "중요 문제만 출제 시 문제 수는 1문항을 초과할 수 없습니다.", variant: "destructive" });
         return;
       }
     }
 
     if (totalProblems === 0) { toast({ title: "문제 수를 설정하세요.", variant: "destructive" }); return; }
 
+    // 저장 직전 방어 2. 중요 문제만 출제 ON 상태에서 모든 선택 조합 problemCount=1 보정
+    const finalSelectedTypes = onlyImportant
+      ? selectedTypes.map(t => ({ ...t, problemCount: 1 }))
+      : selectedTypes;
+
+    const finalTotalProblems = onlyImportant ? finalSelectedTypes.length : totalProblems;
+
     // difficulties는 selectedTypes에서 추출하여 고유 목록 저장
-    const finalDifficulties = Array.from(new Set(selectedTypes.map(t => t.difficulty)));
+    const finalDifficulties = Array.from(new Set(finalSelectedTypes.map(t => t.difficulty)));
 
     setIsSaving(true);
     try {
       if (isCreate) {
         const newId = `task-${Date.now()}`;
         const newTask: TaskItem = {
-          id: newId, subject, name: name.trim(), course: selectedTypes[0]?.course ?? "",
+          id: newId, subject, name: name.trim(), course: finalSelectedTypes[0]?.course ?? "",
           status: "draft", difficulties: finalDifficulties, problemMode, prioritizeUnsolved,
-          onlyImportant, onlyImportantType, selectedTypes, totalProblems,
+          onlyImportant, onlyImportantType, selectedTypes: finalSelectedTypes, totalProblems: finalTotalProblems,
           createdAt: new Date().toISOString(), assignedStudents: [],
           problemScope: onlyImportant ? "important" : "all", // 하위 호환용
         };
@@ -320,11 +350,11 @@ export default function TaskDetail({ taskId }: Props) {
       } else if (taskId) {
         updateTask(taskId, {
           name: name.trim(), difficulties: finalDifficulties, problemMode, prioritizeUnsolved,
-          onlyImportant, onlyImportantType, selectedTypes, totalProblems,
-          course: selectedTypes[0]?.course ?? normalizedExistingTask?.course ?? "",
+          onlyImportant, onlyImportantType, selectedTypes: finalSelectedTypes, totalProblems: finalTotalProblems,
+          course: finalSelectedTypes[0]?.course ?? normalizedExistingTask?.course ?? "",
           problemScope: onlyImportant ? "important" : "all", // 하위 호환용
         });
-        savedSnapshot.current = JSON.stringify({ name: name.trim(), selectedTypes, problemMode, prioritizeUnsolved, onlyImportant, onlyImportantType });
+        savedSnapshot.current = JSON.stringify({ name: name.trim(), selectedTypes: finalSelectedTypes, problemMode, prioritizeUnsolved, onlyImportant, onlyImportantType });
         setCurrentSubject(subject);
         toast({ title: "저장되었습니다." });
       }

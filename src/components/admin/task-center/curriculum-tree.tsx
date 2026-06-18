@@ -22,6 +22,7 @@ interface Props {
   onToggleMinorChecked: (minorUnit: string, types: CurriculumType[]) => void;
   onToggleMajorChecked: (majorUnit: string, types: CurriculumType[]) => void;
   readonly?: boolean;
+  onlyImportant?: boolean;
 }
 
 function HighlightedText({ text, query }: { text: string; query?: string }) {
@@ -62,7 +63,7 @@ function majorCheckTriState(
 export function CurriculumTree({
   curriculum, selectedCombos, checkedTypeIds = [], searchQuery,
   onToggleCombo, onToggleTypeChecked, onToggleMinorChecked, onToggleMajorChecked,
-  readonly
+  readonly, onlyImportant
 }: Props) {
   // 대단원 그룹핑
   const majorGroups = React.useMemo(() => {
@@ -189,23 +190,32 @@ export function CurriculumTree({
 
                   {isOpenMinor && types.map(type => {
                     const isChecked = checkedTypeIds.includes(type.id);
-                    const availableDiffs = DIFFICULTY_LIST; // 모든 난이도 활성화
+                    const hasAnyImportant = (type.importantCount?.basic ?? 0) > 0 || (type.importantCount?.intermediate ?? 0) > 0 || (type.importantCount?.advanced ?? 0) > 0;
+                    const isTreeDisabled = readonly || (onlyImportant && !hasAnyImportant);
 
                     return (
                       <div key={type.id} className="ml-6">
                         {/* 유형 행 */}
                         <div
                           className={`flex items-center gap-1.5 py-1.5 px-2.5 rounded-lg transition-all duration-150 cursor-pointer overflow-hidden group/type border-l-2 ${
-                            isChecked
+                            isTreeDisabled
+                              ? "opacity-45 cursor-not-allowed hover:bg-transparent border-transparent pointer-events-none"
+                              : isChecked
                               ? "bg-indigo-50/40 hover:bg-indigo-50/60 border-indigo-500 rounded-r-lg rounded-l-none"
                               : "hover:bg-slate-50/60 border-transparent"
                           }`}
-                          onClick={() => !readonly && onToggleTypeChecked(type)}
+                          onClick={() => {
+                            if (isTreeDisabled) return;
+                            onToggleTypeChecked(type);
+                          }}
                         >
                           <Checkbox
                             checked={isChecked}
-                            disabled={readonly}
-                            onCheckedChange={() => !readonly && onToggleTypeChecked(type)}
+                            disabled={isTreeDisabled}
+                            onCheckedChange={() => {
+                              if (isTreeDisabled) return;
+                              onToggleTypeChecked(type);
+                            }}
                             onClick={e => e.stopPropagation()}
                           />
                           <div className="flex-1 min-w-0 flex items-center justify-between">
