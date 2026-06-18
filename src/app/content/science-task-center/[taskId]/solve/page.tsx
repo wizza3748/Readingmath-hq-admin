@@ -30,7 +30,7 @@ import { useToast } from "@/hooks/use-toast";
 
 interface PageProps {
   params: Promise<{ taskId: string }>;
-  searchParams: Promise<{ preview?: string }>;
+  searchParams: Promise<{ preview?: string; previewStudentId?: string }>;
 }
 
 // KaTeX 수식 렌더링 컴포넌트
@@ -192,7 +192,7 @@ export default function ScienceSolvePage(props: PageProps) {
 
   // 로드 데이터
   useEffect(() => {
-    const qList = getQuestionsByTaskId(taskId);
+    const qList = getQuestionsByTaskId(taskId, searchParams.previewStudentId);
     setQuestions(qList);
 
     const taskList = getStoredTasks();
@@ -259,7 +259,7 @@ export default function ScienceSolvePage(props: PageProps) {
         document.documentElement.classList.remove("dark");
       }
     }
-  }, [taskId, isPreview]);
+  }, [taskId, isPreview, searchParams.previewStudentId]);
 
   // 문항 전환 시 입력값 동기화
   useEffect(() => {

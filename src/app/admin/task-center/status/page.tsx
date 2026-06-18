@@ -88,6 +88,16 @@ export type UIExamAchievementStatus =
   | "understand"
   | "master";
 
+export type ProblemTypeResultRow = {
+  problemId: string;
+  problemNo: number;
+  typeId: string;
+  typeName: string;
+  unit: string;
+  problemStatement: string;
+  result: "correct" | "incorrect" | "unentered";
+};
+
 // undecided <-> undetermined 변환 헬퍼
 export function toUIAchievement(status: string): UIExamAchievementStatus {
   if (status === "undetermined") return "undecided";

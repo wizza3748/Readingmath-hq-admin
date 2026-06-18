@@ -7,6 +7,14 @@ import { List, Trash2, Eye, Printer, StopCircle, Save } from "lucide-react";
 import { ConfirmDialog } from "../confirm-dialog";
 import { useToast } from "@/hooks/use-toast";
 import { useTaskCenterStore } from "@/lib/task-center-store";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { evaluateStudentAchievement } from "@/utils/examPrepStorage";
 
 interface Props {
   task?: TaskItem;
@@ -23,8 +31,81 @@ export function TaskBottomBar({ task, isCreate, isSaving, totalProblems, onSave,
   const { deleteTask, endTask } = useTaskCenterStore();
   const [deleteOpen, setDeleteOpen] = React.useState(false);
   const [endOpen, setEndOpen] = React.useState(false);
+  const [studentSelectOpen, setStudentSelectOpen] = React.useState(false);
+  const [selectedPreviewStudentId, setSelectedPreviewStudentId] = React.useState("");
 
   const status = task?.status;
+
+  const isStudentSelectable = React.useCallback((studentId: string) => {
+    if (!task) return false;
+    if (task.problemMode !== "relearn") return true;
+    if (!task.selectedTypes || task.selectedTypes.length === 0) return false;
+    
+    return task.selectedTypes.some(t => {
+      const cleanTypeId = t.typeId.replace(/-(basic|skill|advanced)$/, "");
+      const status = evaluateStudentAchievement(studentId, cleanTypeId, task.subject || "math");
+      return status === "relearn";
+    });
+  }, [task]);
+
+  const previewStatus = React.useMemo(() => {
+    if (!task) return { disabled: true, reason: "" };
+
+    if (totalProblems === 0) {
+      return { disabled: true, reason: "미리보기할 문제가 없습니다." };
+    }
+
+    const activeStudents = (task.assignedStudents || []).filter(s => s.status !== ("canceled" as any));
+
+    if (task.problemMode === "individual") {
+      if (activeStudents.length === 0) {
+        return { disabled: true, reason: "학생별 문제 출제 과제는 배정 후 미리보기할 수 있습니다." };
+      }
+    }
+
+    if (task.problemMode === "relearn") {
+      const selectableStudentsCount = activeStudents.filter(s => isStudentSelectable(s.studentId)).length;
+      if (selectableStudentsCount === 0) {
+        return { disabled: true, reason: "학생별 재학습 유형 출제 과제는 배정 후 미리보기할 수 있습니다." };
+      }
+    }
+
+    return { disabled: false, reason: "" };
+  }, [task, totalProblems, isStudentSelectable]);
+
+  const previewCandidates = React.useMemo(() => {
+    if (!task) return [];
+    const activeStudents = (task.assignedStudents || []).filter(s => s.status !== ("canceled" as any));
+    if (task.problemMode === "individual") {
+      return activeStudents;
+    }
+    if (task.problemMode === "relearn") {
+      return activeStudents.filter(s => isStudentSelectable(s.studentId));
+    }
+    return [];
+  }, [task, isStudentSelectable]);
+
+  const handlePreviewClick = () => {
+    if (!task) return;
+    
+    if (task.problemMode === "same") {
+      const folder = task.subject === "science" ? "science-task-center" : "math-task-center";
+      window.open(`/content/${folder}/${task.id}/solve?preview=true`, "_blank");
+      return;
+    }
+    
+    if (previewCandidates.length > 0) {
+      setSelectedPreviewStudentId(previewCandidates[0].studentId);
+      setStudentSelectOpen(true);
+    }
+  };
+
+  const handleConfirmPreview = () => {
+    if (!task || !selectedPreviewStudentId) return;
+    const folder = task.subject === "science" ? "science-task-center" : "math-task-center";
+    window.open(`/content/${folder}/${task.id}/solve?preview=true&previewStudentId=${selectedPreviewStudentId}`, "_blank");
+    setStudentSelectOpen(false);
+  };
 
   const handleDelete = () => {
     if (!task) return;
@@ -66,18 +147,17 @@ export function TaskBottomBar({ task, isCreate, isSaving, totalProblems, onSave,
 
           {/* 미리보기 - draft, published, ended */}
           {!isCreate && task && (
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => {
-                const folder = task.subject === "science" ? "science-task-center" : "math-task-center";
-                window.open(`/content/${folder}/${task.id}/solve?preview=true`, "_blank");
-              }}
-              disabled={totalProblems === 0}
-              className="gap-2"
-            >
-              <Eye className="h-4 w-4" /> 미리보기
-            </Button>
+            <div title={previewStatus.disabled ? previewStatus.reason : undefined}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handlePreviewClick}
+                disabled={previewStatus.disabled}
+                className="gap-2"
+              >
+                <Eye className="h-4 w-4" /> 미리보기
+              </Button>
+            </div>
           )}
 
           {/* 출력 - draft, published, ended */}
@@ -129,6 +209,61 @@ export function TaskBottomBar({ task, isCreate, isSaving, totalProblems, onSave,
         confirmLabel="종료"
         onConfirm={handleEnd}
       />
+      {/* 미리보기 학생 선택 모달 */}
+      <Dialog open={studentSelectOpen} onOpenChange={setStudentSelectOpen}>
+        <DialogContent className="max-w-[400px] rounded-2xl border border-slate-200 p-5 shadow-2xl bg-white text-slate-900">
+          <DialogHeader className="pb-3 border-b border-slate-100">
+            <DialogTitle className="text-lg font-extrabold text-slate-800">
+              미리보기 학생 선택
+            </DialogTitle>
+          </DialogHeader>
+          
+          <div className="py-4 max-h-[280px] overflow-y-auto flex flex-col gap-2">
+            <p className="text-xs font-semibold text-slate-500 mb-2">
+              미리보기할 학생을 선택해 주세요. 해당 학생에게 배정된 문항 기준으로 미리보기가 표시됩니다.
+            </p>
+            {previewCandidates.map(student => (
+              <label 
+                key={student.studentId}
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-xl border cursor-pointer transition-all ${
+                  selectedPreviewStudentId === student.studentId
+                    ? "border-primary bg-primary/5 text-primary font-bold shadow-xs"
+                    : "border-slate-200 text-slate-700 hover:bg-slate-50"
+                }`}
+              >
+                <input 
+                  type="radio" 
+                  name="previewStudent" 
+                  value={student.studentId}
+                  checked={selectedPreviewStudentId === student.studentId}
+                  onChange={() => setSelectedPreviewStudentId(student.studentId)}
+                  className="accent-primary h-4 w-4"
+                />
+                <div className="flex flex-col">
+                  <span className="text-sm font-extrabold">{student.studentName}</span>
+                  <span className="text-[10px] text-slate-400 font-semibold">{student.classGroup}</span>
+                </div>
+              </label>
+            ))}
+          </div>
+
+          <DialogFooter className="pt-3 border-t border-slate-100 flex items-center justify-end gap-2 shrink-0">
+            <Button 
+              variant="outline" 
+              onClick={() => setStudentSelectOpen(false)}
+              className="h-10 px-5 font-black text-slate-500 rounded-xl"
+            >
+              취소
+            </Button>
+            <Button 
+              onClick={handleConfirmPreview}
+              className="h-10 px-6 font-black rounded-xl shadow-lg shadow-primary/20"
+            >
+              확인
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }

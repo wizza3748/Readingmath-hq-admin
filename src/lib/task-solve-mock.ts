@@ -52,8 +52,16 @@ export function matchStoredIdWithAdminId(storedId: string, adminId: string): boo
   }
 }
 
+function getSeedFromString(str: string): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return Math.abs(hash);
+}
+
 // taskId에 따라 문항들을 반환하는 함수
-export function getQuestionsByTaskId(taskId: string): Question[] {
+export function getQuestionsByTaskId(taskId: string, studentId?: string): Question[] {
   // taskStorage 에 기록된 totalProblems 갯수 조회
   const tasks = getStoredTasks();
   const task = tasks.find((t) => matchStoredIdWithAdminId(t.id, taskId) || matchStoredIdWithAdminId(taskId, t.id));
@@ -70,6 +78,7 @@ export function getQuestionsByTaskId(taskId: string): Question[] {
 
   console.log("DEBUG: getQuestionsByTaskId", {
     taskId,
+    studentId,
     taskFound: task ? task.id : null,
     adminTaskFound: adminTask ? adminTask.id : null,
     selectedTypes: adminTask ? adminTask.selectedTypes : null
@@ -80,6 +89,17 @@ export function getQuestionsByTaskId(taskId: string): Question[] {
     task?.subject ?? adminTask?.subject ?? (taskId.includes("sci") ? "science" : "math");
   const isMath = subject === "math";
   const sourceSamples = isMath ? MATH_PRINT_SAMPLES : SCIENCE_PRINT_SAMPLES;
+
+  let currentSamples = [...sourceSamples];
+  if (studentId && (adminTask?.problemMode === "individual" || adminTask?.problemMode === "relearn" || (task as any)?.problemMode === "individual" || (task as any)?.problemMode === "relearn")) {
+    const seed = getSeedFromString(studentId);
+    for (let i = currentSamples.length - 1; i > 0; i--) {
+      const j = (seed + i) % (i + 1);
+      const temp = currentSamples[i];
+      currentSamples[i] = currentSamples[j];
+      currentSamples[j] = temp;
+    }
+  }
 
   const totalProblems = task ? task.totalProblems : adminTask ? adminTask.totalProblems : 10;
 
@@ -99,7 +119,7 @@ export function getQuestionsByTaskId(taskId: string): Question[] {
   const questions: Question[] = [];
 
   for (let i = 0; i < totalProblems; i++) {
-    const sample = sourceSamples[i % sourceSamples.length];
+    const sample = currentSamples[i % currentSamples.length];
     const index = i + 1;
     const isChoice = sample.choices && sample.choices.length > 0;
 

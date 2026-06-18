@@ -11,7 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
-import { TaskItem, getStudentTaskStatusLabel } from "@/lib/task-center-mock";
+import { TaskItem, getStudentTaskStatusLabel, StudentAssignment } from "@/lib/task-center-mock";
 import { Printer, CheckCircle2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
