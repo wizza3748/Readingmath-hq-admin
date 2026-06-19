@@ -660,9 +660,9 @@ export default function ScienceSolvePage(props: PageProps) {
         {/* 좌측 문제/풀이 영역 */}
         <section className="flex flex-1 flex-col overflow-y-auto p-8 lg:p-12 bg-white dark:bg-gray-955 border-r border-gray-100 dark:border-gray-855">
           <div className="flex-1 space-y-8 w-full max-w-none">
-            {/* 문제 영역 (카드 형태의 보더, 배경, 그림자를 제거하여 무테 왼쪽 정렬 콘텐츠로 변경) */}
+            {/* 문제 영역 */}
             <div className="w-full space-y-6 transition-all duration-300">
-              <div className="mb-6 flex items-center justify-between border-b border-gray-100 pb-4 dark:border-gray-800">
+              <div className="mb-6 flex items-center justify-between border-b border-gray-105 pb-4 dark:border-gray-800">
                 <div className="flex items-center gap-3 flex-wrap">
                   <span className="text-lg font-bold text-emerald-600 dark:text-emerald-400">
                     문제 {currentIdx + 1}
@@ -679,7 +679,7 @@ export default function ScienceSolvePage(props: PageProps) {
                             ? "bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950/40 dark:text-sky-300 dark:border-sky-800"
                             : currentQuestion.difficulty === "intermediate"
                             ? "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:border-sky-800"
-                            : "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:border-sky-800"
+                            : "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-955/40 dark:text-rose-300 dark:border-sky-800"
                         }`}>
                           {currentQuestion.difficulty === "basic" ? "기본" : currentQuestion.difficulty === "intermediate" ? "실력" : "심화"}
                         </span>
@@ -716,7 +716,7 @@ export default function ScienceSolvePage(props: PageProps) {
                                 onClick={() => handleChoiceSelect(choiceNum)}
                                 className={`flex items-center justify-start space-x-3 rounded-xl border px-3 py-2.5 text-left transition-all duration-150 ${
                                   isSelected
-                                    ? "border-emerald-500 bg-emerald-50/50 text-emerald-900 shadow-sm dark:bg-emerald-950/30 dark:text-emerald-100 font-bold"
+                                    ? "border-emerald-500 bg-emerald-50/50 text-emerald-900 shadow-sm dark:bg-emerald-955/30 dark:text-emerald-100 font-bold"
                                     : "border-transparent bg-transparent hover:bg-gray-100/40 dark:hover:bg-gray-800/40"
                                 }`}
                               >
@@ -754,7 +754,7 @@ export default function ScienceSolvePage(props: PageProps) {
                                 onClick={() => handleChoiceSelect(choiceNum)}
                                 className={`flex items-center justify-start space-x-3 rounded-xl border px-4 py-3 text-left transition-all duration-150 ${
                                   isSelected
-                                    ? "border-emerald-500 bg-emerald-50/50 text-emerald-900 shadow-sm dark:bg-emerald-950/30 dark:text-emerald-100 font-bold"
+                                    ? "border-emerald-500 bg-emerald-50/50 text-emerald-900 shadow-sm dark:bg-emerald-955/30 dark:text-emerald-100 font-bold"
                                     : "border-transparent bg-transparent hover:bg-gray-100/40 dark:hover:bg-gray-800/40"
                                 }`}
                               >
@@ -762,7 +762,7 @@ export default function ScienceSolvePage(props: PageProps) {
                                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-sm font-semibold transition-all ${
                                     isSelected
                                       ? "border-emerald-600 bg-emerald-600 text-white"
-                                      : "border-gray-300 bg-white text-gray-650 dark:bg-gray-800 dark:text-gray-300"
+                                      : "border-gray-300 bg-white text-gray-650 dark:border-gray-800 dark:text-gray-300"
                                   }`}
                                 >
                                   {choiceNum}
@@ -792,7 +792,7 @@ export default function ScienceSolvePage(props: PageProps) {
                                 onClick={() => handleChoiceSelect(choiceNum)}
                                 className={`flex items-center justify-start space-x-4 rounded-xl border px-4 py-3 text-left transition-all duration-150 ${
                                   isSelected
-                                    ? "border-emerald-500 bg-emerald-50/50 text-emerald-900 shadow-sm dark:bg-emerald-950/30 dark:text-emerald-100 font-bold"
+                                    ? "border-emerald-500 bg-emerald-50/50 text-emerald-900 shadow-sm dark:bg-emerald-955/30 dark:text-emerald-100 font-bold"
                                     : "border-transparent bg-transparent hover:bg-gray-100/40 dark:hover:bg-gray-800/40"
                                 }`}
                               >
@@ -800,7 +800,7 @@ export default function ScienceSolvePage(props: PageProps) {
                                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-sm font-semibold transition-all ${
                                     isSelected
                                       ? "border-emerald-600 bg-emerald-600 text-white"
-                                      : "border-gray-300 bg-white text-gray-650 dark:bg-gray-800 dark:text-gray-300"
+                                      : "border-gray-300 bg-white text-gray-650 dark:border-gray-800 dark:text-gray-300"
                                   }`}
                                 >
                                   {choiceNum}
@@ -830,7 +830,7 @@ export default function ScienceSolvePage(props: PageProps) {
                               onClick={() => handleChoiceSelect(choiceNum)}
                               className={`flex w-full items-center justify-start space-x-4 rounded-xl border px-5 py-3.5 text-left transition-all duration-150 ${
                                 isSelected
-                                  ? "border-emerald-500 bg-emerald-50/50 text-emerald-900 shadow-sm dark:bg-emerald-950/30 dark:text-emerald-100 font-bold"
+                                  ? "border-emerald-500 bg-emerald-50/50 text-emerald-900 shadow-sm dark:bg-emerald-955/30 dark:text-emerald-100 font-bold"
                                   : "border-transparent bg-transparent hover:bg-gray-100/40 dark:hover:bg-gray-800/40"
                               }`}
                             >
@@ -838,7 +838,7 @@ export default function ScienceSolvePage(props: PageProps) {
                                 className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-sm font-semibold transition-all ${
                                   isSelected
                                     ? "border-emerald-600 bg-emerald-600 text-white"
-                                    : "border-gray-300 bg-white text-gray-655 dark:bg-gray-800 dark:text-gray-300"
+                                    : "border-gray-300 bg-white text-gray-655 dark:bg-gray-800 dark:text-gray-305"
                                 }`}
                               >
                                 {choiceNum}
@@ -890,14 +890,14 @@ export default function ScienceSolvePage(props: PageProps) {
                           { label: ".", value: "." },
                           { label: "-", value: "-" },
                           { label: "+", value: "+" },
-                          { label: "↺", value: "clear", cls: "bg-gray-55 dark:bg-gray-800 text-gray-650 dark:text-gray-400 font-bold" },
-                          { label: "⌫", value: "delete", cls: "bg-gray-55 dark:bg-gray-800 text-gray-650 dark:text-gray-400 font-bold" },
+                          { label: "↺", value: "clear", cls: "bg-gray-55 dark:bg-gray-850 text-gray-650 dark:text-gray-400 font-bold" },
+                          { label: "⌫", value: "delete", cls: "bg-gray-55 dark:bg-gray-855 text-gray-655 dark:text-gray-400 font-bold" },
                           
                           { label: "✓", value: "confirm", colSpan: 5, cls: "bg-slate-600 hover:bg-slate-700 text-white font-bold text-xl h-12 flex items-center justify-center rounded-xl" },
                         ].map((btn, i) => {
                           const gridCls = [
                             btn.colSpan ? `col-span-${btn.colSpan}` : "",
-                            btn.cls || "bg-white hover:bg-gray-55 text-gray-850 dark:bg-gray-800 dark:hover:bg-gray-750 dark:text-gray-100 border border-gray-200/50 dark:border-gray-700/50",
+                            btn.cls || "bg-white hover:bg-gray-50 text-gray-850 dark:bg-gray-800 dark:hover:bg-gray-750 dark:text-gray-100 border border-gray-200/50 dark:border-gray-700/50",
                           ].join(" ");
                           return (
                             <button
@@ -964,7 +964,7 @@ export default function ScienceSolvePage(props: PageProps) {
                 } else if (isFilled) {
                   buttonClass += "border-emerald-600 bg-emerald-600 text-white font-semibold";
                 } else {
-                  buttonClass += "border-gray-200 bg-white hover:bg-gray-55 text-gray-600 dark:border-gray-800 dark:bg-gray-900 dark:hover:bg-gray-800 dark:text-gray-400";
+                  buttonClass += "border-gray-200 bg-white hover:bg-gray-55 text-gray-650 dark:border-gray-800 dark:bg-gray-900 dark:hover:bg-gray-800 dark:text-gray-400";
                 }
 
                 return (
@@ -993,9 +993,9 @@ export default function ScienceSolvePage(props: PageProps) {
               />
 
               {/* Drawer 컨테이너 (가로 50% 영역 전체 채움) */}
-              <div className="relative h-full w-full bg-white dark:bg-gray-900 shadow-2xl flex flex-col border-l border-gray-200 dark:border-gray-800 transform transition-transform duration-300 translate-x-0">
-                {/* 헤더 영역 (타이틀 및 안내 문구) */}
-                <div className="px-6 py-5 border-b border-gray-150 dark:border-gray-800 flex items-start justify-between shrink-0">
+              <div className="relative h-full w-full bg-[#FDFCF7] dark:bg-[#1A1A16] shadow-2xl flex flex-col border-l border-gray-200 dark:border-amber-900/20 transform transition-transform duration-300 translate-x-0">
+                {/* 헤더 영역 (타이틀 및 안내 문구) - OMR 웜톤 배경 */}
+                <div className="px-6 py-5 border-b border-[#EAE6D2] dark:border-amber-900/30 bg-[#F9F8F0] dark:bg-[#1C1C18] flex items-start justify-between shrink-0">
                   <div>
                     <h2 className="text-lg font-black text-slate-800 dark:text-white">답안표 입력</h2>
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
@@ -1013,15 +1013,15 @@ export default function ScienceSolvePage(props: PageProps) {
                   </button>
                 </div>
 
-                {/* 바디 영역 (스크롤 리스트) */}
-                <div className="flex-1 overflow-y-auto px-6 py-4 bg-white dark:bg-gray-900">
+                {/* 바디 영역 (스크롤 리스트) - OMR 미색 배경 적용 */}
+                <div className="flex-1 overflow-y-auto px-6 py-4 bg-[#FDFCF7] dark:bg-[#1A1A16]">
                   {(() => {
                     const half = Math.ceil(questions.length / 2);
                     const leftColQuestions = questions.slice(0, half);
                     const rightColQuestions = questions.slice(half);
                     const useTwoColumn = questions.length > 15;
 
-                    // 개별 문항 행 렌더러 함수
+                    // 개별 문항 행 렌더러 함수 (OMR 전용 컴팩트 카드 스타일)
                     const renderRow = (q: Question, idx: number) => {
                       const isFilled = isQuestionAnswered(idx);
                       const currentAns = answers.find((a) => a.questionIndex === idx);
@@ -1030,21 +1030,23 @@ export default function ScienceSolvePage(props: PageProps) {
                       return (
                         <div
                           key={idx}
-                          className={`flex items-center justify-between py-1.5 border-b border-gray-100 dark:border-gray-800/60 transition-all duration-150 ${
-                            isActiveInput ? "bg-emerald-50/30 dark:bg-emerald-950/20 px-2 rounded-lg border-l-2 border-l-emerald-500" : ""
+                          className={`flex items-center justify-between px-3 py-2 mb-2 rounded-xl bg-white dark:bg-gray-800 shadow-xs border transition-all duration-200 ${
+                            isActiveInput 
+                              ? "border-emerald-500 dark:border-emerald-500 bg-emerald-50/20 dark:bg-emerald-950/10 ring-1 ring-emerald-500/20" 
+                              : "border-[#EFECE0] dark:border-gray-700/50 hover:border-emerald-300 dark:hover:border-gray-600"
                           }`}
                         >
-                          {/* 문항 번호 */}
+                          {/* 문항 번호 - 세련된 배지 스타일 */}
                           <div className="flex items-center gap-1 shrink-0">
-                            <span className="text-xs font-extrabold text-gray-500 dark:text-gray-400">
-                              {String(idx + 1).padStart(2, "0")}번
+                            <span className="px-1.5 py-0.5 rounded-md bg-slate-100 dark:bg-gray-700 text-[10px] font-black text-slate-500 dark:text-gray-400">
+                              {String(idx + 1).padStart(2, "0")}
                             </span>
                           </div>
 
                           {/* 답안 입력 컨트롤 */}
                           <div className="flex-1 flex justify-center px-2 min-w-0">
                             {q.type === "choice" ? (
-                              /* 선지형 */
+                              /* 선지형 (사인펜 마킹 스타일) */
                               <div className="flex items-center gap-1.5">
                                 {Array.from({ length: q.choiceHtmls?.length || 5 }).map((_, cIdx) => {
                                   const choiceNum = cIdx + 1;
@@ -1066,19 +1068,25 @@ export default function ScienceSolvePage(props: PageProps) {
                                           selectedChoices: selected,
                                         });
                                       }}
-                                      className={`h-8 w-8 rounded-full border text-xs font-bold flex items-center justify-center transition active:scale-95 ${
+                                      className={`h-8 w-8 rounded-full border text-xs transition-all duration-150 hover:scale-105 active:scale-95 flex items-center justify-center ${
                                         isSelected
-                                          ? "border-emerald-600 bg-emerald-600 text-white font-black"
-                                          : "border-gray-200 bg-white text-gray-555 dark:border-gray-750 dark:bg-gray-800 dark:text-gray-400 hover:bg-gray-50"
+                                          ? "border-emerald-600 bg-emerald-50 text-emerald-700 font-extrabold ring-2 ring-emerald-500/20"
+                                          : "border-slate-300 bg-slate-50/50 text-slate-650 dark:border-gray-600 dark:bg-gray-750 dark:text-gray-300 hover:bg-slate-100 hover:border-slate-400"
                                       }`}
                                     >
-                                      {["①", "②", "③", "④", "⑤"][cIdx] || choiceNum}
+                                      {isSelected ? (
+                                        <span className="flex items-center justify-center font-black">
+                                          ●
+                                        </span>
+                                      ) : (
+                                        ["①", "②", "③", "④", "⑤"][cIdx] || choiceNum
+                                      )}
                                     </button>
                                   );
                                 })}
                               </div>
                             ) : (
-                              /* 입력형 */
+                              /* 입력형 (주관식 컴팩트 스타일) */
                               <div className="w-full max-w-[100px]">
                                 <input
                                   type="text"
@@ -1092,15 +1100,19 @@ export default function ScienceSolvePage(props: PageProps) {
                             )}
                           </div>
 
-                          {/* 입력 상태 표시 */}
-                          <div className="shrink-0 w-12 text-right">
-                            <span className={`text-xs font-bold ${
-                              isFilled
-                                ? "text-emerald-600 dark:text-emerald-400 font-extrabold"
-                                : "text-gray-400 dark:text-gray-655"
-                            }`}>
-                              {isFilled ? "입력" : "미입력"}
-                            </span>
+                          {/* 입력 상태 표시 - 조약돌 배지화 */}
+                          <div className="shrink-0 w-12 text-right flex justify-end">
+                            {isFilled ? (
+                              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-300 border border-emerald-150 dark:border-emerald-900/50">
+                                <span className="h-1 w-1 rounded-full bg-emerald-500 animate-pulse" />
+                                완료
+                              </span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-slate-100 text-slate-400 dark:bg-gray-800 dark:text-gray-500 border border-slate-200/60 dark:border-gray-700/60">
+                                <span className="h-1 w-1 rounded-full bg-slate-350 dark:bg-gray-600" />
+                                대기
+                              </span>
+                            )}
                           </div>
                         </div>
                       );
@@ -1108,13 +1120,13 @@ export default function ScienceSolvePage(props: PageProps) {
 
                     if (useTwoColumn) {
                       return (
-                        <div className="grid grid-cols-2 gap-x-8 min-h-0">
+                        <div className="grid grid-cols-2 gap-x-6 min-h-0">
                           {/* 좌측 단: 앞부분 절반 */}
-                          <div className="space-y-1 pr-2 border-r border-gray-100 dark:border-gray-800/80">
+                          <div className="pr-2 border-r border-[#EAE6D2] dark:border-amber-900/20">
                             {leftColQuestions.map((q, lIdx) => renderRow(q, lIdx))}
                           </div>
                           {/* 우측 단: 뒷부분 절반 */}
-                          <div className="space-y-1 pl-2">
+                          <div className="pl-2">
                             {rightColQuestions.map((q, rIdx) => renderRow(q, half + rIdx))}
                           </div>
                         </div>
@@ -1123,7 +1135,7 @@ export default function ScienceSolvePage(props: PageProps) {
 
                     // 15문항 이하인 경우: 기존 1단 레이아웃
                     return (
-                      <div className="space-y-1">
+                      <div className="max-w-md mx-auto">
                         {questions.map((q, idx) => renderRow(q, idx))}
                       </div>
                     );
@@ -1132,14 +1144,14 @@ export default function ScienceSolvePage(props: PageProps) {
 
                 {/* 입력형 하단 고정 키패드 */}
                 {activeInputIdx !== null && (
-                  <div className="border-t border-gray-200 dark:border-gray-855 bg-gray-55/90 dark:bg-gray-900/95 p-4 shrink-0">
+                  <div className="border-t border-[#EAE6D2] dark:border-amber-900/30 bg-[#F9F8F0]/90 dark:bg-[#1C1C18]/95 p-4 shrink-0">
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-xs font-black text-emerald-600 dark:text-emerald-400">
                         선택 문항: {String(activeInputIdx + 1).padStart(2, "0")}번
                       </span>
                       <button
                         onClick={() => setActiveInputIdx(null)}
-                        className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-0.5"
+                        className="text-gray-400 hover:text-gray-650 dark:hover:text-gray-200 p-0.5"
                       >
                         <X className="h-4 w-4" />
                       </button>
@@ -1162,8 +1174,8 @@ export default function ScienceSolvePage(props: PageProps) {
                         { label: ".", value: "." },
                         { label: "-", value: "-" },
                         { label: "+", value: "+" },
-                        { label: "clear", value: "clear", cls: "bg-white hover:bg-gray-55 text-gray-555 dark:bg-gray-850 dark:hover:bg-gray-700 dark:text-gray-400 text-xs font-bold border border-gray-200/50 dark:border-gray-700/50" },
-                        { label: "⌫", value: "delete", cls: "bg-white hover:bg-gray-55 text-gray-555 dark:bg-gray-850 dark:hover:bg-gray-750 dark:text-gray-450 text-xs font-bold border border-gray-200/50 dark:border-gray-700/50" },
+                        { label: "clear", value: "clear", cls: "bg-white hover:bg-gray-55 text-gray-555 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-400 text-xs font-bold border border-gray-200/50 dark:border-gray-700/50" },
+                        { label: "⌫", value: "delete", cls: "bg-white hover:bg-gray-55 text-gray-555 dark:bg-gray-800 dark:hover:bg-gray-750 dark:text-gray-450 text-xs font-bold border border-gray-200/50 dark:border-gray-700/50" },
 
                         { label: "✓ 확인", value: "confirm", colSpan: 5, cls: "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs h-9 flex items-center justify-center rounded-lg shadow-sm" },
                       ].map((btn, i) => {
@@ -1192,11 +1204,11 @@ export default function ScienceSolvePage(props: PageProps) {
             </div>
           )}
 
-          {/* 현황 수치 요약 */}
-          <div className="mt-auto border-t border-gray-100 pt-6 dark:border-gray-800 space-y-2.5">
+          {/* 현황 수치 요약 - 그라디언트 게이지 바 적용 */}
+          <div className="mt-auto border-t border-[#EAE6D2] dark:border-amber-900/30 pt-6 dark:border-gray-800 space-y-2.5">
             <div className="flex justify-between text-sm">
               <span className="text-gray-500">풀이한 문제</span>
-              <span className="font-semibold">
+              <span className="font-semibold text-emerald-600 dark:text-emerald-400">
                 {
                   answers.filter((a) => {
                     if (a.type === "choice") {
@@ -1210,7 +1222,7 @@ export default function ScienceSolvePage(props: PageProps) {
             </div>
             <div className="h-2 w-full rounded-full bg-gray-150 dark:bg-gray-800 overflow-hidden">
               <div
-                className="h-full bg-emerald-600 rounded-full transition-all duration-300"
+                className="h-full bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full transition-all duration-350"
                 style={{
                   width: `${
                     (answers.filter((a) => {
@@ -1266,7 +1278,7 @@ export default function ScienceSolvePage(props: PageProps) {
           {!isPreview && (
             <button
               onClick={handleSubmitClick}
-              className="flex items-center space-x-1 rounded-xl bg-emerald-600 px-6 py-3 text-sm font-bold text-white hover:bg-emerald-700 shadow-md shadow-emerald-500/10 z-10 active:scale-95 transition"
+              className="flex items-center space-x-1 rounded-xl bg-emerald-600 px-6 py-3 text-sm font-bold text-white hover:bg-emerald-700 shadow-md shadow-emerald-500/10 active:scale-95 transition"
             >
               <span>제출하기</span>
             </button>
@@ -1278,7 +1290,7 @@ export default function ScienceSolvePage(props: PageProps) {
       {showExitModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
           <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl dark:bg-gray-900 border border-gray-100 dark:border-gray-800 animate-in fade-in zoom-in-95 duration-150">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-red-100 dark:bg-red-950/40">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-red-100 dark:bg-red-955/40">
               <AlertCircle className="h-6 w-6 text-red-600 dark:text-red-400" />
             </div>
             <h3 className="mb-2 text-lg font-bold text-gray-900 dark:text-white">
@@ -1311,7 +1323,7 @@ export default function ScienceSolvePage(props: PageProps) {
       {showUnenteredModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
           <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl dark:bg-gray-955 border border-gray-100 dark:border-gray-800 animate-in fade-in zoom-in-95 duration-150">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-950/40">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-955/40">
               <AlertCircle className="h-6 w-6 text-amber-600 dark:text-amber-400" />
             </div>
             <h3 className="mb-2 text-lg font-bold text-gray-900 dark:text-white">

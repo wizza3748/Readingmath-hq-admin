@@ -583,7 +583,7 @@ export default function MathSolvePage(props: PageProps) {
 
           {/* 학기 뱃지 */}
           {task.course && (
-            <span className="inline-flex items-center rounded-md bg-gray-100 px-2 py-0.5 text-xs font-bold text-gray-650 border border-gray-200/60 dark:bg-gray-800 dark:text-gray-350 dark:border-gray-700">
+            <span className="inline-flex items-center rounded-md bg-gray-100 px-2 py-0.5 text-xs font-bold text-gray-655 border border-gray-200/60 dark:bg-gray-800 dark:text-gray-350 dark:border-gray-700">
               {task.course}
             </span>
           )}
@@ -607,7 +607,7 @@ export default function MathSolvePage(props: PageProps) {
           </div>
 
           {isPreview && (
-            <span className="rounded bg-amber-100 px-2 py-0.5 text-xs font-bold text-amber-850 animate-pulse dark:bg-amber-900/50 dark:text-amber-300 ml-2">
+            <span className="rounded bg-amber-100 px-2 py-0.5 text-xs font-bold text-amber-800 animate-pulse dark:bg-amber-900/50 dark:text-amber-300 ml-2">
               미리보기
             </span>
           )}
@@ -665,7 +665,7 @@ export default function MathSolvePage(props: PageProps) {
         >
           <ArrowLeft className="h-5 w-5" />
         </button>
-        <h1 className="text-xl font-bold text-gray-805 dark:text-gray-100">
+        <h1 className="text-xl font-bold text-gray-800 dark:text-gray-100">
           {task.title}
         </h1>
       </div>
@@ -694,7 +694,7 @@ export default function MathSolvePage(props: PageProps) {
                             ? "bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950/40 dark:text-sky-300 dark:border-sky-800"
                             : currentQuestion.difficulty === "intermediate"
                             ? "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:border-sky-800"
-                            : "bg-rose-50 text-rose-750 border-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:border-sky-800"
+                            : "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-955/40 dark:text-rose-300 dark:border-sky-800"
                         }`}>
                           {currentQuestion.difficulty === "basic" ? "기본" : currentQuestion.difficulty === "intermediate" ? "실력" : "심화"}
                         </span>
@@ -884,7 +884,7 @@ export default function MathSolvePage(props: PageProps) {
                         });
                       }}
                       placeholder="답을 입력해주세요"
-                      className="w-full text-center rounded-xl border border-gray-200 bg-white px-5 py-3.5 text-xl font-bold tracking-wider text-gray-800 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-800 dark:bg-gray-900 dark:text-white"
+                      className="w-full text-center rounded-xl border border-gray-200 bg-white px-5 py-3.5 text-xl font-bold tracking-wider text-gray-850 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-800 dark:bg-gray-900 dark:text-white"
                     />
 
                     {/* 수치 키패드 */}
@@ -907,7 +907,7 @@ export default function MathSolvePage(props: PageProps) {
                           { label: "-", value: "-" },
                           { label: "+", value: "+" },
                           { label: "↺", value: "clear", cls: "bg-gray-55 dark:bg-gray-850 text-gray-650 dark:text-gray-400 font-bold" },
-                          { label: "⌫", value: "delete", cls: "bg-gray-55 dark:bg-gray-855 text-gray-650 dark:text-gray-400 font-bold" },
+                          { label: "⌫", value: "delete", cls: "bg-gray-55 dark:bg-gray-855 text-gray-655 dark:text-gray-400 font-bold" },
                           
                           { label: "✓", value: "confirm", colSpan: 5, cls: "bg-slate-600 hover:bg-slate-700 text-white font-bold text-xl h-12 flex items-center justify-center rounded-xl" },
                         ].map((btn, i) => {
@@ -1009,9 +1009,9 @@ export default function MathSolvePage(props: PageProps) {
               />
 
               {/* Drawer 컨테이너 (가로 50% 영역 전체 채움) */}
-              <div className="relative h-full w-full bg-white dark:bg-gray-900 shadow-2xl flex flex-col border-l border-gray-200 dark:border-gray-800 transform transition-transform duration-300 translate-x-0">
-                {/* 헤더 영역 (타이틀 및 안내 문구) */}
-                <div className="px-6 py-5 border-b border-gray-150 dark:border-gray-800 flex items-start justify-between shrink-0">
+              <div className="relative h-full w-full bg-[#FDFCF7] dark:bg-[#1A1A16] shadow-2xl flex flex-col border-l border-gray-200 dark:border-amber-900/20 transform transition-transform duration-300 translate-x-0">
+                {/* 헤더 영역 (타이틀 및 안내 문구) - OMR 웜톤 배경 */}
+                <div className="px-6 py-5 border-b border-[#EAE6D2] dark:border-amber-900/30 bg-[#F9F8F0] dark:bg-[#1C1C18] flex items-start justify-between shrink-0">
                   <div>
                     <h2 className="text-lg font-black text-slate-800 dark:text-white">답안표 입력</h2>
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
@@ -1029,15 +1029,15 @@ export default function MathSolvePage(props: PageProps) {
                   </button>
                 </div>
 
-                {/* 바디 영역 (스크롤 리스트) */}
-                <div className="flex-1 overflow-y-auto px-6 py-4 bg-white dark:bg-gray-900">
+                {/* 바디 영역 (스크롤 리스트) - OMR 미색 배경 적용 */}
+                <div className="flex-1 overflow-y-auto px-6 py-4 bg-[#FDFCF7] dark:bg-[#1A1A16]">
                   {(() => {
                     const half = Math.ceil(questions.length / 2);
                     const leftColQuestions = questions.slice(0, half);
                     const rightColQuestions = questions.slice(half);
                     const useTwoColumn = questions.length > 15;
 
-                    // 개별 문항 행 렌더러 함수
+                    // 개별 문항 행 렌더러 함수 (OMR 전용 컴팩트 카드 스타일)
                     const renderRow = (q: Question, idx: number) => {
                       const isFilled = isQuestionAnswered(idx);
                       const currentAns = answers.find((a) => a.questionIndex === idx);
@@ -1046,22 +1046,24 @@ export default function MathSolvePage(props: PageProps) {
                       return (
                         <div
                           key={idx}
-                          className={`flex items-center justify-between py-1.5 border-b border-gray-100 dark:border-gray-800/60 transition-all duration-150 ${
-                            isActiveInput ? "bg-blue-50/30 dark:bg-blue-955/20 px-2 rounded-lg border-l-2 border-l-blue-500" : ""
+                          className={`flex items-center justify-between px-3 py-2 mb-2 rounded-xl bg-white dark:bg-gray-800 shadow-xs border transition-all duration-200 ${
+                            isActiveInput 
+                              ? "border-blue-500 dark:border-blue-500 bg-blue-50/20 dark:bg-blue-950/10 ring-1 ring-blue-500/20" 
+                              : "border-[#EFECE0] dark:border-gray-700/50 hover:border-blue-300 dark:hover:border-gray-600"
                           }`}
                         >
-                          {/* 문항 번호 */}
+                          {/* 문항 번호 - 세련된 배지 스타일 */}
                           <div className="flex items-center gap-1 shrink-0">
-                            <span className="text-xs font-extrabold text-gray-500 dark:text-gray-400">
-                              {String(idx + 1).padStart(2, "0")}번
+                            <span className="px-1.5 py-0.5 rounded-md bg-slate-100 dark:bg-gray-700 text-[10px] font-black text-slate-500 dark:text-gray-400">
+                              {String(idx + 1).padStart(2, "0")}
                             </span>
                           </div>
 
                           {/* 답안 입력 컨트롤 */}
                           <div className="flex-1 flex justify-center px-2 min-w-0">
                             {q.type === "choice" ? (
-                              /* 선지형 */
-                              <div className="flex items-center gap-1.5">
+                              /* 선지형 (사인펜 마킹 스타일) */
+                              <div className="flex items-center gap-1">
                                 {Array.from({ length: q.choiceHtmls?.length || 5 }).map((_, cIdx) => {
                                   const choiceNum = cIdx + 1;
                                   const isSelected = currentAns?.selectedChoices?.includes(choiceNum) || false;
@@ -1082,19 +1084,25 @@ export default function MathSolvePage(props: PageProps) {
                                           selectedChoices: selected,
                                         });
                                       }}
-                                      className={`h-8 w-8 rounded-full border text-xs font-bold flex items-center justify-center transition active:scale-95 ${
+                                      className={`h-8 w-8 rounded-full border text-xs transition-all duration-150 hover:scale-105 active:scale-95 flex items-center justify-center ${
                                         isSelected
-                                          ? "border-blue-600 bg-blue-600 text-white font-black"
-                                          : "border-gray-200 bg-white text-gray-555 dark:border-gray-750 dark:bg-gray-800 dark:text-gray-400 hover:bg-gray-55"
+                                          ? "border-blue-600 bg-blue-50 text-blue-700 font-extrabold ring-2 ring-blue-500/20"
+                                          : "border-slate-300 bg-slate-50/50 text-slate-600 dark:border-gray-600 dark:bg-gray-750 dark:text-gray-300 hover:bg-slate-100 hover:border-slate-400"
                                       }`}
                                     >
-                                      {["①", "②", "③", "④", "⑤"][cIdx] || choiceNum}
+                                      {isSelected ? (
+                                        <span className="flex items-center justify-center font-black">
+                                          ●
+                                        </span>
+                                      ) : (
+                                        ["①", "②", "③", "④", "⑤"][cIdx] || choiceNum
+                                      )}
                                     </button>
                                   );
                                 })}
                               </div>
                             ) : (
-                              /* 입력형 */
+                              /* 입력형 (주관식 컴팩트 스타일) */
                               <div className="w-full max-w-[100px]">
                                 <input
                                   type="text"
@@ -1102,21 +1110,25 @@ export default function MathSolvePage(props: PageProps) {
                                   value={currentAns?.inputValue || ""}
                                   onClick={() => setActiveInputIdx(isActiveInput ? null : idx)}
                                   placeholder="입력"
-                                  className="w-full text-center rounded border border-gray-200 bg-white px-2 py-1 text-xs font-bold text-gray-850 focus:border-blue-500 focus:outline-none dark:border-gray-800 dark:bg-gray-955 dark:text-white cursor-pointer hover:bg-gray-55/50"
+                                  className="w-full text-center rounded border border-gray-200 bg-white px-2 py-1 text-xs font-bold text-gray-800 focus:border-blue-500 focus:outline-none dark:border-gray-800 dark:bg-gray-955 dark:text-white cursor-pointer hover:bg-gray-55/50"
                                 />
                               </div>
                             )}
                           </div>
 
-                          {/* 입력 상태 표시 */}
-                          <div className="shrink-0 w-12 text-right">
-                            <span className={`text-xs font-bold ${
-                              isFilled
-                                ? "text-blue-600 dark:text-blue-400 font-extrabold"
-                                : "text-gray-400 dark:text-gray-655"
-                            }`}>
-                              {isFilled ? "입력" : "미입력"}
-                            </span>
+                          {/* 입력 상태 표시 - 조약돌 배지화 */}
+                          <div className="shrink-0 w-12 text-right flex justify-end">
+                            {isFilled ? (
+                              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-blue-50 text-blue-600 dark:bg-blue-950/40 dark:text-blue-300 border border-blue-150 dark:border-blue-900/50">
+                                <span className="h-1 w-1 rounded-full bg-blue-500 animate-pulse" />
+                                완료
+                              </span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-slate-100 text-slate-400 dark:bg-gray-800 dark:text-gray-500 border border-slate-200/60 dark:border-gray-700/60">
+                                <span className="h-1 w-1 rounded-full bg-slate-350 dark:bg-gray-600" />
+                                대기
+                              </span>
+                            )}
                           </div>
                         </div>
                       );
@@ -1124,13 +1136,13 @@ export default function MathSolvePage(props: PageProps) {
 
                     if (useTwoColumn) {
                       return (
-                        <div className="grid grid-cols-2 gap-x-8 min-h-0">
+                        <div className="grid grid-cols-2 gap-x-6 min-h-0">
                           {/* 좌측 단: 앞부분 절반 */}
-                          <div className="space-y-1 pr-2 border-r border-gray-100 dark:border-gray-800/80">
+                          <div className="pr-2 border-r border-[#EAE6D2] dark:border-amber-900/20">
                             {leftColQuestions.map((q, lIdx) => renderRow(q, lIdx))}
                           </div>
                           {/* 우측 단: 뒷부분 절반 */}
-                          <div className="space-y-1 pl-2">
+                          <div className="pl-2">
                             {rightColQuestions.map((q, rIdx) => renderRow(q, half + rIdx))}
                           </div>
                         </div>
@@ -1139,7 +1151,7 @@ export default function MathSolvePage(props: PageProps) {
 
                     // 15문항 이하인 경우: 기존 1단 레이아웃
                     return (
-                      <div className="space-y-1">
+                      <div className="max-w-md mx-auto">
                         {questions.map((q, idx) => renderRow(q, idx))}
                       </div>
                     );
@@ -1148,7 +1160,7 @@ export default function MathSolvePage(props: PageProps) {
 
                 {/* 입력형 하단 고정 키패드 */}
                 {activeInputIdx !== null && (
-                  <div className="border-t border-gray-200 dark:border-gray-855 bg-gray-55/90 dark:bg-gray-900/95 p-4 shrink-0">
+                  <div className="border-t border-[#EAE6D2] dark:border-amber-900/30 bg-[#F9F8F0]/90 dark:bg-[#1C1C18]/95 p-4 shrink-0">
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-xs font-black text-blue-600 dark:text-blue-400">
                         선택 문항: {String(activeInputIdx + 1).padStart(2, "0")}번
@@ -1185,7 +1197,7 @@ export default function MathSolvePage(props: PageProps) {
                       ].map((btn, i) => {
                         const gridCls = [
                           btn.colSpan ? `col-span-${btn.colSpan}` : "",
-                          btn.cls || "bg-white hover:bg-gray-50 text-gray-800 dark:bg-gray-800 dark:hover:bg-gray-750 dark:text-gray-100 border border-gray-200/50 dark:border-gray-700/50",
+                          btn.cls || "bg-white hover:bg-gray-50 text-gray-850 dark:bg-gray-800 dark:hover:bg-gray-750 dark:text-gray-100 border border-gray-200/50 dark:border-gray-700/50",
                         ].join(" ");
                         return (
                           <button
@@ -1208,11 +1220,11 @@ export default function MathSolvePage(props: PageProps) {
             </div>
           )}
 
-          {/* 현황 수치 요약 */}
-          <div className="mt-auto border-t border-gray-100 pt-6 dark:border-gray-800 space-y-2.5">
+          {/* 현황 수치 요약 - 그라디언트 게이지 바 적용 */}
+          <div className="mt-auto border-t border-[#EAE6D2] dark:border-amber-900/30 pt-6 dark:border-gray-800 space-y-2.5">
             <div className="flex justify-between text-sm">
               <span className="text-gray-500">풀이한 문제</span>
-              <span className="font-semibold">
+              <span className="font-semibold text-blue-600 dark:text-blue-400">
                 {
                   answers.filter((a) => {
                     if (a.type === "choice") {
@@ -1226,7 +1238,7 @@ export default function MathSolvePage(props: PageProps) {
             </div>
             <div className="h-2 w-full rounded-full bg-gray-150 dark:bg-gray-800 overflow-hidden">
               <div
-                className="h-full bg-blue-600 rounded-full transition-all duration-300"
+                className="h-full bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full transition-all duration-350"
                 style={{
                   width: `${
                     (answers.filter((a) => {
@@ -1251,7 +1263,7 @@ export default function MathSolvePage(props: PageProps) {
         <button
           onClick={() => currentIdx > 0 && setCurrentIdx(currentIdx - 1)}
           disabled={currentIdx === 0}
-          className="flex items-center space-x-1 rounded-xl border border-gray-200 px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:hover:bg-transparent dark:border-gray-850 dark:text-gray-350 dark:hover:bg-gray-800"
+          className="flex items-center space-x-1 rounded-xl border border-gray-200 px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:hover:bg-transparent dark:border-gray-850 dark:text-gray-305 dark:hover:bg-gray-800"
         >
           <ChevronLeft className="h-4 w-4" />
           <span>이전</span>
@@ -1428,7 +1440,7 @@ export default function MathSolvePage(props: PageProps) {
               value={reportText}
               onChange={(e) => setReportText(e.target.value)}
               placeholder="오류 내용을 상세히 작성해 주세요."
-              className="w-full h-32 rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-850 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-800 dark:bg-gray-955 dark:text-white mb-6 resize-none"
+              className="w-full h-32 rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-800 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-800 dark:bg-gray-950 dark:text-white mb-6 resize-none"
             />
             <div className="flex justify-end space-x-3">
               <button
