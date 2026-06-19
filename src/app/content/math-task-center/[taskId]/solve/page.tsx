@@ -1003,9 +1003,6 @@ export default function MathSolvePage(props: PageProps) {
                 <div className="p-4 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex items-center justify-between">
                   <div className="space-y-1">
                     <h4 className="text-sm font-bold text-gray-800 dark:text-gray-150">답안표 입력</h4>
-                    <p className="text-[11px] leading-relaxed text-gray-400 dark:text-gray-500 break-keep">
-                      출력물로 풀이한 답안을 문항별로 입력해 주세요.
-                    </p>
                   </div>
                   <button
                     onClick={() => {
