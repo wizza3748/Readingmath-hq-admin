@@ -1021,13 +1021,10 @@ export default function ScienceSolvePage(props: PageProps) {
                           isActiveInput ? "bg-emerald-50/30 dark:bg-emerald-950/20 px-2 rounded-lg border-l-2 border-l-emerald-500" : ""
                         }`}
                       >
-                        {/* 문항 번호 및 유형 배지 */}
+                        {/* 문항 번호 배지 */}
                         <div className="flex items-center gap-1.5 shrink-0">
                           <span className="text-xs font-extrabold text-gray-500 dark:text-gray-400">
                             {String(idx + 1).padStart(2, "0")}
-                          </span>
-                          <span className="text-[9px] font-bold text-gray-400 dark:text-gray-500 border border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/40 px-1 py-0.2 rounded shrink-0">
-                            {q.type === "choice" ? "선지형" : "입력형"}
                           </span>
                         </div>
 
