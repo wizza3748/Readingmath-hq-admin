@@ -989,10 +989,7 @@ export default function ScienceSolvePage(props: PageProps) {
               /* 신규 <답안표 입력 카드> */
               <div className="flex flex-col h-full border border-gray-200 dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 overflow-hidden">
                 {/* 카드 헤더 */}
-                <div className="p-4 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex items-center justify-between">
-                  <div className="space-y-1">
-                    <h4 className="text-sm font-bold text-gray-800 dark:text-gray-150">답안표 입력</h4>
-                  </div>
+                <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex items-center justify-end">
                   <button
                     onClick={() => {
                       setShowAnswerSheet(false);
