@@ -1005,13 +1005,13 @@ export default function MathSolvePage(props: PageProps) {
                     setShowAnswerSheet(false);
                     setActiveInputIdx(null);
                   }}
-                  className="absolute top-3.5 right-3.5 z-10 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1 bg-white/85 dark:bg-gray-900/85 rounded-full backdrop-blur-xs transition-colors"
+                  className="absolute top-2 right-2 z-10 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1 bg-white/85 dark:bg-gray-900/85 rounded-full backdrop-blur-xs transition-colors"
                 >
                   <X className="h-4 w-4" />
                 </button>
 
                 {/* 문항 목록 리스트 (스크롤 영역) */}
-                <div className="flex-1 overflow-y-auto px-4 pt-9 pb-2 space-y-1 bg-white dark:bg-gray-900">
+                <div className="flex-1 overflow-y-auto px-4 pt-7 pb-2 space-y-1 bg-white dark:bg-gray-900">
                   {questions.map((q, idx) => {
                     const isFilled = isQuestionAnswered(idx);
                     const currentAns = answers.find((a) => a.questionIndex === idx);
