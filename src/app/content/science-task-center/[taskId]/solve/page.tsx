@@ -1000,7 +1000,7 @@ export default function ScienceSolvePage(props: PageProps) {
                 </button>
 
                 {/* 문항 목록 리스트 (스크롤 영역) */}
-                <div className="flex-1 overflow-y-auto px-4 py-2 space-y-1 bg-white dark:bg-gray-900">
+                <div className="flex-1 overflow-y-auto px-4 pt-9 pb-2 space-y-1 bg-white dark:bg-gray-900">
                   {questions.map((q, idx) => {
                     const isFilled = isQuestionAnswered(idx);
                     const currentAns = answers.find((a) => a.questionIndex === idx);
