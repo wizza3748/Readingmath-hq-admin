@@ -673,7 +673,7 @@ export default function MathSolvePage(props: PageProps) {
       {/* 메인 레이아웃 (문제/현황) */}
       <main className="flex flex-1 overflow-hidden">
         {/* 좌측 문제/풀이 영역 */}
-        <section className="flex flex-1 flex-col overflow-y-auto p-8 lg:p-12 bg-white dark:bg-gray-950 border-r border-gray-100 dark:border-gray-855">
+        <section className="flex flex-1 flex-col overflow-y-auto p-8 lg:p-12 bg-white dark:bg-gray-955 border-r border-gray-100 dark:border-gray-855">
           <div className="flex-1 space-y-8 w-full max-w-none">
             {/* 문제 영역 */}
             <div className="w-full space-y-6 transition-all duration-300">
@@ -740,7 +740,7 @@ export default function MathSolvePage(props: PageProps) {
                                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-sm font-semibold transition-all ${
                                     isSelected
                                       ? "border-blue-600 bg-blue-600 text-white"
-                                      : "border-gray-300 bg-white text-gray-600 dark:border-gray-650 dark:bg-gray-800 dark:text-gray-300"
+                                      : "border-gray-300 bg-white text-gray-600 dark:border-gray-650 dark:bg-gray-800 dark:text-gray-350"
                                   }`}
                                 >
                                   {choiceNum}
@@ -778,7 +778,7 @@ export default function MathSolvePage(props: PageProps) {
                                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-sm font-semibold transition-all ${
                                     isSelected
                                       ? "border-blue-600 bg-blue-600 text-white"
-                                      : "border-gray-300 bg-white text-gray-600 dark:border-gray-650 dark:bg-gray-800 dark:text-gray-300"
+                                      : "border-gray-300 bg-white text-gray-600 dark:border-gray-650 dark:bg-gray-800 dark:text-gray-305"
                                   }`}
                                 >
                                   {choiceNum}
@@ -816,7 +816,7 @@ export default function MathSolvePage(props: PageProps) {
                                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-sm font-semibold transition-all ${
                                     isSelected
                                       ? "border-blue-600 bg-blue-600 text-white"
-                                      : "border-gray-300 bg-white text-gray-600 dark:border-gray-650 dark:bg-gray-800 dark:text-gray-300"
+                                      : "border-gray-300 bg-white text-gray-600 dark:border-gray-650 dark:bg-gray-800 dark:text-gray-305"
                                   }`}
                                 >
                                   {choiceNum}
@@ -854,7 +854,7 @@ export default function MathSolvePage(props: PageProps) {
                                 className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-sm font-semibold transition-all ${
                                   isSelected
                                     ? "border-blue-600 bg-blue-600 text-white"
-                                    : "border-gray-300 bg-white text-gray-600 dark:border-gray-650 dark:bg-gray-800 dark:text-gray-300"
+                                    : "border-gray-300 bg-white text-gray-600 dark:border-gray-655 dark:bg-gray-800 dark:text-gray-300"
                                 }`}
                               >
                                 {choiceNum}
@@ -906,14 +906,14 @@ export default function MathSolvePage(props: PageProps) {
                           { label: ".", value: "." },
                           { label: "-", value: "-" },
                           { label: "+", value: "+" },
-                          { label: "↺", value: "clear", cls: "bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 font-bold" },
-                          { label: "⌫", value: "delete", cls: "bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 font-bold" },
+                          { label: "↺", value: "clear", cls: "bg-gray-55 dark:bg-gray-800 text-gray-650 dark:text-gray-400 font-bold" },
+                          { label: "⌫", value: "delete", cls: "bg-gray-55 dark:bg-gray-800 text-gray-650 dark:text-gray-400 font-bold" },
                           
                           { label: "✓", value: "confirm", colSpan: 5, cls: "bg-slate-600 hover:bg-slate-700 text-white font-bold text-xl h-12 flex items-center justify-center rounded-xl" },
                         ].map((btn, i) => {
                           const gridCls = [
                             btn.colSpan ? `col-span-${btn.colSpan}` : "",
-                            btn.cls || "bg-white hover:bg-gray-50 text-gray-800 dark:bg-gray-800 dark:hover:bg-gray-750 dark:text-gray-100 border border-gray-200/50 dark:border-gray-700/50",
+                            btn.cls || "bg-white hover:bg-gray-50 text-gray-850 dark:bg-gray-800 dark:hover:bg-gray-750 dark:text-gray-100 border border-gray-200/50 dark:border-gray-700/50",
                           ].join(" ");
                           return (
                             <button
@@ -1148,7 +1148,7 @@ export default function MathSolvePage(props: PageProps) {
                         { label: ".", value: "." },
                         { label: "-", value: "-" },
                         { label: "+", value: "+" },
-                        { label: "clear", value: "clear", cls: "bg-white hover:bg-gray-55 text-gray-555 dark:bg-gray-800 dark:hover:bg-gray-750 dark:text-gray-400 text-xs font-bold border border-gray-200/50 dark:border-gray-700/50" },
+                        { label: "clear", value: "clear", cls: "bg-white hover:bg-gray-55 text-gray-555 dark:bg-gray-800 dark:hover:bg-gray-770 dark:text-gray-400 text-xs font-bold border border-gray-200/50 dark:border-gray-700/50" },
                         { label: "⌫", value: "delete", cls: "bg-white hover:bg-gray-55 text-gray-555 dark:bg-gray-800 dark:hover:bg-gray-750 dark:text-gray-450 text-xs font-bold border border-gray-200/50 dark:border-gray-700/50" },
 
                         { label: "✓ 확인", value: "confirm", colSpan: 5, cls: "bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs h-9 flex items-center justify-center rounded-lg shadow-sm" },
@@ -1162,7 +1162,7 @@ export default function MathSolvePage(props: PageProps) {
                             key={i}
                             type="button"
                             onClick={() => handleAnswerSheetKeypad(btn.value, activeInputIdx)}
-                            className={`flex h-7 items-center justify-center rounded-lg text-[10px] font-bold shadow-sm transition active:scale-95 ${gridCls}`}
+                            className={`flex h-9 items-center justify-center rounded-lg text-xs font-bold shadow-sm transition active:scale-95 ${gridCls}`}
                             style={{
                               gridColumnEnd: btn.colSpan ? `span ${btn.colSpan}` : undefined
                             }}

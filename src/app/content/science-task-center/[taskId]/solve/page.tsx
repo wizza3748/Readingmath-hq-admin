@@ -568,7 +568,7 @@ export default function ScienceSolvePage(props: PageProps) {
 
           {/* 학기 뱃지 */}
           {task.course && (
-            <span className="inline-flex items-center rounded-md bg-gray-100 px-2 py-0.5 text-xs font-bold text-gray-650 border border-gray-200/60 dark:bg-gray-800 dark:text-gray-350 dark:border-gray-700">
+            <span className="inline-flex items-center rounded-md bg-gray-100 px-2 py-0.5 text-xs font-bold text-gray-655 border border-gray-200/60 dark:bg-gray-800 dark:text-gray-350 dark:border-gray-700">
               {task.course}
             </span>
           )}
@@ -584,7 +584,7 @@ export default function ScienceSolvePage(props: PageProps) {
             {task.unitDisplayName?.includes(">") && (
               <>
                 <span className="text-gray-400 dark:text-gray-600 font-normal">&gt;</span>
-                <span className="text-gray-500 dark:text-gray-450 font-medium">
+                <span className="text-gray-500 dark:text-gray-455 font-medium">
                   {task.unitDisplayName.substring(task.unitDisplayName.indexOf(">") + 1).trim()}
                 </span>
               </>
@@ -650,7 +650,7 @@ export default function ScienceSolvePage(props: PageProps) {
         >
           <ArrowLeft className="h-5 w-5" />
         </button>
-        <h1 className="text-xl font-bold text-gray-800 dark:text-gray-100">
+        <h1 className="text-xl font-bold text-gray-850 dark:text-gray-100">
           {task.title}
         </h1>
       </div>
@@ -658,7 +658,7 @@ export default function ScienceSolvePage(props: PageProps) {
       {/* 메인 레이아웃 (문제/현황) */}
       <main className="flex flex-1 overflow-hidden">
         {/* 좌측 문제/풀이 영역 */}
-        <section className="flex flex-1 flex-col overflow-y-auto p-8 lg:p-12 bg-white dark:bg-gray-950 border-r border-gray-100 dark:border-gray-855">
+        <section className="flex flex-1 flex-col overflow-y-auto p-8 lg:p-12 bg-white dark:bg-gray-955 border-r border-gray-100 dark:border-gray-855">
           <div className="flex-1 space-y-8 w-full max-w-none">
             {/* 문제 영역 (카드 형태의 보더, 배경, 그림자를 제거하여 무테 왼쪽 정렬 콘텐츠로 변경) */}
             <div className="w-full space-y-6 transition-all duration-300">
@@ -678,8 +678,8 @@ export default function ScienceSolvePage(props: PageProps) {
                           currentQuestion.difficulty === "basic"
                             ? "bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950/40 dark:text-sky-300 dark:border-sky-800"
                             : currentQuestion.difficulty === "intermediate"
-                            ? "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:border-amber-800"
-                            : "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:border-rose-800"
+                            ? "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:border-sky-800"
+                            : "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:border-sky-800"
                         }`}>
                           {currentQuestion.difficulty === "basic" ? "기본" : currentQuestion.difficulty === "intermediate" ? "실력" : "심화"}
                         </span>
@@ -724,7 +724,7 @@ export default function ScienceSolvePage(props: PageProps) {
                                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-sm font-semibold transition-all ${
                                     isSelected
                                       ? "border-emerald-600 bg-emerald-600 text-white"
-                                      : "border-gray-300 bg-white text-gray-600 dark:border-gray-300"
+                                      : "border-gray-300 bg-white text-gray-650 dark:border-gray-800 dark:text-gray-300"
                                   }`}
                                 >
                                   {choiceNum}
@@ -762,7 +762,7 @@ export default function ScienceSolvePage(props: PageProps) {
                                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-sm font-semibold transition-all ${
                                     isSelected
                                       ? "border-emerald-600 bg-emerald-600 text-white"
-                                      : "border-gray-300 bg-white text-gray-600 dark:border-gray-350 dark:bg-gray-800 dark:text-gray-300"
+                                      : "border-gray-300 bg-white text-gray-650 dark:bg-gray-800 dark:text-gray-300"
                                   }`}
                                 >
                                   {choiceNum}
@@ -800,7 +800,7 @@ export default function ScienceSolvePage(props: PageProps) {
                                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-sm font-semibold transition-all ${
                                     isSelected
                                       ? "border-emerald-600 bg-emerald-600 text-white"
-                                      : "border-gray-300 bg-white text-gray-600 dark:border-gray-350 dark:bg-gray-800 dark:text-gray-300"
+                                      : "border-gray-300 bg-white text-gray-650 dark:bg-gray-800 dark:text-gray-300"
                                   }`}
                                 >
                                   {choiceNum}
@@ -838,7 +838,7 @@ export default function ScienceSolvePage(props: PageProps) {
                                 className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-sm font-semibold transition-all ${
                                   isSelected
                                     ? "border-emerald-600 bg-emerald-600 text-white"
-                                    : "border-gray-300 bg-white text-gray-600 dark:border-gray-350 dark:bg-gray-800 dark:text-gray-300"
+                                    : "border-gray-300 bg-white text-gray-655 dark:bg-gray-800 dark:text-gray-300"
                                 }`}
                               >
                                 {choiceNum}
@@ -890,14 +890,14 @@ export default function ScienceSolvePage(props: PageProps) {
                           { label: ".", value: "." },
                           { label: "-", value: "-" },
                           { label: "+", value: "+" },
-                          { label: "↺", value: "clear", cls: "bg-gray-55 dark:bg-gray-800 text-gray-600 dark:text-gray-400 font-bold" },
-                          { label: "⌫", value: "delete", cls: "bg-gray-55 dark:bg-gray-800 text-gray-600 dark:text-gray-400 font-bold" },
+                          { label: "↺", value: "clear", cls: "bg-gray-55 dark:bg-gray-800 text-gray-650 dark:text-gray-400 font-bold" },
+                          { label: "⌫", value: "delete", cls: "bg-gray-55 dark:bg-gray-800 text-gray-650 dark:text-gray-400 font-bold" },
                           
                           { label: "✓", value: "confirm", colSpan: 5, cls: "bg-slate-600 hover:bg-slate-700 text-white font-bold text-xl h-12 flex items-center justify-center rounded-xl" },
                         ].map((btn, i) => {
                           const gridCls = [
                             btn.colSpan ? `col-span-${btn.colSpan}` : "",
-                            btn.cls || "bg-white hover:bg-gray-50 text-gray-850 dark:bg-gray-800 dark:hover:bg-gray-750 dark:text-gray-100 border border-gray-200/50 dark:border-gray-700/50",
+                            btn.cls || "bg-white hover:bg-gray-55 text-gray-850 dark:bg-gray-800 dark:hover:bg-gray-750 dark:text-gray-100 border border-gray-200/50 dark:border-gray-700/50",
                           ].join(" ");
                           return (
                             <button
@@ -960,7 +960,7 @@ export default function ScienceSolvePage(props: PageProps) {
 
                 let buttonClass = "border ";
                 if (isCurrent) {
-                  buttonClass += "border-2 border-emerald-600 bg-emerald-50 text-emerald-900 dark:bg-emerald-950/50 dark:text-emerald-100 font-bold ring-2 ring-emerald-555/20";
+                  buttonClass += "border-2 border-emerald-600 bg-emerald-50 text-emerald-900 dark:bg-emerald-950/50 dark:text-emerald-100 font-bold ring-2 ring-emerald-500/20";
                 } else if (isFilled) {
                   buttonClass += "border-emerald-600 bg-emerald-600 text-white font-semibold";
                 } else {
@@ -1014,90 +1014,120 @@ export default function ScienceSolvePage(props: PageProps) {
                 </div>
 
                 {/* 바디 영역 (스크롤 리스트) */}
-                <div className="flex-1 overflow-y-auto px-6 py-4 space-y-3 bg-white dark:bg-gray-900">
-                  {questions.map((q, idx) => {
-                    const isFilled = isQuestionAnswered(idx);
-                    const currentAns = answers.find((a) => a.questionIndex === idx);
-                    const isActiveInput = activeInputIdx === idx;
+                <div className="flex-1 overflow-y-auto px-6 py-4 bg-white dark:bg-gray-900">
+                  {(() => {
+                    const half = Math.ceil(questions.length / 2);
+                    const leftColQuestions = questions.slice(0, half);
+                    const rightColQuestions = questions.slice(half);
+                    const useTwoColumn = questions.length > 15;
 
+                    // 개별 문항 행 렌더러 함수
+                    const renderRow = (q: Question, idx: number) => {
+                      const isFilled = isQuestionAnswered(idx);
+                      const currentAns = answers.find((a) => a.questionIndex === idx);
+                      const isActiveInput = activeInputIdx === idx;
+
+                      return (
+                        <div
+                          key={idx}
+                          className={`flex items-center justify-between py-1.5 border-b border-gray-100 dark:border-gray-800/60 transition-all duration-150 ${
+                            isActiveInput ? "bg-emerald-50/30 dark:bg-emerald-950/20 px-2 rounded-lg border-l-2 border-l-emerald-500" : ""
+                          }`}
+                        >
+                          {/* 문항 번호 */}
+                          <div className="flex items-center gap-1 shrink-0">
+                            <span className="text-xs font-extrabold text-gray-500 dark:text-gray-400">
+                              {String(idx + 1).padStart(2, "0")}번
+                            </span>
+                          </div>
+
+                          {/* 답안 입력 컨트롤 */}
+                          <div className="flex-1 flex justify-center px-2 min-w-0">
+                            {q.type === "choice" ? (
+                              /* 선지형 */
+                              <div className="flex items-center gap-1.5">
+                                {Array.from({ length: q.choiceHtmls?.length || 5 }).map((_, cIdx) => {
+                                  const choiceNum = cIdx + 1;
+                                  const isSelected = currentAns?.selectedChoices?.includes(choiceNum) || false;
+
+                                  return (
+                                    <button
+                                      key={choiceNum}
+                                      onClick={() => {
+                                        let selected: number[] = [];
+                                        if (currentAns && Array.isArray(currentAns.selectedChoices) && currentAns.selectedChoices.includes(choiceNum)) {
+                                          selected = currentAns.selectedChoices.filter((c) => c !== choiceNum);
+                                        } else {
+                                          selected = [...(currentAns?.selectedChoices || []), choiceNum];
+                                        }
+                                        handleSaveAnswer({
+                                          questionIndex: idx,
+                                          type: "choice",
+                                          selectedChoices: selected,
+                                        });
+                                      }}
+                                      className={`h-8 w-8 rounded-full border text-xs font-bold flex items-center justify-center transition active:scale-95 ${
+                                        isSelected
+                                          ? "border-emerald-600 bg-emerald-600 text-white font-black"
+                                          : "border-gray-200 bg-white text-gray-555 dark:border-gray-750 dark:bg-gray-800 dark:text-gray-400 hover:bg-gray-50"
+                                      }`}
+                                    >
+                                      {["①", "②", "③", "④", "⑤"][cIdx] || choiceNum}
+                                    </button>
+                                  );
+                                })}
+                              </div>
+                            ) : (
+                              /* 입력형 */
+                              <div className="w-full max-w-[100px]">
+                                <input
+                                  type="text"
+                                  readOnly
+                                  value={currentAns?.inputValue || ""}
+                                  onClick={() => setActiveInputIdx(isActiveInput ? null : idx)}
+                                  placeholder="입력"
+                                  className="w-full text-center rounded border border-gray-200 bg-white px-2 py-1 text-xs font-bold text-gray-850 focus:border-emerald-500 focus:outline-none dark:border-gray-800 dark:bg-gray-955 dark:text-white cursor-pointer hover:bg-gray-55/50"
+                                />
+                              </div>
+                            )}
+                          </div>
+
+                          {/* 입력 상태 표시 */}
+                          <div className="shrink-0 w-12 text-right">
+                            <span className={`text-xs font-bold ${
+                              isFilled
+                                ? "text-emerald-600 dark:text-emerald-400 font-extrabold"
+                                : "text-gray-400 dark:text-gray-655"
+                            }`}>
+                              {isFilled ? "입력" : "미입력"}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    };
+
+                    if (useTwoColumn) {
+                      return (
+                        <div className="grid grid-cols-2 gap-x-8 min-h-0">
+                          {/* 좌측 단: 앞부분 절반 */}
+                          <div className="space-y-1 pr-2 border-r border-gray-100 dark:border-gray-800/80">
+                            {leftColQuestions.map((q, lIdx) => renderRow(q, lIdx))}
+                          </div>
+                          {/* 우측 단: 뒷부분 절반 */}
+                          <div className="space-y-1 pl-2">
+                            {rightColQuestions.map((q, rIdx) => renderRow(q, half + rIdx))}
+                          </div>
+                        </div>
+                      );
+                    }
+
+                    // 15문항 이하인 경우: 기존 1단 레이아웃
                     return (
-                      <div
-                        key={idx}
-                        className={`flex items-center justify-between py-3 border-b border-gray-100 dark:border-gray-800/60 transition-all duration-150 ${
-                          isActiveInput ? "bg-emerald-50/30 dark:bg-emerald-950/20 px-3 rounded-xl border-l-2 border-l-emerald-500" : ""
-                        }`}
-                      >
-                        {/* 문항 번호 */}
-                        <div className="flex items-center gap-1.5 shrink-0">
-                          <span className="text-sm font-extrabold text-gray-600 dark:text-gray-300">
-                            {String(idx + 1).padStart(2, "0")}번
-                          </span>
-                        </div>
-
-                        {/* 답안 입력 컨트롤 */}
-                        <div className="flex-1 flex justify-center px-4 min-w-0">
-                          {q.type === "choice" ? (
-                            /* 선지형 */
-                            <div className="flex items-center gap-1.5">
-                              {Array.from({ length: q.choiceHtmls?.length || 5 }).map((_, cIdx) => {
-                                const choiceNum = cIdx + 1;
-                                const isSelected = currentAns?.selectedChoices?.includes(choiceNum) || false;
-
-                                return (
-                                  <button
-                                    key={choiceNum}
-                                    onClick={() => {
-                                      let selected: number[] = [];
-                                      if (currentAns && Array.isArray(currentAns.selectedChoices) && currentAns.selectedChoices.includes(choiceNum)) {
-                                        selected = currentAns.selectedChoices.filter((c) => c !== choiceNum);
-                                      } else {
-                                        selected = [...(currentAns?.selectedChoices || []), choiceNum];
-                                      }
-                                      handleSaveAnswer({
-                                        questionIndex: idx,
-                                        type: "choice",
-                                        selectedChoices: selected,
-                                      });
-                                    }}
-                                    className={`h-9 w-9 rounded-full border text-sm font-bold flex items-center justify-center transition active:scale-95 ${
-                                      isSelected
-                                        ? "border-emerald-600 bg-emerald-600 text-white font-black"
-                                        : "border-gray-200 bg-white text-gray-555 dark:border-gray-750 dark:bg-gray-800 dark:text-gray-400 hover:bg-gray-50"
-                                    }`}
-                                  >
-                                    {["①", "②", "③", "④", "⑤"][cIdx] || choiceNum}
-                                  </button>
-                                );
-                              })}
-                            </div>
-                          ) : (
-                            /* 입력형 */
-                            <div className="w-full max-w-[120px]">
-                              <input
-                                type="text"
-                                readOnly
-                                value={currentAns?.inputValue || ""}
-                                onClick={() => setActiveInputIdx(isActiveInput ? null : idx)}
-                                placeholder="입력"
-                                className="w-full text-center rounded border border-gray-200 bg-white px-2.5 py-1.5 text-sm font-bold text-gray-800 focus:border-emerald-500 focus:outline-none dark:border-gray-800 dark:bg-gray-955 dark:text-white cursor-pointer hover:bg-gray-55/50"
-                              />
-                            </div>
-                          )}
-                        </div>
-
-                        {/* 입력 상태 표시 */}
-                        <div className="shrink-0 w-12 text-right">
-                          <span className={`text-xs font-bold ${
-                            isFilled
-                              ? "text-emerald-600 dark:text-emerald-400 font-extrabold"
-                              : "text-gray-400 dark:text-gray-655"
-                          }`}>
-                            {isFilled ? "입력" : "미입력"}
-                          </span>
-                        </div>
+                      <div className="space-y-1">
+                        {questions.map((q, idx) => renderRow(q, idx))}
                       </div>
                     );
-                  })}
+                  })()}
                 </div>
 
                 {/* 입력형 하단 고정 키패드 */}
@@ -1132,8 +1162,8 @@ export default function ScienceSolvePage(props: PageProps) {
                         { label: ".", value: "." },
                         { label: "-", value: "-" },
                         { label: "+", value: "+" },
-                        { label: "clear", value: "clear", cls: "bg-white hover:bg-gray-55 text-gray-555 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-400 text-xs font-bold border border-gray-200/50 dark:border-gray-700/50" },
-                        { label: "⌫", value: "delete", cls: "bg-white hover:bg-gray-55 text-gray-555 dark:bg-gray-800 dark:hover:bg-gray-750 dark:text-gray-450 text-xs font-bold border border-gray-200/50 dark:border-gray-700/50" },
+                        { label: "clear", value: "clear", cls: "bg-white hover:bg-gray-55 text-gray-555 dark:bg-gray-850 dark:hover:bg-gray-700 dark:text-gray-400 text-xs font-bold border border-gray-200/50 dark:border-gray-700/50" },
+                        { label: "⌫", value: "delete", cls: "bg-white hover:bg-gray-55 text-gray-555 dark:bg-gray-850 dark:hover:bg-gray-750 dark:text-gray-450 text-xs font-bold border border-gray-200/50 dark:border-gray-700/50" },
 
                         { label: "✓ 확인", value: "confirm", colSpan: 5, cls: "bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs h-9 flex items-center justify-center rounded-lg shadow-sm" },
                       ].map((btn, i) => {
@@ -1205,7 +1235,7 @@ export default function ScienceSolvePage(props: PageProps) {
         <button
           onClick={() => currentIdx > 0 && setCurrentIdx(currentIdx - 1)}
           disabled={currentIdx === 0}
-          className="flex items-center space-x-1 rounded-xl border border-gray-200 px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:hover:bg-transparent dark:border-gray-800 dark:text-gray-300 dark:hover:bg-gray-800"
+          className="flex items-center space-x-1 rounded-xl border border-gray-200 px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:hover:bg-transparent dark:border-gray-850 dark:text-gray-300 dark:hover:bg-gray-800"
         >
           <ChevronLeft className="h-4 w-4" />
           <span>이전</span>
@@ -1382,7 +1412,7 @@ export default function ScienceSolvePage(props: PageProps) {
               value={reportText}
               onChange={(e) => setReportText(e.target.value)}
               placeholder="오류 내용을 상세히 작성해 주세요."
-              className="w-full h-32 rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-800 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 dark:border-gray-800 dark:bg-gray-955 dark:text-white mb-6 resize-none"
+              className="w-full h-32 rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-850 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 dark:border-gray-800 dark:bg-gray-955 dark:text-white mb-6 resize-none"
             />
             <div className="flex justify-end space-x-3">
               <button
