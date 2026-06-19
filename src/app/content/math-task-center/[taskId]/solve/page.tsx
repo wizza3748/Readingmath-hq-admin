@@ -961,7 +961,7 @@ export default function MathSolvePage(props: PageProps) {
 
           {/* [답안표 입력] 버튼 추가 */}
           <button
-            onClick={() => setShowAnswerSheet(true)}
+            onClick={() => setShowAnswerSheet(!showAnswerSheet)}
             className="w-full mb-4 py-2.5 rounded-xl border border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 transition-all font-bold text-xs flex items-center justify-center gap-1.5 dark:bg-blue-950/20 dark:border-blue-900/50 dark:text-blue-300 dark:hover:bg-blue-950/40"
           >
             답안표 입력

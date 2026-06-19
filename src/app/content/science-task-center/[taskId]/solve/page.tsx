@@ -950,7 +950,7 @@ export default function ScienceSolvePage(props: PageProps) {
 
           {/* [답안표 입력] 버튼 추가 */}
           <button
-            onClick={() => setShowAnswerSheet(true)}
+            onClick={() => setShowAnswerSheet(!showAnswerSheet)}
             className="w-full mb-4 py-2.5 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100/70 transition-all font-bold text-xs flex items-center justify-center gap-1.5 dark:bg-emerald-950/20 dark:border-emerald-900/50 dark:text-emerald-300 dark:hover:bg-emerald-950/40"
           >
             답안표 입력
