@@ -677,6 +677,21 @@ export const MOCK_EXAM_PREP_HISTORY: MockExamPrepHistory[] = [
     typeName: "소인수분해 문장제 해결하기",
     solvedAt: "2026-06-17T10:00:00", problemCount: 2, correctCount: 0,
   },
+  // ── 테스트 지원용 중1-1 소인수분해 재학습 오답 이력 강제 주입 ──
+  { studentId: "s1", typeId: "mt-중1-1-0-1-1-basic", typeName: "소인수분해 문장제 해결하기", solvedAt: "2026-06-18T10:00:00", problemCount: 2, correctCount: 0 },
+  { studentId: "s1", typeId: "mt-중1-1-0-2-1-basic", typeName: "소인수분해 오류 찾기", solvedAt: "2026-06-18T10:00:00", problemCount: 2, correctCount: 0 },
+  { studentId: "s1", typeId: "mt-중1-1-0-2-2-basic", typeName: "소인수분해 개념 적용하기", solvedAt: "2026-06-18T10:00:00", problemCount: 2, correctCount: 0 },
+  { studentId: "s1", typeId: "mt-중1-1-0-2-3-basic", typeName: "소인수분해 식 세우기", solvedAt: "2026-06-18T10:00:00", problemCount: 2, correctCount: 0 },
+
+  { studentId: "s2", typeId: "mt-중1-1-0-1-1-basic", typeName: "소인수분해 문장제 해결하기", solvedAt: "2026-06-18T10:00:00", problemCount: 2, correctCount: 0 },
+  { studentId: "s2", typeId: "mt-중1-1-0-2-1-basic", typeName: "소인수분해 오류 찾기", solvedAt: "2026-06-18T10:00:00", problemCount: 2, correctCount: 0 },
+  { studentId: "s2", typeId: "mt-중1-1-0-2-2-basic", typeName: "소인수분해 개념 적용하기", solvedAt: "2026-06-18T10:00:00", problemCount: 2, correctCount: 0 },
+  { studentId: "s2", typeId: "mt-중1-1-0-2-3-basic", typeName: "소인수분해 식 세우기", solvedAt: "2026-06-18T10:00:00", problemCount: 2, correctCount: 0 },
+
+  { studentId: "s8", typeId: "mt-중1-1-0-1-1-basic", typeName: "소인수분해 문장제 해결하기", solvedAt: "2026-06-18T10:00:00", problemCount: 2, correctCount: 0 },
+  { studentId: "s8", typeId: "mt-중1-1-0-2-1-basic", typeName: "소인수분해 오류 찾기", solvedAt: "2026-06-18T10:00:00", problemCount: 2, correctCount: 0 },
+  { studentId: "s8", typeId: "mt-중1-1-0-2-2-basic", typeName: "소인수분해 개념 적용하기", solvedAt: "2026-06-18T10:00:00", problemCount: 2, correctCount: 0 },
+  { studentId: "s8", typeId: "mt-중1-1-0-2-3-basic", typeName: "소인수분해 식 세우기", solvedAt: "2026-06-18T10:00:00", problemCount: 2, correctCount: 0 },
 ];
 
 // ── 실시간 유형명 매핑 보정 ──────────────────────────────────────────────────────
