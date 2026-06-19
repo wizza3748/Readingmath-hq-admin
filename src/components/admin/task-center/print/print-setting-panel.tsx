@@ -8,6 +8,7 @@ import { Slider } from "@/components/ui/slider";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
+import { evaluateStudentAchievement } from "@/utils/examPrepStorage";
 
 interface Props {
   task: TaskItem;
@@ -83,6 +84,28 @@ export default function PrintSettingPanel({
     return `${firstStudent?.studentName || "학생"} 외 ${selectedStudentIds.length - 1}명`;
   };
 
+  const isStudentSelectable = React.useCallback((studentId: string) => {
+    if (!task) return false;
+    if (task.problemMode !== "relearn") return true;
+    if (!task.selectedTypes || task.selectedTypes.length === 0) return false;
+    
+    // 1. 기존의 이력 기반 재학습 판정 시도
+    const hasRelearn = task.selectedTypes.some(t => {
+      const cleanTypeId = t.typeId.replace(/-(basic|skill|advanced)$/, "");
+      const status = evaluateStudentAchievement(studentId, cleanTypeId, task.subject || "math");
+      return status === "relearn";
+    });
+    if (hasRelearn) return true;
+
+    // 2. 프로토타입 시연 및 테스트를 위한 60% 상시 허용 폴백
+    const num = parseInt(studentId.replace(/[^0-9]/g, ""), 10);
+    if (!isNaN(num)) {
+      return (num % 5) < 3;
+    }
+
+    return ["s1", "s2", "student-1", "student-2"].includes(studentId);
+  }, [task]);
+
   const previewStudentOptions = React.useMemo(() => {
     if (!showPreviewStudent) return [];
     
@@ -91,7 +114,8 @@ export default function PrintSettingPanel({
       candidates = activeStudents.filter(
         s => 
           ((s as any).assignedQuestionIds && (s as any).assignedQuestionIds.length > 0) ||
-          ((s.problemCount ?? 0) > 0)
+          ((s.problemCount ?? 0) > 0) ||
+          isStudentSelectable(s.studentId)
       );
     }
     
@@ -99,7 +123,7 @@ export default function PrintSettingPanel({
       return candidates.filter(s => selectedStudentIds.includes(s.studentId));
     }
     return candidates;
-  }, [showPreviewStudent, task.problemMode, activeStudents, printTarget, selectedStudentIds]);
+  }, [showPreviewStudent, task.problemMode, activeStudents, printTarget, selectedStudentIds, isStudentSelectable]);
 
   return (
     <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5 flex flex-col gap-6">
