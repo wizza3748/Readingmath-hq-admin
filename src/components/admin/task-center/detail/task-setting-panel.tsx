@@ -380,7 +380,7 @@ export function TaskSettingPanel({
               <Button
                 size="sm"
                 variant="outline"
-                className="h-7 px-2 text-xs border-blue-200 text-blue-700 bg-white hover:bg-blue-50 transition-colors shadow-sm font-bold"
+                className="h-7 px-2 text-xs border-blue-200 text-blue-700 bg-white hover:bg-blue-50 hover:text-blue-800 transition-colors shadow-sm font-bold"
                 onClick={() => {
                   setAssignOpen(true);
                   setAssignHelpOpen(false);
