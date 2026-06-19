@@ -994,7 +994,7 @@ export default function ScienceSolvePage(props: PageProps) {
                     setShowAnswerSheet(false);
                     setActiveInputIdx(null);
                   }}
-                  className="absolute top-2 right-2 z-10 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1 bg-white/85 dark:bg-gray-900/85 rounded-full backdrop-blur-xs transition-colors"
+                  className="absolute top-2 right-3 z-10 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1 bg-white/85 dark:bg-gray-900/85 rounded-full backdrop-blur-xs transition-colors"
                 >
                   <X className="h-4 w-4" />
                 </button>
