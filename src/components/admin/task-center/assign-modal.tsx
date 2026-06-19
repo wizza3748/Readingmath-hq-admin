@@ -575,16 +575,9 @@ export function AssignModal({
                     </span>
                   </div>
                   <div className="flex flex-wrap gap-2.5">
-                    {allStudents.filter(s => s.classGroup === currentClass).length > 0 && 
-                     isRelearnMode && 
-                     allStudents.filter(s => s.classGroup === currentClass && isStudentSelectable(s.studentId)).length === 0 ? (
-                      <span className="text-xs text-slate-400 font-bold italic py-4 w-full text-center">
-                        재학습 필요 유형이 있는 학생이 없습니다.
-                      </span>
-                    ) : (
-                      allStudents
-                        .filter(s => s.classGroup === currentClass)
-                        .map(s => {
+                    {allStudents
+                      .filter(s => s.classGroup === currentClass)
+                      .map(s => {
                           const assignable = isStudentSelectable(s.studentId);
                           const selected = isSelected(s.studentId, s.classGroup);
                           return (
@@ -617,7 +610,7 @@ export function AssignModal({
                             </div>
                           );
                         })
-                    )}
+                    }
                     {allStudents.filter(s => s.classGroup === currentClass).length === 0 && (
                       <span className="text-xs text-slate-400 italic py-2">이 반에 소속된 학생이 아직 없습니다.</span>
                     )}
@@ -697,12 +690,6 @@ export function AssignModal({
                           <tr>
                             <td colSpan={5} className="py-12 text-center text-muted-foreground italic">
                               {searchName.trim() ? "검색 결과가 없습니다." : "학생 데이터가 없습니다."}
-                            </td>
-                          </tr>
-                        ) : isRelearnMode && filteredStudents.filter(s => isStudentSelectable(s.studentId)).length === 0 ? (
-                          <tr>
-                            <td colSpan={5} className="py-12 text-center text-xs font-bold text-slate-400 italic">
-                              재학습 필요 유형이 있는 학생이 없습니다.
                             </td>
                           </tr>
                         ) : (

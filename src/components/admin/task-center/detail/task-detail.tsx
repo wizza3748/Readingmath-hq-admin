@@ -20,6 +20,11 @@ interface Props {
 }
 
 export default function TaskDetail({ taskId }: Props) {
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const router = useRouter();
   const searchParams = useSearchParams();
   const { toast } = useToast();
@@ -366,6 +371,10 @@ export default function TaskDetail({ taskId }: Props) {
       setIsSaving(false);
     }
   };
+
+  if (!mounted) {
+    return <div className="min-h-screen bg-[#f4f6f9] pb-24" />;
+  }
 
   return (
     <div className="min-h-screen bg-[#f4f6f9] pb-24">
