@@ -277,7 +277,7 @@ export function TaskSettingPanel({
                           ? "bg-blue-600 text-white border-blue-600 hover:bg-blue-700 hover:text-white shadow-sm"
                           : "text-slate-600 bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50 hover:text-slate-700"
                       }`}
-                      disabled={readonly || comboCount === 0 || isOverLimit || isImportantInsufficient || (onlyImportant && m !== 1)}
+                      disabled={readonly || comboCount === 0 || isOverLimit || isImportantInsufficient || (onlyImportant && m !== 1) || (problemMode === "relearn" && m !== 2)}
                       onClick={() => onQuickSetAll(m)}
                     >
                       {m}문항씩 {isOverLimit && "(초과)"}

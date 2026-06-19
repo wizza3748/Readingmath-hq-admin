@@ -270,6 +270,8 @@ export default function TaskDetail({ taskId }: Props) {
     if (mode === "relearn") {
       setOnlyImportant(false);
       setOnlyImportantType(false);
+      // 모든 선택 유형의 문제 수를 2로 강제 일괄 세팅
+      setSelectedTypes(prev => prev.map(t => ({ ...t, problemCount: 2 })));
     }
   };
 
