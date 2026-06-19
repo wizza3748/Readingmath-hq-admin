@@ -987,19 +987,17 @@ export default function ScienceSolvePage(props: PageProps) {
               </div>
             ) : (
               /* 신규 <답안표 입력 카드> */
-              <div className="flex flex-col h-full border border-gray-200 dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 overflow-hidden">
-                {/* 카드 헤더 */}
-                <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex items-center justify-end">
-                  <button
-                    onClick={() => {
-                      setShowAnswerSheet(false);
-                      setActiveInputIdx(null);
-                    }}
-                    className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1"
-                  >
-                    <X className="h-4 w-4" />
-                  </button>
-                </div>
+              <div className="relative flex flex-col h-full border border-gray-200 dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 overflow-hidden">
+                {/* 닫기 버튼 absolute 배치 */}
+                <button
+                  onClick={() => {
+                    setShowAnswerSheet(false);
+                    setActiveInputIdx(null);
+                  }}
+                  className="absolute top-3.5 right-3.5 z-10 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1 bg-white/85 dark:bg-gray-900/85 rounded-full backdrop-blur-xs transition-colors"
+                >
+                  <X className="h-4 w-4" />
+                </button>
 
                 {/* 문항 목록 리스트 (스크롤 영역) */}
                 <div className="flex-1 overflow-y-auto px-4 py-2 space-y-1 bg-white dark:bg-gray-900">
