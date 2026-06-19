@@ -998,7 +998,7 @@ export default function MathSolvePage(props: PageProps) {
 
           {/* 신규 우측 슬라이드인 OMR 답안표 입력 모달 */}
           {showAnswerSheet && (
-            <div className="fixed inset-0 z-50 flex justify-end">
+            <div className="fixed top-16 bottom-20 right-0 z-40 w-1/2 flex flex-col">
               {/* 뒷배경 블러 및 어둡게 처리 */}
               <div
                 onClick={() => {
@@ -1008,8 +1008,8 @@ export default function MathSolvePage(props: PageProps) {
                 className="absolute inset-0 bg-black/40 backdrop-blur-xs transition-opacity duration-300"
               />
 
-              {/* Drawer 컨테이너 (가로 50%, 우측 고정) */}
-              <div className="relative h-full w-1/2 bg-white dark:bg-gray-900 shadow-2xl flex flex-col border-l border-gray-200 dark:border-gray-800 transform transition-transform duration-300 translate-x-0">
+              {/* Drawer 컨테이너 (가로 50% 영역 전체 채움) */}
+              <div className="relative h-full w-full bg-white dark:bg-gray-900 shadow-2xl flex flex-col border-l border-gray-200 dark:border-gray-800 transform transition-transform duration-300 translate-x-0">
                 {/* 헤더 영역 (타이틀 및 안내 문구) */}
                 <div className="px-6 py-5 border-b border-gray-150 dark:border-gray-800 flex items-start justify-between shrink-0">
                   <div>
