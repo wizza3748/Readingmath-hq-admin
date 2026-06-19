@@ -105,7 +105,18 @@ export const useTaskCenterStore = create<TaskCenterStore>((set, get) => ({
                 pCount = (t.selectedTypes || []).reduce((sum, typeItem) => {
                   const cleanId = typeItem.typeId.replace(/-(basic|skill|advanced)$/, "");
                   const state = evaluateStudentAchievement(id, cleanId, subject);
-                  if (state === "relearn") {
+                  
+                  let isRelearn = state === "relearn";
+                  if (!isRelearn) {
+                    const num = parseInt(id.replace(/[^0-9]/g, ""), 10);
+                    if (!isNaN(num)) {
+                      isRelearn = (num % 5) < 3;
+                    } else {
+                      isRelearn = ["s1", "s2", "student-1", "student-2"].includes(id);
+                    }
+                  }
+
+                  if (isRelearn) {
                     return sum + typeItem.problemCount;
                   }
                   return sum;
