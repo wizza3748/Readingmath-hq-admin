@@ -77,7 +77,7 @@ const agencyWorkItems: WorkItem[] = [
   {
     id: "RM-360",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-360",
-    title: "[기관] 과제 센터 구축",
+    title: "[기관] 과제 센터",
     internalUrl: "/admin/task-center",
     isNew: true,
   },
@@ -106,7 +106,7 @@ const frontWorkItems: WorkItem[] = [
   {
     id: "RM-361",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-361",
-    title: "[프론트] 과제 센터 구축",
+    title: "[프론트] 과제 센터",
     internalUrl: "/content/math-home",
     isNew: true,
   },
