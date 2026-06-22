@@ -1157,12 +1157,6 @@ function HistoryDetailModal({
                 <p className="font-semibold text-slate-800 mt-0.5">{row.path}</p>
               </div>
               <div>
-                <span className="text-slate-500 text-xs">도전 구분</span>
-                <p className="font-semibold text-slate-800 mt-0.5">
-                  {row.challengeType}
-                </p>
-              </div>
-              <div>
                 <span className="text-slate-500 text-xs">풀이일시</span>
                 <p className="font-semibold text-slate-800 mt-0.5">
                   {formatDateTime(row.solvedAt)}
@@ -1310,12 +1304,6 @@ function DeleteRecordModal({
                 <span className="text-xs text-slate-500">난이도</span>
                 <p className="font-semibold text-slate-800">
                   {DIFF_LABEL[row.difficulty]}
-                </p>
-              </div>
-              <div>
-                <span className="text-xs text-slate-500">도전 구분</span>
-                <p className="font-semibold text-slate-800">
-                  {row.challengeType}
                 </p>
               </div>
               <div>
@@ -1943,7 +1931,6 @@ export default function AdminExamPrepTab({
   const [showSearchCurrModal, setShowSearchCurrModal] = useState(false);
   const [searchTypeName, setSearchTypeName] = useState("");
   const [searchPath, setSearchPath] = useState<"전체" | "시험 대비" | "과제 센터">("전체");
-  const [searchChallenge, setSearchChallenge] = useState("전체");
   const [searchStatus, setSearchStatus] = useState<"전체" | AchievementStatus>("전체");
 
   // 실제 적용된 검색 조건 (검색 버튼 클릭 시 반영)
@@ -1956,7 +1943,6 @@ export default function AdminExamPrepTab({
     currNode: null as CurriculumTreeNode | null,
     typeName: "",
     path: "전체" as "전체" | "시험 대비" | "과제 센터",
-    challenge: "전체",
     status: "전체" as "전체" | AchievementStatus,
   });
 
@@ -1965,15 +1951,6 @@ export default function AdminExamPrepTab({
 
   const typeNameTrimmed = searchTypeName.replace(/\s/g, "");
   const isSearchEnabled = typeNameTrimmed.length !== 1; // 공백제외 1자면 비활성
-
-  // 도전 구분 옵션
-  const challengeOptions = useMemo(() => {
-    if (searchPath === "시험 대비")
-      return ["전체", "초록 도전", "왕관 도전", "다시 도전"];
-    if (searchPath === "과제 센터")
-      return ["과제 센터 반영"];
-    return ["전체", "초록 도전", "왕관 도전", "다시 도전", "과제 센터 반영"];
-  }, [searchPath]);
 
   // 검색 실행
   const handleSearch = () => {
@@ -1984,7 +1961,6 @@ export default function AdminExamPrepTab({
       currNode: searchCurrNode,
       typeName: searchTypeName,
       path: searchPath,
-      challenge: searchChallenge,
       status: searchStatus,
     });
     setCurrentPage(1);
@@ -1999,7 +1975,6 @@ export default function AdminExamPrepTab({
     setSearchCurrNode(null);
     setSearchTypeName("");
     setSearchPath("전체");
-    setSearchChallenge("전체");
     setSearchStatus("전체");
     setAppliedSearch({
       periodUnit: "월",
@@ -2007,7 +1982,6 @@ export default function AdminExamPrepTab({
       currNode: null,
       typeName: "",
       path: "전체",
-      challenge: "전체",
       status: "전체",
     });
     setCurrentPage(1);
@@ -2057,13 +2031,6 @@ export default function AdminExamPrepTab({
 
       // 풀이 경로
       if (appliedSearch.path !== "전체" && row.path !== appliedSearch.path) return false;
-
-      // 도전 구분
-      if (
-        appliedSearch.challenge !== "전체" &&
-        row.challengeType !== appliedSearch.challenge
-      )
-        return false;
 
       // 성취도 상태
       if (
@@ -2270,7 +2237,7 @@ export default function AdminExamPrepTab({
         <div className="space-y-4">
           {/* 검색 영역 */}
           <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm p-5 space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 items-end">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 items-end">
               {/* 기간 단위 */}
               <div className="flex flex-col gap-1 w-full">
                 <label className="text-xs font-semibold text-slate-500">
@@ -2381,29 +2348,12 @@ export default function AdminExamPrepTab({
                   value={searchPath}
                   onChange={(e) => {
                     setSearchPath(e.target.value as typeof searchPath);
-                    setSearchChallenge("전체");
                   }}
                   className="h-8 px-2 text-sm border border-slate-200 rounded-lg focus:outline-none w-full"
                 >
                   <option>전체</option>
                   <option>시험 대비</option>
                   <option>과제 센터</option>
-                </select>
-              </div>
-
-              {/* 도전 구분 */}
-              <div className="flex flex-col gap-1 w-full">
-                <label className="text-xs font-semibold text-slate-500">
-                  도전 구분
-                </label>
-                <select
-                  value={searchChallenge}
-                  onChange={(e) => setSearchChallenge(e.target.value)}
-                  className="h-8 px-2 text-sm border border-slate-200 rounded-lg focus:outline-none w-full"
-                >
-                  {challengeOptions.map((o) => (
-                    <option key={o}>{o}</option>
-                  ))}
                 </select>
               </div>
 
@@ -2487,7 +2437,7 @@ export default function AdminExamPrepTab({
                     {[
                       "번호", "풀이일시", "학년/학기", "대단원",
                       "소단원/중단원", "유형명", "난이도", "풀이 경로",
-                      "도전 구분", "풀이 문제 수", "결과", "성취도 상태", "관리",
+                      "풀이 문제 수", "결과", "성취도 상태", "관리",
                     ].map((col) => (
                       <th
                         key={col}
@@ -2502,7 +2452,7 @@ export default function AdminExamPrepTab({
                   {pagedRows.length === 0 ? (
                     <tr>
                       <td
-                        colSpan={13}
+                        colSpan={12}
                         className="py-16 text-center text-slate-400 text-sm"
                       >
                         <BookOpen className="w-8 h-8 mx-auto mb-2 opacity-30" />
@@ -2551,9 +2501,6 @@ export default function AdminExamPrepTab({
                             >
                               {row.path}
                             </span>
-                          </td>
-                          <td className="px-3 py-2.5 text-xs text-slate-600 whitespace-nowrap">
-                            {row.challengeType}
                           </td>
                           <td className="px-3 py-2.5 text-xs text-slate-700 text-center">
                             {row.problemCount}
