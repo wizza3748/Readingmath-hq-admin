@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { Save, Trash2, ChevronDown, X, ShieldAlert, Sparkles, User, RefreshCw, Calendar, Key, Phone, MapPin, Building, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -33,6 +33,9 @@ interface StudentDetailPageProps {
 
 export default function StudentDetailPage({ params }: StudentDetailPageProps) {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const tabParam = searchParams.get("tab");
   const { toast } = useToast();
 
   // ── Route parameters unwrapping ─────────────────────────────
@@ -75,6 +78,20 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
 
   // 탭 상태 (학생정보 | 시험 대비)
   const [activeTab, setActiveTab] = React.useState<"info" | "exam-prep">("info");
+
+  // URL tab 파라미터가 변경되면 activeTab 상태에 반영
+  React.useEffect(() => {
+    if (tabParam === "exam-prep" || tabParam === "info") {
+      setActiveTab(tabParam);
+    }
+  }, [tabParam]);
+
+  const handleTabChange = (tab: "info" | "exam-prep") => {
+    setActiveTab(tab);
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("tab", tab);
+    router.replace(`${pathname}?${params.toString()}`);
+  };
 
   // 정지 / 시작 모달 상태
   const [suspendModalOpen, setSuspendModalOpen] = React.useState(false);
@@ -326,7 +343,7 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
         <div className="border-b border-slate-200 flex items-center gap-1">
           {/* 학생정보 — activeTab 변경 */}
           <button
-            onClick={() => setActiveTab("info")}
+            onClick={() => handleTabChange("info")}
             className={`px-5 py-2.5 font-bold text-sm rounded-t-lg transition-all ${
               activeTab === "info"
                 ? "text-blue-600 border-b-2 border-blue-600 bg-white"
@@ -344,7 +361,7 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
           </button>
           {/* 시험 대비 — activeTab 변경 */}
           <button
-            onClick={() => setActiveTab("exam-prep")}
+            onClick={() => handleTabChange("exam-prep")}
             className={`px-5 py-2.5 font-bold text-sm rounded-t-lg transition-all ${
               activeTab === "exam-prep"
                 ? "text-blue-600 border-b-2 border-blue-600 bg-white"
