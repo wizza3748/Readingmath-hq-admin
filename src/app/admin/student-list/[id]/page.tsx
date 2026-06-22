@@ -25,6 +25,7 @@ import {
   DialogTitle,
   DialogFooter,
 } from "@/components/ui/dialog";
+import AdminExamPrepTab from "./AdminExamPrepTab";
 
 interface StudentDetailPageProps {
   params: Promise<{ id: string }> | { id: string };
@@ -71,7 +72,10 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
   // ── UI 상태 ──────────────────────────────────────────────
   const [isNotFound, setIsNotFound] = React.useState(false);
   const [deleteConfirmOpen, setDeleteConfirmOpen] = React.useState(false);
-  
+
+  // 탭 상태 (학생정보 | 시험 대비)
+  const [activeTab, setActiveTab] = React.useState<"info" | "exam-prep">("info");
+
   // 정지 / 시작 모달 상태
   const [suspendModalOpen, setSuspendModalOpen] = React.useState(false);
   const [resumeModalOpen, setResumeModalOpen] = React.useState(false);
@@ -318,11 +322,39 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
         </div>
 
         {/* ── 탭 레이아웃 ──────────────────────────────────────── */}
+        {/* 탭 순서: 학생정보 | 학습내역 | 시험 대비 | 주간알림장 | 월간보고서 | 진단평가 보고서 */}
         <div className="border-b border-slate-200 flex items-center gap-1">
-          <button className="px-5 py-2.5 font-bold text-sm text-blue-600 border-b-2 border-blue-600 bg-white rounded-t-lg transition-colors">
+          {/* 학생정보 — activeTab 변경 */}
+          <button
+            onClick={() => setActiveTab("info")}
+            className={`px-5 py-2.5 font-bold text-sm rounded-t-lg transition-all ${
+              activeTab === "info"
+                ? "text-blue-600 border-b-2 border-blue-600 bg-white"
+                : "text-slate-500 hover:text-slate-700 hover:bg-slate-50"
+            }`}
+          >
             학생정보
           </button>
-          {["학습내역", "주간알림장", "월간보고서", "진단평가 보고서"].map((tab) => (
+          {/* 학습내역 — toast만, activeTab 불변 */}
+          <button
+            onClick={() => toast({ title: "'학습내역' 탭은 다음 프롬프트에서 순차 구현될 예정입니다." })}
+            className="px-5 py-2.5 font-semibold text-sm text-slate-500 hover:text-slate-700 hover:bg-slate-50 rounded-t-lg transition-all"
+          >
+            학습내역
+          </button>
+          {/* 시험 대비 — activeTab 변경 */}
+          <button
+            onClick={() => setActiveTab("exam-prep")}
+            className={`px-5 py-2.5 font-bold text-sm rounded-t-lg transition-all ${
+              activeTab === "exam-prep"
+                ? "text-blue-600 border-b-2 border-blue-600 bg-white"
+                : "text-slate-500 hover:text-slate-700 hover:bg-slate-50"
+            }`}
+          >
+            시험 대비
+          </button>
+          {/* 주간알림장, 월간보고서, 진단평가 보고서 — toast만, activeTab 불변 */}
+          {["주간알림장", "월간보고서", "진단평가 보고서"].map((tab) => (
             <button
               key={tab}
               onClick={() => toast({ title: `'${tab}' 탭은 다음 프롬프트에서 순차 구현될 예정입니다.` })}
@@ -333,7 +365,19 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
           ))}
         </div>
 
+        {/* ── 시험 대비 탭 콘텐츠 ──────────────────────────────────── */}
+        {activeTab === "exam-prep" && studentId && (
+          <AdminExamPrepTab
+            studentId={studentId}
+            studentName={name}
+            serviceType={serviceType}
+            grade={grade}
+            semester={semester}
+          />
+        )}
+
         {/* ── 계정 / 개인 / 학부모 / 서비스 카드 레이아웃 ──────────────── */}
+        {activeTab === "info" && (
         <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm p-6 space-y-8">
           
           {/* 계정 정보 섹션 */}
@@ -675,6 +719,7 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
             </div>
           </div>
         </div>
+        )}{/* end activeTab === "info" */}
       </div>
 
       {/* ── 하단 고정 액션 바 (Footer) ─────────────────────────── */}
