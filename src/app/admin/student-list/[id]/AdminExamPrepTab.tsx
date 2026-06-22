@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useEffect, useCallback } from "react";
+import React, { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import {
   ChevronDown,
   ChevronUp,
@@ -35,6 +35,42 @@ import {
   addAdminResetRecord,
   ResetScope,
 } from "./adminExamPrepStorage";
+import {
+  getMockHistoryForType,
+  MATH_TYPE_TO_QUESTIONS,
+  SCIENCE_TYPE_TO_QUESTIONS,
+} from "@/utils/examPrepStorage";
+import { getStoredTasks } from "@/utils/taskStorage";
+import { getTaskResult } from "@/utils/taskResultStorage";
+import { getQuestionsByTaskId } from "@/lib/task-solve-mock";
+import "katex/dist/katex.min.css";
+import renderMathInElement from "katex/contrib/auto-render";
+
+function MathRenderer({ text, className }: { text: string; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    ref.current.innerHTML = text.replace(/\n/g, "<br />");
+    try {
+      renderMathInElement(ref.current, {
+        delimiters: [
+          { left: "\\(", right: "\\)", display: false },
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+        macros: {
+          "\\frac": "\\dfrac",
+        },
+        throwOnError: false,
+      });
+    } catch (e) {
+      console.error("KaTeX rendering error", e);
+    }
+  }, [text]);
+
+  return <div ref={ref} className={className} />;
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // CONSTANTS & TYPES
@@ -85,6 +121,9 @@ interface HistoryRow {
   achievementStatus: AchievementStatus; // 이 기록 반영 후 성취도
 }
 
+const MATH_TEXTBOOKS = ["아이스크림", "천재", "비상", "미래엔", "동아", "지학사"];
+const SCIENCE_TEXTBOOKS = ["오투", "완자", "오투+완자", "기타"];
+
 // 성취도 현황 커리큘럼 유형 타입
 interface TypeData {
   id: string;
@@ -95,6 +134,9 @@ interface TypeData {
   majorUnit: string;
   minorUnit: string;
   gradeTerm: string;
+  textbook: string;
+  videoUrl?: string;
+  sampleQuestion?: string;
 }
 
 interface SubUnit {
@@ -127,61 +169,79 @@ interface CurriculumTreeNode {
 // ACHIEVEMENT CONFIG
 // ─────────────────────────────────────────────────────────────────────────────
 
-const ACHIEVEMENT_CONFIG: Record<
-  AchievementStatus,
-  {
-    label: string;
-    shortLabel: string;
-    chipBg: string;
-    chipBorder: string;
-    chipIconColor: string;
-    textColor: string;
-    badgeBg: string;
-    badgeText: string;
-    icon: "question" | "check" | "crown";
-  }
-> = {
+interface AchievementInfo {
+  label: string;
+  shortLabel: string;
+  icon: "question" | "check" | "crown";
+  chipBg: string;
+  chipBorder: string;
+  chipIconColor: string;
+  filterIconColor: string;
+  filterTextColor: string;
+  selBg: string;
+  selBorder: string;
+  selText: string;
+  description: string;
+  challengeLabel: string;
+  challengeStyle: string;
+  badgeBg: string;
+  badgeText: string;
+}
+
+const ACHIEVEMENT_CONFIG: Record<AchievementStatus, AchievementInfo> = {
   none: {
-    label: "미진행", shortLabel: "미진행",
+    label: "미진행", shortLabel: "미진행", icon: "question",
     chipBg: "bg-white", chipBorder: "border border-slate-200", chipIconColor: "text-slate-300",
-    textColor: "text-slate-500",
+    filterIconColor: "text-slate-300", filterTextColor: "text-slate-500",
+    selBg: "bg-slate-700", selBorder: "border-slate-700", selText: "text-white",
+    description: "아직 학습을 시작하지 않았어요.",
+    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
     badgeBg: "bg-slate-100", badgeText: "text-slate-600",
-    icon: "question",
   },
   undetermined: {
-    label: "미판정", shortLabel: "미판정",
+    label: "미판정", shortLabel: "미판정", icon: "question",
     chipBg: "bg-slate-300", chipBorder: "border-transparent", chipIconColor: "text-slate-500",
-    textColor: "text-slate-600",
+    filterIconColor: "text-slate-500", filterTextColor: "text-slate-600",
+    selBg: "bg-slate-500", selBorder: "border-slate-500", selText: "text-white",
+    description: "학습량이 부족해요.",
+    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
     badgeBg: "bg-slate-200", badgeText: "text-slate-700",
-    icon: "question",
   },
   relearn: {
-    label: "재학습 필요", shortLabel: "재학습",
+    label: "재학습 필요", shortLabel: "재학습", icon: "check",
     chipBg: "bg-red-500", chipBorder: "border-transparent", chipIconColor: "text-white",
-    textColor: "text-red-600",
+    filterIconColor: "text-red-500", filterTextColor: "text-red-600",
+    selBg: "bg-red-500", selBorder: "border-red-500", selText: "text-white",
+    description: "전혀 이해하지 못하고 있어요.",
+    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
     badgeBg: "bg-red-100", badgeText: "text-red-700",
-    icon: "check",
   },
   supplement: {
-    label: "보충 필요", shortLabel: "보충",
+    label: "보충 필요", shortLabel: "보충", icon: "check",
     chipBg: "bg-yellow-500", chipBorder: "border-transparent", chipIconColor: "text-white",
-    textColor: "text-yellow-600",
+    filterIconColor: "text-yellow-500", filterTextColor: "text-yellow-600",
+    selBg: "bg-yellow-500", selBorder: "border-yellow-500", selText: "text-white",
+    description: "이해도가 낮은 상태예요.",
+    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
     badgeBg: "bg-yellow-100", badgeText: "text-yellow-700",
-    icon: "check",
   },
   understand: {
-    label: "유형 이해", shortLabel: "이해",
+    label: "유형 이해", shortLabel: "이해", icon: "check",
     chipBg: "bg-green-400", chipBorder: "border-transparent", chipIconColor: "text-white",
-    textColor: "text-green-600",
+    filterIconColor: "text-green-500", filterTextColor: "text-green-600",
+    selBg: "bg-green-500", selBorder: "border-green-500", selText: "text-white",
+    description: "충분히 이해하여 문제를 풀 수 있어요.",
+    challengeLabel: "왕관 도전", challengeStyle: "bg-violet-600 hover:bg-violet-700 text-white shadow-violet-500/30",
     badgeBg: "bg-green-100", badgeText: "text-green-700",
-    icon: "check",
   },
   master: {
-    label: "유형 정복", shortLabel: "정복",
+    label: "유형 정복", shortLabel: "정복", icon: "crown",
     chipBg: "bg-green-600", chipBorder: "border-transparent", chipIconColor: "text-white",
-    textColor: "text-green-700",
+    filterIconColor: "text-green-700", filterTextColor: "text-green-700",
+    selBg: "bg-green-700", selBorder: "border-green-700", selText: "text-white",
+    description: "완전히 이해하고 있어요.",
+    challengeLabel: "다시 도전", challengeStyle: "bg-slate-500 hover:bg-slate-600 text-white shadow-slate-500/30",
     badgeBg: "bg-green-200", badgeText: "text-green-800",
-    icon: "crown",
   },
 };
 
@@ -244,6 +304,33 @@ function extractDifficulty(typeId: string): Difficulty {
 
 function purifyTypeId(typeId: string): string {
   return typeId.replace(/-(basic|skill|advanced)$/, "");
+}
+
+function hashString(str: string): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return Math.abs(hash);
+}
+
+function getYoutubeEmbedUrl(url?: string) {
+  if (!url) return "";
+  let videoId = "";
+  try {
+    if (url.includes("youtu.be/")) {
+      const parts = url.split("youtu.be/");
+      if (parts.length > 1) {
+        videoId = parts[1].split("?")[0];
+      }
+    } else if (url.includes("youtube.com/watch")) {
+      const match = url.match(/[?&]v=([^&#]+)/);
+      videoId = match ? match[1] : "";
+    }
+  } catch (e) {
+    console.error("Error parsing youtube url", e);
+  }
+  return videoId ? `https://www.youtube.com/embed/${videoId}` : "";
 }
 
 /** 성취도 재계산 — 삭제된 rowId 제외 후 판정 (evaluateStudentAchievement와 동일 로직) */
@@ -461,6 +548,97 @@ function buildHistoryRows(
     });
   });
 
+  // ── 3.1. localStorage Task Results (실제 과제 연동) ─────────────────────
+  try {
+    const localTasks = getStoredTasks().filter(
+      (t) => t.subject === subject && t.status === "submitted"
+    );
+    localTasks.forEach((task) => {
+      const result = getTaskResult(task.id);
+      if (!result) return;
+      const questions = getQuestionsByTaskId(task.id);
+      result.gradingDetails.forEach((detail) => {
+        const q = questions[detail.questionIndex] as any;
+        if (!q) return;
+        const qDifficulty = q.difficulty === "basic" ? "basic" : q.difficulty === "advanced" ? "advanced" : "skill";
+        const qFullTypeId = q.typeId ? `${q.typeId}-${qDifficulty}` : "";
+        if (qFullTypeId) {
+          const rowId = `local-task-${task.id}-${detail.questionIndex}`;
+          if (deletedIds.includes(rowId)) return;
+
+          const info = findTypeInfo(qFullTypeId, subject);
+          const challengeType: ChallengeType = "과제 센터 반영";
+          const isCorrect = detail.status === "correct";
+          const dk = dedupeKey(qFullTypeId, challengeType, result.submittedAt || "", isCorrect);
+          if (dedupSet.has(dk)) return;
+          dedupSet.add(dk);
+
+          rows.push({
+            rowId,
+            source: "task",
+            solvedAt: result.submittedAt || new Date().toISOString(),
+            gradeTerm: info?.gradeTerm || task.course || "",
+            majorUnit: info ? splitMajorUnit(info.majorUnit).name : "",
+            minorUnit: info?.minorUnit || "",
+            typeName: q.typeName || qFullTypeId,
+            typeId: qFullTypeId,
+            difficulty: qDifficulty,
+            path: "과제 센터",
+            challengeType,
+            problemCount: 1,
+            correctCount: isCorrect ? 1 : 0,
+            achievementStatus: "none",
+          });
+        }
+      });
+    });
+  } catch (e) {
+    console.error("Failed to load local tasks in buildHistoryRows", e);
+  }
+
+  // ── 4. 기본 Mock 데이터 (getMockHistoryForType) ──────────────────────────
+  const curricula = subject === "math" ? MATH_CURRICULA : SCIENCE_CURRICULA;
+  curricula.forEach((course) => {
+    course.types.forEach((type) => {
+      const diffs: Difficulty[] = [];
+      if (type.difficultyCount.basic > 0) diffs.push("basic");
+      if (type.difficultyCount.intermediate > 0) diffs.push("skill");
+      if (type.difficultyCount.advanced > 0) diffs.push("advanced");
+
+      diffs.forEach((diff) => {
+        const typeId = `${type.id}-${diff}`;
+        const mockHist = getMockHistoryForType(typeId, subject);
+        mockHist.forEach((h, idx) => {
+          const rowId = `mock-type-${typeId}-${idx}`;
+          if (deletedIds.includes(rowId)) return;
+
+          const info = findTypeInfo(typeId, subject);
+          const challengeType: ChallengeType = h.path === "과제 센터" ? "과제 센터 반영" : "초록 도전";
+          const dk = dedupeKey(typeId, challengeType, h.solvedAt, h.isCorrect);
+          if (dedupSet.has(dk)) return;
+          dedupSet.add(dk);
+
+          rows.push({
+            rowId,
+            source: "mock-exam",
+            solvedAt: h.solvedAt,
+            gradeTerm: info?.gradeTerm || course.course,
+            majorUnit: info ? splitMajorUnit(info.majorUnit).name : "",
+            minorUnit: info?.minorUnit || "",
+            typeName: type.typeName,
+            typeId: typeId,
+            difficulty: diff,
+            path: h.path,
+            challengeType,
+            problemCount: 1,
+            correctCount: h.isCorrect ? 1 : 0,
+            achievementStatus: "none",
+          });
+        });
+      });
+    });
+  });
+
   // 풀이일시 내림차순 정렬
   rows.sort(
     (a, b) => new Date(b.solvedAt).getTime() - new Date(a.solvedAt).getTime()
@@ -590,15 +768,30 @@ function buildAchievementCurriculum(
       }));
       const status = evaluateWithExclusion(histItems, deletedIds);
 
+      // textbook 매핑
+      const hash = hashString(type.id);
+      let textbook = "기타";
+      if (subject === "math") {
+        const offset = diff === "basic" ? 0 : diff === "skill" ? 1 : 2;
+        textbook = MATH_TEXTBOOKS[(hash + offset) % MATH_TEXTBOOKS.length];
+      } else {
+        textbook = type.textbook || "기타";
+      }
+
       return {
         id: fullTypeId,
         name: type.typeName,
         difficulty: diff,
-        isImportant,
+        isImportant: diff === "basic" ? (isImportant || type.importantCount.basic > 0) :
+                     diff === "skill" ? (isImportant || type.importantCount.intermediate > 0) :
+                     (isImportant || type.importantCount.advanced > 0),
         status,
         majorUnit: type.majorUnit,
         minorUnit: type.minorUnit,
         gradeTerm,
+        textbook,
+        videoUrl: type.videoUrl,
+        sampleQuestion: type.sampleQuestion,
       };
     };
 
@@ -1515,6 +1708,7 @@ function TypeDetailPanel({
 
   return (
     <div className="w-full h-full flex flex-col bg-white">
+      {/* 헤더 */}
       <div className="flex items-center justify-between px-4 py-3.5 border-b border-slate-100 shrink-0">
         <span className="text-sm font-extrabold text-slate-800">유형 상세</span>
         <button
@@ -1525,75 +1719,96 @@ function TypeDetailPanel({
         </button>
       </div>
 
-      <div className="flex-1 overflow-y-auto">
+      {/* 스크롤 바디 */}
+      <div className="flex-1 overflow-y-auto px-4 py-5 flex flex-col gap-5">
         {/* 유형 기본 정보 */}
-        <div className="p-4 space-y-4">
-          <div>
-            <div className="flex items-start gap-2 mb-2">
-              <span
-                className={`px-2 py-0.5 rounded-full text-[11px] font-black text-white ${bigUnit.color}`}
+        <div className="flex flex-col gap-3">
+          {/* 배지 행 */}
+          <div className="flex items-center gap-2 flex-wrap">
+            <span
+              className={`px-2.5 py-1 rounded-full text-xs font-bold text-white ${bigUnit.color}`}
+            >
+              {bigUnit.badge}
+            </span>
+            {type.isImportant && (
+              <div className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-600 text-xs font-bold">
+                <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+                중요
+              </div>
+            )}
+            <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-600">
+              {DIFF_LABEL[type.difficulty]}
+            </span>
+            <StatusBadge status={type.status} />
+          </div>
+
+          {/* 유형명 */}
+          <h3 className="text-[15px] font-extrabold leading-snug text-slate-800">
+            {type.name}
+          </h3>
+        </div>
+
+        <div className="border-t border-slate-100" />
+
+        {/* 도전 버튼 (비활성 — 기관관리자 화면) */}
+        <div className="flex flex-col gap-2">
+          <div className="text-center text-[11px] font-bold text-slate-400 py-1">
+            도전 버튼 (기관관리자 화면 — 비활성)
+          </div>
+          <div className="flex gap-2">
+            {(
+              [
+                { label: "초록 도전", cls: "bg-green-100 text-green-600/80" },
+                { label: "왕관 도전", cls: "bg-violet-100 text-violet-600/80" },
+                { label: "다시 도전", cls: "bg-slate-100 text-slate-600/80" },
+              ] as { label: string; cls: string }[]
+            ).map((btn) => (
+              <button
+                key={btn.label}
+                disabled
+                className={`flex-1 py-2.5 rounded-xl font-extrabold text-xs transition-all opacity-50 cursor-not-allowed ${btn.cls}`}
               >
-                {bigUnit.badge}
-              </span>
-              <div>
-                <p className="text-xs text-slate-500">{subUnit.name}</p>
-                <p className="text-sm font-bold text-slate-800 mt-0.5">
-                  {type.name}
-                </p>
+                {btn.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* 도전 버튼 아래 섹션들 (동영상, 대표문제, 최근이력) */}
+        {[
+          // 1. 대표 유형 동영상
+          type.videoUrl ? (
+            <div key="video" className="flex flex-col gap-2">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400">대표 유형 동영상</h4>
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-slate-200/50 bg-black shadow-inner">
+                <iframe
+                  src={getYoutubeEmbedUrl(type.videoUrl)}
+                  title={`${type.name} 동영상`}
+                  className="absolute inset-0 w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="px-2 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-600">
-                {DIFF_LABEL[type.difficulty]}
-              </span>
-              {type.isImportant && (
-                <span className="px-2 py-0.5 rounded-full text-xs font-bold bg-amber-50 text-amber-700 flex items-center gap-1">
-                  <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
-                  중요 유형
-                </span>
-              )}
-              <StatusBadge status={type.status} />
+          ) : null,
+
+          // 2. 대표 유형 문제
+          type.sampleQuestion ? (
+            <div key="sample" className="flex flex-col gap-2.5">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400">대표 유형 문제</h4>
+              <div className="p-4 rounded-xl text-sm leading-relaxed border border-slate-100 bg-slate-50 text-slate-700 font-medium">
+                <MathRenderer text={type.sampleQuestion} />
+              </div>
             </div>
-          </div>
+          ) : null,
 
-          {/* 도전 버튼 (비활성 — 기관관리자 화면) */}
-          <div className="space-y-2">
-            <p className="text-xs text-slate-400 font-semibold">
-              도전 버튼 (기관관리자 화면 — 비활성)
-            </p>
-            <div className="flex gap-2">
-              {(
-                [
-                  { label: "초록 도전", cls: "bg-green-200 text-green-400" },
-                  { label: "왕관 도전", cls: "bg-violet-200 text-violet-400" },
-                  { label: "다시 도전", cls: "bg-slate-200 text-slate-400" },
-                ] as { label: string; cls: string }[]
-              ).map((btn) => (
-                <button
-                  key={btn.label}
-                  disabled
-                  className={`flex-1 h-9 rounded-xl text-xs font-extrabold cursor-not-allowed ${btn.cls}`}
-                >
-                  {btn.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="border-t border-slate-100" />
-
-          {/* 최근 풀이 이력 */}
-          <div>
-            <h4 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">
-              최근 풀이 이력
-            </h4>
+          // 3. 풀이 이력
+          <div key="history" className="flex flex-col gap-2">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400">최근 풀이 이력</h4>
             {typeRows.length > 0 ? (
               <div className="flex flex-col gap-2">
-                {typeRows.map((r) => (
-                  <div
-                    key={r.rowId}
-                    className="flex items-center justify-between p-3 rounded-xl border border-slate-100 bg-white text-xs shadow-sm"
-                  >
+                {typeRows.map((r, i) => (
+                  <div key={i} className="flex items-center justify-between p-3 rounded-xl border border-slate-100 bg-white text-xs shadow-sm">
                     <div className="flex items-center gap-2">
                       {r.correctCount === r.problemCount ? (
                         <Check className="w-4 h-4 text-green-500 stroke-[3]" />
@@ -1601,37 +1816,30 @@ function TypeDetailPanel({
                         <X className="w-4 h-4 text-red-500 stroke-[3]" />
                       )}
                       <div className="flex items-center gap-1.5">
-                        <span className="font-bold text-slate-800">
-                          {r.path}
-                        </span>
+                        <span className="font-bold text-slate-800">{r.path}</span>
                         <span className="text-slate-400">·</span>
-                        <span
-                          className={`font-bold ${
-                            r.correctCount === r.problemCount
-                              ? "text-green-500"
-                              : "text-red-500"
-                          }`}
-                        >
+                        <span className={`font-bold ${r.correctCount === r.problemCount ? "text-green-500" : "text-red-500"}`}>
                           {r.correctCount === r.problemCount ? "정답" : "오답"}
                         </span>
                       </div>
                     </div>
-                    <span className="text-slate-400 font-medium">
-                      {formatDateOnly(r.solvedAt)}
-                    </span>
+                    <span className="font-medium text-slate-400">{formatDateOnly(r.solvedAt)}</span>
                   </div>
                 ))}
               </div>
             ) : (
               <div className="flex flex-col items-center py-8 gap-2.5 rounded-2xl bg-slate-50 text-slate-400">
                 <BookOpen className="w-8 h-8 opacity-40" />
-                <span className="text-xs font-semibold">
-                  아직 풀이 이력이 없어요
-                </span>
+                <span className="text-xs font-semibold">아직 풀이 이력이 없어요</span>
               </div>
             )}
           </div>
-        </div>
+        ].filter(Boolean).map((section, idx) => (
+          <React.Fragment key={idx}>
+            <div className="border-t border-slate-100" />
+            {section}
+          </React.Fragment>
+        ))}
       </div>
     </div>
   );
@@ -1886,12 +2094,27 @@ export default function AdminExamPrepTab({
   const [achStatuses, setAchStatuses] = useState<Set<AchievementStatus>>(new Set());
   const [achTypeName, setAchTypeName] = useState("");
   const [achOnlyImportant, setAchOnlyImportant] = useState(false);
+  const [showGuide, setShowGuide] = useState(false);
+  const guideRef = useRef<HTMLDivElement>(null);
+
   const [appliedAch, setAppliedAch] = useState({
     gradeTerm: defaultGradeTerm,
     statuses: new Set<AchievementStatus>(),
     typeName: "",
     onlyImportant: false,
   });
+
+  // 안내 팝오버 외부 클릭 닫기
+  useEffect(() => {
+    if (!showGuide) return;
+    const handler = (e: MouseEvent) => {
+      if (guideRef.current && !guideRef.current.contains(e.target as Node)) {
+        setShowGuide(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [showGuide]);
 
   const curriculum = useMemo(
     () => buildAchievementCurriculum(studentId, subject, appliedAch.gradeTerm, deletedIds),
@@ -2419,118 +2642,184 @@ export default function AdminExamPrepTab({
           성취도현황 모드
       ══════════════════════════════════════════════════════════════════════ */}
       {viewMode === "achievement" && (
-        <div className="flex gap-4">
-          {/* 좌측 필터 */}
-          <div className="w-64 shrink-0 space-y-4">
-            <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm p-4 space-y-4">
+        <div className="space-y-4">
+          {/* 가로형 필터 영역 */}
+          <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm p-4 flex flex-wrap items-center justify-between gap-4">
+            {/* <좌측 필터 영역> */}
+            <div className="flex flex-wrap items-center gap-2">
               {/* 학년/학기 */}
-              <div>
-                <label className="text-xs font-bold text-slate-600 mb-1.5 block">
-                  학년/학기
-                </label>
-                <select
-                  value={achGradeTerm}
-                  onChange={(e) => setAchGradeTerm(e.target.value)}
-                  className="h-8 w-full border border-slate-200 rounded-lg px-2 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                >
-                  {gradeTerms.map((gt) => (
-                    <option key={gt.v} value={gt.v}>
-                      {gt.l}
-                    </option>
-                  ))}
-                </select>
+              <select
+                value={achGradeTerm}
+                onChange={(e) => {
+                  const newTerm = e.target.value;
+                  setAchGradeTerm(newTerm);
+                  setAppliedAch((prev) => ({ ...prev, gradeTerm: newTerm }));
+                  setSelectedTypeInfo(null);
+                }}
+                className="h-8 border border-slate-200 rounded-lg px-2 text-xs font-bold focus:outline-none focus:ring-1 focus:ring-indigo-500 cursor-pointer"
+              >
+                {gradeTerms.map((gt) => (
+                  <option key={gt.v} value={gt.v}>
+                    {gt.l}
+                  </option>
+                ))}
+              </select>
+
+              {/* 구분선 */}
+              <div className="h-5 w-px bg-slate-200 mx-1" />
+
+              {/* 성취도 상태 칩 그룹 */}
+              <div className="flex flex-wrap items-center gap-1.5">
+                {ALL_STATUSES.map((s) => {
+                  const selected = achStatuses.has(s);
+                  const cfg = ACHIEVEMENT_CONFIG[s];
+                  return (
+                    <button
+                      key={s}
+                      type="button"
+                      onClick={() => {
+                        setAchStatuses((prev) => {
+                          const n = new Set(prev);
+                          n.has(s) ? n.delete(s) : n.add(s);
+                          return n;
+                        });
+                      }}
+                      className={`h-7 px-2.5 text-xs font-bold rounded-full border transition-all flex items-center gap-1 ${
+                        selected
+                          ? "bg-indigo-600 border-indigo-600 text-white shadow-sm"
+                          : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
+                      }`}
+                    >
+                      <AchievementIcon
+                        status={s}
+                        className={`w-3 h-3 ${selected ? "text-white stroke-white" : cfg.filterIconColor}`}
+                      />
+                      <span className={selected ? "text-white" : cfg.filterTextColor}>
+                        {cfg.shortLabel}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
 
-              {/* 성취도 상태 */}
-              <div>
-                <label className="text-xs font-bold text-slate-600 mb-1.5 block">
-                  성취도 상태
-                </label>
-                <div className="flex flex-col gap-1.5">
-                  {ALL_STATUSES.map((s) => {
-                    const selected = achStatuses.has(s);
-                    return (
-                      <button
-                        key={s}
-                        onClick={() =>
-                          setAchStatuses((prev) => {
-                            const n = new Set(prev);
-                            n.has(s) ? n.delete(s) : n.add(s);
-                            return n;
-                          })
-                        }
-                        className={`h-7 px-3 text-xs font-bold rounded-lg border transition-colors text-left flex items-center gap-1.5 ${
-                          selected
-                            ? "bg-indigo-50 border-indigo-300 text-indigo-700"
-                            : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
-                        }`}
-                      >
-                        <AchievementIcon
-                          status={s}
-                          className={`w-3 h-3 ${ACHIEVEMENT_CONFIG[s].chipIconColor}`}
-                        />
-                        {ACHIEVEMENT_CONFIG[s].label}
-                      </button>
-                    );
-                  })}
-                </div>
+              {/* 안내 버튼 및 팝오버 */}
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setShowGuide((v) => !v)}
+                  className="h-7 px-2.5 text-xs font-bold rounded-full border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 flex items-center gap-1"
+                >
+                  <Info className="w-3.5 h-3.5 text-slate-400" />
+                  안내
+                </button>
+                {showGuide && (
+                  <div
+                    ref={guideRef}
+                    className="absolute left-0 top-9 w-72 rounded-2xl shadow-2xl border p-4 z-50 bg-white border-slate-200 flex flex-col gap-2.5"
+                  >
+                    <h4 className="text-xs font-extrabold text-slate-500 mb-0.5 flex items-center gap-1.5">
+                      <Info className="w-3.5 h-3.5 text-slate-400" />
+                      성취도 안내
+                    </h4>
+                    {ALL_STATUSES.map((s) => {
+                      const cfg = ACHIEVEMENT_CONFIG[s];
+                      return (
+                        <div key={s} className="flex items-start gap-2.5">
+                          <div
+                            className={`w-6 h-6 rounded-lg flex items-center justify-center shrink-0 mt-0.5 ${cfg.chipBg} ${
+                              s === "none" ? "border border-slate-200" : ""
+                            }`}
+                          >
+                            <AchievementIcon status={s} className={`w-3.5 h-3.5 ${cfg.chipIconColor}`} />
+                          </div>
+                          <div className="text-left">
+                            <p className="text-xs font-bold text-slate-800">{cfg.label}</p>
+                            <p className="text-[11px] text-slate-500 mt-0.5">{cfg.description}</p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
+
+              {/* 구분선 */}
+              <div className="h-5 w-px bg-slate-200 mx-1" />
 
               {/* 유형명 검색 */}
-              <div>
-                <label className="text-xs font-bold text-slate-600 mb-1.5 block">
-                  유형명 검색
-                </label>
-                <div className="relative">
-                  <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
-                  <input
-                    value={achTypeName}
-                    onChange={(e) => setAchTypeName(e.target.value)}
-                    placeholder="공백제외 2자 이상"
-                    className="w-full h-8 pl-8 pr-3 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                  />
-                </div>
+              <div className="relative">
+                <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
+                <input
+                  value={achTypeName}
+                  onChange={(e) => setAchTypeName(e.target.value)}
+                  placeholder="공백제외 2자 이상"
+                  className="h-8 pl-8 pr-3 text-xs border border-slate-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-500 w-36"
+                />
               </div>
 
+              {/* 검색 */}
+              <button
+                type="button"
+                disabled={achTypeName.replace(/\s/g, "").length === 1}
+                onClick={handleAchSearch}
+                className="h-8 px-4 text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                검색
+              </button>
+
+              {/* 필터 초기화 */}
+              <button
+                type="button"
+                disabled={
+                  achGradeTerm === defaultGradeTerm &&
+                  achStatuses.size === 0 &&
+                  achTypeName === "" &&
+                  achOnlyImportant === false
+                }
+                onClick={() => {
+                  setAchGradeTerm(defaultGradeTerm);
+                  setAchStatuses(new Set());
+                  setAchTypeName("");
+                  setAchOnlyImportant(false);
+                  setAppliedAch({
+                    gradeTerm: defaultGradeTerm,
+                    statuses: new Set(),
+                    typeName: "",
+                    onlyImportant: false,
+                  });
+                  setSelectedTypeInfo(null);
+                }}
+                className="h-8 px-3 text-xs font-semibold border border-slate-200 text-slate-600 rounded-lg hover:bg-slate-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1"
+              >
+                <RotateCcw className="w-3.5 h-3.5" />
+                초기화
+              </button>
+            </div>
+
+            {/* <우측 필터 영역> */}
+            <div className="flex items-center">
               {/* 중요 유형만 보기 */}
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-slate-600">
-                  중요 유형만 보기
-                </span>
-                <button
-                  onClick={() => setAchOnlyImportant((v) => !v)}
-                  className={`relative w-11 h-6 rounded-full transition-colors ${
-                    achOnlyImportant ? "bg-amber-400" : "bg-slate-200"
-                  }`}
-                >
-                  <div
-                    className={`absolute top-1 w-4 h-4 rounded-full bg-white shadow transition-transform ${
-                      achOnlyImportant ? "translate-x-6" : "translate-x-1"
-                    }`}
-                  />
-                </button>
-              </div>
-
-              {/* 검색 / 초기화 */}
-              <div className="flex gap-2 pt-1 border-t border-slate-100">
-                <button
-                  onClick={handleAchSearch}
-                  className="flex-1 h-8 text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors"
-                >
-                  검색
-                </button>
-                <button
-                  onClick={handleAchReset}
-                  className="flex-1 h-8 text-xs font-semibold border border-slate-200 text-slate-600 rounded-lg hover:bg-slate-50 transition-colors"
-                >
-                  초기화
-                </button>
-              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  const newVal = !achOnlyImportant;
+                  setAchOnlyImportant(newVal);
+                  setAppliedAch((prev) => ({ ...prev, onlyImportant: newVal }));
+                }}
+                className={`h-8 px-3.5 text-xs font-bold rounded-lg border flex items-center gap-1.5 transition-all ${
+                  achOnlyImportant
+                    ? "bg-amber-50 border-amber-300 text-amber-700 shadow-sm"
+                    : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
+                }`}
+              >
+                <Star className={`w-3.5 h-3.5 ${achOnlyImportant ? "fill-amber-400 text-amber-400" : "text-slate-400"}`} />
+                중요 유형만 보기
+              </button>
             </div>
           </div>
 
-          {/* 우측 성취도 현황 + 유형 상세 패널 */}
-          <div className="flex-1 min-w-0 relative">
+          {/* 아코디언 본문 및 유형 상세 패널 */}
+          <div className="w-full relative">
             <div
               className={`flex gap-4 transition-all duration-200 ${
                 selectedTypeInfo ? "pr-[420px]" : ""
