@@ -2238,9 +2238,9 @@ export default function AdminExamPrepTab({
         <div className="space-y-4">
           {/* 검색 영역 */}
           <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm p-5 space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 items-end">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-12 gap-4 items-end">
               {/* 기간 단위 */}
-              <div className="flex flex-col gap-1 w-full">
+              <div className="flex flex-col gap-1 w-full col-span-1 xl:col-span-1">
                 <label className="text-xs font-semibold text-slate-500">
                   기간 단위
                 </label>
@@ -2275,7 +2275,7 @@ export default function AdminExamPrepTab({
               </div>
 
               {/* 기간 선택 */}
-              <div className="flex flex-col gap-1 w-full">
+              <div className="flex flex-col gap-1 w-full col-span-1 xl:col-span-2">
                 <label className="text-xs font-semibold text-slate-500">
                   기간 선택
                 </label>
@@ -2296,7 +2296,7 @@ export default function AdminExamPrepTab({
               </div>
 
               {/* 커리큘럼 검색 */}
-              <div className="flex flex-col gap-1 w-full">
+              <div className="flex flex-col gap-1 w-full col-span-1 xl:col-span-2">
                 <label className="text-xs font-semibold text-slate-500">
                   커리큘럼 검색
                 </label>
@@ -2325,7 +2325,7 @@ export default function AdminExamPrepTab({
               </div>
 
               {/* 유형명 검색 */}
-              <div className="flex flex-col gap-1 w-full">
+              <div className="flex flex-col gap-1 w-full col-span-1 xl:col-span-2">
                 <label className="text-xs font-semibold text-slate-500">
                   유형명 검색
                 </label>
@@ -2341,7 +2341,7 @@ export default function AdminExamPrepTab({
               </div>
 
               {/* 풀이 경로 */}
-              <div className="flex flex-col gap-1 w-full">
+              <div className="flex flex-col gap-1 w-full col-span-1 xl:col-span-1">
                 <label className="text-xs font-semibold text-slate-500">
                   풀이 경로
                 </label>
@@ -2359,7 +2359,7 @@ export default function AdminExamPrepTab({
               </div>
 
               {/* 성취도 상태 */}
-              <div className="flex flex-col gap-1.5 w-full">
+              <div className="flex flex-col gap-1.5 w-full col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4 xl:col-span-4">
                 <label className="text-xs font-semibold text-slate-500">
                   성취도 상태
                 </label>
