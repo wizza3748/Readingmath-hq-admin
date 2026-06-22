@@ -1931,7 +1931,7 @@ export default function AdminExamPrepTab({
   const [showSearchCurrModal, setShowSearchCurrModal] = useState(false);
   const [searchTypeName, setSearchTypeName] = useState("");
   const [searchPath, setSearchPath] = useState<"전체" | "시험 대비" | "과제 센터">("전체");
-  const [searchStatus, setSearchStatus] = useState<"전체" | AchievementStatus>("전체");
+  const [searchStatuses, setSearchStatuses] = useState<Set<AchievementStatus>>(new Set());
 
   // 실제 적용된 검색 조건 (검색 버튼 클릭 시 반영)
   const [appliedSearch, setAppliedSearch] = useState({
@@ -1943,7 +1943,7 @@ export default function AdminExamPrepTab({
     currNode: null as CurriculumTreeNode | null,
     typeName: "",
     path: "전체" as "전체" | "시험 대비" | "과제 센터",
-    status: "전체" as "전체" | AchievementStatus,
+    statuses: new Set<AchievementStatus>(),
   });
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -1961,7 +1961,7 @@ export default function AdminExamPrepTab({
       currNode: searchCurrNode,
       typeName: searchTypeName,
       path: searchPath,
-      status: searchStatus,
+      statuses: new Set(searchStatuses),
     });
     setCurrentPage(1);
   };
@@ -1975,14 +1975,14 @@ export default function AdminExamPrepTab({
     setSearchCurrNode(null);
     setSearchTypeName("");
     setSearchPath("전체");
-    setSearchStatus("전체");
+    setSearchStatuses(new Set());
     setAppliedSearch({
       periodUnit: "월",
       periodValue: initPeriod,
       currNode: null,
       typeName: "",
       path: "전체",
-      status: "전체",
+      statuses: new Set(),
     });
     setCurrentPage(1);
   };
@@ -2034,10 +2034,11 @@ export default function AdminExamPrepTab({
 
       // 성취도 상태
       if (
-        appliedSearch.status !== "전체" &&
-        row.achievementStatus !== appliedSearch.status
-      )
+        appliedSearch.statuses.size > 0 &&
+        !appliedSearch.statuses.has(row.achievementStatus)
+      ) {
         return false;
+      }
 
       return true;
     });
@@ -2358,24 +2359,42 @@ export default function AdminExamPrepTab({
               </div>
 
               {/* 성취도 상태 */}
-              <div className="flex flex-col gap-1 w-full">
+              <div className="flex flex-col gap-1.5 w-full">
                 <label className="text-xs font-semibold text-slate-500">
                   성취도 상태
                 </label>
-                <select
-                  value={searchStatus}
-                  onChange={(e) =>
-                    setSearchStatus(e.target.value as typeof searchStatus)
-                  }
-                  className="h-8 px-2 text-sm border border-slate-200 rounded-lg focus:outline-none w-full"
-                >
-                  <option value="전체">전체</option>
-                  {ALL_STATUSES.map((s) => (
-                    <option key={s} value={s}>
-                      {ACHIEVEMENT_CONFIG[s].label}
-                    </option>
-                  ))}
-                </select>
+                <div className="flex flex-wrap items-center gap-1.5 min-h-[32px]">
+                  {ALL_STATUSES.map((s) => {
+                    const selected = searchStatuses.has(s);
+                    const cfg = ACHIEVEMENT_CONFIG[s];
+                    return (
+                      <button
+                        key={s}
+                        type="button"
+                        onClick={() => {
+                          setSearchStatuses((prev) => {
+                            const n = new Set(prev);
+                            n.has(s) ? n.delete(s) : n.add(s);
+                            return n;
+                          });
+                        }}
+                        className={`h-7 px-2.5 text-xs font-bold rounded-full border transition-all flex items-center gap-1 ${
+                          selected
+                            ? "bg-indigo-600 border-indigo-600 text-white shadow-sm"
+                            : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
+                        }`}
+                      >
+                        <AchievementIcon
+                          status={s}
+                          className={`w-3.5 h-3.5 ${selected ? "text-white stroke-white" : cfg.filterIconColor}`}
+                        />
+                        <span className={selected ? "text-white" : cfg.filterTextColor}>
+                          {cfg.shortLabel}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
 
