@@ -2207,50 +2207,60 @@ export default function AdminExamPrepTab({
 
   return (
     <div className="w-full space-y-4 relative">
-      {/* ── 과목 탭 ─────────────────────────────────────────────────────────── */}
-      {availableSubjects.length > 1 && (
-        <div className="flex items-center gap-2">
-          {availableSubjects.map((s) => (
-            <button
-              key={s}
-              onClick={() => {
-                setSubject(s);
-                setSelectedTypeInfo(null);
-              }}
-              className={`h-8 px-4 text-sm font-bold rounded-lg border transition-colors ${
-                subject === s
-                  ? s === "math"
-                    ? "bg-amber-500 border-amber-500 text-white"
-                    : "bg-sky-500 border-sky-500 text-white"
-                  : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
-              }`}
-            >
-              {s === "math" ? "수학" : "과학"}
-            </button>
-          ))}
-        </div>
-      )}
+      {/* ── 과목 선택 및 보기 전환 상단 바 ───────────────────────────────────── */}
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-1.5 border-b border-slate-200/60">
+        {/* 좌측: 과목 탭 */}
+        {availableSubjects.length > 1 ? (
+          <div className="flex items-center gap-1.5">
+            {availableSubjects.map((s) => (
+              <button
+                key={s}
+                type="button"
+                onClick={() => {
+                  setSubject(s);
+                  setSelectedTypeInfo(null);
+                }}
+                className={`h-8 px-4 text-xs font-extrabold rounded-lg border transition-all ${
+                  subject === s
+                    ? s === "math"
+                      ? "bg-amber-50 border-amber-200 text-amber-700 shadow-sm"
+                      : "bg-sky-50 border-sky-200 text-sky-700 shadow-sm"
+                    : "bg-white border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-700"
+                }`}
+              >
+                {s === "math" ? "수학" : "과학"}
+              </button>
+            ))}
+          </div>
+        ) : (
+          <div />
+        )}
 
-      {/* ── 보기 전환 ────────────────────────────────────────────────────────── */}
-      <div className="flex items-center bg-slate-100 rounded-lg p-1 w-fit">
-        {(
-          [
-            { value: "history", label: "풀이이력" },
-            { value: "achievement", label: "성취도현황" },
-          ] as { value: ViewMode; label: string }[]
-        ).map((opt) => (
-          <button
-            key={opt.value}
-            onClick={() => setViewMode(opt.value)}
-            className={`h-8 px-5 text-sm font-bold rounded-md transition-all ${
-              viewMode === opt.value
-                ? "bg-white text-slate-900 shadow-sm"
-                : "text-slate-500 hover:text-slate-700"
-            }`}
-          >
-            {opt.label}
-          </button>
-        ))}
+        {/* 우측: 보기 전환 탭 (Segmented Control) */}
+        <div className="flex items-center bg-slate-100/80 border border-slate-200/60 rounded-xl p-1 w-fit shadow-inner">
+          {(
+            [
+              { value: "history", label: "풀이이력" },
+              { value: "achievement", label: "성취도현황" },
+            ] as { value: ViewMode; label: string }[]
+          ).map((opt) => {
+            const active = viewMode === opt.value;
+            return (
+              <button
+                key={opt.value}
+                type="button"
+                onClick={() => setViewMode(opt.value)}
+                className={`h-7 px-4.5 text-xs font-bold rounded-lg transition-all ${
+                  active
+                    ? "bg-white text-slate-800 shadow-sm border border-slate-200/40"
+                    : "text-slate-500 hover:text-slate-700"
+                }`}
+              >
+                {opt.label}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* ══════════════════════════════════════════════════════════════════════
