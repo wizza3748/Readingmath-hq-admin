@@ -2250,7 +2250,7 @@ export default function AdminExamPrepTab({
                 key={opt.value}
                 type="button"
                 onClick={() => setViewMode(opt.value)}
-                className={`h-7 px-4.5 text-xs font-bold rounded-lg transition-all ${
+                className={`h-7 px-4 text-xs font-bold rounded-lg transition-all whitespace-nowrap min-w-[80px] flex items-center justify-center ${
                   active
                     ? "bg-white text-slate-800 shadow-sm border border-slate-200/40"
                     : "text-slate-500 hover:text-slate-700"
@@ -2270,9 +2270,9 @@ export default function AdminExamPrepTab({
         <div className="space-y-4">
           {/* 검색 영역 */}
           <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm p-5 space-y-4">
-            <div className="flex flex-wrap gap-3 items-end">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 items-end">
               {/* 기간 단위 */}
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 w-full">
                 <label className="text-xs font-semibold text-slate-500">
                   기간 단위
                 </label>
@@ -2294,7 +2294,7 @@ export default function AdminExamPrepTab({
                             `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`
                           );
                       }}
-                      className={`h-8 px-3 text-xs font-bold rounded-lg border transition-colors ${
+                      className={`h-8 px-3 text-xs font-bold rounded-lg border transition-colors flex-1 ${
                         searchPeriodUnit === u
                           ? "bg-indigo-600 border-indigo-600 text-white"
                           : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
@@ -2307,7 +2307,7 @@ export default function AdminExamPrepTab({
               </div>
 
               {/* 기간 선택 */}
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 w-full">
                 <label className="text-xs font-semibold text-slate-500">
                   기간 선택
                 </label>
@@ -2323,24 +2323,24 @@ export default function AdminExamPrepTab({
                   min={searchPeriodUnit === "년" ? "2020" : undefined}
                   max={searchPeriodUnit === "년" ? "2099" : undefined}
                   onChange={(e) => setSearchPeriodValue(e.target.value)}
-                  className="h-8 px-3 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                  className="h-8 px-3 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-500 w-full"
                 />
               </div>
 
               {/* 커리큘럼 검색 */}
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 w-full">
                 <label className="text-xs font-semibold text-slate-500">
                   커리큘럼 검색
                 </label>
                 <button
                   onClick={() => setShowSearchCurrModal(true)}
-                  className="h-8 px-3 text-sm border border-slate-200 rounded-lg hover:bg-slate-50 flex items-center gap-2 min-w-[160px] text-left"
+                  className="h-8 px-3 text-sm border border-slate-200 rounded-lg hover:bg-slate-50 flex items-center gap-2 w-full text-left"
                 >
                   <BookOpen className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                   <span
-                    className={
+                    className={`truncate ${
                       searchCurrNode ? "text-slate-800 font-semibold" : "text-slate-400"
-                    }
+                    }`}
                   >
                     {searchCurrNode ? searchCurrNode.label : "커리큘럼 선택"}
                   </span>
@@ -2357,23 +2357,23 @@ export default function AdminExamPrepTab({
               </div>
 
               {/* 유형명 검색 */}
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 w-full">
                 <label className="text-xs font-semibold text-slate-500">
                   유형명 검색
                 </label>
-                <div className="relative">
+                <div className="relative w-full">
                   <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
                   <input
                     value={searchTypeName}
                     onChange={(e) => setSearchTypeName(e.target.value)}
                     placeholder="공백제외 2자 이상"
-                    className="h-8 pl-8 pr-3 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-500 w-40"
+                    className="h-8 pl-8 pr-3 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-500 w-full"
                   />
                 </div>
               </div>
 
               {/* 풀이 경로 */}
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 w-full">
                 <label className="text-xs font-semibold text-slate-500">
                   풀이 경로
                 </label>
@@ -2383,7 +2383,7 @@ export default function AdminExamPrepTab({
                     setSearchPath(e.target.value as typeof searchPath);
                     setSearchChallenge("전체");
                   }}
-                  className="h-8 px-2 text-sm border border-slate-200 rounded-lg focus:outline-none"
+                  className="h-8 px-2 text-sm border border-slate-200 rounded-lg focus:outline-none w-full"
                 >
                   <option>전체</option>
                   <option>시험 대비</option>
@@ -2392,14 +2392,14 @@ export default function AdminExamPrepTab({
               </div>
 
               {/* 도전 구분 */}
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 w-full">
                 <label className="text-xs font-semibold text-slate-500">
                   도전 구분
                 </label>
                 <select
                   value={searchChallenge}
                   onChange={(e) => setSearchChallenge(e.target.value)}
-                  className="h-8 px-2 text-sm border border-slate-200 rounded-lg focus:outline-none"
+                  className="h-8 px-2 text-sm border border-slate-200 rounded-lg focus:outline-none w-full"
                 >
                   {challengeOptions.map((o) => (
                     <option key={o}>{o}</option>
@@ -2408,7 +2408,7 @@ export default function AdminExamPrepTab({
               </div>
 
               {/* 성취도 상태 */}
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 w-full">
                 <label className="text-xs font-semibold text-slate-500">
                   성취도 상태
                 </label>
@@ -2417,7 +2417,7 @@ export default function AdminExamPrepTab({
                   onChange={(e) =>
                     setSearchStatus(e.target.value as typeof searchStatus)
                   }
-                  className="h-8 px-2 text-sm border border-slate-200 rounded-lg focus:outline-none"
+                  className="h-8 px-2 text-sm border border-slate-200 rounded-lg focus:outline-none w-full"
                 >
                   <option value="전체">전체</option>
                   {ALL_STATUSES.map((s) => (
@@ -2430,31 +2430,35 @@ export default function AdminExamPrepTab({
             </div>
 
             {/* 검색 / 초기화 버튼 */}
-            <div className="flex items-center gap-2 pt-1 border-t border-slate-100">
-              <button
-                onClick={handleSearch}
-                disabled={!isSearchEnabled}
-                className={`h-8 px-5 text-sm font-bold rounded-lg transition-colors flex items-center gap-1.5 ${
-                  isSearchEnabled
-                    ? "bg-indigo-600 hover:bg-indigo-700 text-white"
-                    : "bg-slate-100 text-slate-400 cursor-not-allowed"
-                }`}
-              >
-                <Search className="w-3.5 h-3.5" />
-                검색
-              </button>
-              <button
-                onClick={handleSearchReset}
-                className="h-8 px-4 text-sm font-semibold border border-slate-200 rounded-lg text-slate-600 hover:bg-slate-50 transition-colors flex items-center gap-1.5"
-              >
-                <RotateCcw className="w-3.5 h-3.5" />
-                초기화
-              </button>
-              {typeNameTrimmed.length === 1 && (
+            <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100">
+              {typeNameTrimmed.length === 1 ? (
                 <p className="text-xs text-red-500 font-semibold">
                   유형명은 공백 제외 2자 이상 입력해 주세요.
                 </p>
+              ) : (
+                <div />
               )}
+              <div className="flex items-center gap-2 ml-auto">
+                <button
+                  onClick={handleSearch}
+                  disabled={!isSearchEnabled}
+                  className={`h-8 px-5 text-sm font-bold rounded-lg transition-colors flex items-center gap-1.5 ${
+                    isSearchEnabled
+                      ? "bg-indigo-600 hover:bg-indigo-700 text-white"
+                      : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                  }`}
+                >
+                  <Search className="w-3.5 h-3.5" />
+                  검색
+                </button>
+                <button
+                  onClick={handleSearchReset}
+                  className="h-8 px-4 text-sm font-semibold border border-slate-200 rounded-lg text-slate-600 hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+                >
+                  <RotateCcw className="w-3.5 h-3.5" />
+                  초기화
+                </button>
+              </div>
             </div>
           </div>
 
