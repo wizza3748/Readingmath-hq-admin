@@ -58,6 +58,17 @@ export function renderLatexToHtml(latex: string): string {
   html = html.replace(/\\times/g, '×');
   html = html.replace(/\\div/g, '÷');
 
+  // 9.1. 각도 및 선분 기호
+  html = html.replace(/\\angle/g, '∠');
+  
+  let overlinePrev = "";
+  while (html !== overlinePrev) {
+    overlinePrev = html;
+    html = html.replace(/\\overline\s*\{([^{}]+)\}/g, (match, txt) => {
+      return `<span class="not-italic font-sans" style="text-decoration: overline;">${txt}</span>`;
+    });
+  }
+
   // 10. 백슬래시 정리
   html = html.replace(/\\/g, '');
 
