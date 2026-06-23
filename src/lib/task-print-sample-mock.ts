@@ -115,8 +115,8 @@ export const MATH_PRINT_SAMPLES: PrintQuestion[] = [
     subject: "math",
     stem: "다음은 '이등변삼각형의 두 밑각의 크기는 같다.'를 증명하는 과정입니다. (가)~(마)에 알맞지 않은 것을 고르세요.",
     passage: `<div class="flex flex-col gap-2 items-center my-3">
-  <img src="/print_sample/math-proof-1a.png" alt="증명 과정" style="max-width:100%; height:auto; border: 1px solid #e2e8f0; border-radius: 8px;" />
-  <img src="/print_sample/math-proof-1b.png" alt="삼각형 도형" style="max-width:100%; height:auto; border: 1px solid #e2e8f0; border-radius: 8px;" />
+  <img src="/print_sample/math-proof-1b.png" alt="삼각형 도형" style="width: 100%; max-width: 300px; height: auto;" />
+  <img src="/print_sample/math-proof-1a.png" alt="증명 과정" style="width: 100%; max-width: 500px; height: auto;" />
 </div>`,
     choices: [
       "(가) - $\\overline{AD}$",
@@ -132,7 +132,9 @@ export const MATH_PRINT_SAMPLES: PrintQuestion[] = [
     id: "math-sample-12",
     subject: "math",
     stem: "다음은 '이등변삼각형의 두 밑각의 크기는 같다.'를 증명하는 과정입니다. (가)~(마)에 알맞지 않은 것을 고르세요.",
-    image: "/print_sample/math-proof-2.png",
+    passage: `<div class="flex justify-center my-3">
+  <img src="/print_sample/math-proof-2.png" alt="증명 과정" style="width: 100%; max-width: 500px; height: auto;" />
+</div>`,
     choices: [
       "(가) - $\\overline{AC}$",
       "(나) - $\\overline{AD}$",
