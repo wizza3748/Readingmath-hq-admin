@@ -114,26 +114,9 @@ export const MATH_PRINT_SAMPLES: PrintQuestion[] = [
     id: "math-sample-11",
     subject: "math",
     stem: "다음은 '이등변삼각형의 두 밑각의 크기는 같다.'를 증명하는 과정입니다. (가)~(마)에 알맞지 않은 것을 고르세요.",
-    passage: `<div class="flex justify-center my-3">
-  <img src="/print_sample/math-proof-2.png" alt="증명 과정" style="width: 100%; max-width: 500px; height: auto;" />
-</div>`,
-    choices: [
-      "(가) - $\\overline{AC}$",
-      "(나) - $\\overline{AD}$",
-      "(다) - $\\angle ADC$",
-      "(라) - SAS",
-      "(마) - $\\angle C$"
-    ],
-    answer: "(다) - $\\angle ADC$",
-    explanation: "선분 AD는 $\\angle A$의 이등분선이므로, $\\angle BAD = \\angle CAD$ 입니다. 따라서 (다)에 알맞은 각은 $\\angle CAD$ 이며, 옳지 않은 것은 ③번입니다."
-  },
-  {
-    id: "math-sample-12",
-    subject: "math",
-    stem: "다음은 '이등변삼각형의 두 밑각의 크기는 같다.'를 증명하는 과정입니다. (가)~(마)에 알맞지 않은 것을 고르세요.",
     passage: `<div class="flex flex-col gap-2 items-center my-3">
   <img src="/print_sample/math-proof-1b.png" alt="삼각형 도형" style="width: 100%; max-width: 300px; height: auto;" />
-  <img src="/print_sample/math-proof-1a.png" alt="증명 과정" style="width: 100%; max-width: 500px; height: auto;" />
+  <img src="/print_sample/math-proof-1a.png" alt="증명 과정" style="width: 100%; max-width: 500px; height: auto; max-height: none !important; object-fit: contain !important;" />
 </div>`,
     choices: [
       "(가) - $\\overline{AD}$",
@@ -144,6 +127,23 @@ export const MATH_PRINT_SAMPLES: PrintQuestion[] = [
     ],
     answer: "(다) - $\\angle A$",
     explanation: "삼각형의 세 내각의 크기의 합은 180도이고, $\\angle B = \\angle C$ 이므로, (다)에 알맞은 각은 $\\angle C$ 입니다. 따라서 옳지 않은 것은 ③번입니다."
+  },
+  {
+    id: "math-sample-12",
+    subject: "math",
+    stem: "다음은 '이등변삼각형의 두 밑각의 크기는 같다.'를 증명하는 과정입니다. (가)~(마)에 알맞지 않은 것을 고르세요.",
+    passage: `<div class="flex justify-center my-3">
+  <img src="/print_sample/math-proof-2.png" alt="증명 과정" style="width: 100%; max-width: 500px; height: auto; max-height: none !important; object-fit: contain !important;" />
+</div>`,
+    choices: [
+      "(가) - $\\overline{AC}$",
+      "(나) - $\\overline{AD}$",
+      "(다) - $\\angle ADC$",
+      "(라) - SAS",
+      "(마) - $\\angle C$"
+    ],
+    answer: "(다) - $\\angle ADC$",
+    explanation: "선분 AD는 $\\angle A$의 이등분선이므로, $\\angle BAD = \\angle CAD$ 입니다. 따라서 (다)에 알맞은 각은 $\\angle CAD$ 이며, 옳지 않은 것은 ③번입니다."
   }
 ];
 
