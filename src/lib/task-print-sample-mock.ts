@@ -109,6 +109,39 @@ export const MATH_PRINT_SAMPLES: PrintQuestion[] = [
     ],
     answer: "<img src=\"/images/mock/math-q5-choice3.svg\" alt=\"선지3\" style=\"height:75px; width:auto; object-fit:contain; display:inline-block; vertical-align:middle;\" />",
     explanation: "두 변량 x, y를 순서쌍 (x, y)로 하는 8개의 점 (5, 4), (2, 2), (4, 3), (3, 3), (4, 5), (5, 5), (4, 3), (2, 3)를 좌표평면 위에 바르게 나타낸 것은 ②입니다."
+  },
+  {
+    id: "math-sample-11",
+    subject: "math",
+    stem: "다음은 '이등변삼각형의 두 밑각의 크기는 같다.'를 증명하는 과정입니다. (가)~(마)에 알맞지 않은 것을 고르세요.",
+    passage: `<div class="flex flex-col gap-2 items-center my-3">
+  <img src="/print_sample/math-proof-1a.png" alt="증명 과정" style="max-width:100%; height:auto; border: 1px solid #e2e8f0; border-radius: 8px;" />
+  <img src="/print_sample/math-proof-1b.png" alt="삼각형 도형" style="max-width:100%; height:auto; border: 1px solid #e2e8f0; border-radius: 8px;" />
+</div>`,
+    choices: [
+      "(가) - $\\overline{AD}$",
+      "(나) - $\\angle CAD$",
+      "(다) - $\\angle A$",
+      "(라) - $\\angle ADC$",
+      "(마) - ASA"
+    ],
+    answer: "(다) - $\\angle A$",
+    explanation: "삼각형의 세 내각의 크기의 합은 180도이고, $\\angle B = \\angle C$ 이므로, (다)에 알맞은 각은 $\\angle C$ 입니다. 따라서 옳지 않은 것은 ③번입니다."
+  },
+  {
+    id: "math-sample-12",
+    subject: "math",
+    stem: "다음은 '이등변삼각형의 두 밑각의 크기는 같다.'를 증명하는 과정입니다. (가)~(마)에 알맞지 않은 것을 고르세요.",
+    image: "/print_sample/math-proof-2.png",
+    choices: [
+      "(가) - $\\overline{AC}$",
+      "(나) - $\\overline{AD}$",
+      "(다) - $\\angle ADC$",
+      "(라) - SAS",
+      "(마) - $\\angle C$"
+    ],
+    answer: "(다) - $\\angle ADC$",
+    explanation: "선분 AD는 $\\angle A$의 이등분선이므로, $\\angle BAD = \\angle CAD$ 입니다. 따라서 (다)에 알맞은 각은 $\\angle CAD$ 이며, 옳지 않은 것은 ③번입니다."
   }
 ];
 
