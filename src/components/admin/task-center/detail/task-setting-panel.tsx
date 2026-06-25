@@ -253,12 +253,9 @@ export function TaskSettingPanel({
           const comboCount = activeSelectedTypes.length;
           const currentMultiplier = activeSelectedTypes[0]?.problemCount ?? 1;
 
-          // 중요 문제만 출제 ON 시: 중요 문제가 있는 조합만 합산
+          // 중요 문제만 출제 ON 시: 중요 문제가 포함된 조합의 개수만큼 (조합당 1문항씩 출제되므로)
           const displayTotal = onlyImportant
-            ? activeSelectedTypes.reduce((s, t) => {
-                const importantMax = t.importantCount[t.difficulty];
-                return s + (importantMax > 0 ? Math.min(t.problemCount, importantMax) : 0);
-              }, 0)
+            ? activeSelectedTypes.filter(t => (t.importantCount?.[t.difficulty] ?? 0) > 0).length
             : comboCount * (comboCount > 0 ? currentMultiplier : 0);
 
           return (

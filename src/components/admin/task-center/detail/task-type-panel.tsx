@@ -661,8 +661,10 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
                             {group.types.map((type, idx) => {
                               if ((type.difficultyCount[d] || 0) === 0) return null;
                               const isTypeImportant = type.importantCount.basic > 0 || type.importantCount.intermediate > 0 || type.importantCount.advanced > 0;
-                              const isSelected = selectedCombos.includes(makeComboKey(type.id, d)) && (!onlyImportantType || isTypeImportant);
                               const hasImportant = (type.importantCount?.[d] ?? 0) > 0;
+                              const isSelected = selectedCombos.includes(makeComboKey(type.id, d)) && 
+                                                 (!onlyImportantType || isTypeImportant) &&
+                                                 (!onlyImportant || hasImportant);
                               const isChipDisabled = onlyImportant && !hasImportant;
                               
                               const importantQuestionText = hasImportant ? "중요문제 있음" : "중요문제 없음";

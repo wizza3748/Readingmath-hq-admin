@@ -219,13 +219,6 @@ export default function TaskDetail({ taskId }: Props) {
   // 출제 범위(중요 문제만) 변경
   const handleOnlyImportantChange = (important: boolean) => {
     setOnlyImportant(important);
-    if (important) {
-      setSelectedTypes(prev =>
-        prev
-          .filter(t => (t.importantCount?.[t.difficulty] ?? 0) > 0)
-          .map(t => ({ ...t, problemCount: 1 }))
-      );
-    }
   };
 
   // 중요 유형만 출제 필터 변경
@@ -252,12 +245,9 @@ export default function TaskDetail({ taskId }: Props) {
     ? selectedTypes.filter(t => t.importantCount.basic > 0 || t.importantCount.intermediate > 0 || t.importantCount.advanced > 0)
     : selectedTypes;
 
-  // 중요 문제만 출제 ON 시: 각 조합의 importantCount[difficulty] 를 초과하지 않도록 clamp
+  // 중요 문제만 출제 ON 시: 중요 문제가 포함된 조합의 개수만큼 (조합당 1문항씩 출제되므로)
   const totalProblems = onlyImportant
-    ? activeSelectedTypesForCalculation.reduce((s, t) => {
-        const importantMax = t.importantCount?.[t.difficulty] ?? 0;
-        return s + (importantMax > 0 ? Math.min(t.problemCount, importantMax) : 0);
-      }, 0)
+    ? activeSelectedTypesForCalculation.filter(t => (t.importantCount?.[t.difficulty] ?? 0) > 0).length
     : activeSelectedTypesForCalculation.reduce((s, t) => s + t.problemCount, 0);
 
   const handleProblemModeChange = (mode: ProblemMode) => {
@@ -302,43 +292,37 @@ export default function TaskDetail({ taskId }: Props) {
       ? selectedTypes.filter(t => t.importantCount.basic > 0 || t.importantCount.intermediate > 0 || t.importantCount.advanced > 0)
       : selectedTypes;
 
-    const totalMax = activeTypesForCheck.reduce((sum, t) => sum + t.maxCount[t.difficulty], 0);
+    // 중요 문제만 출제 ON 상태에서 실제 저장할 조합은 중요 문제가 1개 이상 있는 조합들만 추리고 problemCount=1 보정
+    const finalSelectedTypes = onlyImportant
+      ? activeTypesForCheck
+          .filter(t => (t.importantCount?.[t.difficulty] ?? 0) > 0)
+          .map(t => ({ ...t, problemCount: 1 }))
+      : activeTypesForCheck;
+
+    const totalMax = finalSelectedTypes.reduce((sum, t) => sum + t.maxCount[t.difficulty], 0);
 
     if (!name.trim()) { toast({ title: "과제명을 입력하세요.", variant: "destructive" }); return; }
-    if (activeTypesForCheck.length === 0) { toast({ title: "선택한 단원에 출제 가능한 중요 유형이 없습니다.", variant: "destructive" }); return; }
+    if (finalSelectedTypes.length === 0) {
+      toast({ 
+        title: onlyImportant ? "선택한 단원에 출제 가능한 중요 유형·문항이 없습니다." : "선택한 단원에 출제 가능한 유형이 없습니다.", 
+        variant: "destructive" 
+      }); 
+      return; 
+    }
     if (totalMax === 0) { toast({ title: "선택한 유형·난이도에 출제 가능한 문제가 없습니다.", variant: "destructive" }); return; }
 
     // 중요 문제 부족 상태 검사
     if (onlyImportant) {
-      const importantMax = activeTypesForCheck.reduce((sum, t) => sum + (t.importantCount?.[t.difficulty] ?? 0), 0);
+      const importantMax = finalSelectedTypes.reduce((sum, t) => sum + (t.importantCount?.[t.difficulty] ?? 0), 0);
       if (importantMax === 0) {
         toast({ title: "선택한 유형·난이도에 중요 문제가 없습니다.", variant: "destructive" });
         return;
       }
-
-      // 저장 직전 방어 1. 중요 문제 수 0개 조합 저장 금지
-      const hasZeroImportant = selectedTypes.some(t => (t.importantCount?.[t.difficulty] ?? 0) === 0);
-      if (hasZeroImportant) {
-        toast({ title: "선택한 유형·난이도 중 중요 문제가 없는 항목이 있습니다.", variant: "destructive" });
-        return;
-      }
-
-      // 저장 직전 방어 3. 문제 수 1 초과 저장 금지
-      const hasOverOne = selectedTypes.some(t => t.problemCount > 1);
-      if (hasOverOne) {
-        toast({ title: "중요 문제만 출제 시 문제 수는 1문항을 초과할 수 없습니다.", variant: "destructive" });
-        return;
-      }
     }
 
-    if (totalProblems === 0) { toast({ title: "문제 수를 설정하세요.", variant: "destructive" }); return; }
-
-    // 저장 직전 방어 2. 중요 문제만 출제 ON 상태에서 모든 선택 조합 problemCount=1 보정
-    const finalSelectedTypes = onlyImportant
-      ? selectedTypes.map(t => ({ ...t, problemCount: 1 }))
-      : selectedTypes;
-
     const finalTotalProblems = onlyImportant ? finalSelectedTypes.length : totalProblems;
+
+    if (finalTotalProblems === 0) { toast({ title: "문제 수를 설정하세요.", variant: "destructive" }); return; }
 
     // difficulties는 selectedTypes에서 추출하여 고유 목록 저장
     const finalDifficulties = Array.from(new Set(finalSelectedTypes.map(t => t.difficulty)));
