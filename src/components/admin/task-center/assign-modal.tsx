@@ -411,10 +411,7 @@ export function AssignModal({
               <span>학습과정 <strong className="text-slate-700 font-extrabold">{task.course}</strong></span>
               <span className="text-slate-300 font-light">·</span>
               <span>문제 수 <strong className="text-slate-700 font-extrabold">
-                {isRelearnMode
-                  ? (task.status === "published" || task.status === "ended" ? "학생별 상이" : "배정 시 확정")
-                  : `${task.totalProblems}문항`
-                }
+                {getTaskProblemCountText(task)}
               </strong></span>
               <span className="text-slate-300 font-light">·</span>
               <span className="text-slate-600 font-bold bg-slate-100/80 px-1.5 py-0.5 rounded border border-slate-200/30">
@@ -781,3 +778,18 @@ export function AssignModal({
     </Dialog>
   );
 }
+
+const getTaskProblemCountText = (task: any) => {
+  if (task.problemMode === "same") {
+    return `${task.totalProblems}문항`;
+  }
+  let maxCount = task.totalProblems;
+  if (task.assignedStudents && task.assignedStudents.length > 0) {
+    const counts = task.assignedStudents.map((s: any) => s.problemCount ?? s.totalCount ?? 0);
+    const maxStudentCount = Math.max(...counts);
+    if (maxStudentCount > 0) {
+      maxCount = maxStudentCount;
+    }
+  }
+  return `${maxCount}문항(최대)`;
+};

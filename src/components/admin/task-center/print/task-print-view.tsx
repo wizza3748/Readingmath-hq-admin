@@ -184,7 +184,7 @@ export default function TaskPrintView({ taskId }: Props) {
           </div>
           <div className="flex flex-col shrink-0">
             <span className="text-gray-500 text-xs mb-1 whitespace-nowrap">문제 수</span>
-            <span className="font-medium text-gray-900">{task.totalProblems}문항</span>
+            <span className="font-medium text-gray-900">{getTaskProblemCountText(task)}</span>
           </div>
           <div className="flex flex-col shrink-0">
             <span className="text-gray-500 text-xs mb-1 whitespace-nowrap">문제 구성 방식</span>
@@ -276,3 +276,18 @@ export default function TaskPrintView({ taskId }: Props) {
     </div>
   );
 }
+
+const getTaskProblemCountText = (task: any) => {
+  if (task.problemMode === "same") {
+    return `${task.totalProblems}문항`;
+  }
+  let maxCount = task.totalProblems;
+  if (task.assignedStudents && task.assignedStudents.length > 0) {
+    const counts = task.assignedStudents.map((s: any) => s.problemCount ?? s.totalCount ?? 0);
+    const maxStudentCount = Math.max(...counts);
+    if (maxStudentCount > 0) {
+      maxCount = maxStudentCount;
+    }
+  }
+  return `${maxCount}문항(최대)`;
+};

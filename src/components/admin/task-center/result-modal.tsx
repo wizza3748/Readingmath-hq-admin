@@ -217,7 +217,7 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
     rows.push(["▣ 과제 기본 정보"]);
     rows.push(["과제명", task.name]);
     rows.push(["학습과정", task.course]);
-    rows.push(["문제 수", task.problemMode === "relearn" ? "학생별 상이" : `${task.totalProblems}문항`]);
+    rows.push(["문제 수", getTaskProblemCountText(task)]);
     rows.push(["문제 구성 방식", task.problemMode === "same" ? "동일 문제" : task.problemMode === "relearn" ? "학생별 재학습 유형" : "학생별 문제"]);
     rows.push(["배정 대상", isClassTask ? `반 배정 (${assignedClassName})` : `개별 학생 배정 (${totalCount}명)`]);
     rows.push(["배정 학생 수", `${totalCount}명`]);
@@ -296,7 +296,7 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
               <span>학습과정 <strong className="text-slate-700 font-extrabold">{task.course}</strong></span>
               <span className="text-slate-300 font-light">·</span>
               <span>문제 수 <strong className="text-slate-700 font-extrabold">
-                {task.problemMode === "relearn" ? "학생별 상이" : `${task.totalProblems}문항`}
+                {getTaskProblemCountText(task)}
               </strong></span>
               <span className="text-slate-300 font-light">·</span>
               <span className="text-slate-600 font-bold bg-slate-100/80 px-1.5 py-0.5 rounded border border-slate-200/30">
@@ -628,3 +628,18 @@ export function ResultModal({ open, onOpenChange, task }: ResultModalProps) {
     </Dialog>
   );
 }
+
+const getTaskProblemCountText = (task: any) => {
+  if (task.problemMode === "same") {
+    return `${task.totalProblems}문항`;
+  }
+  let maxCount = task.totalProblems;
+  if (task.assignedStudents && task.assignedStudents.length > 0) {
+    const counts = task.assignedStudents.map((s: any) => s.problemCount ?? s.totalCount ?? 0);
+    const maxStudentCount = Math.max(...counts);
+    if (maxStudentCount > 0) {
+      maxCount = maxStudentCount;
+    }
+  }
+  return `${maxCount}문항(최대)`;
+};

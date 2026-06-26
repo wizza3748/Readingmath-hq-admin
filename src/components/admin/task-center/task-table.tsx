@@ -363,10 +363,7 @@ export function TaskTable({ tasks }: Props) {
                   </td>
                   <td className="py-3 px-3"><TypeCountPopover task={task} /></td>
                   <td className="py-3 px-3 whitespace-nowrap">
-                    {task.problemMode === "relearn"
-                      ? (task.status === "published" || task.status === "ended" ? "학생별 상이" : "배정 시 확정")
-                      : `${task.totalProblems}문항`
-                    }
+                    {getTaskProblemCountText(task)}
                   </td>
                   <td className="py-3 px-3"><DifficultyBadges difficulties={task.difficulties} /></td>
                   <td className="py-3 px-3">
@@ -482,3 +479,18 @@ export function TaskTable({ tasks }: Props) {
     </>
   );
 }
+
+const getTaskProblemCountText = (task: any) => {
+  if (task.problemMode === "same") {
+    return `${task.totalProblems}문항`;
+  }
+  let maxCount = task.totalProblems;
+  if (task.assignedStudents && task.assignedStudents.length > 0) {
+    const counts = task.assignedStudents.map((s: any) => s.problemCount ?? s.totalCount ?? 0);
+    const maxStudentCount = Math.max(...counts);
+    if (maxStudentCount > 0) {
+      maxCount = maxStudentCount;
+    }
+  }
+  return `${maxCount}문항(최대)`;
+};
