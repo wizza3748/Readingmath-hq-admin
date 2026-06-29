@@ -75,6 +75,13 @@ const hqWorkItems: WorkItem[] = [
 
 const agencyWorkItems: WorkItem[] = [
   {
+    id: "RM-402",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-402",
+    title: "[기관] 학생상세 > 시험대비 탭",
+    internalUrl: "/admin/student-list/s1?tab=exam-prep",
+    isNew: true,
+  },
+  {
     id: "RM-360",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-360",
     title: "[기관] 과제 센터",
