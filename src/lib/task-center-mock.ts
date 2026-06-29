@@ -37485,6 +37485,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 첨단 과학 기술의 명칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -37522,7 +37523,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 문제 인식부터 결론 도출까지 전체 흐름 비판적 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -37560,7 +37560,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화석 연료와 환경 문제 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -37617,6 +37616,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가설 증명을 위한 변인 통제 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -37654,6 +37654,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 첨단 과학 기술 용어 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -37748,7 +37749,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 변인 사이의 인과관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -37767,7 +37767,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학적 탐구 방법에 대한 일반적인 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -38014,7 +38013,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 탐구 계획서의 기본 구성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -38089,7 +38087,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 무작위로 제시된 탐구 과정을 순서대로 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -38146,6 +38143,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 첨단 기술의 부정적 영향 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -38183,6 +38181,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 가지 세포의 모양과 크기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -38314,7 +38313,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동물과 식물의 구성 단계 차이점(조직계/기관계) 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -38333,7 +38331,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물 세포의 주요 구조 명칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -38484,7 +38481,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 조직(울타리조직 등)과 기관의 체계적 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -38522,7 +38518,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포 소기관(에너지 생산, 광합성 등)의 상세 기능 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -38598,6 +38593,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 신경세포와 상피세포의 모양 및 기능적 차이 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -38673,7 +38669,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동물 세포와 식물 세포의 구조적 차이점 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -38692,6 +38687,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 현미경을 이용한 동물/식물 세포 관찰 결과 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -38710,7 +38706,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 벤다이어그램을 통한 세포 공통 구조 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -38862,6 +38857,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물 세포의 구조와 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -38880,6 +38876,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동물 및 식물 세포 소기관 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -38954,6 +38951,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분류 단계가 하위(종)로 갈수록 나타나는 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -39029,7 +39027,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성에 포함되는 요소 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -39048,6 +39045,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 변이인 것과 변이가 아닌 사례 구분하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -39084,6 +39082,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성의 의미와 범위 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -39121,6 +39120,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분류 단계의 포함 관계에 따른 생물 수 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -39139,6 +39139,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 사이에서 나타나는 변이의 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -39194,6 +39195,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서식 환경에 적응한 생물의 특징(여우) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -39288,7 +39290,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 분류의 기본 단위 '종'의 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -39364,6 +39365,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서로 다른 두 지역(밭과 숲)의 생물다양성 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -39439,6 +39441,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 변이가 생물의 생존과 환경 적응에 미치는 역할 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -39590,6 +39593,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 분류 단계(문-강-목-과-속-종)의 포함 관계와 서열 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -39683,7 +39687,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원핵생물계의 주요 특징과 대표 생물 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -39759,7 +39762,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 버섯과 곰팡이의 균사 구조와 포자 번식 특성 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -39778,7 +39780,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 5계의 종합적인 특징 비교표 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -39854,6 +39855,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 5계의 대표적인 특징 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -39967,7 +39969,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 균계의 양분 얻는 방식과 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40024,7 +40025,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물계의 광합성 및 세포 구조적 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40061,6 +40061,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동물계의 특징과 양분 섭취 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40098,7 +40099,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주변 생물의 소속 계 연결하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40174,7 +40174,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성 여부에 따른 독립 영양과 종속 영양의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40230,7 +40229,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 5계의 관계를 나타낸 모식도 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40306,6 +40304,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 5계 분류 체계의 명칭과 각 계의 포함 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40343,7 +40342,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복합적인 분류 기준을 통한 생물의 '계' 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40362,6 +40360,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 주변 생물의 소속 계 연결하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40399,7 +40398,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 5계의 공통점과 차이점(세포 구조 분석) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40512,7 +40510,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서식지 면적 감소와 종수 유지 비율의 상관관계 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40531,7 +40528,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성의 의미와 생태계 유지의 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40664,6 +40660,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 멸종 위기 생물 복원 사업 및 종자 은행의 역할 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40701,6 +40698,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성을 보전해야 하는 까닭 인식 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40775,7 +40773,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 먹이그물의 복잡성과 생태계 안정성의 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40832,6 +40829,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성 보전을 위한 국가적·국제적 협력 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40850,6 +40848,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성 감소의 인위적 요인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40868,6 +40867,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 남획이 해양 생물 생태계에 미치는 영향(기사 분석) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -40981,6 +40981,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물다양성의 정의와 세 가지 요소(유전자, 종, 생태계) 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -41018,7 +41019,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서식지 분할과 생물 개체수의 변화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -41398,7 +41398,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주전자 속 물의 대류 현상과 입자 운동 방향 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -41417,7 +41416,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열평형 온도 결정 요인(처음 온도와 질량 등)의 데이터 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -41512,6 +41510,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도-시간 그래프를 통한 열평형 도달 과정 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -41549,7 +41548,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실험 데이터를 이용한 열평형 시간 및 온도 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -41587,6 +41585,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열의 이동에 따른 입자 사이의 거리 변화와 이동한 열의 양 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -41605,7 +41604,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고체에서의 열의 이동 방식(전도)의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -41643,7 +41641,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복사 에너지를 감지하는 열화상 카메라 원리 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -41662,7 +41659,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 한 상황에서 일어나는 여러 가지 열의 이동 방식 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -41738,7 +41734,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도-시간 그래프를 통한 열평형 도달 과정 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -41757,6 +41752,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도-시간 그래프에서 열이 이동하는 속도의 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -42002,7 +41998,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비열 차이에 의한 해륙풍의 발생 원리 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -42115,6 +42110,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열팽창을 고려한 구조물 설계 원리(다리, 철로) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -42321,7 +42317,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 시간-온도 그래프 해석(세 물질) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -42340,7 +42335,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 바이메탈의 기본 개념과 제작 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -42397,6 +42391,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비열 공식을 이용한 기본적인 비열 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -42491,6 +42486,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비열의 정의와 단위에 대한 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -42547,7 +42543,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비열에 의해 나타나는 일상 현상 구분 → 비열 차이에 의한 모래와 물의 온도 특성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -42566,6 +42561,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 시간-온도 그래프 분석(열량과 비열의 비) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -42603,7 +42599,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 운동의 관점에서 본 열팽창 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -42660,7 +42655,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 바이메탈 냉각 시 휘어지는 방향 판단 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -42698,7 +42692,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질을 구성하는 입자의 스스로 운동하는 성질 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -42736,7 +42729,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증발과 끓음 모형의 입자 운동론적 차이점 심화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -42812,6 +42804,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 확산과 증발이 일어나는 근본적인 까닭 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -42830,6 +42823,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물속에서 퍼진 잉크 입자의 최종 분포 모형 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -42924,6 +42918,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 확산과 증발의 공통점(입자 운동)과 차이점 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -43075,7 +43070,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증발의 정의와 일어나는 장소의 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -43113,6 +43107,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상 속 확산과 증발 현상의 사례 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -43150,7 +43145,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체 속 잉크 확산 실험의 관찰과 결과 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -43226,6 +43220,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 확산이 일어나는 방향성과 최종 도달 상태 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -43320,6 +43315,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 확산의 정의와 물질을 이루는 입자의 기본 성질 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -43376,7 +43372,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 증발 현상이 나타나는 다양한 실례 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -43414,6 +43409,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 변인(질량, 온도, 거리)이 복합된 확산 및 증발 실험의 설계와 해석 → 반응 위치를 이용한 기체 입자의 운동 속도 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -43488,7 +43484,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 승화 현상의 예시와 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -43526,7 +43521,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 주변의 물질을 세 가지 상태로 분류하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -43639,6 +43633,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 배열의 규칙성 및 무질서도 비교 → 물질의 상태 변화에 따른 입자 배열과 운동의 변화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -43771,7 +43766,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모형을 통한 기화 현상의 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -43866,6 +43860,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 모형의 미시적 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -43959,7 +43954,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분류 기준을 이용한 상태 구분 흐름도 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -43978,7 +43972,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물의 상태 변화 관찰 실험(시계 접시) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -44168,6 +44161,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모형(A, B)을 이용한 기화와 액화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -44205,7 +44199,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 일상 현상 속 공통적인 상태 변화 추출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -44318,7 +44311,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 녹는점과 끓는점 데이터를 활용한 특정 온도에서의 상태 판정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -44356,6 +44348,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 액체 기화 시 주변 열에너지를 빼앗는 현상과 온도 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -44469,6 +44462,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 실험 장치의 구조와 액체의 기화 현상 연계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -44506,7 +44500,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 상태 변화 사례의 에너지 출입 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -44525,7 +44518,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 승화 과정에서의 입자 배열 및 인력 변화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -44544,6 +44536,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 에어컨과 증기난방의 장치별 상태 변화 과정 통합 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -44714,6 +44707,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 구간에서 온도가 일정한 이유 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -44751,7 +44745,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열/냉각 복합 온도 변화 그래프의 구간별 상태 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -44808,7 +44801,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고체 물질의 가열 곡선 해석 및 녹는점 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -44846,6 +44838,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열에너지 출입에 따른 입자 운동의 변화 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -44940,6 +44933,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 곡선 분석 및 상태 변화 구간의 특징 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -44960,6 +44954,4871 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 시 열에너지를 흡수하는 일상의 예 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      }
+    ]
+  },
+  {
+    "id": "sci-중1-2",
+    "subject": "science",
+    "course": "중1-2",
+    "types": [
+      {
+        "id": "sc-중1-2-s0-r3-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "부력의 기초 개념과 일상생활 속 현상",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 부력의 기초 개념과 일상생활 속 현상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r3-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "용수철의 늘어난 길이를 이용한 힘의 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 용수철의 늘어난 길이를 이용한 힘의 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r3-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "행성별 무게·질량 데이터 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 행성별 무게·질량 데이터 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r4-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "힘이 작용하여 나타나는 현상 구별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 힘이 작용하여 나타나는 현상 구별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r4-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "정지해 있는 물체에 작용하는 마찰력의 크기와 방향 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정지해 있는 물체에 작용하는 마찰력의 크기와 방향 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r4-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "서로 다른 용수철의 변형 길이를 활용한 탄성 법칙 실험 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서로 다른 용수철의 변형 길이를 활용한 탄성 법칙 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r5-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "과학에서의 힘의 정의",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학에서의 힘의 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r5-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "나란한 방향으로 작용하는 두 힘의 합력 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 나란한 방향으로 작용하는 두 힘의 합력 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r5-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "마찰력 크기 측정 실험 데이터의 종합적 분석 및 변인 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마찰력 크기 측정 실험 데이터의 종합적 분석 및 변인 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r6-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "힘의 3요소와 화살표 표시법",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 힘의 3요소와 화살표 표시법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r6-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "다양하게 작용하는 다수 힘의 합력 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다양하게 작용하는 다수 힘의 합력 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r6-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "물체의 모양 및 부피 변화에 따른 부력 원리 적용",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체의 모양 및 부피 변화에 따른 부력 원리 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r7-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "화살표로 표시한 힘의 해석",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화살표로 표시한 힘의 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r7-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "두 힘의 평형 조건 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 힘의 평형 조건 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r7-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "세 힘이 작용할 때의 합력 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세 힘이 작용할 때의 합력 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r8-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "중력의 정의와 작용 방향",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 중력의 정의와 작용 방향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r8-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "일상생활 속 힘의 평형 현상",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 힘의 평형 현상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r8-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "합력(알짜힘)을 이용한 미지의 힘 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 합력(알짜힘)을 이용한 미지의 힘 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r9-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "질량과 무게의 개념 및 상호 관계",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량과 무게의 개념 및 상호 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r9-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "물체에 작용하는 중력의 방향",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체에 작용하는 중력의 방향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r10-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "탄성력의 개념",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 탄성력의 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r10-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "지구와 달에서의 질량 및 무게 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구와 달에서의 질량 및 무게 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r11-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "마찰력의 개념",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마찰력의 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r11-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "변형된 물체에 작용하는 탄성력의 크기와 방향",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 변형된 물체에 작용하는 탄성력의 크기와 방향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r12-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "탄성력의 크기와 용수철이 늘어난 길이의 관계 자료 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 탄성력의 크기와 용수철이 늘어난 길이의 관계 자료 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r13-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "무게 및 접촉면의 넓이와 마찰력",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 무게 및 접촉면의 넓이와 마찰력 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r14-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "접촉면의 거친 정도에 따른 마찰력의 크기 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 접촉면의 거친 정도에 따른 마찰력의 크기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r15-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "유체 속에서 부력의 크기와 작용 방향",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 유체 속에서 부력의 크기와 작용 방향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r16-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "양팔저울 실험을 통한 두 물체의 무게, 부피, 부력 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양팔저울 실험을 통한 두 물체의 무게, 부피, 부력 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r17-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "부피가 같은 물체 A~C의 부력 및 질량 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 부피가 같은 물체 A~C의 부력 및 질량 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r18-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "과학에서의 힘의 정의와 현상 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학에서의 힘의 정의와 현상 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r18-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "여러 힘이 동시에 작용하는 물체의 알짜힘과 평형 상태 종합 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 힘이 동시에 작용하는 물체의 알짜힘과 평형 상태 종합 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r18-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "변형 방향에 따른 용수철 탄성력의 방향과 크기 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 변형 방향에 따른 용수철 탄성력의 방향과 크기 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r19-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "힘이 작용할 때 나타나는 물체의 효과(모양 및 운동 상태 변화) 판별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 힘이 작용할 때 나타나는 물체의 효과(모양 및 운동 상태 변화) 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r19-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "장소 변화(지구와 달)에 따른 물체의 질량 변화 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 장소 변화(지구와 달)에 따른 물체의 질량 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r19-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "자기력과 탄성력이 복합적으로 작용하는 용수철 시스템 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자기력과 탄성력이 복합적으로 작용하는 용수철 시스템 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r20-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "여러 가지 힘의 종류와 일상생활 속 현상 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 가지 힘의 종류와 일상생활 속 현상 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r20-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "무게 조건이 주어진 두 천체에서의 물체 질량 및 무게 복합 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 무게 조건이 주어진 두 천체에서의 물체 질량 및 무게 복합 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r20-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "잠긴 부피 변화에 따른 부력의 크기 및 저울 눈금 비교 실험 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 잠긴 부피 변화에 따른 부력의 크기 및 저울 눈금 비교 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r21-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "추의 개수(무게)에 따른 용수철 늘어난 길이 실험 데이터 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 추의 개수(무게)에 따른 용수철 늘어난 길이 실험 데이터 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r22-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(1) 힘의 표현과 여러 가지 힘",
+        "typeName": "유체 속에 정지한 물체에 작용하는 중력과 부력의 방향 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 유체 속에 정지한 물체에 작용하는 중력과 부력의 방향 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r28-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "알짜힘의 방향과 크기 계산",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 알짜힘의 방향과 크기 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r28-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "다중 노출 사진을 이용한 등속 운동 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다중 노출 사진을 이용한 등속 운동 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r28-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "부력, 탄성력과 중력의 평형 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 부력, 탄성력과 중력의 평형 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r29-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "알짜힘이 0일 때 물체의 운동 상태",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 알짜힘이 0일 때 물체의 운동 상태 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r29-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "힘과 운동 상태 변화(속력과 운동 방향의 변화)",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 힘과 운동 상태 변화(속력과 운동 방향의 변화) ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r29-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "비스듬히 던진 공의 힘과 운동 방향 각도",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비스듬히 던진 공의 힘과 운동 방향 각도 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r30-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "도구에 이용되는 힘의 종류 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 도구에 이용되는 힘의 종류 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r30-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "질량 및 알짜힘과 속력 변화의 관계",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량 및 알짜힘과 속력 변화의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r30-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "다중 노출 사진 속 여러 공의 이동 거리를 통한 속력 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다중 노출 사진 속 여러 공의 이동 거리를 통한 속력 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r31-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "속력과 운동 방향의 동시 변화 예시",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 속력과 운동 방향의 동시 변화 예시 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r31-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "포물선 운동의 종합적 특징 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 포물선 운동의 종합적 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r31-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "다양한 곡선 궤도(진자, 원, 포물선) 공들의 운동 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다양한 곡선 궤도(진자, 원, 포물선) 공들의 운동 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r32-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "알짜힘이 0이 되는 상황 찾기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 알짜힘이 0이 되는 상황 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r32-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "물체에 작용하는 여러 힘의 종류 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체에 작용하는 여러 힘의 종류 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r32-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "순서도를 이용한 속력 및 운동 방향 변화 기준별 운동 분류",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 순서도를 이용한 속력 및 운동 방향 변화 기준별 운동 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r33-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "힘의 방향과 운동 상태 변화의 관계",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 힘의 방향과 운동 상태 변화의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r33-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "질량과 공기 저항이 운동에 미치는 영향",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량과 공기 저항이 운동에 미치는 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r33-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "승강기의 운동 구간별 힘의 합성 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 승강기의 운동 구간별 힘의 합성 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r34-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "자유 낙하 운동의 기초 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 운동의 기초 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r34-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "인공위성의 궤도 운동과 중력의 역할",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 인공위성의 궤도 운동과 중력의 역할 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r35-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "속력이 감소하는 운동의 일상적 사례",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 속력이 감소하는 운동의 일상적 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r35-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "정리 개념도를 활용한 속력 및 방향 변화에 따른 운동 체계화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정리 개념도를 활용한 속력 및 방향 변화에 따른 운동 체계화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r36-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "운동 방향과 반대 방향의 힘이 작용할 때의 속력 변화",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 운동 방향과 반대 방향의 힘이 작용할 때의 속력 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r36-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "마찰력과 탄성력이 복합 작용하여 정지한 물체의 힘의 평형 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마찰력과 탄성력이 복합 작용하여 정지한 물체의 힘의 평형 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r37-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "등속 원운동에서의 힘과 운동 방향",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등속 원운동에서의 힘과 운동 방향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r38-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "등속 원운동의 물리적 성질 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등속 원운동의 물리적 성질 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r39-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "운동 방향만 변하는 운동의 예시 구별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 운동 방향만 변하는 운동의 예시 구별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r40-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "포물선 운동을 하는 물체의 구간별 작용 힘의 방향 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 포물선 운동을 하는 물체의 구간별 작용 힘의 방향 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r41-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "속력과 방향이 모두 변하는 운동의 사례",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 속력과 방향이 모두 변하는 운동의 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r42-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "정지한 물체에 작용하는 힘의 평형",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정지한 물체에 작용하는 힘의 평형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r43-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "정지 상태에서 마찰력의 방향과 크기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정지 상태에서 마찰력의 방향과 크기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r43-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "놀이기구의 원운동 및 가속 운동과 힘의 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 놀이기구의 원운동 및 가속 운동과 힘의 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r43-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "수평 막대와 실에 연결된 복합 계의 힘 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수평 막대와 실에 연결된 복합 계의 힘 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r44-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "힘의 방향에 따른 물체의 운동 상태 변화",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 힘의 방향에 따른 물체의 운동 상태 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r44-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "지구 주위를 공전하는 천체 및 위성의 운동 특징",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 주위를 공전하는 천체 및 위성의 운동 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r44-adv",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "복합 도르래 장치에서의 장력과 힘의 평형 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복합 도르래 장치에서의 장력과 힘의 평형 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r45-basic",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "속력만 변화하는 운동의 예",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 속력만 변화하는 운동의 예 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s0-r45-skill",
+        "majorUnit": "5단원 힘의 작용",
+        "minorUnit": "(2) 힘과 운동",
+        "typeName": "다중 외력을 받는 물체의 알짜힘과 운동 방향 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다중 외력을 받는 물체의 알짜힘과 운동 방향 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r3-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "수치 데이터를 이용한 압력의 정량적 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수치 데이터를 이용한 압력의 정량적 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r3-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "압력을 작게 하는 현상과 원리 구분",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 압력을 작게 하는 현상과 원리 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r3-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "쇠구슬 실험을 통한 입자 수와 속도의 영향 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 쇠구슬 실험을 통한 입자 수와 속도의 영향 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r4-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "단면적을 좁혀 압력을 높이는 일상생활의 예",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단면적을 좁혀 압력을 높이는 일상생활의 예 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r4-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "누름못의 개수에 따른 압력 변화 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 누름못의 개수에 따른 압력 변화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r4-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "기체 입자 운동 실험의 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 입자 운동 실험의 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r5-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "압력의 정의와 개념 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 압력의 정의와 개념 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r5-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "고체의 압력과 기체의 압력 개념 종합 평가",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고체의 압력과 기체의 압력 개념 종합 평가 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r5-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "벽돌 실험을 통한 압력과 힘, 면적의 상관관계 파악",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 벽돌 실험을 통한 압력과 힘, 면적의 상관관계 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r6-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "압력이 가장 크게 작용하는 조건 찾기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 압력이 가장 크게 작용하는 조건 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r6-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "풍선 속 기체 입자의 운동과 충돌의 미시적 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 풍선 속 기체 입자의 운동과 충돌의 미시적 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r6-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "페트병을 이용한 압력 실험 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 페트병을 이용한 압력 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r7-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "일상생활에서 압력을 조절하는 예시 구별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활에서 압력을 조절하는 예시 구별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r7-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "입자 수 변화에 따른 기체의 압력 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 수 변화에 따른 기체의 압력 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r7-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "외부 요인(온도, 부피)에 따른 기체 압력 변화의 메커니즘",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외부 요인(온도, 부피)에 따른 기체 압력 변화의 메커니즘 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r8-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "넓은 판을 이용한 압력 분산 효과의 원리",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 넓은 판을 이용한 압력 분산 효과의 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r8-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "페트병 실험을 통한 힘의 크기, 작용하는 면적, 압력 종합 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 페트병 실험을 통한 힘의 크기, 작용하는 면적, 압력 종합 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r8-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "기체 주입 시 입자 수와 압력의 변화 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 주입 시 입자 수와 압력의 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r9-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "기체 압력의 발생 원인과 정의",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 압력의 발생 원인과 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r9-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "벽돌의 배치 방식에 따른 압력의 변화 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 벽돌의 배치 방식에 따른 압력의 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r10-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "풍선의 모양으로 보는 기체 압력의 방향성",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 풍선의 모양으로 보는 기체 압력의 방향성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r10-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "페트병 실험을 통한 스펀지의 압력 크기 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 페트병 실험을 통한 스펀지의 압력 크기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r11-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "일상생활 속 기체 압력의 활용 사례",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 기체 압력의 활용 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r11-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "접촉 면적의 차이에 따른 압력(아픈 정도) 차이 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 접촉 면적의 차이에 따른 압력(아픈 정도) 차이 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r12-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "현상을 통한 압력의 크기에 영향을 주는 요인 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 현상을 통한 압력의 크기에 영향을 주는 요인 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r13-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "축구공 속 기체 입자의 충돌과 압력 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 축구공 속 기체 입자의 충돌과 압력 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r14-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "쇠구슬을 이용한 기체의 압력 모형 실험 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 쇠구슬을 이용한 기체의 압력 모형 실험 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r15-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "기체의 압력이 높아지는 조건 파악",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체의 압력이 높아지는 조건 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r16-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "공기 안전 매트에 적용된 기체 압력의 원리",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 공기 안전 매트에 적용된 기체 압력의 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r17-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "기체 입자 운동 실험 장치를 통한 변인 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 입자 운동 실험 장치를 통한 변인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r18-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "풍선 내부 기체 입자의 운동 모형 해석",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 풍선 내부 기체 입자의 운동 모형 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r18-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "밀폐 용기 내 압력 변화와 기체의 용해 상태 연계",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밀폐 용기 내 압력 변화와 기체의 용해 상태 연계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r18-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "다양한 풍선 환경 조건을 통한 기체 입자 수의 종합적 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다양한 풍선 환경 조건을 통한 기체 입자 수의 종합적 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r19-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "벽돌 실험을 통한 압력·힘·면적의 관계 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 벽돌 실험을 통한 압력·힘·면적의 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r19-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(1) 기체의 압력",
+        "typeName": "진공 용기와 피스톤 용기 연결 시 기체 이동 및 압력 변화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진공 용기와 피스톤 용기 연결 시 기체 이동 및 압력 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r28-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "보일의 법칙을 이용한 기체의 압력 정량 계산",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 보일의 법칙을 이용한 기체의 압력 정량 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r28-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "보일의 법칙 실험 데이터를 활용한 기체의 압력 구하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 보일의 법칙 실험 데이터를 활용한 기체의 압력 구하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r28-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "온도 변화에 따른 기체 부피 변화의 정량적 그래프 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도 변화에 따른 기체 부피 변화의 정량적 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r29-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "기체의 압력과 부피의 정성적 관계 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체의 압력과 부피의 정성적 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r29-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "기체의 온도 변화와 부피(입자 운동)의 관계",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체의 온도 변화와 부피(입자 운동)의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r29-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "온도-부피 실험 데이터 분석을 통한 특정 온도에서의 부피 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도-부피 실험 데이터 분석을 통한 특정 온도에서의 부피 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r30-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "기체의 온도와 부피의 정성적 관계 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체의 온도와 부피의 정성적 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r30-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "냉수와 온수 수조에서의 풍선 크기 변화 실험 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 냉수와 온수 수조에서의 풍선 크기 변화 실험 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r30-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "주사기 속 풍선 실험의 복합 변인 비교 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주사기 속 풍선 실험의 복합 변인 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r31-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "주사기 피스톤 조작에 따른 증가 요소",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주사기 피스톤 조작에 따른 증가 요소 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r31-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "주사기 피스톤 조작에 따른 기체 입자 상태 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주사기 피스톤 조작에 따른 기체 입자 상태 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r31-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "유리컵 속으로 빨려 들어가는 풍선 실험 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 유리컵 속으로 빨려 들어가는 풍선 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r32-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "외부 압력 변화에 따른 기체의 보존 물리량 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외부 압력 변화에 따른 기체의 보존 물리량 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r32-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "기체의 압력과 부피 관계 그래프 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체의 압력과 부피 관계 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r32-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "실린더 속 기체의 압력 및 온도 조건 변화 유추",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실린더 속 기체의 압력 및 온도 조건 변화 유추 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r33-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "주사기 압력-부피 실험 데이터 분석 및 빈칸 추론",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주사기 압력-부피 실험 데이터 분석 및 빈칸 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r33-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "압력 변화에 따른 기체 입자 특성 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 압력 변화에 따른 기체 입자 특성 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r33-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "오줌싸개 인형의 작동 원리 분석 및 샤를의 법칙 응용",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오줌싸개 인형의 작동 원리 분석 및 샤를의 법칙 응용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r34-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "보일 법칙을 적용할 수 있는 실생활 사례 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 보일 법칙을 적용할 수 있는 실생활 사례 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r34-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "주사기 압력-부피 실험 결과의 그래프 표현 방법",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주사기 압력-부피 실험 결과의 그래프 표현 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r35-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "샤를의 법칙과 관련된 일상생활 현상의 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 샤를의 법칙과 관련된 일상생활 현상의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r35-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "기체의 온도와 부피 관계 그래프 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체의 온도와 부피 관계 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r36-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "감압 용기를 이용한 기체 부피 변화 현상 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 감압 용기를 이용한 기체 부피 변화 현상 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r36-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "기체의 온도 변화에 따른 입자 모형의 특징 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체의 온도 변화에 따른 입자 모형의 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r37-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "온도가 다른 물 속 스포이트 물방울 이동 실험 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도가 다른 물 속 스포이트 물방울 이동 실험 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r38-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "스포이트 물방울 실험 결과를 통한 샤를 법칙 그래프 도출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 스포이트 물방울 실험 결과를 통한 샤를 법칙 그래프 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r39-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "주사기 속 고무풍선의 압력에 따른 부피 변화 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주사기 속 고무풍선의 압력에 따른 부피 변화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r40-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "실린더 속 기체 가열에 따른 입자 운동 및 부피 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실린더 속 기체 가열에 따른 입자 운동 및 부피 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r41-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "손으로 감싸 쥔 병 위 동전 실험 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 손으로 감싸 쥔 병 위 동전 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r42-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "기체 부피 변화의 원인(압력 vs 온도) 분류",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 부피 변화의 원인(압력 vs 온도) 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r43-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "온도 변화에 따른 기체 부피 변화 현상 원리 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도 변화에 따른 기체 부피 변화 현상 원리 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r43-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "주사기를 이용한 기체의 온도와 부피 관계 실험 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주사기를 이용한 기체의 온도와 부피 관계 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r43-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "압력-부피 곡선과 샤를의 법칙 현상의 융합 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 압력-부피 곡선과 샤를의 법칙 현상의 융합 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r44-basic",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "기체의 압력 변화에 따른 입자 충돌 횟수 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체의 압력 변화에 따른 입자 충돌 횟수 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r44-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "기체의 압력과 부피 관계 그래프 분석 및 미지수 도출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체의 압력과 부피 관계 그래프 분석 및 미지수 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r44-adv",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "온도, 압력, 부피, 입자 수의 종합 정량 자료 표 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도, 압력, 부피, 입자 수의 종합 정량 자료 표 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r45-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "기체 입자 모형 분석을 통한 물리량 변화 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 입자 모형 분석을 통한 물리량 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s1-r46-skill",
+        "majorUnit": "6단원 기체의 성질",
+        "minorUnit": "(2) 기체의 압력 및 온도와 부피 관계",
+        "typeName": "온도에 따른 기체 부피 변화 그래프 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도에 따른 기체 부피 변화 그래프 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r3-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "물리량 데이터를 활용한 행성 집단 분류",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물리량 데이터를 활용한 행성 집단 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r3-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "질량과 위성 수의 상관관계 그래프 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량과 위성 수의 상관관계 그래프 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r3-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "행성의 특징을 통한 행성 판별 및 태양과의 거리에 따른 행성 배열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 행성의 특징을 통한 행성 판별 및 태양과의 거리에 따른 행성 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r4-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "천체 망원경의 구조와 명칭 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 천체 망원경의 구조와 명칭 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r4-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "분류 흐름도를 활용한 천체의 구분",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분류 흐름도를 활용한 천체의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r4-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "분류 흐름도(순서도)를 적용한 태양계 천체 종합 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분류 흐름도(순서도)를 적용한 태양계 천체 종합 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r5-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "물리적 성질에 따른 행성의 두 집단 분류",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물리적 성질에 따른 행성의 두 집단 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r5-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "왜소 행성의 세부 특징 및 조건 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 왜소 행성의 세부 특징 및 조건 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r5-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "태양 표면 및 대기 현상의 종합적 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양 표면 및 대기 현상의 종합적 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r6-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "시각적 이미지를 통한 행성 식별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시각적 이미지를 통한 행성 식별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r6-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "소행성과 혜성의 외형 자료 해석 및 궤도 특성 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소행성과 혜성의 외형 자료 해석 및 궤도 특성 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r6-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "태양 활동 활발기의 현상과 영향 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양 활동 활발기의 현상과 영향 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r7-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "태양계 구성 천체의 종류와 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양계 구성 천체의 종류와 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r7-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "태양계 행성의 공전 궤도 배치도 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양계 행성의 공전 궤도 배치도 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r7-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "다중 수치 데이터 기반 행성 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다중 수치 데이터 기반 행성 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r8-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "행성의 주요 특징 암기 및 확인",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 행성의 주요 특징 암기 및 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r8-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "실물 사진을 통한 주요 행성의 특징 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실물 사진을 통한 주요 행성의 특징 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r8-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "천체 망원경 관측 과정의 오류 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 천체 망원경 관측 과정의 오류 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r9-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "태양의 표면과 대기의 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양의 표면과 대기의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r9-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "질량과 반지름 분포 그래프에 따른 행성 집단성 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량과 반지름 분포 그래프에 따른 행성 집단성 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r10-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "태양 흑점의 기본 성질 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양 흑점의 기본 성질 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r10-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "핵심 특징 서술을 통한 행성의 종류 구별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 핵심 특징 서술을 통한 행성의 종류 구별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r11-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "개기 일식 시 관측 가능한 태양 대기 현상",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 개기 일식 시 관측 가능한 태양 대기 현상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r11-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "지구형 행성과 목성형 행성의 물리적 특성 비교표 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구형 행성과 목성형 행성의 물리적 특성 비교표 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r12-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "태양의 대기(채층, 코로나)와 홍염의 특징",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양의 대기(채층, 코로나)와 홍염의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r13-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "태양 흑점 수 변동 주기 그래프 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양 흑점 수 변동 주기 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r14-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "천체 망원경의 구조와 핵심 부품별 기능 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 천체 망원경의 구조와 핵심 부품별 기능 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r15-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "천체 망원경의 올바른 조립 및 관측 순서 배열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 천체 망원경의 올바른 조립 및 관측 순서 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r16-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "천체 망원경을 이용한 올바른 관측 방법",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 천체 망원경을 이용한 올바른 관측 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r17-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "태양 표면 현상(쌀알무늬, 흑점)의 특성 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양 표면 현상(쌀알무늬, 흑점)의 특성 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r18-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "태양의 일반적인 특징과 구조",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양의 일반적인 특징과 구조 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r18-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "행성의 물리량 상대 비교 그래프 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 행성의 물리량 상대 비교 그래프 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r18-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "태양 대기 현상의 온도 및 자기장 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양 대기 현상의 온도 및 자기장 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r19-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "태양풍과 지구 상층 대기 현상의 연관성",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양풍과 지구 상층 대기 현상의 연관성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r19-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(1) 태양계의 구성",
+        "typeName": "흑점 수 변화 주기의 분석 및 미래 예측",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 흑점 수 변화 주기의 분석 및 미래 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r28-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "지구 공전의 정의와 공전으로 나타나는 현상 구별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 공전의 정의와 공전으로 나타나는 현상 구별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r28-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "특정 시각 및 방위에서 관측되는 별자리 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 시각 및 방위에서 관측되는 별자리 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r28-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "북두칠성의 위치 변화를 이용한 관측 시각 역산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 북두칠성의 위치 변화를 이용한 관측 시각 역산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r29-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "지구의 공전 방향과 태양의 연주 운동 방향",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구의 공전 방향과 태양의 연주 운동 방향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r29-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "지구 자전 모형 실험을 통한 일주 운동 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 자전 모형 실험을 통한 일주 운동 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r29-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "일정 기간(15일 간격) 새벽 하늘의 별자리 변화 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일정 기간(15일 간격) 새벽 하늘의 별자리 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r30-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "지구 자전 방향과 천체 일주 운동 방향",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 자전 방향과 천체 일주 운동 방향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r30-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "지구 공전 궤도와 황도 12궁의 기본 구조 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 공전 궤도와 황도 12궁의 기본 구조 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r30-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "천구상에서 바라본 별의 일주 운동 궤적 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 천구상에서 바라본 별의 일주 운동 궤적 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r31-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "태양의 겉보기 운동(연주 운동) 방향과 주기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양의 겉보기 운동(연주 운동) 방향과 주기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r31-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "지구 공전에 따른 태양의 겉보기 이동 경로 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 공전에 따른 태양의 겉보기 이동 경로 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r31-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "별자리의 일주 운동과 연주 운동 위치 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별자리의 일주 운동과 연주 운동 위치 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r32-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "북쪽 하늘 별자리의 이동 원인",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 북쪽 하늘 별자리의 이동 원인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r32-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "지구 자전과 공전의 물리적 특징(방향, 속도)",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 자전과 공전의 물리적 특징(방향, 속도) ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r32-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "황도 12궁과 지구 공전 궤도 자료 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 황도 12궁과 지구 공전 궤도 자료 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r33-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "지구 자전 운동의 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 자전 운동의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r33-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "지구의 운동과 천체의 겉보기 운동 방향 관계 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구의 운동과 천체의 겉보기 운동 방향 관계 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r33-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "북극성 중심의 회전각과 일주 운동 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 북극성 중심의 회전각과 일주 운동 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r34-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "방위별 일주 운동의 기본 겉보기 모습 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 방위별 일주 운동의 기본 겉보기 모습 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r34-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "지구의 자전과 공전 현상 종합 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구의 자전과 공전 현상 종합 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r35-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "별의 일주 운동 특징 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 일주 운동 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r35-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "지구 자전으로 나타나는 현상 구별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 자전으로 나타나는 현상 구별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r36-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "태양의 연주 운동 기본 개념",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양의 연주 운동 기본 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r36-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "별의 일주 운동과 시각 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 일주 운동과 시각 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r37-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "북쪽 하늘의 별의 일주 운동 그림 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 북쪽 하늘의 별의 일주 운동 그림 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r38-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "우리나라에서 관측한 일주 운동 궤적을 통한 방위 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리나라에서 관측한 일주 운동 궤적을 통한 방위 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r39-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "별자리의 연주 운동과 관측 순서 배열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별자리의 연주 운동과 관측 순서 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r40-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "별자리의 연주 운동 관측 자료 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별자리의 연주 운동 관측 자료 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r41-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "황도 12궁과 지구 공전 궤도의 공간적 위치 관계 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 황도 12궁과 지구 공전 궤도의 공간적 위치 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r42-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "특정 시기 태양이 지나는 별자리와 밤하늘 별자리",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 시기 태양이 지나는 별자리와 밤하늘 별자리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r43-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "천체의 일주 운동 개념과 원인",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 천체의 일주 운동 개념과 원인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r43-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "지구 공전에 따른 계절별 별자리 관측",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 공전에 따른 계절별 별자리 관측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r43-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "방위별 별의 일주 운동 선도 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 방위별 별의 일주 운동 선도 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r44-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "천구의 구조와 지구 자전축의 관계",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 천구의 구조와 지구 자전축의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r44-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "계절 변화에 따른 북쪽 하늘 별자리(북두칠성)의 위치 변화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 계절 변화에 따른 북쪽 하늘 별자리(북두칠성)의 위치 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r44-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "날짜 변화에 따른 같은 시각 북두칠성의 위치 변화 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 날짜 변화에 따른 같은 시각 북두칠성의 위치 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r45-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(2) 지구의 운동",
+        "typeName": "황도 12궁 도표를 이용한 한밤중 동쪽 하늘 관측 별자리 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 황도 12궁 도표를 이용한 한밤중 동쪽 하늘 관측 별자리 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r53-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "공전 위치별 달의 위상 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 공전 위치별 달의 위상 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r53-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "일식의 관측 순서 배열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일식의 관측 순서 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r53-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "월식의 진행 과정과 지구 그림자 형태 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 월식의 진행 과정과 지구 그림자 형태 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r54-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "달의 자전과 공전의 기초 개념",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 달의 자전과 공전의 기초 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r54-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "일식과 월식 모식도의 특징 비교 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일식과 월식 모식도의 특징 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r54-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "달의 위치와 모양에 따른 관측 특징 비교 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 달의 위치와 모양에 따른 관측 특징 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r55-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "달의 위상 변화 원인 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 달의 위상 변화 원인 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r55-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "북반구 일식 진행 과정 그림 자료 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 북반구 일식 진행 과정 그림 자료 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r55-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "여러 날 동안 서에서 동으로 이동하는 달의 관측 해석 심화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 날 동안 서에서 동으로 이동하는 달의 관측 해석 심화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r56-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "달의 공전 위치에 따른 위상 명칭 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 달의 공전 위치에 따른 위상 명칭 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r56-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "달의 위치와 위상 변화의 기초 개념 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 달의 위치와 위상 변화의 기초 개념 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r56-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "태양·지구·달의 위치 관계와 달의 운동 종합",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태양·지구·달의 위치 관계와 달의 운동 종합 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r57-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "특정 명절(추석)의 달의 위치와 음력 날짜 조건",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 명절(추석)의 달의 위치와 음력 날짜 조건 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r57-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "일식과 월식의 현상별 기본 특징 구분",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일식과 월식의 현상별 기본 특징 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r57-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "일식 발생 원리와 모식도 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일식 발생 원리와 모식도 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r58-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "음력 날짜에 따른 달의 관측 위치와 위상",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 음력 날짜에 따른 달의 관측 위치와 위상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r58-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "일식과 월식의 원리를 확인하는 모형 실험 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일식과 월식의 원리를 확인하는 모형 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r58-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "일식과 월식의 그림자 영역(본그림자/반그림자) 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일식과 월식의 그림자 영역(본그림자/반그림자) 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r59-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "보름달 관측 시 태양의 위치 관계",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 보름달 관측 시 태양의 위치 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r59-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "지구 본그림자 진입 경로에 따른 월식의 종류 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 본그림자 진입 경로에 따른 월식의 종류 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r60-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "일식과 월식의 기본 특징 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일식과 월식의 기본 특징 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r60-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "해가 진 직후 달의 위치 변화와 음력 날짜 순서 배열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 해가 진 직후 달의 위치 변화와 음력 날짜 순서 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r61-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "일식과 월식이 일어나는 공전 위치",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일식과 월식이 일어나는 공전 위치 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r61-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "일정 시간 간격의 달 관측 결과 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일정 시간 간격의 달 관측 결과 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r62-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "달의 위치별 관측 조건 및 천문 현상 종합 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 달의 위치별 관측 조건 및 천문 현상 종합 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r63-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "해가 진 직후 남쪽 하늘에 뜨는 달의 관측 결과 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 해가 진 직후 남쪽 하늘에 뜨는 달의 관측 결과 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r64-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "일식 발생 시 개기일식과 부분일식 관측 지역 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일식 발생 시 개기일식과 부분일식 관측 지역 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r65-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "월식의 원리와 위치에 따른 지구 그림자 특징",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 월식의 원리와 위치에 따른 지구 그림자 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r66-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "일식과 월식의 실제 시각 자료 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일식과 월식의 실제 시각 자료 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r67-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "하현달의 관측 시간과 특징 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 하현달의 관측 시간과 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r68-basic",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "시간 경과에 따른 달의 위상 변화 순서 배열",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간 경과에 따른 달의 위상 변화 순서 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r68-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "특정 시각(한밤중)에 남중하는 달의 위상과 위치 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 시각(한밤중)에 남중하는 달의 위상과 위치 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r68-adv",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "우리나라에서 관측되는 부분일식의 진행 방향과 특징 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리나라에서 관측되는 부분일식의 진행 방향과 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r69-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "음력 날짜에 따른 달의 실제 공전 궤도상 위치 파악",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 음력 날짜에 따른 달의 실제 공전 궤도상 위치 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중1-2-s2-r70-skill",
+        "majorUnit": "7단원 태양계",
+        "minorUnit": "(3) 달의 운동",
+        "typeName": "관측 시각과 달의 모양을 결합한 관측자 방향 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 관측 시각과 달의 모양을 결합한 관측자 방향 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       }
     ]
   },
@@ -45041,7 +49900,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 주변 물질을 순물질과 혼합물로 분류하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45060,7 +49918,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고체 혼합물의 녹는점 변화와 수평 구간의 부재 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45098,7 +49955,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 특성인 것과 특성이 아닌 것 구분하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45117,7 +49973,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실생활 속 혼합물의 특성 이용 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45136,6 +49991,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 압력솥의 원리와 고산 지대 현상의 역관계 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45154,6 +50010,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 끓는점의 정의와 가열 곡선의 수평 구간 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45172,6 +50029,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 녹는점∙끓는점 자료를 통한 실온에서의 상태 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45190,7 +50048,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자 사이의 인력 세기와 끓는점/녹는점의 상관관계 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45209,7 +50066,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 곡선에서 시간에 따른 온도 변화의 기초 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45228,7 +50084,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고체 물질의 가열 및 냉각 곡선에서 구간별 상태 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45247,6 +50102,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복합 상태 변화 구간(가열 및 냉각)에서의 입자 운동 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45265,6 +50121,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화가 일어나는 동안 온도가 일정한 이유 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45283,7 +50140,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 어는점 내림 현상의 원리와 일상생활 속 응용 사례 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45302,6 +50158,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 녹는점과 끓는점을 이용한 특정 온도(실온 등)에서의 물질 상태 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45358,7 +50215,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모델의 기본 형태를 통한 물질 분류 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45471,7 +50327,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가열 시간에 따른 온도 변화율과 물질의 특성 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45566,7 +50421,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양에 관계없이 일정한 물질의 특성(세기 성질) 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45585,7 +50439,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 압력 변화에 따른 끓는점 변화의 원리와 실생활 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45661,7 +50514,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상태 변화 온도가 물질의 양과 불의 세기에 변하는지 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45718,6 +50570,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밀도 비교를 통한 물질이 뜨고 가라앉음 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45907,7 +50760,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 냉각에 따른 용질의 석출 원리와 결정량 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -45926,7 +50778,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 농도와 용매의 양이 변화할 때의 포화 상태 판단 및 석출량 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46020,6 +50871,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 압력 변화에 따른 탄산음료 기포 발생 원리 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46057,6 +50909,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 눈금실린더를 이용한 액체의 부피 읽기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46151,7 +51004,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가스 누출 경보기를 통해 본 기체의 밀도 차이와 실생활 응용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46170,7 +51022,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 용해도 곡선에서 점의 위치에 따른 용액의 포화/불포화 상태 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46264,6 +51115,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도에 따른 기체 용해도 변화가 생태계(물고기)에 미치는 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46301,6 +51153,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모양이 불규칙한 고체의 부피 측정법 (눈금 실린더 활용) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46319,6 +51172,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밀도 차이를 이용한 세 가지 이상 액체 혼합물의 층 분리 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46337,6 +51191,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 용해도의 일반적인 특징 (온도, 압력 조건) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46355,6 +51210,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도에 따른 용해도의 변화 양상과 물질별 곡선 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46391,6 +51247,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체의 용해도와 온도의 반비례 관계 (사이다 실험 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46447,6 +51304,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 용질, 용매, 용액의 질량 관계와 퍼센트 농도의 기초 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46522,6 +51380,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 용매의 질량이 100g이 아닐 때의 결정 석출량 복합 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46540,6 +51399,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증류탑의 높이에 따른 온도 분포와 분리 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46596,7 +51456,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 끓는점 차이를 이용하는 분리 방법의 종류 구분형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46653,6 +51512,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서로 섞이지 않는 두 액체 혼합물의 층 형성 원리 이해형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46690,6 +51550,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분별 증류탑의 원리와 끓는점에 따른 성분 분출 순서 추론형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46708,6 +51569,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생활 주변 혼합물 분리의 필요성과 간단한 예시 찾기형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -46914,6 +51776,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증류 과정에서 온도 변화가 없는 구간의 과학적 이유 분석형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47027,6 +51890,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 바닷물에서 천일염을 얻는 과정과 관련 물질 특성 연결형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47083,6 +51947,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증류 장치에서 온도계의 위치 및 냉각수 방향의 과학적 원리 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47120,7 +51985,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도에 따른 용해도 차이가 큰 고체와 작은 고체의 분리법(재결정) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47215,7 +52079,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성분 물질이 용매를 따라 이동하는 속도 차이의 근거 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47234,6 +52097,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 바닷물에서 식수 얻기, 원유의 분리 등 증류의 실생활 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47309,6 +52173,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 내부 조사 방법 중 지진파 분석의 효과성 이해형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47346,6 +52211,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모호면이 지각과 맨틀 사이의 경계임을 아는지 묻는 기초형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47477,6 +52343,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지권의 층상 구조 모식도에서 각 층의 명칭과 순서 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47533,7 +52400,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구계 구성 요소의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47628,7 +52494,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 내부 구조 모형도에서 A~D 층의 이름 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47666,6 +52531,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구계 요소들이 서로 영향을 주고받는다는 상호작용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47703,6 +52569,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시추, 운석 연구, 화산 분출물 조사 등 조사 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47778,6 +52645,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모호로비치치 불연속면의 정의와 위치(지각-맨틀 경계) 확인형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47815,7 +52683,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외권과 지구계 내부 권역 간의 에너지 및 물질 영향 분석형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47853,7 +52720,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지진파 그래프에서 속도가 갑자기 변하는 구간 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47891,6 +52757,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지진파(P파, S파)의 성질 차이를 이용한 외핵의 상태(액체) 추론 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47909,6 +52776,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외핵의 상태가 액체임을 알려주는 지진파의 특징(S파 통과 불가) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47946,7 +52814,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구계 각 권역 간 상호작용의 에너지원과 물질 순환 경로 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -47984,7 +52851,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수권의 분포(해수, 담수)와 각 요소의 특성 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48003,6 +52869,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지진파의 굴절과 반사를 통한 내부 층상 구조 경계의 확인 과정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48021,7 +52888,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화성암의 정의(마그마가 식어서 만들어진 암석) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48116,6 +52982,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석의 순환 과정을 통한 지구 환경 변화와 암석의 끊임없는 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48134,6 +53001,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석을 분류하는 기준(생성 과정)에 대한 기본 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48228,6 +53096,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화성암의 생성 장소에 따른 냉각 속도와 결정 크기 인과관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48246,6 +53115,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석의 순환 개념과 모든 암석은 서로 다른 암석으로 변할 수 있다는 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48264,6 +53134,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 풍화가 잘 일어나는 조건(표면적 변화 등)에 대한 실험적 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48301,7 +53172,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대표적인 퇴적암(역암, 사암, 셰일)의 명칭 및 구성 입자 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48357,7 +53227,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석의 생성 과정에 따른 3대 분류(화성암, 퇴적암, 변성암) 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48470,6 +53339,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화석이 발견될 수 있는 암석의 종류와 그 보존 환경에 대한 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48526,7 +53396,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 퇴적암의 형성 과정(운반-퇴적-다져짐-굳어짐) 순서 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48582,6 +53451,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화강암과 현무암의 색깔(밝고 어두움) 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48714,6 +53584,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 퇴적 환경(해안, 호수, 심해 등)에 따른 퇴적암의 특징 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48769,7 +53640,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화강암과 편마암의 결정 크기 및 조직 차이 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48807,6 +53677,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 조흔색을 이용한 흑운모와 자철석의 명확한 구분법 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48881,6 +53752,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광물의 여러 특성(조흔색, 자성, 염산 반응)을 종합하여 특정 광물을 감정하는 서술형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48918,7 +53790,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석을 이루는 광물의 종류와 비율에 따른 암석 특징 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48937,7 +53808,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광물 분류 체계(Flow chart)의 논리적 구성 및 질문 설계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -48975,7 +53845,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 조흔색을 이용한 겉보기 색이 유사한 광물(흑운모, 자철석 등)의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49013,6 +53882,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 토양이 생성되는 데 매우 긴 시간이 걸린다는 기초 사실 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49031,7 +53901,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물의 동결 작용에 의한 풍화 원리와 부피 팽창 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49050,7 +53919,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 겉보기 색이 유사한 광물(금, 황동석 등)의 조흔색을 이용한 감별 원리 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49069,7 +53937,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암석이 잘게 부서질수록 풍화가 잘 일어난다는 기본 원리 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49164,7 +54031,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광물의 특성(색, 조흔색, 굳기, 자성, 염산 반응) 종류 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49202,6 +54068,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성숙한 토양이 하나의 층이 아닌 여러 층으로 되어 있다는 사실 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49220,6 +54087,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자성(쇠붙이 반응)을 가진 광물의 종류와 특징 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49275,6 +54143,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성숙한 토양의 층상 구조(A~D층) 명칭과 각 층의 물리적 상태 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49312,6 +54181,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광물 특성 중 질량이 변별력이 없는 이유에 대한 과학적 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49444,6 +54314,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 풍화 작용의 물리적·화학적 요인이 토양 입자 크기에 미치는 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49462,6 +54333,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 토양의 정의와 구성 요소(모래, 점토, 유기물 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49480,7 +54352,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 풍화 작용의 주요 원인(물, 공기, 생물 등)별 사례 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49518,7 +54389,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 토양의 층상 구조(기반암, 모질물, 표토, 심토) 명칭과 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49612,7 +54482,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태평양 가장자리가 전 세계에서 지각 변동이 가장 활발한 지역임을 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49669,6 +54538,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지진 피해를 최소화하기 위한 기본적인 안전 수칙 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49725,6 +54595,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대륙 이동설의 제창자(베게너)와 기본 개념 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49895,7 +54766,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화산대와 지진대의 정의 및 명칭 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49914,6 +54784,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화산 활동이 지구 전체 환경(기온 저하 등)에 미치는 영향 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -49932,7 +54803,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 판이 1년에 수 cm 정도로 매우 느리게 이동한다는 기초 지식 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50027,7 +54897,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대륙판과 해양판의 두께 및 물리적 성질 차이 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50122,7 +54991,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대륙 이동설을 주장한 과학자(베게너)와 정의 알기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50141,7 +55009,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대륙 이동설의 4대 증거(해안선, 화석, 산맥, 빙하) 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50179,6 +55046,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진원과 진앙의 위치적 차이 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50216,6 +55084,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 맨틀 대류와 판의 이동을 연결하여 지구 내부 에너지의 흐름 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50234,6 +55103,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화산 분출물의 종류(용암, 화산 가스, 화산쇄설물) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50252,6 +55122,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화산 활동의 장단점 및 실생활에 미치는 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50289,6 +55160,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 판게아 형성 시기와 분리 과정의 시간적 흐름 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50364,6 +55236,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 굴절 현상의 기본 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50401,7 +55274,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평면거울을 통해 관찰자와 떨어져 있는 물체를 볼 때의 거리와 상의 성질 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50439,7 +55311,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 공기와 물의 경계면에서 발생하는 빛의 굴절 현상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50477,7 +55348,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평면거울과 물체 사이의 거리 개념 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50553,7 +55423,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평면거울에 의한 상의 대칭 구조 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50572,7 +55441,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전신 거울에서 물체를 보는 최적의 반사 지점 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50591,6 +55459,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광원의 정의 및 종류 구별하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50609,7 +55478,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입사각과 반사각의 크기 관계를 이용한 각도 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50628,7 +55496,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상 생활 속 빛의 경로(광원-물체-반사-눈) 서술형 응용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50704,6 +55571,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평면거울 상의 생성 원리(반사 광선의 연장선 교점) 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50760,7 +55628,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 스스로 빛을 내는 광원과 반사해서 보이는 물체의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50798,7 +55665,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거울로부터 물체가 멀어질 때 상의 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50817,7 +55683,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평면거울에 비친 상의 특징 (좌우 반전과 크기) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50874,7 +55739,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 정의와 직진, 반사, 굴절 등 기본 성질의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -50912,7 +55776,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 반사와 굴절이 함께 일어날 때의 각도 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51063,7 +55926,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입사각 변화에 따른 굴절각의 변화율 및 임계각의 개념 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51082,7 +55944,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 평면거울에 의한 상의 특징과 위치 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51139,7 +56000,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 볼록 거울과 오목 거울의 빛 반사 모습(퍼짐/모임) 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51196,6 +56056,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 볼록 거울에서 항상 생기는 상의 특징(작고 바로 선 상) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51290,6 +56151,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 스마트 기기 화면의 화소(RGB)와 색 합성의 상관관계 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51441,7 +56303,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 색팽이를 빠르게 돌릴 때 나타나는 빛의 합성 현상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51460,6 +56321,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 관찰되는 물체의 색을 통해 조명이나 물체의 원래 색 역추적 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51478,7 +56340,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 삼원색(빨강, 초록, 파랑)의 종류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51497,6 +56358,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 볼록 렌즈에서 물체의 위치에 따라 상이 거꾸로 보이는 조건 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51534,6 +56396,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오목거울: 가까이 있는 물체의 확대된 상 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51571,6 +56434,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 볼록거울: 거리에 상관없이 항상 작고 똑바른 상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51608,6 +56472,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오목렌즈: 거리에 상관없이 항상 작고 똑바른 상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51626,6 +56491,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 노란색 사과가 노란색으로 보이는 이유(반사광 분석) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51738,7 +56604,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 경로 분석을 통한 거울과 렌즈의 종류 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51776,7 +56641,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 볼록거울의 특징과 실생활 이용 사례(편의점 거울, 자동차 사이드미러 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51852,6 +56716,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 렌즈를 이용한 시력 교정(근시와 원시) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51870,6 +56735,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체의 원래 색과 특정 조명 아래에서의 색 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51888,7 +56754,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리의 전달 매질(고체, 액체, 기체)의 존재 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -51964,6 +56829,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간에 따른 매질의 진동 횟수를 이용한 주기 및 진동수 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52039,6 +56905,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간-위치 그래프와 거리-위치 그래프를 혼합한 파동의 요소(주기, 파장) 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52057,6 +56924,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동의 전파와 매질의 진동 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52094,7 +56962,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빨대 피리 등 악기의 길이에 따른 소리의 높낮이 변화 원리 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52113,7 +56980,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실생활 속의 파동 사례(물결파, 소리, 지진파 등) 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52189,6 +57055,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리를 내는 힘의 세기에 따른 파동의 물리량(진폭, 진동수, 파장) 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52207,7 +57074,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리의 세기와 높낮이에 따른 파형의 특징 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52226,7 +57092,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동을 전달하는 물질인 '매질'의 용어 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52264,7 +57129,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동의 구성 요소(마루, 골, 진폭, 파장) 명칭 익히기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52302,6 +57166,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리의 3요소 기본 용어 구분하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52320,6 +57185,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동의 이동과 그래프의 시간적 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52433,6 +57299,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소리의 특성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52470,7 +57337,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진폭과 소리의 세기(큰 소리 vs 작은 소리)의 관계 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52489,7 +57355,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 매질의 이동 없이 에너지만 전달되는 파동의 역학적 원리 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52508,6 +57373,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파동 그래프에서 평형 위치로부터의 최대 변위(진폭) 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52602,7 +57468,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진동수(Hz)의 정의와 주기(T)와의 역수 관계 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52621,6 +57486,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진공 상태에서 소리가 전달되지 않는 이유(매질의 유무) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52696,7 +57562,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 아리스토텔레스의 4원소설과 탈레스의 1원소설 차이점 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52715,6 +57580,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 선 스펙트럼의 겹침 현상을 이용한 혼합물 속 원소 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52790,7 +57656,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원소는 화학적 방법으로 더 이상 분해되지 않는다는 성질 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52885,7 +57750,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 불꽃 반응 색이 비슷한 원소(Li, Sr)를 스펙트럼으로 구별하는 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -52904,6 +57768,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 불꽃 반응의 기본 정의와 실험 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53055,7 +57920,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 라부아지에가 분해한 물질(물) 명칭 알기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53131,6 +57995,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원소의 이용 사례와 해당 원소의 특징 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53206,6 +58071,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연속 스펙트럼과 선 스펙트럼의 발생 조건 차이 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53224,6 +58090,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 불꽃 반응 실험의 장점(간편함, 적은 양 등) 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53280,7 +58147,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 구성 성분을 확인하기 위한 불꽃 반응과 스펙트럼의 상호 보완성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53299,7 +58165,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분광기로 본 선 스펙트럼의 모양 특징(띠 모양) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53432,6 +58297,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학식의 기본 표기법과 원소 기호 읽기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53450,6 +58316,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자가 원자로 나누어질 때 성질이 변하는 이유 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53506,6 +58373,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자 모형을 보고 구성 원소의 종류 파악하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53543,7 +58411,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자의 내부 구조(원자핵, 전자) 명칭 알기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53581,6 +58448,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자 내부의 (+)전하량과 (-)전하량의 관계를 통한 전기적 중성 원리 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53637,6 +58505,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자 모델을 보고 성분 원소의 종류와 원자의 총 개수 복합 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53712,6 +58581,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 성질을 가지는 최소 단위인 분자의 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53786,6 +58656,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일원자 분자(He, Ne 등)의 존재 방식과 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53804,6 +58675,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자핵 주위를 움직이는 (-)전하를 띤 전자 인식 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53822,6 +58694,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 라부아지에의 물 분해 실험과 원소의 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53840,6 +58713,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자가 전기적으로 중성인 원리(전하량의 합=0) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53896,6 +58770,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주요 원소 기호(수소, 탄소, 질소, 산소, 구리, 철 등)의 정확한 명칭 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53952,7 +58827,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자 모형을 화학식(기호와 첨자)으로 정확히 변환 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -53971,6 +58845,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자 모형에서 양성자 수와 전자 수의 일치 여부 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -54007,6 +58882,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자 기호의 유래와 베르셀리우스의 표기법 규칙 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -54177,7 +59053,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암모니아, 메테인, 염화 수소 등 주요 분자식 암기 및 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -54196,7 +59071,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전해질과 비전해질 수용액의 전류 흐름 차이 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -54215,6 +59089,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온 형성 식의 해석과 원소별 이온 종류 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -54233,7 +59108,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온의 전하와 이동 방향을 전해질 수용액 실험과 연결하여 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -54271,7 +59145,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이온 수의 상대적 비율을 통해 원자 전하량과 전자 수 관계 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -54461,6 +59334,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 색깔을 띠는 이온의 이동 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -54479,6 +59353,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전류가 흐를 때 이온의 이동 방향 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -54516,7 +59391,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 앙금이 생성되지 않는 이온(알짜 이온 vs 구경꾼 이온)의 존재 논리적 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -54573,6 +59447,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원자핵의 전하는 이온 형성 시에도 변하지 않음을 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -54705,6 +59580,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양이온과 음이온의 명칭 명명법(‘~이온’, ‘~화 이온’)의 올바른 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -54761,7 +59637,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양이온과 음이온의 명칭 부르는 법(‘~이온’, ‘~화 이온’) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -54976,6 +59851,9058 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
     ]
   },
   {
+    "id": "sci-중2-2",
+    "subject": "science",
+    "course": "중2-2",
+    "types": [
+      {
+        "id": "sc-중2-2-s0-r3-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "광합성 장소(엽록체)의 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성 장소(엽록체)의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r3-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "BTB 용액의 성질 및 색깔 변화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ BTB 용액의 성질 및 색깔 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r3-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "잎 탈색 및 검출 실험의 단계별 정밀 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 잎 탈색 및 검출 실험의 단계별 정밀 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r4-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "빛의 세기와 산소 농도",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 세기와 산소 농도 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r4-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "BTB 용액 실험 대조군과 실험군의 비교 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ BTB 용액 실험 대조군과 실험군의 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r4-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "대조군 설정을 이용한 녹말 및 기체 생성 확인 실험 복합 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대조군 설정을 이용한 녹말 및 기체 생성 확인 실험 복합 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r5-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "광합성에 필수적인 기본 요소들의 종류 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성에 필수적인 기본 요소들의 종류 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r5-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "광합성산물 확인 실험 해석(녹말 검출)",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성산물 확인 실험 해석(녹말 검출) ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r5-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "환경 요인(빛, 온도, CO2)의 복합 상호작용 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 환경 요인(빛, 온도, CO2)의 복합 상호작용 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r6-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "기체 확인 실험을 통한 광합성 산물의 인지",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 확인 실험을 통한 광합성 산물의 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r6-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "빛의 세기와 광합성량의 관계",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 세기와 광합성량의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r6-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "BTB 용액의 색깔 변화를 통한 이산화 탄소의 증감 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ BTB 용액의 색깔 변화를 통한 이산화 탄소의 증감 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r7-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "광합성 반응식의 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성 반응식의 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r7-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "광원의 개수에 따른 광합성 속도 측정",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광원의 개수에 따른 광합성 속도 측정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r7-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "빛의 세기(전등 개수)에 따른 잎 조각 부유 시간 데이터 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 세기(전등 개수)에 따른 잎 조각 부유 시간 데이터 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r8-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "광합성 정의 및 일반적 과정",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성 정의 및 일반적 과정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r8-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "광합성 환경 요인 실험에서의 조작 변인 식별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성 환경 요인 실험에서의 조작 변인 식별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r8-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "광합성 환경 요인 실험 장치에서의 정밀한 변인 통제 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성 환경 요인 실험 장치에서의 정밀한 변인 통제 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r9-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "식물의 잎에서 일어나는 광합성 과정의 물질 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 잎에서 일어나는 광합성 과정의 물질 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r9-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "대조 실험을 통한 광합성 산물(녹말)의 생성 조건 검증",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대조 실험을 통한 광합성 산물(녹말)의 생성 조건 검증 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r10-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "광합성에 필요한 원료의 특징 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성에 필요한 원료의 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r10-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "광합성에 영향을 미치는 3가지 환경 요인의 특징 종합 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성에 영향을 미치는 3가지 환경 요인의 특징 종합 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r11-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "광합성 물질의 흡수·생성 및 이동 통로 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성 물질의 흡수·생성 및 이동 통로 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r11-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "현미경 관찰을 통한 엽록체 탈색 및 녹말 검출 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 현미경 관찰을 통한 엽록체 탈색 및 녹말 검출 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r12-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "발생 기체의 정성적 확인 방법",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 발생 기체의 정성적 확인 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r13-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "광합성에 영향을 미치는 환경요인과 광합성량의 관계",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성에 영향을 미치는 환경요인과 광합성량의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r14-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "잎의 탈색 실험 과정에서 에탄올 물중탕의 목적 파악",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 잎의 탈색 실험 과정에서 에탄올 물중탕의 목적 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r15-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "밀폐 용기 내 식물의 광합성에 따른 기체 변화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밀폐 용기 내 식물의 광합성에 따른 기체 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r16-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "밀폐 용기 기체 측정 실험을 통한 광합성 결론 도출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밀폐 용기 기체 측정 실험을 통한 광합성 결론 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r17-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "실험 조건을 조절하여 광합성 속도를 촉진하는 방법 제안",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실험 조건을 조절하여 광합성 속도를 촉진하는 방법 제안 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r18-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "식물의 영양 방식과 광합성의 기본 정의 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 영양 방식과 광합성의 기본 정의 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r18-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "센서 측정 용기 내 시간에 따른 기체 농도 변화 기초 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 센서 측정 용기 내 시간에 따른 기체 농도 변화 기초 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r18-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "물질 이동 통로 구조와 양분 전환(포도당-녹말-설탕) 메커니즘 심층 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질 이동 통로 구조와 양분 전환(포도당-녹말-설탕) 메커니즘 심층 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r19-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "광합성이 일어나는 조건과 전반적인 특징 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성이 일어나는 조건과 전반적인 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r19-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "수산화 칼륨 수용액의 역할과 광합성 원료 관계 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수산화 칼륨 수용액의 역할과 광합성 원료 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r19-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "빛의 세기 임계점(광포화점 현상 등)에 따른 기포 발생 데이터 추론 및 예측",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 세기 임계점(광포화점 현상 등)에 따른 기포 발생 데이터 추론 및 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r20-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "광합성 원료 및 에너지의 흡수·이동 경로 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성 원료 및 에너지의 흡수·이동 경로 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r20-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "실험 장치 조절을 통한 광합성 속도 촉진 요인 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실험 장치 조절을 통한 광합성 속도 촉진 요인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r21-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(1) 광합성",
+        "typeName": "광합성 산물의 이동 통로(체관)와 운반 형태(설탕) 파악",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성 산물의 이동 통로(체관)와 운반 형태(설탕) 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r28-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "호흡 결과 발생하는 이산화탄소 확인 방법",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 호흡 결과 발생하는 이산화탄소 확인 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r28-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "밀폐 용기 속 식물의 호흡에 따른 기체 농도 변화 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밀폐 용기 속 식물의 호흡에 따른 기체 농도 변화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r28-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "식물의 유기 양분 축적과 소모 메커니즘의 종합 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 유기 양분 축적과 소모 메커니즘의 종합 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r29-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "식물의 호흡 화학 반응식 속 기체 성분 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 호흡 화학 반응식 속 기체 성분 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r29-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "대조군 설정을 통한 식물의 호흡 산물(석회수 변화) 확인 실험",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대조군 설정을 통한 식물의 호흡 산물(석회수 변화) 확인 실험 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r29-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "아이오딘-아이오딘화 칼륨 용액 실험을 통한 식물의 양분 저장 형태 및 해당 식물 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 아이오딘-아이오딘화 칼륨 용액 실험을 통한 식물의 양분 저장 형태 및 해당 식물 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r30-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "광합성과 호흡의 반응 물질 및 생성 물질 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성과 호흡의 반응 물질 및 생성 물질 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r30-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "밀폐된 유리종 안에서 식물과 촛불의 연소 관계 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밀폐된 유리종 안에서 식물과 촛불의 연소 관계 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r30-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "빛과 어둠 조건 통제에 따른 스마트 센서 기반 기체 농도 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛과 어둠 조건 통제에 따른 스마트 센서 기반 기체 농도 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r31-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "식물의 호흡 정의 및 생명 활동 에너지 획득 목적 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 호흡 정의 및 생명 활동 에너지 획득 목적 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r31-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "식물의 부위별(잎, 줄기, 뿌리 등) 호흡 발생 여부 판단",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 부위별(잎, 줄기, 뿌리 등) 호흡 발생 여부 판단 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r31-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "환상 박피 실험을 통한 체관의 위치 및 양분 이동 제한 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 환상 박피 실험을 통한 체관의 위치 및 양분 이동 제한 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r32-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "표를 통한 광합성과 호흡의 주요 특징(장소, 시기 등) 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 표를 통한 광합성과 호흡의 주요 특징(장소, 시기 등) 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r32-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "호흡의 서술적 특징과 생성 에너지의 쓰임새 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 호흡의 서술적 특징과 생성 에너지의 쓰임새 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r32-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "낮과 밤의 기체 출입 모형을 통한 광합성량과 호흡량의 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 낮과 밤의 기체 출입 모형을 통한 광합성량과 호흡량의 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r33-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "광합성 양분의 이동 형태 기초 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성 양분의 이동 형태 기초 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r33-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "물질 변화와 에너지 출입 모형을 통한 두 작용의 연계 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질 변화와 에너지 출입 모형을 통한 두 작용의 연계 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r33-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "빛의 세기에 따른 이산화탄소 흡수·방출량 그래프 정밀 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 세기에 따른 이산화탄소 흡수·방출량 그래프 정밀 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r34-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "광합성 양분의 초기 저장과 전환 물질 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성 양분의 초기 저장과 전환 물질 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r34-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "잎에서 일어나는 광합성 과정과 통로별 물질 이동 특징 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 잎에서 일어나는 광합성 과정과 통로별 물질 이동 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r35-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "광합성과 호흡 작용의 종합적인 개념 및 특징 구별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성과 호흡 작용의 종합적인 개념 및 특징 구별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r35-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "두 작용의 순환 모형을 통한 양분 및 에너지 흐름의 종합 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 작용의 순환 모형을 통한 양분 및 에너지 흐름의 종합 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r36-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "식물 종류별 유기 양분의 저장 형태 단순 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물 종류별 유기 양분의 저장 형태 단순 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r36-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "낮과 밤에 따른 식물의 외견상 기체 교환 모형 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 낮과 밤에 따른 식물의 외견상 기체 교환 모형 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r37-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "식물의 양분 종류 및 쓰임새에 대한 종합적 타당성 평가",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 양분 종류 및 쓰임새에 대한 종합적 타당성 평가 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r38-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "광합성으로 만들어진 양분의 이용",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성으로 만들어진 양분의 이용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r39-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "다양한 식물 기관별 유기 양분의 저장 형태 비교 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다양한 식물 기관별 유기 양분의 저장 형태 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r40-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "대조군을 포함한 BTB 용액 실험을 통한 이산화탄소 증감 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대조군을 포함한 BTB 용액 실험을 통한 이산화탄소 증감 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r41-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "낮과 밤에 일어나는 식물의 기체 교환 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 낮과 밤에 일어나는 식물의 기체 교환 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r42-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "싹튼 콩의 호흡 실험을 통한 열에너지 방출과 온도 변화 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 싹튼 콩의 호흡 실험을 통한 열에너지 방출과 온도 변화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r43-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "광합성과 호흡이 일어나는 장소 및 에너지 출입의 기초 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 광합성과 호흡이 일어나는 장소 및 에너지 출입의 기초 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r43-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "낮과 밤의 기체 출입 모형을 통한 광합성과 호흡의 상대적 크기 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 낮과 밤의 기체 출입 모형을 통한 광합성과 호흡의 상대적 크기 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r43-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "복합 조건을 통한 식물, 촛불, 쥐의 상호 기체 교환 종합 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복합 조건을 통한 식물, 촛불, 쥐의 상호 기체 교환 종합 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r44-basic",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "두 가지 작용의 반응 물질과 최종 생성 물질 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 가지 작용의 반응 물질과 최종 생성 물질 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r44-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "밀폐된 유리종 안에서 식물과 동물의 공생 관계(기체 교환) 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밀폐된 유리종 안에서 식물과 동물의 공생 관계(기체 교환) 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r44-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "빛의 세기에 따른 이산화탄소 출입량 그래프에서의 보상점과 총광합성량 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 세기에 따른 이산화탄소 출입량 그래프에서의 보상점과 총광합성량 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r45-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "대조군 설정을 통한 이산화탄소 발생(석회수 백탁) 증명",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대조군 설정을 통한 이산화탄소 발생(석회수 백탁) 증명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r45-adv",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "표 데이터를 활용한 서로 다른 식물의 호흡량 및 외관상 출입량 정밀 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 표 데이터를 활용한 서로 다른 식물의 호흡량 및 외관상 출입량 정밀 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r46-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "엽록체와 미토콘드리아 간의 물질(포도당, 물, 기체) 순환 관계 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 엽록체와 미토콘드리아 간의 물질(포도당, 물, 기체) 순환 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r47-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "잎의 구조 모형을 통한 광합성산물(설탕)의 체관 이동 경로 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 잎의 구조 모형을 통한 광합성산물(설탕)의 체관 이동 경로 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s0-r48-skill",
+        "majorUnit": "5단원 식물과 에너지",
+        "minorUnit": "(2) 식물의 호흡",
+        "typeName": "다양한 식물별 유기 양분의 저장 부위와 형태 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다양한 식물별 유기 양분의 저장 부위와 형태 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r3-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "3대 영양소의 특징과 기능 구분하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 3대 영양소의 특징과 기능 구분하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r3-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "음식물별 영양소 검출 결과 표 데이터 해석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 음식물별 영양소 검출 결과 표 데이터 해석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r3-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "혼합 영양소 용액 검출 반응과 최종 흡수 경로 연계 추론하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혼합 영양소 용액 검출 반응과 최종 흡수 경로 연계 추론하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r4-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "소화의 정의와 소화효소의 기본 특징 파악하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소화의 정의와 소화효소의 기본 특징 파악하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r4-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "소화 기관별(입, 위, 작은창자) 소화 작용 비교 분석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소화 기관별(입, 위, 작은창자) 소화 작용 비교 분석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r4-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "소화제 종류에 따른 영양소 분해 작용과 효소 종류 추론하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소화제 종류에 따른 영양소 분해 작용과 효소 종류 추론하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r5-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "소화액, 소화효소, 분해하는 영양소 매칭하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소화액, 소화효소, 분해하는 영양소 매칭하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r5-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "지방의 소화 경로와 쓸개즙의 보조적 역할 이해하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지방의 소화 경로와 쓸개즙의 보조적 역할 이해하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r5-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "영양소 검출 및 소화 작용의 복합 자료 변형 해석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 영양소 검출 및 소화 작용의 복합 자료 변형 해석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r6-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "비타민, 무기염류, 물 등 부영양소의 고유한 생리 작용 이해하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비타민, 무기염류, 물 등 부영양소의 고유한 생리 작용 이해하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r6-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "단백질의 소화 과정 단계별 효소 작용 모식도 분석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단백질의 소화 과정 단계별 효소 작용 모식도 분석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r6-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "미지 용액의 검출 결과와 해당 영양소의 체내 이동 경로 종합하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 미지 용액의 검출 결과와 해당 영양소의 체내 이동 경로 종합하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r7-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "소화의 생물학적 정의와 소화 기관의 역할 인지하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소화의 생물학적 정의와 소화 기관의 역할 인지하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r7-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "위에서 분비되는 소화액과 단백질 초기 분해 이해하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 위에서 분비되는 소화액과 단백질 초기 분해 이해하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r7-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "혼합 용액의 검출 반응 결과를 이용한 미지 용액 성분 역추론하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혼합 용액의 검출 반응 결과를 이용한 미지 용액 성분 역추론하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r8-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "소화계에서 음식물의 이동 경로 배열하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소화계에서 음식물의 이동 경로 배열하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r8-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "영양소의 함량 데이터를 이용한 총 에너지양 산출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 영양소의 함량 데이터를 이용한 총 에너지양 산출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r8-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "온도 조건에 따른 침의 녹말 분해 효소 활성 실험 분석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도 조건에 따른 침의 녹말 분해 효소 활성 실험 분석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r9-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "영양소의 체내 기능 및 특징을 통한 종류 판별하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 영양소의 체내 기능 및 특징을 통한 종류 판별하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r9-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "소화 과정 없이 체내로 직접 흡수되는 영양소 구별하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소화 과정 없이 체내로 직접 흡수되는 영양소 구별하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r10-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "영양소별 검출 용액 및 반응 색깔 매칭하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 영양소별 검출 용액 및 반응 색깔 매칭하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r10-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "음식물의 영양소 검출 반응 실험 데이터 분석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 음식물의 영양소 검출 반응 실험 데이터 분석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r11-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "입안에서 일어나는 소화 이해하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입안에서 일어나는 소화 이해하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r11-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "대조군 장치를 이용한 침의 녹말 분해 실험 해석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대조군 장치를 이용한 침의 녹말 분해 실험 해석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r12-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "소화계 주 기관 및 부속 기관의 기능적 특징 비교하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소화계 주 기관 및 부속 기관의 기능적 특징 비교하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r13-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "3대 영양소 소화효소를 모두 포함하는 소화액 분비 기관 찾기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 3대 영양소 소화효소를 모두 포함하는 소화액 분비 기관 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r14-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "소화계 모식도를 통한 각 기관별 복합적 기능 분석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소화계 모식도를 통한 각 기관별 복합적 기능 분석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r15-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "3대 영양소의 소화 단계별 분해 과정 모식도 분석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 3대 영양소의 소화 단계별 분해 과정 모식도 분석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r16-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "융털의 구조별 영양소 흡수 경로 구별하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 융털의 구조별 영양소 흡수 경로 구별하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r17-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "작은창자 내벽의 구조적 특징과 흡수 원리 연계하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 작은창자 내벽의 구조적 특징과 흡수 원리 연계하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r18-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "영양소의 고유한 작용과 생리적 기능 구분하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 영양소의 고유한 작용과 생리적 기능 구분하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r18-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "영양소의 기능(에너지원, 몸 구성 등) 연결 관계 분석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 영양소의 기능(에너지원, 몸 구성 등) 연결 관계 분석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r18-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "벤다이어그램 구조를 이용한 중복 성질의 영양소 복합 분류하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 벤다이어그램 구조를 이용한 중복 성질의 영양소 복합 분류하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r19-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "주영양소와 부영양소의 종류 및 특징 구분하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주영양소와 부영양소의 종류 및 특징 구분하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r19-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "시약의 색깔 변화 결과를 해석하여 영양소 종류 판정하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시약의 색깔 변화 결과를 해석하여 영양소 종류 판정하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r19-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "복수 영양소 혼합 용액의 시약 반응 결과를 통한 미지 성분 추론하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복수 영양소 혼합 용액의 시약 반응 결과를 통한 미지 성분 추론하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r20-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "모식도를 통해 녹말의 분해 단계 분석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모식도를 통해 녹말의 분해 단계 분석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r20-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "소화액 이동 통로의 차단(폐쇄) 상황에 따른 소화 이상 예측하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소화액 이동 통로의 차단(폐쇄) 상황에 따른 소화 이상 예측하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r21-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "지방의 단계적 분해 과정 모식도 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지방의 단계적 분해 과정 모식도 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r22-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(1) 소화",
+        "typeName": "융털의 구조적 명칭과 흡수 기능 매칭하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 융털의 구조적 명칭과 흡수 기능 매칭하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r28-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "순환계의 구성과 일반 기능",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 순환계의 구성과 일반 기능 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r28-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "체순환과 폐순환 모식도 상의 경로 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 체순환과 폐순환 모식도 상의 경로 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r28-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "심장 구조적 결함(판막 고장 등)에 따른 신체 변화 논리 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 심장 구조적 결함(판막 고장 등)에 따른 신체 변화 논리 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r29-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "심장의 구조(심방, 심실)의 명칭 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 심장의 구조(심방, 심실)의 명칭 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r29-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "순환 경로 각 구간별 혈액의 산소 농도 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 순환 경로 각 구간별 혈액의 산소 농도 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r29-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "혈관별 혈압 및 혈류 속도 그래프 해석과 특징 비교 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈관별 혈압 및 혈류 속도 그래프 해석과 특징 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r30-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "모세혈관과 조직 세포 간 물질 이동 방향 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모세혈관과 조직 세포 간 물질 이동 방향 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r30-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "심장과 연결된 주요 혈관 명칭 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 심장과 연결된 주요 혈관 명칭 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r30-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "전체 순환 경로에 따른 특정 물질 농도 변화 그래프 추적",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전체 순환 경로에 따른 특정 물질 농도 변화 그래프 추적 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r31-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "심장의 구조와 2심방 2심실 체제",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 심장의 구조와 2심방 2심실 체제 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r31-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "순환 경로상 동맥혈과 정맥혈의 성분 및 특성 비교 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 순환 경로상 동맥혈과 정맥혈의 성분 및 특성 비교 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r31-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "심장 구조와 연계한 대정맥 유입 혈액의 이동 경로 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 심장 구조와 연계한 대정맥 유입 혈액의 이동 경로 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r32-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "판막의 위치와 혈류 역류 방지 원리",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 판막의 위치와 혈류 역류 방지 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r32-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "혈액 순환 모식도를 통한 허파·온몸 순환과 주요 혈관 특징 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈액 순환 모식도를 통한 허파·온몸 순환과 주요 혈관 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r32-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "혈액 도말 표본 자료를 이용한 혈액 성분의 형태와 기능 연계",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈액 도말 표본 자료를 이용한 혈액 성분의 형태와 기능 연계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r33-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "혈관의 종류별 기초 특징 (동맥, 정맥, 모세혈관)",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈관의 종류별 기초 특징 (동맥, 정맥, 모세혈관) ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r33-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "산소 농도에 따른 헤모글로빈의 산소 운반 메커니즘 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 산소 농도에 따른 헤모글로빈의 산소 운반 메커니즘 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r33-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "혈액 순환 경로상 동맥혈과 정맥혈이 흐르는 위치 파악",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈액 순환 경로상 동맥혈과 정맥혈이 흐르는 위치 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r34-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "혈액의 층 분리와 성분 구성 비율",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈액의 층 분리와 성분 구성 비율 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r34-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "심장의 구조적 명칭과 특징 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 심장의 구조적 명칭과 특징 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r35-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "혈구 성분(적혈구, 백혈구, 혈소판)의 핵심 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈구 성분(적혈구, 백혈구, 혈소판)의 핵심 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r35-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "심장 수축과 이완에 따른 혈액 이동 방향",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 심장 수축과 이완에 따른 혈액 이동 방향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r36-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "체순환과 폐순환의 기초 경로 정의",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 체순환과 폐순환의 기초 경로 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r36-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "혈관 모식도를 통한 동맥·정맥·모세혈관의 구조적 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈관 모식도를 통한 동맥·정맥·모세혈관의 구조적 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r37-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "혈관 벽 두께, 혈압, 혈류 속도의 종합적 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈관 벽 두께, 혈압, 혈류 속도의 종합적 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r38-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "시각적 자료를 이용한 혈액 구성 성분 및 특징",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시각적 자료를 이용한 혈액 구성 성분 및 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r39-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "혈구 수치 데이터 분석을 통한 건강 상태 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈구 수치 데이터 분석을 통한 건강 상태 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r40-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "순환계 모형(실험 자료)을 통한 혈류 경로 단계별 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 순환계 모형(실험 자료)을 통한 혈류 경로 단계별 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r41-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "모세혈관의 구조적 특징과 물질 교환의 효율성 연계",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모세혈관의 구조적 특징과 물질 교환의 효율성 연계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r42-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "혈구의 구조적 특징 및 기능을 통한 종류 판별하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈구의 구조적 특징 및 기능을 통한 종류 판별하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r43-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "심장의 구조적 특징과 4개 방실의 기초 명칭 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 심장의 구조적 특징과 4개 방실의 기초 명칭 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r43-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "혈관별 혈압, 두께, 총단면적 특성의 상대적 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈관별 혈압, 두께, 총단면적 특성의 상대적 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r43-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "고산 지대 환경 적응 메커니즘과 생명 활동 유지 원리 서술",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고산 지대 환경 적응 메커니즘과 생명 활동 유지 원리 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r44-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "심방과 심실에 연결된 주요 혈관의 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 심방과 심실에 연결된 주요 혈관의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r44-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "혈구 성분(적혈구, 백혈구, 혈소판)의 고유 기능 연계",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈구 성분(적혈구, 백혈구, 혈소판)의 고유 기능 연계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r44-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "혈압, 총단면적, 혈관 단면 구조의 유체역학적 복합 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈압, 총단면적, 혈관 단면 구조의 유체역학적 복합 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r45-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "온몸 순환과 폐순환의 목적 및 기능적 차이 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온몸 순환과 폐순환의 목적 및 기능적 차이 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r45-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "온몸 순환과 폐순환 도식화 경로의 단계별 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온몸 순환과 폐순환 도식화 경로의 단계별 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r46-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "온몸 및 폐순환 통합 모식도상 혈관 기능 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온몸 및 폐순환 통합 모식도상 혈관 기능 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r47-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "심장 박동 과정에 따른 판막 상태 변화 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 심장 박동 과정에 따른 판막 상태 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r48-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(2) 순환",
+        "typeName": "혈액 원심분리 및 도말 표본 현미경 관찰 자료 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈액 원심분리 및 도말 표본 현미경 관찰 자료 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r53-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "들숨과 날숨의 기체 성분 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 들숨과 날숨의 기체 성분 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r53-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "갈비뼈와 가로막의 움직임에 따른 들숨/날숨 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 갈비뼈와 가로막의 움직임에 따른 들숨/날숨 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r53-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "대기압과 폐 내부 압력 변화 그래프 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대기압과 폐 내부 압력 변화 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r54-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "폐의 구조와 특징 판별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 폐의 구조와 특징 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r54-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "호흡 기관의 상호작용 및 기체 이동 통합 서술",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 호흡 기관의 상호작용 및 기체 이동 통합 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r54-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "흉강 내압과 폐 부피 변화의 인과관계 그래프 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 흉강 내압과 폐 부피 변화의 인과관계 그래프 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r55-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "호흡 기관별 주요 기능 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 호흡 기관별 주요 기능 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r55-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "날숨 시 일어나는 신체 내부의 부피 및 압력 변화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 날숨 시 일어나는 신체 내부의 부피 및 압력 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r55-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "장소별(폐/조직) 산소와 이산화 탄소 분압 비교 그래프",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 장소별(폐/조직) 산소와 이산화 탄소 분압 비교 그래프 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r56-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "인체 호흡 기관의 위치와 구조 판별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 인체 호흡 기관의 위치와 구조 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r56-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "BTB 용액을 이용한 날숨 성분 확인 실험",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ BTB 용액을 이용한 날숨 성분 확인 실험 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r56-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "시간에 따른 폐의 부피 변화 그래프 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간에 따른 폐의 부피 변화 그래프 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r57-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "기체 교환 원리(확산)의 개념 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 교환 원리(확산)의 개념 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r57-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "가슴 구조 변화와 갈비뼈·가로막의 움직임 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가슴 구조 변화와 갈비뼈·가로막의 움직임 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r57-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "들숨·날숨 성분비 수치 데이터를 통한 기체 종류 역추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 들숨·날숨 성분비 수치 데이터를 통한 기체 종류 역추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r58-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "호흡계의 정의와 구성 기관 분류",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 호흡계의 정의와 구성 기관 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r58-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "들숨 시 일어나는 신체 내부의 부피 및 압력 변화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 들숨 시 일어나는 신체 내부의 부피 및 압력 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r58-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "기체 교환 장소(폐/조직)에 따른 전신 순환 혈액의 성분 변화 종합",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 교환 장소(폐/조직)에 따른 전신 순환 혈액의 성분 변화 종합 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r59-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "호흡 운동 모형의 구성 요소와 인체 구조 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 호흡 운동 모형의 구성 요소와 인체 구조 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r59-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "폐포 모세혈관과 연결된 혈관(폐동맥·폐정맥)의 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 폐포 모세혈관과 연결된 혈관(폐동맥·폐정맥)의 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r60-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "폐포와 모세혈관 사이의 기체 이동 방향",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 폐포와 모세혈관 사이의 기체 이동 방향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r60-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "허파꽈리와 조직세포에서의 기체별 농도(분압) 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 허파꽈리와 조직세포에서의 기체별 농도(분압) 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r61-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "허파꽈리의 구조적 특징과 기체 교환의 효율성",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 허파꽈리의 구조적 특징과 기체 교환의 효율성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r61-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "호흡계와 순환계의 기체 운반 및 기체 교환 연계",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 호흡계와 순환계의 기체 운반 및 기체 교환 연계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r62-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "들숨과 날숨 발생 시 신체 변화 비교 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 들숨과 날숨 발생 시 신체 변화 비교 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r63-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "호흡 운동 모형의 동작과 신체 변화 연계",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 호흡 운동 모형의 동작과 신체 변화 연계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r64-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "모형 실험을 통한 공기 이동 경로 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모형 실험을 통한 공기 이동 경로 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r65-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "폐포에서의 기체 교환 모식도 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 폐포에서의 기체 교환 모식도 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r66-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "조직 세포와 모세혈관 사이의 기체 이동 방향",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 조직 세포와 모세혈관 사이의 기체 이동 방향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r67-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "허파꽈리와 조직세포에서의 기체 교환 종합 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 허파꽈리와 조직세포에서의 기체 교환 종합 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r68-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "호흡계 기관의 생물학적 구조와 특징 판별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 호흡계 기관의 생물학적 구조와 특징 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r68-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "숨을 내쉴 때(날숨) 일어나는 신체 부위 및 압력 변화 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 숨을 내쉴 때(날숨) 일어나는 신체 부위 및 압력 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r68-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "시간 경과에 따른 허파의 부피 변화 곡선 그래프 정밀 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간 경과에 따른 허파의 부피 변화 곡선 그래프 정밀 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r69-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "호흡기관(기관지, 허파꽈리)의 상피 세포 및 표면적 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 호흡기관(기관지, 허파꽈리)의 상피 세포 및 표면적 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r69-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "호흡 운동 모형 조작에 따른 들숨·날숨 메커니즘 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 호흡 운동 모형 조작에 따른 들숨·날숨 메커니즘 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r69-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "조직 세포 주변 지점별 기체의 상대적 양 그래프 해석 및 부위 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 조직 세포 주변 지점별 기체의 상대적 양 그래프 해석 및 부위 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r70-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "모세혈관 기체 교환 시 산소와 이산화 탄소 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모세혈관 기체 교환 시 산소와 이산화 탄소 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r70-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "허파꽈리 내부 기체의 시간에 따른 압력 주기 변화 그래프 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 허파꽈리 내부 기체의 시간에 따른 압력 주기 변화 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r71-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "허파꽈리를 둘러싼 혈관의 구분과 혈액 내 산소 농도 변화 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 허파꽈리를 둘러싼 혈관의 구분과 혈액 내 산소 농도 변화 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r72-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(3) 호흡",
+        "typeName": "세포 호흡의 정의와 필요한 물질 변화 반응식 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포 호흡의 정의와 필요한 물질 변화 반응식 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r78-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "노폐물의 생성과 배설의 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 노폐물의 생성과 배설의 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r78-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "오줌 생성 과정에 따른 주요 성분의 여과·재흡수·분비 특징 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오줌 생성 과정에 따른 주요 성분의 여과·재흡수·분비 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r78-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "영양소 검출 실험을 통한 여과·재흡수 여부 판별 및 임상 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 영양소 검출 실험을 통한 여과·재흡수 여부 판별 및 임상 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r79-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "배설계의 정의와 주요 구성 기관의 역할 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 배설계의 정의와 주요 구성 기관의 역할 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r79-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "오줌 속 비정상 성분(포도당) 검출에 따른 배설 과정의 기능 이상 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오줌 속 비정상 성분(포도당) 검출에 따른 배설 과정의 기능 이상 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r79-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "오줌 생성 3단계 과정의 원리와 성분 변화 종합 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오줌 생성 3단계 과정의 원리와 성분 변화 종합 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r80-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "세포 호흡의 기초 개념과 대사 에너지 생성 원리",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포 호흡의 기초 개념과 대사 에너지 생성 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r80-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "네프론 모식도를 이용한 재흡수와 분비가 일어나는 방향성 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 네프론 모식도를 이용한 재흡수와 분비가 일어나는 방향성 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r80-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "물질별 여과·재흡수 양상에 따른 이동 경로 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질별 여과·재흡수 양상에 따른 이동 경로 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r81-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "우리 몸에서 배설의 의미 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 몸에서 배설의 의미 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r81-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "토리, 보먼주머니, 세뇨관의 기능적 특징",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 토리, 보먼주머니, 세뇨관의 기능적 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r81-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "통합 모식도를 통한 기관계 구분 및 이동 물질 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 통합 모식도를 통한 기관계 구분 및 이동 물질 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r82-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "콩팥의 단면 구조의 명칭 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 콩팥의 단면 구조의 명칭 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r82-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "토리에서 보먼주머니로 여과되는 물질의 종류",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 토리에서 보먼주머니로 여과되는 물질의 종류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r82-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "혈액, 여과액, 오줌의 성분 비교 표 자료 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈액, 여과액, 오줌의 성분 비교 표 자료 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r83-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "영양소에 따른 노폐물 생성 및 배설 기관 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 영양소에 따른 노폐물 생성 및 배설 기관 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r83-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "세포 호흡의 반응물과 생성물의 특징 구분",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포 호흡의 반응물과 생성물의 특징 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r83-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "오줌 생성 과정에서 단백질, 요소, 포도당의 상대적 농도 변화 이유 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오줌 생성 과정에서 단백질, 요소, 포도당의 상대적 농도 변화 이유 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r84-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "단백질 대사 노폐물의 독성 전환 및 배설 원리",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단백질 대사 노폐물의 독성 전환 및 배설 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r84-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "사람의 배설계 구조와 각 기관의 명칭 및 기능 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 사람의 배설계 구조와 각 기관의 명칭 및 기능 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r85-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "오줌을 만드는 기본 단위인 네프론의 구성 요소",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오줌을 만드는 기본 단위인 네프론의 구성 요소 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r85-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "콩팥의 단면 구조별 명칭과 기능적 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 콩팥의 단면 구조별 명칭과 기능적 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r86-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "오줌의 생성 및 체외 배설 경로의 순서 배열",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오줌의 생성 및 체외 배설 경로의 순서 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r86-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "오줌 생성의 3단계 과정(여과·재흡수·분비) 명칭 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오줌 생성의 3단계 과정(여과·재흡수·분비) 명칭 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r87-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "세포 호흡을 통한 에너지 생성 과정과 기관계 연관성",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포 호흡을 통한 에너지 생성 과정과 기관계 연관성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r88-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "기관계의 통합적 작용 모식도 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기관계의 통합적 작용 모식도 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r89-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "콩팥단위(네프론) 부위별 혈액 성분의 유무 구분",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 콩팥단위(네프론) 부위별 혈액 성분의 유무 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r90-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "사람의 배설계 구조(A~G)와 오줌의 이동 경로 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 사람의 배설계 구조(A~G)와 오줌의 이동 경로 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r91-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "영양소 흡수부터 노폐물 배출까지의 전 과정 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 영양소 흡수부터 노폐물 배출까지의 전 과정 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r92-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "걷거나 달리기를 할 때 심장박동 수와 호흡률이 증가하는 까닭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 걷거나 달리기를 할 때 심장박동 수와 호흡률이 증가하는 까닭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r93-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "사람의 배설계를 구성하는 주요 기관의 구조와 명칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 사람의 배설계를 구성하는 주요 기관의 구조와 명칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r93-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "영양소 종류에 따른 세포 호흡 노폐물의 표 데이터 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 영양소 종류에 따른 세포 호흡 노폐물의 표 데이터 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r93-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "콩팥단위와 연결된 혈관(콩팥 동맥, 콩팥 정맥)의 혈액 성분 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 콩팥단위와 연결된 혈관(콩팥 동맥, 콩팥 정맥)의 혈액 성분 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r94-basic",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "단백질의 분해 산물인 암모니아의 독성 및 전환 기관의 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단백질의 분해 산물인 암모니아의 독성 및 전환 기관의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r94-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "콩팥단위(네프론) 구조에서 각 물질 이동 작용의 특성 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 콩팥단위(네프론) 구조에서 각 물질 이동 작용의 특성 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r94-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "세포 호흡 활성화와 기관계(호흡계, 순환계) 작용의 연계성 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포 호흡 활성화와 기관계(호흡계, 순환계) 작용의 연계성 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r95-skill",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "기관계 통합 작용 모식도에서 각 기관계별 핵심 기관 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기관계 통합 작용 모식도에서 각 기관계별 핵심 기관 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s1-r95-adv",
+        "majorUnit": "6단원 동물과 에너지",
+        "minorUnit": "(4) 배설",
+        "typeName": "혈장, 여과액, 오줌 속 성분 농도 비교를 통한 물질 특징 유추",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈장, 여과액, 오줌 속 성분 농도 비교를 통한 물질 특징 유추 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r3-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "정전기 유도에 의한 은박 구의 움직임과 전하 분포",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정전기 유도에 의한 은박 구의 움직임과 전하 분포 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r3-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "전기력을 이용한 여러 대전체의 전하 종류 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전기력을 이용한 여러 대전체의 전하 종류 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r3-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "정전기 유도 도체와 외부 대전체 간의 역학적 움직임 예측",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정전기 유도 도체와 외부 대전체 간의 역학적 움직임 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r4-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "금속 막대에서의 정전기 유도와 대전 상태",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 금속 막대에서의 정전기 유도와 대전 상태 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r4-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "금속 막대와 대전체 사이의 인력 발생 메커니즘",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 금속 막대와 대전체 사이의 인력 발생 메커니즘 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r4-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "접촉을 통한 전하의 재분배 및 최종 대전 상태 판정",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 접촉을 통한 전하의 재분배 및 최종 대전 상태 판정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r5-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "정전기 유도 현상이 일상생활에 활용되는 예",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정전기 유도 현상이 일상생활에 활용되는 예 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r5-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "대전열과 정전기 유도가 결합된 복합 실험 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대전열과 정전기 유도가 결합된 복합 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r5-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "이미 대전된 검전기에 다른 대전체가 추가 접근할 때의 역학적 변화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이미 대전된 검전기에 다른 대전체가 추가 접근할 때의 역학적 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r6-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "마찰 전기의 개념과 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마찰 전기의 개념과 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r6-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "표에 제시된 대전체 간 전기력을 통한 전하 종류 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 표에 제시된 대전체 간 전기력을 통한 전하 종류 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r6-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "대전열 조건과 역학적 현상(고무풍선의 움직임)의 종합적 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대전열 조건과 역학적 현상(고무풍선의 움직임)의 종합적 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r7-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "마찰에 의한 전자의 이동 방향",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마찰에 의한 전자의 이동 방향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r7-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "도체(금속 숟가락)에서의 정전기 유도와 인력 작용",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 도체(금속 숟가락)에서의 정전기 유도와 인력 작용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r7-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "도체 막대와 검전기가 연계된 복합 유도 메커니즘 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 도체 막대와 검전기가 연계된 복합 유도 메커니즘 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r8-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "실에 매달린 두 대전체 사이에 작용하는 전기력의 방향",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실에 매달린 두 대전체 사이에 작용하는 전기력의 방향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r8-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "검전기 금속판과 금속박의 대전 상태 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 검전기 금속판과 금속박의 대전 상태 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r8-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "연속적인 정전기 유도와 인력 작용을 통한 전하 종류 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연속적인 정전기 유도와 인력 작용을 통한 전하 종류 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r9-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "일상생활 속 마찰 전기 현상의 예",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 마찰 전기 현상의 예 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r9-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "유리 막대에 의한 금속 구의 부위별 대전 상태 및 인력 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 유리 막대에 의한 금속 구의 부위별 대전 상태 및 인력 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r10-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "정전기 유도 현상의 개념 정의",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정전기 유도 현상의 개념 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r10-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "모델을 통한 마찰 전후 전하 분포 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모델을 통한 마찰 전후 전하 분포 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r11-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "검전기의 기본 구조와 기능 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 검전기의 기본 구조와 기능 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r11-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "동일한 대전체 사이의 전기력 작용",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동일한 대전체 사이의 전기력 작용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r12-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "인력과 척력을 이용한 대전체 무리의 전하 분류",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 인력과 척력을 이용한 대전체 무리의 전하 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r13-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "금속 구의 정전기 유도 현상과 전기력 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 금속 구의 정전기 유도 현상과 전기력 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r14-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "금속 막대에서의 정전기 유도와 전하 이동 메커니즘",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 금속 막대에서의 정전기 유도와 전하 이동 메커니즘 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r15-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "유동성 있는 도체(알루미늄 캔)의 정전기 유도",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 유동성 있는 도체(알루미늄 캔)의 정전기 유도 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r16-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "검전기에 대전체를 가까이 할 때의 정전기 유도 현상",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 검전기에 대전체를 가까이 할 때의 정전기 유도 현상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r17-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "접촉된 두 도체의 정전기 유도 현상 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 접촉된 두 도체의 정전기 유도 현상 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r18-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "마찰 전기의 정의와 전자의 이동 방향 기초",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마찰 전기의 정의와 전자의 이동 방향 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r18-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "모형을 통한 마찰 전후 전하량 보존과 전자의 이동 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모형을 통한 마찰 전후 전하량 보존과 전자의 이동 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r18-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "다중 대전체와 도체 간의 인력·척력 상호작용 및 운동 예측",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다중 대전체와 도체 간의 인력·척력 상호작용 및 운동 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r19-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "인력과 척력 모형을 통한 대전체 사이의 전기력 구별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 인력과 척력 모형을 통한 대전체 사이의 전기력 구별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r19-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "빨대와 털가죽 마찰 실험을 통한 전기력 작용의 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빨대와 털가죽 마찰 실험을 통한 전기력 작용의 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r19-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "정전기 유도 중 손가락 접지 및 대전체 분리 시 최종 역학적 힘 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정전기 유도 중 손가락 접지 및 대전체 분리 시 최종 역학적 힘 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r20-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "금속 내부에서 정전기 유도가 일어나는 기본 원리",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 금속 내부에서 정전기 유도가 일어나는 기본 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r20-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "접촉되어 있던 두 금속 구의 정전기 유도와 분리 후 대전 상태",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 접촉되어 있던 두 금속 구의 정전기 유도와 분리 후 대전 상태 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r20-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "대전 상태가 다른 복수 검전기 간 도선 연결에 따른 최종 전하 재분배 메커니즘",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대전 상태가 다른 복수 검전기 간 도선 연결에 따른 최종 전하 재분배 메커니즘 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r21-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "도선 연결 유무에 따른 다중 금속 구의 정전기 유도",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 도선 연결 유무에 따른 다중 금속 구의 정전기 유도 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r22-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(1) 전기의 발생",
+        "typeName": "상대적 대전 결과를 이용한 전자를 잃기 쉬운 정도 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상대적 대전 결과를 이용한 전자를 잃기 쉬운 정도 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r28-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전류의 정의와 단위 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전류의 정의와 단위 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r28-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "저항의 직렬연결에서 저항값 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 저항의 직렬연결에서 저항값 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r28-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "그래프 해석을 통한 저항 계산 및 단면적 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 그래프 해석을 통한 저항 계산 및 단면적 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r29-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전압의 정의와 특징 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전압의 정의와 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r29-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전구의 연결 방식에 따른 밝기 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전구의 연결 방식에 따른 밝기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r29-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "직·병렬 혼합 회로에서의 전압 및 전류 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 직·병렬 혼합 회로에서의 전압 및 전류 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r30-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전기 저항의 성질과 영향 요인",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전기 저항의 성질과 영향 요인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r30-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전압 변화에 따른 전류 측정 실험 데이터(표) 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전압 변화에 따른 전류 측정 실험 데이터(표) 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r30-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "저항의 직렬연결에서 전류, 전압, 저항의 관계 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 저항의 직렬연결에서 전류, 전압, 저항의 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r31-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전기 회로와 물의 흐름 모형 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전기 회로와 물의 흐름 모형 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r31-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "도선의 길이와 단면적에 따른 저항의 크기 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 도선의 길이와 단면적에 따른 저항의 크기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r31-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "직렬 및 병렬 회로의 전체 저항과 전류 세기 비교 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 직렬 및 병렬 회로의 전체 저항과 전류 세기 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r32-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "물질의 전기적 성질에 따른 분류(도체, 부도체, 반도체)",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질의 전기적 성질에 따른 분류(도체, 부도체, 반도체) ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r32-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전압과 전류값을 활용한 저항값 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전압과 전류값을 활용한 저항값 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r32-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "시간에 따른 소비 전기 에너지 계산과 절약 효율 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간에 따른 소비 전기 에너지 계산과 절약 효율 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r33-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "가정용 전기 배선과 병렬연결의 특징 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가정용 전기 배선과 병렬연결의 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r33-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "직렬연결과 병렬연결의 회로 전체 특징 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 직렬연결과 병렬연결의 회로 전체 특징 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r33-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "병렬 회로의 전류 분배와 전구 추가·제거에 따른 변화 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 병렬 회로의 전류 분배와 전구 추가·제거에 따른 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r34-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "가전제품에서의 전기 에너지 전환 형태 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가전제품에서의 전기 에너지 전환 형태 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r34-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "가전제품의 소비 전력 분류 순서도 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가전제품의 소비 전력 분류 순서도 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r35-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "소비 전력의 정의와 의미 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소비 전력의 정의와 의미 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r35-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전류의 방향과 전자의 이동 방향 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전류의 방향과 전자의 이동 방향 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r36-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "옴의 법칙과 전류·전압·저항의 관계 그래프 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 옴의 법칙과 전류·전압·저항의 관계 그래프 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r36-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "도선 내부 전자의 운동 모형 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 도선 내부 전자의 운동 모형 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r37-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전압-전류 그래프 분석을 통한 저항 크기 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전압-전류 그래프 분석을 통한 저항 크기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r38-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "니크롬선의 재질·길이·굵기에 따른 저항 변화 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 니크롬선의 재질·길이·굵기에 따른 저항 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r39-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "저항의 병렬연결에서 전류와 전압 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 저항의 병렬연결에서 전류와 전압 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r40-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "병렬 회로에서 스위치 개폐에 따른 회로 변화 예측",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 병렬 회로에서 스위치 개폐에 따른 회로 변화 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r41-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "소비 전력이 같은 전구의 에너지 전환 효율 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소비 전력이 같은 전구의 에너지 전환 효율 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r42-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전기 기구의 소비 전력 특성 및 사용 에너지 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전기 기구의 소비 전력 특성 및 사용 에너지 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r43-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전구에 불이 켜지는 까닭과 회로의 기본 작동 원리",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전구에 불이 켜지는 까닭과 회로의 기본 작동 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r43-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전류 흐름 여부에 따른 도선 내부의 전자 운동 모형 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전류 흐름 여부에 따른 도선 내부의 전자 운동 모형 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r43-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "스위치 개폐 시점에 따른 시간-전류 관계 그래프 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 스위치 개폐 시점에 따른 시간-전류 관계 그래프 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r44-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전류의 방향과 도선 속 전자의 이동 방향 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전류의 방향과 도선 속 전자의 이동 방향 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r44-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전류계와 전압계의 기능 및 올바른 회로 연결 방법",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전류계와 전압계의 기능 및 올바른 회로 연결 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r44-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "주기적인 회전형 가변 저항이 있는 회로에서 전구 점등 시간 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주기적인 회전형 가변 저항이 있는 회로에서 전구 점등 시간 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r45-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "가전제품에 표시된 정격 소비 전력 정보의 의미",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가전제품에 표시된 정격 소비 전력 정보의 의미 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r45-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "병렬 회로의 특징과 특정 분기점 도선의 전류 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 병렬 회로의 특징과 특정 분기점 도선의 전류 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r45-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전지와 전구의 직·병렬 혼합 구성에 따른 총 소비 전력 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전지와 전구의 직·병렬 혼합 구성에 따른 총 소비 전력 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r46-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "전기 에너지를 효율적으로 사용해야 하는 이유",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전기 에너지를 효율적으로 사용해야 하는 이유 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r46-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "멀티탭 과다 연결 시의 위험성과 회로 전체 저항 변화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 멀티탭 과다 연결 시의 위험성과 회로 전체 저항 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r46-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "소비 전력이 다른 가전제품 결합 시 전체 전력 및 안전성 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소비 전력이 다른 가전제품 결합 시 전체 전력 및 안전성 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r47-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "단면적이 다른 도선의 전압-전류 그래프 비교 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단면적이 다른 도선의 전압-전류 그래프 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r48-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(2) 전기 회로와 에너지",
+        "typeName": "저항의 연결 방식(직렬·병렬)에 따른 전류 측정 실험 데이터 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 저항의 연결 방식(직렬·병렬)에 따른 전류 측정 실험 데이터 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r53-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "막대자석 주위의 자기력선 배열과 방향 판별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 막대자석 주위의 자기력선 배열과 방향 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r53-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "나침반 방향을 통한 직선 도선의 전류 방향 역추적 및 자기장의 특징",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 나침반 방향을 통한 직선 도선의 전류 방향 역추적 및 자기장의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r53-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "두 평행한 직선 도선에 의한 합성 자기장의 방향과 세기 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 평행한 직선 도선에 의한 합성 자기장의 방향과 세기 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r54-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "직선 도선에 흐르는 전류에 의한 자기장의 방향 추론",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 직선 도선에 흐르는 전류에 의한 자기장의 방향 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r54-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "전류가 흐르는 코일 내부 자기장의 방향 및 자극 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전류가 흐르는 코일 내부 자기장의 방향 및 자극 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r54-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "전동기 정류자의 역할과 코일 반 바퀴 회전 시 전류 방향 변화의 심층 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전동기 정류자의 역할과 코일 반 바퀴 회전 시 전류 방향 변화의 심층 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r55-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "자기장 속에서 전류가 흐르는 직선 도선이 받는 힘의 방향 판별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자기장 속에서 전류가 흐르는 직선 도선이 받는 힘의 방향 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r55-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "전류의 자기 작용을 활용한 스피커의 작동 원리 및 특징 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전류의 자기 작용을 활용한 스피커의 작동 원리 및 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r55-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "두 전자석 사이 공간에 놓인 직선 도선이 받는 힘의 방향 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 전자석 사이 공간에 놓인 직선 도선이 받는 힘의 방향 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r56-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "전류가 흐르는 코일 주위 자기장의 성질 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전류가 흐르는 코일 주위 자기장의 성질 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r56-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "말굽자석 사이 도선 그네의 전류 방향에 따른 움직임 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 말굽자석 사이 도선 그네의 전류 방향에 따른 움직임 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r56-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "자석의 극 및 전류 방향 변화에 따른 코일의 입체적 운동 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자석의 극 및 전류 방향 변화에 따른 코일의 입체적 운동 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r57-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "자기장 속에서 전류가 흐르는 도선(코일)이 받는 힘의 원리",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자기장 속에서 전류가 흐르는 도선(코일)이 받는 힘의 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r57-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "코일 주위 나침반 바늘의 움직임 및 회전 방향 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 코일 주위 나침반 바늘의 움직임 및 회전 방향 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r57-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "코일과 자석 사이의 상호작용 및 나침반 방향의 종합 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 코일과 자석 사이의 상호작용 및 나침반 방향의 종합 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r58-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "오른손을 이용한 자기장의 방향과 힘의 방향 관계 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 오른손을 이용한 자기장의 방향과 힘의 방향 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r58-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "나침반 방향을 통한 코일에 흐르는 전류의 방향 역추적 및 자기장 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 나침반 방향을 통한 코일에 흐르는 전류의 방향 역추적 및 자기장 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r58-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "여러 개의 전자석과 막대자석 사이에 작용하는 자기력의 종합 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 개의 전자석과 막대자석 사이에 작용하는 자기력의 종합 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r59-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "자기력과 자기장의 개념 및 자기력선의 성질 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자기력과 자기장의 개념 및 자기력선의 성질 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r59-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "간이 전동기 제작 원리 및 코일의 회전 속도 제어 요인 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 간이 전동기 제작 원리 및 코일의 회전 속도 제어 요인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r60-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "전류가 흐르는 코일 주위의 자기장 및 자기력선 방향 판별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전류가 흐르는 코일 주위의 자기장 및 자기력선 방향 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r60-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "단일 원형 코일에 흐르는 전류에 의한 자기장 방향 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단일 원형 코일에 흐르는 전류에 의한 자기장 방향 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r61-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "전자석의 성질과 기본 작동 원리 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전자석의 성질과 기본 작동 원리 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r61-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "자기장 속 코일이 받는 힘의 크기를 결정하는 요인 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자기장 속 코일이 받는 힘의 크기를 결정하는 요인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r62-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "코일 내부와 외부의 자기장 방향 및 나침반의 N극 방향 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 코일 내부와 외부의 자기장 방향 및 나침반의 N극 방향 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r63-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "전류가 흐르는 전자석 주위 나침반 바늘의 움직임 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전류가 흐르는 전자석 주위 나침반 바늘의 움직임 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r64-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "자기장 속에서 전류가 흐르는 코일이 받는 힘 확인 실험 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자기장 속에서 전류가 흐르는 코일이 받는 힘 확인 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r65-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "전동기(모터)의 구조적 특징과 회전 원리 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전동기(모터)의 구조적 특징과 회전 원리 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r66-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "전동기 코일의 각 부분이 받는 힘의 방향과 종합적인 회전 방향 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전동기 코일의 각 부분이 받는 힘의 방향과 종합적인 회전 방향 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r67-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "전류가 흐르는 코일이 자기장 속에서 힘을 받는 원리를 이용한 장치 분류",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전류가 흐르는 코일이 자기장 속에서 힘을 받는 원리를 이용한 장치 분류 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r68-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "막대자석 주변의 자기장 방향 및 자기력선의 성질 추론",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 막대자석 주변의 자기장 방향 및 자기력선의 성질 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r68-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "코일 주위 자기장 배열 및 N극의 회전 방향 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 코일 주위 자기장 배열 및 N극의 회전 방향 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r68-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "구리선 고리와 자석을 이용한 호모폴라 전동기의 3차원 회전 원리 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 구리선 고리와 자석을 이용한 호모폴라 전동기의 3차원 회전 원리 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r69-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "전자석의 특징 및 이용 조사",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전자석의 특징 및 이용 조사 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r69-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "전자석과 막대자석의 상호작용 분석을 통한 코일의 전류와 자기장 특징 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전자석과 막대자석의 상호작용 분석을 통한 코일의 전류와 자기장 특징 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r69-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "두 평행 직선 도선과 원형 도선의 전류에 의한 합성 자기장의 정량적 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 평행 직선 도선과 원형 도선의 전류에 의한 합성 자기장의 정량적 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r70-basic",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "전류가 흐르는 코일과 막대자석의 자기장 모양 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전류가 흐르는 코일과 막대자석의 자기장 모양 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r70-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "말굽자석 속 알루미늄 막대에 흐르는 전류 방향에 따른 운동 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 말굽자석 속 알루미늄 막대에 흐르는 전류 방향에 따른 운동 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r70-adv",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "영구 자석 사이 사각 코일에 작용하는 힘의 방향과 정류자 기능의 심층 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 영구 자석 사이 사각 코일에 작용하는 힘의 방향과 정류자 기능의 심층 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r71-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "스위치 개폐에 따른 전자석 자기장 형성과 쇠구슬 유도 원리 판단",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 스위치 개폐에 따른 전자석 자기장 형성과 쇠구슬 유도 원리 판단 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s2-r72-skill",
+        "majorUnit": "7단원 전기와 자기",
+        "minorUnit": "(3) 전류의 자기 작용",
+        "typeName": "코일 감은 방향과 전류 방향 조합에 따른 여러 전자석의 극 비교 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 코일 감은 방향과 전류 방향 조합에 따른 여러 전자석의 극 비교 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r3-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시차 측정을 위한 최적의 지구 공전 궤도상 위치 선정",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시차 측정을 위한 최적의 지구 공전 궤도상 위치 선정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r3-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "별의 거리 배수 변화에 따른 연주 시차 변화 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 거리 배수 변화에 따른 연주 시차 변화 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r3-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "지구 공전 궤도 반지름 변화 시 가상 연주 시차 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 공전 궤도 반지름 변화 시 가상 연주 시차 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r4-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "관측 모식도 내에서 시차와 연주 시차의 구별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 관측 모식도 내에서 시차와 연주 시차의 구별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r4-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "별의 거리 계산 및 특정 배수만큼 먼 별의 연주 시차 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 거리 계산 및 특정 배수만큼 먼 별의 연주 시차 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r4-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "배경 별 기준 상대 위치 변화 해석 및 관측 주기와 연주 시차의 종합적 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 배경 별 기준 상대 위치 변화 해석 및 관측 주기와 연주 시차의 종합적 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r5-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "제시된 연주 시차 값을 통한 가장 가까운 별의 판별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 제시된 연주 시차 값을 통한 가장 가까운 별의 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r5-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "복합 관측도에서 연주 시차와 거리를 각각 찾아 짝짓기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복합 관측도에서 연주 시차와 거리를 각각 찾아 짝짓기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r5-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "복합 관측 모식도 해석과 공전 궤도 반지름 변화에 따른 연주 시차 변화 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복합 관측 모식도 해석과 공전 궤도 반지름 변화에 따른 연주 시차 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r6-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시차 측정 모식도 분석을 통한 연주 시차의 개념 및 별의 거리 관계 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시차 측정 모식도 분석을 통한 연주 시차의 개념 및 별의 거리 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r6-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "천구상 두 지점 간 이동 각거리를 통한 연주 시차 및 실제 거리 산출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 천구상 두 지점 간 이동 각거리를 통한 연주 시차 및 실제 거리 산출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r6-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "천구상에 나타난 별의 겉보기 이동 경로와 각거리 수치 데이터를 통한 거리 도출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 천구상에 나타난 별의 겉보기 이동 경로와 각거리 수치 데이터를 통한 거리 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r7-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시차를 활용한 연주 시차와 거리 도출",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시차를 활용한 연주 시차와 거리 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r7-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "모형 실험 장치를 이용한 거리와 시차의 반비례 관계 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모형 실험 장치를 이용한 거리와 시차의 반비례 관계 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r7-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "배경 별 기준 천구 변위 분석을 통한 연주 시차 도출 및 거리 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 배경 별 기준 천구 변위 분석을 통한 연주 시차 도출 및 거리 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r8-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "연주 시차의 발생 원인과 연주 시차로 측정 가능한 물리량 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연주 시차의 발생 원인과 연주 시차로 측정 가능한 물리량 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r8-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "모형 실험을 통한 시차 발생 원리 탐구 및 관측자-물체 거리의 정성적 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모형 실험을 통한 시차 발생 원리 탐구 및 관측자-물체 거리의 정성적 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r8-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "서로 다른 거리 단위 체계로 표현된 천체들의 실제 거리 크기 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서로 다른 거리 단위 체계로 표현된 천체들의 실제 거리 크기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r9-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시차와 연주 시차의 개념적 정의 및 특징 구별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시차와 연주 시차의 개념적 정의 및 특징 구별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r9-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "두 별의 시차 교차 모식도 분석을 통한 연주 시차 크기 비교 및 거리 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 별의 시차 교차 모식도 분석을 통한 연주 시차 크기 비교 및 거리 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r10-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "연주 시차의 기본 개념 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연주 시차의 기본 개념 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r10-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "여러 별의 시차 데이터를 제시한 표 자료의 종합적 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 별의 시차 데이터를 제시한 표 자료의 종합적 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r11-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "연주 시차의 정의각 판별 및 거리에 따른 변화 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연주 시차의 정의각 판별 및 거리에 따른 변화 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r11-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시차 측정 모식도 분석을 통한 연주 시차 및 별의 거리 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시차 측정 모식도 분석을 통한 연주 시차 및 별의 거리 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r12-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "다수 별의 연주 시차 표 데이터를 이용한 거리 순서 배열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다수 별의 연주 시차 표 데이터를 이용한 거리 순서 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r13-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "두 별의 연주 시차 비율을 활용한 상대적 거리 비 역산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 별의 연주 시차 비율을 활용한 상대적 거리 비 역산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r14-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시차 측정 모식도를 통한 별의 거리 계산 및 특정 배수만큼 먼 별의 연주 시차 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시차 측정 모식도를 통한 별의 거리 계산 및 특정 배수만큼 먼 별의 연주 시차 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r15-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "천구상 배경 별을 기준으로 한 실제 별의 상대적 위치 변화 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 천구상 배경 별을 기준으로 한 실제 별의 상대적 위치 변화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r16-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "복합 관측 모식도에서 각 별의 연주 시차 및 거리 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복합 관측 모식도에서 각 별의 연주 시차 및 거리 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r17-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시기별 천구 관측 자료 분석을 통한 별의 연주 시차 및 거리 대소 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시기별 천구 관측 자료 분석을 통한 별의 연주 시차 및 거리 대소 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r18-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시차 모형 실험을 통한 시차 발생의 원리 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시차 모형 실험을 통한 시차 발생의 원리 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r18-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "관측 모식도를 통한 연주 시차 및 거리 도출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 관측 모식도를 통한 연주 시차 및 거리 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r18-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "두 별 사이의 상대적 각거리 변화량 데이터를 연계한 연주 시차 역산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 별 사이의 상대적 각거리 변화량 데이터를 연계한 연주 시차 역산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r19-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "천구면에 표시된 6개월간의 겉보기 이동 각거리 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 천구면에 표시된 6개월간의 겉보기 이동 각거리 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r28-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별의 거리와 단위 면적당 도달하는 별빛의 양 사이의 관계 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 거리와 단위 면적당 도달하는 별빛의 양 사이의 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r28-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "특정 거리에 위치한 별의 절대 등급 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 거리에 위치한 별의 절대 등급 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r28-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "거리가 임의의 배수로 변할 때의 등급 정량적 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거리가 임의의 배수로 변할 때의 등급 정량적 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r29-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "실제 밤하늘 관측을 통한 별의 색과 표면 온도 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실제 밤하늘 관측을 통한 별의 색과 표면 온도 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r29-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "입체적 거리 도식을 활용한 거리에 따른 등급 변화 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입체적 거리 도식을 활용한 거리에 따른 등급 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r29-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "지구로부터의 거리와 색 데이터를 결합한 복합 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구로부터의 거리와 색 데이터를 결합한 복합 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r30-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별의 거리와 밝기 사이의 반비례 관계 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 거리와 밝기 사이의 반비례 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r30-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "겉보기 등급이 같은 별들의 거리와 실제 밝기 관계 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 겉보기 등급이 같은 별들의 거리와 실제 밝기 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r30-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "절대 등급이 같은 별들의 공간 도식을 통한 등급과 밝기 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 절대 등급이 같은 별들의 공간 도식을 통한 등급과 밝기 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r31-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별의 밝기와 등급의 정의 및 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 밝기와 등급의 정의 및 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r31-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "등급 차(겉보기 등급 - 절대 등급)에 따른 별의 거리 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등급 차(겉보기 등급 - 절대 등급)에 따른 별의 거리 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r31-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "표 데이터를 활용한 등급과 별의 특징 종합 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 표 데이터를 활용한 등급과 별의 특징 종합 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r32-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "등급 차이에 따른 별의 밝기 배수 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등급 차이에 따른 별의 밝기 배수 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r32-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "절대 등급과 연주 시차 그래프의 복합적 자료 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 절대 등급과 연주 시차 그래프의 복합적 자료 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r32-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "거리 변화에 따른 겉보기 등급과 절대 등급의 연동 변화 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거리 변화에 따른 겉보기 등급과 절대 등급의 연동 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r33-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "등급이 주어진 두 별의 밝기 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등급이 주어진 두 별의 밝기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r33-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "특정 별자리의 관측 데이터를 활용한 종합 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 별자리의 관측 데이터를 활용한 종합 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r33-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "겉보기 등급과 연주 시차 표 데이터를 통한 거리 및 밝기 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 겉보기 등급과 연주 시차 표 데이터를 통한 거리 및 밝기 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r34-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "겉보기 등급과 절대 등급의 정의 및 차이점 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 겉보기 등급과 절대 등급의 정의 및 차이점 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r34-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별의 색을 활용한 표면 온도 순서 배열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 색을 활용한 표면 온도 순서 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r35-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "등급 지표를 통한 시각적 및 실제 밝기 비교 기초",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등급 지표를 통한 시각적 및 실제 밝기 비교 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r35-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별의 거리가 가까워지거나 멀어질 때 현상 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 거리가 가까워지거나 멀어질 때 현상 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r36-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별의 색을 활용한 표면 온도 비교 기초",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 색을 활용한 표면 온도 비교 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r36-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "등급 차(겉보기 - 절대)를 활용한 별의 위치 분류(10pc 기준)",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등급 차(겉보기 - 절대)를 활용한 별의 위치 분류(10pc 기준) ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r37-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "겉보기 등급과 절대 등급 그래프 자료의 연계 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 겉보기 등급과 절대 등급 그래프 자료의 연계 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r38-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "연주 시차와 등급 데이터를 연계한 종합 판단",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연주 시차와 등급 데이터를 연계한 종합 판단 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r39-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별의 거리 변화에 따라 변하는 물리량 식별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 거리 변화에 따라 변하는 물리량 식별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r40-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "거리에 따른 조도 변화 실험의 탐구 및 결과 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거리에 따른 조도 변화 실험의 탐구 및 결과 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r41-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "동일한 등급을 가진 복수 별의 집합에 따른 등급 산출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동일한 등급을 가진 복수 별의 집합에 따른 등급 산출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r42-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "색과 절대 등급에 따른 집단 분류 그래프 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 색과 절대 등급에 따른 집단 분류 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r43-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "거리에 따른 광원의 밝기 변화 관계",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거리에 따른 광원의 밝기 변화 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r43-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "복수 천체의 집합에 따른 전체 밝기 및 등급 환산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복수 천체의 집합에 따른 전체 밝기 및 등급 환산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r43-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "특정 거리로 가상 이동 시 등급 변화 및 겉보기 밝기 정량적 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 거리로 가상 이동 시 등급 변화 및 겉보기 밝기 정량적 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r44-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별의 표면 온도와 색깔의 관계 정의",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 표면 온도와 색깔의 관계 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r44-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "등급 표 데이터를 활용한 겉보기 및 절대 등급 종합 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등급 표 데이터를 활용한 겉보기 및 절대 등급 종합 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r44-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "거리 지수(m-M)와 물리적 거리(pc)의 비선형 그래프 연계 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거리 지수(m-M)와 물리적 거리(pc)의 비선형 그래프 연계 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r45-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "표면 온도 수치에 따른 별의 색깔 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 표면 온도 수치에 따른 별의 색깔 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r45-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "2차원 등급 좌표 그래프를 통한 별의 위치 및 특징 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 2차원 등급 좌표 그래프를 통한 별의 위치 및 특징 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r45-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "시간에 따른 변광성의 겉보기 등급 변화 그래프 분석 및 절대 등급 연계 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간에 따른 변광성의 겉보기 등급 변화 그래프 분석 및 절대 등급 연계 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r46-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "겉보기 등급이 동일한 별들의 거리 도식과 실제 밝기 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 겉보기 등급이 동일한 별들의 거리 도식과 실제 밝기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r47-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "절대 등급-표면 온도 및 겉보기 등급-표면 온도 그래프 복합 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 절대 등급-표면 온도 및 겉보기 등급-표면 온도 그래프 복합 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r53-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "외부 은하의 정의와 분류 기준 파악하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외부 은하의 정의와 분류 기준 파악하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r53-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "우리 은하의 옆면 구조 그림 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 은하의 옆면 구조 그림 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r53-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "이분법적 분류 흐름도를 이용한 성운의 계통 분류 및 천체 매칭하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 이분법적 분류 흐름도를 이용한 성운의 계통 분류 및 천체 매칭하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r54-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "우리 은하의 구조적 특징 파악하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 은하의 구조적 특징 파악하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r54-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "성단을 구성하는 별의 색과 표면 온도의 인과관계 분석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성단을 구성하는 별의 색과 표면 온도의 인과관계 분석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r54-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "우리 은하 중심 방향의 별자리와 우리나라의 관측 계절 연계하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 은하 중심 방향의 별자리와 우리나라의 관측 계절 연계하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r55-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "은하수의 정의 및 관측적 특징 이해하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 은하수의 정의 및 관측적 특징 이해하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r55-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "탐사 목적과 천체 관측 방식에 따른 탐사 장비 매칭하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 탐사 목적과 천체 관측 방식에 따른 탐사 장비 매칭하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r55-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "사진 자료(산개 성단/반사 성운)를 통한 복합적 물리 특성 비교하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 사진 자료(산개 성단/반사 성운)를 통한 복합적 물리 특성 비교하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r56-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "성운과 성단의 핵심 개념 구별하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성운과 성단의 핵심 개념 구별하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r56-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "우리 은하의 시각 자료(위)에 따른 구조적 특징과 천체 분포 추론하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 은하의 시각 자료(위)에 따른 구조적 특징과 천체 분포 추론하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r56-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "역사적 우주 탐사선들의 구체적인 탐사 임무와 목적지 복합 비교하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 역사적 우주 탐사선들의 구체적인 탐사 임무와 목적지 복합 비교하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r57-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "제시된 서술을 통한 성운의 종류 판단하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 제시된 서술을 통한 성운의 종류 판단하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r57-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "우리 은하의 시각 자료(옆/위)에서 태양계 위치 판별하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 은하의 시각 자료(옆/위)에서 태양계 위치 판별하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r57-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "우리 은하 옆면 구조 해석 및 거리에 따른 빛의 이동 시간 계산하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 은하 옆면 구조 해석 및 거리에 따른 빛의 이동 시간 계산하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r58-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "우주 팽창 현상의 기본 개념 이해하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우주 팽창 현상의 기본 개념 이해하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r58-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "우주 탐사 역사의 주요 사건별 시간 순서 배열하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우주 탐사 역사의 주요 사건별 시간 순서 배열하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r58-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "별의 색과 나이 분포 그래프 해석을 통한 성단 종류 및 특징 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 색과 나이 분포 그래프 해석을 통한 성단 종류 및 특징 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r59-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "다양한 천체 구조의 규모 순서 배열하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다양한 천체 구조의 규모 순서 배열하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r59-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "표 자료를 활용한 산개 성단과 구상 성단의 특징 비교하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 표 자료를 활용한 산개 성단과 구상 성단의 특징 비교하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r60-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "우주 탐사의 목적과 필요성 이해하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우주 탐사의 목적과 필요성 이해하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r60-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "천체 사진을 통한 세 가지 성운의 종류 구별하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 천체 사진을 통한 세 가지 성운의 종류 구별하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r61-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "우주 탐사 과학 기술이 미치는 영향 파악하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우주 탐사 과학 기술이 미치는 영향 파악하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r61-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "성단을 구성하는 별의 물리량(수, 색, 위치 등) 크기 관계 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성단을 구성하는 별의 물리량(수, 색, 위치 등) 크기 관계 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r62-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "암흑 성운의 시각적 특징과 빛의 차단 원리 연결하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암흑 성운의 시각적 특징과 빛의 차단 원리 연결하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r63-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "사진 자료를 통한 성단의 종류 판별 및 특징 비교하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 사진 자료를 통한 성단의 종류 판별 및 특징 비교하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r64-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "풍선 모형 실험을 통한 우주 팽창 및 은하 간 거리 변화 해석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 풍선 모형 실험을 통한 우주 팽창 및 은하 간 거리 변화 해석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r65-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "우주 생성 모형을 통한 시공간 변화 과정 해석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우주 생성 모형을 통한 시공간 변화 과정 해석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r66-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "시각 자료를 활용한 우주 탐사 장비의 종류와 특징 분석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시각 자료를 활용한 우주 탐사 장비의 종류와 특징 분석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r67-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "우주 탐사 과학 기술의 산업 분야 적용 사례 분석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우주 탐사 과학 기술의 산업 분야 적용 사례 분석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r68-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "우리 은하를 구성하는 천체들의 기본 개념 이해하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 은하를 구성하는 천체들의 기본 개념 이해하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r68-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "우리 은하 옆면 모형 해석 및 구조별 명칭 파악하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 은하 옆면 모형 해석 및 구조별 명칭 파악하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r68-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "계절별 밤하늘 은하수 관측 조건과 지구의 공전 주기 및 방향성 종합 추론하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 계절별 밤하늘 은하수 관측 조건과 지구의 공전 주기 및 방향성 종합 추론하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r69-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "풍선 모형 실험에서 우주 구성 요소와 모형 매칭하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 풍선 모형 실험에서 우주 구성 요소와 모형 매칭하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r69-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "성운의 종류별 빛의 방출 및 차단 효과 구별하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성운의 종류별 빛의 방출 및 차단 효과 구별하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r69-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "성단을 구성하는 별의 물리적 특성과 우리 은하 내 3차원 분포 공간 연결하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성단을 구성하는 별의 물리적 특성과 우리 은하 내 3차원 분포 공간 연결하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r70-basic",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "우주 탐사가 가지는 학문적·인류적 의의 파악하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우주 탐사가 가지는 학문적·인류적 의의 파악하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r70-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "풍선 팽창 모형 실험을 통한 정량적 거리 변화 계산하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 풍선 팽창 모형 실험을 통한 정량적 거리 변화 계산하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r70-adv",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "관측자에 따른 주변 은하들의 상대적 이동 속도 및 방향 변화 계산하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 관측자에 따른 주변 은하들의 상대적 이동 속도 및 방향 변화 계산하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r71-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "모형을 통한 우주 팽창의 특징 해석하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모형을 통한 우주 팽창의 특징 해석하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중2-2-s3-r72-skill",
+        "majorUnit": "8단원 별와 우주",
+        "minorUnit": "(3) 우리 은하와 우주 탐사",
+        "typeName": "관측 장소에 따른 우주 탐사 장비의 분류 및 특징 비교하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 관측 장소에 따른 우주 탐사 장비의 분류 및 특징 비교하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      }
+    ]
+  },
+  {
     "id": "sci-중3-1",
     "subject": "science",
     "course": "중3-1",
@@ -55034,6 +68961,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 변화 시 보존되는 요소와 변하는 요소의 심층 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -55090,7 +69018,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응식을 통한 질량 및 입자 수 관계의 정량적 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -55147,7 +69074,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 미지의 물질 X가 포함된 화학 반응식의 계수 맞추기 및 원소 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -55204,7 +69130,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응식의 계수비와 분자 수비, 부피비의 상관관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -55223,7 +69148,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 변화 시 원자의 배열 변화 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -55261,7 +69185,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물질 변화의 미시적 관점(원자/분자 배열) 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -55299,6 +69222,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응 시 변하는 것(분자 배열)과 변하지 않는 것(원자 배열) 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -55336,7 +69260,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응의 정의와 반응물, 생성물의 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -55373,6 +69296,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연소 반응의 정의와 산소와의 결합 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -55524,7 +69448,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암모니아 생성 반응의 입자 수 비 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -55600,7 +69523,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 제철 과정(용광로)의 문장 정보를 화학 반응식으로 변환 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -55694,7 +69616,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분자 모형을 통한 물리 변화(기화) 과정 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -55713,6 +69634,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 잘못된 화학 반응식의 오류 찾기 및 수정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -55788,6 +69710,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 암모니아 생성 반응의 모형과 반응식 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -55863,7 +69786,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과산화 수소 분해 반응에서의 질량 보존 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -56091,6 +70013,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화합물 생성 시 성분 원소 간 일정한 질량비가 성립하는 이유 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -56393,7 +70316,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마그네슘과 산소의 반응 데이터를 이용한 질량비 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -56507,7 +70429,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 종류의 화합물(A, B) 질량 관계 비교 및 화학식 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -56564,6 +70485,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 금속 가루 연소 시 질량이 일정해지는 구간의 의미 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -56676,6 +70598,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모형의 모순점(원자가 쪼개지는 현상)과 분자설의 필요성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -56694,6 +70617,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 반응 법칙이 성립하는 물질의 상태(기체) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -56712,6 +70636,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 부피의 기체를 얻기 위해 필요한 반응 기체의 최소 부피 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -56806,7 +70731,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 분자 모형에서 각 기체의 부피 칸 수 세기 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -56825,7 +70749,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 탄산수소 나트륨의 열분해 및 광합성 반응의 에너지 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -56844,6 +70767,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응식의 계수비와 기체의 부피비 및 분자 수 비의 상관관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -56862,6 +70786,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응에서 에너지를 활용하는 예시(연료 등) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -56937,6 +70862,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질소와 수소가 반응하여 암모니아가 될 때의 부피비(1:3:2) 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57067,7 +70993,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수소와 산소의 반응 부피비(2:1:2)를 이용한 수증기 생성량 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57105,6 +71030,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질산 암모늄과 물의 반응을 이용한 냉질찜 팩의 원리 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57142,6 +71068,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 반응에서 계수비와 부피비의 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57179,7 +71106,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 미지의 기체 화합물 생성 시 반응물과 생성물의 부피비 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57198,6 +71124,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 화학 반응에서 에너지 출입이 일어나는 이유 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57254,7 +71181,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실생활 속 열에너지 활용 사례 (손난로, 냉찜질팩 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57292,7 +71218,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 입자 모형을 보고 반응 전후의 분자 수 변화와 부피비 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57311,7 +71236,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기체 반응 법칙이 고체나 액체에서 성립하지 않는 까닭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57501,7 +71425,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복사 평형 실험 그래프에서의 시간에 따른 온도 변화 정밀 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57520,7 +71443,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복사 에너지의 정의와 물체가 에너지를 내보내는 방식 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57596,6 +71518,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 온난화의 원인(이산화 탄소 등)과 평균 기온 상승의 상관관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57614,7 +71537,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대기 유무에 따른 달과 지구의 복사 평형 상태 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57785,7 +71707,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 복사 평형 수치(100:70:70) 데이터 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57861,6 +71782,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 중간권과 대류권의 공통점(대류 현상) 및 차이점(기상 현상) 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57898,6 +71820,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온실 기체의 종류와 각 기체가 온난화에 기여하는 특성 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -57935,7 +71858,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기권의 각 층 중 대류가 일어나는 층(대류권, 중간권) 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58030,7 +71952,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성층권(B층)의 정의와 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58123,7 +72044,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 포화 수증기량 곡선 해석을 통한 냉각 시 이슬점과 응결량 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58142,7 +72062,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 포화 수증기량과 이슬점의 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58275,6 +72194,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도 변화가 없을 때 수증기 공급에 의한 포화 상태 도달 과정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58293,7 +72213,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 위도에 따른 강수 이론(병합설 vs 빙정설)의 구체적 과정 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58350,6 +72269,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 공기의 상승 조건에 따른 구름의 모양(적운형/층운형) 결정 요인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58386,7 +72306,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기온과 포화 수증기량의 비례 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58500,6 +72419,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 하루 중 습도가 가장 낮은 시간대와 그 이유 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58556,6 +72476,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수증기 응결을 돕는 응결핵의 역할과 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58574,7 +72495,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 적운형 구름과 층운형 구름의 특징 비교(상승 기류 세기) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58612,7 +72532,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 기온에서 공기 1kg에 들어 있는 수증기량 산출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58650,6 +72569,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증발과 응결의 정의 및 사례 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58687,7 +72607,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 포화 수증기량 곡선을 이용한 공기 혼합 시 응결 여부 판단 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58706,7 +72625,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 포화 상태, 불포화 상태, 과포화 상태의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58743,6 +72661,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고도에 따른 기온 하강과 이슬점 도달(구름 생성 높이) 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58799,7 +72718,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 인공 강수의 원리 및 드라이아이스/요오드화 은의 역할 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58818,7 +72736,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 병합설이 일어나는 저위도 및 여름철 강수 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58913,7 +72830,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 토리첼리 실험 시 유리관 내부가 진공일 때와 아닐 때의 차이점 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58932,7 +72848,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 토리첼리 실험에서 수은 기둥 높이 변화 요인 분석(진공, 굵기, 기울기) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -58970,6 +72885,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고도가 올라감에 따라 기압이 낮아지는 현상과 신체 변화 연결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -59007,6 +72923,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 높이 올라갈수록 기압이 낮아지는 이유 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -59025,6 +72942,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기압의 정의와 모든 방향에서 작용하는 기압의 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -59043,7 +72961,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지표의 부등 가열에 따른 수직 기류와 지표면 기압 형성의 인과 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -59138,6 +73055,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고무막을 씌운 시험관 실험을 통한 기압의 작용 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -59346,6 +73264,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여름철과 겨울철 우리나라 주변의 고기압, 저기압 위치 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -59535,6 +73454,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 장소(높이)에 따른 기압 변화와 수은 기둥 높이 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -59553,6 +73473,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상층풍과 지상풍의 흐름을 연결한 대류 순환 체계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -59627,6 +73548,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기압 측정 장치의 종류와 용도 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -59721,7 +73643,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리나라 계절별 대표적인 날씨 특징 연결하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -59758,7 +73679,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온대 저기압 통과 시 관측소의 기온, 기압, 풍향 변화 시계열 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -59796,7 +73716,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 겨울철 한파와 폭설을 일으키는 시베리아 기단의 확장 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -59966,6 +73885,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전선의 정의와 성질이 다른 두 기단이 만날 때의 경계면(전선면) 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -59984,6 +73904,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 계절별 일기도의 특징(서고동저, 남고북저 등)과 기압 배치 원리 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60040,7 +73961,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전선면의 기울기와 공기 상승 속도에 따른 강수 강도 인과 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60116,7 +74036,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온대 저기압의 중심을 기준으로 한 전선 배치와 구름의 분포 범위 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60135,6 +74054,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 바람이 기압이 높은 곳에서 낮은 곳으로 분다는 기초 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60153,6 +74073,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 봄·가을철 양쯔강 기단 및 이동성 고기압이 날씨에 미치는 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60171,6 +74092,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 한여름 무더위와 열대야의 원인이 되는 기단의 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60320,7 +74242,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온대 저기압의 발달 단계에 따른 전선 배치 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60377,7 +74298,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기상 위성 영상(가시/적외)을 통한 구름의 높이와 두께 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60396,6 +74316,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고기압과 저기압에서의 기본적인 날씨 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60414,6 +74335,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일기 예보가 작성되는 과정 순서 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60432,6 +74354,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수조를 이용한 전선 형성 모델 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60450,7 +74373,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전선면에서 구름이 생성되는 원리 설명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60469,6 +74391,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온대 저기압 통과 시 풍향이 변하는 이유 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60487,7 +74410,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 속력의 정의와 공식(이동 거리 / 걸린 시간) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60544,7 +74466,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등속 운동의 정의와 대표적인 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60639,6 +74560,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 운동과 등속 운동의 물리량(속력, 힘) 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60751,6 +74673,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 속력이 변하는 운동에서 단위 시간당 속력 변화량(가속도 개념) 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60769,7 +74692,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간-속력 그래프의 기본 형태 그리기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60845,7 +74767,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단위 환산(m/s ↔ km/h)을 포함한 물체의 속력 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60883,6 +74804,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간-이동 거리 그래프에서 기울기의 의미(속력) 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60901,6 +74823,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 여러 가지 물체의 속력 읽기 및 크기 비교 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60938,7 +74861,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 운동 시 시간에 비례하여 증가하는 속력 관계 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60957,6 +74879,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 공기 저항이 있을 때 물체의 낙하 운동 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -60994,6 +74917,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 운동의 시간-속력 그래프 면적을 통한 낙하 거리 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61012,6 +74936,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 등속 운동의 사례(에스컬레이터 등) 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61030,7 +74955,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다중 노출 사진에서 물체 사이의 간격 변화와 속력의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61144,7 +75068,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 속력이 일정하게 증가/유지/감소하는 복합 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61220,6 +75143,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진공 중 낙하 시 질량과 도달 시간의 관계 설명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61409,7 +75333,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 중력에 의한 위치 에너지의 정의와 결정 요인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61447,6 +75370,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량과 속력이 동시에 변할 때 두 물체의 운동 에너지 비(Ratio) 구하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61484,6 +75408,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 힘의 방향과 이동 방향의 관계를 통한 '과학에서의 일' 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61521,7 +75446,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일과 에너지의 상호 전환성 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61540,7 +75464,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 힘-이동 거리 그래프에서 면적을 이용한 일의 양 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61578,7 +75501,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 무게(N)와 질량(kg)의 관계 및 단위 환산 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61635,6 +75557,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량과 높이에 따른 위치 에너지의 비례 관계 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61672,7 +75595,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 운동 에너지 공식($\\frac{1}{2}mv^2$)을 이용한 정량적 수치 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61710,6 +75632,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수레의 충돌 실험을 통한 운동 에너지와 이동 거리(s)의 관계 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61785,6 +75708,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 속력이 2배, 3배 증가할 때 제동 거리가 4배, 9배 증가하는 원리 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61803,6 +75727,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 중력에 대해 한 일의 양 계산 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61821,6 +75746,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량과 속력에 따른 운동 에너지의 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61877,6 +75803,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 낙하하는 물체의 위치 에너지 감소량과 운동 에너지 증가량 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -61933,6 +75860,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비스듬한 면(빗면)을 따라 물체를 끌어올릴 때의 일과 에너지 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62008,7 +75936,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 귓속뼈의 진동 증폭 작용과 달팽이관의 청각 세포 자극 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62084,7 +76011,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체의 거리 변화에 따른 수정체 두께와 모양체 근육의 상호작용 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62141,7 +76067,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밝기 변화에 따른 홍채의 면적 변화와 동공 크기 조절의 인과 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62217,7 +76142,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혀에서 맛을 느끼는 부위(맛봉오리) 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62236,6 +76160,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 눈의 구조 명칭과 각 부분(각막, 수정체, 망막 등)의 기능 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62311,7 +76236,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 후각의 특징(예민성, 피로성)이 생존에 주는 의미와 메커니즘 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62330,7 +76254,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수정체의 두께가 변하는 상황(멀리 볼 때/가까이 볼 때) 기초 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62368,6 +76291,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 고막의 위치와 소리에 의한 진동 역할 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62424,6 +76348,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 맛의 종류(단, 신, 짠, 쓴, 감칠맛)와 매운맛·떫은맛의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62461,6 +76386,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 온도 변화에 따른 냉각과 온각의 상대적 인식 원리(상대적 변화) ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62479,6 +76405,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 감각 기관의 기능 상실 시 나타날 수 있는 증상 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62535,7 +76462,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 후각과 미각의 상호작용(코를 막고 음식 먹기 실험) 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62554,7 +76480,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 귀의 구조와 각 명칭의 기능 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62573,6 +76498,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밝기에 따른 동공의 크기 조절 원리(홍채) 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62591,6 +76517,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밝기와 거리 변화가 동시에 일어날 때 홍채와 수정체의 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62704,7 +76631,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 감각 기관의 기능 상실 시 다른 감각으로의 보완 메커니즘 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62742,7 +76668,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 피부 감각점의 분포 밀도와 예민함의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62761,6 +76686,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 청각의 성립 경로 순서 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62779,7 +76705,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 어두운 곳에서 밝은 곳으로 나갈 때의 눈의 변화 설명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62874,7 +76799,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 척수 반사(무릎 반사, 뜨거운 것 피하기)의 경로와 생존적 의미 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62969,7 +76893,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 중추 신경계에 속하는 기관(뇌, 척수) 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -62988,7 +76911,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 내분비샘의 종류와 각 샘에서 분비되는 호르몬 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -63064,6 +76986,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 신경계와 호르몬의 특징(전달 속도, 지속성, 범위) 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -63082,6 +77005,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혈당량을 낮추는 유일한 호르몬인 인슐린의 명칭 확인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -63138,6 +77062,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 무조건 반사의 대표적 사례(재채기, 딸꾹질, 동공 반사 등) 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -63251,6 +77176,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 신경계와 호르몬의 특성(전달 매체, 속도, 지속성) 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -63307,6 +77233,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 아드레날린(에피네프린)이 신체 변화(심박, 혈당)에 미치는 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -63325,6 +77252,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식사 후와 운동 중의 혈당량 변화 추이 및 조절 과정 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -63419,7 +77347,6 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
-        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 주요 내분비샘의 위치와 분비되는 호르몬 명칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -63438,6 +77365,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 0
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연수와 중간뇌가 중추인 무의식적 반응 사례 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -63456,6 +77384,7 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
           "advanced": 2
         },
         "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 피드백 원리를 이용한 티록신 농도 조절의 인과관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       },
       {
@@ -63608,6 +77537,6931 @@ export const SCIENCE_CURRICULA: Curriculum[] = [
         "textbook": "기타",
         "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
         "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 신경계와 호르몬의 신호 전달 속도 및 지속성 차이 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      }
+    ]
+  },
+  {
+    "id": "sci-중3-2",
+    "subject": "science",
+    "course": "중3-2",
+    "types": [
+      {
+        "id": "sc-중3-2-s0-r3-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "상동 염색체와 성염색체의 개념",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상동 염색체와 성염색체의 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r3-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "염색체 모형을 통한 체세포·생식세포 특징 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 염색체 모형을 통한 체세포·생식세포 특징 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r3-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "두 종류의 세포 분열 비교 도식 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 종류의 세포 분열 비교 도식 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r4-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "생식세포 분열(감수 분열)의 기본 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생식세포 분열(감수 분열)의 기본 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r4-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "특정 시기의 염색체 구성을 통한 체세포와 생식세포의 염색체 수 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 시기의 염색체 구성을 통한 체세포와 생식세포의 염색체 수 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r4-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "체세포 분열 관찰 실험의 심층 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 체세포 분열 관찰 실험의 심층 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r5-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "체세포 분열의 개념과 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 체세포 분열의 개념과 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r5-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "체세포 분열 시기 판별과 딸세포의 염색체 수",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 체세포 분열 시기 판별과 딸세포의 염색체 수 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r5-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "감수 분열 시기별 특징과 모세포 및 딸세포의 염색체 수 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 감수 분열 시기별 특징과 모세포 및 딸세포의 염색체 수 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r6-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "감수 분열의 생물학적 의의",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 감수 분열의 생물학적 의의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r6-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "2가 염색체의 형성과 관찰 시기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 2가 염색체의 형성과 관찰 시기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r6-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "감수 분열 모식도를 통한 각 단계별 특징 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 감수 분열 모식도를 통한 각 단계별 특징 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r7-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "생물의 생장과 세포 수의 관계",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물의 생장과 세포 수의 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r7-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "정육면체 모형을 통한 물질 교환 효율성 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정육면체 모형을 통한 물질 교환 효율성 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r7-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "모세포의 염색체 구성을 기반으로 한 감수 분열 딸세포 유추",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모세포의 염색체 구성을 기반으로 한 감수 분열 딸세포 유추 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r8-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "세포 분열이 필요한 까닭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포 분열이 필요한 까닭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r8-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "염색체의 세부 구조",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 염색체의 세부 구조 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r8-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "감수 분열의 DNA 상대량 변화 그래프 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 감수 분열의 DNA 상대량 변화 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r9-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "체세포 분열의 결과와 현상",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 체세포 분열의 결과와 현상 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r9-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "상동 염색체와 염색분체의 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상동 염색체와 염색분체의 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r10-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "염색체의 정의와 구성 성분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 염색체의 정의와 구성 성분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r10-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "사람의 염색체 구성 및 핵형 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 사람의 염색체 구성 및 핵형 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r11-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "생물 종류에 따른 염색체 수의 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생물 종류에 따른 염색체 수의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r11-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "체세포 분열 과정의 순서 나열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 체세포 분열 과정의 순서 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r12-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "체세포 분열 시기별 주요 특징",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 체세포 분열 시기별 주요 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r13-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "동물 세포와 식물 세포의 세포질 분열 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동물 세포와 식물 세포의 세포질 분열 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r14-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "양파 뿌리를 이용한 세포 분열 관찰 실험 과정 나열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양파 뿌리를 이용한 세포 분열 관찰 실험 과정 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r15-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "양파 뿌리 세포 분열 관찰 실험 단계별 특징",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양파 뿌리 세포 분열 관찰 실험 단계별 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r16-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "감수 분열 과정의 순서 나열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 감수 분열 과정의 순서 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r17-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "체세포 분열과 감수 분열의 특징 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 체세포 분열과 감수 분열의 특징 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r18-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "세포 주기의 구분과 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포 주기의 구분과 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r18-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "세포 크기 제한 원인(우무 조각) 실험 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포 크기 제한 원인(우무 조각) 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r18-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "DNA 상대량 그래프와 실제 세포 분열 시기의 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ DNA 상대량 그래프와 실제 세포 분열 시기의 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r19-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "정육면체를 통한 세포 분열 원리 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정육면체를 통한 세포 분열 원리 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r19-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "세포 단계별 염색체 수와 DNA 상대량 매트릭스 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포 단계별 염색체 수와 DNA 상대량 매트릭스 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r20-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "상동 염색체와 복제 유전자의 관계 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상동 염색체와 복제 유전자의 관계 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r21-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(1) 세포 분열",
+        "typeName": "식물의 세포 분열 장소와 기관별 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 식물의 세포 분열 장소와 기관별 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r28-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "정자와 난자의 형태 및 기본 특징 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정자와 난자의 형태 및 기본 특징 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r28-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "초기 발생 단계별 명칭과 구조 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 초기 발생 단계별 명칭과 구조 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r28-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "수정란의 염색체 구성 및 결합 특징 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수정란의 염색체 구성 및 결합 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r29-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "난자의 크기가 정자보다 큰 까닭 분석",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 난자의 크기가 정자보다 큰 까닭 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r29-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "수정과 발생 종합 과정의 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수정과 발생 종합 과정의 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r29-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "태반의 구조적 특징과 물질 이동 방향 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태반의 구조적 특징과 물질 이동 방향 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r30-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "남녀 생식 기관의 구조와 명칭 식별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 남녀 생식 기관의 구조와 명칭 식별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r30-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "생식세포(정자, 난자)의 염색체 수 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생식세포(정자, 난자)의 염색체 수 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r30-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "정자와 난자의 구조와 특징 종합 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정자와 난자의 구조와 특징 종합 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r31-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "남녀 생식 세포의 형성 및 이동 장소 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 남녀 생식 세포의 형성 및 이동 장소 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r31-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "태아의 성별 결정과 성염색체 유전 경로 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태아의 성별 결정과 성염색체 유전 경로 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r31-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "난할 단계에 따른 세포 특징 추론 심화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 난할 단계에 따른 세포 특징 추론 심화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r32-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "정자와 난자의 구조 및 각 부위 명칭 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정자와 난자의 구조 및 각 부위 명칭 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r32-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "난할과 일반 체세포 분열의 차이점 비교 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 난할과 일반 체세포 분열의 차이점 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r32-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "태아의 주차별 주요 기관 발달 시기 그래프 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태아의 주차별 주요 기관 발달 시기 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r33-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "사람의 수정 현상과 기본 개념 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 사람의 수정 현상과 기본 개념 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r33-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "초기 난할 과정의 순서 배열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 초기 난할 과정의 순서 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r33-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "난할 진행 시 세포수, 세포 1개의 크기, 염색체 수의 변화 그래프 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 난할 진행 시 세포수, 세포 1개의 크기, 염색체 수의 변화 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r34-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "난할의 기초 개념과 특징 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 난할의 기초 개념과 특징 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r34-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "난할 진행 시 세포 수와 염색체 수의 변화 관계",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 난할 진행 시 세포 수와 염색체 수의 변화 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r35-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "발생의 정의와 개념 인지",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 발생의 정의와 개념 인지 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r35-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "태반을 통한 이동 물질 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 태반을 통한 이동 물질 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r36-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "사람의 발생 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 사람의 발생 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r36-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "수정에서 출산까지의 기간",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수정에서 출산까지의 기간 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r37-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "생식 기관의 기능과 세포 형성 장소의 심층 연계",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생식 기관의 기능과 세포 형성 장소의 심층 연계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r38-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "정자와 난자의 구조적 차이 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정자와 난자의 구조적 차이 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r39-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "난할 단계에 따른 세포 특징 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 난할 단계에 따른 세포 특징 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r40-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "사람의 수정과 초기 발생 과정의 위치별 특징 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 사람의 수정과 초기 발생 과정의 위치별 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r41-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "수정부터 출산까지의 순서 배열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수정부터 출산까지의 순서 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r42-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "배란에서 착상까지의 전체 경로 순서 나열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 배란에서 착상까지의 전체 경로 순서 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r43-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "수정란의 초기 세포 분열(난할)의 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 수정란의 초기 세포 분열(난할)의 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r43-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "사람의 임신 과정 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 사람의 임신 과정 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r43-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "세포 분열과 사람의 초기 발생 통합 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세포 분열과 사람의 초기 발생 통합 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r44-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "난할 횟수에 따른 세포 수, 배의 크기, 세포 1개의 크기 변화 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 난할 횟수에 따른 세포 수, 배의 크기, 세포 1개의 크기 변화 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r44-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "초기 발생 과정 중 배와 세포의 특징 변화 그래프 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 초기 발생 과정 중 배와 세포의 특징 변화 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r45-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(2) 사람의 발생",
+        "typeName": "난할 시 세포의 염색체 수와 크기 세포의 크기 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 난할 시 세포의 염색체 수와 크기 세포의 크기 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r53-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "단성 잡종 교배에서 잡종 1대의 표현형과 유전자형",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단성 잡종 교배에서 잡종 1대의 표현형과 유전자형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r53-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "잡종 1대와 열성 순종의 교배 결과 표현형 예측",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 잡종 1대와 열성 순종의 교배 결과 표현형 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r53-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "독립적으로 유전되는 개체 간의 복합 교배 및 유전자형 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 독립적으로 유전되는 개체 간의 복합 교배 및 유전자형 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r54-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "한 쌍의 대립 형질 교배와 우열의 원리",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 한 쌍의 대립 형질 교배와 우열의 원리 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r54-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "단성 잡종의 검정교배를 통한 자손 수 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단성 잡종의 검정교배를 통한 자손 수 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r54-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "다양한 교배 실험 데이터 분석을 통한 유전자형 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다양한 교배 실험 데이터 분석을 통한 유전자형 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r55-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "양성 잡종 교배에서 잡종 1대의 표현형과 유전자형",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양성 잡종 교배에서 잡종 1대의 표현형과 유전자형 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r55-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "양성 잡종 잡종 2대의 표현형 분리비 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양성 잡종 잡종 2대의 표현형 분리비 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r55-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "양성 잡종 2대에서 특정 단일 형질의 표현형 개수 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양성 잡종 2대에서 특정 단일 형질의 표현형 개수 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r56-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "유전 기본 용어의 정의 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 유전 기본 용어의 정의 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r56-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "양성 잡종 잡종 2대에서 특정 형질의 자손 개수 산출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양성 잡종 잡종 2대에서 특정 형질의 자손 개수 산출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r56-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "양성 잡종 잡종 2대에서 잡종 1대와 동일한 유전자형을 가진 자손 수",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양성 잡종 잡종 2대에서 잡종 1대와 동일한 유전자형을 가진 자손 수 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r57-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "대립 형질 예시 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대립 형질 예시 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r57-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "양성 잡종 잡종 2대의 특정 유전자형 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양성 잡종 잡종 2대의 특정 유전자형 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r57-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "세 쌍 이상의 대립 형질을 가진 다성 잡종의 생식세포 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 세 쌍 이상의 대립 형질을 가진 다성 잡종의 생식세포 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r58-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "유전자형에 따른 순종과 잡종의 판별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 유전자형에 따른 순종과 잡종의 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r58-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "단성 잡종 2대 자손의 순종 및 잡종 유전자형 비율 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단성 잡종 2대 자손의 순종 및 잡종 유전자형 비율 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r58-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "양성 잡종 유전 - 중간 유전이 포함된 복합 표현형 개수 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양성 잡종 유전 - 중간 유전이 포함된 복합 표현형 개수 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r59-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "멘델의 유전 실험 재료로서 완두의 장점 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 멘델의 유전 실험 재료로서 완두의 장점 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r59-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "우성 형질과 열성 형질의 비를 기반으로 한 어버이 유전자형 역추적",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우성 형질과 열성 형질의 비를 기반으로 한 어버이 유전자형 역추적 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r60-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "잡종 1대 유전자 구성의 염색체 상 위치 시각화",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 잡종 1대 유전자 구성의 염색체 상 위치 시각화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r60-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "자손의 분리비를 기반으로 한 어버이 유전자형 역추적",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자손의 분리비를 기반으로 한 어버이 유전자형 역추적 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r61-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "멘델의 유전 가설 내용 분석",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 멘델의 유전 가설 내용 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r61-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "단성 잡종 유전 과정 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단성 잡종 유전 과정 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r62-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "단성 잡종 2대의 열성 순종 자손 개수 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단성 잡종 2대의 열성 순종 자손 개수 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r63-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "단성 잡종 2대에서 잡종 1대와 동일한 유전자형의 자손 개수 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단성 잡종 2대에서 잡종 1대와 동일한 유전자형의 자손 개수 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r64-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "분꽃의 교배 실험을 통한 중간 유전 원리 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 분꽃의 교배 실험을 통한 중간 유전 원리 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r65-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "두 쌍의 대립형질 유전 - 잡종 1대의 염색체 상의 유전자 위치",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 쌍의 대립형질 유전 - 잡종 1대의 염색체 상의 유전자 위치 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r66-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "양성 잡종 1대의 생식세포 종류와 비율 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양성 잡종 1대의 생식세포 종류와 비율 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r67-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "양성 잡종 유전 실험 분석과 독립의 법칙 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양성 잡종 유전 실험 분석과 독립의 법칙 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r68-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "단성잡종 교배에서 우열의 원리 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단성잡종 교배에서 우열의 원리 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r68-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "완두의 5가지 형질의 우열 관계를 활용한 선지 판단",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 완두의 5가지 형질의 우열 관계를 활용한 선지 판단 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r68-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "자손의 유전자형 다양성과 분리비 정밀 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자손의 유전자형 다양성과 분리비 정밀 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r69-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "교배 실험 결과를 통한 어버이 유전자형 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 교배 실험 결과를 통한 어버이 유전자형 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r69-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "양성잡종 검정교배 결과를 바탕으로 한 어버이 유전자형 역추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 양성잡종 검정교배 결과를 바탕으로 한 어버이 유전자형 역추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r70-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(3) 멘델의 유전 원리",
+        "typeName": "꽃 색깔 교배 실험 그림을 통한 유전 원리 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 꽃 색깔 교배 실험 그림을 통한 유전 원리 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r78-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "1란성 쌍둥이와 2란성 쌍둥이의 특징 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 1란성 쌍둥이와 2란성 쌍둥이의 특징 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r78-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "상염색체 가계도 내 유전자형 미확정자 추론 및 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상염색체 가계도 내 유전자형 미확정자 추론 및 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r78-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "상염색체 유전 형질 2가지의 복합 가계 및 표 자료 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상염색체 유전 형질 2가지의 복합 가계 및 표 자료 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r79-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "상염색체 유전 형질의 종류와 대립 관계 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상염색체 유전 형질의 종류와 대립 관계 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r79-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "상염색체 가계도 내 특정 가계의 자녀 형질 확률 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상염색체 가계도 내 특정 가계의 자녀 형질 확률 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r79-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "복합 조건(ABO식 혈액형+적록 색맹) 가계 분석을 통한 자녀 형질 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복합 조건(ABO식 혈액형+적록 색맹) 가계 분석을 통한 자녀 형질 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r80-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "부모의 혈액형에 따른 자녀의 혈액형 예측",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 부모의 혈액형에 따른 자녀의 혈액형 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r80-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "귀지 상태 가계도의 종합적 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 귀지 상태 가계도의 종합적 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r80-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "상염색체 유전과 ABO식 혈액형의 복합 가계도 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상염색체 유전과 ABO식 혈액형의 복합 가계도 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r81-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "대립유전자의 염색체 상 위치 표현",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대립유전자의 염색체 상 위치 표현 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r81-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "적록 색맹 가계도에서 특정 성별(아들/딸)의 유전 확률 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 적록 색맹 가계도에서 특정 성별(아들/딸)의 유전 확률 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r81-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "텍스트 조건으로 제시된 가족 관계 속 적록 색맹 유전 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 텍스트 조건으로 제시된 가족 관계 속 적록 색맹 유전 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r82-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "사람의 유전 연구가 어려운 원인 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 사람의 유전 연구가 어려운 원인 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r82-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "부모와 자녀의 ABO식 혈액형 조합 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 부모와 자녀의 ABO식 혈액형 조합 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r82-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "ABO식 혈액형과 적록 색맹의 복합 가계도 분석 및 확률 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ ABO식 혈액형과 적록 색맹의 복합 가계도 분석 및 확률 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r83-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "사람의 유전 연구 방법 종류와 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 사람의 유전 연구 방법 종류와 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r83-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "혀 말기 가계도 분석 및 우열 판단",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 혀 말기 가계도 분석 및 우열 판단 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r83-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "미지의 유전병 가계도 분석을 통한 유전 방식(상/성염색체) 판정",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 미지의 유전병 가계도 분석을 통한 유전 방식(상/성염색체) 판정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r84-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "쌍둥이 연구를 통한 유전과 환경의 영향 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 쌍둥이 연구를 통한 유전과 환경의 영향 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r84-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "적록 색맹 가계도에서 성별이 지정되지 않은 자손의 유전 확률 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 적록 색맹 가계도에서 성별이 지정되지 않은 자손의 유전 확률 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r85-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "ABO식 혈액형 유전의 특징과 우열 관계",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ ABO식 혈액형 유전의 특징과 우열 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r85-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "쌍둥이의 형질 비교와 데이터 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 쌍둥이의 형질 비교와 데이터 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r86-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "적록 색맹 유전의 기본 개념",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 적록 색맹 유전의 기본 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r86-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "가족의 표현형을 통한 유전자형 결정",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가족의 표현형을 통한 유전자형 결정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r87-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "특정 유전자형을 가진 개체와의 교배 시 확률 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 특정 유전자형을 가진 개체와의 교배 시 확률 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r88-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "미맹 가계도 분석 및 대립유전자 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 미맹 가계도 분석 및 대립유전자 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r89-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "ABO식 혈액형 가계도 분석을 통한 유전자형 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ ABO식 혈액형 가계도 분석을 통한 유전자형 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r90-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "가계도를 이용한 자손의 가능한 ABO식 혈액형 나열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가계도를 이용한 자손의 가능한 ABO식 혈액형 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r91-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "ABO식 혈액형 가계도의 종합적 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ ABO식 혈액형 가계도의 종합적 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r92-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "적록 색맹 가계도의 종합적 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 적록 색맹 가계도의 종합적 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r93-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "가계도 조사를 통해 알 수 있는 기본 정보 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가계도 조사를 통해 알 수 있는 기본 정보 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r93-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "1란성 쌍둥이와 2란성 쌍둥이의 형성 과정 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 1란성 쌍둥이와 2란성 쌍둥이의 형성 과정 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r93-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "미지의 유전병 가계도를 통한 보인자 확률 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 미지의 유전병 가계도를 통한 보인자 확률 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r94-basic",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "상염색체 유전 형질의 우열 관계 판정",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 상염색체 유전 형질의 우열 관계 판정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r94-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "일치율 데이터 분석을 통한 환경적 요인의 영향력 평가",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일치율 데이터 분석을 통한 환경적 요인의 영향력 평가 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r94-adv",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "DNA 상대량 비교를 통한 상·성염색체 유전 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ DNA 상대량 비교를 통한 상·성염색체 유전 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s0-r95-skill",
+        "majorUnit": "5단원 생식과 유전",
+        "minorUnit": "(4) 사람의 유전",
+        "typeName": "유전 자료 서술을 통한 우열 및 염색체(상/성) 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 유전 자료 서술을 통한 우열 및 염색체(상/성) 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r3-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "롤러코스터 궤도 운동의 구간별 에너지 전환 방향 판별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 롤러코스터 궤도 운동의 구간별 에너지 전환 방향 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r3-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "자유 낙하 운동 시 지점별 위치 에너지와 운동 에너지의 크기 및 비율 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 운동 시 지점별 위치 에너지와 운동 에너지의 크기 및 비율 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r3-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "다중 굴곡 곡면 궤도에서 롤러코스터의 물리량 정성 분석 심화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다중 굴곡 곡면 궤도에서 롤러코스터의 물리량 정성 분석 심화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r4-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "일상생활 속 역학적 에너지 전환 사례 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상생활 속 역학적 에너지 전환 사례 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r4-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "낙하 중 특정 지점의 순간 속력 정보를 활용한 수직 높이 역산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 낙하 중 특정 지점의 순간 속력 정보를 활용한 수직 높이 역산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r4-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "360도 수직 원형 루프 회전 궤도를 도는 롤러코스터의 운동 에너지 비 산출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 360도 수직 원형 루프 회전 궤도를 도는 롤러코스터의 운동 에너지 비 산출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r5-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "연직 위로 던져 올린 물체의 에너지 전환 기초 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연직 위로 던져 올린 물체의 에너지 전환 기초 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r5-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "연직 상방으로 던진 물체의 질량, 속력을 통한 최고점 높이 구하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연직 상방으로 던진 물체의 질량, 속력을 통한 최고점 높이 구하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r5-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "일정한 마찰력이 작용하는 구간에서의 역학적 에너지 손실 및 제동거리 산출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일정한 마찰력이 작용하는 구간에서의 역학적 에너지 손실 및 제동거리 산출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r6-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "자유 낙하 운동에서의 역학적 에너지 보존 및 전환",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 운동에서의 역학적 에너지 보존 및 전환 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r6-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "도달 최고 높이 정보를 역이용한 초기 발사 속력 도출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 도달 최고 높이 정보를 역이용한 초기 발사 속력 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r6-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "서로 다른 방향으로 던진 물체의 도달 속력 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 서로 다른 방향으로 던진 물체의 도달 속력 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r7-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "진자의 왕복 운동 중 에너지 전환",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 진자의 왕복 운동 중 에너지 전환 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r7-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "마찰이 없는 빗면에서 역학적 에너지 보존을 이용한 공의 높이 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마찰이 없는 빗면에서 역학적 에너지 보존을 이용한 공의 높이 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r7-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "장애물(못)에 걸려 피벗이 변하는 진자의 운동 역학적 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 장애물(못)에 걸려 피벗이 변하는 진자의 운동 역학적 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r8-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "높이, 질량, 속력이 주어졌을 때 역학적 에너지 계산",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 높이, 질량, 속력이 주어졌을 때 역학적 에너지 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r8-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "롤러코스터 궤도 위 임의 지점에서의 위치 에너지와 운동 에너지 비 산출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 롤러코스터 궤도 위 임의 지점에서의 위치 에너지와 운동 에너지 비 산출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r8-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "굴곡 레일에서 역학적 에너지 보존을 이용한 속력비 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 굴곡 레일에서 역학적 에너지 보존을 이용한 속력비 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r9-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "낙하하는 물체의 임의 지점 위치 에너지와 운동 에너지 비율 계산",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 낙하하는 물체의 임의 지점 위치 에너지와 운동 에너지 비율 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r9-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "감소한 위치 에너지를 활용한 실에 매달린 진자의 최저점 순간 속력 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 감소한 위치 에너지를 활용한 실에 매달린 진자의 최저점 순간 속력 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r10-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "자유 낙하 중 특정 높이를 지날 때의 운동 에너지 계산",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 중 특정 높이를 지날 때의 운동 에너지 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r10-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "반원형 그릇 운동에서 임의 높이 통과 시 공의 운동 에너지 정량 산출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 반원형 그릇 운동에서 임의 높이 통과 시 공의 운동 에너지 정량 산출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r11-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "단진자의 왕복 운동 경로에 따른 에너지 전환 분석",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단진자의 왕복 운동 경로에 따른 에너지 전환 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r11-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "자유 낙하 중 두 에너지의 특정 비를 만족하는 지점 찾기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 중 두 에너지의 특정 비를 만족하는 지점 찾기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r12-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "롤러코스터 궤도에서 높이 차를 이용한 지점 간 운동 에너지 비 산출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 롤러코스터 궤도에서 높이 차를 이용한 지점 간 운동 에너지 비 산출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r13-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "경사면에서 역학적 에너지 보존을 이용한 수레의 속력 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 경사면에서 역학적 에너지 보존을 이용한 수레의 속력 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r14-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "자유 낙하하는 물체의 지면 도달 순간 속력 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하하는 물체의 지면 도달 순간 속력 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r15-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "롤러코스터 레일 운동의 전체 지점별 역학적 에너지 크기 및 변환 종합 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 롤러코스터 레일 운동의 전체 지점별 역학적 에너지 크기 및 변환 종합 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r16-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "반원형 용기 속 구슬 왕복 운동의 대칭 지점별 에너지 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 반원형 용기 속 구슬 왕복 운동의 대칭 지점별 에너지 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r17-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "비스듬히 던진 공의 2차원 포물선 운동 경로 상 물리 정보 종합 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비스듬히 던진 공의 2차원 포물선 운동 경로 상 물리 정보 종합 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r18-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "자유 낙하 물체의 역학적 에너지 개념",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 물체의 역학적 에너지 개념 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r18-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "곡면을 따라 올라가는 물체의 역학적 에너지 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 곡면을 따라 올라가는 물체의 역학적 에너지 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r18-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "질량이 다른 두 물체의 자유 낙하 운동 에너지 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 질량이 다른 두 물체의 자유 낙하 운동 에너지 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r19-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "연직 위로 던진 물체의 역학적 에너지 보존",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연직 위로 던진 물체의 역학적 에너지 보존 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r19-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "마찰이 없는 레일 위 물체의 운동 상태 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마찰이 없는 레일 위 물체의 운동 상태 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r19-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "경로가 다른 두 곡면 운동의 바닥 도달 속력 및 역학적 에너지 크기 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 경로가 다른 두 곡면 운동의 바닥 도달 속력 및 역학적 에너지 크기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r20-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "곡면 레일 낙하 운동의 최고점 운동 에너지 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 곡면 레일 낙하 운동의 최고점 운동 에너지 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r20-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "원형 궤도 이탈 운동의 역학적 에너지 보존과 속력 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 원형 궤도 이탈 운동의 역학적 에너지 보존과 속력 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r21-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "에너지 보존을 이용한 특정 지점의 높이 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 에너지 보존을 이용한 특정 지점의 높이 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r22-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(1) 역학적 에너지 전환과 보존",
+        "typeName": "자유 낙하 시 특정 높이 구간별 에너지 정량 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 시 특정 높이 구간별 에너지 정량 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r28-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "발전소에서의 에너지 전환(풍력, 화력, 수력 등)",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 발전소에서의 에너지 전환(풍력, 화력, 수력 등) ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r28-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "소비 전력을 바탕으로 일정 시간 동안 소비한 전기 에너지 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소비 전력을 바탕으로 일정 시간 동안 소비한 전기 에너지 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r28-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "비보존력을 고려한 운동 상태에서의 발생한 열에너지 구하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 비보존력을 고려한 운동 상태에서의 발생한 열에너지 구하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r29-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "전기 기구의 에너지 전환 유형별 공통점 그룹화",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전기 기구의 에너지 전환 유형별 공통점 그룹화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r29-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "자석의 움직임에 따른 유도 전류의 방향과 세기 변화 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자석의 움직임에 따른 유도 전류의 방향과 세기 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r29-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "마찰력을 받아 정지하는 물체의 일과 역학적 에너지 정리 적용",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마찰력을 받아 정지하는 물체의 일과 역학적 에너지 정리 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r30-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "전자기 유도 현상의 정의와 유도 전류의 개념 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전자기 유도 현상의 정의와 유도 전류의 개념 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r30-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "코일 감은 수와 자석 속도에 따른 유도 전류 세기 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 코일 감은 수와 자석 속도에 따른 유도 전류 세기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r30-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "발전기와 전동기의 내부 구조와 각 구성 부품의 역할 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 발전기와 전동기의 내부 구조와 각 구성 부품의 역할 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r31-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "유도 전류가 발생하는 조건 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 유도 전류가 발생하는 조건 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r31-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "물체에 가해진 힘과 이동 거리를 통한 열에너지 발생량 역산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 물체에 가해진 힘과 이동 거리를 통한 열에너지 발생량 역산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r31-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "마찰이 있는 빗면 운동 시 감소한 역학적 에너지 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 마찰이 있는 빗면 운동 시 감소한 역학적 에너지 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r32-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "전자기 유도 현상을 활용한 일상생활의 예",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전자기 유도 현상을 활용한 일상생활의 예 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r32-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "자석의 운동 방향에 따른 유도 전류의 방향 판단",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자석의 운동 방향에 따른 유도 전류의 방향 판단 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r32-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "다양한 가전제품을 동시 사용할 때의 일일 총 소비 전력량 산출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다양한 가전제품을 동시 사용할 때의 일일 총 소비 전력량 산출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r33-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "역학적 에너지가 전기 에너지로 전환되는 발전 장치 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 역학적 에너지가 전기 에너지로 전환되는 발전 장치 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r33-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "자전거 발전기의 구조를 통한 전류 발생 메커니즘 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자전거 발전기의 구조를 통한 전류 발생 메커니즘 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r33-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "일일 전력량 데이터를 기반으로 한 월간 전기 요금 추정",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일일 전력량 데이터를 기반으로 한 월간 전기 요금 추정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r34-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "일상 가전제품에서 일어나는 에너지 전환 형태",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상 가전제품에서 일어나는 에너지 전환 형태 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r34-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "자유 낙하 운동 중 마찰이나 충돌로 손실된 역학적 에너지 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자유 낙하 운동 중 마찰이나 충돌로 손실된 역학적 에너지 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r35-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "소비 전력과 전력량의 단위 및 개념 식별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소비 전력과 전력량의 단위 및 개념 식별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r35-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "유도 전류의 세기를 변화시키는 요인 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 유도 전류의 세기를 변화시키는 요인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r36-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "에너지 보존 법칙과 형태 변화의 기본 개념 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 에너지 보존 법칙과 형태 변화의 기본 개념 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r36-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "간이 발전기 작동 조작에 따른 발광 다이오드 실험 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 간이 발전기 작동 조작에 따른 발광 다이오드 실험 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r37-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "단일 가전제품 사용 시간에 따른 소비 전력량 도출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 단일 가전제품 사용 시간에 따른 소비 전력량 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r38-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "가전제품에 표시된 정격 전압과 소비 전력 규격 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가전제품에 표시된 정격 전압과 소비 전력 규격 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r39-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "발전기와 전동기의 구조적 차이 및 에너지 전환 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 발전기와 전동기의 구조적 차이 및 에너지 전환 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r40-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "소비 전력과 사용 시간을 이용한 전력량 산출 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 소비 전력과 사용 시간을 이용한 전력량 산출 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r41-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "전등의 소비 에너지와 방출 에너지 비교를 통한 효율 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전등의 소비 에너지와 방출 에너지 비교를 통한 효율 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r42-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "일상적인 역학적 운동에서 에너지 손실 현상 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상적인 역학적 운동에서 에너지 손실 현상 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r43-basic",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "복합적인 에너지 전환을 일으키는 전기 기구의 특징 분석",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 복합적인 에너지 전환을 일으키는 전기 기구의 특징 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r43-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "발전기의 정밀 내부 구조 분석과 코일 내 자기장 변화 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 발전기의 정밀 내부 구조 분석과 코일 내 자기장 변화 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r43-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "자석의 낙하 높이에 따른 유도 전류의 세기 및 에너지 손실 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자석의 낙하 높이에 따른 유도 전류의 세기 및 에너지 손실 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r44-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "코일이 감긴 유리관을 낙하하는 자석의 구간별 역학적 에너지 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 코일이 감긴 유리관을 낙하하는 자석의 구간별 역학적 에너지 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r44-adv",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "경사면을 운동하는 자석의 전자기 유도와 전체 에너지 전환 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 경사면을 운동하는 자석의 전자기 유도와 전체 에너지 전환 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s1-r45-skill",
+        "majorUnit": "6단원 에너지전환과 보존",
+        "minorUnit": "(2) 전기 에너지의 전환과 발생",
+        "typeName": "가정 내 가전제품 병렬연결 시 스위치 조작에 따른 전체 전류와 전력 변화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가정 내 가전제품 병렬연결 시 스위치 조작에 따른 전체 전류와 전력 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r3-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시차와 연주 시차의 정의 및 특징 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시차와 연주 시차의 정의 및 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r3-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "두 별의 관측 도판에서 연주 시차 구하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 별의 관측 도판에서 연주 시차 구하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r3-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "모형 실험 요소를 실제 우주 관측 요소와 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모형 실험 요소를 실제 우주 관측 요소와 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r4-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "천체 관측 시 시차가 발생하는 원인",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 천체 관측 시 시차가 발생하는 원인 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r4-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "두 별의 연주 시차와 거리의 상관관계 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 별의 연주 시차와 거리의 상관관계 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r4-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시차 관측 도판에서 두 별의 연주 시차와 거리의 동시 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시차 관측 도판에서 두 별의 연주 시차와 거리의 동시 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r5-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시각 자료를 통한 별의 연주 시차 판독",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시각 자료를 통한 별의 연주 시차 판독 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r5-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "지정된 연주 시차를 가진 별의 거리 계산 및 거리 변화에 따른 연주 시차 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지정된 연주 시차를 가진 별의 거리 계산 및 거리 변화에 따른 연주 시차 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r5-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "지구 공전 궤도 반지름 변화에 따른 연주 시차 변화 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 공전 궤도 반지름 변화에 따른 연주 시차 변화 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r6-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "연주 시차와 별의 거리(pc) 관계 공식 적용",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연주 시차와 별의 거리(pc) 관계 공식 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r6-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "파섹(pc) 단위를 광년(ly) 단위로 변환하는 방법",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 파섹(pc) 단위를 광년(ly) 단위로 변환하는 방법 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r6-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "6개월 간격으로 관측한 두 별의 상대적 위치 변화 각도를 이용한 실제 시차 도출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 6개월 간격으로 관측한 두 별의 상대적 위치 변화 각도를 이용한 실제 시차 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r7-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시각 자료를 통한 별의 연주 시차와 별까지의 거리 관계 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시각 자료를 통한 별의 연주 시차와 별까지의 거리 관계 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r7-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "6개월 간격의 사진 비교를 통한 별의 시차 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 6개월 간격의 사진 비교를 통한 별의 시차 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r7-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "지구 공전 방향과 천구상 별의 겉보기 이동 방향 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 공전 방향과 천구상 별의 겉보기 이동 방향 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r8-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "연주 시차의 정의와 측정 주기 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연주 시차의 정의와 측정 주기 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r8-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "6개월 뒤 별의 위치가 바뀐 까닭 서술",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 6개월 뒤 별의 위치가 바뀐 까닭 서술 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r8-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시차 데이터(표)를 활용한 정량적 거리 변화 예측",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시차 데이터(표)를 활용한 정량적 거리 변화 예측 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r9-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "모형 실험을 통한 시차와 거리의 관계 해석",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모형 실험을 통한 시차와 거리의 관계 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r9-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시각 자료와 거리 조건을 통한 연주 시차 및 별까지의 거리 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시각 자료와 거리 조건을 통한 연주 시차 및 별까지의 거리 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r10-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "연주 시차의 정의 및 단위, 측정 가능한 별의 거리 한계",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연주 시차의 정의 및 단위, 측정 가능한 별의 거리 한계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r10-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "모식도를 통한 두 별의 연주 시차와 거리의 동시 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 모식도를 통한 두 별의 연주 시차와 거리의 동시 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r11-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "관측 도식에서 연주 시차와 별까지의 거리 도출하기",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 관측 도식에서 연주 시차와 별까지의 거리 도출하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r11-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "연주 시차가 발생하는 원인과 연주 시차로 구할 수 있는 물리량",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연주 시차가 발생하는 원인과 연주 시차로 구할 수 있는 물리량 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r12-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시차 데이터 기반의 별의 거리 비교(가장 가까운 별, 먼 별)",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시차 데이터 기반의 별의 거리 비교(가장 가까운 별, 먼 별) ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r13-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시차 표 데이터를 활용한 별의 실제 거리(pc) 구하기",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시차 표 데이터를 활용한 별의 실제 거리(pc) 구하기 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r14-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "연필을 이용한 시차 모형 실험의 원리 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연필을 이용한 시차 모형 실험의 원리 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r15-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "연주 시차 크기 비료를 통한 별의 거리 정렬",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연주 시차 크기 비료를 통한 별의 거리 정렬 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r16-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "두 별의 시각적 관측 자료 분석을 통한 거리 비 도출",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 별의 시각적 관측 자료 분석을 통한 거리 비 도출 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r17-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "다른 거리 단위(pc, 광년 등)로 제시된 별의 거리 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 다른 거리 단위(pc, 광년 등)로 제시된 별의 거리 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r18-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시차와 연주 시차의 개념적 차이 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시차와 연주 시차의 개념적 차이 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r18-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "시차 모형 실험 요소와 실제 천문 개념의 상호 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시차 모형 실험 요소와 실제 천문 개념의 상호 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r18-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "1년 주기 동안의 별의 위치 변화 궤적 그래프 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 1년 주기 동안의 별의 위치 변화 궤적 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r19-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(1) 별까지의 거리",
+        "typeName": "두 별의 상대적 위치 변화를 통한 시차 데이터 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 별의 상대적 위치 변화를 통한 시차 데이터 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r28-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "거리가 다른 두 별의 겉보기 밝기 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거리가 다른 두 별의 겉보기 밝기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r28-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "밝기 배수를 이용한 별의 등급 역산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 밝기 배수를 이용한 별의 등급 역산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r28-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "절대 등급과 연주 시차 그래프의 연계 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 절대 등급과 연주 시차 그래프의 연계 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r29-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "등급 차이에 따른 별의 밝기 배수 계산",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등급 차이에 따른 별의 밝기 배수 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r29-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별자리 관측과 별의 밝기 및 등급 적용",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별자리 관측과 별의 밝기 및 등급 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r29-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "거리비와 밝기비를 조합한 두 별의 물리량 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거리비와 밝기비를 조합한 두 별의 물리량 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r30-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "10 pc 거리 기준과 절대 등급의 정의",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 10 pc 거리 기준과 절대 등급의 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r30-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "등급 차이를 활용한 별의 거리 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등급 차이를 활용한 별의 거리 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r30-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "등급과 색깔 정보를 결합한 별(가~마)의 물리적 특성 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등급과 색깔 정보를 결합한 별(가~마)의 물리적 특성 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r31-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "거리 변화에 따른 별의 밝기 변화",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거리 변화에 따른 별의 밝기 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r31-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "색과 절대 등급에 따른 별의 집단 분류 그래프 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 색과 절대 등급에 따른 별의 집단 분류 그래프 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r31-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "겉보기 등급과 절대 등급 차를 이용한 거리 순서 배열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 겉보기 등급과 절대 등급 차를 이용한 거리 순서 배열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r32-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별의 밝기와 등급의 기초 관계 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 밝기와 등급의 기초 관계 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r32-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "관측 자료(등급, 색)를 활용한 별의 실제 밝기 비교 기초",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 관측 자료(등급, 색)를 활용한 별의 실제 밝기 비교 기초 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r32-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "등급 데이터를 통한 10 pc 기준 별의 위치 판정",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등급 데이터를 통한 10 pc 기준 별의 위치 판정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r33-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "겉보기 등급과 절대 등급의 정의 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 겉보기 등급과 절대 등급의 정의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r33-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "거리가 다른 두 별의 밝기 비와 등급 관계 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거리가 다른 두 별의 밝기 비와 등급 관계 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r33-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별 A~C의 등급 차이, 색깔 데이터 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별 A~C의 등급 차이, 색깔 데이터 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r34-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별의 색에 따른 표면 온도 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 색에 따른 표면 온도 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r34-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "동일한 등급을 가진 다수 별의 합성 밝기 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동일한 등급을 가진 다수 별의 합성 밝기 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r35-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "두 별의 등급 차이를 이용한 밝기 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 두 별의 등급 차이를 이용한 밝기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r35-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별의 거리 이동에 따른 겉보기 등급과 절대 등급의 정량적 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 거리 이동에 따른 겉보기 등급과 절대 등급의 정량적 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r36-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별의 색깔이 다르게 보이는 근본 원인 식별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 색깔이 다르게 보이는 근본 원인 식별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r36-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "관측 데이터에 근거한 별의 특징 분석 및 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 관측 데이터에 근거한 별의 특징 분석 및 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r37-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "가상 거리 변화에 따른 등급 변동 수치 계산",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가상 거리 변화에 따른 등급 변동 수치 계산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r38-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별의 거리 변화에 따라 변하는 물리량 구분",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 거리 변화에 따라 변하는 물리량 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r39-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "거리와 밝기 관계 입체 모형의 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거리와 밝기 관계 입체 모형의 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r40-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "거리 변화와 등급 차 표를 이용한 등급 변화 추정",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 거리 변화와 등급 차 표를 이용한 등급 변화 추정 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r41-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "등급 자료를 통한 겉보기 밝기와 실제 밝기 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등급 자료를 통한 겉보기 밝기와 실제 밝기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r42-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "손전등 실험을 통한 별의 밝기 영향 요인 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 손전등 실험을 통한 별의 밝기 영향 요인 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r43-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별의 밝기와 거리의 반비례 관계",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 밝기와 거리의 반비례 관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r43-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "기준 거리(10 pc)와 별의 위치 관계 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기준 거리(10 pc)와 별의 위치 관계 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r43-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "동일 크기 조건 하에 표면 온도와 등급의 물리적 관계 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 동일 크기 조건 하에 표면 온도와 등급의 물리적 관계 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r44-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "별의 표면 온도와 색깔의 상관관계",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 별의 표면 온도와 색깔의 상관관계 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r44-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "등급 그래프 자료를 활용한 별의 거리 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 등급 그래프 자료를 활용한 별의 거리 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r44-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "시간에 따른 변광성의 겉보기 등급 주기 변화 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시간에 따른 변광성의 겉보기 등급 주기 변화 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r45-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "종합 데이터 표를 활용한 별의 밝기 및 색상 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 종합 데이터 표를 활용한 별의 밝기 및 색상 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r46-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "가상 상황에서의 거리와 겉보기 등급의 상관성 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 가상 상황에서의 거리와 겉보기 등급의 상관성 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r47-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(2) 별의 특성",
+        "typeName": "연주 시차와 등급을 결합한 절대 등급 유추",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 연주 시차와 등급을 결합한 절대 등급 유추 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r53-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "성단과 성운의 종합적인 개념 비교",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성단과 성운의 종합적인 개념 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r53-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "외부 은하들이 우리은하로부터 멀어지는 까닭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외부 은하들이 우리은하로부터 멀어지는 까닭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r53-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "산개/구상 성단의 정량적 물리량 비교 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 산개/구상 성단의 정량적 물리량 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r54-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "외부 은하의 형태별 분류 기준",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 외부 은하의 형태별 분류 기준 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r54-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "행성 탐사선의 관측 데이터 및 탐사선 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 행성 탐사선의 관측 데이터 및 탐사선 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r54-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "성단의 온도-색상-나이 복합 관계 2차원 산포 그래프 판독",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성단의 온도-색상-나이 복합 관계 2차원 산포 그래프 판독 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r55-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "허블의 분류 체계와 외부 은하의 형태 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 허블의 분류 체계와 외부 은하의 형태 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r55-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "우리은하 중심 방향 관측과 은하수의 폭 변화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리은하 중심 방향 관측과 은하수의 폭 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r55-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "대폭발 우주론(빅뱅 이론) 모형 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대폭발 우주론(빅뱅 이론) 모형 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r56-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "우리은하의 기본 구성과 형태적 특징",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리은하의 기본 구성과 형태적 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r56-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "기능 및 목적에 따른 인공위성의 종류 구분",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 기능 및 목적에 따른 인공위성의 종류 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r56-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "우주 탐사의 시대적 역사 흐름 나열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우주 탐사의 시대적 역사 흐름 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r57-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "은하수의 개념과 시각적 특징 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 은하수의 개념과 시각적 특징 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r57-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "우리은하 구조 내 태양계의 위치 파악",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리은하 구조 내 태양계의 위치 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r57-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "대폭발 우주론의 시공간 변화 및 탐사 역사 연대기 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대폭발 우주론의 시공간 변화 및 탐사 역사 연대기 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r58-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "성단의 개념적 정의와 의미 이해",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성단의 개념적 정의와 의미 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r58-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "우리은하의 단면 구조와 공간적 규모 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리은하의 단면 구조와 공간적 규모 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r58-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "풍선 고무 스티커 모형을 통한 우주 팽창 메커니즘 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 풍선 고무 스티커 모형을 통한 우주 팽창 메커니즘 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r59-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "시각 자료를 통한 성운의 기본 유형 판별",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시각 자료를 통한 성운의 기본 유형 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r59-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "시각 자료(위에서 본 모습)를 통한 우리은하의 특징 이해",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시각 자료(위에서 본 모습)를 통한 우리은하의 특징 이해 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r60-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "현대 우주 탐사의 당위성과 목적 파악",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 현대 우주 탐사의 당위성과 목적 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r60-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "산개 성단과 구상 성단의 이분법적 표 비교 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 산개 성단과 구상 성단의 이분법적 표 비교 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r61-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "우리 생활에서 우주 탐사 기술을 이용하는 예",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우리 생활에서 우주 탐사 기술을 이용하는 예 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r61-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "실제 관측 사진을 통한 성단(구상/산개) 구분 및 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 실제 관측 사진을 통한 성단(구상/산개) 구분 및 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r62-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "빛의 작용 메커니즘에 따른 성운의 종류 구분",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 빛의 작용 메커니즘에 따른 성운의 종류 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r63-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "우주 천체들의 상대적 크기 위계 판별 및 나열",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우주 천체들의 상대적 크기 위계 판별 및 나열 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r64-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "우주 팽창의 개념적 규칙",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우주 팽창의 개념적 규칙 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r65-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "성능 및 특성에 따른 우주 탐사 장비의 구분",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성능 및 특성에 따른 우주 탐사 장비의 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r66-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "우주 탐사의 시대적 역사 흐름 파악",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우주 탐사의 시대적 역사 흐름 파악 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r67-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "지구 궤도상의 우주 쓰레기 피해 요인과 운동량 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지구 궤도상의 우주 쓰레기 피해 요인과 운동량 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r68-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "시각 자료를 활용한 우리은하의 주요 구성 요소 분석",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 시각 자료를 활용한 우리은하의 주요 구성 요소 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r68-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "성운이 빛을 내거나 차단하는 형성 메커니즘 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 성운이 빛을 내거나 차단하는 형성 메커니즘 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r68-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "스펙트럼의 적색편이 현상을 통한 우주 팽창의 증거 및 은하의 이동 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 스펙트럼의 적색편이 현상을 통한 우주 팽창의 증거 및 은하의 이동 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r69-basic",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "우주를 구성하는 천체들의 공간적 스케일 및 개념 구분",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우주를 구성하는 천체들의 공간적 스케일 및 개념 구분 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r69-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "우주 공간의 확장에 따른 은하 자체의 크기 변화 여부 판별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 우주 공간의 확장에 따른 은하 자체의 크기 변화 여부 판별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r69-adv",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "대기 투과율 및 관측 장소(지상 vs 우주)에 따른 망원경의 관측 파장 영역 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 대기 투과율 및 관측 장소(지상 vs 우주)에 따른 망원경의 관측 파장 영역 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s2-r70-skill",
+        "majorUnit": "7단원 별과 우주",
+        "minorUnit": "(3) 은하와 우주",
+        "typeName": "계절별 은하수 관측 사진을 통한 겉보기 두께와 밝기 비교",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 계절별 은하수 관측 사진을 통한 겉보기 두께와 밝기 비교 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r3-basic",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "불의 이용이 인류 문명에 미친 영향",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 불의 이용이 인류 문명에 미친 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r3-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "과학 원리 발견 사례와 과학적 사고의 전환",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학 원리 발견 사례와 과학적 사고의 전환 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r3-adv",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "일상 제품 속 역학적 과학 원리의 연계 및 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 일상 제품 속 역학적 과학 원리의 연계 및 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r4-basic",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "공학적 설계의 기본 개념과 정의",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 공학적 설계의 기본 개념과 정의 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r4-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "산업 혁명 시기 공장의 모습과 핵심 동력원",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 산업 혁명 시기 공장의 모습과 핵심 동력원 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r4-adv",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "신소재(그래핀)의 물리적 특성과 제품 적용 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 신소재(그래핀)의 물리적 특성과 제품 적용 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r5-basic",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "지능형 농장(스마트 팜)의 자동화 메커니즘 해석",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 지능형 농장(스마트 팜)의 자동화 메커니즘 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r5-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "교통 분야 과학기술의 발달과 물류 변화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 교통 분야 과학기술의 발달과 물류 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r5-adv",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "공학적 설계의 조건과 다각적 고려 요소",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 공학적 설계의 조건과 다각적 고려 요소 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r6-basic",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "과학 원리와 발견 학자 매칭",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학 원리와 발견 학자 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r6-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "첨단 정보 통신 기술의 핵심 요소와 특징",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 첨단 정보 통신 기술의 핵심 요소와 특징 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r6-adv",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "설명을 통한 과학기술의 종류 매칭",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 설명을 통한 과학기술의 종류 매칭 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r7-basic",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "과학기술이 일상생활에 미치는 긍정적 효과",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학기술이 일상생활에 미치는 긍정적 효과 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r7-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "스마트 기기 도입에 따른 생활 편의성 변화",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 스마트 기기 도입에 따른 생활 편의성 변화 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r7-adv",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "유전자 재조합 기술의 특징과 적용 조건",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 유전자 재조합 기술의 특징과 적용 조건 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r8-basic",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "농업 분야 과학기술의 기본 역할",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 농업 분야 과학기술의 기본 역할 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r8-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "첨단 기술 용어의 정의와 빈칸 추론",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 첨단 기술 용어의 정의와 빈칸 추론 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r8-adv",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "공학적 설계 기반 전기 자동차 개발 시 고려사항",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 공학적 설계 기반 전기 자동차 개발 시 고려사항 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r9-basic",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "과학 원리 발견이 인류 문명에 미친 영향",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학 원리 발견이 인류 문명에 미친 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r9-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "자연 생물(연잎)의 특성을 모방한 기술 원리 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 자연 생물(연잎)의 특성을 모방한 기술 원리 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r10-basic",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "과학기술 발달이 인류에 미친 일반적 영향",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 2,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학기술 발달이 인류에 미친 일반적 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r10-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "정보 통신 기술(ICT)의 다각적 활용 사례",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정보 통신 기술(ICT)의 다각적 활용 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r11-basic",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "생명 공학 기술의 적용 사례",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생명 공학 기술의 적용 사례 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r11-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "설명을 통한 첨단 과학기술 식별",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "완자",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 설명을 통한 첨단 과학기술 식별 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r12-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "인쇄 분야 과학기술의 문명사적 영향",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 인쇄 분야 과학기술의 문명사적 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r13-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "증기 기관의 작동 특성과 기술의 변천",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증기 기관의 작동 특성과 기술의 변천 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r14-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "농업 분야 과학기술 발달과 식량 문제 해결",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 농업 분야 과학기술 발달과 식량 문제 해결 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r15-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "의료 분야 과학기술의 발전과 영향",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 의료 분야 과학기술의 발전과 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r16-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "정보 통신 기술 발전과 영향",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 정보 통신 기술 발전과 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r17-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "현대 생활을 편리하게 하는 첨단 기술의 적용",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "오투+완자",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 현대 생활을 편리하게 하는 첨단 기술의 적용 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r18-basic",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "증기 기관의 발명과 기계화 혁명",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 증기 기관의 발명과 기계화 혁명 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r18-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "철의 제련 화학 반응과 인류 문명에 미친 영향",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 철의 제련 화학 반응과 인류 문명에 미친 영향 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r18-adv",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "과학 원리를 적용한 제품 개발 단계의 심층 분석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 과학 원리를 적용한 제품 개발 단계의 심층 분석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r19-basic",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "전자기 유도 현상과 전기 에너지의 생산",
+        "difficultyCount": {
+          "basic": 10,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 전자기 유도 현상과 전기 에너지의 생산 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r19-skill",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "열기관의 에너지 전환 효율과 산업 혁명의 심화 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 10,
+          "advanced": 0
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 2,
+          "advanced": 0
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 열기관의 에너지 전환 효율과 산업 혁명의 심화 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
+      },
+      {
+        "id": "sc-중3-2-s3-r19-adv",
+        "majorUnit": "8단원 과학기술과 인류 문명",
+        "minorUnit": "(1) 과학기술과 인류 문명",
+        "typeName": "생명 공학 기술(유전자 재조합 등)의 탐구 과정 해석",
+        "difficultyCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 10
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 2
+        },
+        "textbook": "기타",
+        "videoUrl": "https://youtu.be/s1G_j-KW_Tk?si=xk0d4ppedI3wgil5",
+        "sampleQuestion": "다음 질문에 답하시오.\n\n[문제] 다음 중 [ 생명 공학 기술(유전자 재조합 등)의 탐구 과정 해석 ]에 대한 설명으로 가장 적절한 것을 고르시오."
       }
     ]
   }
