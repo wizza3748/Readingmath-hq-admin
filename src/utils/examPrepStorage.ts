@@ -124,7 +124,7 @@ export function getMockHistoryForType(typeId: string, subject: "math" | "science
       id: `mock-${typeId}-${offsetDays}`,
       typeId,
       questionId: questions[qIdx % questions.length],
-      path: (h + qIdx) % 2 === 0 ? "시험 대비" : "과제 센터",
+      path: "시험 대비",
       isCorrect,
       submittedAnswer: "mock",
       solvedAt,
