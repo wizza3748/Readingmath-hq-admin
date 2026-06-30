@@ -1466,6 +1466,12 @@ function ResetHistoryModal({
     }
   };
 
+  const isSelectionComplete =
+    scope === "all" ||
+    (scope === "grade" && selectedGrade !== "") ||
+    (scope === "semester" && selectedGrade !== "" && selectedSemester !== "") ||
+    (scope === "unit" && selectedCurrNode !== null);
+
   const isValid =
     trimmedReason.length >= 2 &&
     reason.length <= 500 &&
@@ -1618,6 +1624,14 @@ function ResetHistoryModal({
               </p>
             )}
           </div>
+
+          {/* 복구 불가 안내 */}
+          {isSelectionComplete && (
+            <div className="bg-red-50 border border-red-100 text-red-700 text-xs rounded-xl p-3 font-semibold flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+              초기화된 데이터는 복구할 수 없습니다.
+            </div>
+          )}
 
           {/* 초기화 사유 */}
           <div>
