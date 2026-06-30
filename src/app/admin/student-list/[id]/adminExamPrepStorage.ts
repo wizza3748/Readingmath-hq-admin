@@ -16,7 +16,7 @@ const ADMIN_RESET_KEY = "readingmath_admin_exam_reset_v1";
 
 // ── 타입 정의 ─────────────────────────────────────────────────────────────────
 
-export type ResetScope = "all" | "grade" | "semester" | "unit" | "type";
+export type ResetScope = "all" | "grade" | "semester" | "unit";
 
 export interface AdminResetRecord {
   subject: "math" | "science";

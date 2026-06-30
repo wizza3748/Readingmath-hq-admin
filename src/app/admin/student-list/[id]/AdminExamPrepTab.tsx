@@ -1017,22 +1017,16 @@ function CurriculumModal({
     return (
       <div key={node.id}>
         <div
-          className={`flex items-center gap-2 px-3 py-1.5 rounded-lg cursor-pointer transition-colors ${
-            isSelectable
-              ? "hover:bg-indigo-50 hover:text-indigo-700"
-              : "hover:bg-slate-50"
-          }`}
+          className="flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-slate-50 transition-colors"
           style={{ paddingLeft: `${12 + depth * 16}px` }}
           onClick={() => {
-            if (isSelectable) {
-              onSelect(node);
-            } else if (hasChildren) {
+            if (hasChildren) {
               toggleNode(node.id);
             }
           }}
         >
           {hasChildren && (
-            <span className="text-slate-400 w-4 shrink-0">
+            <span className="text-slate-400 w-4 shrink-0 cursor-pointer">
               {isOpen ? (
                 <ChevronDown className="w-3.5 h-3.5" />
               ) : (
@@ -1042,7 +1036,7 @@ function CurriculumModal({
           )}
           {!hasChildren && <span className="w-4 shrink-0" />}
           <span
-            className={`text-sm ${
+            className={`text-sm flex-1 ${
               isSelectable
                 ? "font-semibold text-slate-700"
                 : "font-medium text-slate-500"
@@ -1050,6 +1044,17 @@ function CurriculumModal({
           >
             {node.label}
           </span>
+          {isSelectable && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onSelect(node);
+              }}
+              className="ml-2 shrink-0 text-xs font-bold text-indigo-600 hover:text-indigo-800 hover:underline transition-colors"
+            >
+              적용
+            </button>
+          )}
         </div>
         {isOpen &&
           hasChildren &&
@@ -1402,9 +1407,7 @@ function ResetHistoryModal({
 
   const scopeSelectableTypes: CurriculumTreeNode["type"][] =
     scope === "unit"
-      ? ["bigUnit", "minorUnit"]
-      : scope === "type"
-      ? ["typeNode"]
+      ? ["bigUnit", "minorUnit", "typeNode"]
       : [];
 
   // 초기화 범위에 포함되는 rowId 산출 (시험 대비 경로만)
@@ -1427,6 +1430,13 @@ function ResetHistoryModal({
           .map((r) => r.rowId);
       case "unit":
         if (!selectedCurrNode) return [];
+        if (selectedCurrNode.type === "typeNode") {
+          // 유형 선택 시 typeId로 필터
+          return examRows
+            .filter((r) => r.typeId === selectedCurrNode.typeId)
+            .map((r) => r.rowId);
+        }
+        // 대단원 또는 소단원/중단원 선택 시
         return examRows
           .filter(
             (r) =>
@@ -1437,11 +1447,6 @@ function ResetHistoryModal({
               ) ||
               r.minorUnit === selectedCurrNode.label
           )
-          .map((r) => r.rowId);
-      case "type":
-        if (!selectedCurrNode?.typeId) return [];
-        return examRows
-          .filter((r) => r.typeId === selectedCurrNode.typeId)
           .map((r) => r.rowId);
       default:
         return [];
@@ -1456,8 +1461,7 @@ function ResetHistoryModal({
         return selectedGrade && selectedSemester
           ? `${selectedGrade} ${selectedSemester}`
           : "학기 미선택";
-      case "unit": return selectedCurrNode ? selectedCurrNode.label : "단원 미선택";
-      case "type": return selectedCurrNode ? selectedCurrNode.label : "유형 미선택";
+      case "unit": return selectedCurrNode ? selectedCurrNode.label : "단원/유형 미선택";
     }
   };
 
@@ -1514,8 +1518,7 @@ function ResetHistoryModal({
                   { value: "all", label: "전체 초기화" },
                   { value: "grade", label: "학년별 초기화" },
                   { value: "semester", label: "학기별 초기화" },
-                  { value: "unit", label: "단원별 초기화" },
-                  { value: "type", label: "유형별 초기화" },
+                  { value: "unit", label: "단원/유형 초기화" },
                 ] as { value: ResetScope; label: string }[]
               ).map((opt) => (
                 <button
@@ -1577,10 +1580,10 @@ function ResetHistoryModal({
             </div>
           )}
 
-          {(scope === "unit" || scope === "type") && (
+          {scope === "unit" && (
             <div>
               <label className="text-xs font-semibold text-slate-600 mb-1 block">
-                {scope === "unit" ? "단원 선택" : "유형 선택"}
+                단원/유형 선택
               </label>
               <button
                 onClick={() => setShowCurrModal(true)}
