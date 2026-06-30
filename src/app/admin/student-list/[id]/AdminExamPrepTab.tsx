@@ -355,10 +355,11 @@ function findTypeInfo(
   subject: Subject
 ): { majorUnit: string; minorUnit: string; gradeTerm: string } | null {
   const pureId = purifyTypeId(typeId);
+  const normalizedId = normalizeTypeIdForMatch(typeId);
   const curricula = subject === "math" ? MATH_CURRICULA : SCIENCE_CURRICULA;
   for (const course of curricula) {
     const found = course.types.find(
-      (t) => t.id === pureId || t.id === typeId
+      (t) => t.id === pureId || t.id === typeId || t.id === normalizedId
     );
     if (found) {
       return {
