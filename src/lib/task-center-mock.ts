@@ -27614,8 +27614,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중1-1-0-16",
         "majorUnit": "1단원 소인수분해",
-        "minorUnit": "(3) 공약수와 최대공약수",
-        "typeName": "소인수분해를 이용한 최대공약수 구하기 및 성질 판별",
+        "minorUnit": "(2) 소인수분해, 소인수분해를 이용하여 약수 구하기",
+        "typeName": "약수의 개수와 약수의 총합을 이용한 고난도 문제",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27633,7 +27633,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-17",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(3) 공약수와 최대공약수",
-        "typeName": "두 수가 서로소인 조건 이해 및 개수 구하기",
+        "typeName": "소인수분해를 이용한 최대공약수 구하기 및 성질 판별",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27651,7 +27651,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-18",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(3) 공약수와 최대공약수",
-        "typeName": "최대공약수가 주어질 때 미지수 지수 및 조건식 구하기",
+        "typeName": "두 수가 서로소인 조건 이해 및 개수 구하기",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27669,7 +27669,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-19",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(3) 공약수와 최대공약수",
-        "typeName": "특정 범위 내에서 서로소인 수의 개수 세기",
+        "typeName": "최대공약수가 주어질 때 미지수 지수 및 조건식 구하기",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27687,7 +27687,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-20",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(3) 공약수와 최대공약수",
-        "typeName": "최대공약수의 성질을 이용한 공약수 판별",
+        "typeName": "특정 범위 내에서 서로소인 수의 개수 세기",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27705,7 +27705,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-21",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(3) 공약수와 최대공약수",
-        "typeName": "최대공약수의 성질과 유클리드 호제 원리의 기초 활용",
+        "typeName": "최대공약수의 성질을 이용한 공약수 판별",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27723,7 +27723,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-22",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(3) 공약수와 최대공약수",
-        "typeName": "최대공약수의 활용 (똑같이 나누기, 블록 쌓기, 간격 배치)",
+        "typeName": "최대공약수의 성질과 유클리드 호제 원리의 기초 활용",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27741,7 +27741,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-23",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(3) 공약수와 최대공약수",
-        "typeName": "최대공약수의 활용 (입체도형/평면도형 빈틈없이 채우기)",
+        "typeName": "최대공약수의 활용 (똑같이 나누기, 블록 쌓기, 간격 배치)",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27758,8 +27758,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중1-1-0-24",
         "majorUnit": "1단원 소인수분해",
-        "minorUnit": "(4) 공배수와 최소공배수",
-        "typeName": "소인수분해를 이용한 최소공배수 구하기 및 성질 판별",
+        "minorUnit": "(3) 공약수와 최대공약수",
+        "typeName": "최대공약수의 활용 (입체도형/평면도형 빈틈없이 채우기)",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27776,8 +27776,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중1-1-0-25",
         "majorUnit": "1단원 소인수분해",
-        "minorUnit": "(4) 공배수와 최소공배수",
-        "typeName": "세 수의 최대공약수와 최소공배수 동시에 구하기",
+        "minorUnit": "(3) 공약수와 최대공약수",
+        "typeName": "최대공약수의 활용 (조 나누기 및 구성원 계산)",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27795,7 +27795,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-26",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(4) 공배수와 최소공배수",
-        "typeName": "최소공배수가 주어질 때 소인수의 미지수 지수 구하기",
+        "typeName": "소인수분해를 이용한 최소공배수 구하기 및 성질 판별",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27813,7 +27813,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-27",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(4) 공배수와 최소공배수",
-        "typeName": "최소공배수의 성질을 이용한 공배수 판별",
+        "typeName": "세 수의 최대공약수와 최소공배수 동시에 구하기",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27831,7 +27831,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-28",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(4) 공배수와 최소공배수",
-        "typeName": "최대공약수와 최소공배수가 동시에 주어질 때 미지수 구하기",
+        "typeName": "최소공배수가 주어질 때 소인수의 미지수 지수 구하기",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27849,7 +27849,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-29",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(4) 공배수와 최소공배수",
-        "typeName": "최소공배수 조건을 이용한 세 자연수의 비 추정하기",
+        "typeName": "최소공배수의 성질을 이용한 공배수 판별",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27867,7 +27867,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-30",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(4) 공배수와 최소공배수",
-        "typeName": "최소공배수의 활용 (동시 출발, 동시에 만나는 시각 구하기)",
+        "typeName": "최대공약수와 최소공배수가 동시에 주어질 때 미지수 구하기",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27885,7 +27885,61 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-0-31",
         "majorUnit": "1단원 소인수분해",
         "minorUnit": "(4) 공배수와 최소공배수",
+        "typeName": "최소공배수 조건을 이용한 세 자연수의 비 추정하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-0-32",
+        "majorUnit": "1단원 소인수분해",
+        "minorUnit": "(4) 공배수와 최소공배수",
+        "typeName": "최소공배수의 활용 (동시 출발, 동시에 만나는 시각 구하기)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-0-33",
+        "majorUnit": "1단원 소인수분해",
+        "minorUnit": "(4) 공배수와 최소공배수",
         "typeName": "분수를 자연수로 만드는 미지수 구하기 (복합 조건 포함)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-0-34",
+        "majorUnit": "1단원 소인수분해",
+        "minorUnit": "(4) 공배수와 최소공배수",
+        "typeName": "최대공약수와 최소공배수 활용 (톱니바퀴 연계 및 주기성 복합)",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -27974,6 +28028,78 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중1-1-1-4",
         "majorUnit": "2단원 정수와 유리수",
+        "minorUnit": "(2) 수직선과 절댓값",
+        "typeName": "절댓값의 정의와 성질을 이용한 미지수 범위 계산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-1-5",
+        "majorUnit": "2단원 정수와 유리수",
+        "minorUnit": "(2) 수직선과 절댓값",
+        "typeName": "절댓값의 범위를 만족하는 조건 정수의 개수 구하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-1-6",
+        "majorUnit": "2단원 정수와 유리수",
+        "minorUnit": "(2) 수직선과 절댓값",
+        "typeName": "수직선에서 두 수로부터 같은 거리에 있는 수 (거리 해석)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-1-7",
+        "majorUnit": "2단원 정수와 유리수",
+        "minorUnit": "(2) 수직선과 절댓값",
+        "typeName": "절댓값 기호를 포함한 수직선 위 거리 조건 심화 해석",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-1-8",
+        "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(3) 수의 대소 관계, 부등호의 사용",
         "typeName": "부등호를 사용한 대소 관계 표현 및 다중 부등식 식의 값",
         "difficultyCount": {
@@ -27990,7 +28116,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중1-1-1-5",
+        "id": "mt-중1-1-1-9",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(4) 유리수의 덧셈과 뺄셈",
         "typeName": "유리수의 덧셈 및 연산 법칙 (교환, 결합) 적용 기호화",
@@ -28008,7 +28134,79 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중1-1-1-6",
+        "id": "mt-중1-1-1-10",
+        "majorUnit": "2단원 정수와 유리수",
+        "minorUnit": "(4) 유리수의 덧셈과 뺄셈",
+        "typeName": "유리수의 뺄셈 및 덧셈과 뺄셈의 복합 혼합 계산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-1-11",
+        "majorUnit": "2단원 정수와 유리수",
+        "minorUnit": "(4) 유리수의 덧셈과 뺄셈",
+        "typeName": "부호가 생략된 수들의 계산 및 대소 조건식 계산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-1-12",
+        "majorUnit": "2단원 정수와 유리수",
+        "minorUnit": "(4) 유리수의 덧셈과 뺄셈",
+        "typeName": "어떤 수보다 크거나 작은 수 구하기 (바르게 계산하기)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-1-13",
+        "majorUnit": "2단원 정수와 유리수",
+        "minorUnit": "(4) 유리수의 덧셈과 뺄셈",
+        "typeName": "유리수의 덧셈과 뺄셈 기호의 추상화 및 기호 법칙 연산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-1-14",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(5) 유리수의 곱셈과 나눗셈",
         "typeName": "유리수의 곱셈 및 세 개 이상의 수의 곱셈 연산",
@@ -28026,10 +28224,136 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중1-1-1-7",
+        "id": "mt-중1-1-1-15",
+        "majorUnit": "2단원 정수와 유리수",
+        "minorUnit": "(5) 유리수의 곱셈과 나눗셈",
+        "typeName": "거듭제곱이 포함된 유리수의 곱셈 및 연산 법칙 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-1-16",
+        "majorUnit": "2단원 정수와 유리수",
+        "minorUnit": "(5) 유리수의 곱셈과 나눗셈",
+        "typeName": "곱셈의 연산 법칙 및 분배법칙을 역으로 활용하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-1-17",
+        "majorUnit": "2단원 정수와 유리수",
+        "minorUnit": "(5) 유리수의 곱셈과 나눗셈",
+        "typeName": "유리수의 거듭제곱 규칙성 파악 및 순환 곱셈 연산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-1-18",
+        "majorUnit": "2단원 정수와 유리수",
+        "minorUnit": "(5) 유리수의 곱셈과 나눗셈",
+        "typeName": "유리수의 나눗셈 및 역수를 이용한 기호 연산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-1-19",
+        "majorUnit": "2단원 정수와 유리수",
+        "minorUnit": "(5) 유리수의 곱셈과 나눗셈",
+        "typeName": "곱셈과 나눗셈의 혼합 계산 및 부호 판별",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-1-20",
         "majorUnit": "2단원 정수와 유리수",
         "minorUnit": "(6) 덧셈, 뺄셈, 곱셈, 나눗셈의 혼합계산, 유리수 계산의 활용",
         "typeName": "유리수의 사칙연산 부호 판별 및 문자의 조건 유추",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-1-21",
+        "majorUnit": "2단원 정수와 유리수",
+        "minorUnit": "(6) 덧셈, 뺄셈, 곱셈, 나눗셈의 혼합계산, 유리수 계산의 활용",
+        "typeName": "덧셈, 뺄셈, 곱셈, 나눗셈의 사칙 혼합 계산 (복합 문장제 포함)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-1-22",
+        "majorUnit": "2단원 정수와 유리수",
+        "minorUnit": "(6) 덧셈, 뺄셈, 곱셈, 나눗셈의 혼합계산, 유리수 계산의 활용",
+        "typeName": "바르게 계산한 식을 세워 미지수 구하기",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28496,8 +28820,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중1-1-2-25",
         "majorUnit": "3단원 문자와 식",
-        "minorUnit": "(5) 일차방정식의 활용 문제",
-        "typeName": "일차방정식의 활용 (수, 나이, 연속하는 정수에 관한 문장제)",
+        "minorUnit": "(4) 일차방정식의 풀이",
+        "typeName": "해가 특정 조건(정수 또는 자연수)을 만족하는 방정식 분석",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28514,8 +28838,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중1-1-2-26",
         "majorUnit": "3단원 문자와 식",
-        "minorUnit": "(5) 일차방정식의 활용 문제",
-        "typeName": "일차방정식의 활용 (나이, 예금액, 도형의 평행이동 및 넓이 변화)**",
+        "minorUnit": "(4) 일차방정식의 풀이",
+        "typeName": "특수 기호 연산 약속을 포함한 고난도 일차방정식",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28533,7 +28857,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-27",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(5) 일차방정식의 활용 문제",
-        "typeName": "일차방정식의 활용 (도형의 둘레, 넓이에 관한 문제)",
+        "typeName": "일차방정식의 활용 (수, 나이, 연속하는 정수에 관한 문장제)",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28551,7 +28875,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-28",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(5) 일차방정식의 활용 문제",
-        "typeName": "일차방정식의 활용 (증가와 감소, 원가와 정가, 할인율 심화)",
+        "typeName": "일차방정식의 활용 (나이, 예금액, 도형의 평행이동 및 넓이 변화)**",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28569,7 +28893,133 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-1-2-29",
         "majorUnit": "3단원 문자와 식",
         "minorUnit": "(5) 일차방정식의 활용 문제",
+        "typeName": "일차방정식의 활용 (도형의 둘레, 넓이에 관한 문제)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-2-30",
+        "majorUnit": "3단원 문자와 식",
+        "minorUnit": "(5) 일차방정식의 활용 문제",
+        "typeName": "일차방정식의 활용 (증가와 감소, 원가와 정가, 할인율 심화)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-2-31",
+        "majorUnit": "3단원 문자와 식",
+        "minorUnit": "(5) 일차방정식의 활용 문제",
         "typeName": "일차방정식의 활용 (과부족 및 긴 의자/텐트 문제 최고난도)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-2-32",
+        "majorUnit": "3단원 문자와 식",
+        "minorUnit": "(5) 일차방정식의 활용 문제",
+        "typeName": "일차방정식의 활용 (거리, 속력, 시간 - 마주보고 걷기/트랙/기초문장)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-2-33",
+        "majorUnit": "3단원 문자와 식",
+        "minorUnit": "(5) 일차방정식의 활용 문제",
+        "typeName": "일차방정식의 활용 (학생 수 나누어주기, 의자 배정 과부족 문제)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-2-34",
+        "majorUnit": "3단원 문자와 식",
+        "minorUnit": "(5) 일차방정식의 활용 문제",
+        "typeName": "일차방정식의 활용 (일의 양 및 소금물 농도 섞기 복합 문제)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-2-35",
+        "majorUnit": "3단원 문자와 식",
+        "minorUnit": "(5) 일차방정식의 활용 문제",
+        "typeName": "일차방정식의 활용 (거리·속력·시간 - 시계 바늘의 각도 복합)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-2-36",
+        "majorUnit": "3단원 문자와 식",
+        "minorUnit": "(5) 일차방정식의 활용 문제",
+        "typeName": "일차방정식의 활용 (일의 양 및 파이프/물탱크 채우기 심화)",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28784,8 +29234,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중1-1-3-11",
         "majorUnit": "4단원 좌표평면과 그래프",
-        "minorUnit": "(4) 반비례",
-        "typeName": "변수 간의 반비례 관계 판단 및 관계식 미지수 세우기",
+        "minorUnit": "(3) 정비례",
+        "typeName": "정비례 관계 y=ax의 그래프 성질 및 지나는 점의 대입",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28802,8 +29252,170 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중1-1-3-12",
         "majorUnit": "4단원 좌표평면과 그래프",
+        "minorUnit": "(3) 정비례",
+        "typeName": "정비례 관계 y=ax의 그래프 성질 및 사분면 판별",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-3-13",
+        "majorUnit": "4단원 좌표평면과 그래프",
+        "minorUnit": "(3) 정비례",
+        "typeName": "정비례 그래프에서 상수의 대소 관계 비교",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-3-14",
+        "majorUnit": "4단원 좌표평면과 그래프",
+        "minorUnit": "(3) 정비례",
+        "typeName": "정비례 관계를 이용한 실생활 문장제 활용 및 도형 분할",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-3-15",
+        "majorUnit": "4단원 좌표평면과 그래프",
+        "minorUnit": "(4) 반비례",
+        "typeName": "변수 간의 반비례 관계 판단 및 관계식 미지수 세우기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-3-16",
+        "majorUnit": "4단원 좌표평면과 그래프",
         "minorUnit": "(4) 반비례",
         "typeName": "반비례 관계식 세우기 및 미지수 값 구하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-3-17",
+        "majorUnit": "4단원 좌표평면과 그래프",
+        "minorUnit": "(4) 반비례",
+        "typeName": "반비례 관계 $y=\\frac{a}{x}$의 그래프 성질과 지나는 점 판별",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-3-18",
+        "majorUnit": "4단원 좌표평면과 그래프",
+        "minorUnit": "(4) 반비례",
+        "typeName": "반비례 그래프 성질 및 대칭성을 활용한 선분 조건 구하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-3-19",
+        "majorUnit": "4단원 좌표평면과 그래프",
+        "minorUnit": "(4) 반비례",
+        "typeName": "반비례 그래프 위의 점을 활용한 사각형의 넓이 및 규칙성",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-3-20",
+        "majorUnit": "4단원 좌표평면과 그래프",
+        "minorUnit": "(4) 반비례",
+        "typeName": "정비례와 반비례 그래프 교점 연계 및 다각형 넓이 복합 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-1-3-21",
+        "majorUnit": "4단원 좌표평면과 그래프",
+        "minorUnit": "(4) 반비례",
+        "typeName": "반비례 관계를 이용한 실생활 문장제 활용",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28935,8 +29547,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중1-2-0-6",
         "majorUnit": "1단원 기본도형",
-        "minorUnit": "(3) 점, 직선, 평면의 위치 관계",
-        "typeName": "평면에서의 점, 직선의 위치 관계 및 입체도형 모서리·면의 관계",
+        "minorUnit": "(2) 각",
+        "typeName": "시침과 분침이 이루는 각의 크기 및 n분 후의 심화 연산 (시계 문제)",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28954,7 +29566,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-7",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(3) 점, 직선, 평면의 위치 관계",
-        "typeName": "공간에서 두 직선의 위치 관계 (꼬인 위치에 있는 모서리 찾기 및 개수)",
+        "typeName": "평면에서의 점, 직선의 위치 관계 및 입체도형 모서리·면의 관계",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28972,7 +29584,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-0-8",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(3) 점, 직선, 평면의 위치 관계",
-        "typeName": "공간에서 직선과 평면, 두 평면의 위치 관계 및 교선 찾기",
+        "typeName": "공간에서 두 직선의 위치 관계 (꼬인 위치에 있는 모서리 찾기 및 개수)",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -28988,6 +29600,60 @@ export const MATH_CURRICULA: Curriculum[] = [
       },
       {
         "id": "mt-중1-2-0-9",
+        "majorUnit": "1단원 기본도형",
+        "minorUnit": "(3) 점, 직선, 평면의 위치 관계",
+        "typeName": "공간에서 직선과 평면, 두 평면의 위치 관계 및 교선 찾기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-2-0-10",
+        "majorUnit": "1단원 기본도형",
+        "minorUnit": "(3) 점, 직선, 평면의 위치 관계",
+        "typeName": "공간에서 두 평면의 위치 관계 및 전개도를 접었을 때의 위치 추론",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-2-0-11",
+        "majorUnit": "1단원 기본도형",
+        "minorUnit": "(3) 점, 직선, 평면의 위치 관계",
+        "typeName": "공간에서 위치 관계에 대한 설명 중 참·거짓 엄밀한 논리 증명",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-2-0-12",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(4) 평행선의 성질",
         "typeName": "동위각과 엇각의 크기 구하기 및 복잡한 각의 연산",
@@ -29005,7 +29671,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중1-2-0-10",
+        "id": "mt-중1-2-0-13",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(4) 평행선의 성질",
         "typeName": "평행선의 성질을 이용한 각의 크기 계산 (다중 꺾인 선의 일반화 규칙)",
@@ -29023,7 +29689,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중1-2-0-11",
+        "id": "mt-중1-2-0-14",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(4) 평행선의 성질",
         "typeName": "두 직선이 평행하기 위한 조건 판별",
@@ -29041,7 +29707,25 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중1-2-0-12",
+        "id": "mt-중1-2-0-15",
+        "majorUnit": "1단원 기본도형",
+        "minorUnit": "(4) 평행선의 성질",
+        "typeName": "종이 접기 도형에서의 평행선의 성질과 이등변삼각형 융합 응용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-2-0-16",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(5) 삼각의 작도",
         "typeName": "눈금 없는 자와 컴퍼스의 용도 판별 및 작도의 기본 원리 이해",
@@ -29059,7 +29743,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중1-2-0-13",
+        "id": "mt-중1-2-0-17",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(5) 삼각의 작도",
         "typeName": "크기가 같은 각과 평행선의 작도 순서, 원리 및 대칭성 심화",
@@ -29077,7 +29761,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중1-2-0-14",
+        "id": "mt-중1-2-0-18",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(5) 삼각의 작도",
         "typeName": "평행선의 작도 순서와 원리 이해",
@@ -29095,7 +29779,43 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중1-2-0-15",
+        "id": "mt-중1-2-0-19",
+        "majorUnit": "1단원 기본도형",
+        "minorUnit": "(5) 삼각의 작도",
+        "typeName": "삼각형의 세 변의 길이 조건 (가장 긴 변과 나머지 두 변의 관계식)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-2-0-20",
+        "majorUnit": "1단원 기본도형",
+        "minorUnit": "(5) 삼각의 작도",
+        "typeName": "삼각형이 하나로 정해지는 조건 및 조건 경계면을 만족하는 개수 논리 추론",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-2-0-21",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(6) 삼각형의 합동",
         "typeName": "합동인 도형의 성질과 대응점, 대응변, 대응각 찾기",
@@ -29113,7 +29833,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중1-2-0-16",
+        "id": "mt-중1-2-0-22",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(6) 삼각형의 합동",
         "typeName": "삼각형의 합동 조건(SSS, SAS, ASA) 판별 및 변과 각의 크기 구하기",
@@ -29131,7 +29851,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중1-2-0-17",
+        "id": "mt-중1-2-0-23",
         "majorUnit": "1단원 기본도형",
         "minorUnit": "(6) 삼각형의 합동",
         "typeName": "정삼각형·정사각형 다각형 합동 조건을 활용한 연계 각도 고난도 증명",
@@ -29475,8 +30195,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중1-2-1-18",
         "majorUnit": "2단원 평면도형",
-        "minorUnit": "(4) 부채꼴의 호의 길이와 넓이",
-        "typeName": "중심각의 크기와 반지름을 연계한 부채꼴의 호와 넓이 복합 계산",
+        "minorUnit": "(3) 원과 부채꼴",
+        "typeName": "곡선으로 둘러싸인 복잡한 기하학적 도형의 역산 추론",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29494,7 +30214,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-19",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(4) 부채꼴의 호의 길이와 넓이",
-        "typeName": "정다각형 내부에 접한 부채꼴의 호의 길이 및 성질 응용",
+        "typeName": "중심각의 크기와 반지름을 연계한 부채꼴의 호와 넓이 복합 계산",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29512,7 +30232,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-20",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(4) 부채꼴의 호의 길이와 넓이",
-        "typeName": "색칠한 평면도형의 둘레의 길이 구하기 (곡선과 직선 복합 변형)",
+        "typeName": "정다각형 내부에 접한 부채꼴의 호의 길이 및 성질 응용",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29530,7 +30250,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-21",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(4) 부채꼴의 호의 길이와 넓이",
-        "typeName": "색칠한 평면도형의 넓이 구하기 (도형의 평행이동 및 기하학적 커팅)",
+        "typeName": "색칠한 평면도형의 둘레의 길이 구하기 (곡선과 직선 복합 변형)",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29548,7 +30268,61 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-1-22",
         "majorUnit": "2단원 평면도형",
         "minorUnit": "(4) 부채꼴의 호의 길이와 넓이",
+        "typeName": "색칠한 평면도형의 넓이 구하기 (도형의 평행이동 및 기하학적 커팅)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-2-1-23",
+        "majorUnit": "2단원 평면도형",
+        "minorUnit": "(4) 부채꼴의 호의 길이와 넓이",
         "typeName": "원 또는 부채꼴이 굴러간 자리의 경로 및 넓이 계산 (회전 궤적)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-2-1-24",
+        "majorUnit": "2단원 평면도형",
+        "minorUnit": "(4) 부채꼴의 호의 길이와 넓이",
+        "typeName": "끈으로 묶은 묶음 도형의 최소 길이 및 둘레 구하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-2-1-25",
+        "majorUnit": "2단원 평면도형",
+        "minorUnit": "(4) 부채꼴의 호의 길이와 넓이",
+        "typeName": "색칠한 평면도형의 넓이 심화 (히포크라테스의 초승달 및 대칭 이동)",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29853,8 +30627,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중1-2-2-16",
         "majorUnit": "3단원 입체도형",
-        "minorUnit": "(5) 구의 겉넓이와 부피",
-        "typeName": "구의 겉넓이 공식 (4πr²) 대입 및 표면적 내·외접 연산",
+        "minorUnit": "(4) 뿔의 겉넓이와 부피",
+        "typeName": "원뿔의 표면을 움직이는 최단 거리 구하기 (전개도 활용)",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29872,7 +30646,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-17",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(5) 구의 겉넓이와 부피",
-        "typeName": "구의 부피 공식 (34​πr³) 대입 및 활용 계산",
+        "typeName": "구의 겉넓이 공식 (4πr²) 대입 및 표면적 내·외접 연산",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -29890,7 +30664,43 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중1-2-2-18",
         "majorUnit": "3단원 입체도형",
         "minorUnit": "(5) 구의 겉넓이와 부피",
+        "typeName": "구의 부피 공식 (34​πr³) 대입 및 활용 계산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-2-2-19",
+        "majorUnit": "3단원 입체도형",
+        "minorUnit": "(5) 구의 겉넓이와 부피",
         "typeName": "잘라낸 구(반구, 복합 회전체 입체)의 겉넓이와 부피 구하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-2-2-20",
+        "majorUnit": "3단원 입체도형",
+        "minorUnit": "(5) 구의 겉넓이와 부피",
+        "typeName": "원기둥, 원뿔, 구의 부피 사이의 비(Ratio) 관계 및 내접 응용",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30069,8 +30879,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중1-2-3-9",
         "majorUnit": "4단원 통계",
-        "minorUnit": "(5) 상대도수와 그 그래프",
-        "typeName": "상대도수의 정의식을 이용한 빈칸 채우기 및 역산 연산",
+        "minorUnit": "(4) 히스토그램과 도수분포다각형",
+        "typeName": "도수분포다각형과 가로축으로 둘러싸인 부분의 넓이 계산",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30087,8 +30897,62 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중1-2-3-10",
         "majorUnit": "4단원 통계",
+        "minorUnit": "(4) 히스토그램과 도수분포다각형",
+        "typeName": "두 집단의 도수분포다각형 비교 해석 및 분포 특성 다단계 추론",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-2-3-11",
+        "majorUnit": "4단원 통계",
+        "minorUnit": "(5) 상대도수와 그 그래프",
+        "typeName": "상대도수의 정의식을 이용한 빈칸 채우기 및 역산 연산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-2-3-12",
+        "majorUnit": "4단원 통계",
         "minorUnit": "(5) 상대도수와 그 그래프",
         "typeName": "도수의 총합의 비와 상대도수의 비를 이용한 특정 계급 도수의 비 계산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중1-2-3-13",
+        "majorUnit": "4단원 통계",
+        "minorUnit": "(5) 상대도수와 그 그래프",
+        "typeName": "상대도수 분포 그래프(상대도수 다각형) 해석 및 찢어진 그래프 복원",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30454,6 +31318,60 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중2-1-0-19",
         "majorUnit": "1단원 수와 식",
+        "minorUnit": "(3) 지수법칙",
+        "typeName": "치환을 이용한 거듭제곱의 합과 곱의 지수 변형",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-0-20",
+        "majorUnit": "1단원 수와 식",
+        "minorUnit": "(3) 지수법칙",
+        "typeName": "주어진 문자를 사용하여 지수 식 나타내기 (심화 포함)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-0-21",
+        "majorUnit": "1단원 수와 식",
+        "minorUnit": "(3) 지수법칙",
+        "typeName": "몇 자리 자연수인지 구하기 및 큰 수의 대소 관계 비교",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-0-22",
+        "majorUnit": "1단원 수와 식",
         "minorUnit": "(4) 단항식의 곱셈과 나눗셈",
         "typeName": "단항식의 곱셈과 나눗셈의 복합 혼합 계산 및 미지수 결정",
         "difficultyCount": {
@@ -30470,7 +31388,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-1-0-20",
+        "id": "mt-중2-1-0-23",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(4) 단항식의 곱셈과 나눗셈",
         "typeName": "단항식의 연산에서 어떤 식(미지수 식) 구하기",
@@ -30488,7 +31406,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-1-0-21",
+        "id": "mt-중2-1-0-24",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(4) 단항식의 곱셈과 나눗셈",
         "typeName": "단항식의 계산 기하학적 활용 (도형의 부피와 넓이 고난도)",
@@ -30506,7 +31424,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-1-0-22",
+        "id": "mt-중2-1-0-25",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(5) 다항식의 덧셈과 뺄셈, 곱셈과 나눗셈",
         "typeName": "다항식의 덧셈과 뺄셈 및 이차식의 계산",
@@ -30524,7 +31442,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-1-0-23",
+        "id": "mt-중2-1-0-26",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(5) 다항식의 덧셈과 뺄셈, 곱셈과 나눗셈",
         "typeName": "여러 가지 괄호가 있는 다항식의 연산과 최고차항 결정",
@@ -30542,10 +31460,118 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-1-0-24",
+        "id": "mt-중2-1-0-27",
         "majorUnit": "1단원 수와 식",
         "minorUnit": "(5) 다항식의 덧셈과 뺄셈, 곱셈과 나눗셈",
         "typeName": "다항식의 덧셈과 뺄셈에서 어떤 식 구하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-0-28",
+        "majorUnit": "1단원 수와 식",
+        "minorUnit": "(5) 다항식의 덧셈과 뺄셈, 곱셈과 나눗셈",
+        "typeName": "다항식과 단항식의 곱셈/나눗셈 혼합 계산 및 문장제 응용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-0-29",
+        "majorUnit": "1단원 수와 식",
+        "minorUnit": "(5) 다항식의 덧셈과 뺄셈, 곱셈과 나눗셈",
+        "typeName": "사칙연산이 복잡하게 혼합된 다항식의 계산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-0-30",
+        "majorUnit": "1단원 수와 식",
+        "minorUnit": "(5) 다항식의 덧셈과 뺄셈, 곱셈과 나눗셈",
+        "typeName": "식의 전개식에서 특정 항의 계수 및 상수항 추론 구하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-0-31",
+        "majorUnit": "1단원 수와 식",
+        "minorUnit": "(5) 다항식의 덧셈과 뺄셈, 곱셈과 나눗셈",
+        "typeName": "다항식의 계산 기하학적 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-0-32",
+        "majorUnit": "1단원 수와 식",
+        "minorUnit": "(5) 다항식의 덧셈과 뺄셈, 곱셈과 나눗셈",
+        "typeName": "한 문자에 관한 등식 변형, 대입법 및 조건식 문자 소거",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-0-33",
+        "majorUnit": "1단원 수와 식",
+        "minorUnit": "(5) 다항식의 덧셈과 뺄셈, 곱셈과 나눗셈",
+        "typeName": "비례식이 주어진 경우의 등식 변형 및 시각적 변형 구하기",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30706,8 +31732,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중2-1-1-8",
         "majorUnit": "2단원 부등식",
-        "minorUnit": "(3) 일차부등식의 활용(1)",
-        "typeName": "일차부등식의 활용 - 수, 나이, 평균 성적 및 횟수 제한 조건",
+        "minorUnit": "(2) 일차부등식",
+        "typeName": "일차부등식을 만족하는 정수(자연수) 해의 개수 조건과 미지수 범위 심화",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30724,8 +31750,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중2-1-1-9",
         "majorUnit": "2단원 부등식",
-        "minorUnit": "(3) 일차부등식의 활용(1)",
-        "typeName": "일차부등식의 활용 - 물건 가격, 구매 개수 및 원가·정가 이익률 심화",
+        "minorUnit": "(2) 일차부등식",
+        "typeName": "두 일차부등식의 해가 서로 같을 조건",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30743,7 +31769,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-10",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(3) 일차부등식의 활용(1)",
-        "typeName": "일차부등식의 활용 - 예금액 비교 및 유리한 방법 선택하기 (단체 입장료)",
+        "typeName": "일차부등식의 활용 - 수, 나이, 평균 성적 및 횟수 제한 조건",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30761,7 +31787,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-1-1-11",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(3) 일차부등식의 활용(1)",
-        "typeName": "일차부등식의 활용 - 사다리꼴 및 직사각형 등 도형 문장제",
+        "typeName": "일차부등식의 활용 - 물건 가격, 구매 개수 및 원가·정가 이익률 심화",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -30777,6 +31803,42 @@ export const MATH_CURRICULA: Curriculum[] = [
       },
       {
         "id": "mt-중2-1-1-12",
+        "majorUnit": "2단원 부등식",
+        "minorUnit": "(3) 일차부등식의 활용(1)",
+        "typeName": "일차부등식의 활용 - 예금액 비교 및 유리한 방법 선택하기 (단체 입장료)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-1-13",
+        "majorUnit": "2단원 부등식",
+        "minorUnit": "(3) 일차부등식의 활용(1)",
+        "typeName": "일차부등식의 활용 - 사다리꼴 및 직사각형 등 도형 문장제",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-1-14",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(4) 일차부등식의 활용(2)",
         "typeName": "일차부등식의 활용 - 거리·속력·시간 고난도 (도중에 속도 변화 포함)",
@@ -30794,7 +31856,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-1-1-13",
+        "id": "mt-중2-1-1-15",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(4) 일차부등식의 활용(2)",
         "typeName": "일차부등식의 활용 - 의자 배정, 방 배정 (과부족 문제)",
@@ -30812,7 +31874,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-1-1-14",
+        "id": "mt-중2-1-1-16",
         "majorUnit": "2단원 부등식",
         "minorUnit": "(4) 일차부등식의 활용(2)",
         "typeName": "일차부등식의 활용 - 소금물의 농도 혼합 및 증발 심화",
@@ -31190,6 +32252,24 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
+        "id": "mt-중2-1-2-20",
+        "majorUnit": "3단원 방정식",
+        "minorUnit": "(4) 연립방정식의 활용(2)",
+        "typeName": "연립일차방정식의 활용 - 증감률 및 비율에 관한 문제",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
         "id": "mt-중2-1-3-0",
         "majorUnit": "4단원 함수",
         "minorUnit": "(1) 함수, 일차함수의 뜻",
@@ -31318,6 +32398,78 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중2-1-3-7",
         "majorUnit": "4단원 함수",
+        "minorUnit": "(3) 일차함수의 그래프의 성질",
+        "typeName": "그래프의 절편과 기울기 조건의 복합 기하학적 매칭 및 도형 성질",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-3-8",
+        "majorUnit": "4단원 함수",
+        "minorUnit": "(3) 일차함수의 그래프의 성질",
+        "typeName": "기울기 a와 y절편 b의 부호에 따른 지나지 않는 사분면 추론",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-3-9",
+        "majorUnit": "4단원 함수",
+        "minorUnit": "(3) 일차함수의 그래프의 성질",
+        "typeName": "두 일차함수 그래프가 만나지 않을 조건 (평행 및 일치 조건 탐색)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-3-10",
+        "majorUnit": "4단원 함수",
+        "minorUnit": "(3) 일차함수의 그래프의 성질",
+        "typeName": "세 직선이 한 점에서 만날 조건 또는 삼각형을 이루지 않을 조건 심화",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-3-11",
+        "majorUnit": "4단원 함수",
         "minorUnit": "(4) 일차함수의 식 구하기",
         "typeName": "기울기와 한 점(또는 y절편)이 주어질 때 일차함수의 식 구하기",
         "difficultyCount": {
@@ -31334,7 +32486,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-1-3-8",
+        "id": "mt-중2-1-3-12",
         "majorUnit": "4단원 함수",
         "minorUnit": "(4) 일차함수의 식 구하기",
         "typeName": "서로 다른 두 점이 주어지는 일차함수의 식 도출 기법",
@@ -31352,7 +32504,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-1-3-9",
+        "id": "mt-중2-1-3-13",
         "majorUnit": "4단원 함수",
         "minorUnit": "(5) 일차함수의 활용",
         "typeName": "주어진 기하학적 도형의 넓이를 이등분하거나 특정 비율로 나누는 직선",
@@ -31370,7 +32522,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-1-3-10",
+        "id": "mt-중2-1-3-14",
         "majorUnit": "4단원 함수",
         "minorUnit": "(5) 일차함수의 활용",
         "typeName": "일차함수의 실생활 활용 문장제 (온도, 길이, 거속시 등 복합 변동)",
@@ -31388,7 +32540,25 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-1-3-11",
+        "id": "mt-중2-1-3-15",
+        "majorUnit": "4단원 함수",
+        "minorUnit": "(5) 일차함수의 활용",
+        "typeName": "일차함수의 활용 - 도형 위를 움직이는 점(동점)과 넓이의 변화 관계",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-3-16",
         "majorUnit": "4단원 함수",
         "minorUnit": "(6) 일차함수의 그래프와 일차방정식",
         "typeName": "일차방정식 ax+by+c=0과 일차함수 그래프의 매칭 및 계수 부호 추론",
@@ -31406,7 +32576,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-1-3-12",
+        "id": "mt-중2-1-3-17",
         "majorUnit": "4단원 함수",
         "minorUnit": "(6) 일차함수의 그래프와 일차방정식",
         "typeName": "축에 평행하거나 수직인 직선의 방정식 특성 조건 (x=p,y=q)",
@@ -31424,7 +32594,25 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-1-3-13",
+        "id": "mt-중2-1-3-18",
+        "majorUnit": "4단원 함수",
+        "minorUnit": "(6) 일차함수의 그래프와 일차방정식",
+        "typeName": "직선들로 둘러싸인 기하학적 도형의 넓이와 좌표 변형 계산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-3-19",
         "majorUnit": "4단원 함수",
         "minorUnit": "(7) 일차함수의 그래프와 연립방정식",
         "typeName": "연립일차방정식의 해의 뜻과 두 직선의 교점의 좌표의 일치 성질",
@@ -31442,10 +32630,28 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-1-3-14",
+        "id": "mt-중2-1-3-20",
         "majorUnit": "4단원 함수",
         "minorUnit": "(7) 일차함수의 그래프와 연립방정식",
         "typeName": "두 직선의 교점의 존재 조건 및 특정 사분면/선분 위를 지날 조건",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-1-3-21",
+        "majorUnit": "4단원 함수",
+        "minorUnit": "(7) 일차함수의 그래프와 연립방정식",
+        "typeName": "연립방정식의 특수한 해(무수히 많거나 없다)와 직선의 위치 관계 심화",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32367,6 +33573,24 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
+        "id": "mt-중2-2-0-50",
+        "majorUnit": "1단원 도형의 성질",
+        "minorUnit": "(7) 여러 가지 사각형",
+        "typeName": "사각형 내부의 각의 이등분선과 기하학적 고난도 증명",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
         "id": "mt-중2-2-1-0",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(1) 닮은 도형",
@@ -32442,7 +33666,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-4",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(2) 삼각형의 닮은 조건",
-        "typeName": "정삼각형 또는 정사각형의 종이접기에서의 닮음 활용",
+        "typeName": "이등변삼각형 내부에서의 닮음과 변의 길이 계산",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32460,7 +33684,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-5",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(2) 삼각형의 닮은 조건",
-        "typeName": "직각삼각형의 내접정사각형과 닮음의 연계 계산",
+        "typeName": "평행사변형 및 사각형 내부 연장선에서의 삼각형 닮음",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32478,7 +33702,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중2-2-1-6",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(2) 삼각형의 닮은 조건",
-        "typeName": "직각삼각형 내부의 닮음을 활용한 최적화된 넓이 증명",
+        "typeName": "삼각형 내부에서 두 쌍의 닮음을 이용한 선분의 비 계산",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32494,6 +33718,96 @@ export const MATH_CURRICULA: Curriculum[] = [
       },
       {
         "id": "mt-중2-2-1-7",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(2) 삼각형의 닮은 조건",
+        "typeName": "직각삼각형의 닮음과 공식의 활용 (소 공식 포함)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-8",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(2) 삼각형의 닮은 조건",
+        "typeName": "직각삼각형의 닮음 공식의 다각적 복합 응용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-9",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(2) 삼각형의 닮은 조건",
+        "typeName": "정삼각형 또는 정사각형의 종이접기에서의 닮음 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-10",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(2) 삼각형의 닮은 조건",
+        "typeName": "직각삼각형의 내접정사각형과 닮음의 연계 계산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-11",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(2) 삼각형의 닮은 조건",
+        "typeName": "직각삼각형 내부의 닮음을 활용한 최적화된 넓이 증명",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-12",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(3) 평행선과 선분의 길이의 비",
         "typeName": "삼각형에서 평행선과 선분의 길이의 비 (기본형)",
@@ -32511,7 +33825,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-2-1-8",
+        "id": "mt-중2-2-1-13",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(3) 평행선과 선분의 길이의 비",
         "typeName": "삼각형에서 평행선과 선분의 길이의 비 (모래시계형)",
@@ -32529,7 +33843,97 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-2-1-9",
+        "id": "mt-중2-2-1-14",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(3) 평행선과 선분의 길이의 비",
+        "typeName": "평행선에 선분의 길이의 비의 역(조건 판정)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-15",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(3) 평행선과 선분의 길이의 비",
+        "typeName": "평행선과 보조선을 활용한 세 선분의 비 메넬라우스 응용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-16",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(3) 평행선과 선분의 길이의 비",
+        "typeName": "삼각형의 내각의 이등분선과 선분의 길이의 비",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-17",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(3) 평행선과 선분의 길이의 비",
+        "typeName": "삼각형의 외각의 이등분선과 선분의 길이의 비",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-18",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(3) 평행선과 선분의 길이의 비",
+        "typeName": "평행선 사이의 선분의 길이의 비",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-19",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(3) 평행선과 선분의 길이의 비",
         "typeName": "사다리꼴에서 평행선과 선분의 길이의 비",
@@ -32547,7 +33951,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-2-1-10",
+        "id": "mt-중2-2-1-20",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(3) 평행선과 선분의 길이의 비",
         "typeName": "평행선과 사다리꼴의 넓이 및 선분의 비의 응용",
@@ -32565,7 +33969,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-2-1-11",
+        "id": "mt-중2-2-1-21",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(3) 평행선과 선분의 길이의 비",
         "typeName": "수직인 세 직선 사이의 평행선과 선분의 비 (크로스형)",
@@ -32583,7 +33987,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-2-1-12",
+        "id": "mt-중2-2-1-22",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(4) 삼각형의 무게중심",
         "typeName": "삼각형의 세 중선과 무게중심의 성질",
@@ -32601,7 +34005,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-2-1-13",
+        "id": "mt-중2-2-1-23",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(4) 삼각형의 무게중심",
         "typeName": "무게중심과 평행선을 활용한 선분의 길이 계산",
@@ -32619,7 +34023,61 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-2-1-14",
+        "id": "mt-중2-2-1-24",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(4) 삼각형의 무게중심",
+        "typeName": "무게중심에 의해 분할되는 삼각형의 넓이 관계",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-25",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(4) 삼각형의 무게중심",
+        "typeName": "평행사변형에서 대각선과 중선의 교점(무게중심의 응용)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-26",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(4) 삼각형의 무게중심",
+        "typeName": "무게중심과 중단원 심화 연계 모래시계형 닮음의 응용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-27",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(5) 닮은 도형의 넓이와 부피",
         "typeName": "닮은 평면도형의 둘레의 비와 넓이의 비",
@@ -32637,7 +34095,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-2-1-15",
+        "id": "mt-중2-2-1-28",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(5) 닮은 도형의 넓이와 부피",
         "typeName": "닮은 입체도형의 겉넓이의 비와 부피의 비",
@@ -32655,7 +34113,25 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-2-1-16",
+        "id": "mt-중2-2-1-29",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(5) 닮은 도형의 넓이와 부피",
+        "typeName": "닮음비의 실생활 문장제 및 수면의 높이 응용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-30",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(6) 피타고라스 정리",
         "typeName": "피타고라스 정리의 이해와 기본 선분의 길이 계산",
@@ -32673,7 +34149,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-2-1-17",
+        "id": "mt-중2-2-1-31",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(6) 피타고라스 정리",
         "typeName": "피타고라스 정리의 증명 (유클리드·바스카라 등)",
@@ -32691,7 +34167,25 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-2-1-18",
+        "id": "mt-중2-2-1-32",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(6) 피타고라스 정리",
+        "typeName": "삼각형의 세 변의 길이에 따른 모양 판정",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-33",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(7) 피타고라스 정리의 활용",
         "typeName": "직각삼각형의 성질과 세 반원 사이의 넓이관계 (히포크라테스의 원)",
@@ -32709,10 +34203,46 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중2-2-1-19",
+        "id": "mt-중2-2-1-34",
         "majorUnit": "2단원 도형의 닮음",
         "minorUnit": "(7) 피타고라스 정리의 활용",
         "typeName": "사각 대각선 조건 및 내부 한 점에서 변의 관계식 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-35",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(7) 피타고라스 정리의 활용",
+        "typeName": "접은 도형(종이접기)에서의 피타고라스 정리 복합 응용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-1-36",
+        "majorUnit": "2단원 도형의 닮음",
+        "minorUnit": "(7) 피타고라스 정리의 활용",
+        "typeName": "입체도형에서의 최단 거리 구하기 (전개도 활용)",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -32947,6 +34477,78 @@ export const MATH_CURRICULA: Curriculum[] = [
         "majorUnit": "3단원 확률",
         "minorUnit": "(4) 확률의 계산",
         "typeName": "확률의 곱셈 정리 (연속적인 독립 시행 및 복합 확률)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-2-13",
+        "majorUnit": "3단원 확률",
+        "minorUnit": "(4) 확률의 계산",
+        "typeName": "연속하여 꺼내는 경우의 확률 (복원/비복원 및 조건부 상태 변화)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-2-14",
+        "majorUnit": "3단원 확률",
+        "minorUnit": "(4) 확률의 계산",
+        "typeName": "도형에서의 확률 (기하학적 확률의 응용)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-2-15",
+        "majorUnit": "3단원 확률",
+        "minorUnit": "(4) 확률의 계산",
+        "typeName": "시합이나 게임에서 특정 점수를 얻어 최종 우승할 확률",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중2-2-2-16",
+        "majorUnit": "3단원 확률",
+        "minorUnit": "(4) 확률의 계산",
+        "typeName": "좌표평면 위에서 점의 이동과 동전/주사위 확률의 연계",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -33564,6 +35166,96 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중3-1-0-33",
         "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(4) 제곱근의 곱셈과 나눗셈",
+        "typeName": "소수의 제곱근을 ka​ 꼴로 나타내기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-34",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(4) 제곱근의 곱셈과 나눗셈",
+        "typeName": "소인수분해 성질과 문자 조건을 연계한 거듭제곱근 식의 거듭제곱 계산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-35",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(4) 제곱근의 곱셈과 나눗셈",
+        "typeName": "제곱근을 문자를 사용하여 나타내기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-36",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(4) 제곱근의 곱셈과 나눗셈",
+        "typeName": "다항식의 분모 유리화 및 미지수 결정 복합 연산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-37",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(4) 제곱근의 곱셈과 나눗셈",
+        "typeName": "분모의 유리화 (단항식)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-38",
+        "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(5) 제곱근의 덧셈과 뺄셈",
         "typeName": "제곱근의 동류항 덧셈과 뺄셈",
         "difficultyCount": {
@@ -33580,7 +35272,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-0-34",
+        "id": "mt-중3-1-0-39",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(5) 제곱근의 덧셈과 뺄셈",
         "typeName": "분모 유리화를 동반한 상등 조건 기반의 연립방정식 대입 계산",
@@ -33598,7 +35290,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-0-35",
+        "id": "mt-중3-1-0-40",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(5) 제곱근의 덧셈과 뺄셈",
         "typeName": "근호 안의 수를 소인수분해하여 계산하기",
@@ -33616,7 +35308,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-0-36",
+        "id": "mt-중3-1-0-41",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(5) 제곱근의 덧셈과 뺄셈",
         "typeName": "마방진 구조를 이용한 가로, 세로, 대각선 제곱근 다항식의 합 추론",
@@ -33634,7 +35326,187 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-0-37",
+        "id": "mt-중3-1-0-42",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(5) 제곱근의 덧셈과 뺄셈",
+        "typeName": "분배법칙과 분모의 유리화가 혼합된 계산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-43",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(5) 제곱근의 덧셈과 뺄셈",
+        "typeName": "무리수의 상등(유리수와 무리수가 섞인 식의 연산) 조건 만족",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-44",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(5) 제곱근의 덧셈과 뺄셈",
+        "typeName": "복잡한 식의 유리화 연산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-45",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(5) 제곱근의 덧셈과 뺄셈",
+        "typeName": "소거형 급수를 이용한 무리수 수열의 합 계산 (f(x)=x+1​−x​)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-46",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(5) 제곱근의 덧셈과 뺄셈",
+        "typeName": "분수 형태의 다항식 유리화와 유리수 조건 복합",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-47",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(5) 제곱근의 덧셈과 뺄셈",
+        "typeName": "복잡한 무리수 분수식 구조에서의 변형 연산 및 대입 값 구하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-48",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(5) 제곱근의 덧셈과 뺄셈",
+        "typeName": "제곱근표의 이해 및 값 구하기 (기본)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-49",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(5) 제곱근의 덧셈과 뺄셈",
+        "typeName": "제곱근표의 일부분을 활용한 미지수 역산 유도 및 어림값 계산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-50",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(5) 제곱근의 덧셈과 뺄셈",
+        "typeName": "피타고라스 정리와 직사각형에서의 변의 길이 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-51",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(5) 제곱근의 덧셈과 뺄셈",
+        "typeName": "제곱근표를 참고한 방정식 148​−x​=k 구조의 미지수 해 구하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-52",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(5) 제곱근의 덧셈과 뺄셈",
         "typeName": "제곱근표에 없는 큰 수/작은 수의 어림값 구하기",
@@ -33652,7 +35524,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-0-38",
+        "id": "mt-중3-1-0-53",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
         "typeName": "사칙연산이 혼합된 복잡한 식의 계산",
@@ -33670,7 +35542,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-0-39",
+        "id": "mt-중3-1-0-54",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
         "typeName": "복잡한 혼합 사칙연산의 간략화 및 미지수 무리수 값 계산",
@@ -33688,7 +35560,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-0-40",
+        "id": "mt-중3-1-0-55",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
         "typeName": "실력편 심화 유형: 복잡한 근호 식의 변형 및 대입",
@@ -33706,7 +35578,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-0-41",
+        "id": "mt-중3-1-0-56",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
         "typeName": "복수 제곱근식들의 정수 부분이 주어질 때 정수가 되게 하는 순서쌍 카운팅",
@@ -33724,7 +35596,187 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-0-42",
+        "id": "mt-중3-1-0-57",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
+        "typeName": "실력편 심화 유형: 다항식의 근호 계산 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-58",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
+        "typeName": "넓이 배수 관계(연속된 정사각형) 조건에서의 한 변의 길이 기하학적 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-59",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
+        "typeName": "도형에서의 제곱근 활용 (넓이와 변의 관계)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-60",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
+        "typeName": "입체도형(직육면체)의 대각선과 수선의 발 길이를 구하는 피타고라스 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-61",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
+        "typeName": "다중 정사각형 색종이를 붙여 만든 복합 기하 도형의 둘레 길이 연산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-62",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
+        "typeName": "연속된 황금비 구조 사분원의 호의 길이 합 계산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-63",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
+        "typeName": "무리수의 정수 부분과 소수 부분",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-64",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
+        "typeName": "대소 관계 비교를 통한 수직선 위 무리수의 위치 매칭 (우측/좌측 배치)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-65",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
+        "typeName": "두 무리수 사이에 있는 수 찾기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-66",
+        "majorUnit": "1단원 실수와 그 계산",
+        "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
+        "typeName": "수직선 모눈종이 위 정사각형 대각선 범위 내 무리수 개수 및 참·거짓 판별",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-0-67",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
         "typeName": "두 실수의 대소 관계 비교 활용",
@@ -33742,7 +35794,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-0-43",
+        "id": "mt-중3-1-0-68",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
         "typeName": "두 무리수 사이의 정수 개수가 주어질 때의 미지수 범위 역산 연산",
@@ -33760,7 +35812,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-0-44",
+        "id": "mt-중3-1-0-69",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
         "typeName": "a​ 의 정수 부분 조건 만족하는 자연수 개수 탐색",
@@ -33778,7 +35830,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-0-45",
+        "id": "mt-중3-1-0-70",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
         "typeName": "두 무리수의 소수 부분을 이용한 문자 상등 조건의 대입 연산",
@@ -33796,7 +35848,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-0-46",
+        "id": "mt-중3-1-0-71",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
         "typeName": "복합 무리수 정수/소수 기호 연산의 상등 조건 비교 및 값 계산",
@@ -33814,7 +35866,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-0-47",
+        "id": "mt-중3-1-0-72",
         "majorUnit": "1단원 실수와 그 계산",
         "minorUnit": "(6) 근호를 포함한 복잡한 식의 계산",
         "typeName": "0<x<1 범위 조건 하에서 다항 근호 식들의 크기 순서 판별 및 연산",
@@ -34212,8 +36264,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중3-1-1-21",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
-        "minorUnit": "(4) 인수분해",
-        "typeName": "공통인수를 묶어내는 인수분해의 기초 개념",
+        "minorUnit": "(3) 곱셈 공식의 변형",
+        "typeName": "길이의 변화를 반영한 직사각형 모양 도형의 넓이 전개 활용",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34231,7 +36283,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-22",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(4) 인수분해",
-        "typeName": "공통인수를 이용한 인수분해와 인수의 진위 판별",
+        "typeName": "공통인수를 묶어내는 인수분해의 기초 개념",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34249,7 +36301,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-23",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(4) 인수분해",
-        "typeName": "공통인수 추출 및 인수분해 공식을 이용한 다항식의 인수 분석",
+        "typeName": "공통인수를 이용한 인수분해와 인수의 진위 판별",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34267,7 +36319,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-24",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(4) 인수분해",
-        "typeName": "인수분해 공식 (1) : 완전제곱식 꼴의 판별과 변형",
+        "typeName": "공통인수 추출 및 인수분해 공식을 이용한 다항식의 인수 분석",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34285,7 +36337,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-25",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(4) 인수분해",
-        "typeName": "인수분해 공식 (2) : 제곱의 차 (a2−b2) 공식을 이용한 다항식 분해",
+        "typeName": "인수분해 공식 (1) : 완전제곱식 꼴의 판별과 변형",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34303,7 +36355,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-26",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(4) 인수분해",
-        "typeName": "인수분해 공식(제곱의 차)을 이용한 다항식 분해 및 공통인수 판별",
+        "typeName": "인수분해 공식 (1) : 완전제곱식이 되기 위한 미지수의 조건",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34321,7 +36373,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-1-1-27",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(4) 인수분해",
-        "typeName": "인수분해 공식 (3), (4) : 크로스 대각선 공식을 이용한 분해",
+        "typeName": "다항식이 완전제곱식이 되기 위한 미지수 조건과 부호 판별 복합 변형",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34337,6 +36389,204 @@ export const MATH_CURRICULA: Curriculum[] = [
       },
       {
         "id": "mt-중3-1-1-28",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(4) 인수분해",
+        "typeName": "삼항식이 완전제곱식이 되기 위한 미지수 상수의 조건",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-29",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(4) 인수분해",
+        "typeName": "문자의 부호 범위가 주어질 때 완전제곱식 근호 부등식의 간략화",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-30",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(4) 인수분해",
+        "typeName": "문자의 범위가 주어질 때 완전제곱식과 근호의 성질을 이용한 식의 간략화",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-31",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(4) 인수분해",
+        "typeName": "인수분해 공식 (2) : 제곱의 차 (a2−b2) 합차 분해",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-32",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(4) 인수분해",
+        "typeName": "인수분해 공식 (2) : 제곱의 차 (a2−b2) 공식을 이용한 다항식 분해",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-33",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(4) 인수분해",
+        "typeName": "인수분해 공식(제곱의 차)을 이용한 다항식 분해 및 공통인수 판별",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-34",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(4) 인수분해",
+        "typeName": "인수분해 공식 (3), (4) : 크로스 대각선 공식을 이용한 분해",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-35",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(4) 인수분해",
+        "typeName": "대각선 공식을 활용한 이차식의 인수분해 및 계수 조건 만족하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-36",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(4) 인수분해",
+        "typeName": "이차식이 두 일차식의 곱으로 전개될 때 계수 합 구하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-37",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(4) 인수분해",
+        "typeName": "두 이차식의 공통인수를 구하여 미지수 상수의 값 추론하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-38",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(4) 인수분해",
+        "typeName": "어떤 항을 잘못 보고 인수분해한 결과로부터 처음 다항식 복원하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-39",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(5) 인수분해 공식의 활용",
         "typeName": "공통부분이 반복되는 다항식의 치환을 통한 인수분해",
@@ -34354,7 +36604,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-1-29",
+        "id": "mt-중3-1-1-40",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(5) 인수분해 공식의 활용",
         "typeName": "공통부분이 있는 복잡한 다항식의 치환을 이용한 인수분해",
@@ -34372,7 +36622,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-1-30",
+        "id": "mt-중3-1-1-41",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(5) 인수분해 공식의 활용",
         "typeName": "공통부분의 치환 및 여러 개의 문자를 포함한 복잡한 다항식의 인수분해",
@@ -34390,10 +36640,100 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-1-31",
+        "id": "mt-중3-1-1-42",
         "majorUnit": "2단원 다항식의 곱셈과 인수분해",
         "minorUnit": "(5) 인수분해 공식의 활용",
         "typeName": "항이 4개인 다항식의 인수분해 (2+2 묶음 또는 3+1 완전제곱 꼴)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-43",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(5) 인수분해 공식의 활용",
+        "typeName": "내림차순 정리를 이용한 문자가 여러 개인 복잡한 식의 인수분해",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-44",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(5) 인수분해 공식의 활용",
+        "typeName": "인수분해 공식을 대입한 수의 속산 및 식의 값 구하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-45",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(5) 인수분해 공식의 활용",
+        "typeName": "인수분해 공식을 이용한 복잡한 수의 계산 및 연쇄 소거 급수 풀이",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-46",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(5) 인수분해 공식의 활용",
+        "typeName": "인수분해 공식을 이용한 복잡한 다항식의 변형 및 식의 값 구하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-1-47",
+        "majorUnit": "2단원 다항식의 곱셈과 인수분해",
+        "minorUnit": "(5) 인수분해 공식의 활용",
+        "typeName": "도형의 넓이와 길이에 관한 인수분해 공식의 기하학적 활용",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -34772,6 +37112,168 @@ export const MATH_CURRICULA: Curriculum[] = [
         "majorUnit": "3단원 이차방정식",
         "minorUnit": "(6) 이차방정식의 활용",
         "typeName": "수에 관한 이차방정식 실생활 문장제 활용 (연속하는 수 등)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-2-21",
+        "majorUnit": "3단원 이차방정식",
+        "minorUnit": "(6) 이차방정식의 활용",
+        "typeName": "연속하는 두 홀수 또는 짝수의 곱 조건식 세우기 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-2-22",
+        "majorUnit": "3단원 이차방정식",
+        "minorUnit": "(6) 이차방정식의 활용",
+        "typeName": "연속하는 정수 조건 또는 개수 분배에 관한 실생활 방정식 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-2-23",
+        "majorUnit": "3단원 이차방정식",
+        "minorUnit": "(6) 이차방정식의 활용",
+        "typeName": "지면에서 던져 올린 물체의 높이와 시간에 관한 과학 연계 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-2-24",
+        "majorUnit": "3단원 이차방정식",
+        "minorUnit": "(6) 이차방정식의 활용",
+        "typeName": "도형(삼각형·정사각형)의 변의 변화와 넓이에 관한 기하 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-2-25",
+        "majorUnit": "3단원 이차방정식",
+        "minorUnit": "(6) 이차방정식의 활용",
+        "typeName": "도형의 닮음(정사각형, 황금비 구조) 또는 변의 변화와 넓이 관계 기하 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-2-26",
+        "majorUnit": "3단원 이차방정식",
+        "minorUnit": "(6) 이차방정식의 활용",
+        "typeName": "도형의 닮음 및 변의 길이 변화 관계를 활용한 기하학적 문장제 풀이",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-2-27",
+        "majorUnit": "3단원 이차방정식",
+        "minorUnit": "(6) 이차방정식의 활용",
+        "typeName": "일정한 폭의 길을 뺀 화단의 남은 넓이를 구하는 길 만들기 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-2-28",
+        "majorUnit": "3단원 이차방정식",
+        "minorUnit": "(6) 이차방정식의 활용",
+        "typeName": "일정한 폭의 길을 뺀 화단의 면적 또는 상자 접기 부피 관계 기하 문장제",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-2-29",
+        "majorUnit": "3단원 이차방정식",
+        "minorUnit": "(6) 이차방정식의 활용",
+        "typeName": "일정한 폭의 길을 뺀 면적 또는 원의 반지름 활용 도형 복합 기하 활용",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -35184,6 +37686,96 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중3-1-3-22",
         "majorUnit": "4단원 이차함수",
+        "minorUnit": "(3) 이차함수의 표준형과 그 그래프",
+        "typeName": "특정 사분면을 지나지 않도록 평행이동하는 꼭짓점 미지수 상수의 범위 추론",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-23",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(3) 이차함수의 표준형과 그 그래프",
+        "typeName": "그래프의 모양과 위치에 따른 꼭짓점 미지수 부호(a,p,q) 판별",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-24",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(3) 이차함수의 표준형과 그 그래프",
+        "typeName": "포물선의 개형과 꼭짓점 위치를 연계한 일차함수 직선과의 부호 복합 판별",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-25",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(3) 이차함수의 표준형과 그 그래프",
+        "typeName": "꼭짓점의 좌표와 지나는 점이 주어질 때 이차함수 표준형 식 구하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-26",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(3) 이차함수의 표준형과 그 그래프",
+        "typeName": "이차함수 표준형 그래프의 꼭짓점 이동에 의한 평행사변형 넓이 기하 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-27",
+        "majorUnit": "4단원 이차함수",
         "minorUnit": "(4) 이차함수의 일반형과 그 그래프",
         "typeName": "이차함수 일반형을 완전제곱식을 이용하여 표준형으로 변형하기",
         "difficultyCount": {
@@ -35200,7 +37792,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-3-23",
+        "id": "mt-중3-1-3-28",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(4) 이차함수의 일반형과 그 그래프",
         "typeName": "일반형 식을 표준형으로 변형 시 계수 간 고난도 연립 방정식 해법",
@@ -35218,7 +37810,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-3-24",
+        "id": "mt-중3-1-3-29",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(4) 이차함수의 일반형과 그 그래프",
         "typeName": "이차함수 일반형 그래프의 꼭짓점, 축의 방정식, y축 교점 구하기",
@@ -35236,7 +37828,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-3-25",
+        "id": "mt-중3-1-3-30",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(4) 이차함수의 일반형과 그 그래프",
         "typeName": "일반형 그래프의 축의 위치 변화에 따른 x축 교점간 거리 및 미지수 역산",
@@ -35254,7 +37846,115 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-3-26",
+        "id": "mt-중3-1-3-31",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(4) 이차함수의 일반형과 그 그래프",
+        "typeName": "일반형 포물선의 증가·감소 성질 범위와 축의 방정식 관계 해석",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-32",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(4) 이차함수의 일반형과 그 그래프",
+        "typeName": "포물선의 꼭짓점이 제4사분면 위에 있을 조건 만족 및 대수식 범위 해석",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-33",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(4) 이차함수의 일반형과 그 그래프",
+        "typeName": "일반형 포물선의 평행이동 조건에 따른 미지수 상수의 연립 방정식 풀이",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-34",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(4) 이차함수의 일반형과 그 그래프",
+        "typeName": "일반형 그래프의 평행이동에 따른 최고차항 보존 및 대칭축 변화 추적",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-35",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(4) 이차함수의 일반형과 그 그래프",
+        "typeName": "일반형 그래프의 부호 조건에 따른 계수 a,b,c 의 부호 판별",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-36",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(4) 이차함수의 일반형과 그 그래프",
+        "typeName": "일반형 계수 부호 판별 고난도 (a+b+c, 4a−2b+c 등 복합 기하 판단)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-37",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(5) 이차함수의 식과 활용",
         "typeName": "축의 방정식과 지나는 점들이 주어질 때 이차함수 일반형 식 구하기",
@@ -35272,7 +37972,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-3-27",
+        "id": "mt-중3-1-3-38",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(5) 이차함수의 식과 활용",
         "typeName": "x축 교점 정보(두 근) 및 한 점이 주어질 때 인수정리형 식 설계",
@@ -35290,7 +37990,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-3-28",
+        "id": "mt-중3-1-3-39",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(5) 이차함수의 식과 활용",
         "typeName": "평행이동 조건과 특정 사분면을 지나지 않는 조건의 미지수 범위 결정",
@@ -35308,10 +38008,226 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-1-3-29",
+        "id": "mt-중3-1-3-40",
         "majorUnit": "4단원 이차함수",
         "minorUnit": "(5) 이차함수의 식과 활용",
         "typeName": "서로 다른 세 점이 주어질 때 가감법을 이용한 일반형 식 완성",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-41",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(5) 이차함수의 식과 활용",
+        "typeName": "이차함수 그래프와 x축, y축 교점으로 둘러싸인 도형의 넓이 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-42",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(5) 이차함수의 식과 활용",
+        "typeName": "포물선의 x축 교점 두 개와 꼭짓점으로 이루어진 삼각형 넓이 기하 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-43",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(5) 이차함수의 식과 활용",
+        "typeName": "이차함수 포물선의 꼭짓점이 특정 직선(일차함수) 위에 있을 조건 대입",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-44",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(5) 이차함수의 식과 활용",
+        "typeName": "두 이차함수 그래프의 꼭짓점 일치 조건을 이용한 미지수 연립",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-45",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(5) 이차함수의 식과 활용",
+        "typeName": "이차함수의 식을 보고 최댓값 또는 최솟값의 유무 판별하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-46",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(5) 이차함수의 식과 활용",
+        "typeName": "이차함수 식의 표준형 변형을 통한 최댓값 또는 최솟값 도출 기본",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-47",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(5) 이차함수의 식과 활용",
+        "typeName": "최솟값(또는 최댓값) 조건이 주어질 때 역산하여 미지수 구하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-48",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(5) 이차함수의 식과 활용",
+        "typeName": "이차함수가 중근 조건이나 특정 변수를 공유할 때 최솟값 역산 유도",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-49",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(5) 이차함수의 식과 활용",
+        "typeName": "최댓값/최솟값 자체를 다른 변수의 이차식 함수(M=g(k))로 정의 시 연계 계산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-50",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(5) 이차함수의 식과 활용",
+        "typeName": "실생활 문장제 활용 (도형의 둘레, 넓이 등의 최댓값 구하기)",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-51",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(5) 이차함수의 식과 활용",
+        "typeName": "물리 과학 연계: 포물선 운동 물체의 시간 변수 t에 따른 최대 높이 도달 활용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-1-3-52",
+        "majorUnit": "4단원 이차함수",
+        "minorUnit": "(5) 이차함수의 식과 활용",
+        "typeName": "도형 기하 복합: 선분 길이 변화에 따른 내접 사각형 또는 원의 넓이 합의 최솟값",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36037,8 +38953,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중3-2-0-39",
         "majorUnit": "1단원 삼각비",
-        "minorUnit": "(5) 삼각비의 활용(2)",
-        "typeName": "두 변의 길이와 그 사잇각이 예각일 때 삼각형 넓이 기본 공식 연산",
+        "minorUnit": "(4) 삼각비의 활용(1)",
+        "typeName": "둔각삼각형 외부 연장선에 수선을 내려 높이와 변의 길이를 산출",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36055,8 +38971,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중3-2-0-40",
         "majorUnit": "1단원 삼각비",
-        "minorUnit": "(5) 삼각비의 활용(2)",
-        "typeName": "두 변과 사잇각이 둔각일 때 외각(180˚−x) 이용 넓이 구하기",
+        "minorUnit": "(4) 삼각비의 활용(1)",
+        "typeName": "호수 및 강의 폭을 구하기 위해 축측 직각삼각형 구조를 다루는 문항",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36074,7 +38990,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-41",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(5) 삼각비의 활용(2)",
-        "typeName": "평행사변형에서 두 변의 길이와 내각 조건을 결합한 평면 넓이",
+        "typeName": "두 변의 길이와 그 사잇각이 예각일 때 삼각형 넓이 기본 공식 연산",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36092,7 +39008,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-42",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(5) 삼각비의 활용(2)",
-        "typeName": "일반 사각형의 대각선 길이와 사잇각을 알 때의 기하 넓이 공식",
+        "typeName": "두 변과 사잇각이 둔각일 때 외각(180˚−x) 이용 넓이 구하기",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36110,7 +39026,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-43",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(5) 삼각비의 활용(2)",
-        "typeName": "정다각형(정육각형/정팔각형) 중심각 균등 분할 이용 전체 면적 산출",
+        "typeName": "평행사변형에서 두 변의 길이와 내각 조건을 결합한 평면 넓이",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36128,7 +39044,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-44",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(5) 삼각비의 활용(2)",
-        "typeName": "삼각형의 각의 이등분선 정리 및 비례 배분 결합 분할 면적 추적",
+        "typeName": "일반 사각형의 대각선 길이와 사잇각을 알 때의 기하 넓이 공식",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36146,7 +39062,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-45",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(5) 삼각비의 활용(2)",
-        "typeName": "접기 기하학 구조 및 회전 평면 영역에서 공통 오버랩 음영 넓이",
+        "typeName": "정다각형(정육각형/정팔각형) 중심각 균등 분할 이용 전체 면적 산출",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36164,7 +39080,169 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-0-46",
         "majorUnit": "1단원 삼각비",
         "minorUnit": "(5) 삼각비의 활용(2)",
+        "typeName": "삼각형의 각의 이등분선 정리 및 비례 배분 결합 분할 면적 추적",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-0-47",
+        "majorUnit": "1단원 삼각비",
+        "minorUnit": "(5) 삼각비의 활용(2)",
+        "typeName": "접기 기하학 구조 및 회전 평면 영역에서 공통 오버랩 음영 넓이",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-0-48",
+        "majorUnit": "1단원 삼각비",
+        "minorUnit": "(5) 삼각비의 활용(2)",
         "typeName": "입체도형(원기둥/정육면체) 전개도 위 최단거리 선분이 이루는 면적",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-0-49",
+        "majorUnit": "1단원 삼각비",
+        "minorUnit": "(5) 삼각비의 활용(2)",
+        "typeName": "넓이 수치를 역산하여 비특수각의 미지수 삼각비 값(sinx) 도출",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-0-50",
+        "majorUnit": "1단원 삼각비",
+        "minorUnit": "(5) 삼각비의 활용(2)",
+        "typeName": "사각형을 대각선으로 분할하여 두 삼각형 넓이의 합으로 해결하는 문항",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-0-51",
+        "majorUnit": "1단원 삼각비",
+        "minorUnit": "(5) 삼각비의 활용(2)",
+        "typeName": "삼각형 내심의 성질(내저번의 반지름 공식)과 삼각비 넓이의 융합",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-0-52",
+        "majorUnit": "1단원 삼각비",
+        "minorUnit": "(5) 삼각비의 활용(2)",
+        "typeName": "닮음비와 넓이비 성질을 삼각비 공식과 결합한 다단계 면적 추적",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-0-53",
+        "majorUnit": "1단원 삼각비",
+        "minorUnit": "(5) 삼각비의 활용(2)",
+        "typeName": "평행선 사이에서 높이가 일정함을 이용하는 등적변형 기하학 문항",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-0-54",
+        "majorUnit": "1단원 삼각비",
+        "minorUnit": "(5) 삼각비의 활용(2)",
+        "typeName": "삼각비를 문자로 표현하여 사각형 내부 특정 영역의 넓이식 추정",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-0-55",
+        "majorUnit": "1단원 삼각비",
+        "minorUnit": "(5) 삼각비의 활용(2)",
+        "typeName": "원의 현과 호로 둘러싸인 활꼴 또는 조각 부채꼴의 기하학적 넓이",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36469,8 +39547,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중3-2-1-16",
         "majorUnit": "2단원 원의 성질",
-        "minorUnit": "(3) 원의 접선(2)",
-        "typeName": "삼각형의 내저번 작도 성질과 꼭짓점별 접선 독립 분할 선분의 길이 구하기",
+        "minorUnit": "(2) 원의 접선(1)",
+        "typeName": "삼각비 정의(sin,cos,tan)를 원 외부 접선 길이 및 각도 구조에 역대입하는 문항",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36487,8 +39565,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중3-2-1-17",
         "majorUnit": "2단원 원의 성질",
-        "minorUnit": "(3) 원의 접선(2)",
-        "typeName": "외접사각형의 마주 보는 두 쌍의 대변 길이의 합 등치 원리를 적용한 선분 구하기",
+        "minorUnit": "(2) 원의 접선(1)",
+        "typeName": "접선 성질과 좌표평면 위 원의 중심점 사이의 거리 공식을 결합한 대수 연계",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36506,7 +39584,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-18",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(3) 원의 접선(2)",
-        "typeName": "직각삼각형 내저번 반지름 공식(r=2a+b−c​)과 피타고라스 면적 공식의 연립",
+        "typeName": "삼각형의 내저번 작도 성질과 꼭짓점별 접선 독립 분할 선분의 길이 구하기",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36524,7 +39602,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-19",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(3) 원의 접선(2)",
-        "typeName": "등변사다리꼴 및 외접 평행사변형 내부 접선 분할선과 높이 삼각비 융합 계산",
+        "typeName": "외접사각형의 마주 보는 두 쌍의 대변 길이의 합 등치 원리를 적용한 선분 구하기",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36542,7 +39620,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-20",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(3) 원의 접선(2)",
-        "typeName": "두 원이 외접하면서 삼각형 내부에 동시에 내접할 때 공통 내접선의 기하 성질",
+        "typeName": "직각삼각형 내저번 반지름 공식(r=2a+b−c​)과 피타고라스 면적 공식의 연립",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36560,7 +39638,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-21",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(3) 원의 접선(2)",
-        "typeName": "원 외부 다각형(오각형, 육각형) 외접 구조에서의 다단계 교교 접선 분할 추적",
+        "typeName": "등변사다리꼴 및 외접 평행사변형 내부 접선 분할선과 높이 삼각비 융합 계산",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36578,7 +39656,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-22",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(3) 원의 접선(2)",
-        "typeName": "내저번의 반지름과 삼각형의 둘레 길이를 활용한 삼각형의 기하 넓이 역산",
+        "typeName": "두 원이 외접하면서 삼각형 내부에 동시에 내접할 때 공통 내접선의 기하 성질",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36596,7 +39674,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-23",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(3) 원의 접선(2)",
-        "typeName": "외접사각형의 연장선 작도 구조에서 닮음비 삼각형과 접선의 비례 배분 공식",
+        "typeName": "원 외부 다각형(오각형, 육각형) 외접 구조에서의 다단계 교교 접선 분할 추적",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36613,8 +39691,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중3-2-1-24",
         "majorUnit": "2단원 원의 성질",
-        "minorUnit": "(4) 원주각",
-        "typeName": "동일 호 중심각 원주각 크기 반감 원리(∠원주=½∠중심) 연산",
+        "minorUnit": "(3) 원의 접선(2)",
+        "typeName": "내저번의 반지름과 삼각형의 둘레 길이를 활용한 삼각형의 기하 넓이 역산",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36631,8 +39709,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중3-2-1-25",
         "majorUnit": "2단원 원의 성질",
-        "minorUnit": "(4) 원주각",
-        "typeName": "동일 호 조건 위 상호 교차하는 원주각의 크기가 상동함을 이용한 각도 추적",
+        "minorUnit": "(3) 원의 접선(2)",
+        "typeName": "외접사각형의 연장선 작도 구조에서 닮음비 삼각형과 접선의 비례 배분 공식",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36649,8 +39727,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중3-2-1-26",
         "majorUnit": "2단원 원의 성질",
-        "minorUnit": "(4) 원주각",
-        "typeName": "지름(반원)의 원주각은 직각(90˚)이 됨을 활용한 삼각 직각 기하 해석",
+        "minorUnit": "(3) 원의 접선(2)",
+        "typeName": "원 외접도형 내부 특정 음영 사각 영역의 둘레 및 선분 연립방정식 유도 문제",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36667,8 +39745,8 @@ export const MATH_CURRICULA: Curriculum[] = [
       {
         "id": "mt-중3-2-1-27",
         "majorUnit": "2단원 원의 성질",
-        "minorUnit": "(4) 원주각",
-        "typeName": "원주각 크기와 호의 길이가 정비례함을 이용한 분배 비례식 각도 구하기",
+        "minorUnit": "(3) 원의 접선(2)",
+        "typeName": "원에 외접하는 원과 사각형 내부에서의 최적 분할면적 공통 접선 최고난도 변형",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36686,7 +39764,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-28",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(4) 원주각",
-        "typeName": "원주각 총합 비율(180˚ 분배)을 기반으로 특정 호 부채꼴 각도 산출",
+        "typeName": "동일 호 중심각 원주각 크기 반감 원리(∠원주=½∠중심) 연산",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36704,7 +39782,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-29",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(4) 원주각",
-        "typeName": "네 점이 한 원 위에 있기 위한 동방향 원주각 일치 판정 조건의 연립 계산",
+        "typeName": "동일 호 조건 위 상호 교차하는 원주각의 크기가 상동함을 이용한 각도 추적",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36722,7 +39800,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-30",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(4) 원주각",
-        "typeName": "현의 교각 분할 및 연장선 외각 구조에서 삼각형 외각 성질과 원주각 융합",
+        "typeName": "지름(반원)의 원주각은 직각(90˚)이 됨을 활용한 삼각 직각 기하 해석",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36740,7 +39818,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-31",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(4) 원주각",
-        "typeName": "삼각비(sinA)를 구하기 위해 지름을 지나는 원주각 보조선을 작도하는 유형",
+        "typeName": "원주각 크기와 호의 길이가 정비례함을 이용한 분배 비례식 각도 구하기",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36758,7 +39836,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-32",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(4) 원주각",
-        "typeName": "원주각의 정비례 성질을 이용한 복잡한 다중 호 비례 배분 일차방정식 수립",
+        "typeName": "원주각 총합 비율(180˚ 분배)을 기반으로 특정 호 부채꼴 각도 산출",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36776,7 +39854,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-1-33",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(4) 원주각",
-        "typeName": "원의 지름과 현이 이루는 예각 조건에서 피타고라스 정리와 원주각 복합 기하",
+        "typeName": "네 점이 한 원 위에 있기 위한 동방향 원주각 일치 판정 조건의 연립 계산",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -36792,6 +39870,204 @@ export const MATH_CURRICULA: Curriculum[] = [
       },
       {
         "id": "mt-중3-2-1-34",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(4) 원주각",
+        "typeName": "현의 교각 분할 및 연장선 외각 구조에서 삼각형 외각 성질과 원주각 융합",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-35",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(4) 원주각",
+        "typeName": "삼각비(sinA)를 구하기 위해 지름을 지나는 원주각 보조선을 작도하는 유형",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-36",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(4) 원주각",
+        "typeName": "원의 중심을 지나지 않는 두 현의 교점 내부 각도와 호의 원주각 합의 공식",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-37",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(4) 원주각",
+        "typeName": "원 외부의 한 점에서 그은 두 할선이 만드는 교각과 호의 원주각 차의 정리",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-38",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(4) 원주각",
+        "typeName": "원에 내접하는 정다각형의 한 내각 조건과 호에 대응하는 원주각 다중 연산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-39",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(4) 원주각",
+        "typeName": "호의 길이가 반지름 또는 원둘레의 특정 배수일 때 원주각 크기 역산 연산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-40",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(4) 원주각",
+        "typeName": "원 외부 접선-할선 결합 구조에서 접선 각도와 내접원주각 관계의 심화 해석",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-41",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(4) 원주각",
+        "typeName": "원의 현과 호의 중점을 연결하여 이등변 삼각형 성질과 원주각을 결합하는 문항",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-42",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(4) 원주각",
+        "typeName": "원에 내접하는 이등변삼각형에서 꼭지각 원주각과 밑변 수직이등분선 관계",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-43",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(4) 원주각",
+        "typeName": "원주각의 정비례 성질을 이용한 복잡한 다중 호 비례 배분 일차방정식 수립",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-44",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(4) 원주각",
+        "typeName": "원의 지름과 현이 이루는 예각 조건에서 피타고라스 정리와 원주각 복합 기하",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-45",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(5) 원에 내접하는 사각형",
         "typeName": "내접사각형의 대각의 합이 180˚임을 활용하여 마주 보는 각 일차 수치 산출",
@@ -36809,7 +40085,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-1-35",
+        "id": "mt-중3-2-1-46",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(5) 원에 내접하는 사각형",
         "typeName": "내접사각형의 외각 크기는 대내각 크기와 같다는 정리의 다단계 연쇄 풀이",
@@ -36827,7 +40103,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-1-36",
+        "id": "mt-중3-2-1-47",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(5) 원에 내접하는 사각형",
         "typeName": "대각의 합 조건 또는 외각 조건을 역이용 사각형 원 내접성 여부 검증",
@@ -36845,7 +40121,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-1-37",
+        "id": "mt-중3-2-1-48",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(5) 원에 내접하는 사각형",
         "typeName": "두 원이 교점에서 만날 때 공통현 축을 기준으로 한 연쇄 내접 사각형 추적",
@@ -36863,7 +40139,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-1-38",
+        "id": "mt-중3-2-1-49",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(5) 원에 내접하는 사각형",
         "typeName": "원에 내접하는 오각형, 육각형에서 대각선 보조선을 그어 내접 사각형 분할 계산",
@@ -36881,7 +40157,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-1-39",
+        "id": "mt-중3-2-1-50",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(5) 원에 내접하는 사각형",
         "typeName": "내접사각형의 대각 성질에 호의 비례 원주각 성질을 혼합 가공한 연립 방정식",
@@ -36899,7 +40175,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-1-40",
+        "id": "mt-중3-2-1-51",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(5) 원에 내접하는 사각형",
         "typeName": "원 외부 할선의 교각 삼각형과 사각형 내접 기하 구조의 원주각 복합 추론",
@@ -36917,7 +40193,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-1-41",
+        "id": "mt-중3-2-1-52",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(5) 원에 내접하는 사각형",
         "typeName": "내접하는 사각형의 대각선 교점이 이루는 분할 삼각형 닮음비와 원주각 관계",
@@ -36935,7 +40211,97 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-1-42",
+        "id": "mt-중3-2-1-53",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(5) 원에 내접하는 사각형",
+        "typeName": "내접사각형 성질을 만족하는 원주상의 점의 위치 이동에 따른 각 최대최소",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-54",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(5) 원에 내접하는 사각형",
+        "typeName": "외접원의 지름이 내접사각형의 한 변(지름 사각형)일 때의 수직 조건 융합",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-55",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(5) 원에 내접하는 사각형",
+        "typeName": "내접 사각형 각 꼭짓점 외각의 이등분선 교점들이 이루는 새로운 원 기하",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-56",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(5) 원에 내접하는 사각형",
+        "typeName": "원의 접선 성질과 내접사각형 대각 정리를 복합 결합한 변별력 문항",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-57",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(5) 원에 내접하는 사각형",
+        "typeName": "평행선 조건(엇각, 동위각)이 추가된 원 내접 사각형의 등변사다리꼴 유도",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-58",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(6) 원의 접선과 현이 이루는 각",
         "typeName": "접선-현 각 크기는 내부 호 대응 원주각 크기와 상동함의 정의 연산",
@@ -36953,7 +40319,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-1-43",
+        "id": "mt-중3-2-1-59",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(6) 원의 접선과 현이 이루는 각",
         "typeName": "접선-현 각 정리에 반원 지름 통과 직각 원주각(90˚)을 가공한 각도 구하기",
@@ -36971,7 +40337,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-1-44",
+        "id": "mt-중3-2-1-60",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(6) 원의 접선과 현이 이루는 각",
         "typeName": "원 외부의 점 작도 접선 길이(이등변) 조건과 접선-현 각 공식의 복합 연산",
@@ -36989,7 +40355,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-1-45",
+        "id": "mt-중3-2-1-61",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(6) 원의 접선과 현이 이루는 각",
         "typeName": "두 원이 한 점에서 만나는 접선(내접/외접)에서 엇각, 동위각 공통현 활용",
@@ -37007,7 +40373,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-1-46",
+        "id": "mt-중3-2-1-62",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(6) 원의 접선과 현이 이루는 각",
         "typeName": "접선과 현이 이루는 각 성질에 호의 정비례 원주각 조건을 연립하는 방정식",
@@ -37025,7 +40391,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-1-47",
+        "id": "mt-중3-2-1-63",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(6) 원의 접선과 현이 이루는 각",
         "typeName": "원에 내접하는 삼각형 내부의 특정 선분 비율과 접선 각도 기하학의 연계",
@@ -37043,7 +40409,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-1-48",
+        "id": "mt-중3-2-1-64",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(6) 원의 접선과 현이 이루는 각",
         "typeName": "원 외부 한 할선과 접선이 이루는 삼각형 교각 관계식 도출 및 역산 연산",
@@ -37061,10 +40427,64 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-1-49",
+        "id": "mt-중3-2-1-65",
         "majorUnit": "2단원 원의 성질",
         "minorUnit": "(6) 원의 접선과 현이 이루는 각",
         "typeName": "접선-현 각 정리를 사각형 내접 조건 및 대각의 합 공식과 이중 레이어로 결합",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-66",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(6) 원의 접선과 현이 이루는 각",
+        "typeName": "접선 기하 구조에 이등분선 성질을 혼합하여 닮음 삼각형 자취를 판정하는 유형",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-67",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(6) 원의 접선과 현이 이루는 각",
+        "typeName": "두 원의 공통할선 작도 조건에서 연쇄적 접선-현 평행선 판정 원리 적용",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-1-68",
+        "majorUnit": "2단원 원의 성질",
+        "minorUnit": "(6) 원의 접선과 현이 이루는 각",
+        "typeName": "접선과 현이 이루는 각 정의를 원 밖의 임의 사각형 변의 연장선에 역투영하기",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37190,7 +40610,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-6",
         "majorUnit": "3단원 통계",
         "minorUnit": "(2) 산포도",
-        "typeName": "기존 자료의 각 변량에 상수를 곱하고 더할 때(aX+b)의 평균, 분산 변동 법칙",
+        "typeName": "주어진 나열식 수치 데이터(변량) 자료의 분산과 표준편차를 단계별 도출",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37208,7 +40628,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-7",
         "majorUnit": "3단원 통계",
         "minorUnit": "(2) 산포도",
-        "typeName": "실제 평균과 다르게 잘못 보고 계산한 자료를 정상 변량으로 치환하여 분산 수정",
+        "typeName": "표에 주어진 편차 데이터를 활용하여 자료 전체의 분산 및 표준편차 도출",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37226,7 +40646,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-8",
         "majorUnit": "3단원 통계",
         "minorUnit": "(2) 산포도",
-        "typeName": "자료의 편차 제곱합 공식의 대수적 변형(제곱의 평균−평균의 제곱) 연계",
+        "typeName": "미지수 변량 x,y가 포함된 자료에서 평균과 분산 조건을 연립한 제곱합 산출",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37244,7 +40664,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-9",
         "majorUnit": "3단원 통계",
         "minorUnit": "(2) 산포도",
-        "typeName": "이차방정식의 근과 계수의 관계식을 분산 식의 변량 구조에 연립하는 문항",
+        "typeName": "변량의 개수가 다른 두 집단(A반, B반)의 평균/분산을 결합한 통합 분산 계산",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37262,7 +40682,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-10",
         "majorUnit": "3단원 통계",
         "minorUnit": "(2) 산포도",
-        "typeName": "평균, 분산, 표준편차의 정의적 서술을 이용한 진위 판정 문항 및 두 집단 분포 비교",
+        "typeName": "기존 변량에 새로운 변량이 추가되거나 제외될 때 변동되는 새로운 산포도 추적",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37280,7 +40700,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-11",
         "majorUnit": "3단원 통계",
         "minorUnit": "(2) 산포도",
-        "typeName": "도수분포표 또는 변량의 빈도가 가중치 표로 주어질 때의 평균과 분산 연산",
+        "typeName": "기존 자료의 각 변량에 상수를 곱하고 더할 때(aX+b)의 평균, 분산 변동 법칙",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37298,7 +40718,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-12",
         "majorUnit": "3단원 통계",
         "minorUnit": "(2) 산포도",
-        "typeName": "연속된 자연수 또는 일정한 공차 규칙을 가진 변량 데이터의 분산 일반화 풀이",
+        "typeName": "실제 평균과 다르게 잘못 보고 계산한 자료를 정상 변량으로 치환하여 분산 수정",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37316,7 +40736,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-13",
         "majorUnit": "3단원 통계",
         "minorUnit": "(2) 산포도",
-        "typeName": "실생활 서술 조건에서 평균이 동일하고 분산이 상이한 집단 그래프 분포의 해석",
+        "typeName": "자료의 편차 제곱합 공식의 대수적 변형(제곱의 평균−평균의 제곱) 연계",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37334,7 +40754,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "id": "mt-중3-2-2-14",
         "majorUnit": "3단원 통계",
         "minorUnit": "(2) 산포도",
-        "typeName": "기하학적 도형(삼각형 변의 길이 등) 데이터 변량을 산포도 공식과 결합하는 문항",
+        "typeName": "이차방정식의 근과 계수의 관계식을 분산 식의 변량 구조에 연립하는 문항",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,
@@ -37350,6 +40770,96 @@ export const MATH_CURRICULA: Curriculum[] = [
       },
       {
         "id": "mt-중3-2-2-15",
+        "majorUnit": "3단원 통계",
+        "minorUnit": "(2) 산포도",
+        "typeName": "평균, 분산, 표준편차의 정의적 서술을 이용한 진위 판정 문항 및 두 집단 분포 비교",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-2-16",
+        "majorUnit": "3단원 통계",
+        "minorUnit": "(2) 산포도",
+        "typeName": "도수분포표 또는 변량의 빈도가 가중치 표로 주어질 때의 평균과 분산 연산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-2-17",
+        "majorUnit": "3단원 통계",
+        "minorUnit": "(2) 산포도",
+        "typeName": "연속된 자연수 또는 일정한 공차 규칙을 가진 변량 데이터의 분산 일반화 풀이",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-2-18",
+        "majorUnit": "3단원 통계",
+        "minorUnit": "(2) 산포도",
+        "typeName": "실생활 서술 조건에서 평균이 동일하고 분산이 상이한 집단 그래프 분포의 해석",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-2-19",
+        "majorUnit": "3단원 통계",
+        "minorUnit": "(2) 산포도",
+        "typeName": "기하학적 도형(삼각형 변의 길이 등) 데이터 변량을 산포도 공식과 결합하는 문항",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-2-20",
         "majorUnit": "3단원 통계",
         "minorUnit": "(3) 산점도와 상관관계",
         "typeName": "두 변량 데이터의 분포를 좌표평면 상의 점으로 매칭 표현한 산점도 기본 해석",
@@ -37367,7 +40877,7 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-2-16",
+        "id": "mt-중3-2-2-21",
         "majorUnit": "3단원 통계",
         "minorUnit": "(3) 산점도와 상관관계",
         "typeName": "산점도에 대각선(y=x)을 작도하여 두 변량 성적의 동등성 및 대소 비교 분석",
@@ -37385,10 +40895,100 @@ export const MATH_CURRICULA: Curriculum[] = [
         "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
       },
       {
-        "id": "mt-중3-2-2-17",
+        "id": "mt-중3-2-2-22",
         "majorUnit": "3단원 통계",
         "minorUnit": "(3) 산점도와 상관관계",
         "typeName": "좌표평면 상의 격자 조건(몇 점 이상, 몇 점 미만) 영역 내 데이터 개수 필터링",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-2-23",
+        "majorUnit": "3단원 통계",
+        "minorUnit": "(3) 산점도와 상관관계",
+        "typeName": "두 변량의 합산 점수 또는 가중 평균 조건을 이용한 특정 등수 및 상위 비율 계산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-2-24",
+        "majorUnit": "3단원 통계",
+        "minorUnit": "(3) 산점도와 상관관계",
+        "typeName": "양, 음, 무상관 등 산점도 플롯의 전체적인 경향성에 기반한 상관관계 판별",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-2-25",
+        "majorUnit": "3단원 통계",
+        "minorUnit": "(3) 산점도와 상관관계",
+        "typeName": "실생활의 인과 관계적 상호 현상을 알맞은 형태의 상관관계 산점도와 매칭하기",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-2-26",
+        "majorUnit": "3단원 통계",
+        "minorUnit": "(3) 산점도와 상관관계",
+        "typeName": "산점도 평면 위에서 두 변량의 차이(∣x−y∣)가 일정 기준 이상인 이탈 영역 데이터 연산",
+        "difficultyCount": {
+          "basic": 3,
+          "intermediate": 3,
+          "advanced": 3
+        },
+        "importantCount": {
+          "basic": 0,
+          "intermediate": 0,
+          "advanced": 0
+        },
+        "videoUrl": "https://youtu.be/8cuQVowUw6U?si=M_-nYwgtGemwdgH3",
+        "sampleQuestion": "다음 식을 계산하여 값을 구하시오.\n\n$$ 124 + 352 = \\Box $$"
+      },
+      {
+        "id": "mt-중3-2-2-27",
+        "majorUnit": "3단원 통계",
+        "minorUnit": "(3) 산점도와 상관관계",
+        "typeName": "산점도 격자 공간의 데이터 분포 특성을 다중 서술형 보기와 종합하여 진위 연계 판단",
         "difficultyCount": {
           "basic": 3,
           "intermediate": 3,

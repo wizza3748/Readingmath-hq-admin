@@ -192,6 +192,17 @@ courses.forEach((courseObj) => {
       const soIndex = row.indexOf('소단원');
       if (soIndex !== -1 && row[soIndex + 1]) {
         minorUnit = String(row[soIndex + 1]).trim();
+        // 소단원 변경 시 상태 초기화
+        excludedBasicTypeNos.clear();
+        excludedInterTypeNos.clear();
+        excludedAdvTypeNos.clear();
+        curBasicTypeNo = null;
+        curInterTypeNo = null;
+        curAdvTypeNo = null;
+        curBasicTypeName = "";
+        curInterTypeName = "";
+        curAdvTypeName = "";
+        curBasicTypeNameBase = "";
         continue;
       }
 
