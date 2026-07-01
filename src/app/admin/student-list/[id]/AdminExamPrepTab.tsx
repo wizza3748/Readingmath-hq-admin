@@ -1940,11 +1940,8 @@ export default function AdminExamPrepTab({
 
   // ── 풀이이력 검색 상태 ────────────────────────────────────────────────────
   const defaultGradeTerm = toGradeTerm(grade, semester);
-  const [searchPeriodUnit, setSearchPeriodUnit] = useState<"일" | "월" | "년">("년");
-  const [searchPeriodValue, setSearchPeriodValue] = useState<string>(() => {
-    const now = new Date();
-    return String(now.getFullYear());
-  });
+  const [searchPeriodUnit, setSearchPeriodUnit] = useState<"전체" | "일" | "월" | "년">("전체");
+  const [searchPeriodValue, setSearchPeriodValue] = useState<string>("");
   const [searchCurrNode, setSearchCurrNode] = useState<CurriculumTreeNode | null>(null);
   const [showSearchCurrModal, setShowSearchCurrModal] = useState(false);
   const [searchTypeName, setSearchTypeName] = useState("");
@@ -1953,11 +1950,8 @@ export default function AdminExamPrepTab({
 
   // 실제 적용된 검색 조건 (검색 버튼 클릭 시 반영)
   const [appliedSearch, setAppliedSearch] = useState({
-    periodUnit: "년" as "일" | "월" | "년",
-    periodValue: (() => {
-      const now = new Date();
-      return String(now.getFullYear());
-    })(),
+    periodUnit: "전체" as "전체" | "일" | "월" | "년",
+    periodValue: "",
     currNode: null as CurriculumTreeNode | null,
     typeName: "",
     path: "전체" as "전체" | "시험 대비" | "과제 센터",
@@ -1986,17 +1980,15 @@ export default function AdminExamPrepTab({
 
   // 검색 초기화
   const handleSearchReset = () => {
-    const now = new Date();
-    const initPeriod = String(now.getFullYear());
-    setSearchPeriodUnit("년");
-    setSearchPeriodValue(initPeriod);
+    setSearchPeriodUnit("전체");
+    setSearchPeriodValue("");
     setSearchCurrNode(null);
     setSearchTypeName("");
     setSearchPath("전체");
     setSearchStatuses(new Set());
     setAppliedSearch({
-      periodUnit: "년",
-      periodValue: initPeriod,
+      periodUnit: "전체",
+      periodValue: "",
       currNode: null,
       typeName: "",
       path: "전체",
@@ -2009,7 +2001,7 @@ export default function AdminExamPrepTab({
   const filteredRows = useMemo(() => {
     return allRows.filter((row) => {
       // 기간 필터
-      if (appliedSearch.periodValue) {
+      if (appliedSearch.periodUnit !== "전체" && appliedSearch.periodValue) {
         const dt = new Date(row.solvedAt);
         const y = dt.getFullYear();
         const mo = dt.getMonth() + 1;
@@ -2263,11 +2255,15 @@ export default function AdminExamPrepTab({
                   기간 단위
                 </label>
                 <div className="flex items-center gap-1">
-                  {(["일", "월", "년"] as const).map((u) => (
+                  {(["전체", "일", "월", "년"] as const).map((u) => (
                     <button
                       key={u}
                       onClick={() => {
                         setSearchPeriodUnit(u);
+                        if (u === "전체") {
+                          setSearchPeriodValue("");
+                          return;
+                        }
                         const now = new Date();
                         if (u === "년")
                           setSearchPeriodValue(String(now.getFullYear()));
@@ -2303,13 +2299,17 @@ export default function AdminExamPrepTab({
                       ? "date"
                       : searchPeriodUnit === "월"
                       ? "month"
-                      : "number"
+                      : searchPeriodUnit === "년"
+                      ? "number"
+                      : "text"
                   }
                   value={searchPeriodValue}
+                  disabled={searchPeriodUnit === "전체"}
+                  placeholder={searchPeriodUnit === "전체" ? "전체 기간" : undefined}
                   min={searchPeriodUnit === "년" ? "2020" : undefined}
                   max={searchPeriodUnit === "년" ? "2099" : undefined}
                   onChange={(e) => setSearchPeriodValue(e.target.value)}
-                  className="h-8 px-3 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-500 w-full"
+                  className="h-8 px-3 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-500 w-full disabled:bg-slate-50 disabled:text-slate-400"
                 />
               </div>
 
