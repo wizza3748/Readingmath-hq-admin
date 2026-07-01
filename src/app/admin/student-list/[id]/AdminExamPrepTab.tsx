@@ -1940,10 +1940,10 @@ export default function AdminExamPrepTab({
 
   // ── 풀이이력 검색 상태 ────────────────────────────────────────────────────
   const defaultGradeTerm = toGradeTerm(grade, semester);
-  const [searchPeriodUnit, setSearchPeriodUnit] = useState<"일" | "월" | "년">("월");
+  const [searchPeriodUnit, setSearchPeriodUnit] = useState<"일" | "월" | "년">("년");
   const [searchPeriodValue, setSearchPeriodValue] = useState<string>(() => {
     const now = new Date();
-    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+    return String(now.getFullYear());
   });
   const [searchCurrNode, setSearchCurrNode] = useState<CurriculumTreeNode | null>(null);
   const [showSearchCurrModal, setShowSearchCurrModal] = useState(false);
@@ -1953,10 +1953,10 @@ export default function AdminExamPrepTab({
 
   // 실제 적용된 검색 조건 (검색 버튼 클릭 시 반영)
   const [appliedSearch, setAppliedSearch] = useState({
-    periodUnit: "월" as "일" | "월" | "년",
+    periodUnit: "년" as "일" | "월" | "년",
     periodValue: (() => {
       const now = new Date();
-      return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+      return String(now.getFullYear());
     })(),
     currNode: null as CurriculumTreeNode | null,
     typeName: "",
@@ -1987,15 +1987,15 @@ export default function AdminExamPrepTab({
   // 검색 초기화
   const handleSearchReset = () => {
     const now = new Date();
-    const initPeriod = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
-    setSearchPeriodUnit("월");
+    const initPeriod = String(now.getFullYear());
+    setSearchPeriodUnit("년");
     setSearchPeriodValue(initPeriod);
     setSearchCurrNode(null);
     setSearchTypeName("");
     setSearchPath("전체");
     setSearchStatuses(new Set());
     setAppliedSearch({
-      periodUnit: "월",
+      periodUnit: "년",
       periodValue: initPeriod,
       currNode: null,
       typeName: "",
