@@ -740,27 +740,29 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
       </div>
 
       {/* ── 하단 고정 액션 바 (Footer) ─────────────────────────── */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-[2px] border-t border-slate-200 px-6 py-4 flex items-center justify-between shadow-[0_-6px_20px_-4px_rgba(0,0,0,0.06)]">
-        <button
-          onClick={() => router.push("/admin/student-list")}
-          className="h-9 px-3.5 border border-slate-200 rounded-lg bg-white hover:bg-slate-50 text-slate-600 font-semibold text-sm flex items-center gap-2.5 transition-colors"
-        >
-          <div className="flex flex-col gap-1 w-3.5">
-            <span className="h-0.5 w-full bg-slate-500 rounded-full" />
-            <span className="h-0.5 w-full bg-slate-500 rounded-full" />
-            <span className="h-0.5 w-full bg-slate-500 rounded-full" />
-          </div>
-          목록
-        </button>
+      {activeTab === "info" && (
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-[2px] border-t border-slate-200 px-6 py-4 flex items-center justify-between shadow-[0_-6px_20px_-4px_rgba(0,0,0,0.06)]">
+          <button
+            onClick={() => router.push("/admin/student-list")}
+            className="h-9 px-3.5 border border-slate-200 rounded-lg bg-white hover:bg-slate-50 text-slate-600 font-semibold text-sm flex items-center gap-2.5 transition-colors"
+          >
+            <div className="flex flex-col gap-1 w-3.5">
+              <span className="h-0.5 w-full bg-slate-500 rounded-full" />
+              <span className="h-0.5 w-full bg-slate-500 rounded-full" />
+              <span className="h-0.5 w-full bg-slate-500 rounded-full" />
+            </div>
+            목록
+          </button>
 
-        <Button
-          className="h-9 px-5 gap-1.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-sm rounded-lg"
-          onClick={handleSave}
-        >
-          <Save className="h-4 w-4" />
-          저장
-        </Button>
-      </div>
+          <Button
+            className="h-9 px-5 gap-1.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-sm rounded-lg"
+            onClick={handleSave}
+          >
+            <Save className="h-4 w-4" />
+            저장
+          </Button>
+        </div>
+      )}
 
       {/* ── 삭제 확인 다이얼로그 ───────────────────────────────── */}
       <ConfirmDialog
