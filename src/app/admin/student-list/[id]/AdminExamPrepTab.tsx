@@ -5,6 +5,9 @@ import {
   ChevronDown,
   ChevronUp,
   ChevronRight,
+  ChevronLeft,
+  ChevronsLeft,
+  ChevronsRight,
   Search,
   RotateCcw,
   Trash2,
@@ -1959,7 +1962,7 @@ export default function AdminExamPrepTab({
   });
 
   const [currentPage, setCurrentPage] = useState(1);
-  const PAGE_SIZE = 10;
+  const [pageSize, setPageSize] = useState<number>(20);
 
   const typeNameTrimmed = searchTypeName.replace(/\s/g, "");
   const isSearchEnabled = typeNameTrimmed.length !== 1; // 공백제외 1자면 비활성
@@ -2055,10 +2058,10 @@ export default function AdminExamPrepTab({
   }, [allRows, appliedSearch]);
 
   const totalCount = filteredRows.length;
-  const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
+  const totalPages = Math.max(1, Math.ceil(totalCount / pageSize));
   const pagedRows = filteredRows.slice(
-    (currentPage - 1) * PAGE_SIZE,
-    currentPage * PAGE_SIZE
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
   );
 
   // ── 모달 상태 ─────────────────────────────────────────────────────────────
@@ -2499,7 +2502,7 @@ export default function AdminExamPrepTab({
                   ) : (
                     pagedRows.map((row, i) => {
                       const rowNum =
-                        totalCount - (currentPage - 1) * PAGE_SIZE - i;
+                        totalCount - (currentPage - 1) * pageSize - i;
                       return (
                         <tr
                           key={row.rowId}
@@ -2588,50 +2591,98 @@ export default function AdminExamPrepTab({
             </div>
 
             {/* 페이징 */}
-            {totalPages > 1 && (
-              <div className="flex items-center justify-center gap-1 px-5 py-3.5 border-t border-slate-100">
-                <button
-                  onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                  disabled={currentPage === 1}
-                  className="h-8 w-8 flex items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed"
-                >
-                  <ChevronDown className="w-4 h-4 rotate-90" />
-                </button>
-                {Array.from({ length: totalPages }, (_, i) => i + 1)
-                  .filter(
-                    (p) =>
-                      p === 1 ||
-                      p === totalPages ||
-                      Math.abs(p - currentPage) <= 2
-                  )
-                  .map((p, idx, arr) => (
-                    <React.Fragment key={p}>
-                      {idx > 0 && arr[idx - 1] !== p - 1 && (
-                        <span className="px-1 text-slate-400 text-xs">…</span>
-                      )}
-                      <button
-                        onClick={() => setCurrentPage(p)}
-                        className={`h-8 w-8 flex items-center justify-center rounded-lg text-sm font-semibold transition-colors ${
-                          currentPage === p
-                            ? "bg-indigo-600 text-white"
-                            : "border border-slate-200 text-slate-600 hover:bg-slate-50"
-                        }`}
-                      >
-                        {p}
-                      </button>
-                    </React.Fragment>
-                  ))}
-                <button
-                  onClick={() =>
-                    setCurrentPage((p) => Math.min(totalPages, p + 1))
-                  }
-                  disabled={currentPage === totalPages}
-                  className="h-8 w-8 flex items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed"
-                >
-                  <ChevronDown className="w-4 h-4 -rotate-90" />
-                </button>
-              </div>
-            )}
+            {(() => {
+              const startRowIndex = totalCount === 0 ? 0 : (currentPage - 1) * pageSize + 1;
+              const endRowIndex = Math.min(currentPage * pageSize, totalCount);
+              return (
+                <div className="flex items-center justify-between px-5 py-3.5 border-t border-slate-100">
+                  {/* 왼쪽: 범위 정보 및 페이지 크기 선택 */}
+                  <div className="flex items-center gap-3 text-sm text-slate-500 font-semibold">
+                    <span>
+                      {startRowIndex} - {endRowIndex} / 전체 {totalCount}
+                    </span>
+                    <select
+                      value={pageSize}
+                      onChange={(e) => {
+                        setPageSize(Number(e.target.value));
+                        setCurrentPage(1);
+                      }}
+                      className="h-8 border border-slate-200 rounded-lg px-2 text-sm bg-white focus:outline-none cursor-pointer text-slate-600"
+                    >
+                      <option value={10}>10</option>
+                      <option value={20}>20</option>
+                      <option value={50}>50</option>
+                      <option value={100}>100</option>
+                    </select>
+                  </div>
+
+                  {/* 오른쪽: 페이징 네비게이션 */}
+                  <div className="flex items-center gap-1">
+                    {/* << */}
+                    <button
+                      onClick={() => setCurrentPage(1)}
+                      disabled={currentPage === 1}
+                      className="h-8 w-8 flex items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
+                      <ChevronsLeft className="w-4 h-4" />
+                    </button>
+                    {/* < */}
+                    <button
+                      onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                      disabled={currentPage === 1}
+                      className="h-8 w-8 flex items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </button>
+
+                    {/* 페이지 번호 루프 */}
+                    {Array.from({ length: totalPages }, (_, i) => i + 1)
+                      .filter(
+                        (p) =>
+                          p === 1 ||
+                          p === totalPages ||
+                          Math.abs(p - currentPage) <= 2
+                      )
+                      .map((p, idx, arr) => (
+                        <React.Fragment key={p}>
+                          {idx > 0 && arr[idx - 1] !== p - 1 && (
+                            <span className="px-1 text-slate-400 text-xs">…</span>
+                          )}
+                          <button
+                            onClick={() => setCurrentPage(p)}
+                            className={`h-8 w-8 flex items-center justify-center rounded-lg text-sm font-semibold transition-colors ${
+                              currentPage === p
+                                ? "bg-[#0092fa] text-white border-[#0092fa]"
+                                : "border border-slate-200 text-slate-600 hover:bg-slate-50"
+                            }`}
+                          >
+                            {p}
+                          </button>
+                        </React.Fragment>
+                      ))}
+
+                    {/* > */}
+                    <button
+                      onClick={() =>
+                        setCurrentPage((p) => Math.min(totalPages, p + 1))
+                      }
+                      disabled={currentPage === totalPages}
+                      className="h-8 w-8 flex items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                    {/* >> */}
+                    <button
+                      onClick={() => setCurrentPage(totalPages)}
+                      disabled={currentPage === totalPages}
+                      className="h-8 w-8 flex items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
+                      <ChevronsRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              );
+            })()}
           </div>
         </div>
       )}
