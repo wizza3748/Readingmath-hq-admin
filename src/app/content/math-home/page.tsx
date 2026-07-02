@@ -14,6 +14,45 @@ import StudentSidebar from "@/components/StudentSidebar";
 import { MATH_CURRICULA } from "@/lib/task-center-mock";
 import { getGradeTerm, onGradeTermChange, gradeTermToLabel } from "@/utils/gradeTermStorage";
 
+const MATH_BACKGROUNDS: Record<string, string> = {
+    "초3-1": "https://readingmath.co.kr/build/assets/bg_main_3-1-CCUbB7o5.svg",
+    "초3-2": "https://readingmath.co.kr/build/assets/bg_main_3-2-D8EqePYa.svg",
+    "초4-1": "https://readingmath.co.kr/build/assets/bg_main_4-1-CIpXu7g-.svg",
+    "초4-2": "https://readingmath.co.kr/build/assets/bg_main_4-2-D3-5QOWb.svg",
+    "초5-1": "https://readingmath.co.kr/build/assets/bg_main_5-1-DH42VZWQ.svg",
+    "초5-2": "https://readingmath.co.kr/build/assets/bg_main_5-2-Cu-5JXHZ.svg",
+    "초6-1": "https://readingmath.co.kr/build/assets/bg_main_6-1-9k9owats.svg",
+    "초6-2": "https://readingmath.co.kr/build/assets/bg_main_6-2-BwHkaxh6.svg",
+    "중1-1": "https://readingmath.co.kr/build/assets/bg_main_7-1-CJk0frCW.svg",
+    "중1-2": "https://readingmath.co.kr/build/assets/bg_main_7-2-Dv97TJh6.svg",
+    "중2-1": "https://readingmath.co.kr/build/assets/bg_main_8-1-BVgw1sDG.svg",
+    "중2-2": "https://readingmath.co.kr/build/assets/bg_main_8-2-DlcRqy-0.svg",
+    "중3-1": "https://readingmath.co.kr/build/assets/bg_main_9-1-CFKWPuz7.svg",
+    "중3-2": "https://readingmath.co.kr/build/assets/bg_main_9-2-C47Hs1ye.svg",
+    "고1-1": "https://readingmath.co.kr/build/assets/bg_main_7-1-CJk0frCW.svg",
+    "고1-2": "https://readingmath.co.kr/build/assets/bg_main_7-2-Dv97TJh6.svg",
+};
+
+const MATH_CHARACTERS: Record<string, string> = {
+    "초3-1": "https://readingmath.co.kr/build/assets/alien_3-1-97dhOfbo.svg",
+    "초3-2": "https://readingmath.co.kr/build/assets/alien_3-2-2r3DnG1l.svg",
+    "초4-1": "https://readingmath.co.kr/build/assets/alien_4-1-DbP9nCdy.svg",
+    "초4-2": "https://readingmath.co.kr/build/assets/alien_4-2-Da6oETZx.svg",
+    "초5-1": "https://readingmath.co.kr/build/assets/alien_5-1-CL3ZP9hd.svg",
+    "초5-2": "https://readingmath.co.kr/build/assets/alien_5-2-BQv9nVZE.svg",
+    "초6-1": "https://readingmath.co.kr/build/assets/alien_6-1-BWQCAj9Y.svg",
+    "초6-2": "https://readingmath.co.kr/build/assets/alien_6-2-aHiGzB4J.svg",
+    "중1-1": "https://readingmath.co.kr/build/assets/alien_7-1-PpO6__ME.svg",
+    "중1-2": "https://readingmath.co.kr/build/assets/alien_7-2-D_rZjnTH.svg",
+    "중2-1": "https://readingmath.co.kr/build/assets/alien_8-1-C9kW02q9.svg",
+    "중2-2": "https://readingmath.co.kr/build/assets/alien_8-2-BqqoQ5DU.svg",
+    "중3-1": "https://readingmath.co.kr/build/assets/alien_9-1-B2AtrAOh.svg",
+    "중3-2": "https://readingmath.co.kr/build/assets/alien_9-2-CkyBzS70.svg",
+    "고1-1": "https://readingmath.co.kr/build/assets/alien_7-1-PpO6__ME.svg",
+    "고1-2": "https://readingmath.co.kr/build/assets/alien_7-2-D_rZjnTH.svg",
+};
+
+
 
 export default function MathHomePage() {
     const [tasks, setTasks] = useState<Task[]>([]);
@@ -62,6 +101,10 @@ export default function MathHomePage() {
         }
         return course.types[0].minorUnit;
     })();
+
+    const backgroundUrl = MATH_BACKGROUNDS[selectedGradeTerm] || MATH_BACKGROUNDS["중1-1"];
+    const characterUrl = MATH_CHARACTERS[selectedGradeTerm] || MATH_CHARACTERS["중1-1"];
+
 
 
 
@@ -198,7 +241,7 @@ export default function MathHomePage() {
                 <div className="absolute inset-0 z-0">
                     <div
                         className="w-full h-full bg-cover bg-center"
-                        style={{ backgroundImage: `url('https://readingmath.co.kr/build/assets/bg_main_8-1-BVgw1sDG.svg')` }}
+                        style={{ backgroundImage: `url('${backgroundUrl}')` }}
                     />
                     <div className="absolute inset-0 bg-black/25 pointer-events-none" />
                 </div>
@@ -216,61 +259,8 @@ export default function MathHomePage() {
 
                 {/* Character */}
                 <div className="relative z-10 flex flex-col items-center">
-                    <div className="w-[170px] h-[190px] transform hover:scale-105 transition-transform duration-500 cursor-pointer drop-shadow-[0_15px_25px_rgba(255,69,58,0.35)]">
-                        <svg viewBox="0 0 200 220" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" stopColor="#FF2400" />
-                                    <stop offset="60%" stopColor="#FF4D00" />
-                                    <stop offset="100%" stopColor="#FFA600" />
-                                </linearGradient>
-                                <linearGradient id="faceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" stopColor="#FFE600" />
-                                    <stop offset="100%" stopColor="#FF9900" />
-                                </linearGradient>
-                                <filter id="fireGlow" x="-20%" y="-20%" width="140%" height="140%">
-                                    <feGaussianBlur stdDeviation="5" result="blur" />
-                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                                </filter>
-                            </defs>
-                            
-                            <ellipse cx="78" cy="196" rx="14" ry="10" fill="#FF2400" />
-                            <ellipse cx="122" cy="196" rx="14" ry="10" fill="#FF2400" />
-                            
-                            <path d="M 100,8 
-                                     C 122,38 144,52 160,72 
-                                     C 180,98 184,128 168,158 
-                                     C 152,188 122,198 100,198 
-                                     C 78,198 48,188 32,158 
-                                     C 16,128 20,98 40,72 
-                                     C 56,52 78,38 100,8 Z" 
-                                  fill="url(#bodyGrad)" filter="url(#fireGlow)" />
-                                  
-                            <path d="M 100,22 C 106,42 116,52 126,62 C 106,67 96,72 101,92 C 91,77 86,62 100,22 Z" fill="#FF3C00" />
-                            <path d="M 68,52 C 78,62 83,72 86,82 C 73,82 68,87 71,102 C 61,92 58,77 68,52 Z" fill="#FFA600" />
-                            <path d="M 132,52 C 122,62 117,72 114,82 C 127,82 132,87 129,102 C 139,92 142,77 132,52 Z" fill="#FFA600" />
-
-                            <path d="M 100,88 
-                                     C 116,88 136,93 141,113 
-                                     C 146,133 136,163 100,173 
-                                     C 64,163 54,133 59,113 
-                                     C 64,93 84,88 100,88 Z" 
-                                  fill="url(#faceGrad)" />
-                                  
-                            <circle cx="82" cy="128" r="8" fill="#1C1C1E" />
-                            <circle cx="80" cy="126" r="2.8" fill="#FFFFFF" />
-                            
-                            <circle cx="118" cy="128" r="8" fill="#1C1C1E" />
-                            <circle cx="116" cy="126" r="2.8" fill="#FFFFFF" />
-                            
-                            <ellipse cx="71" cy="138" rx="7" ry="4.5" fill="#FF3C00" opacity="0.55" />
-                            <ellipse cx="129" cy="138" rx="7" ry="4.5" fill="#FF3C00" opacity="0.55" />
-                            
-                            <path d="M 95,142 Q 100,146 105,142" stroke="#1C1C1E" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-                            
-                            <path d="M 42,132 C 27,132 22,142 29,147 C 37,152 42,142 42,132 Z" fill="#FF3C00" />
-                            <path d="M 158,132 C 173,132 178,142 171,147 C 163,152 158,142 158,132 Z" fill="#FF3C00" />
-                        </svg>
+                    <div className="w-[170px] h-[190px] transform hover:scale-105 transition-transform duration-500 cursor-pointer">
+                        <img src={characterUrl} className="w-full h-full object-contain" alt="character" />
                     </div>
                     <div className="w-[140px] h-[10px] bg-black/35 blur-sm rounded-full mt-1.5 opacity-80 pointer-events-none" />
                 </div>

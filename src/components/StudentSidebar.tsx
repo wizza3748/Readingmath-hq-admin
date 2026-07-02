@@ -393,8 +393,9 @@ export default function StudentSidebar({
       if (currentSubject === "math") setMathGradeCode(code);
       else setScienceGradeCode(code);
       setShowGradeModal(false);
+      onClose();
     },
-    [currentSubject]
+    [currentSubject, onClose]
   );
 
   /** 과목 선택: 현재 화면 타입 유지한 채 과목만 전환 */
