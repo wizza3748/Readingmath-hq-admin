@@ -3,13 +3,14 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { X, HelpCircle, Siren, Megaphone, Check } from "lucide-react";
+import { X, HelpCircle, Siren, Megaphone, Check, Menu } from "lucide-react";
 import {
   getGradeTerm,
   setGradeTerm,
   gradeTermToLabel,
   SubjectKey,
 } from "@/utils/gradeTermStorage";
+import StudentSidebar from "@/components/StudentSidebar";
 
 // ─── 학기 데이터 ─────────────────────────────────────────────────
 const ELEM_TERMS = [
@@ -154,6 +155,8 @@ function GradeTermModal({ currentCode, subject, onConfirm, onClose }: GradeTermM
 export default function MyPage() {
   const router = useRouter();
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   // 학기 상태
   const [mathGradeCode, setMathGradeCode] = useState("중1-1");
   const [scienceGradeCode, setScienceGradeCode] = useState("중1-1");
@@ -215,6 +218,10 @@ export default function MyPage() {
           <HelpCircle className="h-5 w-5 cursor-not-allowed opacity-50" />
           <Siren className="h-5 w-5 cursor-not-allowed opacity-50" />
           <Megaphone className="h-5 w-5 cursor-not-allowed opacity-50" />
+          <Menu 
+            className="h-5 w-5 cursor-pointer hover:text-white transition-colors" 
+            onClick={() => setIsSidebarOpen(true)}
+          />
         </div>
       </header>
 
@@ -433,6 +440,12 @@ export default function MyPage() {
 
         </section>
       </main>
+
+      <StudentSidebar 
+        isOpen={isSidebarOpen} 
+        onClose={() => setIsSidebarOpen(false)} 
+        subject="math"
+      />
     </div>
   );
 }
