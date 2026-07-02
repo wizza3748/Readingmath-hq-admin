@@ -10,9 +10,11 @@ import {
     ArrowRight,
 } from "lucide-react";
 import { getStoredTasks, Task } from "@/utils/taskStorage";
+import StudentSidebar from "@/components/StudentSidebar";
 
 export default function MathHomePage() {
     const [tasks, setTasks] = useState<Task[]>([]);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     
     useEffect(() => {
         setTasks(getStoredTasks());
@@ -93,7 +95,10 @@ export default function MathHomePage() {
                         <span className="absolute top-[-1px] right-[-1px] h-2 w-2 bg-[#ff3b30] rounded-full animate-pulse" />
                     </div>
                     <Megaphone className="h-[22px] w-[22px] hover:text-white transition-colors cursor-pointer" />
-                    <Menu className="h-[22px] w-[22px] hover:text-white transition-colors cursor-pointer" />
+                    <Menu 
+                        className="h-[22px] w-[22px] hover:text-white transition-colors cursor-pointer" 
+                        onClick={() => setIsSidebarOpen(true)}
+                    />
                 </div>
             </header>
 
@@ -103,7 +108,7 @@ export default function MathHomePage() {
                 <div className="bg-white hover:bg-slate-50 shadow-[0_2px_10px_rgba(0,0,0,0.12)] pl-[18px] pr-5 py-2.5 rounded-full flex items-center gap-2.5 cursor-pointer transition-all duration-200 select-none">
                     <span className="text-[15px] leading-none">🪐</span>
                     <span className="text-[13.5px] font-bold text-[#1e293b] tracking-tight leading-none">
-                        중등 2학년 1학기 행성
+                        중등 1학년 1학기 행성
                     </span>
                 </div>
                 {/* Badge 2: 수학 (클릭 시 과학 홈으로 이동) */}
@@ -256,7 +261,14 @@ export default function MathHomePage() {
                 .task-card-enter {
                     animation: card-enter 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
                 }
-            `}</style>
+            </style>
+
+            <StudentSidebar 
+                isOpen={isSidebarOpen} 
+                onClose={() => setIsSidebarOpen(false)} 
+                subject="math"
+                gradeTerm="중등 1학년 1학기"
+            />
         </div>
     );
 }
