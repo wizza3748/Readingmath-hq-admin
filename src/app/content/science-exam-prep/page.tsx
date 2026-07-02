@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import { SCIENCE_CURRICULA } from "@/lib/task-center-mock";
 import "katex/dist/katex.min.css";
 import renderMathInElement from "katex/contrib/auto-render";
+import StudentSidebar from "@/components/StudentSidebar";
 
 const DAILY_ATTEMPTS_KEY = "readingmath_examprep_daily_attempts_v1";
 
@@ -594,6 +595,7 @@ const safeExtractGradeSemester = (typeId: string | null): string | null => {
 
 function ScienceExamPrepPageContent() {
   const [isDark, setIsDark] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedGradeTerm, setSelectedGradeTerm] = useState("중1-1");
   const [selectedTextbooks, setSelectedTextbooks] = useState<Set<string>>(new Set());
   const [selectedStatuses, setSelectedStatuses] = useState<Set<AchievementStatus>>(new Set());
@@ -1162,7 +1164,7 @@ function ScienceExamPrepPageContent() {
             <span className="absolute top-0 right-0 h-1.5 w-1.5 bg-[#ef4444] rounded-full animate-pulse" />
           </div>
           <Megaphone className={`h-[20px] w-[20px] ${isDark ? "hover:text-white" : "hover:text-slate-900"} transition-colors cursor-pointer`} />
-          <Menu className={`h-[20px] w-[20px] ${isDark ? "hover:text-white" : "hover:text-slate-900"} transition-colors cursor-pointer`} />
+          <Menu className={`h-[20px] w-[20px] ${isDark ? "hover:text-white" : "hover:text-slate-900"} transition-colors cursor-pointer`} onClick={() => setIsSidebarOpen(true)} />
         </div>
       </header>
 
@@ -1482,6 +1484,11 @@ function ScienceExamPrepPageContent() {
           />
         )}
       </div>
+      <StudentSidebar
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+        subject="science"
+      />
     </div>
   );
 }

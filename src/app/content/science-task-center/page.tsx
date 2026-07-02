@@ -23,11 +23,14 @@ import {
     RotateCcw
 } from "lucide-react";
 import { getStoredTasks, updateTaskStatus, Task } from "@/utils/taskStorage";
+import StudentSidebar from "@/components/StudentSidebar";
+
 
 export default function ScienceTaskCenterPage() {
     const router = useRouter();
     const [tasks, setTasks] = useState<Task[]>([]);
     const [isDarkMode, setIsDarkMode] = useState(false); // 기본 테마는 라이트 모드 (false)
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const observerRef = React.useRef<HTMLDivElement | null>(null);
 
     // 목 데이터 초기화
@@ -225,7 +228,7 @@ export default function ScienceTaskCenterPage() {
                         <span className="absolute top-0 right-0 h-1.5 w-1.5 bg-[#ef4444] rounded-full animate-pulse" />
                     </div>
                     <Megaphone className={`h-[20px] w-[20px] ${isDarkMode ? 'hover:text-white' : 'hover:text-slate-900'} transition-colors cursor-pointer`} />
-                    <Menu className={`h-[20px] w-[20px] ${isDarkMode ? 'hover:text-white' : 'hover:text-slate-900'} transition-colors cursor-pointer`} />
+                    <Menu className={`h-[20px] w-[20px] ${isDarkMode ? 'hover:text-white' : 'hover:text-slate-900'} transition-colors cursor-pointer`} onClick={() => setIsSidebarOpen(true)} />
                 </div>
             </header>
 
@@ -660,6 +663,12 @@ export default function ScienceTaskCenterPage() {
                     </div>
                 </div>
             )}
+
+            <StudentSidebar 
+                isOpen={isSidebarOpen} 
+                onClose={() => setIsSidebarOpen(false)} 
+                subject="science"
+            />
         </div>
     );
 }

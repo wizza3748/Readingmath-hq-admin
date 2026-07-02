@@ -10,9 +10,11 @@ import {
     ArrowRight,
 } from "lucide-react";
 import { getStoredTasks, Task } from "@/utils/taskStorage";
+import StudentSidebar from "@/components/StudentSidebar";
 
 export default function ScienceHomePage() {
     const [tasks, setTasks] = useState<Task[]>([]);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     
     useEffect(() => {
         setTasks(getStoredTasks());
@@ -93,7 +95,7 @@ export default function ScienceHomePage() {
                         <span className="absolute top-[-1px] right-[-1px] h-2 w-2 bg-[#ff3b30] rounded-full animate-pulse" />
                     </div>
                     <Megaphone className="h-[22px] w-[22px] hover:text-white transition-colors cursor-pointer" />
-                    <Menu className="h-[22px] w-[22px] hover:text-white transition-colors cursor-pointer" />
+                    <Menu className="h-[22px] w-[22px] hover:text-white transition-colors cursor-pointer" onClick={() => setIsSidebarOpen(true)} />
                 </div>
             </header>
 
@@ -258,6 +260,12 @@ export default function ScienceHomePage() {
                     animation: card-enter 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
                 }
             `}</style>
+
+            <StudentSidebar
+                isOpen={isSidebarOpen}
+                onClose={() => setIsSidebarOpen(false)}
+                subject="science"
+            />
         </div>
     );
 }
