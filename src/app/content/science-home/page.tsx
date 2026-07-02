@@ -11,10 +11,30 @@ import {
 } from "lucide-react";
 import { getStoredTasks, Task } from "@/utils/taskStorage";
 import StudentSidebar from "@/components/StudentSidebar";
+import { SCIENCE_CURRICULA } from "@/lib/task-center-mock";
+import { getGradeTerm, onGradeTermChange, gradeTermToLabel } from "@/utils/gradeTermStorage";
+
 
 export default function ScienceHomePage() {
     const [tasks, setTasks] = useState<Task[]>([]);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [selectedGradeTerm, setSelectedGradeTerm] = useState<string>(() => {
+        if (typeof window !== "undefined") {
+            return getGradeTerm("science");
+        }
+        return "중1-1";
+    });
+    
+    useEffect(() => {
+        setSelectedGradeTerm(getGradeTerm("science"));
+        const cleanup = onGradeTermChange((subject, code) => {
+            if (subject === "science") {
+                setSelectedGradeTerm(code);
+            }
+        });
+        return cleanup;
+    }, []);
+
     
     useEffect(() => {
         setTasks(getStoredTasks());
@@ -33,6 +53,16 @@ export default function ScienceHomePage() {
     const latestUnstartedTask = [...scienceTasks]
         .filter(t => t.status === "notStarted")
         .sort((a, b) => new Date(b.assignedAt).getTime() - new Date(a.assignedAt).getTime())[0];
+
+    // 선택된 학기의 첫 단원 첫 소/중단원 명칭 가져오기
+    const firstProgressLabel = (() => {
+        const course = SCIENCE_CURRICULA.find(c => c.course === selectedGradeTerm);
+        if (!course || course.types.length === 0) {
+            return "(1) 과학과 인류의 지속가능한 삶";
+        }
+        return course.types[0].minorUnit;
+    })();
+
 
 
     return (
@@ -105,7 +135,7 @@ export default function ScienceHomePage() {
                 <div className="bg-white hover:bg-slate-50 shadow-[0_2px_10px_rgba(0,0,0,0.12)] pl-[18px] pr-5 py-2.5 rounded-full flex items-center gap-2.5 cursor-pointer transition-all duration-200 select-none">
                     <span className="text-[15px] leading-none">🪐</span>
                     <span className="text-[13.5px] font-bold text-[#1e293b] tracking-tight leading-none">
-                        중등 2학년 1학기 행성
+                        {gradeTermToLabel(selectedGradeTerm)} 행성
                     </span>
                 </div>
                 {/* Badge 2: 과학 (클릭 시 수학 홈으로 이동) */}
@@ -174,9 +204,8 @@ export default function ScienceHomePage() {
                 <div className="relative z-10 mb-6 animate-bounce-slow">
                     <div className="bg-white rounded-2xl p-5 px-8 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.6)] border border-slate-100/90 relative max-w-[420px] select-none">
                         <p className="text-[14.5px] font-black text-slate-800 leading-relaxed text-center break-keep">
-                            (1) 순물질과 혼합물, 녹는점과 어는점, <br />
-                            끓는점의 <br />
-                            <span className="text-slate-800">개념훈련</span>을 시작해 보세요!
+                            {firstProgressLabel}의 <br />
+                            개념훈련을 시작해 보세요!
                         </p>
                         <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-white" />
                     </div>
@@ -265,6 +294,7 @@ export default function ScienceHomePage() {
                 isOpen={isSidebarOpen}
                 onClose={() => setIsSidebarOpen(false)}
                 subject="science"
+                gradeTerm={gradeTermToLabel(selectedGradeTerm)}
             />
         </div>
     );
