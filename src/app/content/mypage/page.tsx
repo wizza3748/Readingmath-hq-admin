@@ -155,8 +155,6 @@ function GradeTermModal({ currentCode, subject, onConfirm, onClose }: GradeTermM
 export default function MyPage() {
   const router = useRouter();
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
   // 학기 상태
   const [mathGradeCode, setMathGradeCode] = useState("중1-1");
   const [scienceGradeCode, setScienceGradeCode] = useState("중1-1");
@@ -164,6 +162,7 @@ export default function MyPage() {
   // 모달 제어 상태
   const [showModal, setShowModal] = useState(false);
   const [modalSubject, setModalSubject] = useState<SubjectKey>("math");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     setMathGradeCode(getGradeTerm("math"));
@@ -191,8 +190,8 @@ export default function MyPage() {
   );
 
   return (
-    <div className="min-h-screen w-full bg-[#081324] text-slate-100 font-sans pb-16">
-      {/* GNB 헤더 */}
+    <div className="min-h-screen w-full bg-[#f8fafc] text-slate-800 font-sans pb-16">
+      {/* GNB 헤더 (어두운 테마 유지) */}
       <header className="fixed top-0 left-0 right-0 h-[56px] bg-[#091527] border-b border-[#142338] z-50 flex items-center justify-between px-5 shadow-md">
         <Link href="/content/math-home" className="flex items-center gap-2 cursor-pointer">
           <svg viewBox="0 0 100 100" className="h-6 w-6 flex-shrink-0" xmlns="http://www.w3.org/2000/svg">
@@ -241,7 +240,7 @@ export default function MyPage() {
         {/* 좌측 사이드 프로필 카드 */}
         <section className="w-[200px] flex-shrink-0 flex flex-col items-center select-none pt-4">
           <div className="relative mb-4">
-            <div className="h-28 w-28 rounded-full bg-[#3ba8fc] border-[3px] border-slate-700/80 flex items-center justify-center overflow-hidden shadow-2xl">
+            <div className="h-28 w-28 rounded-full bg-[#3ba8fc] border-[3px] border-slate-200 flex items-center justify-center overflow-hidden shadow-md">
               <svg viewBox="0 0 100 100" className="w-24 h-24 text-white fill-current">
                 <circle cx="28" cy="40" r="10" />
                 <circle cx="72" cy="40" r="10" />
@@ -257,16 +256,16 @@ export default function MyPage() {
                 <path d="M 46,62 Q 50,65 54,62" stroke="#1e232f" strokeWidth="3" strokeLinecap="round" fill="none" />
               </svg>
             </div>
-            <div className="absolute bottom-0 right-0 bg-[#2563eb] text-white p-1.5 rounded-full border border-slate-800 shadow">
+            <div className="absolute bottom-0 right-0 bg-[#2563eb] text-white p-1.5 rounded-full border border-slate-200 shadow">
               <span className="text-[12px] leading-none">⚙️</span>
             </div>
           </div>
-          <h2 className="text-[17px] font-bold mb-6 text-white text-center">진리딩</h2>
+          <h2 className="text-[17px] font-bold mb-6 text-slate-800 text-center">진리딩</h2>
           <nav className="w-full space-y-1">
-            <button className="w-full text-left py-2.5 px-4 rounded-xl text-[14px] font-bold bg-[#1e293b] text-white shadow-sm transition-colors cursor-pointer">
+            <button className="w-full text-left py-2.5 px-4 rounded-xl text-[14px] font-bold bg-white border border-slate-200 text-slate-800 shadow-sm transition-colors cursor-pointer">
               내 정보
             </button>
-            <button className="w-full text-left py-2.5 px-4 rounded-xl text-[14px] font-bold text-slate-400 hover:text-slate-200 transition-colors cursor-not-allowed opacity-60">
+            <button className="w-full text-left py-2.5 px-4 rounded-xl text-[14px] font-bold text-slate-400 hover:text-slate-500 transition-colors cursor-not-allowed opacity-60">
               이용권 정보
             </button>
           </nav>
@@ -276,77 +275,77 @@ export default function MyPage() {
         <section className="flex-1 space-y-6 max-w-[700px]">
           
           {/* 계정 정보 카드 */}
-          <article className="bg-[#0f172a]/80 border border-[#1e293b] rounded-2xl p-6 shadow-lg">
-            <h3 className="text-[15px] font-extrabold text-slate-400 mb-4 select-none">계정 정보</h3>
-            <div className="grid grid-cols-3 gap-y-3.5 text-[13.5px] border-b border-slate-800/60 pb-4">
+          <article className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+            <h3 className="text-[15px] font-extrabold text-slate-500 mb-4 select-none">계정 정보</h3>
+            <div className="grid grid-cols-3 gap-y-3.5 text-[13.5px] border-b border-slate-100 pb-4">
               <span className="text-slate-400 font-bold select-none">학생이름</span>
-              <span className="col-span-2 text-white font-extrabold">진리딩</span>
+              <span className="col-span-2 text-slate-800 font-extrabold">진리딩</span>
               
               <span className="text-slate-400 font-bold select-none">아이디</span>
-              <span className="col-span-2 text-white font-extrabold">test123</span>
+              <span className="col-span-2 text-slate-800 font-extrabold">test123</span>
               
               <span className="text-slate-400 font-bold select-none">가입일</span>
-              <span className="col-span-2 text-white font-extrabold">2026-07-02</span>
+              <span className="col-span-2 text-slate-800 font-extrabold">2026-07-02</span>
             </div>
             <div className="flex justify-end pt-3">
-              <button className="text-[12px] font-semibold text-slate-500 hover:text-slate-400 cursor-not-allowed opacity-50">
+              <button className="text-[12px] font-semibold text-slate-400 hover:text-slate-600 cursor-not-allowed opacity-50">
                 회원 탈퇴
               </button>
             </div>
           </article>
 
           {/* 학생 정보 카드 */}
-          <article className="bg-[#0f172a]/80 border border-[#1e293b] rounded-2xl p-6 shadow-lg space-y-4">
-            <h3 className="text-[15px] font-extrabold text-slate-400 select-none">학생 정보</h3>
+          <article className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+            <h3 className="text-[15px] font-extrabold text-slate-500 select-none">학생 정보</h3>
             <div className="space-y-3 pointer-events-none opacity-60 select-none">
-              <div className="flex items-center bg-[#1e293b]/60 border border-slate-700/60 rounded-xl px-4 py-3">
+              <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-4 py-3">
                 <span className="text-[14px] text-slate-400 mr-3">👤</span>
-                <input type="text" value="진리딩" readOnly className="bg-transparent outline-none text-[13.5px] text-white font-bold w-full" />
+                <input type="text" value="진리딩" readOnly className="bg-transparent outline-none text-[13.5px] text-slate-700 font-bold w-full" />
               </div>
-              <div className="flex items-center bg-[#1e293b]/60 border border-slate-700/60 rounded-xl px-4 py-3">
+              <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-4 py-3">
                 <span className="text-[14px] text-slate-400 mr-3">📅</span>
-                <input type="text" value="2016-01-01" readOnly className="bg-transparent outline-none text-[13.5px] text-white font-bold w-full" />
+                <input type="text" value="2016-01-01" readOnly className="bg-transparent outline-none text-[13.5px] text-slate-700 font-bold w-full" />
               </div>
-              <div className="flex items-center bg-[#1e293b]/60 border border-slate-700/60 rounded-xl px-4 py-3">
+              <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-4 py-3">
                 <span className="text-[14px] text-slate-400 mr-3">📱</span>
-                <input type="text" value="01012345678" readOnly className="bg-transparent outline-none text-[13.5px] text-white font-bold w-full" />
+                <input type="text" value="01012345678" readOnly className="bg-transparent outline-none text-[13.5px] text-slate-700 font-bold w-full" />
               </div>
             </div>
           </article>
 
           {/* 학습 정보 카드 (동적 변경 영역) */}
-          <article className="bg-[#0f172a]/80 border border-[#1e293b] rounded-2xl p-6 shadow-lg space-y-4">
-            <h3 className="text-[15px] font-extrabold text-slate-400 select-none">학습 정보</h3>
+          <article className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+            <h3 className="text-[15px] font-extrabold text-slate-500 select-none">학습 정보</h3>
             <div className="space-y-3">
               {/* 수학 학기 변경 */}
-              <div className="flex items-center justify-between bg-[#1e293b] border border-[#2563eb]/40 rounded-xl px-4 py-3.5">
+              <div className="flex items-center justify-between bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5">
                 <div className="flex items-center gap-3">
                   <span className="text-[14px]">📐</span>
-                  <span className="text-[13.5px] font-bold text-slate-300">리딩수학</span>
-                  <span className="text-[13.5px] font-black text-white ml-2 bg-[#2563eb]/20 px-2 py-0.5 rounded-lg border border-[#2563eb]/30">
+                  <span className="text-[13.5px] font-bold text-slate-600">리딩수학</span>
+                  <span className="text-[13.5px] font-black text-slate-800 ml-2 bg-slate-200 px-2 py-0.5 rounded-lg border border-slate-300">
                     {gradeTermToLabel(mathGradeCode)}
                   </span>
                 </div>
                 <button
                   onClick={() => openModal("math")}
-                  className="bg-[#2563eb] hover:bg-[#1d4ed8] active:bg-[#1e40af] text-white text-[12px] font-extrabold px-3 py-1.5 rounded-lg shadow-md transition-colors cursor-pointer"
+                  className="bg-[#2563eb] hover:bg-[#1d4ed8] active:bg-[#1e40af] text-white text-[12px] font-extrabold px-3 py-1.5 rounded-lg shadow-sm transition-colors cursor-pointer"
                 >
                   변경하기
                 </button>
               </div>
 
               {/* 과학 학기 변경 */}
-              <div className="flex items-center justify-between bg-[#1e293b] border border-[#7c3aed]/40 rounded-xl px-4 py-3.5">
+              <div className="flex items-center justify-between bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5">
                 <div className="flex items-center gap-3">
                   <span className="text-[14px]">🚀</span>
-                  <span className="text-[13.5px] font-bold text-slate-300">리딩과학</span>
-                  <span className="text-[13.5px] font-black text-white ml-2 bg-[#7c3aed]/20 px-2 py-0.5 rounded-lg border border-[#7c3aed]/30">
+                  <span className="text-[13.5px] font-bold text-slate-600">리딩과학</span>
+                  <span className="text-[13.5px] font-black text-slate-800 ml-2 bg-slate-200 px-2 py-0.5 rounded-lg border border-slate-300">
                     {gradeTermToLabel(scienceGradeCode)}
                   </span>
                 </div>
                 <button
                   onClick={() => openModal("science")}
-                  className="bg-[#7c3aed] hover:bg-[#6d28d9] active:bg-[#5b21b6] text-white text-[12px] font-extrabold px-3 py-1.5 rounded-lg shadow-md transition-colors cursor-pointer"
+                  className="bg-[#7c3aed] hover:bg-[#6d28d9] active:bg-[#5b21b6] text-white text-[12px] font-extrabold px-3 py-1.5 rounded-lg shadow-sm transition-colors cursor-pointer"
                 >
                   변경하기
                 </button>
@@ -355,42 +354,42 @@ export default function MyPage() {
           </article>
 
           {/* 비밀번호 변경 카드 */}
-          <article className="bg-[#0f172a]/80 border border-[#1e293b] rounded-2xl p-6 shadow-lg space-y-4 opacity-50 pointer-events-none select-none">
-            <h3 className="text-[15px] font-extrabold text-slate-400">비밀번호 변경</h3>
+          <article className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4 opacity-50 pointer-events-none select-none">
+            <h3 className="text-[15px] font-extrabold text-slate-500">비밀번호 변경</h3>
             <div className="space-y-3">
-              <div className="flex items-center bg-[#1e293b]/60 border border-slate-700/60 rounded-xl px-4 py-3">
+              <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-4 py-3">
                 <span className="text-[14px] text-slate-400 mr-3">🔒</span>
-                <input type="password" placeholder="새 비밀번호" readOnly className="bg-transparent outline-none text-[13.5px] text-white w-full" />
+                <input type="password" placeholder="새 비밀번호" readOnly className="bg-transparent outline-none text-[13.5px] text-slate-600 w-full" />
               </div>
-              <div className="flex items-center bg-[#1e293b]/60 border border-slate-700/60 rounded-xl px-4 py-3">
+              <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-4 py-3">
                 <span className="text-[14px] text-slate-400 mr-3">🔒</span>
-                <input type="password" placeholder="새 비밀번호 확인" readOnly className="bg-transparent outline-none text-[13.5px] text-white w-full" />
+                <input type="password" placeholder="새 비밀번호 확인" readOnly className="bg-transparent outline-none text-[13.5px] text-slate-600 w-full" />
               </div>
             </div>
           </article>
 
           {/* 학부모 정보 카드 */}
-          <article className="bg-[#0f172a]/80 border border-[#1e293b] rounded-2xl p-6 shadow-lg space-y-4 opacity-50 pointer-events-none select-none">
-            <h3 className="text-[15px] font-extrabold text-slate-400">학부모 정보</h3>
+          <article className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4 opacity-50 pointer-events-none select-none">
+            <h3 className="text-[15px] font-extrabold text-slate-500">학부모 정보</h3>
             <div className="space-y-3">
-              <div className="flex items-center bg-[#1e293b]/60 border border-slate-700/60 rounded-xl px-4 py-3">
+              <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-4 py-3">
                 <span className="text-[14px] text-slate-400 mr-3">👤</span>
-                <input type="text" value="진부모" readOnly className="bg-transparent outline-none text-[13.5px] text-white font-bold w-full" />
+                <input type="text" value="진부모" readOnly className="bg-transparent outline-none text-[13.5px] text-slate-600 font-bold w-full" />
               </div>
-              <div className="flex items-center bg-[#1e293b]/60 border border-slate-700/60 rounded-xl px-4 py-3">
+              <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-4 py-3">
                 <span className="text-[14px] text-slate-400 mr-3">📱</span>
-                <input type="text" value="01012345678" readOnly className="bg-transparent outline-none text-[13.5px] text-white font-bold w-full" />
+                <input type="text" value="01012345678" readOnly className="bg-transparent outline-none text-[13.5px] text-slate-600 font-bold w-full" />
               </div>
             </div>
           </article>
 
           {/* 마케팅 활용 동의 */}
-          <article className="bg-[#0f172a]/80 border border-[#1e293b] rounded-2xl p-5 shadow-lg flex items-center justify-between opacity-50 pointer-events-none select-none">
+          <article className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex items-center justify-between opacity-50 pointer-events-none select-none">
             <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded border border-slate-600 flex items-center justify-center">
+              <div className="h-5 w-5 rounded border border-slate-300 bg-slate-50 flex items-center justify-center">
                 <span className="text-[11px] text-slate-400"></span>
               </div>
-              <span className="text-[13.5px] font-bold text-slate-300">마케팅 활용 동의</span>
+              <span className="text-[13.5px] font-bold text-slate-500">마케팅 활용 동의</span>
             </div>
             <button className="text-[12px] font-bold text-[#3ba8fc] border border-[#3ba8fc]/40 rounded-lg px-3 py-1 bg-[#3ba8fc]/5">
               약관 보기
@@ -398,24 +397,24 @@ export default function MyPage() {
           </article>
 
           {/* 로그인 관리 */}
-          <article className="bg-[#0f172a]/80 border border-[#1e293b] rounded-2xl p-6 shadow-lg space-y-4 opacity-50 pointer-events-none select-none">
-            <h3 className="text-[15px] font-extrabold text-slate-400">로그인 관리</h3>
+          <article className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4 opacity-50 pointer-events-none select-none">
+            <h3 className="text-[15px] font-extrabold text-slate-500">로그인 관리</h3>
             <div className="space-y-3">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                <span className="text-[13.5px] font-extrabold text-emerald-500">N 네이버</span>
-                <button className="text-[12px] font-extrabold border border-slate-700 rounded-lg px-3 py-1.5 bg-slate-800 text-slate-400">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                <span className="text-[13.5px] font-extrabold text-emerald-600">N 네이버</span>
+                <button className="text-[12px] font-extrabold border border-slate-200 rounded-lg px-3 py-1.5 bg-slate-50 text-slate-400">
                   연동 하기
                 </button>
               </div>
-              <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                <span className="text-[13.5px] font-extrabold text-yellow-500">💬 카카오톡</span>
-                <button className="text-[12px] font-extrabold border border-slate-700 rounded-lg px-3 py-1.5 bg-slate-800 text-slate-400">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                <span className="text-[13.5px] font-extrabold text-yellow-600">💬 카카오톡</span>
+                <button className="text-[12px] font-extrabold border border-slate-200 rounded-lg px-3 py-1.5 bg-slate-50 text-slate-400">
                   연동 하기
                 </button>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-[13.5px] font-extrabold text-slate-300">🔢 핀번호</span>
-                <button className="text-[12px] font-extrabold border border-slate-700 rounded-lg px-3 py-1.5 bg-slate-800 text-slate-400">
+                <span className="text-[13.5px] font-extrabold text-slate-600">🔢 핀번호</span>
+                <button className="text-[12px] font-extrabold border border-slate-200 rounded-lg px-3 py-1.5 bg-slate-50 text-slate-400">
                   PIN 설정하기
                 </button>
               </div>
@@ -426,13 +425,13 @@ export default function MyPage() {
           <div className="flex items-center justify-center gap-4 pt-6 select-none">
             <button
               onClick={() => router.push("/content/math-home")}
-              className="px-8 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-extrabold text-[14px] rounded-xl shadow-lg transition-all"
+              className="px-8 py-3.5 bg-slate-200 hover:bg-slate-300 text-slate-700 font-extrabold text-[14px] rounded-xl shadow-sm transition-all cursor-pointer"
             >
               메인으로
             </button>
             <button
               disabled
-              className="px-8 py-3.5 bg-slate-800/40 text-slate-600 font-extrabold text-[14px] rounded-xl shadow border border-slate-800/50 cursor-not-allowed opacity-50"
+              className="px-8 py-3.5 bg-slate-100 text-slate-400 font-extrabold text-[14px] rounded-xl shadow-sm border border-slate-200/50 cursor-not-allowed opacity-50"
             >
               저장하기
             </button>
