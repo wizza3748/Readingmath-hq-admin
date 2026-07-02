@@ -16,6 +16,8 @@ import { SCIENCE_CURRICULA } from "@/lib/task-center-mock";
 import "katex/dist/katex.min.css";
 import renderMathInElement from "katex/contrib/auto-render";
 import StudentSidebar from "@/components/StudentSidebar";
+import { getGradeTerm, setGradeTerm, onGradeTermChange, gradeTermToLabel } from "@/utils/gradeTermStorage";
+
 
 const DAILY_ATTEMPTS_KEY = "readingmath_examprep_daily_attempts_v1";
 
@@ -161,10 +163,16 @@ const ALL_STATUSES: AchievementStatus[] = ["none", "undetermined", "relearn", "s
 const SCIENCE_TEXTBOOKS = ["오투", "완자", "오투+완자", "기타"];
 
 const GRADE_TERMS = [
-  { v: "중1-1", l: "중등 1-1" },
-  { v: "중2-1", l: "중등 2-1" },
-  { v: "중3-1", l: "중등 3-1" },
+  { v: "초3-1", l: "초등 3-1" }, { v: "초3-2", l: "초등 3-2" },
+  { v: "초4-1", l: "초등 4-1" }, { v: "초4-2", l: "초등 4-2" },
+  { v: "초5-1", l: "초등 5-1" }, { v: "초5-2", l: "초등 5-2" },
+  { v: "초6-1", l: "초등 6-1" }, { v: "초6-2", l: "초등 6-2" },
+  { v: "중1-1", l: "중등 1-1" }, { v: "중1-2", l: "중등 1-2" },
+  { v: "중2-1", l: "중등 2-1" }, { v: "중2-2", l: "중등 2-2" },
+  { v: "중3-1", l: "중등 3-1" }, { v: "중3-2", l: "중등 3-2" },
+  { v: "고1-1", l: "고등 1-1" }, { v: "고1-2", l: "고등 1-2" },
 ];
+
 
 function hashString(str: string): number {
   let hash = 0;
@@ -596,7 +604,12 @@ const safeExtractGradeSemester = (typeId: string | null): string | null => {
 function ScienceExamPrepPageContent() {
   const [isDark, setIsDark] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [selectedGradeTerm, setSelectedGradeTerm] = useState("중1-1");
+  const [selectedGradeTerm, setSelectedGradeTerm] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      return getGradeTerm("science");
+    }
+    return "중1-1";
+  });
   const [selectedTextbooks, setSelectedTextbooks] = useState<Set<string>>(new Set());
   const [selectedStatuses, setSelectedStatuses] = useState<Set<AchievementStatus>>(new Set());
   const [onlyImportant, setOnlyImportant] = useState(false);
@@ -617,6 +630,18 @@ function ScienceExamPrepPageContent() {
       window.removeEventListener("task-status-changed", handleChanged);
     };
   }, []);
+
+  // localStorage 학기 변경 이벤트 구독 (사이드바에서 변경 시 동기화)
+  useEffect(() => {
+    setSelectedGradeTerm(getGradeTerm("science"));
+    const cleanup = onGradeTermChange((subject, code) => {
+      if (subject === "science") {
+        setSelectedGradeTerm(code);
+      }
+    });
+    return cleanup;
+  }, []);
+
 
   const scienceTasks = tasks.filter(t => t.subject === "science");
   const unstartedCount = scienceTasks.filter(t => t.status === "notStarted").length;
@@ -1199,7 +1224,7 @@ function ScienceExamPrepPageContent() {
           {/* 학년-학기 */}
           <select
             value={selectedGradeTerm}
-            onChange={e => { setSelectedGradeTerm(e.target.value); setSelectedInfo(null); }}
+            onChange={e => { setSelectedGradeTerm(e.target.value); setGradeTerm("science", e.target.value); setSelectedInfo(null); }}
             className={cn("h-7 px-3 text-xs font-bold rounded-full border outline-none cursor-pointer", inputBg)}
           >
             {GRADE_TERMS.map(g => <option key={g.v} value={g.v}>{g.l}</option>)}
@@ -1488,6 +1513,7 @@ function ScienceExamPrepPageContent() {
         isOpen={isSidebarOpen}
         onClose={() => setIsSidebarOpen(false)}
         subject="science"
+        gradeTerm={gradeTermToLabel(selectedGradeTerm)}
       />
     </div>
   );
