@@ -481,7 +481,10 @@ export default function StudentSidebar({
                   <div className="flex items-center gap-1.5">
                     <span className="text-[19px] font-black tracking-tight select-none">진리딩</span>
                     <button
-                      onClick={handleAlert}
+                      onClick={() => {
+                        router.push("/content/mypage");
+                        onClose();
+                      }}
                       className="p-1 text-slate-400 hover:text-white transition-colors focus:outline-none"
                     >
                       <Settings className="h-4.5 w-4.5" />
