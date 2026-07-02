@@ -13,6 +13,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { getCombinedTypeHistory, evaluateAchievementStatus, getChallengeQuestionCount, MATH_TYPE_TO_QUESTIONS, getDailyAttemptsCount, isDailyAttemptAllowed } from "@/utils/examPrepStorage";
 import { cn } from "@/lib/utils";
 import { MATH_CURRICULA } from "@/lib/task-center-mock";
+import { getGradeTerm, setGradeTerm, onGradeTermChange, gradeTermToLabel } from "@/utils/gradeTermStorage";
 import "katex/dist/katex.min.css";
 import renderMathInElement from "katex/contrib/auto-render";
 import StudentSidebar from "@/components/StudentSidebar";
@@ -168,6 +169,7 @@ const GRADE_TERMS = [
   { v: "중1-1", l: "중등 1-1" }, { v: "중1-2", l: "중등 1-2" },
   { v: "중2-1", l: "중등 2-1" }, { v: "중2-2", l: "중등 2-2" },
   { v: "중3-1", l: "중등 3-1" }, { v: "중3-2", l: "중등 3-2" },
+  { v: "고1-1", l: "고등 1-1" }, { v: "고1-2", l: "고등 1-2" },
 ];
 
 function hashString(str: string): number {
@@ -600,7 +602,13 @@ const safeExtractGradeSemester = (typeId: string | null): string | null => {
 function MathExamPrepPageContent() {
   const [isDark, setIsDark] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [selectedGradeTerm, setSelectedGradeTerm] = useState("초3-1");
+  const [selectedGradeTerm, setSelectedGradeTerm] = useState<string>(() => {
+    // 초기값: localStorage에서 수학 학기를 읽어옴 (SSR 안전 처리)
+    if (typeof window !== "undefined") {
+      return getGradeTerm("math");
+    }
+    return "중1-1";
+  });
   const [selectedTextbooks, setSelectedTextbooks] = useState<Set<string>>(new Set());
   const [selectedStatuses, setSelectedStatuses] = useState<Set<AchievementStatus>>(new Set());
   const [onlyImportant, setOnlyImportant] = useState(false);
@@ -620,6 +628,18 @@ function MathExamPrepPageContent() {
     return () => {
       window.removeEventListener("task-status-changed", handleChanged);
     };
+  }, []);
+
+  // localStorage 학기 변경 이벤트 구독 (사이드바에서 변경 시 동기화)
+  useEffect(() => {
+    // 마운트 시 최신 값으로 갱신
+    setSelectedGradeTerm(getGradeTerm("math"));
+    const cleanup = onGradeTermChange((subject, code) => {
+      if (subject === "math") {
+        setSelectedGradeTerm(code);
+      }
+    });
+    return cleanup;
   }, []);
 
   const mathTasks = tasks.filter(t => t.subject === "math");
@@ -1200,7 +1220,7 @@ function MathExamPrepPageContent() {
           {/* 학년-학기 */}
           <select
             value={selectedGradeTerm}
-            onChange={e => { setSelectedGradeTerm(e.target.value); setSelectedInfo(null); }}
+            onChange={e => { setSelectedGradeTerm(e.target.value); setGradeTerm("math", e.target.value); setSelectedInfo(null); }}
             className={cn("h-7 px-3 text-xs font-bold rounded-full border outline-none cursor-pointer", inputBg)}
           >
             {GRADE_TERMS.map(g => <option key={g.v} value={g.v}>{g.l}</option>)}
