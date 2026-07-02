@@ -261,7 +261,7 @@ export default function MathHomePage() {
                 .task-card-enter {
                     animation: card-enter 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
                 }
-            </style>
+            `}</style>
 
             <StudentSidebar 
                 isOpen={isSidebarOpen} 
