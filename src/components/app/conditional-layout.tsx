@@ -24,7 +24,8 @@ export default function ConditionalLayout({
         pathname?.startsWith("/content/science-task-center") ||
         pathname?.startsWith("/content/math-task-center") ||
         pathname?.startsWith("/content/math-exam-prep") ||
-        pathname?.startsWith("/content/science-exam-prep");
+        pathname?.startsWith("/content/science-exam-prep") ||
+        pathname?.startsWith("/content/mypage");
 
     if (isStandalone) {
         return (
