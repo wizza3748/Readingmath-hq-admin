@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { X, Settings, ChevronRight } from "lucide-react";
 import {
   getGradeTerm,
@@ -182,6 +182,23 @@ interface SubjectSelectScreenProps {
   onClose: () => void;
 }
 
+/** 현재 경로에서 화면 타입을 추출하여 대상 과목 경로를 반환 */
+function resolveSubjectPath(currentPath: string, subject: SubjectKey): string {
+  const pageTypeMap: Record<string, { math: string; science: string }> = {
+    "home": { math: "/content/math-home", science: "/content/science-home" },
+    "exam-prep": { math: "/content/math-exam-prep", science: "/content/science-exam-prep" },
+    "task-center": { math: "/content/math-task-center", science: "/content/science-task-center" },
+  };
+  // 경로에서 페이지 타입 추출 (math-home → home, science-exam-prep → exam-prep 등)
+  for (const [type, paths] of Object.entries(pageTypeMap)) {
+    if (currentPath.includes(type)) {
+      return paths[subject];
+    }
+  }
+  // 매핑 없으면 과목별 홈으로
+  return subject === "math" ? "/content/math-home" : "/content/science-home";
+}
+
 function SubjectSelectScreen({
   currentSubject,
   mathGradeCode,
@@ -229,12 +246,12 @@ function SubjectSelectScreen({
           학습할 과목을 선택하세요
         </h1>
 
-        {/* 과목 카드 */}
-        <div className="space-y-4 mb-8">
+        {/* 과목 카드 - 가로 배열 */}
+        <div className="flex gap-4 mb-8">
           {/* 리딩수학 */}
           <button
             onClick={() => onSelect("math")}
-            className={`w-full rounded-2xl p-5 text-left transition-all duration-200 ${
+            className={`flex-1 rounded-2xl p-4 text-left transition-all duration-200 ${
               currentSubject === "math"
                 ? "ring-2 ring-white/60 scale-[1.02]"
                 : "hover:scale-[1.01]"
@@ -242,22 +259,22 @@ function SubjectSelectScreen({
             style={{ background: "linear-gradient(135deg, #4f8ef7 0%, #2563eb 100%)" }}
           >
             <div className="flex items-center justify-between mb-3">
-              <span className="text-white font-black text-[20px]">리딩수학</span>
-              <span className="text-2xl">🪐</span>
+              <span className="text-white font-black text-[18px]">리딩수학</span>
+              <span className="text-xl">🪐</span>
             </div>
-            <div className="bg-white/20 rounded-lg px-3 py-2">
-              <p className="text-white/80 text-[11px] font-medium mb-0.5">학습 진도</p>
+            <div className="bg-white/20 rounded-lg px-2.5 py-2">
+              <p className="text-white/80 text-[10px] font-medium mb-0.5">학습 진도</p>
               {mathProgress.major ? (
                 <>
-                  <p className="text-white font-bold text-[13px] leading-tight">{mathProgress.major}</p>
-                  <p className="text-white/80 text-[12px]">{mathProgress.minor}</p>
+                  <p className="text-white font-bold text-[11px] leading-tight">{mathProgress.major}</p>
+                  <p className="text-white/80 text-[10px]">{mathProgress.minor}</p>
                 </>
               ) : (
-                <p className="text-white/70 text-[12px]">데이터 준비중</p>
+                <p className="text-white/70 text-[11px]">데이터 준비중</p>
               )}
             </div>
             <div className="mt-3">
-              <span className="inline-block bg-white/20 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              <span className="inline-block bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
                 개념 훈련 ROUND 1
               </span>
             </div>
@@ -266,7 +283,7 @@ function SubjectSelectScreen({
           {/* 리딩과학 */}
           <button
             onClick={() => onSelect("science")}
-            className={`w-full rounded-2xl p-5 text-left transition-all duration-200 ${
+            className={`flex-1 rounded-2xl p-4 text-left transition-all duration-200 ${
               currentSubject === "science"
                 ? "ring-2 ring-white/60 scale-[1.02]"
                 : "hover:scale-[1.01]"
@@ -274,22 +291,22 @@ function SubjectSelectScreen({
             style={{ background: "linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)" }}
           >
             <div className="flex items-center justify-between mb-3">
-              <span className="text-white font-black text-[20px]">리딩과학</span>
-              <span className="text-2xl">🚀</span>
+              <span className="text-white font-black text-[18px]">리딩과학</span>
+              <span className="text-xl">🚀</span>
             </div>
-            <div className="bg-white/20 rounded-lg px-3 py-2">
-              <p className="text-white/80 text-[11px] font-medium mb-0.5">학습 진도</p>
+            <div className="bg-white/20 rounded-lg px-2.5 py-2">
+              <p className="text-white/80 text-[10px] font-medium mb-0.5">학습 진도</p>
               {scienceProgress.major ? (
                 <>
-                  <p className="text-white font-bold text-[13px] leading-tight">{scienceProgress.major}</p>
-                  <p className="text-white/80 text-[12px]">{scienceProgress.minor}</p>
+                  <p className="text-white font-bold text-[11px] leading-tight">{scienceProgress.major}</p>
+                  <p className="text-white/80 text-[10px]">{scienceProgress.minor}</p>
                 </>
               ) : (
-                <p className="text-white/70 text-[12px]">데이터 준비중</p>
+                <p className="text-white/70 text-[11px]">데이터 준비중</p>
               )}
             </div>
             <div className="mt-3">
-              <span className="inline-block bg-white/20 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              <span className="inline-block bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
                 개념 훈련 ROUND 1
               </span>
             </div>
@@ -335,6 +352,7 @@ export default function StudentSidebar({
   subject: initialSubject,
 }: StudentSidebarProps) {
   const router = useRouter();
+  const pathname = usePathname();
 
   // ── 내부 상태: localStorage에서 읽어옴 ──
   const [mathGradeCode, setMathGradeCode] = useState<string>("중1-1");
@@ -379,21 +397,19 @@ export default function StudentSidebar({
     [currentSubject]
   );
 
-  /** 과목 선택 */
+  /** 과목 선택: 현재 화면 타입 유지한 채 과목만 전환 */
   const handleSubjectSelect = useCallback(
     (sub: SubjectKey) => {
       setCurrentSubject(sub);
       setShowSubjectScreen(false);
-      // 과목에 맞는 페이지로 이동
-      if (sub === "math") {
-        router.push("/content/math-home");
-      } else {
-        // 과학 페이지가 없으면 준비중 알럿
-        alert("준비중입니다.");
+      const targetPath = resolveSubjectPath(pathname, sub);
+      // 현재 경로와 같으면 이동 불필요
+      if (targetPath !== pathname) {
+        router.push(targetPath);
       }
       onClose();
     },
-    [router, onClose]
+    [router, onClose, pathname]
   );
 
   if (!isOpen) return null;
