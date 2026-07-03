@@ -719,7 +719,7 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
                     <Button
                       type="button"
                       onClick={() => setSuspendModalOpen(true)}
-                      className="h-9 px-4 text-xs font-bold rounded-lg border bg-white border-slate-200 text-slate-600 hover:bg-rose-50 hover:border-rose-300 hover:text-rose-600 transition-all"
+                      className="h-9 px-4 text-xs font-bold rounded-lg border bg-rose-50 border-rose-300 text-rose-600 hover:bg-rose-100 transition-all"
                     >
                       서비스 정지
                     </Button>
