@@ -215,8 +215,13 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
       }
     }
 
+    // 저장 후 상세 페이지에 머무르기 위해 currentStudent 상태 업데이트
+    const updatedTarget = updatedStudents.find((s) => s.id === currentStudent.id);
+    if (updatedTarget) {
+      setCurrentStudent(updatedTarget);
+    }
+
     toast({ title: "수정사항이 성공적으로 저장되었습니다." });
-    router.push("/admin/student-list");
   };
 
   // ── 삭제 핸들러 ───────────────────────────────────────────
