@@ -621,7 +621,7 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
                     onChange={(e) => setGrade(e.target.value)}
                     className="h-9 text-sm w-[130px] bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
                   >
-                    {["초등 3", "초등 4", "초등 5", "초등 6", "중등 1", "중등 2", "중등 3", "미정"].map((g) => (
+                    {["초등 3", "초등 4", "초등 5", "초등 6", "중등 1", "중등 2", "중등 3", "고등 1", "미정"].map((g) => (
                       <option key={g} value={g}>{g}</option>
                     ))}
                   </select>
@@ -630,7 +630,7 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
                     onChange={(e) => setSemester(e.target.value)}
                     className="h-9 text-sm w-[90px] bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
                   >
-                    {["1학기", "2학기", "-"].map((s) => (
+                    {["1학기", "2학기"].map((s) => (
                       <option key={s} value={s}>{s}</option>
                     ))}
                   </select>
