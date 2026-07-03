@@ -724,15 +724,12 @@ export default function StudentListPage() {
                   </th>
                   <th
                     onClick={() => handleSort("grade")}
-                    className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-20 cursor-pointer select-none hover:bg-slate-100/80"
+                    className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-36 cursor-pointer select-none hover:bg-slate-100/80"
                   >
-                    학년 {sortField === "grade" ? (sortDirection === "asc" ? "↑" : "↓") : ""}
+                    기본 학기 {sortField === "grade" ? (sortDirection === "asc" ? "↑" : "↓") : ""}
                   </th>
-                  <th
-                    onClick={() => handleSort("semester")}
-                    className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-20 cursor-pointer select-none hover:bg-slate-100/80"
-                  >
-                    학기 {sortField === "semester" ? (sortDirection === "asc" ? "↑" : "↓") : ""}
+                  <th className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-36">
+                    학습 학기
                   </th>
                   <th
                     onClick={() => handleSort("class")}
@@ -847,14 +844,27 @@ export default function StudentListPage() {
                           </span>
                         </td>
 
-                        {/* 학년 */}
-                        <td className="px-4 py-3 text-slate-700 text-sm">
-                          {student.grade}
+                        {/* 기본 학기 */}
+                        <td className="px-4 py-3 text-slate-700 text-sm whitespace-nowrap">
+                          {student.grade === "미지정" || !student.grade
+                            ? "미지정"
+                            : `${student.grade}학년 ${student.semester || "미지정"}`
+                          }
                         </td>
 
-                        {/* 학기 */}
-                        <td className="px-4 py-3 text-slate-700 text-sm">
-                          {student.semester || "-"}
+                        {/* 학습 학기 */}
+                        <td className="px-4 py-3 text-slate-700 text-xs whitespace-nowrap">
+                          {(() => {
+                            const hasMath = student.serviceType === "math" || student.serviceType === "combo";
+                            const hasScience = student.serviceType === "science" || student.serviceType === "combo";
+                            const mathVal = student.mathGradeTerm;
+                            const sciVal = student.scienceGradeTerm;
+                            if (!hasMath && !hasScience) return <span className="text-slate-400">미설정</span>;
+                            const parts: string[] = [];
+                            if (hasMath) parts.push(`수학 ${mathVal || "미설정"}`);
+                            if (hasScience) parts.push(`과학 ${sciVal || "미설정"}`);
+                            return <span>{parts.join(" / ")}</span>;
+                          })()}
                         </td>
 
                         {/* 반 */}
