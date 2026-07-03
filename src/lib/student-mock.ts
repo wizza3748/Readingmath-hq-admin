@@ -17,6 +17,8 @@ export interface Student {
   serviceType: StudentServiceType;
   grade: string; // 초등 3, 초등 4, 중등 1 등 또는 미정
   semester: string; // 1학기, 2학기 등 또는 -
+  mathGradeTerm?: string; // 수학 학습 학기 (예: 중1-1, 중3-1 등)
+  scienceGradeTerm?: string; // 과학 학습 학기
   classId: string | null; // 소속 반 ID
   serviceStatus: StudentServiceStatus;
   serviceEndDate: string; // YYYY-MM-DD 또는 -
@@ -68,6 +70,8 @@ export const INITIAL_STUDENTS: Student[] = [
     serviceType: "combo",
     grade: "중등 1",
     semester: "1학기",
+    mathGradeTerm: "중1-1",
+    scienceGradeTerm: "중1-1",
     classId: "class-1",
     serviceStatus: "in_use",
     serviceEndDate: "2027-12-31",
