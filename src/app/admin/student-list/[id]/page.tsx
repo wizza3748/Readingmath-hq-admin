@@ -615,11 +615,11 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
               {/* ── 기본 학기 (학년 + 학기 한 행) ── */}
               <div className="grid grid-cols-4 gap-4 items-center">
                 <label className="text-sm font-semibold text-slate-600 col-span-1">기본 학기</label>
-                <div className="col-span-3 flex items-center gap-3">
+                <div className="col-span-3 flex items-center gap-2">
                   <select
                     value={grade}
                     onChange={(e) => setGrade(e.target.value)}
-                    className="h-10 text-sm bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                    className="h-9 text-sm w-[130px] bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
                   >
                     {["초등 3", "초등 4", "초등 5", "초등 6", "중등 1", "중등 2", "중등 3", "미정"].map((g) => (
                       <option key={g} value={g}>{g}</option>
@@ -628,7 +628,7 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
                   <select
                     value={semester}
                     onChange={(e) => setSemester(e.target.value)}
-                    className="h-10 text-sm bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                    className="h-9 text-sm w-[90px] bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
                   >
                     {["1학기", "2학기", "-"].map((s) => (
                       <option key={s} value={s}>{s}</option>
@@ -637,48 +637,52 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
                 </div>
               </div>
 
-              {/* ── 학습 학기 (수학 + 과학 한 행) ── */}
+              {/* ── 학습 학기 (서비스 타입에 따라 수학/과학 조건부 노출) ── */}
               <div className="grid grid-cols-4 gap-4 items-center">
                 <label className="text-sm font-semibold text-slate-600 col-span-1">학습 학기</label>
-                <div className="col-span-3 flex items-center gap-4 flex-wrap">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-slate-500 whitespace-nowrap">수학</span>
-                    <select
-                      value={mathGradeTerm}
-                      onChange={(e) => setMathGradeTerm(e.target.value)}
-                      className="h-10 text-sm bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                    >
-                      {["초3-1","초3-2","초4-1","초4-2","초5-1","초5-2","초6-1","초6-2","중1-1","중1-2","중2-1","중2-2","중3-1","중3-2","고1-1","고1-2"].map((v) => (
-                        <option key={v} value={v}>{v}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-slate-500 whitespace-nowrap">과학</span>
-                    <select
-                      value={scienceGradeTerm}
-                      onChange={(e) => setScienceGradeTerm(e.target.value)}
-                      className="h-10 text-sm bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                    >
-                      {["초3-1","초3-2","초4-1","초4-2","초5-1","초5-2","초6-1","초6-2","중1-1","중1-2","중2-1","중2-2","중3-1","중3-2","고1-1","고1-2"].map((v) => (
-                        <option key={v} value={v}>{v}</option>
-                      ))}
-                    </select>
-                  </div>
+                <div className="col-span-3 flex items-center gap-3 flex-wrap">
+                  {(serviceType === "math" || serviceType === "combo") && (
+                    <div className="flex items-center gap-2">
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-bold bg-blue-50 text-blue-600 border border-blue-200 whitespace-nowrap">수학</span>
+                      <select
+                        value={mathGradeTerm}
+                        onChange={(e) => setMathGradeTerm(e.target.value)}
+                        className="h-9 text-sm w-[110px] bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                      >
+                        {["초3-1","초3-2","초4-1","초4-2","초5-1","초5-2","초6-1","초6-2","중1-1","중1-2","중2-1","중2-2","중3-1","중3-2","고1-1","고1-2"].map((v) => (
+                          <option key={v} value={v}>{v}</option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
+                  {(serviceType === "science" || serviceType === "combo") && (
+                    <div className="flex items-center gap-2">
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-200 whitespace-nowrap">과학</span>
+                      <select
+                        value={scienceGradeTerm}
+                        onChange={(e) => setScienceGradeTerm(e.target.value)}
+                        className="h-9 text-sm w-[110px] bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500"
+                      >
+                        {["초3-1","초3-2","초4-1","초4-2","초5-1","초5-2","초6-1","초6-2","중1-1","중1-2","중2-1","중2-2","중3-1","중3-2","고1-1","고1-2"].map((v) => (
+                          <option key={v} value={v}>{v}</option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
                 </div>
               </div>
 
-              {/* ── 반 / 담당 선생님 (한 행으로 합침) ── */}
+              {/* ── 반 / 담당 선생님 (한 행) ── */}
               <div className="grid grid-cols-4 gap-4 items-center">
                 <label className="text-sm font-semibold text-slate-600 col-span-1">반 / 담당 선생님</label>
-                <div className="col-span-3 flex items-center gap-3">
+                <div className="col-span-3 flex items-center gap-2">
                   <select
                     value={classId || "all"}
                     onChange={(e) => {
                       const val = e.target.value;
                       setClassId(val === "all" ? null : val);
                     }}
-                    className="h-10 text-sm bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 font-semibold"
+                    className="h-9 text-sm w-[140px] bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 font-semibold"
                   >
                     <option value="all">미지정 (-)</option>
                     {classesList.map((cls) => (
@@ -689,7 +693,7 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
                     value={assignedTeacherName}
                     readOnly
                     disabled
-                    className="h-10 text-sm bg-slate-50 border-slate-200 text-slate-700 font-bold cursor-not-allowed"
+                    className="h-9 text-sm w-[100px] bg-slate-50 border-slate-200 text-slate-700 font-bold cursor-not-allowed"
                   />
                 </div>
               </div>
