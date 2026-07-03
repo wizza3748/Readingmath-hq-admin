@@ -64,7 +64,7 @@ export default function StudentListPage() {
 
   // ── 페이징 ──────────────────────────────────────────────────
   const [page, setPage] = React.useState(1);
-  const [perPage, setPerPage] = React.useState(10);
+  const [perPage, setPerPage] = React.useState(20);
 
   // ── 삭제 확인 다이얼로그 ────────────────────────────────────
   const [deleteTarget, setDeleteTarget] = React.useState<Student | null>(null);
