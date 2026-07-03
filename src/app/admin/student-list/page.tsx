@@ -724,11 +724,11 @@ export default function StudentListPage() {
                   </th>
                   <th
                     onClick={() => handleSort("grade")}
-                    className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-36 cursor-pointer select-none hover:bg-slate-100/80"
+                    className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-40 cursor-pointer select-none hover:bg-slate-100/80"
                   >
                     기본 학기 {sortField === "grade" ? (sortDirection === "asc" ? "↑" : "↓") : ""}
                   </th>
-                  <th className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-36">
+                  <th className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-40">
                     학습 학기
                   </th>
                   <th
@@ -845,7 +845,7 @@ export default function StudentListPage() {
                         </td>
 
                         {/* 기본 학기 */}
-                        <td className="px-4 py-3 text-slate-700 text-sm whitespace-nowrap">
+                        <td className="px-4 py-3 text-slate-700 text-sm whitespace-nowrap w-40">
                           {student.grade === "미지정" || !student.grade
                             ? "미지정"
                             : `${student.grade}학년 ${student.semester || "미지정"}`
@@ -853,17 +853,30 @@ export default function StudentListPage() {
                         </td>
 
                         {/* 학습 학기 */}
-                        <td className="px-4 py-3 text-slate-700 text-xs whitespace-nowrap">
+                        <td className="px-4 py-3 whitespace-nowrap w-40">
                           {(() => {
                             const hasMath = student.serviceType === "math" || student.serviceType === "combo";
                             const hasScience = student.serviceType === "science" || student.serviceType === "combo";
                             const mathVal = student.mathGradeTerm;
                             const sciVal = student.scienceGradeTerm;
-                            if (!hasMath && !hasScience) return <span className="text-slate-400">미설정</span>;
-                            const parts: string[] = [];
-                            if (hasMath) parts.push(`수학 ${mathVal || "미설정"}`);
-                            if (hasScience) parts.push(`과학 ${sciVal || "미설정"}`);
-                            return <span>{parts.join(" / ")}</span>;
+                            if (!hasMath && !hasScience) return <span className="text-xs text-slate-400">미설정</span>;
+                            return (
+                              <span className="flex items-center gap-1.5 flex-wrap">
+                                {hasMath && (
+                                  <span className="inline-flex items-center gap-1 text-[11px] font-bold">
+                                    <span className="px-1.5 py-0.5 rounded bg-blue-50 text-blue-600 border border-blue-200">수학</span>
+                                    <span className="text-slate-600">{mathVal || "미설정"}</span>
+                                  </span>
+                                )}
+                                {hasMath && hasScience && <span className="text-slate-300 text-xs">/</span>}
+                                {hasScience && (
+                                  <span className="inline-flex items-center gap-1 text-[11px] font-bold">
+                                    <span className="px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-600 border border-emerald-200">과학</span>
+                                    <span className="text-slate-600">{sciVal || "미설정"}</span>
+                                  </span>
+                                )}
+                              </span>
+                            );
                           })()}
                         </td>
 

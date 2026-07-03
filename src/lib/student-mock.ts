@@ -242,6 +242,19 @@ export const INITIAL_STUDENTS: Student[] = [
 
 const STUDENT_STORAGE_KEY = "readingmath_students_data";
 
+/** grade(중등 1) + semester(1학기) → 학습학기 코드(중1-1) 파생 */
+function deriveGradeTerm(grade: string, semester: string): string {
+  const gradeMap: Record<string, string> = {
+    "초등 3": "초3", "초등 4": "초4", "초등 5": "초5", "초등 6": "초6",
+    "중등 1": "중1", "중등 2": "중2", "중등 3": "중3", "고등 1": "고1",
+  };
+  const semMap: Record<string, string> = { "1학기": "1", "2학기": "2" };
+  const g = gradeMap[grade];
+  const s = semMap[semester];
+  if (!g || !s) return "중1-1";
+  return `${g}-${s}`;
+}
+
 export function getStoredStudents(): Student[] {
   if (typeof window === "undefined") {
     return INITIAL_STUDENTS;
@@ -253,11 +266,22 @@ export function getStoredStudents(): Student[] {
   }
   try {
     const parsed = JSON.parse(stored) as Student[];
-    // 만약 구버전 학생 데이터(예: "student-" 로 시작하는 ID)가 있거나, 학기(semester) 정보가 누락/비정상일 경우 자동 마이그레이션
+    // 구버전 학생 데이터 자동 마이그레이션
     const hasLegacyData = parsed.some(s => s.id.startsWith("student-") || !s.hasOwnProperty("semester") || !s.semester || s.semester === "-");
     if (hasLegacyData) {
       localStorage.setItem(STUDENT_STORAGE_KEY, JSON.stringify(INITIAL_STUDENTS));
       return INITIAL_STUDENTS;
+    }
+    // mathGradeTerm / scienceGradeTerm 누락 시 기본학기에서 파생 자동 적용
+    const needsMigration = parsed.some(s => !s.mathGradeTerm || !s.scienceGradeTerm);
+    if (needsMigration) {
+      const migrated = parsed.map(s => ({
+        ...s,
+        mathGradeTerm: s.mathGradeTerm || deriveGradeTerm(s.grade, s.semester),
+        scienceGradeTerm: s.scienceGradeTerm || deriveGradeTerm(s.grade, s.semester),
+      }));
+      localStorage.setItem(STUDENT_STORAGE_KEY, JSON.stringify(migrated));
+      return migrated;
     }
     return parsed;
   } catch (e) {
