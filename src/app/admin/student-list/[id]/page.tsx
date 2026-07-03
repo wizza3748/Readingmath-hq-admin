@@ -621,7 +621,7 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
                     onChange={(e) => setGrade(e.target.value)}
                     className="h-9 text-sm w-[130px] bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
                   >
-                    {["초등 3", "초등 4", "초등 5", "초등 6", "중등 1", "중등 2", "중등 3", "고등 1", "미정"].map((g) => (
+                    {["초등 3", "초등 4", "초등 5", "초등 6", "중등 1", "중등 2", "중등 3", "고등 1", "미지정"].map((g) => (
                       <option key={g} value={g}>{g}</option>
                     ))}
                   </select>
@@ -630,7 +630,7 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
                     onChange={(e) => setSemester(e.target.value)}
                     className="h-9 text-sm w-[90px] bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
                   >
-                    {["1학기", "2학기"].map((s) => (
+                    {["1학기", "2학기", "미지정"].map((s) => (
                       <option key={s} value={s}>{s}</option>
                     ))}
                   </select>
@@ -701,37 +701,37 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
               {/* 서비스 상태 */}
               <div className="grid grid-cols-4 gap-4 items-center">
                 <label className="text-sm font-semibold text-slate-600 col-span-1">서비스 상태</label>
-                <div className="col-span-3 flex items-center gap-2">
-                  <Button
-                    type="button"
-                    onClick={() => {
-                      if (serviceStatus !== "in_use") {
-                        setResumeModalOpen(true);
-                      }
-                    }}
-                    className={`h-9 px-4 text-xs font-bold rounded-lg border transition-all ${
-                      serviceStatus === "in_use"
-                        ? "bg-emerald-600 border-emerald-600 text-white shadow-sm cursor-default"
-                        : "bg-white border-slate-200 text-slate-400 hover:bg-slate-50"
-                    }`}
-                  >
-                    사용중
-                  </Button>
-                  <Button
-                    type="button"
-                    onClick={() => {
-                      if (serviceStatus !== "suspended") {
-                        setSuspendModalOpen(true);
-                      }
-                    }}
-                    className={`h-9 px-4 text-xs font-bold rounded-lg border transition-all ${
-                      serviceStatus === "suspended"
-                        ? "bg-rose-600 border-rose-600 text-white shadow-sm cursor-default"
-                        : "bg-white border-slate-200 text-slate-400 hover:bg-slate-50"
-                    }`}
-                  >
-                    서비스 정지
-                  </Button>
+                <div className="col-span-3 flex items-center gap-3">
+                  {/* 현재 상태 배지 */}
+                  {serviceStatus === "in_use" ? (
+                    <span className="inline-flex items-center gap-1.5 h-9 px-4 text-xs font-bold rounded-lg border bg-emerald-50 border-emerald-200 text-emerald-700">
+                      <span className="h-2 w-2 rounded-full bg-emerald-500 inline-block" />
+                      사용중
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center gap-1.5 h-9 px-4 text-xs font-bold rounded-lg border bg-amber-50 border-amber-200 text-amber-700">
+                      <span className="h-2 w-2 rounded-full bg-amber-500 inline-block" />
+                      서비스 정지
+                    </span>
+                  )}
+                  {/* 액션 버튼 */}
+                  {serviceStatus === "in_use" ? (
+                    <Button
+                      type="button"
+                      onClick={() => setSuspendModalOpen(true)}
+                      className="h-9 px-4 text-xs font-bold rounded-lg border bg-white border-slate-200 text-slate-600 hover:bg-rose-50 hover:border-rose-300 hover:text-rose-600 transition-all"
+                    >
+                      서비스 정지
+                    </Button>
+                  ) : (
+                    <Button
+                      type="button"
+                      onClick={() => setResumeModalOpen(true)}
+                      className="h-9 px-4 text-xs font-bold rounded-lg border bg-blue-600 border-blue-600 text-white hover:bg-blue-700 shadow-sm transition-all"
+                    >
+                      서비스 시작
+                    </Button>
+                  )}
                 </div>
               </div>
 
