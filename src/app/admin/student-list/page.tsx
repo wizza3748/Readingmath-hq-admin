@@ -863,14 +863,14 @@ export default function StudentListPage() {
                             return (
                               <span className="flex items-center gap-1.5 flex-nowrap">
                                 {hasMath && (
-                                  <span className="inline-flex items-center gap-1 text-[11px] font-bold">
+                                  <span className="inline-flex items-center gap-1 text-[11px]">
                                     <span className="px-1.5 py-0.5 rounded bg-blue-50 text-blue-600 border border-blue-200">수학</span>
                                     <span className="text-slate-600">{mathVal || "미설정"}</span>
                                   </span>
                                 )}
                                 {hasMath && hasScience && <span className="text-slate-300 text-xs">/</span>}
                                 {hasScience && (
-                                  <span className="inline-flex items-center gap-1 text-[11px] font-bold">
+                                  <span className="inline-flex items-center gap-1 text-[11px]">
                                     <span className="px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-600 border border-emerald-200">과학</span>
                                     <span className="text-slate-600">{sciVal || "미설정"}</span>
                                   </span>
@@ -881,18 +881,18 @@ export default function StudentListPage() {
                         </td>
 
                         {/* 반 */}
-                        <td className="px-4 py-3 text-slate-700 text-sm font-semibold">
+                        <td className="px-4 py-3 text-slate-700 text-sm">
                           {matchedClass ? matchedClass.name : "-"}
                         </td>
 
                         {/* 담당 선생님 (조회 전용 및 강조 스타일) */}
-                        <td className="px-4 py-3 text-slate-800 text-sm font-bold bg-slate-50/30">
+                        <td className="px-4 py-3 text-slate-800 text-sm bg-slate-50/30">
                           {teacherName}
                         </td>
 
                         {/* 서비스상태 */}
                         <td className="px-4 py-3">
-                          <span className={`text-[11px] font-bold px-2 py-0.5 rounded border ${statusBadge}`}>
+                          <span className={`text-[11px] font-bold px-2 py-0.5 rounded border whitespace-nowrap ${statusBadge}`}>
                             {getStudentStatusLabel(student.serviceStatus)}
                           </span>
                         </td>
