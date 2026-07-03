@@ -861,7 +861,7 @@ export default function StudentListPage() {
                             const sciVal = student.scienceGradeTerm;
                             if (!hasMath && !hasScience) return <span className="text-xs text-slate-400">미설정</span>;
                             return (
-                              <span className="flex items-center gap-1.5 flex-wrap">
+                              <span className="flex items-center gap-1.5 flex-nowrap">
                                 {hasMath && (
                                   <span className="inline-flex items-center gap-1 text-[11px] font-bold">
                                     <span className="px-1.5 py-0.5 rounded bg-blue-50 text-blue-600 border border-blue-200">수학</span>
