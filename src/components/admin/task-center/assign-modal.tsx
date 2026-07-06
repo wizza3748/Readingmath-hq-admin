@@ -237,14 +237,14 @@ export function AssignModal({
       // 이미 활성화된 반 탭을 한 번 더 누름 -> 배정 해제 시도
       if (isAssigned) {
         const classStudents = allStudents.filter(s => s.classGroup === cls);
-        const canDeselect = classStudents.some(s => {
+        const hasLockedStudent = classStudents.some(s => {
           const selected = isSelected(s.studentId, s.classGroup);
           const status = getStudentTaskStatus(s.studentId);
           const isLocked = status && status !== "not_started";
-          return selected && !isLocked;
+          return selected && isLocked;
         });
 
-        if (!canDeselect && classStudents.length > 0) {
+        if (hasLockedStudent) {
           alert("이미 과제를 진행 중이거나 완료한 학생이 있어 반 배정을 해제할 수 없습니다.");
           return;
         }
