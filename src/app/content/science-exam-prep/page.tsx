@@ -231,8 +231,8 @@ function getYoutubeEmbedUrl(url?: string) {
 // =========================================================================
 function AchievementIcon({ status, className }: { status: AchievementStatus; className?: string }) {
   const cfg = ACHIEVEMENT_CONFIG[status];
-  if (cfg.icon === "crown") return <Crown className={cn("stroke-[2]", className)} />;
-  if (cfg.icon === "zap") return <Zap className={cn("stroke-[2.5]", className)} />;
+  if (cfg.icon === "crown") return <Crown className={cn("stroke-[2] fill-current", className)} />;
+  if (cfg.icon === "zap") return <Zap className={cn("stroke-[2.5] fill-current", className)} />;
   if (cfg.icon === "check") return <Check className={cn("stroke-[3]", className)} />;
   return <span className={cn("font-extrabold text-[15px] leading-none select-none flex items-center justify-center", className)}>?</span>;
 }
