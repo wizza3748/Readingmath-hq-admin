@@ -418,9 +418,9 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark, gradeTerm }: Det
               (!isChallengeEnabled || (cfg.challengeLabel === "다시 도전" && !isPlayable)) && "opacity-50 cursor-not-allowed pointer-events-none shadow-none"
             )}
           >
-            {cfg.challengeLabel === "왕관 도전" && <Crown className="w-4 h-4" />}
+            {cfg.challengeLabel === "왕관 도전" && <Crown className="w-4 h-4 fill-current" />}
             {cfg.challengeLabel === "다시 도전" && <RotateCcw className="w-4 h-4" />}
-            {cfg.challengeLabel === "번개 도전" && <Zap className="w-4 h-4" />}
+            {cfg.challengeLabel === "번개 도전" && <Zap className="w-4 h-4 fill-current" />}
             {cfg.challengeLabel}
           </button>
 
