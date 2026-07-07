@@ -13,7 +13,10 @@ import {
   ArrowRight,
   Star,
   BookOpen,
-  Crown
+  Crown,
+  HelpCircle,
+  AlertTriangle,
+  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -58,7 +61,7 @@ const formatSolvedAt = (isoString: string) => {
 interface AchievementInfo {
   label: string;
   shortLabel: string;
-  icon: "crown" | "check" | "question";
+  icon: "question" | "check" | "crown" | "zap" | "x" | "alert";
   chipBg: string;
   chipBorder: string;
   chipIconColor: string;
@@ -90,7 +93,7 @@ const ACHIEVEMENT_CONFIG: Record<string, AchievementInfo> = {
     challengeLabel: "번개 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
   },
   relearn: {
-    label: "재학습 필요", shortLabel: "재학습", icon: "check",
+    label: "재학습 필요", shortLabel: "재학습", icon: "x",
     chipBg: "bg-red-500", chipBorder: "border-transparent", chipIconColor: "text-white",
     filterIconColor: "text-red-500", filterTextColor: "text-red-600",
     selBg: "bg-red-500", selBorder: "border-red-500", selText: "text-white",
@@ -98,7 +101,7 @@ const ACHIEVEMENT_CONFIG: Record<string, AchievementInfo> = {
     challengeLabel: "번개 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
   },
   supplement: {
-    label: "보충 필요", shortLabel: "보충", icon: "check",
+    label: "보충 필요", shortLabel: "보충", icon: "alert",
     chipBg: "bg-yellow-500", chipBorder: "border-transparent", chipIconColor: "text-white",
     filterIconColor: "text-yellow-500", filterTextColor: "text-yellow-600",
     selBg: "bg-yellow-500", selBorder: "border-yellow-500", selText: "text-white",
@@ -126,8 +129,12 @@ const ACHIEVEMENT_CONFIG: Record<string, AchievementInfo> = {
 function AchievementIcon({ status, className }: { status: string; className?: string }) {
   const cfg = ACHIEVEMENT_CONFIG[status];
   if (!cfg) return null;
-  if (cfg.icon === "crown") return <Crown className={cn("stroke-[2]", className)} />;
+  if (cfg.icon === "crown") return <Crown className={cn("stroke-[2] fill-current", className)} />;
+  if (cfg.icon === "zap") return <Zap className={cn("stroke-[2.5] fill-current", className)} />;
+  if (cfg.icon === "x") return <X className={cn("stroke-[3]", className)} />;
+  if (cfg.icon === "alert") return <AlertTriangle className={cn("stroke-[2.5]", className)} />;
   if (cfg.icon === "check") return <Check className={cn("stroke-[3]", className)} />;
+  return <HelpCircle className={cn("stroke-[2.5]", className)} />;
 }
 
 // KaTeX 수식 렌더링 컴포넌트

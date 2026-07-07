@@ -5,7 +5,7 @@ import {
   ChevronDown, ChevronUp, RotateCcw, Star, X,
   HelpCircle, Moon, Sun, Info, Crown, Check,
   BookOpen, ChevronRight, Play, Zap,
-  Siren, Megaphone, Menu,
+  Siren, Megaphone, Menu, AlertTriangle,
 } from "lucide-react";
 import Link from "next/link";
 import { getStoredTasks, Task } from "@/utils/taskStorage";
@@ -94,7 +94,7 @@ interface BigUnit {
 interface AchievementInfo {
   label: string;
   shortLabel: string;
-  icon: "question" | "check" | "crown" | "zap";
+  icon: "question" | "check" | "crown" | "zap" | "x" | "alert";
   chipBg: string;
   chipBorder: string;
   chipIconColor: string;
@@ -126,7 +126,7 @@ const ACHIEVEMENT_CONFIG: Record<AchievementStatus, AchievementInfo> = {
     challengeLabel: "번개 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
   },
   relearn: {
-    label: "재학습 필요", shortLabel: "재학습", icon: "check",
+    label: "재학습 필요", shortLabel: "재학습", icon: "x",
     chipBg: "bg-red-500", chipBorder: "border-transparent", chipIconColor: "text-white",
     filterIconColor: "text-red-500", filterTextColor: "text-red-600",
     selBg: "bg-red-500", selBorder: "border-red-500", selText: "text-white",
@@ -134,7 +134,7 @@ const ACHIEVEMENT_CONFIG: Record<AchievementStatus, AchievementInfo> = {
     challengeLabel: "번개 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
   },
   supplement: {
-    label: "보충 필요", shortLabel: "보충", icon: "check",
+    label: "보충 필요", shortLabel: "보충", icon: "alert",
     chipBg: "bg-yellow-500", chipBorder: "border-transparent", chipIconColor: "text-white",
     filterIconColor: "text-yellow-500", filterTextColor: "text-yellow-600",
     selBg: "bg-yellow-500", selBorder: "border-yellow-500", selText: "text-white",
@@ -233,8 +233,10 @@ function AchievementIcon({ status, className }: { status: AchievementStatus; cla
   const cfg = ACHIEVEMENT_CONFIG[status];
   if (cfg.icon === "crown") return <Crown className={cn("stroke-[2] fill-current", className)} />;
   if (cfg.icon === "zap") return <Zap className={cn("stroke-[2.5] fill-current", className)} />;
+  if (cfg.icon === "x") return <X className={cn("stroke-[3]", className)} />;
+  if (cfg.icon === "alert") return <AlertTriangle className={cn("stroke-[2.5]", className)} />;
   if (cfg.icon === "check") return <Check className={cn("stroke-[3]", className)} />;
-  return <span className={cn("font-extrabold text-[15px] leading-none select-none flex items-center justify-center", className)}>?</span>;
+  return <HelpCircle className={cn("stroke-[2.5]", className)} />;
 }
 
 interface TypeChipProps {
