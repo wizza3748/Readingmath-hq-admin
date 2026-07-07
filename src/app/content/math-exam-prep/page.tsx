@@ -234,7 +234,20 @@ function AchievementIcon({ status, className }: { status: AchievementStatus; cla
   if (cfg.icon === "x") return <X className={cn("stroke-[3]", className)} />;
   if (cfg.icon === "alert") return <AlertTriangle className={cn("stroke-[2.5]", className)} />;
   if (cfg.icon === "check") return <Check className={cn("stroke-[3]", className)} />;
-  return <HelpCircle className={cn("stroke-[2.5]", className)} />;
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="3.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+      <path d="M12 17h.01" />
+    </svg>
+  );
 }
 
 interface TypeChipProps {
