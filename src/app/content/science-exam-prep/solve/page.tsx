@@ -144,8 +144,8 @@ function AchievementIcon({ status, className }: { status: string; className?: st
       strokeLinejoin="round"
       className={className}
     >
-      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-      <path d="M12 17h.01" />
+      <path d="M7.5 9.5a4.5 4.5 0 0 1 9 0c0 2.5-4.5 3.5-4.5 5.5" />
+      <path d="M12 19h.01" />
     </svg>
   );
 }
