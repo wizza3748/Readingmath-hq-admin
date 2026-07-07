@@ -79,7 +79,7 @@ const ACHIEVEMENT_CONFIG: Record<string, AchievementInfo> = {
     filterIconColor: "text-slate-300", filterTextColor: "text-slate-500",
     selBg: "bg-slate-700", selBorder: "border-slate-700", selText: "text-white",
     description: "아직 학습을 시작하지 않았어요.",
-    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
+    challengeLabel: "번개 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
   },
   undetermined: {
     label: "미판정", shortLabel: "미판정", icon: "question",
@@ -87,7 +87,7 @@ const ACHIEVEMENT_CONFIG: Record<string, AchievementInfo> = {
     filterIconColor: "text-slate-500", filterTextColor: "text-slate-600",
     selBg: "bg-slate-500", selBorder: "border-slate-500", selText: "text-white",
     description: "학습량이 부족해요.",
-    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
+    challengeLabel: "번개 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
   },
   relearn: {
     label: "재학습 필요", shortLabel: "재학습", icon: "check",
@@ -95,7 +95,7 @@ const ACHIEVEMENT_CONFIG: Record<string, AchievementInfo> = {
     filterIconColor: "text-red-500", filterTextColor: "text-red-600",
     selBg: "bg-red-500", selBorder: "border-red-500", selText: "text-white",
     description: "전혀 이해하지 못하고 있어요.",
-    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
+    challengeLabel: "번개 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
   },
   supplement: {
     label: "보충 필요", shortLabel: "보충", icon: "check",
@@ -103,7 +103,7 @@ const ACHIEVEMENT_CONFIG: Record<string, AchievementInfo> = {
     filterIconColor: "text-yellow-500", filterTextColor: "text-yellow-600",
     selBg: "bg-yellow-500", selBorder: "border-yellow-500", selText: "text-white",
     description: "이해도가 낮은 상태예요.",
-    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
+    challengeLabel: "번개 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
   },
   understand: {
     label: "유형 이해", shortLabel: "이해", icon: "check",
