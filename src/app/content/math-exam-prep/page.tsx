@@ -646,7 +646,13 @@ function MathExamPrepPageContent() {
   const mathTasks = tasks.filter(t => t.subject === "math");
   const unstartedCount = mathTasks.filter(t => t.status === "notStarted").length;
 
-  const [refreshTrigger, setRefreshTrigger] = useState(0);
+  // refreshTrigger: -1 = 서버/초기(hydration 안전), 0 이상 = 클라이언트에서 localStorage 읽기
+  const [refreshTrigger, setRefreshTrigger] = useState(-1);
+
+  // 클라이언트 마운트 후 실제 localStorage status 반영을 위해 trigger 업데이트
+  useEffect(() => {
+    setRefreshTrigger(0);
+  }, []);
 
   const handleResetData = () => {
     if (typeof window !== "undefined") {
@@ -732,7 +738,7 @@ function MathExamPrepPageContent() {
           difficulty: "basic",
           isImportant: isTypeImportant || type.importantCount.basic > 0,
           textbook: MATH_TEXTBOOKS[hash % MATH_TEXTBOOKS.length],
-          status: evaluateAchievementStatus(`${type.id}-basic`, "math"),
+          status: refreshTrigger < 0 ? "none" : evaluateAchievementStatus(`${type.id}-basic`, "math"),
           videoUrl: type.videoUrl,
           sampleQuestion: type.sampleQuestion,
           availableCount: type.difficultyCount.basic
@@ -745,7 +751,7 @@ function MathExamPrepPageContent() {
           difficulty: "skill",
           isImportant: isTypeImportant || type.importantCount.intermediate > 0,
           textbook: MATH_TEXTBOOKS[(hash + 1) % MATH_TEXTBOOKS.length],
-          status: evaluateAchievementStatus(`${type.id}-skill`, "math"),
+          status: refreshTrigger < 0 ? "none" : evaluateAchievementStatus(`${type.id}-skill`, "math"),
           videoUrl: type.videoUrl,
           sampleQuestion: type.sampleQuestion,
           availableCount: type.difficultyCount.intermediate
@@ -758,7 +764,7 @@ function MathExamPrepPageContent() {
           difficulty: "advanced",
           isImportant: isTypeImportant || type.importantCount.advanced > 0,
           textbook: MATH_TEXTBOOKS[(hash + 2) % MATH_TEXTBOOKS.length],
-          status: evaluateAchievementStatus(`${type.id}-advanced`, "math"),
+          status: refreshTrigger < 0 ? "none" : evaluateAchievementStatus(`${type.id}-advanced`, "math"),
           videoUrl: type.videoUrl,
           sampleQuestion: type.sampleQuestion,
           availableCount: type.difficultyCount.advanced

@@ -647,7 +647,13 @@ function ScienceExamPrepPageContent() {
   const scienceTasks = tasks.filter(t => t.subject === "science");
   const unstartedCount = scienceTasks.filter(t => t.status === "notStarted").length;
 
-  const [refreshTrigger, setRefreshTrigger] = useState(0);
+  // refreshTrigger: -1 = 서버/초기(hydration 안전), 0 이상 = 클라이언트에서 localStorage 읽기
+  const [refreshTrigger, setRefreshTrigger] = useState(-1);
+
+  // 클라이언트 마운트 후 실제 localStorage status 반영을 위해 trigger 업데이트
+  useEffect(() => {
+    setRefreshTrigger(0);
+  }, []);
 
   const handleResetData = () => {
     if (typeof window !== "undefined") {
@@ -739,7 +745,7 @@ function ScienceExamPrepPageContent() {
           difficulty: "basic",
           isImportant: type.importantCount.basic > 0,
           textbook: type.textbook || "기타",
-          status: evaluateAchievementStatus(`${type.id}-basic`, "science"),
+          status: refreshTrigger < 0 ? "none" : evaluateAchievementStatus(`${type.id}-basic`, "science"),
           videoUrl: type.videoUrl,
           sampleQuestion: type.sampleQuestion,
           availableCount: type.difficultyCount.basic
@@ -752,7 +758,7 @@ function ScienceExamPrepPageContent() {
           difficulty: "skill",
           isImportant: type.importantCount.intermediate > 0,
           textbook: type.textbook || "기타",
-          status: evaluateAchievementStatus(`${type.id}-skill`, "science"),
+          status: refreshTrigger < 0 ? "none" : evaluateAchievementStatus(`${type.id}-skill`, "science"),
           videoUrl: type.videoUrl,
           sampleQuestion: type.sampleQuestion,
           availableCount: type.difficultyCount.intermediate
@@ -765,7 +771,7 @@ function ScienceExamPrepPageContent() {
           difficulty: "advanced",
           isImportant: type.importantCount.advanced > 0,
           textbook: type.textbook || "기타",
-          status: evaluateAchievementStatus(`${type.id}-advanced`, "science"),
+          status: refreshTrigger < 0 ? "none" : evaluateAchievementStatus(`${type.id}-advanced`, "science"),
           videoUrl: type.videoUrl,
           sampleQuestion: type.sampleQuestion,
           availableCount: type.difficultyCount.advanced
