@@ -147,7 +147,7 @@ const ACHIEVEMENT_CONFIG: Record<AchievementStatus, AchievementInfo> = {
     filterIconColor: "text-green-500", filterTextColor: "text-green-600",
     selBg: "bg-green-500", selBorder: "border-green-500", selText: "text-white",
     description: "충분히 이해하여 문제를 풀 수 있어요.",
-    challengeLabel: "왕관 도전", challengeStyle: "bg-violet-600 hover:bg-violet-700 text-white shadow-violet-500/30",
+    challengeLabel: "왕관 도전", challengeStyle: "bg-green-600 hover:bg-green-700 text-white shadow-green-500/30",
   },
   master: {
     label: "유형 정복", shortLabel: "정복", icon: "crown",
