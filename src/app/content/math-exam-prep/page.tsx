@@ -1277,7 +1277,7 @@ function MathExamPrepPageContent() {
                 className={cn(
                   "h-7 px-2.5 text-xs font-bold rounded-full border transition-all flex items-center gap-1",
                   sel
-                    ? "bg-blue-600 border-blue-600 text-white"
+                    ? `${cfg.selBg} ${cfg.selBorder} ${cfg.selText}`
                     : chipDefault
                 )}>
                 <AchievementIcon status={status} className={cn("w-3 h-3", sel ? "text-white stroke-white" : cfg.filterIconColor)} />
