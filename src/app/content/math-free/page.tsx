@@ -506,7 +506,7 @@ export default function MathFreePage() {
                                 isPanelOpen ? "translate-x-0 opacity-100 scale-100" : "translate-x-full opacity-0 scale-95 pointer-events-none"
                             }`}
                         >
-                            {/* 패널 헤더 - 학기 타이틀 왼쪽 행성 아이콘 삭제 완료 */}
+                            {/* 패널 헤더 */}
                             <div className="p-5 border-b border-[#142338] flex items-center justify-between bg-[#0e1f37]/40">
                                 <div className="flex items-center gap-3">
                                     {viewMode === "semester" ? (
@@ -532,7 +532,7 @@ export default function MathFreePage() {
                                 </button>
                             </div>
 
-                            {/* 패널 단원 리스트 - 계통 태그를 대단원(중단원) 타이틀 좌측에 1회 공통 노출화 */}
+                            {/* 패널 단원 리스트 */}
                             <div className="flex-1 overflow-y-auto p-5 space-y-6 scrollbar-thin">
                                 {viewMode === "semester" ? (
                                     getUnitsForCourse(selectedCourse).map((unitGroup, idx) => {
@@ -549,7 +549,7 @@ export default function MathFreePage() {
                                                         {unitGroup.majorUnit}
                                                     </h4>
                                                 </div>
-                                                {/* 소단원 리스트 - 소단원 개별 카드 내부에는 태그 없음 */}
+                                                {/* 소단원 리스트 */}
                                                 <div className="space-y-2">
                                                     {unitGroup.minors.map((minor, mIdx) => (
                                                         <div key={mIdx} className="bg-[#12253f] hover:bg-[#162d4c] rounded-2xl p-3.5 border border-[#1e324c]/40 transition-colors flex items-center justify-between gap-3">
@@ -570,20 +570,23 @@ export default function MathFreePage() {
                                 ) : (
                                     getUnitsForDomain(selectedDomain).map((unitItem, idx) => {
                                         const color = DOMAIN_COLORS[selectedDomain] || DOMAIN_COLORS["수와 연산"];
+                                        const charUrl = MATH_CHARACTERS[unitItem.course] || MATH_CHARACTERS["중1-1"];
                                         return (
                                             <div key={idx} className="space-y-3">
+                                                {/* 학기 표시 행 (단원 바로 위 행) */}
+                                                <div className="flex items-center gap-2 text-[#0084ff] font-black text-[15px] mb-1">
+                                                    <img src={charUrl} alt="alien" className="w-[20px] h-[20px] object-contain flex-shrink-0" />
+                                                    <span>{gradeTermToLabel(unitItem.course).replace("학년", "")}</span>
+                                                </div>
                                                 <div className="flex items-center justify-between border-b border-[#1e2e45] pb-1">
                                                     <div className="flex items-center gap-2">
                                                         <span className={`text-[10px] font-extrabold px-2 py-0.5 rounded-md border ${color.bg} ${color.text} ${color.border} flex-shrink-0`}>
                                                             {selectedDomain}
                                                         </span>
-                                                        <h4 className="text-[14px] font-black text-[#0084ff]">
+                                                        <h4 className="text-[14px] font-black text-white">
                                                             {unitItem.majorUnit}
                                                         </h4>
                                                     </div>
-                                                    <span className="text-[10.5px] font-extrabold text-[#a0aec0] bg-slate-800 px-2 py-0.5 rounded-md flex-shrink-0">
-                                                        {gradeTermToLabel(unitItem.course)}
-                                                    </span>
                                                 </div>
                                                 <div className="space-y-2">
                                                     {unitItem.minors.map((minor, mIdx) => (
@@ -610,25 +613,23 @@ export default function MathFreePage() {
                     /* 모두 보기 모드 */
                     <div className="w-full h-[calc(100vh-170px)] overflow-y-auto pr-1 pb-10">
                         {viewMode === "semester" ? (
-                            /* 학기 기준 그리드 배열 */
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                                {courses.map((courseCode, idx) => {
+                            /* 학기 기준 4열-2행 격자 순서 매칭 렌더링 (1열에 1학기/2학기 세로 정렬 및 미니 행성, [22개정] 뱃지, 푸터영역 제거) */
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                {[0, 2, 4, 6, 1, 3, 5, 7].map((originalIdx) => {
+                                    const courseCode = courses[originalIdx];
                                     const units = getUnitsForCourse(courseCode);
                                     const charUrl = MATH_CHARACTERS[courseCode] || MATH_CHARACTERS["중1-1"];
                                     return (
-                                        <div key={idx} className="bg-[#0b1828] border border-[#1a2b3e] rounded-2xl p-5 shadow-lg flex flex-col justify-between hover:border-[#0084ff]/50 transition-colors">
+                                        <div key={originalIdx} className="bg-[#0b1828] border border-[#1a2b3e] rounded-2xl p-5 shadow-lg flex flex-col justify-between hover:border-[#0084ff]/50 transition-colors">
                                             <div>
                                                 <div className="flex items-center gap-3 mb-4">
-                                                    <img src={charUrl} alt="alien" className="w-[32px] h-[32px] object-contain" />
-                                                    <h3 className="text-[15.5px] font-black text-white">
+                                                    <img src={charUrl} alt="alien" className="w-[32px] h-[32px] object-contain flex-shrink-0" />
+                                                    <h3 className="text-[15.5px] font-black text-white whitespace-nowrap">
                                                         {gradeTermToLabel(courseCode)}
                                                     </h3>
-                                                    <span className="text-[10px] font-extrabold text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded border border-[#10b981]/20">
-                                                        [22개정]
-                                                    </span>
                                                 </div>
 
-                                                <div className="space-y-2 mb-4">
+                                                <div className="space-y-2">
                                                     {units.map((unitGroup, uIdx) => (
                                                         <p key={uIdx} className="text-[12.5px] text-slate-400 font-bold leading-normal truncate">
                                                             {unitGroup.majorUnit}
@@ -639,14 +640,6 @@ export default function MathFreePage() {
                                                             단원 데이터 준비 중
                                                         </p>
                                                     )}
-                                                </div>
-                                            </div>
-
-                                            <div className="flex items-center justify-between border-t border-[#1e2e45] pt-3.5 mt-2">
-                                                <div style={getPlanetStyle(courseCode, 45)} className="rounded" />
-                                                <div className="text-right">
-                                                    <span className="text-[10px] font-bold text-[#0084ff] block">0% 완료</span>
-                                                    <span className="text-[11.5px] font-black text-slate-400 block">개념훈련 도전</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -678,9 +671,6 @@ export default function MathFreePage() {
                                                                     <h4 className="text-[14.5px] font-black text-white">
                                                                         {gradeTermToLabel(courseCode)}
                                                                     </h4>
-                                                                    <span className="text-[9px] font-extrabold text-[#10b981] bg-[#10b981]/10 px-1.5 py-0.5 rounded border border-[#10b981]/20">
-                                                                        [22개정]
-                                                                    </span>
                                                                 </div>
 
                                                                 <div className="space-y-2">
@@ -696,11 +686,6 @@ export default function MathFreePage() {
                                                                     ))}
                                                                 </div>
                                                             </div>
-
-                                                            <div className="flex items-center justify-between border-t border-[#1e2e45] pt-3.5 mt-4">
-                                                                <div style={getPlanetStyle(courseCode, 45)} className="rounded" />
-                                                                <span className="text-[11.5px] font-black text-[#0084ff]">도전하기</span>
-                                                            </div>
                                                         </div>
                                                     );
                                                 })}
@@ -714,7 +699,7 @@ export default function MathFreePage() {
                 )}
             </main>
 
-            {/* 4. Global Footer - 상세 패널 오픈 시(isPanelOpen === true) 화면에서 아예 숨김 처리하여 겹침/가림 차단 */}
+            {/* 4. Global Footer */}
             {!isPanelOpen && (
                 <div className="fixed bottom-4 right-4 z-40">
                     <button

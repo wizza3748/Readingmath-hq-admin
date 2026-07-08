@@ -519,7 +519,7 @@ export default function ScienceFreePage() {
                                 isPanelOpen ? "translate-x-0 opacity-100 scale-100" : "translate-x-full opacity-0 scale-95 pointer-events-none"
                             }`}
                         >
-                            {/* 패널 헤더 - 학기 타이틀 왼쪽 행성 아이콘 삭제 완료 */}
+                            {/* 패널 헤더 */}
                             <div className="p-5 border-b border-[#142338] flex items-center justify-between bg-[#0e1f37]/40">
                                 <div className="flex items-center gap-3">
                                     {viewMode === "semester" ? (
@@ -587,20 +587,23 @@ export default function ScienceFreePage() {
                                 ) : (
                                     getUnitsForDomain(selectedDomain).map((unitItem, idx) => {
                                         const color = DOMAIN_COLORS[selectedDomain] || DOMAIN_COLORS["물리영역"];
+                                        const charUrl = SCIENCE_CHARACTERS[unitItem.course] || SCIENCE_CHARACTERS["중1-1"];
                                         return (
                                             <div key={idx} className="space-y-4 border-b border-[#1e2e45]/60 pb-6 last:border-b-0 last:pb-0">
+                                                {/* 학기 표시 행 (단원 바로 위 행) */}
+                                                <div className="flex items-center gap-2 text-[#0084ff] font-black text-[15px] mb-1">
+                                                    <img src={charUrl} alt="alien" className="w-[20px] h-[20px] object-contain flex-shrink-0" />
+                                                    <span>{getSciencePlanetLabel(unitItem.course).replace("학년", "")}</span>
+                                                </div>
                                                 <div className="flex items-center justify-between gap-3 flex-wrap">
                                                     <div className="flex items-center gap-3">
                                                         <span className={`text-[10.5px] font-extrabold px-2 py-0.5 rounded-md border ${color.bg} ${color.text} ${color.border} flex-shrink-0`}>
                                                             {selectedDomain}
                                                         </span>
-                                                        <h4 className="text-[14px] font-extrabold text-[#94a3b8] leading-tight">
+                                                        <h4 className="text-[14px] font-extrabold text-white leading-tight">
                                                             {unitItem.majorUnit}
                                                         </h4>
                                                     </div>
-                                                    <span className="text-[10.5px] font-extrabold text-[#a0aec0] bg-slate-800 px-2 py-0.5 rounded-md flex-shrink-0">
-                                                        {getSciencePlanetLabel(unitItem.course)}
-                                                    </span>
                                                 </div>
 
                                                 <div className="space-y-4 pt-1">
@@ -636,22 +639,23 @@ export default function ScienceFreePage() {
                     /* 모두 보기 모드 */
                     <div className="w-full h-[calc(100vh-170px)] overflow-y-auto pr-1 pb-10">
                         {viewMode === "semester" ? (
-                            /* 학기 기준 그리드 배열 */
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                                {courses.map((courseCode, idx) => {
+                            /* 학기 기준 4열-2행 격자 순서 매칭 렌더링 (1열에 1학기/2학기 세로 정렬 및 푸터 영역 제거) */
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                {[0, 2, 4, 6, 1, 3, 5, 7].map((originalIdx) => {
+                                    const courseCode = courses[originalIdx];
                                     const units = getUnitsForCourse(courseCode);
                                     const charUrl = SCIENCE_CHARACTERS[courseCode] || SCIENCE_CHARACTERS["중1-1"];
                                     return (
-                                        <div key={idx} className="bg-[#0b1828] border border-[#1a2b3e] rounded-2xl p-5 shadow-lg flex flex-col justify-between hover:border-[#0084ff]/50 transition-colors">
+                                        <div key={originalIdx} className="bg-[#0b1828] border border-[#1a2b3e] rounded-2xl p-5 shadow-lg flex flex-col justify-between hover:border-[#0084ff]/50 transition-colors">
                                             <div>
                                                 <div className="flex items-center gap-3 mb-4">
-                                                    <img src={charUrl} alt="alien" className="w-[32px] h-[32px] object-contain" />
-                                                    <h3 className="text-[15.5px] font-black text-white">
+                                                    <img src={charUrl} alt="alien" className="w-[32px] h-[32px] object-contain flex-shrink-0" />
+                                                    <h3 className="text-[15.5px] font-black text-white whitespace-nowrap">
                                                         {getSciencePlanetLabel(courseCode)}
                                                     </h3>
                                                 </div>
 
-                                                <div className="space-y-2 mb-4">
+                                                <div className="space-y-2">
                                                     {units.map((unitGroup, uIdx) => (
                                                         <p key={uIdx} className="text-[12.5px] text-slate-400 font-bold leading-normal truncate">
                                                             {unitGroup.majorUnit}
@@ -662,14 +666,6 @@ export default function ScienceFreePage() {
                                                             단원 데이터 준비 중
                                                         </p>
                                                     )}
-                                                </div>
-                                            </div>
-
-                                            <div className="flex items-center justify-between border-t border-[#1e2e45] pt-3.5 mt-2">
-                                                <div style={getPlanetStyle(courseCode, 45)} className="rounded" />
-                                                <div className="text-right">
-                                                    <span className="text-[10px] font-bold text-[#0084ff] block">0% 완료</span>
-                                                    <span className="text-[11.5px] font-black text-slate-400 block">개념훈련 도전</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -716,11 +712,6 @@ export default function ScienceFreePage() {
                                                                     ))}
                                                                 </div>
                                                             </div>
-
-                                                            <div className="flex items-center justify-between border-t border-[#1e2e45] pt-3.5 mt-4">
-                                                                <div style={getPlanetStyle(courseCode, 45)} className="rounded" />
-                                                                <span className="text-[11.5px] font-black text-[#0084ff]">도전하기</span>
-                                                            </div>
                                                         </div>
                                                     );
                                                 })}
@@ -734,7 +725,7 @@ export default function ScienceFreePage() {
                 )}
             </main>
 
-            {/* 4. Global Footer - 상세 패널 오픈 시(isPanelOpen === true) 화면에서 아예 숨김 처리 */}
+            {/* 4. Global Footer */}
             {!isPanelOpen && (
                 <div className="fixed bottom-4 right-4 z-40">
                     <button
