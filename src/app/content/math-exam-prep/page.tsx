@@ -1177,11 +1177,11 @@ function MathExamPrepPageContent() {
               기본 모드
             </div>
           </Link>
-          <div className="h-[44px] flex items-center">
-            <div className={`${isDark ? "text-[#94a3b8]" : "text-slate-600"} px-5 py-2 text-[14px] font-bold min-w-[90px] text-center select-none cursor-default`}>
+          <Link href="/content/math-free" className="h-[44px] flex items-center">
+            <div className={`${tabTextStyle} px-5 py-2 text-[14px] font-bold min-w-[90px] text-center cursor-pointer transition-all duration-200 hover:-translate-y-[1px] select-none`}>
               자유 모드
             </div>
-          </div>
+          </Link>
           {/* 시험 대비 - 활성 탭 */}
           <div className={`relative ${isDark ? "bg-[#f59e0b] shadow-[0_-4px_20px_rgba(245,158,11,0.25)] border-[#fbbf24]/30" : "bg-[#f59e0b] shadow-[0_-4px_15px_rgba(245,158,11,0.15)] border-[#fbbf24]/50"} text-white px-6 h-[44px] rounded-t-[12px] rounded-b-none text-[14px] font-black flex items-center justify-center min-w-[95px] select-none border-t border-x`}>
             <span>시험 대비</span>

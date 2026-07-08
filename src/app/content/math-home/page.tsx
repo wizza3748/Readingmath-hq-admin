@@ -135,11 +135,11 @@ export default function MathHomePage() {
                     <div className="bg-[#0084ff] text-white px-6 h-[40px] rounded-t-[10px] rounded-b-none text-[15px] font-black flex items-center justify-center cursor-pointer min-w-[95px] transition-all hover:bg-[#0074e0] select-none">
                         기본 모드
                     </div>
-                    <div className="h-[40px] flex items-center">
-                        <div className="text-[#5c7797] px-5 py-1.5 text-[15px] font-bold min-w-[95px] text-center select-none cursor-default">
+                    <Link href="/content/math-free" className="h-[40px] flex items-center">
+                        <div className="text-[#5c7797] hover:text-white px-5 py-1.5 text-[15px] font-bold min-w-[95px] text-center cursor-pointer transition-colors select-none">
                             자유 모드
                         </div>
-                    </div>
+                    </Link>
                     <Link href="/content/math-exam-prep" className="h-[40px] flex items-center">
                         <div className="text-[#5c7797] hover:text-white px-5 py-1.5 text-[15px] font-bold min-w-[95px] text-center cursor-pointer transition-colors select-none">
                             시험 대비
