@@ -2489,8 +2489,8 @@ export default function AdminExamPrepTab({
                 <thead className="bg-slate-50 border-b border-slate-200">
                   <tr>
                     {[
-                      "번호", "풀이일시", "학년/학기", "대단원",
-                      "소단원/중단원", "유형명", "난이도", "풀이 경로",
+                      "번호", "최근 풀이 일시", "학년/학기", "대단원",
+                      "소단원/중단원", "유형명", "난이도", "최근 풀이 경로",
                       "풀이 문제 수", "결과", "성취도 상태", "관리",
                     ].map((col) => (
                       <th
