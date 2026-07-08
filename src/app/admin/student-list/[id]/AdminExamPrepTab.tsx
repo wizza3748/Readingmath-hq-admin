@@ -1781,7 +1781,7 @@ function TypeDetailPanel({
           <div className="flex gap-2">
             {(
               [
-                { label: "초록 도전", cls: "bg-green-100 text-green-600/80" },
+                { label: "번개 도전", cls: "bg-green-100 text-green-600/80" },
                 { label: "왕관 도전", cls: "bg-violet-100 text-violet-600/80" },
                 { label: "다시 도전", cls: "bg-slate-100 text-slate-600/80" },
               ] as { label: string; cls: string }[]
@@ -2415,7 +2415,7 @@ export default function AdminExamPrepTab({
                         }}
                         className={`h-7 px-2.5 text-xs font-bold rounded-full border transition-all flex items-center gap-1 ${
                           selected
-                            ? "bg-indigo-600 border-indigo-600 text-white shadow-sm"
+                            ? `${cfg.selBg} ${cfg.selBorder} ${cfg.selText} shadow-sm`
                             : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
                         }`}
                       >
@@ -2749,7 +2749,7 @@ export default function AdminExamPrepTab({
                       }}
                       className={`h-7 px-2.5 text-xs font-bold rounded-full border transition-all flex items-center gap-1 ${
                         selected
-                          ? "bg-indigo-600 border-indigo-600 text-white shadow-sm"
+                          ? `${cfg.selBg} ${cfg.selBorder} ${cfg.selText} shadow-sm`
                           : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
                       }`}
                     >
