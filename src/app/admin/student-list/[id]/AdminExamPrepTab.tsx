@@ -22,6 +22,7 @@ import {
   BookOpen,
   Filter,
   RefreshCw,
+  Zap,
 } from "lucide-react";
 import { StudentServiceType } from "@/lib/student-mock";
 import { MATH_CURRICULA, SCIENCE_CURRICULA } from "@/lib/task-center-mock";
@@ -198,7 +199,7 @@ const ACHIEVEMENT_CONFIG: Record<AchievementStatus, AchievementInfo> = {
     filterIconColor: "text-slate-300", filterTextColor: "text-slate-500",
     selBg: "bg-slate-700", selBorder: "border-slate-700", selText: "text-white",
     description: "아직 학습을 시작하지 않았어요.",
-    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
+    challengeLabel: "번개 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
     badgeBg: "bg-slate-100", badgeText: "text-slate-600",
   },
   undetermined: {
@@ -207,34 +208,34 @@ const ACHIEVEMENT_CONFIG: Record<AchievementStatus, AchievementInfo> = {
     filterIconColor: "text-slate-500", filterTextColor: "text-slate-600",
     selBg: "bg-slate-500", selBorder: "border-slate-500", selText: "text-white",
     description: "학습량이 부족해요.",
-    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
+    challengeLabel: "번개 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
     badgeBg: "bg-slate-200", badgeText: "text-slate-700",
   },
   relearn: {
-    label: "재학습 필요", shortLabel: "재학습", icon: "check",
+    label: "재학습 필요", shortLabel: "재학습", icon: "x",
     chipBg: "bg-red-500", chipBorder: "border-transparent", chipIconColor: "text-white",
     filterIconColor: "text-red-500", filterTextColor: "text-red-600",
     selBg: "bg-red-500", selBorder: "border-red-500", selText: "text-white",
     description: "전혀 이해하지 못하고 있어요.",
-    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
+    challengeLabel: "번개 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
     badgeBg: "bg-red-100", badgeText: "text-red-700",
   },
   supplement: {
-    label: "보충 필요", shortLabel: "보충", icon: "check",
+    label: "보충 필요", shortLabel: "보충", icon: "alert",
     chipBg: "bg-yellow-500", chipBorder: "border-transparent", chipIconColor: "text-white",
     filterIconColor: "text-yellow-500", filterTextColor: "text-yellow-600",
     selBg: "bg-yellow-500", selBorder: "border-yellow-500", selText: "text-white",
     description: "이해도가 낮은 상태예요.",
-    challengeLabel: "초록 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
+    challengeLabel: "번개 도전", challengeStyle: "bg-green-500 hover:bg-green-600 text-white shadow-green-500/30",
     badgeBg: "bg-yellow-100", badgeText: "text-yellow-700",
   },
   understand: {
-    label: "유형 이해", shortLabel: "이해", icon: "check",
+    label: "유형 이해", shortLabel: "이해", icon: "zap",
     chipBg: "bg-green-400", chipBorder: "border-transparent", chipIconColor: "text-white",
     filterIconColor: "text-green-500", filterTextColor: "text-green-600",
     selBg: "bg-green-500", selBorder: "border-green-500", selText: "text-white",
     description: "충분히 이해하여 문제를 풀 수 있어요.",
-    challengeLabel: "왕관 도전", challengeStyle: "bg-violet-600 hover:bg-violet-700 text-white shadow-violet-500/30",
+    challengeLabel: "왕관 도전", challengeStyle: "bg-green-600 hover:bg-green-700 text-white shadow-green-500/30",
     badgeBg: "bg-green-100", badgeText: "text-green-700",
   },
   master: {
@@ -889,15 +890,28 @@ function AchievementIcon({
 }) {
   const cfg = ACHIEVEMENT_CONFIG[status];
   if (cfg.icon === "crown")
-    return <Crown className={`stroke-[2] ${className}`} />;
+    return <Crown className={`stroke-[2] fill-current ${className}`} />;
+  if (cfg.icon === "zap")
+    return <Zap className={`stroke-[2.5] fill-current ${className}`} />;
+  if (cfg.icon === "x")
+    return <X className={`stroke-[3] ${className}`} />;
+  if (cfg.icon === "alert")
+    return <AlertTriangle className={`stroke-[2.5] ${className}`} />;
   if (cfg.icon === "check")
     return <Check className={`stroke-[3] ${className}`} />;
   return (
-    <span
-      className={`font-extrabold text-[15px] leading-none select-none flex items-center justify-center ${className}`}
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="3.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
     >
-      ?
-    </span>
+      <path d="M7.5 9.5a4.5 4.5 0 0 1 9 0c0 2.5-4.5 3.5-4.5 5.5" />
+      <path d="M12 19h.01" />
+    </svg>
   );
 }
 
