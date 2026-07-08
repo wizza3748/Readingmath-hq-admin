@@ -29,10 +29,11 @@ const ALL_COURSES = [
     "고1-1", "고1-2"
 ];
 
-// 과학용 코스 필터 (중1-1 ~ 중3-2까지만 데이터가 있으므로 6개만 캐러셀에 활용)
-const SCIENCE_COURSES = ALL_COURSES.slice(8, 14);
+// 초등 및 중고등 학기 분리
+const ELEM_COURSES = ALL_COURSES.slice(0, 8);
+const MID_HIGH_COURSES = ALL_COURSES.slice(8, 16);
 
-// 과학 캐릭터 매핑 (기본 모드 캐릭터 재사용)
+// 과학 캐릭터 매핑
 const SCIENCE_CHARACTERS: Record<string, string> = {
     "초3-1": "https://readingmath.co.kr/build/assets/alien_3-1-97dhOfbo.svg",
     "초3-2": "https://readingmath.co.kr/build/assets/alien_3-2-2r3DnG1l.svg",
@@ -49,7 +50,7 @@ const SCIENCE_CHARACTERS: Record<string, string> = {
     "중3-1": "https://readingmath.co.kr/build/assets/alien_9-1-B2AtrAOh.svg",
     "중3-2": "https://readingmath.co.kr/build/assets/alien_9-2-CkyBzS70.svg",
     "고1-1": "https://readingmath.co.kr/build/assets/alien_7-1-PpO6__ME.svg",
-    "고1-2": "https://readingmath.co.kr/build/assets/alien_7-2-D_rZjnTH.svg",
+    "고1-2": "https://readingmath.co.kr/build/assets/alien_7-2-D_rZjnTH.svg"
 };
 
 // 과학 5대 영역 정의
@@ -64,27 +65,21 @@ const DOMAIN_TYPES = [
 // 대단원명 기준으로 계통 자동 판정 함수
 function getScienceDomainOfUnit(majorUnit: string): string {
     const name = majorUnit.replace(/^\d+단원\s+/, "");
-    // 탐구활동영역
     if (/과학과\s*인류|지속가능|탐구|실험|도구|측정/i.test(name)) {
         return "탐구활동영역";
     }
-    // 생명과학영역
     if (/생물|식물|동물|유전|세포|자극|반응|생식|생태계|인체|소화|순환|호흡|배설/i.test(name)) {
         return "생명과학영역";
     }
-    // 지구과학영역
     if (/지권|별|우주|태양계|날씨|기권|은하|달|행성|수권|해수|지각|화산|지진/i.test(name)) {
         return "지구과학영역";
     }
-    // 물리영역
     if (/열|빛|파동|힘|운동|속력|에너지|전기|자기|전류|전압|저항|소리|일/i.test(name)) {
         return "물리영역";
     }
-    // 그 외는 모두 화학영역 (물질, 기체, 원소, 화학 반응 등)
     return "화학영역";
 }
 
-// 계통별 테마 색상 설정
 const DOMAIN_COLORS: Record<string, { bg: string; text: string; border: string }> = {
     "물리영역": { bg: "bg-rose-500/10", text: "text-rose-400", border: "border-rose-500/20" },
     "화학영역": { bg: "bg-amber-500/10", text: "text-amber-400", border: "border-amber-500/20" },
@@ -103,18 +98,46 @@ function getSciencePlanetLabel(courseCode: string): string {
 export default function ScienceFreePage() {
     const [tasks, setTasks] = useState<Task[]>([]);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const [viewMode, setViewMode] = useState<"semester" | "domain">("semester"); // 학기 vs 계통 토글
-    const [showAll, setShowAll] = useState(false); // 모두 보기 토글
-    const [selectedCourse, setSelectedCourse] = useState<string>("중1-1");
-    const [selectedDomain, setSelectedDomain] = useState<string>("물리영역");
+    const [viewMode, setViewMode] = useState<"semester" | "domain">("semester");
+    const [showAll, setShowAll] = useState(false);
     const [isPanelOpen, setIsPanelOpen] = useState(false);
 
-    // Hydration 해결을 위해 마운트 후 localStorage 값 동기화
+    // 우주(Elementary vs Middle/High) 상태
+    const [universe, setUniverse] = useState<"elem" | "mid-high">("mid-high");
+
+    const courses = universe === "elem" ? ELEM_COURSES : MID_HIGH_COURSES;
+    const [selectedCourse, setSelectedCourse] = useState<string>("중1-1");
+    const [selectedDomain, setSelectedDomain] = useState<string>("물리영역");
+
+    // 우주 상태 전환 시 기본 선택 학기 설정 및 패널 닫기
+    const handleUniverseToggle = () => {
+        if (universe === "mid-high") {
+            setUniverse("elem");
+            setSelectedCourse("초3-1");
+        } else {
+            setUniverse("mid-high");
+            setSelectedCourse("중1-1");
+        }
+        setIsPanelOpen(false);
+    };
+
+    // Hydration 해결 및 최초 로드
     useEffect(() => {
-        setSelectedCourse(getGradeTerm("science") || "중1-1");
+        const stored = getGradeTerm("science") || "중1-1";
+        setSelectedCourse(stored);
+        if (ELEM_COURSES.includes(stored)) {
+            setUniverse("elem");
+        } else {
+            setUniverse("mid-high");
+        }
         const cleanup = onGradeTermChange((subject, code) => {
             if (subject === "science") {
                 setSelectedCourse(code);
+                if (ELEM_COURSES.includes(code)) {
+                    setUniverse("elem");
+                } else {
+                    setUniverse("mid-high");
+                }
             }
         });
         return cleanup;
@@ -134,33 +157,35 @@ export default function ScienceFreePage() {
     const scienceTasks = tasks.filter(t => t.subject === "science");
     const unstartedCount = scienceTasks.filter(t => t.status === "notStarted").length;
 
-    // 캐러셀 관련 인덱스 연산
-    const currentCourseIdx = SCIENCE_COURSES.indexOf(selectedCourse);
-    const handlePrevCourse = () => {
-        const nextIdx = (currentCourseIdx - 1 + SCIENCE_COURSES.length) % SCIENCE_COURSES.length;
-        setSelectedCourse(SCIENCE_COURSES[nextIdx]);
-        setIsPanelOpen(true);
-    };
-    const handleNextCourse = () => {
-        const nextIdx = (currentCourseIdx + 1) % SCIENCE_COURSES.length;
-        setSelectedCourse(SCIENCE_COURSES[nextIdx]);
-        setIsPanelOpen(true);
+    // 학기 인덱스 계산 및 순환 로직
+    const currentCourseIdx = courses.indexOf(selectedCourse);
+    const prevCourseCode = courses[(currentCourseIdx - 1 + courses.length) % courses.length];
+    const nextCourseCode = courses[(currentCourseIdx + 1) % courses.length];
+
+    const selectCourseWithPanel = (courseCode: string) => {
+        if (courseCode === selectedCourse) {
+            setIsPanelOpen(!isPanelOpen);
+        } else {
+            setSelectedCourse(courseCode);
+            setIsPanelOpen(true);
+        }
     };
 
-    // 계통 캐러셀 관련 연산
+    // 계통 인덱스 계산 및 순환 로직
     const currentDomainIdx = DOMAIN_TYPES.findIndex(d => d.name === selectedDomain);
-    const handlePrevDomain = () => {
-        const nextIdx = (currentDomainIdx - 1 + DOMAIN_TYPES.length) % DOMAIN_TYPES.length;
-        setSelectedDomain(DOMAIN_TYPES[nextIdx].name);
-        setIsPanelOpen(true);
-    };
-    const handleNextDomain = () => {
-        const nextIdx = (currentDomainIdx + 1) % DOMAIN_TYPES.length;
-        setSelectedDomain(DOMAIN_TYPES[nextIdx].name);
-        setIsPanelOpen(true);
+    const prevDomainName = DOMAIN_TYPES[(currentDomainIdx - 1 + DOMAIN_TYPES.length) % DOMAIN_TYPES.length].name;
+    const nextDomainName = DOMAIN_TYPES[(currentDomainIdx + 1) % DOMAIN_TYPES.length].name;
+
+    const selectDomainWithPanel = (domainName: string) => {
+        if (domainName === selectedDomain) {
+            setIsPanelOpen(!isPanelOpen);
+        } else {
+            setSelectedDomain(domainName);
+            setIsPanelOpen(true);
+        }
     };
 
-    // 선택된 학기의 대단원 및 소단원 그룹핑
+    // 단원 정보 매핑
     const getUnitsForCourse = (courseCode: string) => {
         const courseData = SCIENCE_CURRICULA.find(c => c.course === courseCode);
         if (!courseData) return [];
@@ -184,11 +209,13 @@ export default function ScienceFreePage() {
         }));
     };
 
-    // 선택된 계통에 소속된 학기별 단원 그룹핑
     const getUnitsForDomain = (domainName: string) => {
         const result: { course: string; majorUnit: string; minors: string[] }[] = [];
 
         SCIENCE_CURRICULA.forEach(curr => {
+            // 현재 우주에 속해있는 학기만 계통 리스트에 걸러 노출
+            if (!courses.includes(curr.course)) return;
+
             const courseUnits: Record<string, string[]> = {};
             curr.types.forEach(t => {
                 const dom = getScienceDomainOfUnit(t.majorUnit);
@@ -214,13 +241,12 @@ export default function ScienceFreePage() {
         return result;
     };
 
-    // 스프라이트 행성 이미지 크롭 스타일 생성 함수
+    // 행성 크롭 스타일 생성
     const getPlanetStyle = (courseCode: string, size = 160) => {
         const idx = ALL_COURSES.indexOf(courseCode);
         if (idx === -1) return {};
         const planetWidth = 240;
         const totalWidth = 3840;
-        // 크기에 비례한 백그라운드 사이즈 계산
         const scale = size / planetWidth;
         const bgSizeX = totalWidth * scale;
         const bgSizeY = 255 * scale;
@@ -259,7 +285,6 @@ export default function ScienceFreePage() {
                     </span>
                 </Link>
 
-                {/* GNB Tabs */}
                 <div className="flex items-end gap-1.5 h-full">
                     <Link href="/content/science-home" className="h-[40px] flex items-center">
                         <div className="text-[#5c7797] hover:text-white px-5 py-1.5 text-[15px] font-bold min-w-[95px] text-center cursor-pointer transition-colors select-none">
@@ -295,13 +320,13 @@ export default function ScienceFreePage() {
                 </div>
             </header>
 
-            {/* 2. Controls Area (Sub-bar) */}
-            <div className="absolute top-[75px] left-6 right-6 z-40 flex justify-between items-center">
-                {/* Left: 학기/계통 토글 */}
-                <div className="bg-[#142338]/90 backdrop-blur-md p-1 rounded-xl border border-[#1e2e45] flex items-center gap-1">
+            {/* 2. Controls Area (Sub-bar) - 우측 상단 정렬 및 나란히 배치 */}
+            <div className="absolute top-[75px] right-6 z-40 flex items-center gap-4 bg-[#142338]/90 backdrop-blur-md p-1.5 rounded-xl border border-[#1e2e45]/80 shadow-lg">
+                {/* 학기/계통 토글 */}
+                <div className="flex items-center gap-1">
                     <button
                         onClick={() => { setViewMode("semester"); setIsPanelOpen(false); }}
-                        className={`px-4 py-1.5 rounded-lg text-[13.5px] font-extrabold transition-all duration-200 ${
+                        className={`px-3 py-1 rounded-lg text-[13px] font-extrabold transition-all duration-200 ${
                             viewMode === "semester"
                                 ? "bg-[#0084ff] text-white shadow-sm"
                                 : "text-[#5c7797] hover:text-white"
@@ -311,7 +336,7 @@ export default function ScienceFreePage() {
                     </button>
                     <button
                         onClick={() => { setViewMode("domain"); setIsPanelOpen(false); }}
-                        className={`px-4 py-1.5 rounded-lg text-[13.5px] font-extrabold transition-all duration-200 ${
+                        className={`px-3 py-1 rounded-lg text-[13px] font-extrabold transition-all duration-200 ${
                             viewMode === "domain"
                                 ? "bg-[#0084ff] text-white shadow-sm"
                                 : "text-[#5c7797] hover:text-white"
@@ -321,18 +346,21 @@ export default function ScienceFreePage() {
                     </button>
                 </div>
 
-                {/* Right: 모두 보기 토글 */}
-                <div className="flex items-center gap-3">
-                    <span className="text-[13.5px] font-bold text-[#cbd5e1]">모두 보기</span>
+                {/* 세로 얇은 선 */}
+                <div className="w-[1px] h-4 bg-slate-700/60" />
+
+                {/* 모두 보기 토글 */}
+                <div className="flex items-center gap-2">
+                    <span className="text-[13px] font-bold text-[#cbd5e1]">모두 보기</span>
                     <button
                         onClick={() => { setShowAll(!showAll); setIsPanelOpen(false); }}
-                        className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 focus:outline-none ${
+                        className={`relative inline-flex h-5.5 w-10.5 items-center rounded-full transition-colors duration-300 focus:outline-none ${
                             showAll ? "bg-[#10b981]" : "bg-slate-700"
                         }`}
                     >
                         <span
-                            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ${
-                                showAll ? "translate-x-6" : "translate-x-1"
+                            className={`inline-block h-3.5 w-3.5 transform rounded-full bg-white transition-transform duration-300 ${
+                                showAll ? "translate-x-5.5" : "translate-x-1"
                             }`}
                         />
                     </button>
@@ -342,35 +370,45 @@ export default function ScienceFreePage() {
             {/* 3. Main Display Area */}
             <main className="relative h-full w-full pt-[130px] px-6 pb-6 overflow-hidden">
                 {!showAll ? (
-                    /* 캐러셀 모드 (상세 패널 슬라이드 구성) */
+                    /* 캐러셀 모드 (3단 렌더링 개편) */
                     <div className="relative w-full h-full flex items-center justify-center">
                         <div className={`transition-all duration-500 flex items-center justify-center w-full ${isPanelOpen ? "lg:pr-[500px]" : ""}`}>
                             {viewMode === "semester" ? (
-                                /* 학기 캐러셀 */
-                                <div className="flex flex-col items-center select-none">
-                                    <div className="flex items-center gap-8 md:gap-16">
-                                        <button
-                                            onClick={handlePrevCourse}
-                                            className="h-12 w-12 rounded-full bg-[#142338]/80 hover:bg-[#0084ff] flex items-center justify-center border border-[#1e2e45] text-white transition-all transform hover:scale-105"
+                                /* 학기 3단 캐러셀 */
+                                <div className="flex flex-col items-center select-none w-full max-w-[840px]">
+                                    <div className="flex items-center justify-between w-full relative">
+                                        {/* 이전 학기 (왼쪽 배치, opacity-50) */}
+                                        <div
+                                            onClick={() => selectCourseWithPanel(prevCourseCode)}
+                                            className="flex flex-col items-center opacity-50 cursor-pointer scale-75 transform transition-all duration-300 hover:opacity-85"
                                         >
-                                            <ChevronLeft className="h-6 w-6" />
+                                            <div style={getPlanetStyle(prevCourseCode, 150)} />
+                                            <span className="text-[13px] font-bold text-slate-300 mt-3 truncate max-w-[120px]">
+                                                {getSciencePlanetLabel(prevCourseCode)}
+                                            </span>
+                                        </div>
+
+                                        {/* 네비게이션 좌측 화살표 */}
+                                        <button
+                                            onClick={() => selectCourseWithPanel(prevCourseCode)}
+                                            className="absolute left-[130px] h-10 w-10 rounded-full bg-[#142338]/80 hover:bg-[#0084ff] flex items-center justify-center border border-[#1e2e45] text-white transition-all transform hover:scale-105 z-20"
+                                        >
+                                            <ChevronLeft className="h-5 w-5" />
                                         </button>
 
-                                        {/* 중앙 학기 강조 뷰 */}
+                                        {/* 중앙 현재 학기 */}
                                         <div
-                                            className="flex flex-col items-center cursor-pointer transition-all duration-300"
-                                            onClick={() => setIsPanelOpen(true)}
+                                            className="flex flex-col items-center cursor-pointer transition-all duration-300 z-10 px-8"
+                                            onClick={() => selectCourseWithPanel(selectedCourse)}
                                         >
-                                            {/* 스프라이트 행성 이미지 */}
-                                            <div className="transform hover:scale-[1.03] transition-transform duration-300 drop-shadow-[0_10px_30px_rgba(59,130,246,0.3)]">
+                                            <div className="transform hover:scale-[1.03] transition-transform duration-300 drop-shadow-[0_10px_35px_rgba(59,130,246,0.35)]">
                                                 <div style={getPlanetStyle(selectedCourse, 220)} />
                                             </div>
 
-                                            <h2 className="text-[24px] font-black tracking-tight mt-6 mb-2">
+                                            <h2 className="text-[23px] font-black tracking-tight mt-6 mb-2">
                                                 {getSciencePlanetLabel(selectedCourse)} 행성
                                             </h2>
                                             
-                                            {/* 진행률 바 */}
                                             <div className="flex flex-col items-center gap-1.5">
                                                 <span className="text-[12px] font-bold text-slate-400">0% 진행했어요!</span>
                                                 <div className="w-[180px] h-1.5 bg-slate-800 rounded-full overflow-hidden">
@@ -379,56 +417,93 @@ export default function ScienceFreePage() {
                                             </div>
                                         </div>
 
+                                        {/* 네비게이션 우측 화살표 */}
                                         <button
-                                            onClick={handleNextCourse}
-                                            className="h-12 w-12 rounded-full bg-[#142338]/80 hover:bg-[#0084ff] flex items-center justify-center border border-[#1e2e45] text-white transition-all transform hover:scale-105"
+                                            onClick={() => selectCourseWithPanel(nextCourseCode)}
+                                            className="absolute right-[130px] h-10 w-10 rounded-full bg-[#142338]/80 hover:bg-[#0084ff] flex items-center justify-center border border-[#1e2e45] text-white transition-all transform hover:scale-105 z-20"
                                         >
-                                            <ChevronRight className="h-6 w-6" />
+                                            <ChevronRight className="h-5 w-5" />
                                         </button>
+
+                                        {/* 다음 학기 (오른쪽 배치, opacity-50) */}
+                                        <div
+                                            onClick={() => selectCourseWithPanel(nextCourseCode)}
+                                            className="flex flex-col items-center opacity-50 cursor-pointer scale-75 transform transition-all duration-300 hover:opacity-85"
+                                        >
+                                            <div style={getPlanetStyle(nextCourseCode, 150)} />
+                                            <span className="text-[13px] font-bold text-slate-300 mt-3 truncate max-w-[120px]">
+                                                {getSciencePlanetLabel(nextCourseCode)}
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             ) : (
-                                /* 계통 캐러셀 */
-                                <div className="flex flex-col items-center select-none">
-                                    <div className="flex items-center gap-8 md:gap-16">
-                                        <button
-                                            onClick={handlePrevDomain}
-                                            className="h-12 w-12 rounded-full bg-[#142338]/80 hover:bg-[#0084ff] flex items-center justify-center border border-[#1e2e45] text-white transition-all transform hover:scale-105"
+                                /* 계통 3단 캐러셀 */
+                                <div className="flex flex-col items-center select-none w-full max-w-[840px]">
+                                    <div className="flex items-center justify-between w-full relative">
+                                        {/* 이전 계통 (왼쪽) */}
+                                        <div
+                                            onClick={() => selectDomainWithPanel(prevDomainName)}
+                                            className="flex flex-col items-center opacity-50 cursor-pointer scale-75 transform transition-all duration-300 hover:opacity-85"
                                         >
-                                            <ChevronLeft className="h-6 w-6" />
+                                            <div className="w-[130px] h-[130px] rounded-full bg-gradient-to-br from-[#0c2240] to-[#173863] border-2 border-slate-700 flex items-center justify-center">
+                                                <span className="text-[48px]">
+                                                    {DOMAIN_TYPES.find(d => d.name === prevDomainName)?.icon}
+                                                </span>
+                                            </div>
+                                            <span className="text-[13px] font-bold text-slate-300 mt-3">{prevDomainName}</span>
+                                        </div>
+
+                                        <button
+                                            onClick={() => selectDomainWithPanel(prevDomainName)}
+                                            className="absolute left-[130px] h-10 w-10 rounded-full bg-[#142338]/80 hover:bg-[#0084ff] flex items-center justify-center border border-[#1e2e45] text-white transition-all transform hover:scale-105 z-20"
+                                        >
+                                            <ChevronLeft className="h-5 w-5" />
                                         </button>
 
+                                        {/* 중앙 현재 계통 */}
                                         <div
-                                            className="flex flex-col items-center cursor-pointer transition-all duration-300"
-                                            onClick={() => setIsPanelOpen(true)}
+                                            className="flex flex-col items-center cursor-pointer transition-all duration-300 z-10 px-8"
+                                            onClick={() => selectDomainWithPanel(selectedDomain)}
                                         >
-                                            {/* 계통구조 전용 일러스트 모양의 원형 뱃지 */}
                                             <div className="w-[200px] h-[200px] rounded-full bg-gradient-to-br from-[#0c2240] to-[#173863] border-4 border-[#0084ff]/30 flex items-center justify-center shadow-[0_15px_40px_-5px_rgba(0,132,255,0.4)] transform hover:scale-105 transition-transform duration-300">
                                                 <span className="text-[72px]">
                                                     {DOMAIN_TYPES.find(d => d.name === selectedDomain)?.icon}
                                                 </span>
                                             </div>
-
-                                            <h2 className="text-[24px] font-black tracking-tight mt-6 mb-2">
+                                            <h2 className="text-[23px] font-black tracking-tight mt-6 mb-2">
                                                 {selectedDomain}
                                             </h2>
                                             <span className="text-[12px] font-bold text-slate-400">0% 진행했어요!</span>
                                         </div>
 
                                         <button
-                                            onClick={handleNextDomain}
-                                            className="h-12 w-12 rounded-full bg-[#142338]/80 hover:bg-[#0084ff] flex items-center justify-center border border-[#1e2e45] text-white transition-all transform hover:scale-105"
+                                            onClick={() => selectDomainWithPanel(nextDomainName)}
+                                            className="absolute right-[130px] h-10 w-10 rounded-full bg-[#142338]/80 hover:bg-[#0084ff] flex items-center justify-center border border-[#1e2e45] text-white transition-all transform hover:scale-105 z-20"
                                         >
-                                            <ChevronRight className="h-6 w-6" />
+                                            <ChevronRight className="h-5 w-5" />
                                         </button>
+
+                                        {/* 다음 계통 (오른쪽) */}
+                                        <div
+                                            onClick={() => selectDomainWithPanel(nextDomainName)}
+                                            className="flex flex-col items-center opacity-50 cursor-pointer scale-75 transform transition-all duration-300 hover:opacity-85"
+                                        >
+                                            <div className="w-[130px] h-[130px] rounded-full bg-gradient-to-br from-[#0c2240] to-[#173863] border-2 border-slate-700 flex items-center justify-center">
+                                                <span className="text-[48px]">
+                                                    {DOMAIN_TYPES.find(d => d.name === nextDomainName)?.icon}
+                                                </span>
+                                            </div>
+                                            <span className="text-[13px] font-bold text-slate-300 mt-3">{nextDomainName}</span>
+                                        </div>
                                     </div>
                                 </div>
                             )}
                         </div>
 
-                        {/* 우측 단원 목록 상세 패널 (Drawer) */}
+                        {/* 우측 상세 패널 (GNB 서브 스위치를 가리지 않도록 top-[130px] 부터 시작) */}
                         <div
-                            className={`fixed top-[56px] right-0 bottom-0 w-full lg:w-[480px] bg-[#0c192c]/95 border-l border-[#142338] z-30 shadow-2xl transition-transform duration-300 flex flex-col backdrop-blur-md ${
+                            className={`fixed top-[130px] right-0 bottom-0 w-full lg:w-[480px] bg-[#0c192c]/95 border-l border-[#142338] z-30 shadow-2xl transition-transform duration-300 flex flex-col backdrop-blur-md ${
                                 isPanelOpen ? "translate-x-0" : "translate-x-full"
                             }`}
                         >
@@ -438,16 +513,16 @@ export default function ScienceFreePage() {
                                     {viewMode === "semester" ? (
                                         <>
                                             <div style={getPlanetStyle(selectedCourse, 50)} className="rounded-md" />
-                                            <h3 className="text-[18px] font-black text-white">
+                                            <h3 className="text-[17px] font-black text-white">
                                                 {getSciencePlanetLabel(selectedCourse)}
                                             </h3>
                                         </>
                                     ) : (
                                         <>
-                                            <span className="text-[28px]">
+                                            <span className="text-[24px]">
                                                 {DOMAIN_TYPES.find(d => d.name === selectedDomain)?.icon}
                                             </span>
-                                            <h3 className="text-[18px] font-black text-white">
+                                            <h3 className="text-[17px] font-black text-white">
                                                 {selectedDomain}
                                             </h3>
                                         </>
@@ -457,7 +532,7 @@ export default function ScienceFreePage() {
                                     onClick={() => setIsPanelOpen(false)}
                                     className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
                                 >
-                                    <X className="h-5 w-5" />
+                                    <X className="h-4.5 w-4.5" />
                                 </button>
                             </div>
 
@@ -466,7 +541,7 @@ export default function ScienceFreePage() {
                                 {viewMode === "semester" ? (
                                     getUnitsForCourse(selectedCourse).map((unitGroup, idx) => (
                                         <div key={idx} className="space-y-3">
-                                            <h4 className="text-[15px] font-black text-[#0084ff] border-b border-[#1e2e45] pb-1">
+                                            <h4 className="text-[14.5px] font-black text-[#0084ff] border-b border-[#1e2e45] pb-1">
                                                 {unitGroup.majorUnit}
                                             </h4>
                                             <div className="space-y-2">
@@ -478,14 +553,14 @@ export default function ScienceFreePage() {
                                                                 <span className={`text-[10.5px] font-extrabold px-2 py-0.5 rounded-md border ${color.bg} ${color.text} ${color.border}`}>
                                                                     {minor.domain}
                                                                 </span>
-                                                                <p className="text-[13.5px] font-bold text-white leading-snug break-keep">
+                                                                <p className="text-[13px] font-bold text-white leading-snug break-keep">
                                                                     {minor.minorUnit}
                                                                 </p>
                                                             </div>
                                                             <div className="flex items-center gap-0.5 text-slate-600 flex-shrink-0">
-                                                                <Star className="h-[14px] w-[14px]" />
-                                                                <Star className="h-[14px] w-[14px]" />
-                                                                <Star className="h-[14px] w-[14px]" />
+                                                                <Star className="h-[13px] w-[13px]" />
+                                                                <Star className="h-[13px] w-[13px]" />
+                                                                <Star className="h-[13px] w-[13px]" />
                                                             </div>
                                                         </div>
                                                     );
@@ -497,29 +572,34 @@ export default function ScienceFreePage() {
                                     getUnitsForDomain(selectedDomain).map((unitItem, idx) => (
                                         <div key={idx} className="space-y-3">
                                             <div className="flex items-center justify-between border-b border-[#1e2e45] pb-1">
-                                                <h4 className="text-[14px] font-black text-[#0084ff]">
+                                                <h4 className="text-[13.5px] font-black text-[#0084ff] pr-2 break-all">
                                                     {unitItem.majorUnit}
                                                 </h4>
-                                                <span className="text-[11px] font-extrabold text-[#a0aec0] bg-slate-800 px-2 py-0.5 rounded-md">
+                                                <span className="text-[10.5px] font-extrabold text-[#a0aec0] bg-slate-800 px-2 py-0.5 rounded-md flex-shrink-0">
                                                     {getSciencePlanetLabel(unitItem.course)}
                                                 </span>
                                             </div>
                                             <div className="space-y-2">
                                                 {unitItem.minors.map((minor, mIdx) => (
                                                     <div key={mIdx} className="bg-[#12253f] hover:bg-[#162d4c] rounded-xl p-3.5 border border-[#1e324c]/40 transition-colors flex items-center justify-between gap-3">
-                                                        <p className="text-[13.5px] font-bold text-white leading-snug break-keep">
+                                                        <p className="text-[13px] font-bold text-white leading-snug break-keep">
                                                             {minor}
                                                         </p>
                                                         <div className="flex items-center gap-0.5 text-slate-600 flex-shrink-0">
-                                                            <Star className="h-[14px] w-[14px]" />
-                                                            <Star className="h-[14px] w-[14px]" />
-                                                            <Star className="h-[14px] w-[14px]" />
+                                                            <Star className="h-[13px] w-[13px]" />
+                                                            <Star className="h-[13px] w-[13px]" />
+                                                            <Star className="h-[13px] w-[13px]" />
                                                         </div>
                                                     </div>
                                                 ))}
                                             </div>
                                         </div>
                                     ))
+                                )}
+                                {viewMode === "semester" && getUnitsForCourse(selectedCourse).length === 0 && (
+                                    <div className="text-center py-12 text-slate-500 font-bold italic">
+                                        해당 학기의 과학 단원은 준비 중입니다.
+                                    </div>
                                 )}
                             </div>
                         </div>
@@ -530,13 +610,12 @@ export default function ScienceFreePage() {
                         {viewMode === "semester" ? (
                             /* 학기 기준 그리드 배열 */
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                                {SCIENCE_COURSES.map((courseCode, idx) => {
+                                {courses.map((courseCode, idx) => {
                                     const units = getUnitsForCourse(courseCode);
                                     const charUrl = SCIENCE_CHARACTERS[courseCode] || SCIENCE_CHARACTERS["중1-1"];
                                     return (
                                         <div key={idx} className="bg-[#0b1828] border border-[#1a2b3e] rounded-2xl p-5 shadow-lg flex flex-col justify-between hover:border-[#0084ff]/50 transition-colors">
                                             <div>
-                                                {/* 헤더 캐릭터 아이콘 + 타이틀 */}
                                                 <div className="flex items-center gap-3 mb-4">
                                                     <img src={charUrl} alt="alien" className="w-[32px] h-[32px] object-contain" />
                                                     <h3 className="text-[15.5px] font-black text-white">
@@ -544,17 +623,20 @@ export default function ScienceFreePage() {
                                                     </h3>
                                                 </div>
 
-                                                {/* 단원 목록 */}
                                                 <div className="space-y-2 mb-4">
                                                     {units.map((unitGroup, uIdx) => (
                                                         <p key={uIdx} className="text-[12.5px] text-slate-400 font-bold leading-normal truncate">
                                                             {unitGroup.majorUnit}
                                                         </p>
                                                     ))}
+                                                    {units.length === 0 && (
+                                                        <p className="text-[12px] text-slate-500 font-bold italic leading-normal">
+                                                            단원 데이터 준비 중
+                                                        </p>
+                                                    )}
                                                 </div>
                                             </div>
 
-                                            {/* 하단 행성 썸네일 & 진행률 */}
                                             <div className="flex items-center justify-between border-t border-[#1e2e45] pt-3.5 mt-2">
                                                 <div style={getPlanetStyle(courseCode, 45)} className="rounded" />
                                                 <div className="text-right">
@@ -571,17 +653,14 @@ export default function ScienceFreePage() {
                             <div className="space-y-12">
                                 {DOMAIN_TYPES.map((domain, idx) => {
                                     const domainUnits = getUnitsForDomain(domain.name);
-                                    // 각 계통에 등록된 학기 필터링 및 단원 리스팅
                                     const coursesInDomain = [...new Set(domainUnits.map(du => du.course))];
                                     return (
                                         <div key={idx} className="space-y-4">
-                                            {/* 계통별 타이틀 */}
                                             <div className="flex items-center gap-2 pb-2 border-b border-[#1c2e46]">
                                                 <span className="text-[24px]">{domain.icon}</span>
                                                 <h3 className="text-[18px] font-black text-white">{domain.name}</h3>
                                             </div>
 
-                                            {/* 해당 계통의 학기별 카드 목록 */}
                                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                                                 {coursesInDomain.map((courseCode, cIdx) => {
                                                     const courseUnits = domainUnits.filter(du => du.course === courseCode);
@@ -627,12 +706,17 @@ export default function ScienceFreePage() {
                 )}
             </main>
 
-            {/* 4. Global Footer (우주로) */}
+            {/* 4. Global Footer (우주 전환 플로팅 버튼) */}
             <div className="fixed bottom-4 right-4 z-40">
-                <div className="bg-[#142338]/90 hover:bg-[#1a2d47] backdrop-blur-md px-4 py-2 rounded-full border border-[#1e2e45] shadow-lg flex items-center gap-2 cursor-pointer transition-all hover:scale-105 active:scale-95">
-                    <span className="text-[15px]">🚀</span>
-                    <span className="text-[12.5px] font-black tracking-tight text-white">중고등 우주로</span>
-                </div>
+                <button
+                    onClick={handleUniverseToggle}
+                    className="bg-[#142338]/95 hover:bg-[#0084ff] backdrop-blur-md px-5 py-2.5 rounded-full border border-[#1e2e45] shadow-[0_8px_30px_rgb(0,0,0,0.5)] flex items-center gap-2 cursor-pointer transition-all hover:scale-105 active:scale-95 group"
+                >
+                    <span className="text-[15px] group-hover:animate-bounce">🚀</span>
+                    <span className="text-[13px] font-black tracking-tight text-white">
+                        {universe === "mid-high" ? "초등 우주로" : "중고등 우주로"}
+                    </span>
+                </button>
             </div>
 
             {/* 5. GNB Sidebar */}
