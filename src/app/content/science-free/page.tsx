@@ -701,14 +701,9 @@ export default function ScienceFreePage() {
 
                                                                 <div className="space-y-2">
                                                                     {courseUnits.map((u, uIdx) => (
-                                                                        <div key={uIdx} className="bg-[#12253f]/50 p-2 rounded-lg border border-[#1e324c]/30">
-                                                                            <p className="text-[11.5px] font-black text-[#5c7797] mb-1 truncate">{u.majorUnit}</p>
-                                                                            {u.minors.map((m, mIdx) => (
-                                                                                <p key={mIdx} className="text-[12px] text-slate-300 font-bold truncate leading-relaxed">
-                                                                                    {m}
-                                                                                </p>
-                                                                            ))}
-                                                                        </div>
+                                                                        <p key={uIdx} className="text-[12.5px] text-slate-400 font-bold leading-normal truncate">
+                                                                            {u.majorUnit}
+                                                                        </p>
                                                                     ))}
                                                                 </div>
                                                             </div>
