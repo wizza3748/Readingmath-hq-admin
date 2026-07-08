@@ -57,12 +57,7 @@ const MATH_CHARACTERS: Record<string, string> = {
 export default function MathHomePage() {
     const [tasks, setTasks] = useState<Task[]>([]);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const [selectedGradeTerm, setSelectedGradeTerm] = useState<string>(() => {
-        if (typeof window !== "undefined") {
-            return getGradeTerm("math");
-        }
-        return "중1-1";
-    });
+    const [selectedGradeTerm, setSelectedGradeTerm] = useState<string>("중1-1");
     
     useEffect(() => {
         setSelectedGradeTerm(getGradeTerm("math"));

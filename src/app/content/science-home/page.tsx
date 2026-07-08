@@ -57,12 +57,7 @@ const SCIENCE_CHARACTERS: Record<string, string> = {
 export default function ScienceHomePage() {
     const [tasks, setTasks] = useState<Task[]>([]);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const [selectedGradeTerm, setSelectedGradeTerm] = useState<string>(() => {
-        if (typeof window !== "undefined") {
-            return getGradeTerm("science");
-        }
-        return "중1-1";
-    });
+    const [selectedGradeTerm, setSelectedGradeTerm] = useState<string>("중1-1");
     
     useEffect(() => {
         setSelectedGradeTerm(getGradeTerm("science"));
@@ -104,6 +99,12 @@ export default function ScienceHomePage() {
 
     const backgroundUrl = SCIENCE_BACKGROUNDS[selectedGradeTerm] || SCIENCE_BACKGROUNDS["중1-1"];
     const characterUrl = SCIENCE_CHARACTERS[selectedGradeTerm] || SCIENCE_CHARACTERS["중1-1"];
+
+    // 고등 1학년 1/2학기는 행성 배지 이름만 통합과학으로 표시 (사이드바 등 다른 곳은 변경 안 함)
+    const planetLabel =
+        selectedGradeTerm === "고1-1" ? "통합과학-1" :
+        selectedGradeTerm === "고1-2" ? "통합과학-2" :
+        gradeTermToLabel(selectedGradeTerm);
 
 
 
@@ -178,7 +179,7 @@ export default function ScienceHomePage() {
                 <div className="bg-white hover:bg-slate-50 shadow-[0_2px_10px_rgba(0,0,0,0.12)] pl-[18px] pr-5 py-2.5 rounded-full flex items-center gap-2.5 cursor-pointer transition-all duration-200 select-none">
                     <span className="text-[15px] leading-none">🪐</span>
                     <span className="text-[13.5px] font-bold text-[#1e293b] tracking-tight leading-none">
-                        {gradeTermToLabel(selectedGradeTerm)} 행성
+                        {planetLabel} 행성
                     </span>
                 </div>
                 {/* Badge 2: 과학 (클릭 시 수학 홈으로 이동) */}
