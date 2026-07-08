@@ -236,9 +236,9 @@ export default function ScienceFreePage() {
     };
 
     return (
-        <div className="relative min-h-screen w-full overflow-hidden bg-[#081324] font-sans select-none text-white">
+        <div className="relative h-screen w-full overflow-hidden bg-[#081324] font-sans select-none text-white">
             {/* 1. Global Navigation Bar (GNB) */}
-            <header className="fixed top-0 left-0 right-0 h-[56px] bg-[#091527] border-b border-[#142338] z-50 flex items-center justify-between px-5 shadow-md">
+            <header className="fixed top-0 left-0 right-0 h-[56px] bg-[#081324] z-50 flex items-center justify-between px-5">
                 <Link href="/" className="flex items-center gap-2 cursor-pointer flex-shrink-0 min-w-[130px]">
                     <svg viewBox="0 0 100 100" className="h-6 w-6 flex-shrink-0" xmlns="http://www.w3.org/2000/svg">
                         <defs>
@@ -340,7 +340,7 @@ export default function ScienceFreePage() {
             </div>
 
             {/* 3. Main Display Area */}
-            <main className="relative h-screen w-full pt-[130px] px-6 pb-6 overflow-y-auto">
+            <main className="relative h-full w-full pt-[130px] px-6 pb-6 overflow-hidden">
                 {!showAll ? (
                     /* 캐러셀 모드 (상세 패널 슬라이드 구성) */
                     <div className="relative w-full h-full flex items-center justify-center">
@@ -526,7 +526,7 @@ export default function ScienceFreePage() {
                     </div>
                 ) : (
                     /* 모두 보기 모드 */
-                    <div className="w-full pt-6">
+                    <div className="w-full h-[calc(100vh-170px)] overflow-y-auto pr-1 pb-10">
                         {viewMode === "semester" ? (
                             /* 학기 기준 그리드 배열 */
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
