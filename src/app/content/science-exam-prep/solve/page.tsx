@@ -26,7 +26,7 @@ import renderMathInElement from "katex/contrib/auto-render";
 
 import { SCIENCE_PRINT_SAMPLES } from "@/lib/task-print-sample-mock";
 import { SCIENCE_CURRICULA } from "@/lib/task-center-mock";
-import { SCIENCE_TYPE_TO_QUESTIONS, saveLocalPrepHistory, getCombinedTypeHistory, evaluateAchievementStatus, getChallengeQuestionCount, getDailyAttemptsCount, recordDailyAttempt, isDailyAttemptAllowed } from "@/utils/examPrepStorage";
+import { SCIENCE_TYPE_TO_QUESTIONS, saveLocalPrepHistory, getCombinedTypeHistory, evaluateAchievementStatus, getChallengeQuestionCount, getDailyAttemptsCount, recordDailyAttempt, isDailyAttemptAllowed, getOngoingSession, saveOngoingSession, deleteOngoingSession } from "@/utils/examPrepStorage";
 
 function getYoutubeEmbedUrl(url?: string) {
   if (!url) return "";
@@ -346,7 +346,7 @@ function ScienceSolveContent() {
       <button
         key={idx}
         disabled={isSubmitted}
-        onClick={() => setSelectedChoice(idx)}
+        onClick={() => handleSelectChoice(idx)}
         className={cn(
           "text-left rounded-xl border flex items-center justify-start transition-all duration-150 cursor-pointer group/opt",
           buttonSpacingClass,
@@ -378,6 +378,7 @@ function ScienceSolveContent() {
   const [currentIdx, setCurrentIdx] = useState<number>(0);
   const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
   const [inputText, setInputText] = useState<string>("");
+  const [userAnswers, setUserAnswers] = useState<Record<string, string>>({});
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showExitModal, setShowExitModal] = useState<boolean>(false);
@@ -385,6 +386,14 @@ function ScienceSolveContent() {
   
   // 성취도 실시간 갱신 감지용 버전 상태
   const [historyVersion, setHistoryVersion] = useState<number>(0);
+
+  const combinedHistory = useMemo(() => {
+    return getCombinedTypeHistory(typeId, "science");
+  }, [typeId, historyVersion]);
+
+  const currentStatus = useMemo(() => {
+    return evaluateAchievementStatus(typeId, "science");
+  }, [typeId, historyVersion]);
   
   // 진입 차단(에러) 상태
   const [isBlocked, setIsBlocked] = useState<boolean>(false);
@@ -433,19 +442,17 @@ function ScienceSolveContent() {
 
     // 3.5 일일 도전 제한 및 세션 상태 검증
     const attemptParams = { subject: "science" as const, gradeTerm: detectedGradeTerm, typeId };
-    const sessionKey = `examprep_recorded_${sessionId}`;
-    const questionKey = `examprep_questions_${sessionId}`;
+    
+    // 진행중인 세션이 localStorage에 존재하는지 확인
+    const existingOngoing = getOngoingSession("science", typeId);
 
-    const savedQuestionsStr = sessionStorage.getItem(questionKey);
-    if (savedQuestionsStr) {
-      try {
-        const savedQuestions = JSON.parse(savedQuestionsStr);
-        setSessionQuestions(savedQuestions);
-        setIsBlocked(false);
-        return;
-      } catch (e) {
-        console.error("Failed to parse saved questions", e);
-      }
+    if (existingOngoing) {
+      // 진행중인 세션 복원
+      setSessionQuestions(existingOngoing.questions);
+      setCurrentIdx(existingOngoing.currentIdx);
+      setUserAnswers(existingOngoing.userAnswers);
+      setIsBlocked(false);
+      return;
     }
 
     // 신규 세션인데 도전 제한 횟수(2회) 도달 시 차단 및 홈 화면 리다이렉트
@@ -466,24 +473,70 @@ function ScienceSolveContent() {
       selected.push(pool[idx]);
     }
 
-    // 5. 도전 세션 생성 확정 시점에 도전 횟수 1회 기록 및 세션 정보 저장
-    if (!sessionStorage.getItem(sessionKey)) {
-      recordDailyAttempt(attemptParams);
-      sessionStorage.setItem(sessionKey, "true");
-    }
-    sessionStorage.setItem(questionKey, JSON.stringify(selected));
+    // 5. 도전 세션 생성 확정 시점에 도전 횟수 1회 기록
+    recordDailyAttempt(attemptParams);
+    
+    // 신규 진행중 세션 생성 후 저장
+    const newSession = {
+      sessionId,
+      typeId,
+      subject: "science" as const,
+      gradeTerm: detectedGradeTerm,
+      questions: selected,
+      userAnswers: {},
+      currentIdx: 0,
+      createdAt: new Date().toISOString(),
+      dateStr: new Date().toISOString().slice(0, 10),
+    };
+    saveOngoingSession(newSession);
 
     setSessionQuestions(selected);
+    setCurrentIdx(0);
+    setUserAnswers({});
     setIsBlocked(false);
   }, [typeId]);
 
-  const combinedHistory = useMemo(() => {
-    return getCombinedTypeHistory(typeId, "science");
-  }, [typeId, historyVersion]);
+  // 문항 복원 및 초기화
+  useEffect(() => {
+    if (sessionQuestions.length === 0) return;
+    const questionSample = sessionQuestions[currentIdx];
+    if (!questionSample) return;
 
-  const currentStatus = useMemo(() => {
-    return evaluateAchievementStatus(typeId, "science");
-  }, [typeId, historyVersion]);
+    const savedAns = userAnswers[questionSample.id];
+    const hist = combinedHistory.find(h => h.questionId === questionSample.id);
+    
+    if (hist) {
+      setIsSubmitted(true);
+      setIsCorrect(hist.isCorrect);
+      
+      const isChoiceType = questionSample.choices && questionSample.choices.length > 0;
+      if (isChoiceType) {
+        const choiceIdx = questionSample.choices.indexOf(hist.submittedAnswer);
+        setSelectedChoice(choiceIdx !== -1 ? choiceIdx : null);
+      } else {
+        setInputText(hist.submittedAnswer);
+      }
+    } else {
+      setIsSubmitted(false);
+      setIsCorrect(null);
+      
+      const isChoiceType = questionSample.choices && questionSample.choices.length > 0;
+      if (isChoiceType) {
+        if (savedAns !== undefined && savedAns !== null) {
+          const choiceIdx = questionSample.choices.indexOf(savedAns);
+          setSelectedChoice(choiceIdx !== -1 ? choiceIdx : null);
+        } else {
+          setSelectedChoice(null);
+        }
+        setInputText("");
+      } else {
+        setSelectedChoice(null);
+        setInputText(savedAns || "");
+      }
+    }
+  }, [currentIdx, sessionQuestions, userAnswers, combinedHistory]);
+
+
 
   // 직접 진입 방어 에러 화면
   if (isBlocked) {
@@ -575,8 +628,51 @@ function ScienceSolveContent() {
       solvedAt: new Date().toISOString()
     });
 
+    // 최종 제출 완료 시 해당 진행중 세션 삭제
+    const isLastQuestion = currentIdx === sessionQuestions.length - 1;
+    if (isLastQuestion) {
+      deleteOngoingSession("science", typeId);
+    }
+
     // 성취도 재판정 연동을 위한 버전 상태 갱신
     setHistoryVersion(v => v + 1);
+  };
+
+  const handleSelectChoice = (idx: number) => {
+    if (isSubmitted) return;
+    setSelectedChoice(idx);
+    const questionSample = sessionQuestions[currentIdx];
+    if (questionSample) {
+      const selectedVal = questionSample.choices[idx];
+      const newUserAnswers = {
+        ...userAnswers,
+        [questionSample.id]: selectedVal,
+      };
+      setUserAnswers(newUserAnswers);
+      const ongoing = getOngoingSession("science", typeId);
+      if (ongoing) {
+        ongoing.userAnswers = newUserAnswers;
+        saveOngoingSession(ongoing);
+      }
+    }
+  };
+
+  const handleTextInputChange = (text: string) => {
+    if (isSubmitted) return;
+    setInputText(text);
+    const questionSample = sessionQuestions[currentIdx];
+    if (questionSample) {
+      const newUserAnswers = {
+        ...userAnswers,
+        [questionSample.id]: text,
+      };
+      setUserAnswers(newUserAnswers);
+      const ongoing = getOngoingSession("science", typeId);
+      if (ongoing) {
+        ongoing.userAnswers = newUserAnswers;
+        saveOngoingSession(ongoing);
+      }
+    }
   };
 
   const handleNext = () => {
@@ -584,7 +680,15 @@ function ScienceSolveContent() {
     setInputText("");
     setIsSubmitted(false);
     setIsCorrect(null);
-    setCurrentIdx(prev => prev + 1);
+    const nextIdx = currentIdx + 1;
+    setCurrentIdx(nextIdx);
+
+    // 진행중 세션의 currentIdx 업데이트
+    const ongoing = getOngoingSession("science", typeId);
+    if (ongoing) {
+      ongoing.currentIdx = nextIdx;
+      saveOngoingSession(ongoing);
+    }
   };
 
   const handleKeypadPress = (key: string) => {
@@ -605,7 +709,7 @@ function ScienceSolveContent() {
         nextVal += key;
       }
     }
-    setInputText(nextVal);
+    handleTextInputChange(nextVal);
   };
 
 
@@ -719,7 +823,7 @@ function ScienceSolveContent() {
                     type="text"
                     disabled={isSubmitted}
                     value={inputText}
-                    onChange={(e) => setInputText(e.target.value)}
+                    onChange={(e) => handleTextInputChange(e.target.value)}
                     placeholder={isSubmitted ? "제출이 완료되었습니다." : "답을 입력해주세요"}
                     className={cn(
                       "w-full text-center rounded-xl border border-gray-200 bg-white px-5 py-3.5 text-xl font-bold tracking-wider text-gray-800 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-850 dark:bg-gray-900 dark:text-white transition-all",

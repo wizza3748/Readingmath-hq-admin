@@ -548,3 +548,60 @@ export function evaluateStudentAchievement(
   return "supplement";
 }
 
+// =========================================================================
+// ONGOING SESSIONS (이어풀기) V2 추가
+// =========================================================================
+
+export interface OngoingSession {
+  sessionId: string;
+  typeId: string;
+  subject: "math" | "science";
+  gradeTerm: string;
+  questions: any[];
+  userAnswers: Record<string, string>;
+  currentIdx: number;
+  createdAt: string;
+  dateStr: string;
+}
+
+const ONGOING_SESSIONS_KEY = "readingmath_examprep_ongoing_sessions_v2";
+
+export function getOngoingSessions(): OngoingSession[] {
+  if (typeof window === "undefined") return [];
+  const saved = localStorage.getItem(ONGOING_SESSIONS_KEY);
+  if (!saved) return [];
+  try {
+    return JSON.parse(saved);
+  } catch (e) {
+    console.error("Failed to parse ongoing sessions", e);
+    return [];
+  }
+}
+
+export function getOngoingSession(subject: "math" | "science", typeId: string): OngoingSession | null {
+  const sessions = getOngoingSessions();
+  return sessions.find(s => s.subject === subject && s.typeId === typeId) || null;
+}
+
+export function saveOngoingSession(session: OngoingSession): void {
+  if (typeof window === "undefined") return;
+  const sessions = getOngoingSessions();
+  const idx = sessions.findIndex(s => s.subject === session.subject && s.typeId === session.typeId);
+  if (idx !== -1) {
+    sessions[idx] = session;
+  } else {
+    sessions.push(session);
+  }
+  localStorage.setItem(ONGOING_SESSIONS_KEY, JSON.stringify(sessions));
+  window.dispatchEvent(new Event("examprep-history-updated"));
+}
+
+export function deleteOngoingSession(subject: "math" | "science", typeId: string): void {
+  if (typeof window === "undefined") return;
+  const sessions = getOngoingSessions();
+  const filtered = sessions.filter(s => !(s.subject === subject && s.typeId === typeId));
+  localStorage.setItem(ONGOING_SESSIONS_KEY, JSON.stringify(filtered));
+  window.dispatchEvent(new Event("examprep-history-updated"));
+}
+
+

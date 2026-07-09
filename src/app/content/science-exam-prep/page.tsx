@@ -10,7 +10,7 @@ import {
 import Link from "next/link";
 import { getStoredTasks, Task } from "@/utils/taskStorage";
 import { useRouter, useSearchParams } from "next/navigation";
-import { getCombinedTypeHistory, evaluateAchievementStatus, getChallengeQuestionCount, SCIENCE_TYPE_TO_QUESTIONS, getDailyAttemptsCount, isDailyAttemptAllowed } from "@/utils/examPrepStorage";
+import { getCombinedTypeHistory, evaluateAchievementStatus, getChallengeQuestionCount, SCIENCE_TYPE_TO_QUESTIONS, getDailyAttemptsCount, isDailyAttemptAllowed, getOngoingSession } from "@/utils/examPrepStorage";
 import { cn } from "@/lib/utils";
 import { SCIENCE_CURRICULA } from "@/lib/task-center-mock";
 import "katex/dist/katex.min.css";
@@ -321,6 +321,10 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark, gradeTerm }: Det
 
   const isPlayable = type.availableCount === undefined ? true : type.availableCount > 0;
 
+  // 진행중인 도전 세션 확인
+  const ongoingSession = getOngoingSession("science", type.id);
+  const hasOngoing = !!ongoingSession;
+
   // 도전 세션 문항 수 결정 및 pool 체크
   const qCount = getChallengeQuestionCount(type.id, "science");
   const questionPool = SCIENCE_TYPE_TO_QUESTIONS[type.id] || [];
@@ -331,7 +335,7 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark, gradeTerm }: Det
   const dailyAttemptsCount = getDailyAttemptsCount(attemptParams);
   const isAttemptAllowed = dailyAttemptsCount < 2;
 
-  // 최종 도전 버튼 활성화 조건
+  // 최종 도전 버튼 활성화 조건 (신규 도전 시)
   const isChallengeEnabled = hasEnoughQuestions && isAttemptAllowed;
 
   useEffect(() => {
@@ -414,34 +418,52 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark, gradeTerm }: Det
 
         {/* 도전 버튼 */}
         <div className="flex flex-col gap-2">
-          <button 
-            disabled={!isChallengeEnabled || (cfg.challengeLabel === "다시 도전" && !isPlayable)}
-            onClick={() => {
-              if (cfg.challengeLabel === "다시 도전") {
-                if (isPlayable) {
-                  setShowRetryModal(true);
-                }
-              } else {
+          {hasOngoing ? (
+            <button
+              onClick={() => {
                 onClose();
-                const sessionId = Math.random().toString(36).substring(2, 10) + Date.now();
-                router.push(`/content/science-exam-prep/solve?typeId=${encodeURIComponent(type.id)}&name=${encodeURIComponent(type.name)}&gradeTerm=${encodeURIComponent(gradeTerm)}&sessionId=${sessionId}`);
-              }
-            }}
-            className={cn(
-              "w-full py-3 rounded-xl font-extrabold text-sm transition-all active:scale-95 shadow-lg flex items-center justify-center gap-2",
-              cfg.challengeStyle,
-              (!isChallengeEnabled || (cfg.challengeLabel === "다시 도전" && !isPlayable)) && "opacity-50 cursor-not-allowed pointer-events-none shadow-none"
-            )}
-          >
-            {cfg.challengeLabel === "왕관 도전" && <Crown className="w-4 h-4 fill-current" />}
-            {cfg.challengeLabel === "다시 도전" && <RotateCcw className="w-4 h-4" />}
-            {cfg.challengeLabel === "번개 도전" && <Zap className="w-4 h-4 fill-current" />}
-            {cfg.challengeLabel}
-          </button>
-
+                router.push(`/content/science-exam-prep/solve?typeId=${encodeURIComponent(type.id)}&name=${encodeURIComponent(type.name)}&gradeTerm=${encodeURIComponent(gradeTerm)}&sessionId=${ongoingSession.sessionId}`);
+              }}
+              className={cn(
+                "w-full py-3 rounded-xl font-extrabold text-sm transition-all active:scale-95 shadow-lg flex items-center justify-center gap-2",
+                "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-600/30"
+              )}
+            >
+              <Play className="w-4 h-4 fill-current" />
+              이어풀기
+            </button>
+          ) : (
+            <button 
+              disabled={!isChallengeEnabled || (cfg.challengeLabel === "다시 도전" && !isPlayable)}
+              onClick={() => {
+                if (cfg.challengeLabel === "다시 도전") {
+                  if (isPlayable) {
+                    setShowRetryModal(true);
+                  }
+                } else {
+                  onClose();
+                  const sessionId = Math.random().toString(36).substring(2, 10) + Date.now();
+                  router.push(`/content/science-exam-prep/solve?typeId=${encodeURIComponent(type.id)}&name=${encodeURIComponent(type.name)}&gradeTerm=${encodeURIComponent(gradeTerm)}&sessionId=${sessionId}`);
+                }
+              }}
+              className={cn(
+                "w-full py-3 rounded-xl font-extrabold text-sm transition-all active:scale-95 shadow-lg flex items-center justify-center gap-2",
+                cfg.challengeStyle,
+                (!isChallengeEnabled || (cfg.challengeLabel === "다시 도전" && !isPlayable)) && "opacity-50 cursor-not-allowed pointer-events-none shadow-none"
+              )}
+            >
+              {cfg.challengeLabel === "왕관 도전" && <Crown className="w-4 h-4 fill-current" />}
+              {cfg.challengeLabel === "다시 도전" && <RotateCcw className="w-4 h-4" />}
+              {cfg.challengeLabel === "번개 도전" && <Zap className="w-4 h-4 fill-current" />}
+              {cfg.challengeLabel}
+            </button>
+          )}
+          
           {/* 출제 예정 문항 수 및 부족 안내 문구 */}
           <div className="text-center text-xs font-bold py-1">
-            {!hasEnoughQuestions ? (
+            {hasOngoing ? (
+              <span className="text-indigo-600 dark:text-indigo-400">진행 중인 도전이 있어요. 이어서 풀 수 있어요.</span>
+            ) : !hasEnoughQuestions ? (
               <span className="text-red-500">출제 가능한 문항이 없어요.</span>
             ) : !isAttemptAllowed ? (
               <span className="text-red-500">오늘 이 유형의 도전 횟수를 모두 사용했어요.</span>
