@@ -705,7 +705,54 @@ function getRealTypeName(typeId: string, subject: "math" | "science"): string {
   return "";
 }
 
+// ── 실시간 오늘 시점 기준 날짜 동적 보정 ──────────────────────────────────────────────────
+function adjustDateToTodayRelative(isoStr: string | undefined): string | undefined {
+  if (!isoStr) return isoStr;
+  const parts = isoStr.split("T");
+  if (parts.length < 2) return isoStr;
+  
+  const datePart = parts[0]; 
+  const timePart = parts[1]; 
+  
+  const dayStr = datePart.split("-")[2]; 
+  let daysAgo = 1;
+  
+  switch(dayStr) {
+    case "18": daysAgo = 1; break;
+    case "17": daysAgo = 2; break;
+    case "16": daysAgo = 1; break;
+    case "13": daysAgo = 2; break;
+    case "12": daysAgo = 3; break;
+    case "10": daysAgo = 4; break;
+    case "09": daysAgo = 4; break;
+    case "08": daysAgo = 5; break;
+    case "05": daysAgo = 7; break;
+    case "04": daysAgo = 6; break;
+    case "03": daysAgo = 9; break;
+    case "02": daysAgo = 7; break;
+    case "01": daysAgo = 8; break;
+    case "28": daysAgo = 9; break;
+    case "15": daysAgo = 10; break;
+    default: daysAgo = 12;
+  }
+  
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() - daysAgo);
+  
+  const yyyy = targetDate.getFullYear();
+  const mm = String(targetDate.getMonth() + 1).padStart(2, '0');
+  const dd = String(targetDate.getDate()).padStart(2, '0');
+  
+  return `${yyyy}-${mm}-${dd}T${timePart}`;
+}
+
 MOCK_TASK_RESULTS.forEach(r => {
+  if (r.submittedAt) {
+    r.submittedAt = adjustDateToTodayRelative(r.submittedAt) as string;
+  }
+  if (r.lastSolvedAt) {
+    r.lastSolvedAt = adjustDateToTodayRelative(r.lastSolvedAt) as string;
+  }
   r.typeResults.forEach(tr => {
     const realName = getRealTypeName(tr.typeId, r.subject);
     if (realName) {
@@ -715,6 +762,9 @@ MOCK_TASK_RESULTS.forEach(r => {
 });
 
 MOCK_EXAM_PREP_HISTORY.forEach(h => {
+  if (h.solvedAt) {
+    h.solvedAt = adjustDateToTodayRelative(h.solvedAt) as string;
+  }
   const subject = h.typeId.startsWith("sc") ? "science" : "math";
   const realName = getRealTypeName(h.typeId, subject);
   if (realName) {
