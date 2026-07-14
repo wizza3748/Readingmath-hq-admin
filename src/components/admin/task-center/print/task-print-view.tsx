@@ -38,8 +38,23 @@ export default function TaskPrintView({ taskId }: Props) {
   const [showDate, setShowDate] = React.useState<boolean>(true);
   const [showUnit, setShowUnit] = React.useState<boolean>(true);
   const [showLogo, setShowLogo] = React.useState<boolean>(true);
+  const [answerOnlyMode, setAnswerOnlyMode] = React.useState<boolean>(false);
 
   const [studentModalOpen, setStudentModalOpen] = React.useState(false);
+
+  // printType이 학생용으로 바뀌면 answerOnlyMode 초기화
+  React.useEffect(() => {
+    if (printType === "student") {
+      setAnswerOnlyMode(false);
+    }
+  }, [printType]);
+
+  // answerOnlyMode 활성화 시 페이지 분할을 기본(1단)으로 강제 고정
+  React.useEffect(() => {
+    if (answerOnlyMode) {
+      setSplit("1");
+    }
+  }, [answerOnlyMode]);
 
   const isStudentSelectable = React.useCallback((studentId: string) => {
     if (!task) return false;
@@ -112,6 +127,7 @@ export default function TaskPrintView({ taskId }: Props) {
     setShowDate(true);
     setShowUnit(true);
     setShowLogo(true);
+    setAnswerOnlyMode(false);
   };
 
   const handlePrint = () => {
@@ -222,6 +238,7 @@ export default function TaskPrintView({ taskId }: Props) {
               showLogo={showLogo} setShowLogo={setShowLogo}
               onOpenStudentModal={() => setStudentModalOpen(true)}
               activeStudents={activeStudents}
+              answerOnlyMode={answerOnlyMode} setAnswerOnlyMode={setAnswerOnlyMode}
             />
           </div>
 
@@ -247,6 +264,7 @@ export default function TaskPrintView({ taskId }: Props) {
               printTarget={printTarget}
               selectedStudentIds={selectedStudentIds}
               setPreviewStudentId={setPreviewStudentId}
+              answerOnlyMode={answerOnlyMode}
             />
           </div>
         </div>

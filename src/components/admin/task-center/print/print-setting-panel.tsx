@@ -41,6 +41,8 @@ interface Props {
   setShowLogo: (v: boolean) => void;
   onOpenStudentModal: () => void;
   activeStudents: StudentAssignment[];
+  answerOnlyMode: boolean;
+  setAnswerOnlyMode: (v: boolean) => void;
 }
 
 const COLORS: { value: PrintColor; label: string }[] = [
@@ -69,7 +71,8 @@ export default function PrintSettingPanel({
   showUnit, setShowUnit,
   showLogo, setShowLogo,
   onOpenStudentModal,
-  activeStudents
+  activeStudents,
+  answerOnlyMode, setAnswerOnlyMode
 }: Props) {
   
   const isIndividualOrRelearn = task.problemMode === "individual" || task.problemMode === "relearn";
@@ -142,6 +145,32 @@ export default function PrintSettingPanel({
             <Label htmlFor="pt-teacher" className="font-normal cursor-pointer">교사용</Label>
           </div>
         </RadioGroup>
+
+        {/* 교사용 선택 시에만 노출: 정답·해설만 출력 토글 */}
+        {printType === "teacher" && (
+          <button
+            type="button"
+            onClick={() => setAnswerOnlyMode(!answerOnlyMode)}
+            className={`mt-1 flex items-center gap-2 w-full px-3 py-2 rounded-lg border text-sm font-semibold transition-all duration-150 ${
+              answerOnlyMode
+                ? "bg-primary text-white border-primary shadow-sm"
+                : "bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+            }`}
+          >
+            <span
+              className={`w-4 h-4 rounded border-2 flex items-center justify-center shrink-0 transition-all ${
+                answerOnlyMode ? "bg-white border-white" : "border-slate-400"
+              }`}
+            >
+              {answerOnlyMode && (
+                <svg className="w-2.5 h-2.5" viewBox="0 0 10 10" fill="none">
+                  <path d="M1.5 5L4 7.5L8.5 2.5" stroke="#2563eb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              )}
+            </span>
+            정답·해설만 출력
+          </button>
+        )}
       </div>
 
       {/* 출력 대상 */}
@@ -205,14 +234,29 @@ export default function PrintSettingPanel({
 
       {/* 분할 */}
       <div className="flex flex-col gap-3">
-        <Label className="text-gray-700 font-semibold">페이지 분할</Label>
-        <RadioGroup value={split} onValueChange={(v: any) => setSplit(v)} className="grid grid-cols-4 gap-2">
+        <div className="flex items-center justify-between">
+          <Label className={`font-semibold ${answerOnlyMode ? "text-gray-400" : "text-gray-700"}`}>페이지 분할</Label>
+          {answerOnlyMode && (
+            <span className="text-xs text-gray-400 font-normal">정답·해설만 출력 시 기본으로 고정</span>
+          )}
+        </div>
+        <RadioGroup
+          value={split}
+          onValueChange={(v: any) => { if (!answerOnlyMode) setSplit(v); }}
+          className="grid grid-cols-4 gap-2"
+        >
           {[{v:"1", l:"기본"}, {v:"2", l:"2분할"}, {v:"4", l:"4분할"}, {v:"6", l:"6분할"}].map(item => (
             <div key={item.v}>
-              <RadioGroupItem value={item.v} id={`split-${item.v}`} className="peer sr-only" />
-              <Label 
+              <RadioGroupItem value={item.v} id={`split-${item.v}`} className="peer sr-only" disabled={answerOnlyMode && item.v !== "1"} />
+              <Label
                 htmlFor={`split-${item.v}`}
-                className="flex flex-col items-center justify-center py-2.5 px-1 border border-slate-200 rounded-lg cursor-pointer peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5 text-xs font-semibold text-slate-600 transition-all duration-150"
+                className={`flex flex-col items-center justify-center py-2.5 px-1 border border-slate-200 rounded-lg text-xs font-semibold transition-all duration-150 ${
+                  answerOnlyMode
+                    ? item.v === "1"
+                      ? "border-primary bg-primary/5 text-primary cursor-default"
+                      : "opacity-40 cursor-not-allowed text-slate-400"
+                    : "cursor-pointer text-slate-600 peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/5"
+                }`}
               >
                 {item.l}
               </Label>

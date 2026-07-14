@@ -123,6 +123,7 @@ interface Props {
   printTarget?: "all" | "selected";
   selectedStudentIds?: string[];
   setPreviewStudentId?: (id: string) => void;
+  answerOnlyMode?: boolean;
 }
 
 export interface PrintItem {
@@ -446,7 +447,8 @@ export const QuestionContent = ({ q, printType, task, color, fontSize, onImageLo
 export default function PrintPreviewPanel({
   task, isBlocked, blockMessage, printType, previewStudentId, activeStudents,
   color, split, pageMargin, problemGap, fontSize, showClass, showName, showDate, showUnit, showLogo,
-  printTarget = "all", selectedStudentIds = [], setPreviewStudentId
+  printTarget = "all", selectedStudentIds = [], setPreviewStudentId,
+  answerOnlyMode = false
 }: Props) {
   
   const scrollRef = React.useRef<HTMLDivElement>(null);
@@ -714,7 +716,38 @@ export default function PrintPreviewPanel({
         const q = questions[i];
         
         if (printType === "teacher") {
-          // ── 교사용 지능형 2단계 분리 배치 알고리즘 ──
+          if (answerOnlyMode) {
+            // ── 정답·해설만 출력 모드: explanation 아이템만 배치 ──
+            if (q.explanation || q.answer) {
+              const elExp = document.getElementById(`measure-q-exp-${q.id}`);
+              const expHeight = elExp ? elExp.getBoundingClientRect().height : 0;
+
+              while (true) {
+                const isPageOne = studentPages.length === 0;
+                const currentHeaderHeight = isPageOne ? headerHeight : shortHeaderHeight;
+                const currentAvailableHeight = pageHeightPx - (marginPx * 2) - currentHeaderHeight - 45;
+
+                const heightWithGap = expHeight + (currentPageData[currentColumn].length > 0 ? gapPx : 0);
+                const willExceedHeight = currentColumnHeight + heightWithGap > currentAvailableHeight;
+                const willExceedCount = currentPageData[currentColumn].length >= maxItemsPerColumn;
+
+                if (currentPageData[currentColumn].length === 0) {
+                  currentPageData[currentColumn].push({ type: 'explanation', question: q });
+                  currentColumnHeight += heightWithGap;
+                  break;
+                }
+
+                if (willExceedHeight || willExceedCount) {
+                  moveToNextSlot();
+                  continue;
+                }
+
+                currentPageData[currentColumn].push({ type: 'explanation', question: q });
+                currentColumnHeight += heightWithGap;
+                break;
+              }
+            }
+          } else {
           const elBody = document.getElementById(`measure-q-body-${q.id}`);
           const bodyHeight = elBody ? elBody.getBoundingClientRect().height : 0;
 
@@ -783,6 +816,8 @@ export default function PrintPreviewPanel({
             }
           }
 
+          } // end else (answerOnlyMode === false)
+
         } else {
           // ── 학생용 기존 안전 배치 알고리즘 ──
           const el = document.getElementById(`measure-q-${q.id}`);
@@ -832,7 +867,7 @@ export default function PrintPreviewPanel({
     });
     
     setPages(allPages);
-  }, [triggerMeasure, questions, split, pageMargin, problemGap, targetStudents, scaleDownIds, printType, showClass, showUnit]);
+  }, [triggerMeasure, questions, split, pageMargin, problemGap, targetStudents, scaleDownIds, printType, showClass, showUnit, answerOnlyMode]);
 
   // Preview Student Select Scroll Trigger (조상 컨테이너 스크롤 전파 버그 방지를 위해 직접 scrollTo 제어)
   React.useEffect(() => {
@@ -932,27 +967,28 @@ export default function PrintPreviewPanel({
               if (printType === "teacher") {
                 return (
                   <React.Fragment key={`measure-frag-${q.id}`}>
-                    {/* 교사용 본문 측정 */}
-                    <div 
-                      id={`measure-q-body-${q.id}`} 
+                    {/* 교사용 본문 측정 - answerOnlyMode에서는 숨김 처리하되 DOM은 유지 */}
+                    <div
+                      id={`measure-q-body-${q.id}`}
                       className="flex flex-col bg-white"
-                      style={{ 
-                         width: singleColumnWidth,
-                         maxWidth: singleColumnWidth,
-                         boxSizing: 'border-box'
+                      style={{
+                        width: singleColumnWidth,
+                        maxWidth: singleColumnWidth,
+                        boxSizing: 'border-box',
+                        ...(answerOnlyMode ? { visibility: 'hidden', position: 'absolute', pointerEvents: 'none' } : {})
                       }}
                     >
                        <QuestionContent q={q} printType={printType} task={task} color={color} fontSize={fontSize} onImageLoad={handleImageLoad} scaleDownChoices={scaleDownIds.includes(q.id)} itemType="question" />
                     </div>
-                    
+
                     {/* 교사용 정답·해설 측정 */}
-                    <div 
-                      id={`measure-q-exp-${q.id}`} 
+                    <div
+                      id={`measure-q-exp-${q.id}`}
                       className="flex flex-col bg-white"
-                      style={{ 
-                         width: singleColumnWidth,
-                         maxWidth: singleColumnWidth,
-                         boxSizing: 'border-box'
+                      style={{
+                        width: singleColumnWidth,
+                        maxWidth: singleColumnWidth,
+                        boxSizing: 'border-box'
                       }}
                     >
                        <QuestionContent q={q} printType={printType} task={task} color={color} fontSize={fontSize} onImageLoad={handleImageLoad} itemType="explanation" />
