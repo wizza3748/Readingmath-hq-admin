@@ -890,10 +890,13 @@ function StudentTaskDetailResultModal({
                           <span className="shrink-0">날짜: {new Date().toLocaleDateString('ko-KR')}</span>
                         </div>
                       </div>
-                      <div className="h-[20px] flex items-center shrink-0 mb-0.5">
+                      <div className="h-[20px] flex items-center shrink-0 mb-0.5 relative">
                         <span style={{ color: "#002775", fontWeight: 'bold', fontSize: '11pt' }}>
                           리딩{subject === "math" ? "수학" : "과학"}
                         </span>
+                        <div className="absolute right-0 -top-3.5 z-30 select-none pointer-events-none text-red-500 font-extrabold text-[28px] tracking-wide rotate-[-6deg] drop-shadow-sm font-sans">
+                          {taskResult.score}점
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1061,10 +1064,13 @@ function StudentTaskDetailResultModal({
                         <span className="shrink-0">날짜: {new Date().toLocaleDateString('ko-KR')}</span>
                       </div>
                     </div>
-                    <div className="h-[20px] flex items-center shrink-0 mb-0.5">
+                    <div className="h-[20px] flex items-center shrink-0 mb-0.5 relative">
                       <span style={{ color: "#002775", fontWeight: 'bold', fontSize: '11pt' }}>
                         리딩{subject === "math" ? "수학" : "과학"}
                       </span>
+                      <div className="absolute right-0 -top-3.5 z-30 select-none pointer-events-none text-red-500 font-extrabold text-[28px] tracking-wide rotate-[-6deg] drop-shadow-sm font-sans">
+                        {taskResult.score}점
+                      </div>
                     </div>
                   </div>
                 </div>
