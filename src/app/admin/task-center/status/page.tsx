@@ -722,10 +722,14 @@ function StudentTaskDetailResultModal({
               {/* 빨간 채점 표시 */}
               <div className="relative shrink-0 select-none mr-1 w-6 h-6 flex items-center justify-center">
                 {q.result === "correct" && (
-                  <span className="absolute w-11 h-9 border-[3px] border-red-400/85 rounded-[45%_55%_65%_35%] -top-1.5 -left-2 pointer-events-none z-20" />
+                  <svg className="absolute w-12 h-10 -top-2 -left-2.5 pointer-events-none z-20" viewBox="0 0 48 40">
+                    <ellipse cx="24" cy="20" rx="20" ry="16" fill="none" stroke="#ef4444" strokeWidth="3" strokeOpacity="0.8" />
+                  </svg>
                 )}
                 {q.result === "incorrect" && (
-                  <span className="absolute w-18 h-12 -top-2.5 -left-3 pointer-events-none z-20 before:content-[''] before:absolute before:left-0 before:top-1/2 before:w-full before:border-t-[3.5px] before:border-red-400/80 before:rotate-[20deg]" />
+                  <svg className="absolute w-20 h-14 -top-3.5 -left-3 pointer-events-none z-20" viewBox="0 0 80 56">
+                    <line x1="6" y1="48" x2="74" y2="6" stroke="#ef4444" strokeWidth="3.5" strokeOpacity="0.8" strokeLinecap="round" />
+                  </svg>
                 )}
                 <span className="text-slate-900 font-bold z-10">{q.problemNo}.</span>
               </div>
