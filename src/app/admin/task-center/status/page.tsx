@@ -890,8 +890,8 @@ function StudentTaskDetailResultModal({
                           <span className="shrink-0">날짜: {new Date().toLocaleDateString('ko-KR')}</span>
                         </div>
                       </div>
-                      <div className="flex flex-col items-end justify-end shrink-0 select-none pointer-events-none mb-[-4px]">
-                        <div className="text-red-500 font-extrabold text-[24pt] leading-none mb-1 rotate-[-4deg] tracking-wide font-sans">
+                      <div className="flex flex-col items-end justify-end shrink-0 select-none pointer-events-none mb-[-4px] mt-[-10px]">
+                        <div className="text-red-500 font-extrabold text-[24pt] leading-none mb-1.5 rotate-[-4deg] tracking-wide font-sans">
                           {taskResult.score}점
                         </div>
                         <div className="text-[#002775] font-bold text-[11pt] leading-none pr-1">
@@ -1064,8 +1064,8 @@ function StudentTaskDetailResultModal({
                         <span className="shrink-0">날짜: {new Date().toLocaleDateString('ko-KR')}</span>
                       </div>
                     </div>
-                    <div className="flex flex-col items-end justify-end shrink-0 select-none pointer-events-none mb-[-4px]">
-                      <div className="text-red-500 font-extrabold text-[24pt] leading-none mb-1 rotate-[-4deg] tracking-wide font-sans">
+                    <div className="flex flex-col items-end justify-end shrink-0 select-none pointer-events-none mb-[-4px] mt-[-10px]">
+                      <div className="text-red-500 font-extrabold text-[24pt] leading-none mb-1.5 rotate-[-4deg] tracking-wide font-sans">
                         {taskResult.score}점
                       </div>
                       <div className="text-[#002775] font-bold text-[11pt] leading-none pr-1">
