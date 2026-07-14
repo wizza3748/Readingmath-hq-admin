@@ -44,6 +44,9 @@ import { evaluateAchievementStatus, getStudentTypeHistory, evaluateStudentAchiev
 import type { ExamAchievementStatus } from "@/utils/examPrepStorage";
 
 import { MATH_CURRICULA, SCIENCE_CURRICULA } from "@/lib/task-center-mock";
+import { MATH_PRINT_SAMPLES, SCIENCE_PRINT_SAMPLES } from "@/lib/task-print-sample-mock";
+import { parseAndRenderMath } from "@/components/admin/task-center/print/print-preview-panel";
+import { createPortal } from "react-dom";
 
 import {
   MOCK_TASK_RESULTS,
@@ -429,6 +432,9 @@ function StudentTaskDetailResultModal({
   onClose,
 }: StudentTaskDetailResultModalProps) {
   const [dbStudents, setDbStudents] = useState<any[]>([]);
+  const [showAnswer, setShowAnswer] = useState<boolean>(false);
+  const [isPrinting, setIsPrinting] = useState<boolean>(false);
+
   useEffect(() => {
     setDbStudents(getStoredStudents());
   }, []);
@@ -452,50 +458,41 @@ function StudentTaskDetailResultModal({
       const totalCount = tr.correctCount + tr.incorrectCount + tr.unenteredCount;
       if (totalCount === 0) return;
 
-      // 정답 문항 생성 (itemIndex = 0 ~ correctCount - 1)
+      // 정답 문항 생성
       for (let i = 0; i < tr.correctCount; i++) {
-        const itemIndex = i;
-        const statement = resolveProblemStatement(typeId, typeName, subject, itemIndex);
-
         rows.push({
           problemId: `${taskId}-${typeId}-p-correct-${i}`,
           problemNo: problemNo++,
           typeId,
           typeName,
           unit,
-          problemStatement: statement,
+          problemStatement: "",
           result: "correct",
         });
       }
 
-      // 오답 문항 생성 (itemIndex = correctCount ~ correctCount + incorrectCount - 1)
+      // 오답 문항 생성
       for (let i = 0; i < tr.incorrectCount; i++) {
-        const itemIndex = tr.correctCount + i;
-        const statement = resolveProblemStatement(typeId, typeName, subject, itemIndex);
-
         rows.push({
           problemId: `${taskId}-${typeId}-p-incorrect-${i}`,
           problemNo: problemNo++,
           typeId,
           typeName,
           unit,
-          problemStatement: statement,
+          problemStatement: "",
           result: "incorrect",
         });
       }
 
-      // 미입력 문항 생성 (itemIndex = correctCount + incorrectCount ~ problemCount - 1)
+      // 미입력 문항 생성
       for (let i = 0; i < tr.unenteredCount; i++) {
-        const itemIndex = tr.correctCount + tr.incorrectCount + i;
-        const statement = resolveProblemStatement(typeId, typeName, subject, itemIndex);
-
         rows.push({
           problemId: `${taskId}-${typeId}-p-unentered-${i}`,
           problemNo: problemNo++,
           typeId,
           typeName,
           unit,
-          problemStatement: statement,
+          problemStatement: "",
           result: "unentered",
         });
       }
@@ -504,11 +501,73 @@ function StudentTaskDetailResultModal({
     return rows;
   }, [taskResult, studentId, subject, taskId, student]);
 
+  // 문제 정보 셋업
+  const gradedQuestions = useMemo(() => {
+    if (problemRows.length === 0) return [];
+    const sourceSamples = subject === "science" ? SCIENCE_PRINT_SAMPLES : MATH_PRINT_SAMPLES;
+    
+    return problemRows.map((row, idx) => {
+      const q = sourceSamples[idx % sourceSamples.length];
+
+      // 실제 정답 문자열 및 선지 기호화
+      let displayAnswer = q.answer;
+      let correctChoiceIndex = -1;
+      if (q.choices && q.choices.length > 0) {
+        correctChoiceIndex = q.choices.indexOf(q.answer);
+        if (correctChoiceIndex !== -1) {
+          displayAnswer = ['①','②','③','④','⑤'][correctChoiceIndex];
+        }
+      }
+
+      // 학생 제출 답안 모의 생성
+      let studentAnswer = "";
+      let studentChoiceIndex = -1;
+
+      if (row.result === "correct") {
+        studentAnswer = displayAnswer;
+        studentChoiceIndex = correctChoiceIndex;
+      } else if (row.result === "incorrect") {
+        if (q.choices && q.choices.length > 0) {
+          // 오답 인덱스 설정
+          studentChoiceIndex = (correctChoiceIndex !== -1 ? (correctChoiceIndex + 1) : 1) % q.choices.length;
+          studentAnswer = ['①','②','③','④','⑤'][studentChoiceIndex];
+        } else {
+          // 주관식 오답 설정
+          if (q.answer === "4") studentAnswer = "2";
+          else if (q.answer.includes("h")) studentAnswer = "h ≥ 6";
+          else if (q.answer === "4명") studentAnswer = "6명";
+          else studentAnswer = "오답";
+        }
+      } else {
+        studentAnswer = "-";
+      }
+
+      return {
+        ...q,
+        problemNo: row.problemNo,
+        result: row.result,
+        studentAnswer,
+        studentChoiceIndex,
+        correctChoiceIndex,
+        displayAnswer,
+      };
+    });
+  }, [problemRows, subject]);
+
+  const handlePrint = () => {
+    setIsPrinting(true);
+    setTimeout(() => {
+      window.print();
+      setIsPrinting(false);
+    }, 200);
+  };
+
   if (!student || !taskResult) return null;
 
   return (
     <div className="fixed inset-0 z-[80] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="bg-white rounded-2xl w-[calc(100vw-32px)] lg:w-[70vw] lg:min-w-[720px] max-w-[960px] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200 h-auto max-h-[85vh] flex flex-col">
+      <div className="bg-white rounded-2xl w-[calc(100vw-32px)] lg:w-[75vw] lg:min-w-[800px] max-w-[1000px] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200 h-auto max-h-[90vh] flex flex-col">
+        
         {/* 모달 헤더 */}
         <div className="px-6 py-4 border-b flex items-center justify-between shrink-0 bg-slate-50/80">
           <h2 className="text-lg font-bold text-slate-800">
@@ -525,76 +584,380 @@ function StudentTaskDetailResultModal({
         </div>
 
         {/* 모달 바디 (스크롤 격리) */}
-        <div className="overflow-y-auto flex-1 p-6 min-h-0 bg-white">
-          {/* 테이블 상단 정보 영역 (한 줄 요약 구조) */}
-          <div className="flex items-center gap-2 mb-3.5 text-sm shrink-0">
+        <div className="overflow-y-auto flex-1 p-6 min-h-0 bg-slate-50/50 flex flex-col gap-6">
+          {/* 테이블 상단 정보 영역 */}
+          <div className="bg-white border rounded-xl p-4 flex flex-wrap items-center gap-x-8 gap-y-2 text-sm shrink-0 shadow-sm">
             <span className="font-semibold text-slate-800">학생: {student.name}</span>
             <span className="text-slate-300">|</span>
-            <span className="text-slate-600 truncate max-w-[360px]" title={taskResult.taskName}>
+            <span className="text-slate-600 truncate max-w-[240px]" title={taskResult.taskName}>
               과제: {taskResult.taskName}
             </span>
+            <span className="text-slate-300">|</span>
+            <span className="text-slate-600">점수: <strong className="text-primary text-[15px]">{taskResult.score}점</strong></span>
+            <span className="text-slate-300">|</span>
+            <span className="text-slate-600">정답 문항 수: <strong className="text-emerald-600">{taskResult.correctCount} / {taskResult.totalProblems}</strong></span>
           </div>
-          <div className="w-full">
-            <table className="w-full text-sm border-collapse table-fixed border-t border-b border-slate-200">
-              <thead>
-                <tr className="border-b bg-slate-50 text-slate-500 text-xs font-semibold sticky top-0 z-10">
-                  <th className="text-center px-4 py-3 w-[8%]">문항</th>
-                  <th className="text-left px-4 py-3 w-[30%]">유형명</th>
-                  <th className="text-left px-4 py-3 w-[50%]">문제 발문</th>
-                  <th className="text-center px-4 py-3 w-[12%]">결과</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y text-slate-700">
-                {problemRows.map((row) => (
-                  <tr key={row.problemId} className="hover:bg-slate-50/30">
-                    {/* 문항 */}
-                    <td className="px-4 py-3 text-center font-medium text-slate-600 border-r border-slate-100 whitespace-nowrap">
-                      {row.problemNo}
-                    </td>
-                    {/* 유형명 */}
-                    <td className="px-4 py-3 text-left border-r border-slate-100 align-middle">
-                      <div
-                        className="min-w-[180px] max-w-[240px] whitespace-normal break-keep line-clamp-2 text-slate-800 font-semibold"
-                        title={row.typeName}
-                      >
-                        {row.typeName}
-                      </div>
-                    </td>
-                    {/* 문제 발문 */}
-                    <td className="px-4 py-3 text-left text-slate-600 text-xs font-medium border-r border-slate-100">
-                      <div className="truncate" title={row.problemStatement}>
-                        {row.problemStatement !== "-" && row.problemStatement.length > 40
-                          ? `${row.problemStatement.slice(0, 40)}...`
-                          : row.problemStatement}
-                      </div>
-                    </td>
-                    {/* 결과 */}
-                    <td className="px-4 py-3 text-center font-bold whitespace-nowrap">
-                      {row.result === "correct" && (
-                        <span className="inline-flex items-center gap-1 text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full text-xs font-semibold">
+
+          {/* 학생별 채점 결과 영역 (시험지 형태) */}
+          <div className="flex flex-col gap-6">
+            {gradedQuestions.map((q) => {
+              const isImageOnlyPassage = q.passage && q.passage.includes("<img") && q.passage.replace(/<[^>]*>/g, "").replace(/\s/g, "").length === 0;
+
+              return (
+                <div key={q.id} className="bg-white border rounded-xl p-6 shadow-sm flex flex-col gap-4 relative overflow-hidden">
+                  
+                  {/* 문항 번호 및 채점 뱃지 */}
+                  <div className="flex items-center justify-between border-b pb-3 shrink-0">
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg font-bold text-slate-800">{q.problemNo}번 문항</span>
+                      
+                      {/* 채점 결과 마킹 */}
+                      {q.result === "correct" && (
+                        <span className="inline-flex items-center gap-1 text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full text-xs font-semibold">
                           <Check className="w-3.5 h-3.5 stroke-[3]" />
                           정답
                         </span>
                       )}
-                      {row.result === "incorrect" && (
-                        <span className="inline-flex items-center gap-1 text-rose-500 bg-rose-50 px-2 py-0.5 rounded-full text-xs font-semibold">
+                      {q.result === "incorrect" && (
+                        <span className="inline-flex items-center gap-1 text-rose-500 bg-rose-50 px-2.5 py-0.5 rounded-full text-xs font-semibold">
                           <X className="w-3.5 h-3.5 stroke-[3]" />
                           오답
                         </span>
                       )}
-                      {row.result === "unentered" && (
-                        <span className="inline-flex items-center text-slate-400 bg-slate-50 px-2 py-0.5 rounded-full text-xs font-medium">
+                      {q.result === "unentered" && (
+                        <span className="inline-flex items-center text-slate-400 bg-slate-100 px-2.5 py-0.5 rounded-full text-xs font-medium">
                           미입력
                         </span>
                       )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                    </div>
+
+                    <div className="text-xs text-slate-400">
+                      유형: {resolveProblemStatement(q.id, "", subject, q.problemNo - 1).split('[')[0].trim()}
+                    </div>
+                  </div>
+
+                  {/* 문제 본문 */}
+                  <div className="text-base text-slate-900 font-medium leading-relaxed">
+                    <span 
+                      dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.stem) }} 
+                      className="inline max-w-full min-w-0 [&_p]:inline [&_div]:inline" 
+                    />
+                  </div>
+
+                  {/* 보기 (passage) */}
+                  {q.passage && (
+                    <div 
+                      className={`${
+                        isImageOnlyPassage 
+                          ? "flex justify-center w-full my-1" 
+                          : "border p-4 rounded-lg text-slate-800 leading-relaxed bg-slate-50/50"
+                      } max-w-full min-w-0 overflow-x-auto`}
+                    >
+                      <div 
+                        dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.passage.replace(/\n/g, '<br/>')) }} 
+                        className="max-w-full min-w-0 [&_img]:max-w-full [&_img]:h-auto [&_img]:object-contain [&_table]:max-w-full [&_table]:w-full"
+                      />
+                    </div>
+                  )}
+
+                  {/* 이미지 */}
+                  {q.image && (
+                    <div className="my-2 flex justify-center max-w-full overflow-hidden">
+                      <img 
+                        src={q.image} 
+                        alt="문제 이미지" 
+                        className="max-w-full h-auto max-h-[200px] object-contain border rounded p-1 bg-white" 
+                      />
+                    </div>
+                  )}
+
+                  {/* 선지 (Choices) */}
+                  {q.choices && q.choices.length > 0 && (
+                    <div className="flex flex-col gap-2 mt-2 pl-2">
+                      {q.choices.map((choice, i) => {
+                        const isSelected = q.studentChoiceIndex === i;
+                        const isCorrect = q.correctChoiceIndex === i;
+                        
+                        // 하이라이트 스타일 클래스 계산
+                        let choiceStyle = "text-slate-700 hover:bg-slate-50/80";
+                        if (isSelected) {
+                          choiceStyle = q.result === "correct" 
+                            ? "bg-emerald-50 border-emerald-200 text-emerald-700 font-semibold"
+                            : "bg-rose-50 border-rose-200 text-rose-700 font-semibold";
+                        } else if (showAnswer && isCorrect) {
+                          choiceStyle = "bg-emerald-50 border-emerald-200 text-emerald-700 font-semibold";
+                        }
+
+                        return (
+                          <div 
+                            key={i} 
+                            className={cn("flex items-center gap-3 px-3 py-2 rounded-lg border border-transparent transition-all", choiceStyle)}
+                          >
+                            <span className={cn(
+                              "w-6 h-6 rounded-full flex items-center justify-center shrink-0 border text-xs font-semibold",
+                              isSelected 
+                                ? q.result === "correct"
+                                  ? "bg-emerald-500 border-emerald-500 text-white"
+                                  : "bg-rose-500 border-rose-500 text-white"
+                                : (showAnswer && isCorrect)
+                                ? "bg-emerald-500 border-emerald-500 text-white"
+                                : "bg-white border-slate-200 text-slate-500"
+                            )}>
+                              {['①','②','③','④','⑤'][i]}
+                            </span>
+                            <span 
+                              dangerouslySetInnerHTML={{ __html: parseAndRenderMath(choice) }}
+                              className="text-sm"
+                            />
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  {/* 제출 답안 & 피드백 영역 */}
+                  <div className="mt-4 pt-4 border-t border-dashed flex flex-col gap-2 bg-slate-50/50 p-4 rounded-xl border">
+                    <div className="flex items-center gap-2 text-sm">
+                      <span className="font-semibold text-slate-500">학생 제출 답안:</span>
+                      <span className={cn(
+                        "px-2.5 py-0.5 rounded text-sm font-bold border",
+                        q.result === "correct" 
+                          ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                          : q.result === "incorrect"
+                          ? "bg-rose-50 text-rose-700 border-rose-200"
+                          : "bg-slate-100 text-slate-600 border-slate-200"
+                      )}>
+                        {q.studentAnswer}
+                      </span>
+                    </div>
+
+                    {/* 정답 및 해설 표시 (토글 활성 시) */}
+                    {showAnswer && (
+                      <div className="flex flex-col gap-2 border-t pt-3 mt-1 text-sm">
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold text-emerald-600">정답:</span>
+                          <span className="font-bold text-slate-800" dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.displayAnswer) }} />
+                        </div>
+                        {q.explanation && (
+                          <div className="flex flex-col gap-1 text-slate-600 leading-relaxed mt-1 bg-white border p-3 rounded-lg">
+                            <span className="font-semibold text-slate-700 text-xs">해설</span>
+                            <div 
+                              dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.explanation) }}
+                              className="text-xs [&_img]:max-w-full [&_img]:h-auto [&_img]:object-contain"
+                            />
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+
+                </div>
+              );
+            })}
           </div>
         </div>
+
+        {/* 모달 하단 버튼 영역 */}
+        <div className="px-6 py-4 border-t flex items-center justify-end gap-6 shrink-0 bg-slate-50/80">
+          {/* 정답·해설 보기 토글 */}
+          <button
+            type="button"
+            onClick={() => setShowAnswer(!showAnswer)}
+            className={cn(
+              "flex items-center gap-2 px-3 py-2 rounded-lg border text-sm font-semibold transition-all duration-150",
+              showAnswer
+                ? "bg-emerald-600 text-white border-emerald-600 shadow-sm"
+                : "bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+            )}
+          >
+            <span
+              className={cn(
+                "w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-all",
+                showAnswer ? "bg-white border-white text-emerald-600" : "border-slate-400 bg-white"
+              )}
+            >
+              {showAnswer && (
+                <svg className="w-2.5 h-2.5" viewBox="0 0 10 10" fill="none">
+                  <path d="M1.5 5L4 7.5L8.5 2.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              )}
+            </span>
+            정답·해설 보기
+          </button>
+
+          {/* 출력 버튼 */}
+          <Button
+            onClick={handlePrint}
+            className="bg-primary text-white hover:bg-primary/95 shadow-sm font-semibold text-sm px-6 py-2 rounded-lg"
+          >
+            출력
+          </Button>
+        </div>
+
       </div>
+
+      {/* 인쇄 전용 영역 Portal */}
+      {isPrinting && createPortal(
+        <div className="print-only-root hidden print:block absolute top-0 left-0 m-0 p-0 bg-white z-[9999] w-[210mm] text-slate-800">
+          <style>{`
+            @media print {
+              @page { size: A4 portrait; margin: 15mm; }
+              html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                background: white !important;
+              }
+              body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+              }
+              body > :not(.print-only-root) {
+                display: none !important;
+              }
+            }
+            .print-page-break-avoid {
+              page-break-inside: avoid;
+              break-inside: avoid;
+            }
+          `}</style>
+          
+          {/* 인쇄 상단 헤더 */}
+          <div className="border-b-2 border-slate-800 pb-4 mb-6">
+            <div className="flex justify-between items-end">
+              <div>
+                <h1 className="text-2xl font-bold text-slate-900">{taskResult.taskName}</h1>
+                <p className="text-sm text-slate-500 mt-1">과목: {subject === "math" ? "수학" : "과학"}</p>
+              </div>
+              <div className="text-right">
+                <p className="text-base font-bold text-slate-900">학생명: {student.name}</p>
+                <p className="text-xs text-slate-400 mt-1">출력일시: {new Date().toLocaleDateString('ko-KR')}</p>
+              </div>
+            </div>
+            <div className="mt-4 flex gap-6 text-sm bg-slate-50 p-2.5 rounded-lg border">
+              <span>점수: <strong>{taskResult.score}점</strong></span>
+              <span>정답 문항 수: <strong>{taskResult.correctCount} / {taskResult.totalProblems}</strong></span>
+            </div>
+          </div>
+
+          {/* 문제 리스트 */}
+          <div className="flex flex-col gap-8">
+            {gradedQuestions.map((q) => {
+              const isImageOnlyPassage = q.passage && q.passage.includes("<img") && q.passage.replace(/<[^>]*>/g, "").replace(/\s/g, "").length === 0;
+
+              return (
+                <div key={`print-${q.id}`} className="print-page-break-avoid flex flex-col gap-3 pb-4 border-b border-slate-100 last:border-0">
+                  
+                  {/* 문항 정보 및 채점 */}
+                  <div className="flex items-center justify-between border-b pb-1.5">
+                    <div className="flex items-center gap-3">
+                      <span className="text-base font-bold">{q.problemNo}번.</span>
+                      <span className={cn(
+                        "text-xs font-semibold px-2 py-0.5 rounded border",
+                        q.result === "correct" 
+                          ? "text-emerald-700 bg-emerald-50/50 border-emerald-200" 
+                          : q.result === "incorrect"
+                          ? "text-rose-700 bg-rose-50/50 border-rose-200"
+                          : "text-slate-500 bg-slate-50 border-slate-200"
+                      )}>
+                        {q.result === "correct" ? "정답" : q.result === "incorrect" ? "오답" : "미입력"}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* 발문 */}
+                  <div className="text-sm font-medium text-slate-950 leading-relaxed">
+                    <span dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.stem) }} />
+                  </div>
+
+                  {/* 보기 (passage) */}
+                  {q.passage && (
+                    <div className={cn(
+                      "text-xs leading-relaxed max-w-full overflow-hidden",
+                      isImageOnlyPassage ? "flex justify-center my-1" : "border p-3 rounded bg-slate-50/20"
+                    )}>
+                      <div dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.passage.replace(/\n/g, '<br/>')) }} />
+                    </div>
+                  )}
+
+                  {/* 이미지 */}
+                  {q.image && (
+                    <div className="my-1.5 flex justify-center max-w-full overflow-hidden">
+                      <img src={q.image} alt="문제 이미지" className="max-w-[300px] h-auto max-h-[160px] object-contain border rounded p-0.5 bg-white" />
+                    </div>
+                  )}
+
+                  {/* 선지 (Choices) */}
+                  {q.choices && q.choices.length > 0 && (
+                    <div className="flex flex-col gap-1.5 pl-1.5">
+                      {q.choices.map((choice, i) => {
+                        const isSelected = q.studentChoiceIndex === i;
+                        const isCorrect = q.correctChoiceIndex === i;
+                        
+                        let choiceStyle = "text-slate-700";
+                        if (isSelected) {
+                          choiceStyle = q.result === "correct" 
+                            ? "text-emerald-700 font-bold"
+                            : "text-rose-700 font-bold";
+                        } else if (showAnswer && isCorrect) {
+                          choiceStyle = "text-emerald-700 font-bold";
+                        }
+
+                        return (
+                          <div key={i} className={cn("flex items-center gap-2 text-xs", choiceStyle)}>
+                            <span className={cn(
+                              "w-5 h-5 rounded-full flex items-center justify-center border text-[10px] font-bold shrink-0",
+                              isSelected 
+                                ? q.result === "correct"
+                                  ? "bg-emerald-500 border-emerald-500 text-white"
+                                  : "bg-rose-500 border-rose-500 text-white"
+                                : (showAnswer && isCorrect)
+                                ? "bg-emerald-500 border-emerald-500 text-white"
+                                : "bg-white border-slate-300 text-slate-500"
+                            )}>
+                              {['①','②','③','④','⑤'][i]}
+                            </span>
+                            <span dangerouslySetInnerHTML={{ __html: parseAndRenderMath(choice) }} />
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  {/* 제출 답안 및 정답해설 */}
+                  <div className="mt-2 pt-2 border-t border-slate-100 flex flex-col gap-1 text-xs bg-slate-50/30 p-2.5 rounded border">
+                    <div>
+                      <span className="text-slate-500">학생 제출 답안:</span>{' '}
+                      <strong className={cn(
+                        q.result === "correct" ? "text-emerald-700" : q.result === "incorrect" ? "text-rose-700" : "text-slate-600"
+                      )}>
+                        {q.studentAnswer}
+                      </strong>
+                    </div>
+
+                    {showAnswer && (
+                      <div className="flex flex-col gap-1 border-t border-slate-100 pt-2 mt-1">
+                        <div>
+                          <span className="text-emerald-600 font-semibold">정답:</span>{' '}
+                          <strong dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.displayAnswer) }} />
+                        </div>
+                        {q.explanation && (
+                          <div className="text-slate-500 text-[11px] leading-normal bg-white p-2 rounded border mt-1">
+                            <p className="font-semibold text-[10px] text-slate-700 mb-0.5">해설</p>
+                            <div dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.explanation) }} />
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+
+                </div>
+              );
+            })}
+          </div>
+        </div>,
+        document.body
+      )}
+
     </div>
   );
 }
