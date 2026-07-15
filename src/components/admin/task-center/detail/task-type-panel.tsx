@@ -19,6 +19,31 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import "katex/dist/katex.min.css";
+import renderMathInElement from "katex/contrib/auto-render";
+
+function MathRenderer({ text, className }: { text: string; className?: string }) {
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (!ref.current) return;
+    ref.current.innerHTML = text.replace(/\n/g, "<br />");
+    renderMathInElement(ref.current, {
+      delimiters: [
+        { left: "\\(", right: "\\)", display: false },
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+      macros: {
+        "\\frac": "\\dfrac",
+      },
+      throwOnError: false,
+    });
+  }, [text]);
+
+  return <div ref={ref} className={className} />;
+}
+
 
 interface Props {
   subject: Subject;
@@ -719,9 +744,17 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
                                         {isSelected && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                                       </div>
                                     </TooltipTrigger>
-                                    <TooltipContent side="top" className="bg-slate-900 text-white border border-slate-800 text-[10.5px] font-medium py-1.5 px-2.5 shadow-md max-w-[280px]">
+                                    <TooltipContent side="top" className="bg-slate-900 text-white border border-slate-800 text-[10.5px] font-medium py-2 px-3 shadow-md max-w-[320px]">
                                       <p className="font-extrabold text-blue-400 mb-0.5">{type.typeName}</p>
-                                      <p className="opacity-80">{tooltipDetailText}</p>
+                                      <p className="opacity-80 mb-2">{tooltipDetailText}</p>
+                                      {type.sampleQuestion && (
+                                        <div className="mt-1.5 pt-1.5 border-t border-slate-800/80">
+                                          <p className="font-bold text-[10px] text-slate-400 mb-1">대표 유형 문제</p>
+                                          <div className="bg-slate-950 p-2 rounded-lg text-slate-200 text-[11px] leading-relaxed font-medium overflow-x-auto select-text">
+                                            <MathRenderer text={type.sampleQuestion} />
+                                          </div>
+                                        </div>
+                                      )}
                                     </TooltipContent>
                                   </Tooltip>
                                 </TooltipProvider>
