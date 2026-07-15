@@ -179,20 +179,7 @@ export function TaskBottomBar({ task, isCreate, isSaving, totalProblems, onSave,
             </Button>
           )}
 
-          {/* 미리보기 - draft, published, ended */}
-          {!isCreate && task && (
-            <div title={previewStatus.disabled ? previewStatus.reason : undefined}>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={handlePreviewClick}
-                disabled={previewStatus.disabled}
-                className="gap-2"
-              >
-                <Eye className="h-4 w-4" /> 미리보기
-              </Button>
-            </div>
-          )}
+
 
           {/* 출력 - draft, published, ended */}
           {!isCreate && task && (
