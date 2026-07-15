@@ -131,8 +131,8 @@ function AchievementIcon({ status, className }: { status: string; className?: st
   if (!cfg) return null;
   if (cfg.icon === "crown") return <Crown className={cn("stroke-[2] fill-current", className)} />;
   if (cfg.icon === "zap") return <Zap className={cn("stroke-[2.5] fill-current", className)} />;
-  if (cfg.icon === "x") return <X className={cn("stroke-[3]", className)} />;
-  if (cfg.icon === "alert") return <AlertTriangle className={cn("stroke-[2.5]", className)} />;
+  if (cfg.icon === "x") return <span className={cn("font-black leading-none select-none", className)}>!</span>;
+  if (cfg.icon === "alert") return <span className={cn("font-black leading-none select-none", className)}>!</span>;
   if (cfg.icon === "check") return <Check className={cn("stroke-[3]", className)} />;
   return (
     <svg
