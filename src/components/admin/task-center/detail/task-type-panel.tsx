@@ -746,7 +746,9 @@ export function TaskTypePanel({ subject, selectedTypes, checkedTypeIds = [], bul
                                     </TooltipTrigger>
                                     <TooltipContent side="top" className="bg-slate-900 text-white border border-slate-800 text-[10.5px] font-medium py-2 px-3 shadow-md max-w-[320px]">
                                       <p className="font-extrabold text-blue-400 mb-0.5">{type.typeName}</p>
-                                      <p className="opacity-80 mb-2">{tooltipDetailText}</p>
+                                      {isChipDisabled && (
+                                        <p className="text-red-400/90 font-bold mb-1.5">(중요 문제만 출제 시 선택 불가)</p>
+                                      )}
                                       {type.sampleQuestion && (
                                         <div className="mt-1.5 pt-1.5 border-t border-slate-800/80">
                                           <p className="font-bold text-[10px] text-slate-400 mb-1">대표 유형 문제</p>
