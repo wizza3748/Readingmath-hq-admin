@@ -894,9 +894,9 @@ function AchievementIcon({
   if (cfg.icon === "zap")
     return <Zap className={`stroke-[2.5] fill-current ${className}`} />;
   if (cfg.icon === "x")
-    return <span className={`font-black leading-none select-none ${className}`}>!</span>;
+    return <span className={`inline-flex items-center justify-center font-black leading-none select-none ${className}`}>!</span>;
   if (cfg.icon === "alert")
-    return <span className={`font-black leading-none select-none ${className}`}>!</span>;
+    return <span className={`inline-flex items-center justify-center font-black leading-none select-none ${className}`}>!</span>;
   if (cfg.icon === "check")
     return <Check className={`stroke-[3] ${className}`} />;
   return (
