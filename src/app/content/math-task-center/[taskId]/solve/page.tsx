@@ -27,6 +27,7 @@ import { getStoredTasks, updateTaskStatus, Task } from "@/utils/taskStorage";
 import { saveTaskResult, TaskResult, GradingDetail } from "@/utils/taskResultStorage";
 import { INITIAL_TASKS } from "@/lib/task-center-mock";
 import { useToast } from "@/hooks/use-toast";
+import PrintPreviewPanel from "@/components/admin/task-center/print/print-preview-panel";
 
 interface PageProps {
   params: Promise<{ taskId: string }>;
@@ -181,6 +182,20 @@ export default function MathSolvePage(props: PageProps) {
   const [showAnswerSheet, setShowAnswerSheet] = useState<boolean>(false);
   const [activeInputIdx, setActiveInputIdx] = useState<number | null>(null);
 
+  // 출력 모달 상태
+  const [isPrintModalOpen, setIsPrintModalOpen] = useState<boolean>(false);
+
+  // 출력용 학생/반 데이터 바인딩 로직
+  const adminTask = INITIAL_TASKS.find((t) => t.id === taskId) || null;
+  const activeStudents = adminTask?.assignedStudents || [];
+  const currentStudentId = searchParams.previewStudentId || activeStudents[0]?.studentId || "student-1";
+  const currentStudent = activeStudents.find(s => s.studentId === currentStudentId) || {
+    studentId: currentStudentId,
+    studentName: "김푸름",
+    classGroup: "1반",
+    status: "in_progress"
+  };
+
   // 모달 상태
   const [showExitModal, setShowExitModal] = useState<boolean>(false);
   const [showUnenteredModal, setShowUnenteredModal] = useState<boolean>(false);
@@ -260,6 +275,18 @@ export default function MathSolvePage(props: PageProps) {
       }
     }
   }, [taskId, isPreview, searchParams.previewStudentId]);
+
+  // 출력 모달 노출 시 body 스크롤 방지
+  useEffect(() => {
+    if (isPrintModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isPrintModalOpen]);
 
   // 문항 전환 시 입력값 동기화
   useEffect(() => {
@@ -411,6 +438,18 @@ export default function MathSolvePage(props: PageProps) {
       inputValue: currentVal,
     };
     handleSaveAnswer(newAns);
+  };
+
+  // 인쇄 실행 함수
+  const handlePrint = () => {
+    setTimeout(() => {
+      const originalTitle = document.title;
+      const dateStr = new Date().toISOString().replace(/[:\-T]/g, "").slice(0, 13);
+      const safeTaskName = task?.title ? task.title.replace(/[/\\?%*:|"<>]/g, '') : '과제출력';
+      document.title = `${safeTaskName}_${dateStr}`;
+      window.print();
+      document.title = originalTitle;
+    }, 100);
   };
 
   // 제출하기 프로세스 시작
@@ -1291,6 +1330,14 @@ export default function MathSolvePage(props: PageProps) {
               <ChevronRight className="h-4 w-4" />
             </button>
           )}
+          
+          <button
+            onClick={() => setIsPrintModalOpen(true)}
+            className="flex items-center space-x-1 rounded-xl border border-gray-200 bg-white px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-850 dark:text-gray-300 dark:hover:bg-gray-800 shadow-sm active:scale-95 transition"
+          >
+            <span>출력</span>
+          </button>
+
           {!isPreview && (
             <button
               onClick={handleSubmitClick}
@@ -1470,6 +1517,73 @@ export default function MathSolvePage(props: PageProps) {
                 className="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 shadow-md shadow-blue-500/10 disabled:opacity-50"
               >
                 {isReporting ? "보내는 중..." : "신고하기"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 모달 6. 과제 출력 모달 */}
+      {isPrintModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm print:hidden">
+          <div className="w-full max-w-[850px] h-[90vh] flex flex-col bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 animate-in fade-in zoom-in-95 duration-150 dark:bg-gray-900 dark:border-gray-800">
+            {/* 모달 헤더 영역 */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-150 dark:border-gray-800 shrink-0 bg-gray-50 dark:bg-gray-950">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white">과제 출력</h3>
+              <button
+                onClick={() => setIsPrintModalOpen(false)}
+                className="p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-700 rounded-xl transition dark:hover:bg-gray-800 dark:hover:text-gray-200"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* 과제 출력 미리보기 영역 */}
+            <div className="flex-1 overflow-y-auto min-h-0 bg-slate-100 dark:bg-slate-955 p-6 flex justify-center">
+              {adminTask ? (
+                <div className="w-full max-w-4xl h-full">
+                  <PrintPreviewPanel
+                    task={adminTask}
+                    isBlocked={false}
+                    blockMessage=""
+                    printType="student"
+                    previewStudentId={currentStudentId}
+                    activeStudents={[currentStudent]}
+                    color="#002775"
+                    split="1"
+                    pageMargin={10}
+                    problemGap={16}
+                    fontSize={12}
+                    showClass={true}
+                    showName={true}
+                    showDate={false}
+                    showUnit={true}
+                    showLogo={true}
+                    answerOnlyMode={false}
+                    isStudentView={true}
+                  />
+                </div>
+              ) : (
+                <div className="flex items-center justify-center h-full text-gray-400">
+                  과제 데이터를 불러올 수 없습니다.
+                </div>
+              )}
+            </div>
+
+            {/* 하단 버튼 영역 */}
+            <div className="flex items-center justify-end px-6 py-4 border-t border-gray-150 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 shrink-0 gap-3">
+              <button
+                onClick={() => setIsPrintModalOpen(false)}
+                className="rounded-xl bg-gray-100 px-5 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-200 dark:bg-gray-850 dark:text-gray-305 dark:hover:bg-gray-800 transition"
+              >
+                취소
+              </button>
+              <button
+                onClick={handlePrint}
+                disabled={!adminTask || adminTask.totalProblems === 0}
+                className="rounded-xl bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 shadow-md shadow-blue-500/10 disabled:opacity-50 transition"
+              >
+                인쇄
               </button>
             </div>
           </div>

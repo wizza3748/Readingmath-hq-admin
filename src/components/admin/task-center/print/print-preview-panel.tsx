@@ -124,6 +124,7 @@ interface Props {
   selectedStudentIds?: string[];
   setPreviewStudentId?: (id: string) => void;
   answerOnlyMode?: boolean;
+  isStudentView?: boolean;
 }
 
 export interface PrintItem {
@@ -138,17 +139,25 @@ interface PageData {
   studentPageNo: number;
 }
 
-const PageHeader = ({ task, color, showClass, showName, showDate, showUnit, showLogo, previewStudent, printType }: any) => {
+const PageHeader = ({ task, color, showClass, showName, showDate, showUnit, showLogo, previewStudent, printType, isStudentView }: any) => {
   // 테마 색상에 투명도 30% 적용 (HEX 8자리)
   const borderColor = color.length === 7 ? `${color}4D` : color;
   const displayName = printType === "teacher" ? `${task.name} (교사용)` : task.name;
   
   // 반 정보 추출
-  let classText = "__________";
+  let classText = "";
   if (task.problemMode === "same") {
-    const classes = task.assignedClasses || [];
-    if (classes.length === 1) {
-      classText = classes[0];
+    if (isStudentView) {
+      if (previewStudent && previewStudent.classGroup) {
+        classText = previewStudent.classGroup;
+      }
+    } else {
+      const classes = task.assignedClasses || [];
+      if (classes.length === 1) {
+        classText = classes[0];
+      } else {
+        classText = "__________";
+      }
     }
   } else {
     if (previewStudent && previewStudent.classGroup) {
@@ -176,11 +185,11 @@ const PageHeader = ({ task, color, showClass, showName, showDate, showUnit, show
       <div className="flex justify-between items-end pb-2 border-b" style={{ borderColor }}>
         <div className="flex flex-col flex-1 min-w-0 pr-4">
           <div className="text-[11pt] text-gray-700 flex flex-wrap gap-x-6 gap-y-1 items-center max-w-full font-medium">
-            {showClass && (
+            {showClass && classText && classText !== "__________" && (
               <span className="truncate max-w-[200px]" title={classText}>반: {classText}</span>
             )}
             {showName && (
-              <span className="shrink-0">이름: {(task.problemMode === "individual" || task.problemMode === "relearn") && previewStudent?.studentName ? previewStudent.studentName : "__________"}</span>
+              <span className="shrink-0">이름: {isStudentView && previewStudent?.studentName ? previewStudent.studentName : ((task.problemMode === "individual" || task.problemMode === "relearn") && previewStudent?.studentName ? previewStudent.studentName : "__________")}</span>
             )}
             {showDate && (
               <span className="shrink-0">날짜: {new Date().toLocaleDateString('ko-KR')}</span>
@@ -448,7 +457,7 @@ export default function PrintPreviewPanel({
   task, isBlocked, blockMessage, printType, previewStudentId, activeStudents,
   color, split, pageMargin, problemGap, fontSize, showClass, showName, showDate, showUnit, showLogo,
   printTarget = "all", selectedStudentIds = [], setPreviewStudentId,
-  answerOnlyMode = false
+  answerOnlyMode = false, isStudentView = false
 }: Props) {
   
   const scrollRef = React.useRef<HTMLDivElement>(null);
@@ -952,7 +961,7 @@ export default function PrintPreviewPanel({
       <div className="absolute top-0 left-[-9999px] invisible pointer-events-none" aria-hidden="true">
         <div id="measure-container" style={{ width: '210mm', padding: `${pageMargin}mm`, boxSizing: 'border-box' }}>
           <div id="measure-header">
-            <PageHeader task={task} color={color} showClass={showClass} showName={showName} showDate={showDate} showUnit={showUnit} showLogo={showLogo} previewStudent={null} printType={printType} />
+            <PageHeader task={task} color={color} showClass={showClass} showName={showName} showDate={showDate} showUnit={showUnit} showLogo={showLogo} previewStudent={activeStudents.find(s => s.studentId === previewStudentId) || null} printType={printType} isStudentView={isStudentView} />
           </div>
           <div id="measure-header-short">
             <AbbreviatedPageHeader task={task} color={color} printType={printType} />
@@ -1095,7 +1104,7 @@ export default function PrintPreviewPanel({
               }}
             >
               {pageQuestions.studentPageNo === 1 ? (
-                <PageHeader task={task} color={color} showClass={showClass} showName={showName} showDate={showDate} showUnit={showUnit} showLogo={showLogo} previewStudent={pageQuestions.student} printType={printType} />
+                <PageHeader task={task} color={color} showClass={showClass} showName={showName} showDate={showDate} showUnit={showUnit} showLogo={showLogo} previewStudent={pageQuestions.student} printType={printType} isStudentView={isStudentView} />
               ) : (
                 <AbbreviatedPageHeader task={task} color={color} printType={printType} />
               )}
@@ -1191,7 +1200,7 @@ export default function PrintPreviewPanel({
               }}
             >
               {pageQuestions.studentPageNo === 1 ? (
-                <PageHeader task={task} color={color} showClass={showClass} showName={showName} showDate={showDate} showUnit={showUnit} showLogo={showLogo} previewStudent={pageQuestions.student} printType={printType} />
+                <PageHeader task={task} color={color} showClass={showClass} showName={showName} showDate={showDate} showUnit={showUnit} showLogo={showLogo} previewStudent={pageQuestions.student} printType={printType} isStudentView={isStudentView} />
               ) : (
                 <AbbreviatedPageHeader task={task} color={color} printType={printType} />
               )}

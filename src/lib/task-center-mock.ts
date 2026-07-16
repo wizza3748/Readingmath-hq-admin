@@ -88197,7 +88197,7 @@ export const INITIAL_TASKS: TaskItem[] = [
     "subject": "math",
     "name": "계산 결과가 진분수인 진분수끼리의 덧셈 외 1건",
     "course": "초4-2",
-    "status": "draft",
+    "status": "published",
     "difficulties": [
       "advanced"
     ],
@@ -88248,7 +88248,54 @@ export const INITIAL_TASKS: TaskItem[] = [
     ],
     "totalProblems": 7,
     "createdAt": "2026-05-18T15:00:00Z",
-    "assignedStudents": [],
+    "assignedStudents": [
+      {
+        "studentId": "stu-002-1",
+        "studentName": "김민준",
+        "classGroup": "1반",
+        "status": "submitted",
+        "score": 85,
+        "problemCount": 7,
+        "printStatus": "not_printed",
+        "submittedAt": "2026-06-10T09:30:00Z"
+      },
+      {
+        "studentId": "stu-002-2",
+        "studentName": "이서윤",
+        "classGroup": "1반",
+        "status": "submitted",
+        "score": 71,
+        "problemCount": 7,
+        "printStatus": "not_printed",
+        "submittedAt": "2026-06-10T09:45:00Z"
+      },
+      {
+        "studentId": "stu-002-3",
+        "studentName": "박지호",
+        "classGroup": "1반",
+        "status": "in_progress",
+        "problemCount": 7,
+        "printStatus": "not_printed"
+      },
+      {
+        "studentId": "stu-002-4",
+        "studentName": "최유나",
+        "classGroup": "1반",
+        "status": "submitted",
+        "score": 100,
+        "problemCount": 7,
+        "printStatus": "not_printed",
+        "submittedAt": "2026-06-10T10:00:00Z"
+      },
+      {
+        "studentId": "stu-002-5",
+        "studentName": "정도현",
+        "classGroup": "1반",
+        "status": "not_started",
+        "problemCount": 7,
+        "printStatus": "not_printed"
+      }
+    ],
     "assignedClasses": [
       "1반"
     ],
