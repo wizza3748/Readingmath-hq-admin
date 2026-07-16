@@ -1533,8 +1533,8 @@ export default function MathSolvePage(props: PageProps) {
 
       {/* 모달 6. 과제 출력 모달 */}
       {isPrintModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm print:hidden">
-          <div className="w-full max-w-[960px] h-[760px] max-h-[90vh] flex flex-col bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 animate-in fade-in zoom-in-95 duration-150 dark:bg-gray-900 dark:border-gray-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm print:hidden animate-in fade-in duration-200">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-5xl h-[90vh] flex flex-col overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 animate-in zoom-in-95 duration-200">
             {/* 모달 헤더 영역 */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-gray-150 dark:border-gray-800 shrink-0 bg-gray-50 dark:bg-gray-950">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white">과제 출력</h3>
@@ -1549,7 +1549,7 @@ export default function MathSolvePage(props: PageProps) {
             {/* 과제 출력 미리보기 영역 */}
             <div className="flex-1 overflow-hidden min-h-0 bg-slate-100 dark:bg-slate-955 flex justify-center">
               {adminTask ? (
-                <div className="w-full max-w-4xl h-full">
+                <div className="w-full h-full">
                   <PrintPreviewPanel
                     task={adminTask}
                     isBlocked={false}

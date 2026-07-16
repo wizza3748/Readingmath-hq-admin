@@ -1028,39 +1028,37 @@ export default function PrintPreviewPanel({
       {/* ── 측정용 숨김 컨테이너 끝 ── */}
 
       {/* 뷰어 헤더 (화면용 컨트롤 영역) */}
-      <div className="flex items-center justify-between px-5 py-3 bg-white/95 backdrop-blur-[2px] border-b border-slate-200/80 shrink-0 print:hidden z-20">
-        <div className="flex items-center gap-3.5 ml-auto">
-          {/* 미리보기 학생 select */}
-          {!isStudentView && (task.problemMode === "individual" || task.problemMode === "relearn") && previewStudentOptions.length > 0 && (
-            <div className="flex items-center gap-1.5">
-              <span className="text-xs text-gray-500 font-semibold whitespace-nowrap">미리보기 학생</span>
-              <select
-                value={previewStudentId}
-                onChange={(e) => {
-                  if (setPreviewStudentId) {
-                    setPreviewStudentId(e.target.value);
-                  }
-                }}
-                className="text-xs border border-slate-200 rounded-lg px-2 py-1 bg-white font-semibold text-slate-700 min-w-[100px] outline-none hover:border-slate-300 transition-all focus:ring-1 focus:ring-primary/20"
-              >
-                {previewStudentOptions.map(s => (
-                  <option key={s.studentId} value={s.studentId}>{s.studentName}</option>
-                ))}
-              </select>
-            </div>
-          )}
+      {!isStudentView && (
+        <div className="flex items-center justify-between px-5 py-3 bg-white/95 backdrop-blur-[2px] border-b border-slate-200/80 shrink-0 print:hidden z-20">
+          <div className="flex items-center gap-3.5 ml-auto">
+            {/* 미리보기 학생 select */}
+            {(task.problemMode === "individual" || task.problemMode === "relearn") && previewStudentOptions.length > 0 && (
+              <div className="flex items-center gap-1.5">
+                <span className="text-xs text-gray-500 font-semibold whitespace-nowrap">미리보기 학생</span>
+                <select
+                  value={previewStudentId}
+                  onChange={(e) => {
+                    if (setPreviewStudentId) {
+                      setPreviewStudentId(e.target.value);
+                    }
+                  }}
+                  className="text-xs border border-slate-200 rounded-lg px-2 py-1 bg-white font-semibold text-slate-700 min-w-[100px] outline-none hover:border-slate-300 transition-all focus:ring-1 focus:ring-primary/20"
+                >
+                  {previewStudentOptions.map(s => (
+                    <option key={s.studentId} value={s.studentId}>{s.studentName}</option>
+                  ))}
+                </select>
+              </div>
+            )}
 
-          {/* 페이지 정보 */}
-          {!isStudentView && (
+            {/* 페이지 정보 */}
             <div className="flex items-center gap-1 text-xs bg-slate-100 rounded-lg px-2.5 py-1 whitespace-nowrap font-semibold text-slate-600">
               <span>{currentPage}</span>
               <span className="text-gray-400">/</span>
               <span>{pages.length > 0 ? pages.length : 1}</span>
             </div>
-          )}
 
-          {/* 확대 축소 */}
-          {!isStudentView && (
+            {/* 확대 축소 */}
             <select 
               value={zoom} 
               onChange={(e) => setZoom(Number(e.target.value))}
@@ -1071,9 +1069,9 @@ export default function PrintPreviewPanel({
               <option value={1}>100%</option>
               <option value={1.25}>125%</option>
             </select>
-          )}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* 뷰어 영역 (화면용) */}
       <div 
