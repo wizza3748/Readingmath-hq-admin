@@ -1547,7 +1547,7 @@ export default function MathSolvePage(props: PageProps) {
             </div>
 
             {/* 과제 출력 미리보기 영역 */}
-            <div className="flex-1 overflow-hidden min-h-0 bg-slate-100 dark:bg-slate-955 p-6 flex justify-center">
+            <div className="flex-1 overflow-hidden min-h-0 bg-slate-100 dark:bg-slate-955 flex justify-center">
               {adminTask ? (
                 <div className="w-full max-w-4xl h-full">
                   <PrintPreviewPanel

@@ -530,7 +530,7 @@ export default function PrintPreviewPanel({
       return candidates.filter(s => selectedStudentIds.includes(s.studentId));
     }
     return candidates; // 전체 학생
-  }, [task.problemMode, printTarget, selectedStudentIds, activeStudents, isStudentSelectable]);
+  }, [task.problemMode, printTarget, selectedStudentIds, JSON.stringify(activeStudents), isStudentSelectable]);
 
   // Preview Student options for the top control bar select
   const previewStudentOptions = React.useMemo(() => {
@@ -876,7 +876,7 @@ export default function PrintPreviewPanel({
     });
     
     setPages(allPages);
-  }, [triggerMeasure, questions, split, pageMargin, problemGap, targetStudents, scaleDownIds, printType, showClass, showUnit, answerOnlyMode]);
+  }, [triggerMeasure, questions, split, pageMargin, problemGap, JSON.stringify(targetStudents), scaleDownIds, printType, showClass, showUnit, answerOnlyMode]);
 
   // Preview Student Select Scroll Trigger (조상 컨테이너 스크롤 전파 버그 방지를 위해 직접 scrollTo 제어)
   React.useEffect(() => {
@@ -1028,14 +1028,10 @@ export default function PrintPreviewPanel({
       {/* ── 측정용 숨김 컨테이너 끝 ── */}
 
       {/* 뷰어 헤더 (화면용 컨트롤 영역) */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between px-5 py-3 bg-white/95 backdrop-blur-[2px] border-b border-slate-200/80 gap-3 shrink-0 print:hidden z-20">
-        <div className="flex flex-col">
-          <h3 className="font-bold text-gray-900 text-[11pt]">과제 출력 미리보기</h3>
-          <p className="text-xs text-gray-400 mt-0.5">브라우저와 프린터 설정에 따라 실제 인쇄 결과와 일부 차이가 있을 수 있습니다. PDF 저장은 브라우저 인쇄창에서 대상을 PDF로 선택해 저장합니다.</p>
-        </div>
+      <div className="flex items-center justify-between px-5 py-3 bg-white/95 backdrop-blur-[2px] border-b border-slate-200/80 shrink-0 print:hidden z-20">
         <div className="flex items-center gap-3.5 ml-auto">
           {/* 미리보기 학생 select */}
-          {(task.problemMode === "individual" || task.problemMode === "relearn") && previewStudentOptions.length > 0 && (
+          {!isStudentView && (task.problemMode === "individual" || task.problemMode === "relearn") && previewStudentOptions.length > 0 && (
             <div className="flex items-center gap-1.5">
               <span className="text-xs text-gray-500 font-semibold whitespace-nowrap">미리보기 학생</span>
               <select
@@ -1079,7 +1075,7 @@ export default function PrintPreviewPanel({
       <div 
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex-1 overflow-y-auto bg-slate-100 relative print:hidden custom-scrollbar flex justify-center py-8"
+        className="flex-1 overflow-y-auto bg-slate-100 relative print:hidden custom-scrollbar flex justify-center py-4"
         style={{"--fit-scale": "0.65"} as any}
       >
         <div className="flex flex-col gap-8 shadow-md" style={zoomStyle}>
