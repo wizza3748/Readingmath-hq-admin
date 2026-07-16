@@ -423,7 +423,7 @@ export const AnswerSheet = ({ questions, color }: { questions: PrintQuestion[]; 
       <h4 className="font-bold text-gray-900 mb-3 text-[11pt] border-b pb-1.5" style={{ borderColor: `${color}4D` }}>정답표</h4>
       <div className="grid grid-cols-4 gap-x-4 gap-y-2 text-[10pt] text-gray-800">
         {questions.map((q, idx) => (
-          <div key={q.id} className="flex items-center justify-between border-b border-slate-100 pb-1">
+          <div key={q.id} className="flex items-center justify-start gap-3 border-b border-slate-100 pb-1">
             <span className="font-bold text-gray-400">{idx + 1}</span>
             <span className="font-semibold text-gray-950" dangerouslySetInnerHTML={{ __html: parseAndRenderMath(getDisplayAnswer(q)) }} />
           </div>
@@ -750,79 +750,22 @@ export default function PrintPreviewPanel({
         }
       };
 
-      for (let i = 0; i < questions.length; i++) {
-        const q = questions[i];
+      if (printType === "teacher" && answerOnlyMode) {
+        // ── 정답·해설만 출력 모드 ──
+        // 1. 먼저 정답표(AnswerSheet)를 좌측 단에 배치
+        const elAnswerSheet = document.getElementById('measure-answer-sheet');
+        const answerSheetHeight = elAnswerSheet ? elAnswerSheet.getBoundingClientRect().height : 0;
         
-        if (printType === "teacher") {
-          if (answerOnlyMode) {
-            // ── 정답·해설만 출력 모드: explanation 아이템만 배치 ──
-            if (q.explanation || q.answer) {
-              const elExp = document.getElementById(`measure-q-exp-${q.id}`);
-              const expHeight = elExp ? elExp.getBoundingClientRect().height : 0;
+        currentPageData.left.push({ type: 'answer_sheet' });
+        currentColumnHeight += answerSheetHeight;
 
-              while (true) {
-                const isPageOne = studentPages.length === 0;
-                const currentHeaderHeight = isPageOne ? headerHeight : shortHeaderHeight;
-                const currentAvailableHeight = pageHeightPx - (marginPx * 2) - currentHeaderHeight - 45;
-
-                const heightWithGap = expHeight + (currentPageData[currentColumn].length > 0 ? gapPx : 0);
-                const willExceedHeight = currentColumnHeight + heightWithGap > currentAvailableHeight;
-                const willExceedCount = currentPageData[currentColumn].length >= maxItemsPerColumn;
-
-                if (currentPageData[currentColumn].length === 0) {
-                  currentPageData[currentColumn].push({ type: 'explanation', question: q });
-                  currentColumnHeight += heightWithGap;
-                  break;
-                }
-
-                if (willExceedHeight || willExceedCount) {
-                  moveToNextSlot();
-                  continue;
-                }
-
-                currentPageData[currentColumn].push({ type: 'explanation', question: q });
-                currentColumnHeight += heightWithGap;
-                break;
-              }
-            }
-          } else {
-          const elBody = document.getElementById(`measure-q-body-${q.id}`);
-          const bodyHeight = elBody ? elBody.getBoundingClientRect().height : 0;
-
-          const elExp = document.getElementById(`measure-q-exp-${q.id}`);
-          const expHeight = elExp ? elExp.getBoundingClientRect().height : 0;
-
-          // 1. 문항 본문 배치
-          while (true) {
-            const isPageOne = studentPages.length === 0;
-            const currentHeaderHeight = isPageOne ? headerHeight : shortHeaderHeight;
-            const currentAvailableHeight = pageHeightPx - (marginPx * 2) - currentHeaderHeight - 45;
-
-            const heightWithGap = bodyHeight + (currentPageData[currentColumn].length > 0 ? gapPx : 0);
-            
-            const willExceedHeight = currentColumnHeight + heightWithGap > currentAvailableHeight;
-            const willExceedCount = currentPageData[currentColumn].length >= maxItemsPerColumn;
-
-            if (currentPageData[currentColumn].length === 0) {
-              // 단독 배치는 언제나 강행
-              currentPageData[currentColumn].push({ type: 'question', question: q });
-              currentColumnHeight += heightWithGap;
-              break;
-            }
-
-            if (willExceedHeight || willExceedCount) {
-              moveToNextSlot();
-              continue;
-            }
-
-            currentPageData[currentColumn].push({ type: 'question', question: q });
-            currentColumnHeight += heightWithGap;
-            break;
-          }
-
-          // 해설 정보가 실존할 때만 해설 배치 실행
+        // 정답표 하단으로 각 문항의 정답과 해설 카드 순차적 배치
+        for (let i = 0; i < questions.length; i++) {
+          const q = questions[i];
           if (q.explanation || q.answer) {
-            // 2. 정답·해설 배치
+            const elExp = document.getElementById(`measure-q-exp-${q.id}`);
+            const expHeight = elExp ? elExp.getBoundingClientRect().height : 0;
+
             while (true) {
               const isPageOne = studentPages.length === 0;
               const currentHeaderHeight = isPageOne ? headerHeight : shortHeaderHeight;
@@ -830,20 +773,16 @@ export default function PrintPreviewPanel({
 
               const heightWithGap = expHeight + (currentPageData[currentColumn].length > 0 ? gapPx : 0);
               
-              // 정답/해설은 하나의 통 카드로 다뤄야 하므로 슬롯을 초과하면 다음 슬롯으로 온전히 밀어넘김
               const willExceedHeight = currentColumnHeight + heightWithGap > currentAvailableHeight;
               const willExceedCount = currentPageData[currentColumn].length >= maxItemsPerColumn;
 
               if (currentPageData[currentColumn].length === 0) {
-                // 단독 배치 강행
                 currentPageData[currentColumn].push({ type: 'explanation', question: q });
                 currentColumnHeight += heightWithGap;
                 break;
               }
 
               if (willExceedHeight || willExceedCount) {
-                // 정답·해설이 남은 공간에 들어가지 않는 경우: 다음 단 배치 가능 여부 확인
-                // 다음 단에도 들어가지 않는 경우 다음 페이지 좌측 단 상단에 표시
                 moveToNextSlot();
                 continue;
               }
@@ -853,38 +792,111 @@ export default function PrintPreviewPanel({
               break;
             }
           }
+        }
+      } else {
+        // 기존의 문항 배치 루프 수행
+        for (let i = 0; i < questions.length; i++) {
+          const q = questions[i];
+          
+          if (printType === "teacher") {
+            const elBody = document.getElementById(`measure-q-body-${q.id}`);
+            const bodyHeight = elBody ? elBody.getBoundingClientRect().height : 0;
 
-          } // end else (answerOnlyMode === false)
+            const elExp = document.getElementById(`measure-q-exp-${q.id}`);
+            const expHeight = elExp ? elExp.getBoundingClientRect().height : 0;
 
-        } else {
-          // ── 학생용 기존 안전 배치 알고리즘 ──
-          const el = document.getElementById(`measure-q-${q.id}`);
-          const itemHeight = el ? el.getBoundingClientRect().height : 0;
+            // 1. 문항 본문 배치
+            while (true) {
+              const isPageOne = studentPages.length === 0;
+              const currentHeaderHeight = isPageOne ? headerHeight : shortHeaderHeight;
+              const currentAvailableHeight = pageHeightPx - (marginPx * 2) - currentHeaderHeight - 45;
 
-          while (true) {
-            const isPageOne = studentPages.length === 0;
-            const currentHeaderHeight = isPageOne ? headerHeight : shortHeaderHeight;
-            const currentAvailableHeight = pageHeightPx - (marginPx * 2) - currentHeaderHeight - 45;
+              const heightWithGap = bodyHeight + (currentPageData[currentColumn].length > 0 ? gapPx : 0);
+              
+              const willExceedHeight = currentColumnHeight + heightWithGap > currentAvailableHeight;
+              const willExceedCount = currentPageData[currentColumn].length >= maxItemsPerColumn;
 
-            const heightWithGap = itemHeight + (currentPageData[currentColumn].length > 0 ? gapPx : 0);
-            
-            const willExceedHeight = currentColumnHeight + heightWithGap > currentAvailableHeight;
-            const willExceedCount = currentPageData[currentColumn].length >= maxItemsPerColumn;
+              if (currentPageData[currentColumn].length === 0) {
+                // 단독 배치는 언제나 강행
+                currentPageData[currentColumn].push({ type: 'question', question: q });
+                currentColumnHeight += heightWithGap;
+                break;
+              }
 
-            if (currentPageData[currentColumn].length === 0) {
+              if (willExceedHeight || willExceedCount) {
+                moveToNextSlot();
+                continue;
+              }
+
               currentPageData[currentColumn].push({ type: 'question', question: q });
               currentColumnHeight += heightWithGap;
               break;
             }
 
-            if (willExceedHeight || willExceedCount) {
-              moveToNextSlot();
-              continue;
+            // 해설 정보가 실존할 때만 해설 배치 실행
+            if (q.explanation || q.answer) {
+              // 2. 정답·해설 배치
+              while (true) {
+                const isPageOne = studentPages.length === 0;
+                const currentHeaderHeight = isPageOne ? headerHeight : shortHeaderHeight;
+                const currentAvailableHeight = pageHeightPx - (marginPx * 2) - currentHeaderHeight - 45;
+
+                const heightWithGap = expHeight + (currentPageData[currentColumn].length > 0 ? gapPx : 0);
+                
+                // 정답/해설은 하나의 통 카드로 다뤄야 하므로 슬롯을 초과하면 다음 슬롯으로 온전히 밀어넘김
+                const willExceedHeight = currentColumnHeight + heightWithGap > currentAvailableHeight;
+                const willExceedCount = currentPageData[currentColumn].length >= maxItemsPerColumn;
+
+                if (currentPageData[currentColumn].length === 0) {
+                  // 단독 배치 강행
+                  currentPageData[currentColumn].push({ type: 'explanation', question: q });
+                  currentColumnHeight += heightWithGap;
+                  break;
+                }
+
+                if (willExceedHeight || willExceedCount) {
+                  // 정답·해설이 남은 공간에 들어가지 않는 경우: 다음 단 배치 가능 여부 확인
+                  // 다음 단에도 들어가지 않는 경우 다음 페이지 좌측 단 상단에 표시
+                  moveToNextSlot();
+                  continue;
+                }
+
+                currentPageData[currentColumn].push({ type: 'explanation', question: q });
+                currentColumnHeight += heightWithGap;
+                break;
+              }
             }
 
-            currentPageData[currentColumn].push({ type: 'question', question: q });
-            currentColumnHeight += heightWithGap;
-            break;
+          } else {
+            // ── 학생용 기존 안전 배치 알고리즘 ──
+            const el = document.getElementById(`measure-q-${q.id}`);
+            const itemHeight = el ? el.getBoundingClientRect().height : 0;
+
+            while (true) {
+              const isPageOne = studentPages.length === 0;
+              const currentHeaderHeight = isPageOne ? headerHeight : shortHeaderHeight;
+              const currentAvailableHeight = pageHeightPx - (marginPx * 2) - currentHeaderHeight - 45;
+
+              const heightWithGap = itemHeight + (currentPageData[currentColumn].length > 0 ? gapPx : 0);
+              
+              const willExceedHeight = currentColumnHeight + heightWithGap > currentAvailableHeight;
+              const willExceedCount = currentPageData[currentColumn].length >= maxItemsPerColumn;
+
+              if (currentPageData[currentColumn].length === 0) {
+                currentPageData[currentColumn].push({ type: 'question', question: q });
+                currentColumnHeight += heightWithGap;
+                break;
+              }
+
+              if (willExceedHeight || willExceedCount) {
+                moveToNextSlot();
+                continue;
+              }
+
+              currentPageData[currentColumn].push({ type: 'question', question: q });
+              currentColumnHeight += heightWithGap;
+              break;
+            }
           }
         }
       }
