@@ -128,8 +128,9 @@ interface Props {
 }
 
 export interface PrintItem {
-  type: 'question' | 'explanation';
-  question: PrintQuestion;
+  type: 'question' | 'explanation' | 'answer_sheet';
+  question?: PrintQuestion;
+  questions?: PrintQuestion[];
 }
 
 interface PageData {
@@ -400,6 +401,34 @@ export const QuestionExplanation = ({ q, color, fontSize, isSeparated, onImageLo
           onLoad={onImageLoad}
         />
       ))}
+    </div>
+  );
+};
+
+// ── 정답표 렌더링 컴포넌트 ──
+export const AnswerSheet = ({ questions, color }: { questions: PrintQuestion[]; color: string }) => {
+  const getDisplayAnswer = (q: PrintQuestion) => {
+    let displayAnswer = q.answer;
+    if (q.choices && q.choices.length > 0) {
+      const choiceIndex = q.choices.indexOf(q.answer);
+      if (choiceIndex !== -1) {
+        displayAnswer = ['①','②','③','④','⑤'][choiceIndex];
+      }
+    }
+    return displayAnswer;
+  };
+
+  return (
+    <div className="border border-slate-200 bg-slate-50/50 rounded-lg p-4 w-full break-inside-avoid">
+      <h4 className="font-bold text-gray-900 mb-3 text-[11pt] border-b pb-1.5" style={{ borderColor: `${color}4D` }}>정답표</h4>
+      <div className="grid grid-cols-4 gap-x-4 gap-y-2 text-[10pt] text-gray-800">
+        {questions.map((q, idx) => (
+          <div key={q.id} className="flex items-center justify-between border-b border-slate-100 pb-1">
+            <span className="font-bold text-gray-400">{idx + 1}</span>
+            <span className="font-semibold text-gray-950" dangerouslySetInnerHTML={{ __html: parseAndRenderMath(getDisplayAnswer(q)) }} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
@@ -968,6 +997,19 @@ export default function PrintPreviewPanel({
           </div>
           
           {/* 단일 컬럼 수직 배치로 CSS stretch 격자 왜곡 원천 차단 */}
+          {printType === "teacher" && answerOnlyMode && (
+            <div
+              id="measure-answer-sheet"
+              className="flex flex-col bg-white mb-4"
+              style={{
+                width: `calc((100% - 8mm) / 2)`,
+                maxWidth: `calc((100% - 8mm) / 2)`,
+                boxSizing: 'border-box'
+              }}
+            >
+              <AnswerSheet questions={questions} color={color} />
+            </div>
+          )}
           <div className="flex flex-col gap-4" style={{ width: '100%' }}>
             {questions.map((q) => {
               // 실제 컬럼 너비 정확히 산출: 좌우 다단 간격은 시험지 표준 8mm로 고정
@@ -1122,18 +1164,22 @@ export default function PrintPreviewPanel({
                     maxWidth: 'calc(50% - 4mm)'
                   }}
                 >
-                  {(pageQuestions?.left || []).map((qItem) => (
-                    <div key={`${qItem.question.id}-${qItem.type}`} className="flex flex-col break-inside-avoid bg-white w-full max-w-full min-w-0 overflow-hidden">
-                      <QuestionContent 
-                        q={qItem.question} 
-                        printType={printType} 
-                        task={task} 
-                        color={color} 
-                        fontSize={fontSize} 
-                        onImageLoad={undefined} 
-                        scaleDownChoices={scaleDownIds.includes(qItem.question.id)} 
-                        itemType={qItem.type}
-                      />
+                  {(pageQuestions?.left || []).map((qItem, itemIdx) => (
+                    <div key={qItem.type === 'answer_sheet' ? `answersheet-${itemIdx}` : `${qItem.question?.id}-${qItem.type}`} className="flex flex-col break-inside-avoid bg-white w-full max-w-full min-w-0 overflow-hidden">
+                      {qItem.type === 'answer_sheet' ? (
+                        <AnswerSheet questions={questions} color={color} />
+                      ) : (
+                        <QuestionContent 
+                          q={qItem.question!} 
+                          printType={printType} 
+                          task={task} 
+                          color={color} 
+                          fontSize={fontSize} 
+                          onImageLoad={undefined} 
+                          scaleDownChoices={scaleDownIds.includes(qItem.question!.id)} 
+                          itemType={qItem.type}
+                        />
+                      )}
                     </div>
                   ))}
                 </div>
@@ -1145,18 +1191,22 @@ export default function PrintPreviewPanel({
                     maxWidth: 'calc(50% - 4mm)'
                   }}
                 >
-                  {(pageQuestions?.right || []).map((qItem) => (
-                    <div key={`${qItem.question.id}-${qItem.type}`} className="flex flex-col break-inside-avoid bg-white w-full max-w-full min-w-0 overflow-hidden">
-                      <QuestionContent 
-                        q={qItem.question} 
-                        printType={printType} 
-                        task={task} 
-                        color={color} 
-                        fontSize={fontSize} 
-                        onImageLoad={undefined} 
-                        scaleDownChoices={scaleDownIds.includes(qItem.question.id)} 
-                        itemType={qItem.type}
-                      />
+                  {(pageQuestions?.right || []).map((qItem, itemIdx) => (
+                    <div key={qItem.type === 'answer_sheet' ? `answersheet-${itemIdx}` : `${qItem.question?.id}-${qItem.type}`} className="flex flex-col break-inside-avoid bg-white w-full max-w-full min-w-0 overflow-hidden">
+                      {qItem.type === 'answer_sheet' ? (
+                        <AnswerSheet questions={questions} color={color} />
+                      ) : (
+                        <QuestionContent 
+                          q={qItem.question!} 
+                          printType={printType} 
+                          task={task} 
+                          color={color} 
+                          fontSize={fontSize} 
+                          onImageLoad={undefined} 
+                          scaleDownChoices={scaleDownIds.includes(qItem.question!.id)} 
+                          itemType={qItem.type}
+                        />
+                      )}
                     </div>
                   ))}
                 </div>
@@ -1218,18 +1268,22 @@ export default function PrintPreviewPanel({
                     maxWidth: 'calc(50% - 4mm)'
                   }}
                 >
-                  {(pageQuestions?.left || []).map((qItem) => (
-                    <div key={`p-${qItem.question.id}-${qItem.type}`} className="flex flex-col break-inside-avoid bg-white w-full max-w-full min-w-0 overflow-hidden">
-                      <QuestionContent 
-                        q={qItem.question} 
-                        printType={printType} 
-                        task={task} 
-                        color={color} 
-                        fontSize={fontSize} 
-                        onImageLoad={undefined} 
-                        scaleDownChoices={scaleDownIds.includes(qItem.question.id)} 
-                        itemType={qItem.type}
-                      />
+                  {(pageQuestions?.left || []).map((qItem, itemIdx) => (
+                    <div key={qItem.type === 'answer_sheet' ? `answersheet-${itemIdx}` : `p-${qItem.question?.id}-${qItem.type}`} className="flex flex-col break-inside-avoid bg-white w-full max-w-full min-w-0 overflow-hidden">
+                      {qItem.type === 'answer_sheet' ? (
+                        <AnswerSheet questions={questions} color={color} />
+                      ) : (
+                        <QuestionContent 
+                          q={qItem.question!} 
+                          printType={printType} 
+                          task={task} 
+                          color={color} 
+                          fontSize={fontSize} 
+                          onImageLoad={undefined} 
+                          scaleDownChoices={scaleDownIds.includes(qItem.question!.id)} 
+                          itemType={qItem.type}
+                        />
+                      )}
                     </div>
                   ))}
                 </div>
@@ -1241,18 +1295,22 @@ export default function PrintPreviewPanel({
                     maxWidth: 'calc(50% - 4mm)'
                   }}
                 >
-                  {(pageQuestions?.right || []).map((qItem) => (
-                    <div key={`p-${qItem.question.id}-${qItem.type}`} className="flex flex-col break-inside-avoid bg-white w-full max-w-full min-w-0 overflow-hidden">
-                      <QuestionContent 
-                        q={qItem.question} 
-                        printType={printType} 
-                        task={task} 
-                        color={color} 
-                        fontSize={fontSize} 
-                        onImageLoad={undefined} 
-                        scaleDownChoices={scaleDownIds.includes(qItem.question.id)} 
-                        itemType={qItem.type}
-                      />
+                  {(pageQuestions?.right || []).map((qItem, itemIdx) => (
+                    <div key={qItem.type === 'answer_sheet' ? `answersheet-${itemIdx}` : `p-${qItem.question?.id}-${qItem.type}`} className="flex flex-col break-inside-avoid bg-white w-full max-w-full min-w-0 overflow-hidden">
+                      {qItem.type === 'answer_sheet' ? (
+                        <AnswerSheet questions={questions} color={color} />
+                      ) : (
+                        <QuestionContent 
+                          q={qItem.question!} 
+                          printType={printType} 
+                          task={task} 
+                          color={color} 
+                          fontSize={fontSize} 
+                          onImageLoad={undefined} 
+                          scaleDownChoices={scaleDownIds.includes(qItem.question!.id)} 
+                          itemType={qItem.type}
+                        />
+                      )}
                     </div>
                   ))}
                 </div>
