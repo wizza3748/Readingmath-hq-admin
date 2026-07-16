@@ -463,7 +463,7 @@ export default function PrintPreviewPanel({
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = React.useState(false);
   const [currentPage, setCurrentPage] = React.useState(1);
-  const [zoom, setZoom] = React.useState<number>(isStudentView ? 0.75 : 0);
+  const [zoom, setZoom] = React.useState<number>(isStudentView ? 0.85 : 0);
   const [pages, setPages] = React.useState<PageData[]>([]);
   const [triggerMeasure, setTriggerMeasure] = React.useState(0);
   const [scaleDownIds, setScaleDownIds] = React.useState<string[]>([]);
@@ -1066,6 +1066,7 @@ export default function PrintPreviewPanel({
             >
               <option value={0}>화면 맞춤</option>
               <option value={0.75}>75%</option>
+              <option value={0.85}>85%</option>
               <option value={1}>100%</option>
               <option value={1.25}>125%</option>
             </select>
