@@ -135,13 +135,16 @@ export default function ScienceResultPage(props: PageProps) {
       const detail = taskResult?.gradingDetails?.find((d) => d.questionIndex === idx);
       const resultStatus = detail?.status || "unentered";
 
-      let displayAnswer = q.answer;
+      let displayAnswer = "-";
       let correctChoiceIndex = -1;
-      if (q.choices && q.choices.length > 0) {
-        correctChoiceIndex = q.choices.indexOf(q.answer);
-        if (correctChoiceIndex !== -1) {
-          displayAnswer = ['①','②','③','④','⑤'][correctChoiceIndex];
+      
+      if (q.type === "choice") {
+        if (q.answerKey && q.answerKey.length > 0) {
+          correctChoiceIndex = q.answerKey[0] - 1;
+          displayAnswer = ['①','②','③','④','⑤'][correctChoiceIndex] || "-";
         }
+      } else {
+        displayAnswer = q.correctAnswer || "-";
       }
 
       let studentAnswer = "-";
@@ -156,8 +159,8 @@ export default function ScienceResultPage(props: PageProps) {
           }
         } else {
           studentAnswer = String(sa);
-          if (q.choices && q.choices.length > 0) {
-            const chIdx = q.choices.indexOf(studentAnswer);
+          if (q.choiceHtmls && q.choiceHtmls.length > 0) {
+            const chIdx = q.choiceHtmls.indexOf(studentAnswer);
             if (chIdx !== -1) {
               studentChoiceIndex = chIdx;
               studentAnswer = ['①','②','③','④','⑤'][studentChoiceIndex];
@@ -371,9 +374,9 @@ export default function ScienceResultPage(props: PageProps) {
             </div>
           )}
 
-          {q.choices && q.choices.length > 0 && (
+          {q.choiceHtmls && q.choiceHtmls.length > 0 && (
             <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-1.5 pl-7 text-[12px]">
-              {q.choices.map((choice: string, i: number) => {
+              {q.choiceHtmls.map((choice: string, i: number) => {
                 const isSelected = q.studentChoiceIndex === i;
                 const isCorrect = q.correctChoiceIndex === i;
 
@@ -434,10 +437,10 @@ export default function ScienceResultPage(props: PageProps) {
             <span className="font-semibold text-slate-500">정답:</span>
             <span className="font-bold text-blue-700" dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.displayAnswer) }} />
           </div>
-          {q.explanation && (
+          {q.explanationHtml && (
             <div className="flex flex-col gap-0.5 text-slate-600 mt-1 bg-white border border-blue-50/50 p-2.5 rounded-lg">
               <div 
-                dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.explanation) }}
+                dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.explanationHtml) }}
                 className="text-xs [&_img]:max-w-full [&_img]:h-auto [&_img]:object-contain"
               />
             </div>

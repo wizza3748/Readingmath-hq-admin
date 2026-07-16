@@ -18,6 +18,7 @@ export interface Question {
   difficulty?: "basic" | "intermediate" | "advanced"; // 난이도
   explanationHtml?: string; // 해설 HTML (수식 포함)
   stem?: string; // 발문 텍스트
+  passage?: string; // 보기 텍스트
 }
 
 // LaTeX 수식 구분자를 $...$ 에서 \(...\) 로, $$...$$ 에서 \[...\] 로 변환하는 헬퍼 함수
@@ -201,6 +202,7 @@ export function getQuestionsByTaskId(taskId: string, studentId?: string): Questi
       difficulty: typeInfo?.difficulty,
       explanationHtml: sample.explanation ? convertDollarToParentheses(sample.explanation) : undefined,
       stem: sample.stem,
+      passage: sample.passage,
     });
   }
 
