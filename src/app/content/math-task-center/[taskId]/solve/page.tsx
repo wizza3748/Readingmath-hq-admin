@@ -1534,7 +1534,7 @@ export default function MathSolvePage(props: PageProps) {
       {/* 모달 6. 과제 출력 모달 */}
       {isPrintModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm print:hidden">
-          <div className="w-full max-w-[850px] h-[90vh] flex flex-col bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 animate-in fade-in zoom-in-95 duration-150 dark:bg-gray-900 dark:border-gray-800">
+          <div className="w-full max-w-[960px] h-[760px] max-h-[90vh] flex flex-col bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 animate-in fade-in zoom-in-95 duration-150 dark:bg-gray-900 dark:border-gray-800">
             {/* 모달 헤더 영역 */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-gray-150 dark:border-gray-800 shrink-0 bg-gray-50 dark:bg-gray-950">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white">과제 출력</h3>

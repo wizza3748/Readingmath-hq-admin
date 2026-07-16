@@ -463,7 +463,7 @@ export default function PrintPreviewPanel({
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = React.useState(false);
   const [currentPage, setCurrentPage] = React.useState(1);
-  const [zoom, setZoom] = React.useState<number>(0);
+  const [zoom, setZoom] = React.useState<number>(isStudentView ? 1 : 0);
   const [pages, setPages] = React.useState<PageData[]>([]);
   const [triggerMeasure, setTriggerMeasure] = React.useState(0);
   const [scaleDownIds, setScaleDownIds] = React.useState<string[]>([]);
@@ -1051,23 +1051,27 @@ export default function PrintPreviewPanel({
           )}
 
           {/* 페이지 정보 */}
-          <div className="flex items-center gap-1 text-xs bg-slate-100 rounded-lg px-2.5 py-1 whitespace-nowrap font-semibold text-slate-600">
-            <span>{currentPage}</span>
-            <span className="text-gray-400">/</span>
-            <span>{pages.length > 0 ? pages.length : 1}</span>
-          </div>
+          {!isStudentView && (
+            <div className="flex items-center gap-1 text-xs bg-slate-100 rounded-lg px-2.5 py-1 whitespace-nowrap font-semibold text-slate-600">
+              <span>{currentPage}</span>
+              <span className="text-gray-400">/</span>
+              <span>{pages.length > 0 ? pages.length : 1}</span>
+            </div>
+          )}
 
           {/* 확대 축소 */}
-          <select 
-            value={zoom} 
-            onChange={(e) => setZoom(Number(e.target.value))}
-            className="text-xs border border-slate-200 rounded-lg px-2 py-1 bg-white font-semibold text-slate-600 outline-none hover:border-slate-300 transition-all focus:ring-1 focus:ring-primary/20"
-          >
-            <option value={0}>화면 맞춤</option>
-            <option value={0.75}>75%</option>
-            <option value={1}>100%</option>
-            <option value={1.25}>125%</option>
-          </select>
+          {!isStudentView && (
+            <select 
+              value={zoom} 
+              onChange={(e) => setZoom(Number(e.target.value))}
+              className="text-xs border border-slate-200 rounded-lg px-2 py-1 bg-white font-semibold text-slate-600 outline-none hover:border-slate-300 transition-all focus:ring-1 focus:ring-primary/20"
+            >
+              <option value={0}>화면 맞춤</option>
+              <option value={0.75}>75%</option>
+              <option value={1}>100%</option>
+              <option value={1.25}>125%</option>
+            </select>
+          )}
         </div>
       </div>
 
