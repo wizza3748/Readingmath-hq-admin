@@ -1029,7 +1029,11 @@ export default function PrintPreviewPanel({
 
       {/* 뷰어 헤더 (화면용 컨트롤 영역) */}
       {!isStudentView && (
-        <div className="flex items-center justify-between px-5 py-3 bg-white/95 backdrop-blur-[2px] border-b border-slate-200/80 shrink-0 print:hidden z-20">
+        <div className="flex flex-col md:flex-row md:items-center justify-between px-5 py-3 bg-white/95 backdrop-blur-[2px] border-b border-slate-200/80 gap-3 shrink-0 print:hidden z-20">
+          <div className="flex flex-col">
+            <h3 className="font-bold text-gray-900 text-[11pt]">과제 출력 미리보기</h3>
+            <p className="text-xs text-gray-400 mt-0.5">브라우저와 프린터 설정에 따라 실제 인쇄 결과와 일부 차이가 있을 수 있습니다. PDF 저장은 브라우저 인쇄창에서 대상을 PDF로 선택해 저장합니다.</p>
+          </div>
           <div className="flex items-center gap-3.5 ml-auto">
             {/* 미리보기 학생 select */}
             {(task.problemMode === "individual" || task.problemMode === "relearn") && previewStudentOptions.length > 0 && (
