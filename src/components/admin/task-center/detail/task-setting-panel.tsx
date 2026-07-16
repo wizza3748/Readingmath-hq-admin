@@ -241,7 +241,7 @@ export function TaskSettingPanel({
                       : "text-muted-foreground hover:text-foreground"
                   } transition-colors`}
                 >
-                  중요 문제만 출제
+                  대표 문제만 출제
                 </label>
               </div>
             </div>
