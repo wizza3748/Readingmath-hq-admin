@@ -21,7 +21,7 @@ import {
 import "katex/dist/katex.min.css";
 import renderMathInElement from "katex/contrib/auto-render";
 
-import { getQuestionsByTaskId, Question } from "@/lib/task-solve-mock";
+import { getQuestionsByTaskId, Question, matchStoredIdWithAdminId } from "@/lib/task-solve-mock";
 import { getAnswers, saveAnswer, Answer } from "@/utils/answerStorage";
 import { getStoredTasks, updateTaskStatus, Task } from "@/utils/taskStorage";
 import { saveTaskResult, TaskResult, GradingDetail } from "@/utils/taskResultStorage";
@@ -186,7 +186,7 @@ export default function ScienceSolvePage(props: PageProps) {
   const [isPrintModalOpen, setIsPrintModalOpen] = useState<boolean>(false);
 
   // 출력용 학생/반 데이터 바인딩 로직
-  const adminTask = INITIAL_TASKS.find((t) => t.id === taskId) || null;
+  const adminTask = INITIAL_TASKS.find((t) => matchStoredIdWithAdminId(taskId, t.id) || matchStoredIdWithAdminId(t.id, taskId)) || null;
   const activeStudents = adminTask?.assignedStudents || [];
   const currentStudentId = searchParams.previewStudentId || activeStudents[0]?.studentId || "student-1";
   const currentStudent = activeStudents.find(s => s.studentId === currentStudentId) || {
