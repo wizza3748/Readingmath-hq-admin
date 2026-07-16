@@ -1,8 +1,9 @@
 "use client";
 
-import React, { use, useEffect, useState, useRef } from "react";
+import React, { use, useEffect, useState, useRef, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { createPortal } from "react-dom";
 import {
   ArrowLeft,
   X,
@@ -21,10 +22,13 @@ import {
 import "katex/dist/katex.min.css";
 import renderMathInElement from "katex/contrib/auto-render";
 
-import { getQuestionsByTaskId, Question, matchStoredIdWithAdminId } from "@/lib/task-solve-mock";
+import { getQuestionsByTaskId, matchStoredIdWithAdminId } from "@/lib/task-solve-mock";
 import { getStoredTasks, Task } from "@/utils/taskStorage";
 import { getTaskResult, saveTaskResult, TaskResult, GradingDetail } from "@/utils/taskResultStorage";
 import { INITIAL_TASKS, SCIENCE_CURRICULA } from "@/lib/task-center-mock";
+import { getStoredStudents } from "@/lib/student-mock";
+import { parseAndRenderMath } from "@/components/admin/task-center/print/print-preview-panel";
+import { cn } from "@/lib/utils";
 
 interface PageProps {
   params: Promise<{ taskId: string }>;
@@ -98,13 +102,351 @@ export default function ScienceResultPage(props: PageProps) {
 
   const [task, setTask] = useState<Task | null>(null);
   const [taskResult, setTaskResult] = useState<TaskResult | null>(null);
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<any[]>([]);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   // 오류 신고 모달 상태
   const [showReportModal, setShowReportModal] = useState<boolean>(false);
   const [reportText, setReportText] = useState<string>("");
   const [isReporting, setIsReporting] = useState<boolean>(false);
+
+  // 출력 미리보기 모달 상태
+  const [isPrintModalOpen, setIsPrintModalOpen] = useState<boolean>(false);
+  const [showAnswer, setShowAnswer] = useState<boolean>(false);
+  const [isPrinting, setIsPrinting] = useState<boolean>(false);
+  const [pages, setPages] = useState<any[]>([]);
+  const [triggerMeasure, setTriggerMeasure] = useState<number>(0);
+  const [dbStudents, setDbStudents] = useState<any[]>([]);
+
+  useEffect(() => {
+    setDbStudents(getStoredStudents());
+  }, []);
+
+  const student = dbStudents.find((s) => s.id === "student-1") || {
+    id: "student-1",
+    name: "김민준",
+    className: "1반",
+  };
+
+  const gradedQuestions = useMemo(() => {
+    if (questions.length === 0) return [];
+    
+    return questions.map((q, idx) => {
+      const detail = taskResult?.gradingDetails?.find((d) => d.questionIndex === idx);
+      const resultStatus = detail?.status || "unentered";
+
+      let displayAnswer = q.answer;
+      let correctChoiceIndex = -1;
+      if (q.choices && q.choices.length > 0) {
+        correctChoiceIndex = q.choices.indexOf(q.answer);
+        if (correctChoiceIndex !== -1) {
+          displayAnswer = ['①','②','③','④','⑤'][correctChoiceIndex];
+        }
+      }
+
+      let studentAnswer = "-";
+      let studentChoiceIndex = -1;
+
+      if (detail && detail.submittedAnswer !== undefined) {
+        const sa = detail.submittedAnswer;
+        if (Array.isArray(sa)) {
+          if (sa.length > 0) {
+            studentChoiceIndex = sa[0];
+            studentAnswer = ['①','②','③','④','⑤'][studentChoiceIndex] || "-";
+          }
+        } else {
+          studentAnswer = String(sa);
+          if (q.choices && q.choices.length > 0) {
+            const chIdx = q.choices.indexOf(studentAnswer);
+            if (chIdx !== -1) {
+              studentChoiceIndex = chIdx;
+              studentAnswer = ['①','②','③','④','⑤'][studentChoiceIndex];
+            } else {
+              const symbolIdx = ['①','②','③','④','⑤'].indexOf(studentAnswer);
+              if (symbolIdx !== -1) {
+                studentChoiceIndex = symbolIdx;
+              }
+            }
+          }
+        }
+      }
+
+      return {
+        ...q,
+        problemNo: idx + 1,
+        result: resultStatus,
+        studentAnswer,
+        studentChoiceIndex,
+        correctChoiceIndex,
+        displayAnswer,
+      };
+    });
+  }, [questions, taskResult]);
+
+  useEffect(() => {
+    const handleImgLoad = () => {
+      setTriggerMeasure(t => t + 1);
+    };
+
+    const container = document.getElementById('modal-measure-container');
+    if (container) {
+      const imgs = container.querySelectorAll('img');
+      imgs.forEach(img => {
+        if ((img as HTMLImageElement).complete) {
+          setTriggerMeasure(t => t + 1);
+        } else {
+          img.addEventListener('load', handleImgLoad);
+        }
+      });
+    }
+
+    return () => {
+      if (container) {
+        const imgs = container.querySelectorAll('img');
+        imgs.forEach(img => {
+          img.removeEventListener('load', handleImgLoad);
+        });
+      }
+    };
+  }, [gradedQuestions, isPrintModalOpen]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTriggerMeasure(t => t + 1);
+    }, 150);
+    return () => clearTimeout(timer);
+  }, [gradedQuestions, showAnswer, isPrintModalOpen]);
+
+  useEffect(() => {
+    if (gradedQuestions.length === 0 || !isPrintModalOpen) {
+      setPages([]);
+      return;
+    }
+
+    const mmToPx = 3.779527559;
+    const pageHeightPx = 297 * mmToPx;
+    const marginPx = 10 * mmToPx;
+    const gapPx = 14 * mmToPx;
+    
+    const headerEl = document.getElementById('modal-measure-header');
+    const headerHeight = headerEl ? headerEl.getBoundingClientRect().height : 170;
+
+    const shortHeaderEl = document.getElementById('modal-measure-header-short');
+    const shortHeaderHeight = shortHeaderEl ? shortHeaderEl.getBoundingClientRect().height : 45;
+
+    const allPages: any[] = [];
+    let currentPageData: { left: any[]; right: any[] } = { left: [], right: [] };
+    let currentColumn: 'left' | 'right' = 'left';
+    let currentColumnHeight = 0;
+
+    const moveToNextSlot = () => {
+      if (currentColumn === 'left') {
+        currentColumn = 'right';
+        currentColumnHeight = 0;
+      } else {
+        allPages.push(currentPageData);
+        currentPageData = { left: [], right: [] };
+        currentColumn = 'left';
+        currentColumnHeight = 0;
+      }
+    };
+
+    for (let i = 0; i < gradedQuestions.length; i++) {
+      const q = gradedQuestions[i];
+      
+      const elBody = document.getElementById(`modal-measure-q-body-${q.id}`);
+      const bodyHeight = elBody ? elBody.getBoundingClientRect().height : 140;
+
+      const elExp = document.getElementById(`modal-measure-q-exp-${q.id}`);
+      const expHeight = (showAnswer && elExp) ? elExp.getBoundingClientRect().height : 0;
+
+      while (true) {
+        const isPageOne = allPages.length === 0;
+        const currentHeaderHeight = isPageOne ? headerHeight : shortHeaderHeight;
+        const currentAvailableHeight = pageHeightPx - (marginPx * 2) - currentHeaderHeight - 45;
+
+        const heightWithGap = bodyHeight + (currentPageData[currentColumn].length > 0 ? gapPx : 0);
+        const willExceedHeight = currentColumnHeight + heightWithGap > currentAvailableHeight;
+
+        if (currentPageData[currentColumn].length === 0) {
+          currentPageData[currentColumn].push({ type: 'question', q });
+          currentColumnHeight += heightWithGap;
+          break;
+        }
+
+        if (willExceedHeight) {
+          moveToNextSlot();
+          continue;
+        }
+
+        currentPageData[currentColumn].push({ type: 'question', q });
+        currentColumnHeight += heightWithGap;
+        break;
+      }
+
+      if (showAnswer) {
+        while (true) {
+          const isPageOne = allPages.length === 0;
+          const currentHeaderHeight = isPageOne ? headerHeight : shortHeaderHeight;
+          const currentAvailableHeight = pageHeightPx - (marginPx * 2) - currentHeaderHeight - 45;
+
+          const heightWithGap = expHeight + (currentPageData[currentColumn].length > 0 ? gapPx : 0);
+          const willExceedHeight = currentColumnHeight + heightWithGap > currentAvailableHeight;
+
+          if (currentPageData[currentColumn].length === 0) {
+            currentPageData[currentColumn].push({ type: 'explanation', q });
+            currentColumnHeight += heightWithGap;
+            break;
+          }
+
+          if (willExceedHeight) {
+            moveToNextSlot();
+            continue;
+          }
+
+          currentPageData[currentColumn].push({ type: 'explanation', q });
+          currentColumnHeight += heightWithGap;
+          break;
+        }
+      }
+    }
+
+    if (currentPageData.left.length > 0 || currentPageData.right.length > 0) {
+      allPages.push(currentPageData);
+    }
+
+    setPages(allPages);
+  }, [triggerMeasure, gradedQuestions, showAnswer, isPrintModalOpen]);
+
+  const handlePrint = () => {
+    setIsPrinting(true);
+    setTimeout(() => {
+      window.print();
+      setIsPrinting(false);
+    }, 200);
+  };
+
+  const renderItem = (item: any) => {
+    const q = item.q;
+    if (item.type === 'question') {
+      const isImageOnlyPassage = q.passage && q.passage.includes("<img") && q.passage.replace(/<[^>]*>/g, "").replace(/\s/g, "").length === 0;
+
+      return (
+        <div key={`item-${q.id}`} className="relative group flex flex-col gap-2.5 text-slate-800 text-left">
+          <div className="relative">
+            <div className="flex items-start gap-1 font-bold text-sm leading-snug">
+              <div className="relative shrink-0 select-none mr-1 w-6 h-6 flex items-center justify-center">
+                {q.result === "correct" && (
+                  <svg className="absolute w-12 h-10 -top-2 -left-2.5 pointer-events-none z-20" viewBox="0 0 48 40">
+                    <ellipse cx="24" cy="20" rx="20" ry="16" fill="none" stroke="#ef4444" strokeWidth="3" strokeOpacity="0.8" />
+                  </svg>
+                )}
+                {q.result === "incorrect" && (
+                  <svg className="absolute w-20 h-14 -top-3.5 -left-3 pointer-events-none z-20" viewBox="0 0 80 56">
+                    <line x1="6" y1="48" x2="74" y2="6" stroke="#ef4444" strokeWidth="3.5" strokeOpacity="0.8" strokeLinecap="round" />
+                  </svg>
+                )}
+                <span className="text-slate-900 font-bold z-10">{q.problemNo}.</span>
+              </div>
+
+              <span 
+                dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.stem) }} 
+                className="inline max-w-full min-w-0 [&_p]:inline [&_div]:inline text-[13.5px] text-slate-955 font-semibold" 
+              />
+            </div>
+          </div>
+
+          {q.passage && (
+            <div className={cn(
+              "text-[12px] leading-relaxed max-w-full overflow-hidden my-1",
+              isImageOnlyPassage ? "flex justify-center my-1" : "border border-slate-200 p-3 rounded bg-slate-50/30"
+            )}>
+              <div dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.passage.replace(/\n/g, '<br/>')) }} />
+            </div>
+          )}
+
+          {q.image && (
+            <div className="my-1.5 flex justify-center max-w-full overflow-hidden">
+              <img src={q.image} alt="문제 이미지" className="max-w-[260px] h-auto max-h-[140px] object-contain border rounded p-0.5 bg-white" />
+            </div>
+          )}
+
+          {q.choices && q.choices.length > 0 && (
+            <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-1.5 pl-7 text-[12px]">
+              {q.choices.map((choice: string, i: number) => {
+                const isSelected = q.studentChoiceIndex === i;
+                const isCorrect = q.correctChoiceIndex === i;
+
+                let badgeStyle = "bg-white border-slate-200 text-slate-500";
+                let textStyle = "text-slate-700";
+
+                if (isSelected) {
+                  if (q.result === "correct") {
+                    badgeStyle = "bg-emerald-500 border-emerald-500 text-white font-bold";
+                    textStyle = "text-emerald-700 font-bold";
+                  } else {
+                    badgeStyle = "bg-rose-500 border-rose-500 text-white font-bold";
+                    textStyle = "text-rose-700 font-bold";
+                  }
+                } else if (showAnswer && isCorrect) {
+                  badgeStyle = "bg-emerald-500 border-emerald-500 text-white font-bold";
+                  textStyle = "text-emerald-700 font-bold";
+                }
+
+                return (
+                  <div key={i} className="flex items-center gap-1.5 min-w-0">
+                    <span className={cn("w-4.5 h-4.5 rounded-full flex items-center justify-center border text-[10px] shrink-0", badgeStyle)}>
+                      {['①','②','③','④','⑤'][i]}
+                    </span>
+                    <span 
+                      dangerouslySetInnerHTML={{ __html: parseAndRenderMath(choice) }}
+                      className={cn("truncate", textStyle)}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          )}
+
+          <div className="mt-1 pl-7 flex items-center gap-2 text-[11px] text-slate-500">
+            <span>제출 답안:</span>
+            <span className={cn(
+              "px-1.5 py-0.2 rounded font-bold border",
+              q.result === "correct" 
+                ? "bg-emerald-50 border-emerald-100 text-emerald-700"
+                : q.result === "incorrect"
+                ? "bg-rose-50 border-rose-100 text-rose-700"
+                : "bg-slate-100 border-slate-200 text-slate-500"
+            )}>
+              {q.studentAnswer}
+            </span>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div key={`exp-${q.id}`} className="border border-blue-100 bg-blue-50/40 rounded-xl p-3.5 flex flex-col gap-1.5 text-[11px] leading-relaxed relative overflow-hidden shadow-sm text-left">
+          <div className="text-[11.5px] font-bold text-blue-700 flex items-center gap-1">
+            <span className="inline-block w-1.5 h-3 bg-blue-500 rounded-[2px]" />
+            {q.problemNo}번 정답·해설
+          </div>
+          <div className="flex items-center gap-1.5 mt-0.5">
+            <span className="font-semibold text-slate-500">정답:</span>
+            <span className="font-bold text-blue-700" dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.displayAnswer) }} />
+          </div>
+          {q.explanation && (
+            <div className="flex flex-col gap-0.5 text-slate-600 mt-1 bg-white border border-blue-50/50 p-2.5 rounded-lg">
+              <div 
+                dangerouslySetInnerHTML={{ __html: parseAndRenderMath(q.explanation) }}
+                className="text-xs [&_img]:max-w-full [&_img]:h-auto [&_img]:object-contain"
+              />
+            </div>
+          )}
+        </div>
+      );
+    }
+  };
+
 
   useEffect(() => {
     // 테마 감지
@@ -472,6 +814,12 @@ export default function ScienceResultPage(props: PageProps) {
             시험 대비 반영 확인
           </button>
           <button
+            onClick={() => setIsPrintModalOpen(true)}
+            className="px-6 py-3 bg-slate-800 hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 text-white text-sm font-extrabold rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center gap-1.5 cursor-pointer"
+          >
+            <span>출력</span>
+          </button>
+          <button
             onClick={() => router.push(`/content/science-task-center/${taskId}/explanation${isPreview ? "?preview=true" : ""}`)}
             className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white text-sm font-extrabold rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center gap-1.5 group cursor-pointer"
           >
@@ -518,6 +866,275 @@ export default function ScienceResultPage(props: PageProps) {
             </div>
           </div>
         </div>
+      )}
+
+      {/* ── 과제 결과 모달 (Student Task Detail Result Modal) ── */}
+      {isPrintModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-5xl h-[90vh] flex flex-col overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 animate-in zoom-in-95 duration-200">
+            {/* 모달 헤더 */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shrink-0">
+              <h2 className="text-lg font-bold text-slate-800 dark:text-white">과제 결과</h2>
+              <button 
+                onClick={() => setIsPrintModalOpen(false)}
+                className="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-slate-500 dark:text-slate-400 transition-colors"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            
+            {/* 과제 결과 미리보기 영역 */}
+            <div className="flex-1 overflow-y-auto p-6 min-h-0 bg-slate-100 dark:bg-slate-955 relative flex justify-center custom-scrollbar" style={{"--fit-scale": "0.85"} as any}>
+              <div className="flex flex-col gap-6 shadow-md" style={{ transform: "scale(var(--fit-scale))", transformOrigin: "top center" }}>
+                {pages.map((page, pIndex) => (
+                  <div
+                    key={pIndex}
+                    className="flex flex-col bg-white relative shrink-0 border border-slate-300"
+                    style={{
+                      width: '210mm',
+                      height: '297mm',
+                      minHeight: '297mm',
+                      maxHeight: '297mm',
+                      paddingTop: '10mm',
+                      paddingLeft: '10mm',
+                      paddingRight: '10mm',
+                      paddingBottom: '20mm',
+                      boxSizing: 'border-box'
+                    }}
+                  >
+                    {pIndex === 0 ? (
+                      <div className="mb-4 shrink-0" id="modal-measure-header">
+                        <h2 className="text-[13pt] font-bold text-slate-800 truncate mb-2 text-left" style={{ color: "#002775" }}>{task.title}</h2>
+                        <div className="flex justify-between items-end pb-2 border-b border-slate-200">
+                          <div className="flex flex-col flex-1 min-w-0 pr-4 text-left">
+                            <div className="text-[11pt] text-gray-700 flex flex-wrap gap-x-6 gap-y-1 items-center max-w-full font-medium">
+                              <span className="truncate max-w-[200px]">반: {student.className || "__________"}</span>
+                              <span className="shrink-0">이름: {student.name}</span>
+                              <span className="shrink-0">날짜: {new Date().toLocaleDateString('ko-KR')}</span>
+                            </div>
+                          </div>
+                          <div className="flex flex-col items-end justify-end shrink-0 select-none pointer-events-none mb-[-4px] mt-[-28px]">
+                            <div className="text-red-500 font-extrabold text-[24pt] leading-none mb-2 rotate-[-4deg] tracking-wide font-sans">
+                              {taskResult.score}점
+                            </div>
+                            <div className="text-[#002775] font-bold text-[11pt] leading-none pr-1">
+                              리딩과학
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="mb-3 shrink-0" id="modal-measure-header-short">
+                        <div className="flex justify-between items-center pb-1 border-b border-slate-200">
+                          <h2 className="text-[10pt] font-bold text-slate-800 truncate text-left">{task.title}</h2>
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="flex flex-1 relative min-w-0 text-slate-800" style={{ gap: '8mm' }}>
+                      <div className="absolute top-0 bottom-0 left-1/2 border-l border-slate-300 z-20" style={{ transform: "translateX(-50%)" }} />
+                      
+                      <div className="flex-1 flex flex-col z-10 min-w-0 flex-shrink-0" style={{ gap: '14mm', width: 'calc(50% - 4mm)', maxWidth: 'calc(50% - 4mm)' }}>
+                        {(page.left || []).map((item: any, idx: number) => (
+                          <div key={`l-${idx}`}>
+                            {renderItem(item)}
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="flex-1 flex flex-col z-10 min-w-0 flex-shrink-0" style={{ gap: '14mm', width: 'calc(50% - 4mm)', maxWidth: 'calc(50% - 4mm)' }}>
+                        {(page.right || []).map((item: any, idx: number) => (
+                          <div key={`r-${idx}`}>
+                            {renderItem(item)}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div 
+                      className="absolute flex justify-between items-center text-[10pt] text-gray-400 border-t border-gray-100 pt-2 shrink-0"
+                      style={{
+                        bottom: '10mm',
+                        left: '10mm',
+                        right: '10mm',
+                        height: '25px',
+                        boxSizing: 'border-box'
+                      }}
+                    >
+                      <span>리딩과학</span>
+                      <span>{pIndex + 1} / {pages.length}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* 모달 푸터 */}
+            <div className="flex items-center justify-end gap-3 px-6 py-4 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shrink-0">
+              <button
+                type="button"
+                onClick={() => setShowAnswer(!showAnswer)}
+                className={cn(
+                  "flex items-center gap-2 px-3 py-2.5 rounded-xl border text-sm font-semibold transition-all duration-150 shadow-sm mr-auto",
+                  showAnswer
+                    ? "bg-emerald-600 text-white border-emerald-600"
+                    : "bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700"
+                )}
+              >
+                <span
+                  className={cn(
+                    "w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-all",
+                    showAnswer ? "bg-white border-white text-emerald-600" : "border-slate-400 bg-white"
+                  )}
+                >
+                  {showAnswer && (
+                    <svg className="w-2.5 h-2.5" viewBox="0 0 10 10" fill="none">
+                      <path d="M1.5 5L4 7.5L8.5 2.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                </span>
+                정답·해설 보기
+              </button>
+
+              <button 
+                onClick={() => setIsPrintModalOpen(false)}
+                className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-sm transition-all dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
+              >
+                취소
+              </button>
+              <button 
+                onClick={handlePrint}
+                className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-sm shadow-md hover:shadow-lg transition-all"
+              >
+                인쇄
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── 측정 및 페이징 계산용 숨김 컨테이너 ── */}
+      <div className="absolute top-0 left-[-9999px] invisible pointer-events-none" aria-hidden="true" id="modal-measure-container">
+        <div style={{ width: '210mm', padding: '10mm', boxSizing: 'border-box' }}>
+          {gradedQuestions.map((q) => (
+            <div key={`measure-body-${q.id}`} id={`modal-measure-q-body-${q.id}`} className="flex flex-col gap-2 pb-4" style={{ width: 'calc((100% - 8mm) / 2)' }}>
+              {renderItem({ type: 'question', q })}
+            </div>
+          ))}
+          {gradedQuestions.map((q) => (
+            <div key={`measure-exp-${q.id}`} id={`modal-measure-q-exp-${q.id}`} className="flex flex-col gap-2 pb-4" style={{ width: 'calc((100% - 8mm) / 2)' }}>
+              {renderItem({ type: 'explanation', q })}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* 인쇄 전용 영역 Portal */}
+      {isPrinting && typeof window !== "undefined" && createPortal(
+        <div className="print-only-root hidden print:block absolute top-0 left-0 m-0 p-0 bg-white z-[9999]">
+          <style>{`
+            @media print {
+              @page { size: A4 portrait; margin: 0; }
+              html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                background: white !important;
+              }
+              body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+              }
+              body > :not(.print-only-root) {
+                display: none !important;
+              }
+            }
+          `}</style>
+          
+          {pages.map((page, pIndex) => (
+            <div
+              key={`print-${pIndex}`}
+              className="flex flex-col bg-white relative shrink-0"
+              style={{
+                width: '210mm',
+                height: '297mm',
+                minHeight: '297mm',
+                maxHeight: '297mm',
+                paddingTop: '10mm',
+                paddingLeft: '10mm',
+                paddingRight: '10mm',
+                paddingBottom: '20mm',
+                boxSizing: 'border-box',
+                pageBreakAfter: pIndex === pages.length - 1 ? 'auto' : 'always',
+                pageBreakInside: 'avoid',
+                flexShrink: 0
+              }}
+            >
+              {pIndex === 0 ? (
+                <div className="mb-4 shrink-0">
+                  <h2 className="text-[13pt] font-bold text-slate-800 truncate mb-2 text-left" style={{ color: "#002775" }}>{task.title}</h2>
+                  <div className="flex justify-between items-end pb-2 border-b border-slate-200">
+                    <div className="flex flex-col flex-1 min-w-0 pr-4 text-left">
+                      <div className="text-[11pt] text-gray-700 flex flex-wrap gap-x-6 gap-y-1 items-center max-w-full font-medium">
+                        <span className="truncate max-w-[200px]">반: {student.className || "__________"}</span>
+                        <span className="shrink-0">이름: {student.name}</span>
+                        <span className="shrink-0">날짜: {new Date().toLocaleDateString('ko-KR')}</span>
+                      </div>
+                    </div>
+                    <div className="flex flex-col items-end justify-end shrink-0 select-none pointer-events-none mb-[-4px] mt-[-28px]">
+                      <div className="text-red-500 font-extrabold text-[24pt] leading-none mb-2 rotate-[-4deg] tracking-wide font-sans">
+                        {taskResult.score}점
+                      </div>
+                      <div className="text-[#002775] font-bold text-[11pt] leading-none pr-1">
+                        리딩과학
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="mb-3 shrink-0">
+                  <div className="flex justify-between items-center pb-1 border-b border-slate-200">
+                    <h2 className="text-[10pt] font-bold text-slate-800 truncate text-left">{task.title}</h2>
+                  </div>
+                </div>
+              )}
+
+              <div className="flex flex-1 relative min-w-0 text-slate-800" style={{ gap: '8mm' }}>
+                <div className="absolute top-0 bottom-0 left-1/2 border-l border-slate-300 z-20" style={{ transform: "translateX(-50%)" }} />
+                
+                <div className="flex-1 flex flex-col z-10 min-w-0 flex-shrink-0" style={{ gap: '14mm', width: 'calc(50% - 4mm)', maxWidth: 'calc(50% - 4mm)' }}>
+                  {(page.left || []).map((item: any, idx: number) => (
+                    <div key={`l-${idx}`}>
+                      {renderItem(item)}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex-1 flex flex-col z-10 min-w-0 flex-shrink-0" style={{ gap: '14mm', width: 'calc(50% - 4mm)', maxWidth: 'calc(50% - 4mm)' }}>
+                  {(page.right || []).map((item: any, idx: number) => (
+                    <div key={`r-${idx}`}>
+                      {renderItem(item)}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div 
+                className="absolute flex justify-between items-center text-[10pt] text-gray-400 border-t border-gray-100 pt-2 shrink-0"
+                style={{
+                  bottom: '10mm',
+                  left: '10mm',
+                  right: '10mm',
+                  height: '25px',
+                  boxSizing: 'border-box'
+                }}
+              >
+                <span>리딩과학</span>
+                <span>{pIndex + 1} / {pages.length}</span>
+              </div>
+            </div>
+          ))}
+        </div>,
+        document.body
       )}
     </div>
   );
