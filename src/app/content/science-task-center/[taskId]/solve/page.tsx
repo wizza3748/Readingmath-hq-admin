@@ -196,6 +196,13 @@ export default function ScienceSolvePage(props: PageProps) {
     status: "in_progress",
     printStatus: "not_printed"
   };
+  const currentStudentList = React.useMemo(() => [currentStudent], [
+    currentStudent.studentId,
+    currentStudent.studentName,
+    currentStudent.classGroup,
+    currentStudent.status,
+    currentStudent.printStatus
+  ]);
 
   // 모달 상태
   const [showExitModal, setShowExitModal] = useState<boolean>(false);
@@ -1533,7 +1540,7 @@ export default function ScienceSolvePage(props: PageProps) {
                     blockMessage=""
                     printType="student"
                     previewStudentId={currentStudentId}
-                    activeStudents={[currentStudent]}
+                    activeStudents={currentStudentList}
                     color="#002775"
                     split="1"
                     pageMargin={10}
