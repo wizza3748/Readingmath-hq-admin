@@ -961,7 +961,7 @@ export default function PrintPreviewPanel({
       <div className="absolute top-0 left-[-9999px] invisible pointer-events-none" aria-hidden="true">
         <div id="measure-container" style={{ width: '210mm', padding: `${pageMargin}mm`, boxSizing: 'border-box' }}>
           <div id="measure-header">
-            <PageHeader task={task} color={color} showClass={showClass} showName={showName} showDate={showDate} showUnit={showUnit} showLogo={showLogo} previewStudent={activeStudents.find(s => s.studentId === previewStudentId) || null} printType={printType} isStudentView={isStudentView} />
+            <PageHeader task={task} color={color} showClass={showClass} showName={showName} showDate={showDate} showUnit={showUnit} showLogo={showLogo} previewStudent={activeStudents.find(s => s.studentId === previewStudentId) || (isStudentView ? activeStudents[0] : null)} printType={printType} isStudentView={isStudentView} />
           </div>
           <div id="measure-header-short">
             <AbbreviatedPageHeader task={task} color={color} printType={printType} />
@@ -1100,7 +1100,7 @@ export default function PrintPreviewPanel({
               }}
             >
               {pageQuestions.studentPageNo === 1 ? (
-                <PageHeader task={task} color={color} showClass={showClass} showName={showName} showDate={showDate} showUnit={showUnit} showLogo={showLogo} previewStudent={pageQuestions.student} printType={printType} isStudentView={isStudentView} />
+                <PageHeader task={task} color={color} showClass={showClass} showName={showName} showDate={showDate} showUnit={showUnit} showLogo={showLogo} previewStudent={pageQuestions.student || (isStudentView ? activeStudents[0] : null)} printType={printType} isStudentView={isStudentView} />
               ) : (
                 <AbbreviatedPageHeader task={task} color={color} printType={printType} />
               )}
@@ -1196,7 +1196,7 @@ export default function PrintPreviewPanel({
               }}
             >
               {pageQuestions.studentPageNo === 1 ? (
-                <PageHeader task={task} color={color} showClass={showClass} showName={showName} showDate={showDate} showUnit={showUnit} showLogo={showLogo} previewStudent={pageQuestions.student} printType={printType} isStudentView={isStudentView} />
+                <PageHeader task={task} color={color} showClass={showClass} showName={showName} showDate={showDate} showUnit={showUnit} showLogo={showLogo} previewStudent={pageQuestions.student || (isStudentView ? activeStudents[0] : null)} printType={printType} isStudentView={isStudentView} />
               ) : (
                 <AbbreviatedPageHeader task={task} color={color} printType={printType} />
               )}
