@@ -1325,7 +1325,7 @@ export default function ScienceSolvePage(props: PageProps) {
 
           <button
             onClick={() => setIsPrintModalOpen(true)}
-            className="flex items-center space-x-1 rounded-xl border border-gray-200 bg-white px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-850 dark:text-gray-300 dark:hover:bg-gray-800 shadow-sm active:scale-95 transition"
+            className="px-6 py-3 bg-slate-800 hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 text-white text-sm font-extrabold rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center gap-1.5 cursor-pointer"
           >
             <span>출력</span>
           </button>
