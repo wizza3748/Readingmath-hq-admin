@@ -193,7 +193,8 @@ export default function MathSolvePage(props: PageProps) {
     studentId: currentStudentId,
     studentName: "김푸름",
     classGroup: "1반",
-    status: "in_progress"
+    status: "in_progress",
+    printStatus: "not_printed"
   };
 
   // 모달 상태
