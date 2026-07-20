@@ -217,7 +217,7 @@ export function TaskTable({ tasks }: Props) {
     if (taskItem.totalProblems === 0) {
       return { disabled: true, reason: "미리보기할 문제가 없습니다." };
     }
-    const activeStudents = (taskItem.assignedStudents || []).filter(s => s.status !== "canceled");
+    const activeStudents = (taskItem.assignedStudents || []).filter(s => s.status !== ("canceled" as any));
 
     if (taskItem.problemMode === "individual") {
       if (activeStudents.length === 0) {

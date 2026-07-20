@@ -334,8 +334,8 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
           <div className="flex gap-2 self-stretch md:self-auto justify-end">
             <Button
               variant="outline"
-              className="h-9 px-4 text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100/80 font-bold"
-              onClick={() => toast({ title: "학생 계정으로 로그인을 시도합니다!" })}
+              className="h-9 px-4 text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100/80 hover:text-emerald-700 font-bold"
+              onClick={() => router.push("/content/math-home")}
             >
               학생 로그인
             </Button>

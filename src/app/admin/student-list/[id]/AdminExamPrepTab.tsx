@@ -176,7 +176,7 @@ interface CurriculumTreeNode {
 interface AchievementInfo {
   label: string;
   shortLabel: string;
-  icon: "question" | "check" | "crown";
+  icon: "question" | "check" | "crown" | "zap" | "x" | "alert";
   chipBg: string;
   chipBorder: string;
   chipIconColor: string;
