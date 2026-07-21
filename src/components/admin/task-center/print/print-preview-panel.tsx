@@ -1181,16 +1181,23 @@ export default function PrintPreviewPanel({
                       {qItem.type === 'answer_sheet' ? (
                         <AnswerSheet questions={questions} color={color} />
                       ) : (
-                        <QuestionContent 
-                          q={qItem.question!} 
-                          printType={printType} 
-                          task={task} 
-                          color={color} 
-                          fontSize={fontSize} 
-                          onImageLoad={undefined} 
-                          scaleDownChoices={scaleDownIds.includes(qItem.question!.id)} 
-                          itemType={qItem.type}
-                        />
+                        <a
+                          href="/content/science-question-bank/499"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block text-inherit no-underline"
+                        >
+                          <QuestionContent
+                            q={qItem.question!}
+                            printType={printType}
+                            task={task}
+                            color={color}
+                            fontSize={fontSize}
+                            onImageLoad={undefined}
+                            scaleDownChoices={scaleDownIds.includes(qItem.question!.id)}
+                            itemType={qItem.type}
+                          />
+                        </a>
                       )}
                     </div>
                   ))}
@@ -1208,16 +1215,23 @@ export default function PrintPreviewPanel({
                       {qItem.type === 'answer_sheet' ? (
                         <AnswerSheet questions={questions} color={color} />
                       ) : (
-                        <QuestionContent 
-                          q={qItem.question!} 
-                          printType={printType} 
-                          task={task} 
-                          color={color} 
-                          fontSize={fontSize} 
-                          onImageLoad={undefined} 
-                          scaleDownChoices={scaleDownIds.includes(qItem.question!.id)} 
-                          itemType={qItem.type}
-                        />
+                        <a
+                          href="/content/science-question-bank/499"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block text-inherit no-underline"
+                        >
+                          <QuestionContent
+                            q={qItem.question!}
+                            printType={printType}
+                            task={task}
+                            color={color}
+                            fontSize={fontSize}
+                            onImageLoad={undefined}
+                            scaleDownChoices={scaleDownIds.includes(qItem.question!.id)}
+                            itemType={qItem.type}
+                          />
+                        </a>
                       )}
                     </div>
                   ))}
