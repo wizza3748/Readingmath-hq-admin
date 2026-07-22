@@ -76,17 +76,19 @@ import {
 } from "@/lib/task-center-mock";
 import {
   HQ_INSTITUTIONS,
-  HQ_TASK_STATUS_RECORDS,
+  buildHqTaskStatusRecords,
   HqInstitution,
   HqTaskAssignment,
   HqTaskStatusRecord,
 } from "@/lib/hq-task-status-mock";
+import { useTaskCenterStore } from "@/lib/task-center-store";
 import { cn } from "@/lib/utils";
 
 type SubjectFilter = "all" | Subject;
 type StatusFilter = "all" | TaskStatus;
 type ModeFilter = "all" | ProblemMode;
 type SortDirection = "asc" | "desc";
+type QuickDateRange = "yesterday" | "last7" | "last30";
 type SortKey =
   | "uniqueNo"
   | "name"
@@ -181,6 +183,13 @@ const HELP_SECTIONS = [
 
 function formatNumber(value: number) {
   return value.toLocaleString("ko-KR");
+}
+
+function formatDateInput(date: Date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 
 function courseSort(a: string, b: string) {
@@ -289,8 +298,8 @@ function SubjectBadge({ subject }: { subject: Subject }) {
       variant="outline"
       className={
         subject === "math"
-          ? "border-blue-200 bg-blue-50 text-blue-700"
-          : "border-emerald-200 bg-emerald-50 text-emerald-700"
+          ? "whitespace-nowrap border-blue-200 bg-blue-50 text-blue-700"
+          : "whitespace-nowrap border-emerald-200 bg-emerald-50 text-emerald-700"
       }
     >
       {subject === "math" ? "수학" : "과학"}
@@ -486,6 +495,7 @@ function DetailPopover({
 }
 
 export default function TaskStatusDashboard() {
+  const taskCenterTasks = useTaskCenterStore((state) => state.tasks);
   const [draftFilters, setDraftFilters] = React.useState<Filters>(DEFAULT_FILTERS);
   const [appliedFilters, setAppliedFilters] = React.useState<Filters>(DEFAULT_FILTERS);
   const [sortKey, setSortKey] = React.useState<SortKey>("uniqueNo");
@@ -494,10 +504,15 @@ export default function TaskStatusDashboard() {
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(10);
   const [helpOpen, setHelpOpen] = React.useState(false);
+  const [quickDateRange, setQuickDateRange] =
+    React.useState<QuickDateRange | null>(null);
 
   const visibleRecords = React.useMemo(
-    () => HQ_TASK_STATUS_RECORDS.filter((record) => !record.deleted),
-    [],
+    () =>
+      buildHqTaskStatusRecords(taskCenterTasks).filter(
+        (record) => !record.deleted,
+      ),
+    [taskCenterTasks],
   );
 
   const courseOptions = React.useMemo(() => {
@@ -685,7 +700,30 @@ export default function TaskStatusDashboard() {
   const resetSearch = () => {
     setDraftFilters(DEFAULT_FILTERS);
     setAppliedFilters(DEFAULT_FILTERS);
+    setQuickDateRange(null);
     setPage(1);
+  };
+
+  const selectQuickDateRange = (range: QuickDateRange) => {
+    const today = new Date();
+    const startDate = new Date(today);
+    const endDate = new Date(today);
+
+    if (range === "yesterday") {
+      startDate.setDate(startDate.getDate() - 1);
+      endDate.setDate(endDate.getDate() - 1);
+    } else if (range === "last7") {
+      startDate.setDate(startDate.getDate() - 6);
+    } else {
+      startDate.setDate(startDate.getDate() - 29);
+    }
+
+    setDraftFilters((current) => ({
+      ...current,
+      dateFrom: formatDateInput(startDate),
+      dateTo: formatDateInput(endDate),
+    }));
+    setQuickDateRange(range);
   };
 
   const handleSort = (key: SortKey) => {
@@ -700,35 +738,35 @@ export default function TaskStatusDashboard() {
   const summaryCards = [
     {
       title: "과제 수",
-      description: "작성중·게시됨·종료 상태의 과제 수",
+      description: "작성중·게시됨·종료 과제 수",
       value: `${formatNumber(filteredRecords.length)}건`,
       icon: ClipboardList,
       color: "text-blue-600 bg-blue-50",
     },
     {
-      title: "배정 건수",
-      description: "학생에게 배정된 과제 수",
+      title: "학생 배정 건수",
+      description: "학생별 과제 배정 건수",
       value: `${formatNumber(summary.assignedCount)}건`,
       icon: Users,
       color: "text-violet-600 bg-violet-50",
     },
     {
-      title: "제출완료 건수",
-      description: "학생이 제출을 완료한 과제 수",
+      title: "학생 제출완료 건수",
+      description: "학생별 과제 제출완료 건수",
       value: `${formatNumber(summary.submittedCount)}건`,
       icon: CheckCircle2,
       color: "text-emerald-600 bg-emerald-50",
     },
     {
       title: "제출률",
-      description: "배정 건수 대비 제출완료 비율",
+      description: "배정 건수 대비 제출완료 건수 비율",
       value: `${submissionRate}%`,
       icon: Percent,
       color: "text-orange-600 bg-orange-50",
     },
     {
       title: "평균 점수",
-      description: "제출완료 학생 과제의 평균 점수",
+      description: "제출완료 학생 과제 평균 점수",
       value: averageScore === null ? "-" : `${averageScore}점`,
       icon: BarChart3,
       color: "text-rose-600 bg-rose-50",
@@ -737,8 +775,8 @@ export default function TaskStatusDashboard() {
 
   return (
     <TooltipProvider>
-      <div className="min-h-screen bg-[#f4f6f9] pb-16">
-        <div className="flex items-center justify-between px-6 pt-5 pb-1">
+      <div className="min-h-screen w-full min-w-0 max-w-full overflow-x-hidden bg-[#f4f6f9] pb-16">
+        <div className="flex w-full min-w-0 max-w-full items-center justify-between px-6 pt-5 pb-1">
           <div className="flex items-center gap-3">
             <h1 className="text-[1.5rem] font-bold text-foreground">과제 현황</h1>
             <Button
@@ -752,8 +790,8 @@ export default function TaskStatusDashboard() {
           </div>
         </div>
 
-        <div className="space-y-4 px-6 py-5">
-          <Card className="border-slate-200/80 shadow-sm">
+        <div className="w-full min-w-0 max-w-full space-y-4 px-6 py-5">
+          <Card className="w-full min-w-0 border-slate-200/80 shadow-sm">
             <CardContent className="space-y-4 p-5">
               <div className="flex flex-wrap items-end gap-x-5 gap-y-4">
                 <div className="space-y-1.5">
@@ -771,7 +809,7 @@ export default function TaskStatusDashboard() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <span className="text-xs font-semibold text-muted-foreground">기관</span>
+                  <span className="block text-xs font-semibold text-muted-foreground">기관</span>
                   <InstitutionMultiSelect
                     institutions={HQ_INSTITUTIONS}
                     value={draftFilters.institutionIds}
@@ -876,82 +914,107 @@ export default function TaskStatusDashboard() {
                   />
                 </div>
 
-                <div className="space-y-1.5">
-                  <span className="text-xs font-semibold text-muted-foreground">생성일</span>
-                  <div className="flex items-center gap-2">
-                    <Input
-                      type="date"
-                      aria-label="생성일 시작일"
-                      value={draftFilters.dateFrom}
-                      onChange={(event) =>
-                        setDraftFilters((current) => ({
-                          ...current,
-                          dateFrom: event.target.value,
-                        }))
-                      }
-                      className="h-9 w-[145px] bg-white"
-                    />
-                    <span className="text-muted-foreground">~</span>
-                    <Input
-                      type="date"
-                      aria-label="생성일 종료일"
-                      value={draftFilters.dateTo}
-                      onChange={(event) =>
-                        setDraftFilters((current) => ({
-                          ...current,
-                          dateTo: event.target.value,
-                        }))
-                      }
-                      className="h-9 w-[145px] bg-white"
-                    />
+                <div className="flex w-full min-w-0 flex-wrap items-end gap-x-5 gap-y-4">
+                  <div className="space-y-1.5">
+                    <span className="text-xs font-semibold text-muted-foreground">생성일</span>
+                    <div className="flex flex-wrap items-center gap-2">
+                    <div className="flex items-center gap-2">
+                      <Input
+                        type="date"
+                        aria-label="생성일 시작일"
+                        value={draftFilters.dateFrom}
+                        onChange={(event) => {
+                          setDraftFilters((current) => ({
+                            ...current,
+                            dateFrom: event.target.value,
+                          }));
+                          setQuickDateRange(null);
+                        }}
+                        className="h-9 w-[145px] bg-white"
+                      />
+                      <span className="text-muted-foreground">~</span>
+                      <Input
+                        type="date"
+                        aria-label="생성일 종료일"
+                        value={draftFilters.dateTo}
+                        onChange={(event) => {
+                          setDraftFilters((current) => ({
+                            ...current,
+                            dateTo: event.target.value,
+                          }));
+                          setQuickDateRange(null);
+                        }}
+                        className="h-9 w-[145px] bg-white"
+                      />
+                    </div>
+                      <div className="flex items-center gap-1" role="group" aria-label="빠른 날짜 선택">
+                        {[
+                          { value: "yesterday" as const, label: "어제" },
+                          { value: "last7" as const, label: "최근 7일" },
+                          { value: "last30" as const, label: "최근 30일" },
+                        ].map((option) => (
+                          <Button
+                            key={option.value}
+                            type="button"
+                            size="sm"
+                            variant={quickDateRange === option.value ? "default" : "outline"}
+                            aria-pressed={quickDateRange === option.value}
+                            onClick={() => selectQuickDateRange(option.value)}
+                            className="h-9 whitespace-nowrap px-3"
+                          >
+                            {option.label}
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex min-w-[420px] flex-1 flex-wrap items-center gap-2">
+                  <Input
+                    aria-label="검색어"
+                    placeholder="과제명, 단원명, 유형명 검색"
+                    value={draftFilters.keyword}
+                    onChange={(event) =>
+                      setDraftFilters((current) => ({
+                        ...current,
+                        keyword: event.target.value,
+                      }))
+                    }
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" && !searchDisabled) applySearch();
+                    }}
+                    className="h-9 min-w-[280px] flex-1 bg-white"
+                  />
+                  <Button
+                    size="sm"
+                    onClick={applySearch}
+                    disabled={searchDisabled}
+                    className="h-9 gap-1.5 px-4"
+                  >
+                    <Search className="h-4 w-4" /> 검색
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={resetSearch}
+                    className="h-9 gap-1.5 bg-white px-4"
+                  >
+                    <RotateCcw className="h-4 w-4" /> 초기화
+                  </Button>
+                  <span className="ml-auto whitespace-nowrap text-sm font-semibold text-muted-foreground">
+                    조회 건수: {formatNumber(filteredRecords.length)}건
+                  </span>
                   </div>
                 </div>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-2 border-t border-slate-100 pt-4">
-                <Input
-                  aria-label="검색어"
-                  placeholder="과제명, 단원명, 유형명 검색"
-                  value={draftFilters.keyword}
-                  onChange={(event) =>
-                    setDraftFilters((current) => ({
-                      ...current,
-                      keyword: event.target.value,
-                    }))
-                  }
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter" && !searchDisabled) applySearch();
-                  }}
-                  className="h-9 min-w-[280px] flex-1 bg-white"
-                />
-                <Button
-                  size="sm"
-                  onClick={applySearch}
-                  disabled={searchDisabled}
-                  className="h-9 gap-1.5 px-4"
-                >
-                  <Search className="h-4 w-4" /> 검색
-                </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  onClick={resetSearch}
-                  className="h-9 gap-1.5 bg-white px-4"
-                >
-                  <RotateCcw className="h-4 w-4" /> 초기화
-                </Button>
-                <span className="ml-auto whitespace-nowrap text-sm font-semibold text-muted-foreground">
-                  조회 건수: {formatNumber(filteredRecords.length)}건
-                </span>
               </div>
             </CardContent>
           </Card>
 
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-5">
+          <div className="grid w-full min-w-0 grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-5">
             {summaryCards.map((card) => {
               const Icon = card.icon;
               return (
-                <Card key={card.title} className="border-slate-200/80 shadow-sm">
+                <Card key={card.title} className="min-w-0 border-slate-200/80 shadow-sm">
                   <CardContent className="flex h-full items-start justify-between gap-3 p-4">
                     <div className="min-w-0">
                       <p className="text-sm font-semibold text-muted-foreground">{card.title}</p>
@@ -967,9 +1030,9 @@ export default function TaskStatusDashboard() {
             })}
           </div>
 
-          <Card className="overflow-hidden border-slate-200/80 shadow-sm">
-            <CardContent className="p-0">
-              <div className="overflow-x-auto">
+          <Card className="w-full min-w-0 overflow-hidden border-slate-200/80 shadow-sm">
+            <CardContent className="min-w-0 p-0">
+              <div className="w-full min-w-0 max-w-full overflow-hidden [&>div]:w-full [&>div]:max-w-full [&>div]:overflow-x-auto">
                 <Table className="min-w-[2100px]">
                   <TableHeader>
                     <TableRow className="bg-slate-50/80">
@@ -992,7 +1055,7 @@ export default function TaskStatusDashboard() {
                         <SortableHeader label="문제 수" sortKey="problemCount" activeKey={sortKey} direction={sortDirection} onSort={handleSort} />
                       </TableHead>
                       <TableHead className="min-w-[150px]">난이도</TableHead>
-                      <TableHead className="w-[110px]">문제 구성 방식</TableHead>
+                      <TableHead className="w-[110px] whitespace-nowrap">문제 구성 방식</TableHead>
                       <TableHead className="w-[160px]">
                         <SortableHeader label="생성일시" sortKey="createdAt" activeKey={sortKey} direction={sortDirection} onSort={handleSort} />
                       </TableHead>

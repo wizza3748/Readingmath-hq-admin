@@ -1,6 +1,5 @@
 import {
   Difficulty,
-  INITIAL_TASKS,
   ProblemMode,
   Subject,
   TaskItem,
@@ -46,18 +45,34 @@ export interface HqTaskStatusRecord {
 }
 
 export const HQ_INSTITUTIONS: HqInstitution[] = [
-  { id: "inst-gangnam", name: "리딩수학 강남센터" },
-  { id: "inst-guro", name: "리딩수학 구로센터" },
-  { id: "inst-bundang", name: "리딩수학 분당센터" },
-  { id: "inst-songdo", name: "리딩수학 송도센터" },
-  { id: "inst-suwon", name: "리딩수학 수원센터" },
-  { id: "inst-ilsan", name: "리딩수학 일산센터" },
+  { id: "inst-topbrain", name: "탑브레인수학과학학원" },
+  { id: "inst-aplus", name: "에이플러스학원" },
+  { id: "inst-cnd", name: "씨앤디영재아카데미" },
+  { id: "inst-mathfox", name: "수학여우학원" },
+  { id: "inst-wisdom", name: "지혜의수학" },
+  { id: "inst-uni", name: "유앤아이수학과학학원" },
+  { id: "inst-tid", name: "티아이디영수학원" },
+  { id: "inst-pleria", name: "플리아수학" },
+  { id: "inst-facto", name: "생각이커는팩토수학학원" },
+  { id: "inst-imagination", name: "상상수학" },
+  { id: "inst-yangjeong", name: "양정대입학원" },
 ].sort((a, b) => a.name.localeCompare(b.name, "ko"));
 
 const DIFFICULTY_ORDER: Difficulty[] = ["basic", "intermediate", "advanced"];
 
 function uniqueInOrder(values: string[]) {
   return Array.from(new Set(values));
+}
+
+function getMockCreatedAt(index: number, totalTasks: number) {
+  const latestFirstIndex = totalTasks - 1 - index;
+  const daysAgo = Math.round(
+    (latestFirstIndex * 21) / Math.max(1, totalTasks - 1),
+  );
+  const createdAt = new Date();
+  createdAt.setHours(9 + ((index * 3) % 10), (index * 17) % 60, 0, 0);
+  createdAt.setDate(createdAt.getDate() - daysAgo);
+  return createdAt.toISOString();
 }
 
 function getScore(task: TaskItem, studentIndex: number) {
@@ -113,7 +128,11 @@ function buildAssignments(task: TaskItem, taskIndex: number): HqTaskAssignment[]
   return assignments;
 }
 
-function buildRecord(task: TaskItem, index: number): HqTaskStatusRecord {
+function buildRecord(
+  task: TaskItem,
+  index: number,
+  totalTasks: number,
+): HqTaskStatusRecord {
   const institution = HQ_INSTITUTIONS[index % HQ_INSTITUTIONS.length];
   const units = uniqueInOrder(
     task.selectedTypes.map((type) => `${type.majorUnit} > ${type.minorUnit}`),
@@ -151,19 +170,31 @@ function buildRecord(task: TaskItem, index: number): HqTaskStatusRecord {
     types: Array.from(typeMap.values()),
     typeCount: typeMap.size,
     totalProblems: task.totalProblems,
-    createdAt: task.createdAt,
+    createdAt: getMockCreatedAt(index, totalTasks),
     assignments: buildAssignments(task, index),
   };
 }
 
-const ACTIVE_RECORDS = INITIAL_TASKS.map(buildRecord);
+export function buildHqTaskStatusRecords(
+  tasks: TaskItem[],
+): HqTaskStatusRecord[] {
+  const orderedTasks = [...tasks].sort((a, b) => {
+    if (a.subject === b.subject) return 0;
+    return a.subject === "science" ? -1 : 1;
+  });
+  const activeRecords = orderedTasks.map((task, index) =>
+    buildRecord(task, index, orderedTasks.length),
+  );
 
-export const HQ_TASK_STATUS_RECORDS: HqTaskStatusRecord[] = [
-  ...ACTIVE_RECORDS,
-  {
-    ...ACTIVE_RECORDS[0],
-    id: "task-deleted-mock",
-    uniqueNo: 4999,
-    deleted: true,
-  },
-];
+  if (activeRecords.length === 0) return [];
+
+  return [
+    ...activeRecords,
+    {
+      ...activeRecords[0],
+      id: "task-deleted-mock",
+      uniqueNo: 4999,
+      deleted: true,
+    },
+  ];
+}

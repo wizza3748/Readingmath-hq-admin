@@ -53,9 +53,11 @@ export default function ConditionalLayout({
         <body className="font-body antialiased" suppressHydrationWarning>
             <FirebaseClientProvider>
                 <SidebarLayout defaultOpen={sidebarDefaultOpen}>
-                    {!isLearningOperationsTaskStatus && <SidebarStateController />}
-                    {!isLearningOperationsTaskStatus && <AppSidebar />}
-                    <SidebarInset>
+                    <SidebarStateController />
+                    <AppSidebar />
+                    <SidebarInset
+                        className={isLearningOperationsTaskStatus ? "min-w-0 overflow-x-hidden" : undefined}
+                    >
                         <Header />
                         <main>{children}</main>
                     </SidebarInset>
