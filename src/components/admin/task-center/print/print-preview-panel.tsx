@@ -969,6 +969,34 @@ export default function PrintPreviewPanel({
     ? { transform: "scale(var(--fit-scale))", transformOrigin: "top center" }
     : { transform: `scale(${zoom})`, transformOrigin: "top center" };
 
+  const renderPreviewQuestion = (qItem: PrintItem) => {
+    const content = (
+      <QuestionContent
+        q={qItem.question!}
+        printType={printType}
+        task={task}
+        color={color}
+        fontSize={fontSize}
+        onImageLoad={undefined}
+        scaleDownChoices={scaleDownIds.includes(qItem.question!.id)}
+        itemType={qItem.type}
+      />
+    );
+
+    if (isStudentView) return content;
+
+    return (
+      <a
+        href="/content/science-question-bank/499"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block text-inherit no-underline"
+      >
+        {content}
+      </a>
+    );
+  };
+
   return (
     <div className="flex flex-col h-full print:h-auto relative">
       <style>{`
@@ -1181,23 +1209,7 @@ export default function PrintPreviewPanel({
                       {qItem.type === 'answer_sheet' ? (
                         <AnswerSheet questions={questions} color={color} />
                       ) : (
-                        <a
-                          href="/content/science-question-bank/499"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block text-inherit no-underline"
-                        >
-                          <QuestionContent
-                            q={qItem.question!}
-                            printType={printType}
-                            task={task}
-                            color={color}
-                            fontSize={fontSize}
-                            onImageLoad={undefined}
-                            scaleDownChoices={scaleDownIds.includes(qItem.question!.id)}
-                            itemType={qItem.type}
-                          />
-                        </a>
+                        renderPreviewQuestion(qItem)
                       )}
                     </div>
                   ))}
@@ -1215,23 +1227,7 @@ export default function PrintPreviewPanel({
                       {qItem.type === 'answer_sheet' ? (
                         <AnswerSheet questions={questions} color={color} />
                       ) : (
-                        <a
-                          href="/content/science-question-bank/499"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block text-inherit no-underline"
-                        >
-                          <QuestionContent
-                            q={qItem.question!}
-                            printType={printType}
-                            task={task}
-                            color={color}
-                            fontSize={fontSize}
-                            onImageLoad={undefined}
-                            scaleDownChoices={scaleDownIds.includes(qItem.question!.id)}
-                            itemType={qItem.type}
-                          />
-                        </a>
+                        renderPreviewQuestion(qItem)
                       )}
                     </div>
                   ))}
