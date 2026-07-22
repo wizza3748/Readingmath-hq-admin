@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useTaskCenterStore } from "@/lib/task-center-store";
 import { TaskStatusBadge } from "../task-status-badge";
 import { ChevronLeft } from "lucide-react";
@@ -18,6 +18,14 @@ interface Props {
 
 export default function TaskPrintView({ taskId }: Props) {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const isHqView = searchParams.get("source") === "hq-task-status";
+  const institutionId = searchParams.get("institutionId") ?? "";
+  const detailUrl = `/admin/task-center/${taskId}${
+    isHqView
+      ? `?source=hq-task-status&institutionId=${encodeURIComponent(institutionId)}`
+      : ""
+  }`;
   const { tasks } = useTaskCenterStore();
   const task = tasks.find((t) => t.id === taskId);
 
@@ -171,7 +179,7 @@ export default function TaskPrintView({ taskId }: Props) {
       {/* ── 상단 영역 ── */}
       <div className="px-6 pt-5 pb-4 bg-white border-b border-slate-200/80 print:hidden">
         <button
-          onClick={() => router.push(`/admin/task-center/${taskId}`)}
+          onClick={() => router.push(detailUrl)}
           className="flex items-center text-sm text-gray-500 hover:text-gray-900 transition-colors mb-2"
         >
           <ChevronLeft className="w-4 h-4 mr-1" />
@@ -265,6 +273,7 @@ export default function TaskPrintView({ taskId }: Props) {
               selectedStudentIds={selectedStudentIds}
               setPreviewStudentId={setPreviewStudentId}
               answerOnlyMode={answerOnlyMode}
+              enableQuestionLinks={isHqView}
             />
           </div>
         </div>
@@ -272,7 +281,7 @@ export default function TaskPrintView({ taskId }: Props) {
 
       {/* 하단 바 */}
       <PrintBottomBar 
-        onBack={() => router.push(`/admin/task-center/${taskId}`)}
+        onBack={() => router.push(detailUrl)}
         onReset={handleReset}
         onPrint={handlePrint}
         isBlocked={isBlocked}

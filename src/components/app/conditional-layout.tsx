@@ -16,6 +16,9 @@ export default function ConditionalLayout({
     children: React.ReactNode;
 }) {
     const pathname = usePathname();
+    const isLearningOperationsTaskStatus = pathname?.startsWith(
+        "/learning-operations/task-status"
+    );
     // P0-1: exam-prep, science-home, math-home, science-task-center 및 math-task-center 하위 경로 전체에서 사이드바 및 글로벌 헤더 미노출 보장
     const isStandalone = 
         pathname?.startsWith("/content/exam-prep") || 
@@ -50,8 +53,8 @@ export default function ConditionalLayout({
         <body className="font-body antialiased" suppressHydrationWarning>
             <FirebaseClientProvider>
                 <SidebarLayout defaultOpen={sidebarDefaultOpen}>
-                    <SidebarStateController />
-                    <AppSidebar />
+                    {!isLearningOperationsTaskStatus && <SidebarStateController />}
+                    {!isLearningOperationsTaskStatus && <AppSidebar />}
                     <SidebarInset>
                         <Header />
                         <main>{children}</main>

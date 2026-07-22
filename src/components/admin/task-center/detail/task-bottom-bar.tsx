@@ -23,9 +23,10 @@ interface Props {
   totalProblems: number;
   onSave: () => void;
   onListClick: () => void;
+  hqInstitutionId?: string;
 }
 
-export function TaskBottomBar({ task, isCreate, isSaving, totalProblems, onSave, onListClick }: Props) {
+export function TaskBottomBar({ task, isCreate, isSaving, totalProblems, onSave, onListClick, hqInstitutionId }: Props) {
   const router = useRouter();
   const { toast } = useToast();
   const { deleteTask, endTask } = useTaskCenterStore();
@@ -162,6 +163,14 @@ export function TaskBottomBar({ task, isCreate, isSaving, totalProblems, onSave,
     return { disabled: false, reason: "" };
   }, [task, totalProblems, isStudentSelectable]);
 
+  const printUrl = task
+    ? `/admin/task-center/${task.id}/print${
+        hqInstitutionId !== undefined
+          ? `?source=hq-task-status&institutionId=${encodeURIComponent(hqInstitutionId)}`
+          : ""
+      }`
+    : "";
+
   return (
     <>
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-[2px] border-t border-slate-200 px-6 py-4 flex items-center justify-between shadow-[0_-6px_20px_-4px_rgba(0,0,0,0.06)]">
@@ -187,7 +196,7 @@ export function TaskBottomBar({ task, isCreate, isSaving, totalProblems, onSave,
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => router.push(`/admin/task-center/${task.id}/print`)}
+                onClick={() => router.push(printUrl)}
                 disabled={printStatus.disabled}
                 className="gap-2"
               >

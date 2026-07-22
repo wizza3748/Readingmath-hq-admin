@@ -125,6 +125,7 @@ interface Props {
   setPreviewStudentId?: (id: string) => void;
   answerOnlyMode?: boolean;
   isStudentView?: boolean;
+  enableQuestionLinks?: boolean;
 }
 
 export interface PrintItem {
@@ -486,7 +487,7 @@ export default function PrintPreviewPanel({
   task, isBlocked, blockMessage, printType, previewStudentId, activeStudents,
   color, split, pageMargin, problemGap, fontSize, showClass, showName, showDate, showUnit, showLogo,
   printTarget = "all", selectedStudentIds = [], setPreviewStudentId,
-  answerOnlyMode = false, isStudentView = false
+  answerOnlyMode = false, isStudentView = false, enableQuestionLinks = false
 }: Props) {
   
   const scrollRef = React.useRef<HTMLDivElement>(null);
@@ -983,7 +984,7 @@ export default function PrintPreviewPanel({
       />
     );
 
-    if (isStudentView) return content;
+    if (!enableQuestionLinks) return content;
 
     return (
       <a

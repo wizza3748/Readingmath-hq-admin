@@ -27,6 +27,10 @@ export default function TaskDetail({ taskId }: Props) {
 
   const router = useRouter();
   const searchParams = useSearchParams();
+  const hqInstitutionId =
+    searchParams.get("source") === "hq-task-status"
+      ? searchParams.get("institutionId") ?? ""
+      : undefined;
   const { toast } = useToast();
   const { tasks, addTask, updateTask, setCurrentSubject } = useTaskCenterStore();
 
@@ -419,6 +423,7 @@ export default function TaskDetail({ taskId }: Props) {
         totalProblems={totalProblems}
         onSave={handleSave}
         onListClick={handleListClick}
+        hqInstitutionId={hqInstitutionId}
       />
 
       {/* 목록 이동 확인창 */}
