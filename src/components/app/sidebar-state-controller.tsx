@@ -8,6 +8,7 @@ const SIDEBAR_CLOSE_PATHS = [
   "/admin/task-center",
   "/admin/teacher-list",
   "/admin/student-list",
+  "/learning-operations/task-status",
 ];
 
 function isClosePath(pathname: string | null): boolean {

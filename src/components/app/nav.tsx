@@ -80,6 +80,13 @@ const navConfig: NavItem[] = [
     ],
   },
   {
+    title: "학습운영관리",
+    icon: <ClipboardList />,
+    children: [
+      { title: "과제 현황", href: "/learning-operations/task-status" },
+    ],
+  },
+  {
     title: "선생님관리(B2C)",
     icon: <Users />,
     children: [

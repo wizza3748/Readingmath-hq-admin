@@ -18,6 +18,13 @@ type WorkItem = {
 
 const hqWorkItems: WorkItem[] = [
   {
+    id: "RM-422",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-422",
+    title: "[본사] 학습운영관리 > 과제 현황",
+    internalUrl: "/learning-operations/task-status",
+    isNew: true,
+  },
+  {
     id: "RM-267",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-267",
     title: "[본사] 지사관리 및 지사 정산 조회 기능 개발",
