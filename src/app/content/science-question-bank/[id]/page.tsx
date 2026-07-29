@@ -171,6 +171,24 @@ export default function SubUnitTypeDetailPage() {
         );
     };
 
+    const handleTaskPrint = () => {
+        const printParams = new URLSearchParams({
+            source: "science-question-bank",
+            questionBankId: params.id,
+            questionCount: String(questions.length),
+            course: "초등 3-2",
+            majorUnit: "1단원 - 물체와 물질",
+            minorUnit: "물질의 성질, 물체의 분류",
+            typeName: formData.name,
+        });
+
+        window.open(
+            `/admin/task-center/task-001/print?${printParams.toString()}`,
+            "_blank",
+            "noopener,noreferrer"
+        );
+    };
+
     const difficultyVariant: Record<string, "default" | "secondary" | "destructive" | "outline"> = {
         "기본": "secondary",
         "실력": "default",
@@ -429,9 +447,19 @@ export default function SubUnitTypeDetailPage() {
                         <Button variant="outline" className="flex gap-2" onClick={() => router.push("/content/science-question-bank")}>
                             <List className="h-4 w-4" /> 목록
                         </Button>
-                        <Button variant="outline" className="flex gap-2" onClick={handlePreview}>
-                            <Eye className="h-4 w-4" /> 미리보기
-                        </Button>
+                        <div className="flex items-center gap-2">
+                            <Button variant="outline" className="flex gap-2" onClick={handlePreview}>
+                                <Eye className="h-4 w-4" /> 미리보기
+                            </Button>
+                            <Button
+                                variant="outline"
+                                className="flex gap-2"
+                                onClick={handleTaskPrint}
+                                disabled={questions.length === 0}
+                            >
+                                <FileText className="h-4 w-4" /> 과제 출력
+                            </Button>
+                        </div>
                     </div>
                 </TabsContent>
             </Tabs>

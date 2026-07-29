@@ -20,14 +20,61 @@ export default function TaskPrintView({ taskId }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const isHqView = searchParams.get("source") === "hq-task-status";
+  const isQuestionBankPrint = searchParams.get("source") === "science-question-bank";
   const institutionId = searchParams.get("institutionId") ?? "";
-  const detailUrl = `/admin/task-center/${taskId}${
-    isHqView
-      ? `?source=hq-task-status&institutionId=${encodeURIComponent(institutionId)}`
-      : ""
-  }`;
+  const questionBankId = searchParams.get("questionBankId") ?? "";
+  const questionCount = Math.max(0, Number.parseInt(searchParams.get("questionCount") ?? "0", 10) || 0);
+  const course = searchParams.get("course") ?? "";
+  const majorUnit = searchParams.get("majorUnit") ?? "";
+  const minorUnit = searchParams.get("minorUnit") ?? "";
+  const typeName = searchParams.get("typeName") ?? "";
+  const detailUrl = isQuestionBankPrint
+    ? `/content/science-question-bank/${questionBankId}?tab=questions`
+    : `/admin/task-center/${taskId}${
+        isHqView
+          ? `?source=hq-task-status&institutionId=${encodeURIComponent(institutionId)}`
+          : ""
+      }`;
   const { tasks } = useTaskCenterStore();
-  const task = tasks.find((t) => t.id === taskId);
+  const storedTask = tasks.find((t) => t.id === taskId);
+  const task = React.useMemo(() => {
+    if (!isQuestionBankPrint || !storedTask) return storedTask;
+
+    const selectedType = storedTask.selectedTypes[0];
+    return {
+      ...storedTask,
+      subject: "science" as const,
+      name: "문제은행 출력 테스트",
+      course,
+      problemMode: "same" as const,
+      onlyImportant: false,
+      selectedTypes: selectedType
+        ? [{
+            ...selectedType,
+            curriculumId: `science-question-bank-${questionBankId}`,
+            course,
+            typeId: `science-question-bank-${questionBankId}`,
+            majorUnit,
+            minorUnit,
+            typeName,
+            problemCount: questionCount,
+          }]
+        : [],
+      totalProblems: questionCount,
+      assignedStudents: [],
+      assignedClasses: [],
+      individualStudentIds: [],
+    };
+  }, [
+    course,
+    isQuestionBankPrint,
+    majorUnit,
+    minorUnit,
+    questionBankId,
+    questionCount,
+    storedTask,
+    typeName,
+  ]);
 
   // States
   const [printType, setPrintType] = React.useState<"student" | "teacher">("student");
