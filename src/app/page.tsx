@@ -21,7 +21,7 @@ const hqWorkItems: WorkItem[] = [
     id: "RM-429",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-429",
     title: "[본사] 문제은행 과제 출력 기능 추가",
-    internalUrl: "/content/science-question-bank/499",
+    internalUrl: "/content/science-question-bank/499?tab=questions",
     isNew: true,
   },
   {
