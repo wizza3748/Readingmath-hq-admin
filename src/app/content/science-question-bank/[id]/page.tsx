@@ -14,7 +14,7 @@ import {
     AlertCircle
 } from "lucide-react";
 import Link from "next/link";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { useRouter, useSearchParams, usePathname, useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -71,10 +71,17 @@ const mockQuestions: Question[] = [
     { id: "3", number: 3, questionId: "Q-1003", stem: "금속으로 만든 물체의 공통적인 성질은...", type: "객관식", difficulty: "기본", isInspected: true },
 ];
 
-export default function SubUnitTypeDetailPage({ params }: { params: { id: string } }) {
+const SCIENCE_QUESTION_PREVIEW = {
+    typeId: "sc-중1-1-s0-r3-basic-basic",
+    name: "각 탐구 단계에 대한 옳은 설명 고르기",
+    gradeTerm: "중1-1",
+};
+
+export default function SubUnitTypeDetailPage() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const pathname = usePathname();
+    const params = useParams<{ id: string }>();
     const [activeTab, setActiveTab] = React.useState("info");
     const [questions, setQuestions] = React.useState<Question[]>(mockQuestions);
 
@@ -146,6 +153,22 @@ export default function SubUnitTypeDetailPage({ params }: { params: { id: string
 
     const handleBulkInspection = () => {
         setQuestions(prev => prev.map(q => ({ ...q, isInspected: true })));
+    };
+
+    const handlePreview = () => {
+        const previewParams = new URLSearchParams({
+            typeId: SCIENCE_QUESTION_PREVIEW.typeId,
+            name: SCIENCE_QUESTION_PREVIEW.name,
+            gradeTerm: SCIENCE_QUESTION_PREVIEW.gradeTerm,
+            sessionId: `question-bank-preview-${params.id}`,
+            preview: "true",
+        });
+
+        window.open(
+            `/content/science-exam-prep/solve?${previewParams.toString()}`,
+            "_blank",
+            "noopener,noreferrer"
+        );
     };
 
     const difficultyVariant: Record<string, "default" | "secondary" | "destructive" | "outline"> = {
@@ -406,7 +429,7 @@ export default function SubUnitTypeDetailPage({ params }: { params: { id: string
                         <Button variant="outline" className="flex gap-2" onClick={() => router.push("/content/science-question-bank")}>
                             <List className="h-4 w-4" /> 목록
                         </Button>
-                        <Button variant="outline" className="flex gap-2">
+                        <Button variant="outline" className="flex gap-2" onClick={handlePreview}>
                             <Eye className="h-4 w-4" /> 미리보기
                         </Button>
                     </div>

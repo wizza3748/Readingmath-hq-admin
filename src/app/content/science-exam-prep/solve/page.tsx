@@ -213,6 +213,7 @@ function ScienceSolveContent() {
   const searchParams = useSearchParams();
   const typeId = searchParams.get("typeId") || "";
   const typeName = searchParams.get("name") || "";
+  const isPreviewMode = searchParams.get("preview") === "true";
 
   // typeId로 원본 유형 데이터 찾기
   const rawTypeId = typeId.replace(/-(basic|skill|advanced)$/, "");
@@ -317,7 +318,7 @@ function ScienceSolveContent() {
     // 번호 배지 스타일 (기본은 border-gray-300 bg-white text-gray-600)
     let badgeClass = "border-gray-300 bg-white text-gray-600 dark:border-gray-650 dark:bg-gray-800 dark:text-gray-300";
 
-    if (isSubmitted) {
+    if (isAnswerRevealed) {
       if (isCorrectChoice) {
         buttonClass = "border-emerald-500 bg-emerald-50/40 text-emerald-900 dark:bg-emerald-950/20 dark:text-emerald-100 font-bold shadow-sm";
         badgeClass = "border-emerald-500 bg-emerald-500 text-white";
@@ -345,7 +346,7 @@ function ScienceSolveContent() {
     return (
       <button
         key={idx}
-        disabled={isSubmitted}
+        disabled={isAnswerRevealed}
         onClick={() => handleSelectChoice(idx)}
         className={cn(
           "text-left rounded-xl border flex items-center justify-start transition-all duration-150 cursor-pointer group/opt",
@@ -383,17 +384,21 @@ function ScienceSolveContent() {
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showExitModal, setShowExitModal] = useState<boolean>(false);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [showPreviewAnswer, setShowPreviewAnswer] = useState<boolean>(false);
+  const [isPreviewPanelOpen, setIsPreviewPanelOpen] = useState<boolean>(true);
   
   // 성취도 실시간 갱신 감지용 버전 상태
   const [historyVersion, setHistoryVersion] = useState<number>(0);
 
   const combinedHistory = useMemo(() => {
+    if (isPreviewMode) return [];
     return getCombinedTypeHistory(typeId, "science");
-  }, [typeId, historyVersion]);
+  }, [isPreviewMode, typeId, historyVersion]);
 
   const currentStatus = useMemo(() => {
+    if (isPreviewMode) return "none";
     return evaluateAchievementStatus(typeId, "science");
-  }, [typeId, historyVersion]);
+  }, [isPreviewMode, typeId, historyVersion]);
   
   // 진입 차단(에러) 상태
   const [isBlocked, setIsBlocked] = useState<boolean>(false);
@@ -433,6 +438,19 @@ function ScienceSolveContent() {
     const pool = poolIds
       .map(id => SCIENCE_PRINT_SAMPLES.find(q => q.id === id))
       .filter((q): q is any => !!q);
+
+    if (isPreviewMode) {
+      if (pool.length === 0) {
+        setIsBlocked(true);
+        return;
+      }
+
+      setSessionQuestions(pool);
+      setCurrentIdx(0);
+      setUserAnswers({});
+      setIsBlocked(false);
+      return;
+    }
 
     // 3. 진입 방어 검증 (문항 풀 검증)
     if (pool.length < count) {
@@ -494,7 +512,7 @@ function ScienceSolveContent() {
     setCurrentIdx(0);
     setUserAnswers({});
     setIsBlocked(false);
-  }, [typeId]);
+  }, [isPreviewMode, typeId]);
 
   // 문항 복원 및 초기화
   useEffect(() => {
@@ -568,9 +586,15 @@ function ScienceSolveContent() {
   const questionSample = sessionQuestions[currentIdx];
   const isChoiceType = questionSample?.choices && questionSample.choices.length > 0;
   const isAnswered = isChoiceType ? selectedChoice !== null : inputText.trim() !== "";
+  const isAnswerRevealed = isSubmitted || (isPreviewMode && showPreviewAnswer);
 
   // 뒤로가기 클릭 시 이탈 방지 처리
   const handleBack = () => {
+    if (isPreviewMode) {
+      window.close();
+      return;
+    }
+
     if (!isSubmitted || currentIdx < sessionQuestions.length - 1) {
       setShowExitModal(true);
     } else {
@@ -580,6 +604,7 @@ function ScienceSolveContent() {
 
   // 답안 제출 채점 로직
   const handleSubmit = () => {
+    if (isPreviewMode) return;
     if (!isAnswered || isSubmitted || !questionSample) return;
 
     let correct = false;
@@ -649,10 +674,12 @@ function ScienceSolveContent() {
         [questionSample.id]: selectedVal,
       };
       setUserAnswers(newUserAnswers);
-      const ongoing = getOngoingSession("science", typeId);
-      if (ongoing) {
-        ongoing.userAnswers = newUserAnswers;
-        saveOngoingSession(ongoing);
+      if (!isPreviewMode) {
+        const ongoing = getOngoingSession("science", typeId);
+        if (ongoing) {
+          ongoing.userAnswers = newUserAnswers;
+          saveOngoingSession(ongoing);
+        }
       }
     }
   };
@@ -667,10 +694,12 @@ function ScienceSolveContent() {
         [questionSample.id]: text,
       };
       setUserAnswers(newUserAnswers);
-      const ongoing = getOngoingSession("science", typeId);
-      if (ongoing) {
-        ongoing.userAnswers = newUserAnswers;
-        saveOngoingSession(ongoing);
+      if (!isPreviewMode) {
+        const ongoing = getOngoingSession("science", typeId);
+        if (ongoing) {
+          ongoing.userAnswers = newUserAnswers;
+          saveOngoingSession(ongoing);
+        }
       }
     }
   };
@@ -684,11 +713,28 @@ function ScienceSolveContent() {
     setCurrentIdx(nextIdx);
 
     // 진행중 세션의 currentIdx 업데이트
-    const ongoing = getOngoingSession("science", typeId);
-    if (ongoing) {
-      ongoing.currentIdx = nextIdx;
-      saveOngoingSession(ongoing);
+    if (!isPreviewMode) {
+      const ongoing = getOngoingSession("science", typeId);
+      if (ongoing) {
+        ongoing.currentIdx = nextIdx;
+        saveOngoingSession(ongoing);
+      }
     }
+  };
+
+  const handlePreviewQuestionChange = (nextIdx: number) => {
+    setSelectedChoice(null);
+    setInputText("");
+    setIsSubmitted(false);
+    setIsCorrect(null);
+    setShowPreviewAnswer(false);
+    setCurrentIdx(nextIdx);
+  };
+
+  const getPreviewAnswerLabel = () => {
+    if (!questionSample) return "";
+    const answerChoiceIndex = questionSample.choices?.indexOf(questionSample.answer) ?? -1;
+    return answerChoiceIndex >= 0 ? String(answerChoiceIndex + 1) : questionSample.answer;
   };
 
   const handleKeypadPress = (key: string) => {
@@ -715,7 +761,8 @@ function ScienceSolveContent() {
 
   return (
     <div className={cn(
-      "min-h-screen flex flex-col bg-slate-50 text-slate-900 transition-colors duration-200 pb-24",
+      "min-h-screen flex flex-col bg-slate-50 text-slate-900 transition-colors duration-200",
+      !isPreviewMode && "pb-24",
       isDarkMode && "bg-slate-950 text-slate-100 dark"
     )}>
       {/* GNB / 상단 영역 */}
@@ -730,9 +777,25 @@ function ScienceSolveContent() {
           </button>
           <span className="h-4 w-px bg-slate-200 dark:bg-slate-800" />
           {/* 유형명 주요 제목으로 노출 */}
-          <h1 className="text-[17px] font-black text-slate-900 dark:text-white leading-none">
-            {typeName || "유형 문항 풀이"}
-          </h1>
+          {isPreviewMode ? (
+            <div className="flex items-center gap-2 text-[15px] font-bold text-slate-500 dark:text-slate-400">
+              <span className="text-[17px] font-black text-slate-900 dark:text-white">미리보기</span>
+              <span>·</span>
+              <span>{detectedGradeTerm}</span>
+              {foundType?.majorUnit && (
+                <>
+                  <span>·</span>
+                  <span>{foundType.majorUnit}</span>
+                </>
+              )}
+              <span>·</span>
+              <span className="text-slate-900 dark:text-white">{typeName || "유형 문항 풀이"}</span>
+            </div>
+          ) : (
+            <h1 className="text-[17px] font-black text-slate-900 dark:text-white leading-none">
+              {typeName || "유형 문항 풀이"}
+            </h1>
+          )}
         </div>
         <div className="flex items-center gap-2">
           {/* 상단 문항 진행률 표시 */}
@@ -821,7 +884,7 @@ function ScienceSolveContent() {
                 <div className="flex flex-col space-y-4 max-w-[360px] mx-auto w-full">
                   <input
                     type="text"
-                    disabled={isSubmitted}
+                    disabled={isAnswerRevealed}
                     value={inputText}
                     onChange={(e) => handleTextInputChange(e.target.value)}
                     placeholder={isSubmitted ? "제출이 완료되었습니다." : "답을 입력해주세요"}
@@ -830,7 +893,7 @@ function ScienceSolveContent() {
                       isSubmitted && (isCorrect ? "border-emerald-500 bg-emerald-50/10" : "border-rose-500 bg-rose-50/10")
                     )}
                   />
-                  {isSubmitted && (
+                  {isAnswerRevealed && (
                     <div className="text-sm font-semibold flex items-center justify-center gap-1.5 mt-1">
                       <span className="text-slate-400 dark:text-slate-500">올바른 정답:</span>
                       <span className="text-emerald-600 dark:text-emerald-400 font-bold font-mono">{questionSample.answer}</span>
@@ -868,7 +931,7 @@ function ScienceSolveContent() {
                         return (
                           <button
                             key={i}
-                            disabled={isSubmitted}
+                            disabled={isAnswerRevealed}
                             onClick={() => handleKeypadPress(btn.value)}
                             className={cn(
                               "flex h-11 items-center justify-center rounded-xl text-base font-bold shadow-sm transition active:scale-95 disabled:opacity-50 disabled:pointer-events-none",
@@ -889,7 +952,7 @@ function ScienceSolveContent() {
             </div>
 
             {/* 문항 채점 결과 및 해설 영역 (w-full 래퍼 안으로 배치하여 stretch 정렬 및 100% 폭 활용) */}
-            {isSubmitted && (
+            {isAnswerRevealed && (
               <div className="bg-white dark:bg-slate-900 rounded-[20px] p-6 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden animate-in fade-in slide-in-from-top-4 duration-300">
                 <div className={cn(
                   "absolute top-0 left-0 w-1.5 h-full",
@@ -917,7 +980,7 @@ function ScienceSolveContent() {
 
 
         {/* 우측: 유형 상세 참고 패널 */}
-        {foundType && (
+        {!isPreviewMode && foundType && (
           <div className="w-full lg:w-[350px] xl:w-[400px] shrink-0 border-t lg:border-t-0 lg:border-l border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 overflow-y-auto p-6 flex flex-col gap-6">
             
             {/* 유형 기본 정보 */}
@@ -1047,71 +1110,137 @@ function ScienceSolveContent() {
 
           </div>
         )}
+
+        {isPreviewMode && (
+          <aside className="w-full lg:w-[320px] shrink-0 border-t lg:border-t-0 lg:border-l border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900/40">
+            <div className="overflow-hidden rounded-xl border border-slate-400 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
+              <button
+                type="button"
+                onClick={() => setIsPreviewPanelOpen((open) => !open)}
+                className="flex w-full items-center justify-between border-b border-slate-300 px-4 py-4 text-left dark:border-slate-700"
+                aria-expanded={isPreviewPanelOpen}
+              >
+                <span className="text-xl font-black">미리보기</span>
+                <span className={cn(
+                  "flex h-9 w-9 items-center justify-center rounded-full border border-slate-400 text-lg transition-transform dark:border-slate-600",
+                  !isPreviewPanelOpen && "rotate-180"
+                )}>
+                  ︿
+                </span>
+              </button>
+
+              {isPreviewPanelOpen && (
+                <div className="space-y-4 p-4">
+                  <div>
+                    <h2 className="mb-4 text-base font-black">문제 목록</h2>
+                    <div className="flex flex-wrap gap-4">
+                      {sessionQuestions.map((question, idx) => (
+                        <button
+                          key={question.id}
+                          type="button"
+                          onClick={() => handlePreviewQuestionChange(idx)}
+                          className={cn(
+                            "flex h-9 w-9 items-center justify-center rounded-xl border text-base font-bold transition-colors",
+                            currentIdx === idx
+                              ? "border-blue-500 bg-blue-500 text-white"
+                              : "border-slate-400 bg-slate-50 text-slate-800 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-100"
+                          )}
+                          aria-label={`${idx + 1}번 문제`}
+                        >
+                          {idx + 1}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => setShowPreviewAnswer((visible) => !visible)}
+                    className="h-12 w-full rounded bg-slate-600 text-base font-bold text-white transition-colors hover:bg-slate-700"
+                  >
+                    {showPreviewAnswer ? "정답 숨기기" : "정답 보기"}
+                  </button>
+
+                  {showPreviewAnswer && (
+                    <div className="flex items-center gap-8 border-t border-slate-300 pt-4 text-base dark:border-slate-700">
+                      <span className="font-black">{currentIdx + 1}번</span>
+                      <span className="rounded border border-slate-400 bg-white px-3 py-1.5 font-bold dark:bg-slate-800">
+                        {getPreviewAnswerLabel()}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </aside>
+        )}
       </main>
 
       {/* 하단 푸터 (버튼 영역) */}
-      <footer className="fixed bottom-0 left-0 right-0 h-20 bg-white/95 dark:bg-slate-900/95 border-t border-slate-200 dark:border-slate-800 backdrop-blur-md z-45 flex items-center justify-between px-8 shadow-inner">
-        <div className="flex-1">
-          {/* 채점 완료 후 채점 결과 즉시 표시 */}
-          {isSubmitted && (
-            isCorrect ? (
-              <div className="flex items-center gap-2.5 text-emerald-600 dark:text-emerald-400 font-extrabold animate-in slide-in-from-bottom-2">
-                <div className="p-1 bg-emerald-100 dark:bg-emerald-950/60 rounded-full">
-                  <Check className="w-4 h-4 stroke-[3.5]" />
+      {!isPreviewMode && (
+        <footer className="fixed bottom-0 left-0 right-0 h-20 bg-white/95 dark:bg-slate-900/95 border-t border-slate-200 dark:border-slate-800 backdrop-blur-md z-45 flex items-center justify-between px-8 shadow-inner">
+          <div className="flex-1">
+            {/* 채점 완료 후 채점 결과 즉시 표시 */}
+            {isSubmitted && (
+              isCorrect ? (
+                <div className="flex items-center gap-2.5 text-emerald-600 dark:text-emerald-400 font-extrabold animate-in slide-in-from-bottom-2">
+                  <div className="p-1 bg-emerald-100 dark:bg-emerald-950/60 rounded-full">
+                    <Check className="w-4 h-4 stroke-[3.5]" />
+                  </div>
+                  <span className="text-[14px] md:text-[15px]">정답</span>
                 </div>
-                <span className="text-[14px] md:text-[15px]">정답</span>
-              </div>
-            ) : (
-              <div className="flex items-center gap-2.5 text-rose-600 dark:text-rose-450 font-extrabold animate-in slide-in-from-bottom-2">
-                <div className="p-1 bg-rose-100 dark:bg-rose-950/60 rounded-full">
-                  <X className="w-4 h-4 stroke-[3.5]" />
+              ) : (
+                <div className="flex items-center gap-2.5 text-rose-600 dark:text-rose-450 font-extrabold animate-in slide-in-from-bottom-2">
+                  <div className="p-1 bg-rose-100 dark:bg-rose-950/60 rounded-full">
+                    <X className="w-4 h-4 stroke-[3.5]" />
+                  </div>
+                  <span className="text-[14px] md:text-[15px]">오답</span>
                 </div>
-                <span className="text-[14px] md:text-[15px]">오답</span>
-              </div>
-            )
-          )}
-        </div>
+              )
+            )}
+          </div>
 
-        <div className="flex items-center gap-3">
-          {!isSubmitted ? (
-            <Button
-              disabled={!isAnswered}
-              onClick={handleSubmit}
-              className="px-8 h-12 md:h-13 font-black bg-violet-600 hover:bg-violet-750 text-white rounded-xl shadow-lg shadow-violet-600/10 active:scale-95 disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none"
-            >
-              제출하기
-            </Button>
-          ) : (
-            currentIdx < sessionQuestions.length - 1 ? (
+          <div className="flex items-center gap-3">
+            {!isSubmitted ? (
               <Button
-                onClick={handleNext}
-                className="px-8 h-12 md:h-13 font-black bg-violet-600 hover:bg-violet-750 text-white rounded-xl shadow-md"
+                disabled={!isAnswered}
+                onClick={handleSubmit}
+                className="px-8 h-12 md:h-13 font-black bg-violet-600 hover:bg-violet-750 text-white rounded-xl shadow-lg shadow-violet-600/10 active:scale-95 disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none"
               >
-                다음 문제
-                <ArrowRight className="w-4 h-4 ml-2" />
+                제출하기
               </Button>
             ) : (
-              <div className="flex items-center gap-3">
+              currentIdx < sessionQuestions.length - 1 ? (
                 <Button
-                  onClick={() => router.push(`/content/science-exam-prep?gradeTerm=${encodeURIComponent(detectedGradeTerm)}`)}
-                  variant="outline"
-                  className="px-6 h-12 md:h-13 font-bold border-slate-300 dark:border-slate-700 rounded-xl"
+                  onClick={handleNext}
+                  className="px-8 h-12 md:h-13 font-black bg-violet-600 hover:bg-violet-750 text-white rounded-xl shadow-md"
                 >
-                  <Home className="w-4 h-4 mr-2" />
-                  시험 대비 홈으로
-                </Button>
-                <Button
-                  onClick={() => router.push(`/content/science-exam-prep?selectedTypeId=${encodeURIComponent(typeId)}`)}
-                  className="px-6 h-12 md:h-13 font-black bg-violet-600 hover:bg-violet-750 text-white rounded-xl shadow-md"
-                >
-                  유형 상세로
+                  다음 문제
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
-              </div>
-            )
-          )}
-        </div>
-      </footer>
+              ) : (
+                <div className="flex items-center gap-3">
+                  <Button
+                    onClick={() => router.push(`/content/science-exam-prep?gradeTerm=${encodeURIComponent(detectedGradeTerm)}`)}
+                    variant="outline"
+                    className="px-6 h-12 md:h-13 font-bold border-slate-300 dark:border-slate-700 rounded-xl"
+                  >
+                    <Home className="w-4 h-4 mr-2" />
+                    시험 대비 홈으로
+                  </Button>
+                  <Button
+                    onClick={() => router.push(`/content/science-exam-prep?selectedTypeId=${encodeURIComponent(typeId)}`)}
+                    className="px-6 h-12 md:h-13 font-black bg-violet-600 hover:bg-violet-750 text-white rounded-xl shadow-md"
+                  >
+                    유형 상세로
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </div>
+              )
+            )}
+          </div>
+        </footer>
+      )}
 
       {/* 풀이 종료 확인 모달 */}
       {showExitModal && (
