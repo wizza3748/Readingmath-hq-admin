@@ -3,8 +3,20 @@ import ConditionalLayout from "@/components/app/conditional-layout";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Readingmath HQ Admin",
+  title: "리딩수학과학 프로토타입",
   description: "리딩수학과학 본사 관리자 페이지",
+  icons: {
+    icon: [
+      {
+        url: "https://framerusercontent.com/images/mB5unjxRr8Soyu8ve5oN3fzTi4.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "https://framerusercontent.com/images/MeQL98VgcmhT072SuMzmGneYdQ.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
