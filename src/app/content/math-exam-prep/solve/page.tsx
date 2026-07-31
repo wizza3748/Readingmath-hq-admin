@@ -4,6 +4,7 @@ import React, { use, useEffect, useState, useRef, Suspense, useMemo } from "reac
 import { useRouter, useSearchParams } from "next/navigation";
 import {
   ChevronLeft,
+  ChevronRight,
   X,
   Check,
   AlertCircle,
@@ -54,8 +55,7 @@ const formatSolvedAt = (isoString: string) => {
   const d = String(date.getDate()).padStart(2, "0");
   const hh = String(date.getHours()).padStart(2, "0");
   const mm = String(date.getMinutes()).padStart(2, "0");
-  const ss = String(date.getSeconds()).padStart(2, "0");
-  return `${y}. ${m}. ${d}. ${hh}:${mm}:${ss}`;
+  return `${y}-${m}-${d} ${hh}:${mm}`;
 };
 
 interface AchievementInfo {
@@ -1025,28 +1025,41 @@ function MathSolveContent() {
               <div className="flex flex-col gap-2">
                 <h4 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest font-bold">최근 풀이 이력</h4>
                 {combinedHistory.length > 0 ? (
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col">
                     {combinedHistory.slice(0, 3).map((h, i) => (
-                      <div key={i} className={cn(
-                        "flex items-center justify-between p-3 rounded-xl border text-xs shadow-sm",
-                        isDarkMode ? "bg-slate-800/40 border-slate-700/50" : "bg-white border-slate-100"
-                      )}>
-                        <div className="flex items-center gap-2">
+                      <button
+                        key={h.id}
+                        type="button"
+                        disabled={i >= 2}
+                        onClick={() => {
+                          router.push(
+                            `/content/math-exam-prep/solve?typeId=${encodeURIComponent(typeId)}&name=${encodeURIComponent(foundType.typeName)}&gradeTerm=${encodeURIComponent(detectedGradeTerm)}&historyId=${encodeURIComponent(h.id)}`
+                          );
+                        }}
+                        className={cn(
+                          "flex w-full items-center gap-3 py-3 text-left",
+                          i < Math.min(combinedHistory.length, 3) - 1 && "border-b border-slate-200 dark:border-slate-800",
+                          i < 2 && "cursor-pointer transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40",
+                        )}
+                      >
+                        <div className={cn(
+                          "flex h-7 w-7 shrink-0 items-center justify-center rounded-full",
+                          h.isCorrect ? "bg-emerald-500" : "bg-red-500",
+                        )}>
                           {h.isCorrect ? (
-                            <Check className="w-4 h-4 text-green-500 stroke-[3]" />
+                            <Check className="h-4 w-4 text-white stroke-[3]" />
                           ) : (
-                            <X className="w-4 h-4 text-red-500 stroke-[3]" />
+                            <X className="h-4 w-4 text-white stroke-[3]" />
                           )}
-                          <div className="flex items-center gap-1.5">
-                            <span className="font-bold text-slate-750 dark:text-slate-350">{h.path}</span>
-                            <span className="text-slate-400 dark:text-slate-500">·</span>
-                            <span className={cn("font-bold", h.isCorrect ? "text-green-500" : "text-red-505")}>
-                              {h.isCorrect ? "정답" : "오답"}
-                            </span>
-                          </div>
                         </div>
-                        <span className="text-slate-400 dark:text-slate-500">{formatSolvedAt(h.solvedAt)}</span>
-                      </div>
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate text-sm font-bold text-slate-750 dark:text-slate-350">{h.path}</p>
+                          <p className="mt-0.5 text-xs font-medium text-slate-400 dark:text-slate-500">
+                            {formatSolvedAt(h.solvedAt)}
+                          </p>
+                        </div>
+                        {i < 2 && <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 dark:text-slate-500" />}
+                      </button>
                     ))}
                   </div>
                 ) : (
