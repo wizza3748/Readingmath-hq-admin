@@ -213,6 +213,8 @@ function MathSolveContent() {
   const searchParams = useSearchParams();
   const typeId = searchParams.get("typeId") || "";
   const typeName = searchParams.get("name") || "";
+  const historyId = searchParams.get("historyId") || "";
+  const isHistoryResultMode = historyId !== "";
 
   // typeId로 원본 유형 데이터 찾기
   const rawTypeId = typeId.replace(/-(basic|skill|advanced)$/, "");
@@ -291,6 +293,10 @@ function MathSolveContent() {
   const combinedHistory = useMemo(() => {
     return getCombinedTypeHistory(typeId, "math");
   }, [typeId, historyVersion]);
+  const resultHistory = useMemo(
+    () => combinedHistory.find((history) => history.id === historyId),
+    [combinedHistory, historyId]
+  );
 
   const currentStatus = useMemo(() => {
     return evaluateAchievementStatus(typeId, "math");
@@ -334,6 +340,27 @@ function MathSolveContent() {
     const pool = poolIds
       .map(id => MATH_PRINT_SAMPLES.find(q => q.id === id))
       .filter((q): q is any => !!q);
+
+    // 최근 풀이 이력은 해당 목 문항 한 건만 읽기 전용으로 구성한다.
+    if (isHistoryResultMode) {
+      const history = getCombinedTypeHistory(typeId, "math").find((item) => item.id === historyId);
+      const historyQuestion = history
+        ? MATH_PRINT_SAMPLES.find((question) => question.id === history.questionId)
+        : null;
+
+      if (!history || !historyQuestion) {
+        setIsBlocked(true);
+        return;
+      }
+
+      setSessionQuestions([historyQuestion]);
+      setCurrentIdx(0);
+      setUserAnswers({});
+      setIsSubmitted(true);
+      setIsCorrect(history.isCorrect);
+      setIsBlocked(false);
+      return;
+    }
 
     // 3. 진입 방어 검증 (문항 풀 검증)
     if (pool.length < count) {
@@ -395,7 +422,7 @@ function MathSolveContent() {
     setCurrentIdx(0);
     setUserAnswers({});
     setIsBlocked(false);
-  }, [typeId]);
+  }, [typeId, historyId, isHistoryResultMode]);
 
   // 문항 복원 및 초기화
   useEffect(() => {
@@ -404,7 +431,9 @@ function MathSolveContent() {
     if (!questionSample) return;
 
     const savedAns = userAnswers[questionSample.id];
-    const hist = combinedHistory.find(h => h.questionId === questionSample.id);
+    const hist = isHistoryResultMode
+      ? resultHistory
+      : combinedHistory.find(h => h.questionId === questionSample.id);
     
     if (hist) {
       setIsSubmitted(true);
@@ -412,10 +441,26 @@ function MathSolveContent() {
       
       const isChoiceType = questionSample.choices && questionSample.choices.length > 0;
       if (isChoiceType) {
-        const choiceIdx = questionSample.choices.indexOf(hist.submittedAnswer);
-        setSelectedChoice(choiceIdx !== -1 ? choiceIdx : null);
+        const answerNumber = Number.parseInt(questionSample.answer, 10);
+        const correctChoiceIdx = questionSample.choices.indexOf(questionSample.answer) !== -1
+          ? questionSample.choices.indexOf(questionSample.answer)
+          : Number.isNaN(answerNumber)
+            ? -1
+            : answerNumber - 1;
+        const savedChoiceIdx = questionSample.choices.indexOf(hist.submittedAnswer);
+        const mockChoiceIdx = hist.isCorrect
+          ? correctChoiceIdx
+          : questionSample.choices.findIndex((_: string, index: number) => index !== correctChoiceIdx);
+
+        setSelectedChoice(savedChoiceIdx !== -1 ? savedChoiceIdx : mockChoiceIdx);
       } else {
-        setInputText(hist.submittedAnswer);
+        setInputText(
+          hist.submittedAnswer !== "mock"
+            ? hist.submittedAnswer
+            : hist.isCorrect
+              ? questionSample.answer
+              : "오답"
+        );
       }
     } else {
       setIsSubmitted(false);
@@ -435,7 +480,7 @@ function MathSolveContent() {
         setInputText(savedAns || "");
       }
     }
-  }, [currentIdx, sessionQuestions, userAnswers, combinedHistory]);
+  }, [currentIdx, sessionQuestions, userAnswers, combinedHistory, isHistoryResultMode, resultHistory]);
 
 
 

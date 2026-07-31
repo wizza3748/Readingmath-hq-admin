@@ -49,8 +49,7 @@ const formatSolvedAt = (isoString: string) => {
   const d = String(date.getDate()).padStart(2, "0");
   const hh = String(date.getHours()).padStart(2, "0");
   const mm = String(date.getMinutes()).padStart(2, "0");
-  const ss = String(date.getSeconds()).padStart(2, "0");
-  return `${y}. ${m}. ${d}. ${hh}:${mm}:${ss}`;
+  return `${y}-${m}-${d} ${hh}:${mm}`;
 };
 
 // =========================================================================
@@ -506,28 +505,44 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark, gradeTerm }: Det
           <div key="history" className="flex flex-col gap-2">
             <h4 className={cn("text-xs font-bold uppercase tracking-widest", textMuted)}>최근 풀이 이력</h4>
             {combinedHistory.length > 0 ? (
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col">
                 {combinedHistory.slice(0, 3).map((h, i) => (
-                  <div key={i} className={cn(
-                    "flex items-center justify-between p-3 rounded-xl border text-xs shadow-sm",
-                    isDark ? "bg-slate-800/40 border-slate-700/50" : "bg-white border-slate-100"
-                  )}>
-                    <div className="flex items-center gap-2">
+                  <button
+                    key={h.id}
+                    type="button"
+                    disabled={i >= 2}
+                    onClick={() => {
+                      onClose();
+                      router.push(
+                        `/content/math-exam-prep/solve?typeId=${encodeURIComponent(type.id)}&name=${encodeURIComponent(type.name)}&gradeTerm=${encodeURIComponent(gradeTerm)}&historyId=${encodeURIComponent(h.id)}`
+                      );
+                    }}
+                    className={cn(
+                      "flex w-full items-center gap-3 py-3 text-left",
+                      i < Math.min(combinedHistory.length, 3) - 1 && "border-b",
+                      border,
+                      i < 2 && (isDark ? "hover:bg-slate-700/40" : "hover:bg-slate-50"),
+                      i < 2 && "cursor-pointer transition-colors",
+                    )}
+                  >
+                    <div className={cn(
+                      "flex h-7 w-7 shrink-0 items-center justify-center rounded-full",
+                      h.isCorrect ? "bg-emerald-500" : "bg-red-500",
+                    )}>
                       {h.isCorrect ? (
-                        <Check className="w-4 h-4 text-green-500 stroke-[3]" />
+                        <Check className="h-4 w-4 text-white stroke-[3]" />
                       ) : (
-                        <X className="w-4 h-4 text-red-500 stroke-[3]" />
+                        <X className="h-4 w-4 text-white stroke-[3]" />
                       )}
-                      <div className="flex items-center gap-1.5">
-                        <span className={cn("font-bold", textPrimary)}>{h.path}</span>
-                        <span className={textMuted}>·</span>
-                        <span className={cn("font-bold", h.isCorrect ? "text-green-500" : "text-red-500")}>
-                          {h.isCorrect ? "정답" : "오답"}
-                        </span>
-                      </div>
                     </div>
-                    <span className={cn("font-medium", textMuted)}>{formatSolvedAt(h.solvedAt)}</span>
-                  </div>
+                    <div className="min-w-0 flex-1">
+                      <p className={cn("truncate text-sm font-bold", textPrimary)}>{h.path}</p>
+                      <p className={cn("mt-0.5 text-xs font-medium", textMuted)}>
+                        {formatSolvedAt(h.solvedAt)}
+                      </p>
+                    </div>
+                    {i < 2 && <ChevronRight className={cn("h-4 w-4 shrink-0", textMuted)} />}
+                  </button>
                 ))}
               </div>
             ) : (
