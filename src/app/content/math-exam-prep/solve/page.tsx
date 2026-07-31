@@ -20,6 +20,7 @@ import {
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HistoryResultModal } from "@/components/math-exam-prep/history-result-modal";
 import { cn } from "@/lib/utils";
 
 import "katex/dist/katex.min.css";
@@ -28,6 +29,7 @@ import renderMathInElement from "katex/contrib/auto-render";
 import { MATH_PRINT_SAMPLES } from "@/lib/task-print-sample-mock";
 import { MATH_CURRICULA } from "@/lib/task-center-mock";
 import { MATH_TYPE_TO_QUESTIONS, saveLocalPrepHistory, getCombinedTypeHistory, evaluateAchievementStatus, getChallengeQuestionCount, getDailyAttemptsCount, recordDailyAttempt, isDailyAttemptAllowed, getOngoingSession, saveOngoingSession, deleteOngoingSession } from "@/utils/examPrepStorage";
+import type { ExamPrepHistoryItem } from "@/utils/examPrepStorage";
 
 function getYoutubeEmbedUrl(url?: string) {
   if (!url) return "";
@@ -78,7 +80,7 @@ interface AchievementInfo {
 const ACHIEVEMENT_CONFIG: Record<string, AchievementInfo> = {
   none: {
     label: "미진행", shortLabel: "미진행", icon: "question",
-    chipBg: "bg-white", chipBorder: "border border-slate-200", chipIconColor: "text-slate-300",
+    chipBg: "bg-white", chipBorder: "border-2 border-dashed border-slate-300", chipIconColor: "text-slate-300",
     filterIconColor: "text-slate-300", filterTextColor: "text-slate-500",
     selBg: "bg-slate-700", selBorder: "border-slate-700", selText: "text-white",
     description: "아직 학습을 시작하지 않았어요.",
@@ -127,6 +129,7 @@ const ACHIEVEMENT_CONFIG: Record<string, AchievementInfo> = {
 };
 
 function AchievementIcon({ status, className }: { status: string; className?: string }) {
+  if (status === "undetermined") return null;
   const cfg = ACHIEVEMENT_CONFIG[status];
   if (!cfg) return null;
   if (cfg.icon === "crown") return <Crown className={cn("stroke-[2] fill-current", className)} />;
@@ -285,6 +288,7 @@ function MathSolveContent() {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showExitModal, setShowExitModal] = useState<boolean>(false);
+  const [selectedHistory, setSelectedHistory] = useState<ExamPrepHistoryItem | null>(null);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   
   // 성취도 실시간 갱신 감지용 버전 상태
@@ -944,7 +948,6 @@ function MathSolveContent() {
                   ACHIEVEMENT_CONFIG[currentStatus]?.chipBg || "bg-violet-100",
                   ACHIEVEMENT_CONFIG[currentStatus]?.chipBorder || "",
                   ACHIEVEMENT_CONFIG[currentStatus]?.chipIconColor || "text-violet-700",
-                  currentStatus === "none" && "border"
                 )}>
                   <AchievementIcon status={currentStatus} className="w-3 h-3" />
                   {/* 현재 성취도 상태 */}
@@ -1031,11 +1034,7 @@ function MathSolveContent() {
                         key={h.id}
                         type="button"
                         disabled={i >= 2}
-                        onClick={() => {
-                          router.push(
-                            `/content/math-exam-prep/solve?typeId=${encodeURIComponent(typeId)}&name=${encodeURIComponent(foundType.typeName)}&gradeTerm=${encodeURIComponent(detectedGradeTerm)}&historyId=${encodeURIComponent(h.id)}`
-                          );
-                        }}
+                        onClick={() => setSelectedHistory(h)}
                         className={cn(
                           "flex w-full items-center gap-3 py-3 text-left",
                           i < Math.min(combinedHistory.length, 3) - 1 && "border-b border-slate-200 dark:border-slate-800",
@@ -1138,6 +1137,13 @@ function MathSolveContent() {
           )}
         </div>
       </footer>
+
+      {selectedHistory && (
+        <HistoryResultModal
+          history={selectedHistory}
+          onClose={() => setSelectedHistory(null)}
+        />
+      )}
 
       {/* 풀이 종료 확인 모달 */}
       {showExitModal && (

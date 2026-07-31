@@ -195,7 +195,7 @@ interface AchievementInfo {
 const ACHIEVEMENT_CONFIG: Record<AchievementStatus, AchievementInfo> = {
   none: {
     label: "미진행", shortLabel: "미진행", icon: "question",
-    chipBg: "bg-white", chipBorder: "border border-slate-200", chipIconColor: "text-slate-300",
+    chipBg: "bg-white", chipBorder: "border-2 border-dashed border-slate-300", chipIconColor: "text-slate-300",
     filterIconColor: "text-slate-300", filterTextColor: "text-slate-500",
     selBg: "bg-slate-700", selBorder: "border-slate-700", selText: "text-white",
     description: "아직 학습을 시작하지 않았어요.",
@@ -888,6 +888,7 @@ function AchievementIcon({
   status: AchievementStatus;
   className?: string;
 }) {
+  if (status === "undetermined") return null;
   const cfg = ACHIEVEMENT_CONFIG[status];
   if (cfg.icon === "crown")
     return <Crown className={`stroke-[2] fill-current ${className}`} />;
@@ -949,7 +950,7 @@ function TypeChip({
     <div
       onClick={onClick}
       title={type.name}
-      className={`relative w-9 h-9 rounded-lg flex items-center justify-center cursor-pointer transition-all duration-150 select-none ${cfg.chipBg} ${cfg.chipBorder} ${
+      className={`relative w-12 h-12 rounded-xl flex items-center justify-center cursor-pointer transition-all duration-150 select-none ${cfg.chipBg} ${cfg.chipBorder} ${
         isSelected ? "scale-110 z-10" : "hover:brightness-90 hover:scale-[1.04]"
       }`}
       style={
@@ -958,7 +959,7 @@ function TypeChip({
           : {}
       }
     >
-      <AchievementIcon status={type.status} className={`w-4 h-4 ${cfg.chipIconColor}`} />
+      <AchievementIcon status={type.status} className={`w-6 h-6 ${cfg.chipIconColor}`} />
       {type.isImportant && (
         <Star
           className={`absolute top-0.5 left-0.5 w-2 h-2 fill-current ${
@@ -2778,7 +2779,7 @@ export default function AdminExamPrepTab({
                 {showGuide && (
                   <div
                     ref={guideRef}
-                    className="absolute left-0 top-9 w-72 rounded-2xl shadow-2xl border p-4 z-50 bg-white border-slate-200 flex flex-col gap-2.5"
+                    className="absolute left-0 top-9 w-80 rounded-2xl shadow-2xl border p-5 z-50 bg-white border-slate-200 flex flex-col gap-3"
                   >
                     <h4 className="text-xs font-extrabold text-slate-500 mb-0.5 flex items-center gap-1.5">
                       <Info className="w-3.5 h-3.5 text-slate-400" />
@@ -2787,17 +2788,15 @@ export default function AdminExamPrepTab({
                     {ALL_STATUSES.map((s) => {
                       const cfg = ACHIEVEMENT_CONFIG[s];
                       return (
-                        <div key={s} className="flex items-start gap-2.5">
+                        <div key={s} className="flex items-start gap-3">
                           <div
-                            className={`w-6 h-6 rounded-lg flex items-center justify-center shrink-0 mt-0.5 ${cfg.chipBg} ${
-                              s === "none" ? "border border-slate-200" : ""
-                            }`}
+                            className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${cfg.chipBg} ${cfg.chipBorder}`}
                           >
-                            <AchievementIcon status={s} className={`w-3.5 h-3.5 ${cfg.chipIconColor}`} />
+                            <AchievementIcon status={s} className={`w-6 h-6 ${cfg.chipIconColor}`} />
                           </div>
                           <div className="text-left">
-                            <p className="text-xs font-bold text-slate-800">{cfg.label}</p>
-                            <p className="text-[11px] text-slate-500 mt-0.5">{cfg.description}</p>
+                            <p className="text-sm font-bold text-slate-800">{cfg.label}</p>
+                            <p className="text-sm leading-snug text-slate-500 mt-0.5">{cfg.description}</p>
                           </div>
                         </div>
                       );

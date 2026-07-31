@@ -78,7 +78,7 @@ interface AchievementInfo {
 const ACHIEVEMENT_CONFIG: Record<string, AchievementInfo> = {
   none: {
     label: "미진행", shortLabel: "미진행", icon: "question",
-    chipBg: "bg-white", chipBorder: "border border-slate-200", chipIconColor: "text-slate-300",
+    chipBg: "bg-white", chipBorder: "border-2 border-dashed border-slate-300", chipIconColor: "text-slate-300",
     filterIconColor: "text-slate-300", filterTextColor: "text-slate-500",
     selBg: "bg-slate-700", selBorder: "border-slate-700", selText: "text-white",
     description: "아직 학습을 시작하지 않았어요.",
@@ -127,6 +127,7 @@ const ACHIEVEMENT_CONFIG: Record<string, AchievementInfo> = {
 };
 
 function AchievementIcon({ status, className }: { status: string; className?: string }) {
+  if (status === "undetermined") return null;
   const cfg = ACHIEVEMENT_CONFIG[status];
   if (!cfg) return null;
   if (cfg.icon === "crown") return <Crown className={cn("stroke-[2] fill-current", className)} />;
@@ -994,7 +995,6 @@ function ScienceSolveContent() {
                   ACHIEVEMENT_CONFIG[currentStatus]?.chipBg || "bg-violet-100",
                   ACHIEVEMENT_CONFIG[currentStatus]?.chipBorder || "",
                   ACHIEVEMENT_CONFIG[currentStatus]?.chipIconColor || "text-violet-700",
-                  currentStatus === "none" && "border"
                 )}>
                   <AchievementIcon status={currentStatus} className="w-3 h-3" />
                   {/* 현재 성취도 상태 */}

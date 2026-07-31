@@ -111,7 +111,7 @@ interface AchievementInfo {
 const ACHIEVEMENT_CONFIG: Record<AchievementStatus, AchievementInfo> = {
   none: {
     label: "미진행", shortLabel: "미진행", icon: "question",
-    chipBg: "bg-white", chipBorder: "border border-slate-200", chipIconColor: "text-slate-300",
+    chipBg: "bg-white", chipBorder: "border-2 border-dashed border-slate-300", chipIconColor: "text-slate-300",
     filterIconColor: "text-slate-300", filterTextColor: "text-slate-500",
     selBg: "bg-slate-700", selBorder: "border-slate-700", selText: "text-white",
     description: "아직 학습을 시작하지 않았어요.",
@@ -230,6 +230,7 @@ function getYoutubeEmbedUrl(url?: string) {
 // HELPER COMPONENTS
 // =========================================================================
 function AchievementIcon({ status, className }: { status: AchievementStatus; className?: string }) {
+  if (status === "undetermined") return null;
   const cfg = ACHIEVEMENT_CONFIG[status];
   if (cfg.icon === "crown") return <Crown className={cn("stroke-[2] fill-current", className)} />;
   if (cfg.icon === "zap") return <Zap className={cn("stroke-[2.5] fill-current", className)} />;
@@ -275,7 +276,7 @@ function TypeChip({ type, isSelected, onClick, isDark, isHighlighted, isTaskResu
       onClick={onClick}
       title={type.name}
       className={cn(
-        "relative w-9 h-9 rounded-lg flex items-center justify-center cursor-pointer transition-all duration-150 select-none",
+        "relative w-12 h-12 rounded-xl flex items-center justify-center cursor-pointer transition-all duration-150 select-none",
         cfg.chipBg, cfg.chipBorder,
         isSelected ? "scale-110 z-10" : "hover:brightness-90 hover:scale-[1.04] active:scale-95",
         isHighlighted && "exam-prep-highlight-active"
@@ -285,7 +286,7 @@ function TypeChip({ type, isSelected, onClick, isDark, isHighlighted, isTaskResu
         zIndex: 20,
       } : {}}
     >
-      <AchievementIcon status={type.status} className={cn("w-4 h-4", cfg.chipIconColor)} />
+      <AchievementIcon status={type.status} className={cn("w-6 h-6", cfg.chipIconColor)} />
       {type.isImportant && (
         <Star
           className={cn(
@@ -389,7 +390,6 @@ function DetailPanel({ type, bigUnit, subUnit, onClose, isDark, gradeTerm }: Det
             <div className={cn(
               "flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold",
               cfg.chipBg, cfg.chipBorder, cfg.chipIconColor,
-              type.status === "none" && "border"
             )}>
               <AchievementIcon status={type.status} className="w-3 h-3" />
               <span className={cn(type.status === "none" && "text-slate-500")}>{cfg.shortLabel}</span>
@@ -1325,7 +1325,7 @@ function ScienceExamPrepPageContent() {
             </button>
             {showGuide && (
               <div className={cn(
-                "absolute left-0 top-9 w-72 rounded-2xl shadow-2xl border p-4 z-50 flex flex-col gap-2.5",
+                "absolute left-0 top-9 w-80 rounded-2xl shadow-2xl border p-5 z-50 flex flex-col gap-3",
                 isDark ? "bg-[#1e293b] border-slate-600" : "bg-white border-slate-200"
               )}>
                 <h4 className={cn("text-xs font-extrabold mb-0.5 flex items-center gap-1.5", textMuted)}>
@@ -1334,16 +1334,16 @@ function ScienceExamPrepPageContent() {
                 {ALL_STATUSES.map(s => {
                   const cfg = ACHIEVEMENT_CONFIG[s];
                   return (
-                    <div key={s} className="flex items-start gap-2.5">
+                    <div key={s} className="flex items-start gap-3">
                       <div className={cn(
-                        "w-6 h-6 rounded-lg flex items-center justify-center shrink-0 mt-0.5",
-                        cfg.chipBg, s === "none" && "border border-slate-200"
+                        "w-12 h-12 rounded-xl flex items-center justify-center shrink-0",
+                        cfg.chipBg, cfg.chipBorder
                       )}>
-                        <AchievementIcon status={s} className={cn("w-3.5 h-3.5", cfg.chipIconColor)} />
+                        <AchievementIcon status={s} className={cn("w-6 h-6", cfg.chipIconColor)} />
                       </div>
                       <div>
-                        <p className={cn("text-xs font-bold", textPrimary)}>{cfg.label}</p>
-                        <p className={cn("text-xs mt-0.5", textMuted)}>{cfg.description}</p>
+                        <p className={cn("text-sm font-bold", textPrimary)}>{cfg.label}</p>
+                        <p className={cn("text-sm mt-0.5 leading-snug", textMuted)}>{cfg.description}</p>
                       </div>
                     </div>
                   );
