@@ -959,7 +959,12 @@ function TypeChip({
           : {}
       }
     >
-      <AchievementIcon status={type.status} className={`w-6 h-6 ${cfg.chipIconColor}`} />
+      <AchievementIcon
+        status={type.status}
+        className={`w-6 h-6 ${
+          type.status === "relearn" || type.status === "supplement" ? "text-[30px]" : ""
+        } ${cfg.chipIconColor}`}
+      />
       {type.isImportant && (
         <Star
           className={`absolute top-0.5 left-0.5 w-2 h-2 fill-current ${
@@ -2792,7 +2797,12 @@ export default function AdminExamPrepTab({
                           <div
                             className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${cfg.chipBg} ${cfg.chipBorder}`}
                           >
-                            <AchievementIcon status={s} className={`w-6 h-6 ${cfg.chipIconColor}`} />
+                            <AchievementIcon
+                              status={s}
+                              className={`w-6 h-6 ${
+                                s === "relearn" || s === "supplement" ? "text-[30px]" : ""
+                              } ${cfg.chipIconColor}`}
+                            />
                           </div>
                           <div className="text-left">
                             <p className="text-sm font-bold text-slate-800">{cfg.label}</p>

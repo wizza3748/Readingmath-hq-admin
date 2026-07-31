@@ -285,7 +285,14 @@ function TypeChip({ type, isSelected, onClick, isDark, isHighlighted, isTaskResu
         zIndex: 20,
       } : {}}
     >
-      <AchievementIcon status={type.status} className={cn("w-6 h-6", cfg.chipIconColor)} />
+      <AchievementIcon
+        status={type.status}
+        className={cn(
+          "w-6 h-6",
+          (type.status === "relearn" || type.status === "supplement") && "text-[30px]",
+          cfg.chipIconColor,
+        )}
+      />
       {type.isImportant && (
         <Star
           className={cn(
@@ -1355,7 +1362,14 @@ function MathExamPrepPageContent() {
                         "w-12 h-12 rounded-xl flex items-center justify-center shrink-0",
                         cfg.chipBg, cfg.chipBorder
                       )}>
-                        <AchievementIcon status={s} className={cn("w-6 h-6", cfg.chipIconColor)} />
+                        <AchievementIcon
+                          status={s}
+                          className={cn(
+                            "w-6 h-6",
+                            (s === "relearn" || s === "supplement") && "text-[30px]",
+                            cfg.chipIconColor,
+                          )}
+                        />
                       </div>
                       <div>
                         <p className={cn("text-sm font-bold", textPrimary)}>{cfg.label}</p>
