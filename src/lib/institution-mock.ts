@@ -9,6 +9,24 @@ export type MockInstitutionServiceStatus =
   | "일시정지"
   | "미납정지";
 
+export type InstitutionBillingType = "일반 과금" | "이벤트 과금";
+export type InstitutionEventBillingMethod = "1년 선납" | "월별 과금";
+
+export type InstitutionBillingSettings = {
+  version: 3;
+  billingType: InstitutionBillingType;
+  eventBillingMethod: InstitutionEventBillingMethod;
+  eventAnnualPrepaidFee: string;
+  eventMonthlyFee: string;
+  eventStartDate: string;
+  eventEndDate: string;
+  includedStudents: string;
+  excessMonthlyFee: string;
+  eventEnded?: boolean;
+  studentsPaused?: boolean;
+  serviceStatusAfterEvent?: "일시정지";
+};
+
 export type MockInstitution = {
   id: string;
   branch1: string;
@@ -28,6 +46,14 @@ export type MockInstitution = {
   perStudentFee: number;
   perStudentFeeOneSubject: number;
   perStudentFeeTwoSubjects: number;
+  billingType: InstitutionBillingType;
+  eventBillingMethod: InstitutionEventBillingMethod;
+  eventAnnualPrepaidFee: number;
+  eventMonthlyFee: number;
+  eventStartDate: string;
+  eventEndDate: string;
+  includedStudents: number;
+  excessMonthlyFee: number;
   teacherCount: number;
   studentCount: number;
   createdAt: string;
@@ -101,6 +127,14 @@ function createInstitution(
     perStudentFee,
     perStudentFeeOneSubject: 10_000,
     perStudentFeeTwoSubjects: 15_000,
+    billingType: isQa || index % 4 === 0 ? "이벤트 과금" : "일반 과금",
+    eventBillingMethod: index % 2 === 0 ? "1년 선납" : "월별 과금",
+    eventAnnualPrepaidFee: 600_000,
+    eventMonthlyFee: serviceType === "리딩수학+과학 통합" ? 100_000 : 70_000,
+    eventStartDate: "2026-09-01",
+    eventEndDate: "2027-08-31",
+    includedStudents: 20,
+    excessMonthlyFee: 5_000,
     teacherCount: isQa ? 3 : Math.max(1, index % 5),
     updatedAt: seed.createdAt,
     institutionCode: isQa ? "999787" : String(998000 - index),
@@ -144,4 +178,63 @@ export const INSTITUTION_SERVICE_TYPE_OPTIONS: MockInstitutionServiceType[] = ["
 export function getMockInstitution(id: string) {
   if (id === "zhQ9cSA29ExPK4FlcSDH") return MOCK_INSTITUTIONS[0];
   return MOCK_INSTITUTIONS.find((institution) => institution.id === id) ?? null;
+}
+
+const BILLING_STORAGE_PREFIX = "institution-billing-settings:";
+
+export function getInstitutionBillingSettings(institution: MockInstitution): InstitutionBillingSettings {
+  const fallback: InstitutionBillingSettings = {
+    version: 3,
+    billingType: institution.billingType,
+    eventBillingMethod: institution.eventBillingMethod,
+    eventAnnualPrepaidFee: institution.eventAnnualPrepaidFee.toLocaleString("ko-KR"),
+    eventMonthlyFee: institution.eventMonthlyFee.toLocaleString("ko-KR"),
+    eventStartDate: institution.eventStartDate,
+    eventEndDate: institution.eventEndDate,
+    includedStudents: institution.includedStudents.toLocaleString("ko-KR"),
+    excessMonthlyFee: institution.excessMonthlyFee.toLocaleString("ko-KR"),
+  };
+
+  if (typeof window === "undefined") return fallback;
+  const stored = window.localStorage.getItem(`${BILLING_STORAGE_PREFIX}${institution.id}`);
+  if (!stored) return fallback;
+
+  try {
+    const parsed = JSON.parse(stored) as Partial<Omit<InstitutionBillingSettings, "version">> & {
+      version?: number;
+      mockDefaultsVersion?: number;
+      eventPrepaidFee?: string;
+      eventPeriod?: "1년" | "직접 설정";
+      excessFee?: string;
+    };
+    const normalized: InstitutionBillingSettings = {
+      ...fallback,
+      version: 3,
+      billingType: parsed.billingType || fallback.billingType,
+      eventBillingMethod: parsed.eventBillingMethod || (parsed.eventPeriod === "직접 설정" ? "월별 과금" : "1년 선납"),
+      eventAnnualPrepaidFee: parsed.eventAnnualPrepaidFee || parsed.eventPrepaidFee || fallback.eventAnnualPrepaidFee,
+      eventMonthlyFee: parsed.version === 2 && parsed.eventMonthlyFee === "55,000"
+        ? fallback.eventMonthlyFee
+        : parsed.eventMonthlyFee || fallback.eventMonthlyFee,
+      eventStartDate: parsed.eventStartDate || fallback.eventStartDate,
+      eventEndDate: parsed.eventEndDate || fallback.eventEndDate,
+      includedStudents: parsed.includedStudents || fallback.includedStudents,
+      excessMonthlyFee: parsed.excessMonthlyFee || parsed.excessFee || fallback.excessMonthlyFee,
+      eventEnded: parsed.eventEnded,
+      studentsPaused: parsed.studentsPaused,
+      serviceStatusAfterEvent: parsed.serviceStatusAfterEvent,
+    };
+    if (parsed.version !== 3) {
+      window.localStorage.setItem(`${BILLING_STORAGE_PREFIX}${institution.id}`, JSON.stringify(normalized));
+    }
+    return normalized;
+  } catch {
+    return fallback;
+  }
+}
+
+export function saveInstitutionBillingSettings(institutionId: string, settings: InstitutionBillingSettings) {
+  if (typeof window !== "undefined") {
+    window.localStorage.setItem(`${BILLING_STORAGE_PREFIX}${institutionId}`, JSON.stringify(settings));
+  }
 }

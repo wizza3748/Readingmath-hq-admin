@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Download, Pencil, Plus, Search, Trash2 } from "lucide-react";
+import * as XLSX from "xlsx";
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -19,11 +20,17 @@ import {
   INSTITUTION_BRANCH2_OPTIONS,
   INSTITUTION_SERVICE_TYPE_OPTIONS,
   MOCK_INSTITUTIONS,
+  getInstitutionBillingSettings,
+  type InstitutionBillingSettings,
   type MockInstitution,
 } from "@/lib/institution-mock";
 import { cn } from "@/lib/utils";
 
 const PAGE_SIZE = 10;
+
+function formatDownloadDate(date: Date) {
+  return `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, "0")}${String(date.getDate()).padStart(2, "0")}`;
+}
 
 type Filters = {
   branch1: string;
@@ -32,6 +39,7 @@ type Filters = {
   serviceStatus: string;
   franchiseType: string;
   automaticPayment: string;
+  billingType: string;
   search: string;
 };
 
@@ -42,8 +50,11 @@ const emptyFilters: Filters = {
   serviceStatus: "all",
   franchiseType: "all",
   automaticPayment: "all",
+  billingType: "all",
   search: "",
 };
+
+type InstitutionRow = MockInstitution & { billing: InstitutionBillingSettings };
 
 function FilterSelect({
   value,
@@ -58,7 +69,7 @@ function FilterSelect({
 }) {
   return (
     <Select value={value} onValueChange={onValueChange}>
-      <SelectTrigger className="h-9 min-w-[145px] bg-white text-xs">
+      <SelectTrigger className="h-9 min-w-0 max-w-[150px] flex-1 bg-white text-xs">
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent>
@@ -96,7 +107,7 @@ function ServiceStatusBadge({ value }: { value: MockInstitution["serviceStatus"]
   );
 }
 
-function InstitutionsTableRow({ institution }: { institution: MockInstitution }) {
+function InstitutionsTableRow({ institution }: { institution: InstitutionRow }) {
   return (
     <tr className="border-b border-slate-100 text-xs text-slate-500 transition-colors hover:bg-slate-50/70">
       <td className="px-3 py-4"><Checkbox aria-label={`${institution.name} 선택`} /></td>
@@ -115,6 +126,8 @@ function InstitutionsTableRow({ institution }: { institution: MockInstitution })
           {institution.franchiseType}
         </span>
       </td>
+      <td className="px-3 py-4 whitespace-nowrap font-semibold text-slate-600">{institution.billing.billingType}</td>
+      <td className="px-3 py-4 whitespace-nowrap">{institution.billing.billingType === "이벤트 과금" ? institution.billing.eventEndDate.replaceAll("-", ".") : "–"}</td>
       <td className="px-3 py-4 font-semibold text-slate-500">{institution.automaticPayment}</td>
       <td className="px-3 py-4 whitespace-nowrap">
         {institution.paidPoints.toLocaleString()}P
@@ -122,8 +135,8 @@ function InstitutionsTableRow({ institution }: { institution: MockInstitution })
           {institution.freePoints}P
         </span>
       </td>
-      <td className="px-3 py-4 text-right">{institution.minFee.toLocaleString()}원</td>
-      <td className="px-3 py-4 text-right">{institution.perStudentFee.toLocaleString()}원</td>
+      <td className="px-3 py-4 text-right">{institution.billing.billingType === "일반 과금" ? `${institution.minFee.toLocaleString()}원` : "–"}</td>
+      <td className="px-3 py-4 text-right">{institution.billing.billingType === "일반 과금" ? `${institution.perStudentFee.toLocaleString()}원` : "–"}</td>
       <td className="px-3 py-4 text-center">{institution.studentCount}</td>
       <td className="px-3 py-4 whitespace-nowrap">{institution.createdAt}</td>
       <td className="px-3 py-4">
@@ -144,21 +157,45 @@ export function InstitutionsTable() {
   const [draftFilters, setDraftFilters] = React.useState<Filters>(emptyFilters);
   const [filters, setFilters] = React.useState<Filters>(emptyFilters);
   const [page, setPage] = React.useState(1);
+  const [sort, setSort] = React.useState<{ key: "billingType" | "eventEndDate"; direction: "asc" | "desc" } | null>(null);
+  const [institutions, setInstitutions] = React.useState<InstitutionRow[]>(() => MOCK_INSTITUTIONS.map((institution) => ({ ...institution, billing: {
+    version: 3,
+    billingType: institution.billingType,
+    eventBillingMethod: institution.eventBillingMethod,
+    eventAnnualPrepaidFee: institution.eventAnnualPrepaidFee.toLocaleString("ko-KR"),
+    eventMonthlyFee: institution.eventMonthlyFee.toLocaleString("ko-KR"),
+    eventStartDate: institution.eventStartDate,
+    eventEndDate: institution.eventEndDate,
+    includedStudents: institution.includedStudents.toLocaleString("ko-KR"),
+    excessMonthlyFee: institution.excessMonthlyFee.toLocaleString("ko-KR"),
+  } })));
+
+  React.useEffect(() => {
+    setInstitutions(MOCK_INSTITUTIONS.map((institution) => ({ ...institution, billing: getInstitutionBillingSettings(institution) })));
+  }, []);
 
   const filteredInstitutions = React.useMemo(() => {
     const search = filters.search.trim().toLowerCase();
 
-    return MOCK_INSTITUTIONS.filter((institution) => {
+    const result = institutions.filter((institution) => {
       if (filters.branch1 !== "all" && institution.branch1 !== filters.branch1) return false;
       if (filters.branch2 !== "all" && institution.branch2 !== filters.branch2) return false;
       if (filters.serviceType !== "all" && institution.serviceType !== filters.serviceType) return false;
       if (filters.serviceStatus !== "all" && institution.serviceStatus !== filters.serviceStatus) return false;
       if (filters.franchiseType !== "all" && institution.franchiseType !== filters.franchiseType) return false;
       if (filters.automaticPayment !== "all" && institution.automaticPayment !== filters.automaticPayment) return false;
+      if (filters.billingType !== "all" && institution.billing.billingType !== filters.billingType) return false;
       if (search && !`${institution.name} ${institution.id}`.toLowerCase().includes(search)) return false;
       return true;
     });
-  }, [filters]);
+    if (!sort) return result;
+    return [...result].sort((left, right) => {
+      const leftValue = sort.key === "billingType" ? left.billing.billingType : left.billing.eventEndDate;
+      const rightValue = sort.key === "billingType" ? right.billing.billingType : right.billing.eventEndDate;
+      const compared = leftValue.localeCompare(rightValue, "ko");
+      return sort.direction === "asc" ? compared : -compared;
+    });
+  }, [filters, institutions, sort]);
 
   const pageCount = Math.max(1, Math.ceil(filteredInstitutions.length / PAGE_SIZE));
   const safePage = Math.min(page, pageCount);
@@ -179,18 +216,52 @@ export function InstitutionsTable() {
     setPage(1);
   };
 
+  const toggleSort = (key: "billingType" | "eventEndDate") => {
+    setSort((current) => current?.key === key
+      ? { key, direction: current.direction === "asc" ? "desc" : "asc" }
+      : { key, direction: "asc" });
+  };
+
+  const downloadExcel = () => {
+    const rows = filteredInstitutions.map((institution) => ({
+      고유번호: institution.id,
+      기관명: institution.name,
+      "서비스 타입": institution.serviceType,
+      "서비스 상태": institution.serviceStatus,
+      "가맹 타입": institution.franchiseType,
+      "과금 유형": institution.billing.billingType,
+      "이벤트 과금 방식": institution.billing.billingType === "이벤트 과금" ? institution.billing.eventBillingMethod : "",
+      "이벤트 1년 선납 이용료": institution.billing.billingType === "이벤트 과금" && institution.billing.eventBillingMethod === "1년 선납" ? Number(institution.billing.eventAnnualPrepaidFee.replaceAll(",", "")) : "",
+      "이벤트 월 이용료": institution.billing.billingType === "이벤트 과금" && institution.billing.eventBillingMethod === "월별 과금" ? Number(institution.billing.eventMonthlyFee.replaceAll(",", "")) : "",
+      "이벤트 시작일": institution.billing.billingType === "이벤트 과금" ? institution.billing.eventStartDate : "",
+      "이벤트 종료일": institution.billing.billingType === "이벤트 과금" ? institution.billing.eventEndDate : "",
+      "기본 포함 인원": institution.billing.billingType === "이벤트 과금" ? Number(institution.billing.includedStudents.replaceAll(",", "")) : "",
+      "초과 인당 월 이용료": institution.billing.billingType === "이벤트 과금" ? Number(institution.billing.excessMonthlyFee.replaceAll(",", "")) : "",
+      "자동 결제": institution.automaticPayment,
+      "최소 이용 금액": institution.billing.billingType === "일반 과금" ? institution.minFee : "",
+      "인당 이용료": institution.billing.billingType === "일반 과금" ? institution.perStudentFee : "",
+      "사용 중 학생 수": institution.studentCount,
+      등록일: institution.createdAt,
+    }));
+    const workbook = XLSX.utils.book_new();
+    const worksheet = XLSX.utils.json_to_sheet(rows);
+    XLSX.utils.book_append_sheet(workbook, worksheet, "기관목록");
+    XLSX.writeFile(workbook, `기관목록_${formatDownloadDate(new Date())}.xlsx`);
+  };
+
   return (
     <section className="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm">
       <div className="border-b border-slate-100 p-5">
-        <div className="flex flex-wrap items-center gap-2.5">
+        <div className="flex min-w-0 flex-nowrap items-center gap-2.5 overflow-hidden pb-1">
           <FilterSelect value={draftFilters.branch1} onValueChange={(value) => updateDraft("branch1", value)} placeholder="지사1" options={INSTITUTION_BRANCH1_OPTIONS} />
           <FilterSelect value={draftFilters.branch2} onValueChange={(value) => updateDraft("branch2", value)} placeholder="지사2" options={INSTITUTION_BRANCH2_OPTIONS} />
           <FilterSelect value={draftFilters.serviceType} onValueChange={(value) => updateDraft("serviceType", value)} placeholder="서비스 타입" options={INSTITUTION_SERVICE_TYPE_OPTIONS} />
           <FilterSelect value={draftFilters.serviceStatus} onValueChange={(value) => updateDraft("serviceStatus", value)} placeholder="서비스 상태" options={["무료사용", "정상", "일시정지", "미납정지"]} />
           <FilterSelect value={draftFilters.franchiseType} onValueChange={(value) => updateDraft("franchiseType", value)} placeholder="가맹타입" options={["가맹전", "스탠다드", "학교"]} />
           <FilterSelect value={draftFilters.automaticPayment} onValueChange={(value) => updateDraft("automaticPayment", value)} placeholder="자동 결제" options={["등록", "미등록"]} />
-          <Button type="button" size="sm" className="h-9 bg-blue-500 px-4 hover:bg-blue-600" onClick={applyFilters}>적용</Button>
-          <Button type="button" size="sm" variant="secondary" className="h-9 px-4" onClick={resetFilters}>초기화</Button>
+          <FilterSelect value={draftFilters.billingType} onValueChange={(value) => updateDraft("billingType", value)} placeholder="과금 유형" options={["일반 과금", "이벤트 과금"]} />
+          <Button type="button" size="sm" className="h-9 shrink-0 bg-blue-500 px-4 hover:bg-blue-600" onClick={applyFilters}>적용</Button>
+          <Button type="button" size="sm" variant="secondary" className="h-9 shrink-0 px-4" onClick={resetFilters}>초기화</Button>
         </div>
 
         <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -207,7 +278,7 @@ export function InstitutionsTable() {
             </button>
           </div>
           <div className="flex items-center justify-end gap-2">
-            <Button type="button" variant="ghost" className="h-10 bg-emerald-50 text-emerald-500 hover:bg-emerald-100 hover:text-emerald-600">
+            <Button type="button" variant="ghost" className="h-10 bg-emerald-50 text-emerald-500 hover:bg-emerald-100 hover:text-emerald-600" onClick={downloadExcel}>
               <Download className="mr-2 h-4 w-4" />엑셀 다운로드
             </Button>
             <Button type="button" className="h-10 bg-sky-500 hover:bg-sky-600">
@@ -217,8 +288,8 @@ export function InstitutionsTable() {
         </div>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="min-w-[1850px] w-full border-collapse">
+      <div className="w-full max-w-full overflow-x-auto overscroll-x-contain">
+        <table className="min-w-[2100px] w-full border-collapse">
           <thead className="bg-white">
             <tr className="border-b border-slate-200 text-left text-[11px] font-semibold text-slate-400">
               <th className="w-10 px-3 py-3"><Checkbox aria-label="전체 선택" /></th>
@@ -229,6 +300,8 @@ export function InstitutionsTable() {
               <th className="px-3 py-3">서비스 타입</th>
               <th className="px-3 py-3">서비스 상태</th>
               <th className="px-3 py-3">가맹 타입</th>
+              <th className="px-3 py-3"><button type="button" onClick={() => toggleSort("billingType")}>과금 유형 ↕</button></th>
+              <th className="px-3 py-3"><button type="button" onClick={() => toggleSort("eventEndDate")}>이벤트 종료일 ↕</button></th>
               <th className="px-3 py-3">자동 결제</th>
               <th className="px-3 py-3">포인트</th>
               <th className="px-3 py-3 text-right">최소 이용 금액</th>
@@ -242,7 +315,7 @@ export function InstitutionsTable() {
             {pagedInstitutions.length > 0 ? (
               pagedInstitutions.map((institution) => <InstitutionsTableRow key={institution.id} institution={institution} />)
             ) : (
-              <tr><td colSpan={15} className="h-36 text-center text-sm text-slate-400">검색 결과가 없습니다.</td></tr>
+              <tr><td colSpan={17} className="h-36 text-center text-sm text-slate-400">검색 결과가 없습니다.</td></tr>
             )}
           </tbody>
         </table>

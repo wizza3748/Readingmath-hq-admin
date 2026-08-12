@@ -30,7 +30,14 @@ import { Input } from "@/components/ui/input";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { getMockInstitution } from "@/lib/institution-mock";
+import {
+  getInstitutionBillingSettings,
+  getMockInstitution,
+  saveInstitutionBillingSettings,
+  type InstitutionBillingSettings,
+  type InstitutionBillingType,
+  type InstitutionEventBillingMethod,
+} from "@/lib/institution-mock";
 import { cn } from "@/lib/utils";
 
 function Field({
@@ -77,23 +84,8 @@ function SectionTitle({ title, action }: { title: string; action?: React.ReactNo
 
 type ReservationStatus = "무료사용" | "정상" | "일시정지";
 type PaymentType = "가맹비" | "교육비";
-type BillingType = "일반 과금" | "이벤트 과금";
-type EventPeriod = "1년" | "직접 설정";
 type ServiceReservation = { date: string; status: ReservationStatus; serviceType: string; reason: string };
-type BillingValidationErrors = Partial<Record<"billingType" | "prepaidFee" | "period" | "startDate" | "endDate" | "includedStudents" | "excessFee", string>>;
-
-type SavedBillingSettings = {
-  billingType: BillingType;
-  eventPrepaidFee: string;
-  eventPeriod: EventPeriod;
-  eventStartDate: string;
-  eventEndDate: string;
-  includedStudents: string;
-  excessFee: string;
-  eventEnded?: boolean;
-  studentsPaused?: boolean;
-  serviceStatusAfterEvent?: "일시정지";
-};
+type BillingValidationErrors = Partial<Record<"billingType" | "method" | "annualPrepaidFee" | "monthlyFee" | "startDate" | "endDate" | "includedStudents" | "excessMonthlyFee", string>>;
 
 const EVENT_CALENDAR_CLASS_NAMES = {
   months: "relative",
@@ -203,54 +195,50 @@ export default function InstitutionInfoPage() {
   const [trainingFeePaidAt, setTrainingFeePaidAt] = React.useState<string | null>(null);
   const [serviceReservation, setServiceReservation] = React.useState<ServiceReservation | null>(null);
   const [cancelReservationOpen, setCancelReservationOpen] = React.useState(false);
-  const [billingType, setBillingType] = React.useState<BillingType>("일반 과금");
-  const [eventPrepaidFee, setEventPrepaidFee] = React.useState("");
-  const [eventPeriod, setEventPeriod] = React.useState<EventPeriod>("1년");
-  const [eventStartDate, setEventStartDate] = React.useState("");
-  const [eventEndDate, setEventEndDate] = React.useState("");
-  const [includedStudents, setIncludedStudents] = React.useState("");
-  const [excessFee, setExcessFee] = React.useState("");
+  const [billingType, setBillingType] = React.useState<InstitutionBillingType>(institution?.billingType || "일반 과금");
+  const [eventBillingMethod, setEventBillingMethod] = React.useState<InstitutionEventBillingMethod>(institution?.eventBillingMethod || "1년 선납");
+  const [eventAnnualPrepaidFee, setEventAnnualPrepaidFee] = React.useState(institution?.eventAnnualPrepaidFee.toLocaleString("ko-KR") || "");
+  const [eventMonthlyFee, setEventMonthlyFee] = React.useState(institution?.eventMonthlyFee.toLocaleString("ko-KR") || "");
+  const [eventStartDate, setEventStartDate] = React.useState(institution?.eventStartDate || "");
+  const [eventEndDate, setEventEndDate] = React.useState(institution?.eventEndDate || "");
+  const [includedStudents, setIncludedStudents] = React.useState(institution?.includedStudents.toLocaleString("ko-KR") || "20");
+  const [excessMonthlyFee, setExcessMonthlyFee] = React.useState(institution?.excessMonthlyFee.toLocaleString("ko-KR") || "5,000");
   const [billingErrors, setBillingErrors] = React.useState<BillingValidationErrors>({});
   const [isSaving, setIsSaving] = React.useState(false);
   const [displayedServiceStatus, setDisplayedServiceStatus] = React.useState(institution?.serviceStatus || "무료사용");
 
-  const storageKey = `institution-billing-settings:${String(params.institutionId)}`;
-
   React.useEffect(() => {
-    const stored = window.localStorage.getItem(storageKey);
-    if (!stored) return;
-    try {
-      const settings = JSON.parse(stored) as SavedBillingSettings;
-      setBillingType(settings.billingType || "일반 과금");
-      setEventPrepaidFee(settings.eventPrepaidFee || "");
-      setEventPeriod(settings.eventPeriod || "1년");
-      setEventStartDate(settings.eventStartDate || "");
-      setEventEndDate(settings.eventEndDate || "");
-      setIncludedStudents(settings.includedStudents || "");
-      setExcessFee(settings.excessFee || "");
+    if (!institution) return;
+    const settings = getInstitutionBillingSettings(institution);
+    setBillingType(settings.billingType);
+    setEventBillingMethod(settings.eventBillingMethod);
+    setEventAnnualPrepaidFee(settings.eventAnnualPrepaidFee);
+    setEventMonthlyFee(settings.eventMonthlyFee);
+    setEventStartDate(settings.eventStartDate);
+    setEventEndDate(settings.eventEndDate);
+    setIncludedStudents(settings.includedStudents);
+    setExcessMonthlyFee(settings.excessMonthlyFee);
 
+    try {
       if (settings.billingType === "이벤트 과금" && settings.eventEndDate) {
         const eventStopAt = new Date(`${settings.eventEndDate}T00:00:00`);
         eventStopAt.setDate(eventStopAt.getDate() + 1);
         if (new Date() >= eventStopAt) {
           setDisplayedServiceStatus("일시정지");
-          window.localStorage.setItem(storageKey, JSON.stringify({
+          saveInstitutionBillingSettings(institution.id, {
             ...settings,
             eventEnded: true,
             studentsPaused: true,
             serviceStatusAfterEvent: "일시정지",
-          } satisfies SavedBillingSettings));
+          });
         }
       }
-    } catch {
-      window.localStorage.removeItem(storageKey);
-    }
-  }, [storageKey]);
+    } catch { /* invalid legacy date falls back to the mock service state */ }
+  }, [institution]);
 
   React.useEffect(() => {
-    if (eventPeriod !== "1년") return;
     setEventEndDate(eventStartDate ? format(subDays(addYears(parseISO(eventStartDate), 1), 1), "yyyy-MM-dd") : "");
-  }, [eventPeriod, eventStartDate]);
+  }, [eventStartDate]);
 
   if (!institution) return null;
 
@@ -283,24 +271,25 @@ export default function InstitutionInfoPage() {
     const errors: BillingValidationErrors = {};
     if (!billingType) errors.billingType = "과금 유형을 선택해 주세요.";
     if (billingType === "이벤트 과금") {
-      if (!eventPrepaidFee) errors.prepaidFee = "이벤트 선납 이용료를 입력해 주세요.";
-      if (!eventPeriod) errors.period = "이벤트 이용 기간을 선택해 주세요.";
+      if (!eventBillingMethod) errors.method = "이벤트 과금 방식을 선택해 주세요.";
+      if (eventBillingMethod === "1년 선납" && !eventAnnualPrepaidFee) errors.annualPrepaidFee = "이벤트 1년 선납 이용료를 입력해 주세요.";
+      if (eventBillingMethod === "월별 과금" && !eventMonthlyFee) errors.monthlyFee = "이벤트 월 이용료를 입력해 주세요.";
       if (!eventStartDate) errors.startDate = "이벤트 시작일을 선택해 주세요.";
       if (!eventEndDate) errors.endDate = "이벤트 종료일을 선택해 주세요.";
       if (eventStartDate && eventEndDate && !isAfter(parseISO(eventEndDate), parseISO(eventStartDate))) {
         errors.endDate = "이벤트 종료일은 시작일 이후 날짜로 선택해 주세요.";
       }
       if (!includedStudents) errors.includedStudents = "기본 포함 인원을 입력해 주세요.";
-      if (!excessFee) errors.excessFee = "초과 인당 이용료를 입력해 주세요.";
+      if (!excessMonthlyFee) errors.excessMonthlyFee = "초과 인당 월 이용료를 입력해 주세요.";
     }
     setBillingErrors(errors);
     if (Object.keys(errors).length > 0) return;
 
     setIsSaving(true);
-    const settings: SavedBillingSettings = billingType === "이벤트 과금"
-      ? { billingType, eventPrepaidFee, eventPeriod, eventStartDate, eventEndDate, includedStudents, excessFee, eventEnded: false, studentsPaused: false }
-      : { billingType, eventPrepaidFee: "", eventPeriod: "1년", eventStartDate: "", eventEndDate: "", includedStudents: "", excessFee: "", eventEnded: false, studentsPaused: false };
-    window.localStorage.setItem(storageKey, JSON.stringify(settings));
+    const settings: InstitutionBillingSettings = billingType === "이벤트 과금"
+      ? { version: 3, billingType, eventBillingMethod, eventAnnualPrepaidFee: eventBillingMethod === "1년 선납" ? eventAnnualPrepaidFee : "", eventMonthlyFee: eventBillingMethod === "월별 과금" ? eventMonthlyFee : "", eventStartDate, eventEndDate, includedStudents, excessMonthlyFee, eventEnded: false, studentsPaused: false }
+      : { version: 3, billingType, eventBillingMethod: "1년 선납", eventAnnualPrepaidFee: "", eventMonthlyFee: "", eventStartDate: "", eventEndDate: "", includedStudents: "", excessMonthlyFee: "", eventEnded: false, studentsPaused: false };
+    saveInstitutionBillingSettings(institution.id, settings);
     toast({ title: "저장되었습니다." });
     setIsSaving(false);
   };
@@ -439,23 +428,33 @@ export default function InstitutionInfoPage() {
 
               {billingType === "이벤트 과금" && (
                 <>
-                  <label className="grid grid-cols-[110px_minmax(0,1fr)] items-start gap-3">
-                    <span className="pt-2 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>이벤트 선납 이용료</span>
-                    <div>
-                      <WonInput label="이벤트 선납 이용료" value={eventPrepaidFee} onChange={(value) => { setEventPrepaidFee(value); clearBillingError("prepaidFee"); }} />
-                      {billingErrors.prepaidFee && <p className="mt-1 text-xs text-rose-500">{billingErrors.prepaidFee}</p>}
-                    </div>
-                  </label>
                   <div className="flex items-start gap-5 pt-2">
-                    <span className="w-28 shrink-0 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>이벤트 이용 기간</span>
+                    <span className="w-28 shrink-0 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>이벤트 과금 방식</span>
                     <div>
                       <div className="flex items-center gap-5">
-                        <RadioOption name="eventPeriod" label="1년" checked={eventPeriod === "1년"} onChange={() => { setEventPeriod("1년"); clearBillingError("period"); }} />
-                        <RadioOption name="eventPeriod" label="직접 설정" checked={eventPeriod === "직접 설정"} onChange={() => { setEventPeriod("직접 설정"); setEventEndDate(""); clearBillingError("period"); }} />
+                        <RadioOption name="eventBillingMethod" label="1년 선납" checked={eventBillingMethod === "1년 선납"} onChange={() => { setEventBillingMethod("1년 선납"); clearBillingError("method"); }} />
+                        <RadioOption name="eventBillingMethod" label="월별 과금" checked={eventBillingMethod === "월별 과금"} onChange={() => { setEventBillingMethod("월별 과금"); clearBillingError("method"); }} />
                       </div>
-                      {billingErrors.period && <p className="mt-1 text-xs text-rose-500">{billingErrors.period}</p>}
+                      {billingErrors.method && <p className="mt-1 text-xs text-rose-500">{billingErrors.method}</p>}
                     </div>
                   </div>
+                  {eventBillingMethod === "1년 선납" ? (
+                    <label className="grid grid-cols-[110px_minmax(0,1fr)] items-start gap-3">
+                      <span className="pt-2 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>이벤트 1년 선납 이용료</span>
+                      <div>
+                        <WonInput label="이벤트 1년 선납 이용료" value={eventAnnualPrepaidFee} onChange={(value) => { setEventAnnualPrepaidFee(value); clearBillingError("annualPrepaidFee"); }} />
+                        {billingErrors.annualPrepaidFee && <p className="mt-1 text-xs text-rose-500">{billingErrors.annualPrepaidFee}</p>}
+                      </div>
+                    </label>
+                  ) : (
+                    <label className="grid grid-cols-[110px_minmax(0,1fr)] items-start gap-3">
+                      <span className="pt-2 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>이벤트 월 이용료</span>
+                      <div>
+                        <WonInput label="이벤트 월 이용료" value={eventMonthlyFee} onChange={(value) => { setEventMonthlyFee(value); clearBillingError("monthlyFee"); }} />
+                        {billingErrors.monthlyFee && <p className="mt-1 text-xs text-rose-500">{billingErrors.monthlyFee}</p>}
+                      </div>
+                    </label>
+                  )}
                   <label className="grid grid-cols-[110px_minmax(0,1fr)] items-start gap-3">
                     <span className="pt-2 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>이벤트 시작일</span>
                     <div>
@@ -469,7 +468,7 @@ export default function InstitutionInfoPage() {
                       <ContractDatePicker
                         label="이벤트 종료일"
                         value={eventEndDate}
-                        disabled={eventPeriod === "1년"}
+                        disabled={eventBillingMethod === "1년 선납"}
                         minDate={eventStartDate ? addDays(parseISO(eventStartDate), 1) : undefined}
                         onChange={(value) => { setEventEndDate(value); clearBillingError("endDate"); }}
                       />
@@ -484,10 +483,10 @@ export default function InstitutionInfoPage() {
                     </div>
                   </label>
                   <label className="grid grid-cols-[110px_minmax(0,1fr)] items-start gap-3">
-                    <span className="pt-2 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>초과 인당 이용료</span>
+                    <span className="pt-2 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>초과 인당 월 이용료</span>
                     <div>
-                      <WonInput label="초과 인당 이용료" value={excessFee} onChange={(value) => { setExcessFee(value); clearBillingError("excessFee"); }} />
-                      {billingErrors.excessFee && <p className="mt-1 text-xs text-rose-500">{billingErrors.excessFee}</p>}
+                      <WonInput label="초과 인당 월 이용료" value={excessMonthlyFee} onChange={(value) => { setExcessMonthlyFee(value); clearBillingError("excessMonthlyFee"); }} />
+                      {billingErrors.excessMonthlyFee && <p className="mt-1 text-xs text-rose-500">{billingErrors.excessMonthlyFee}</p>}
                     </div>
                   </label>
                 </>

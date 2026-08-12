@@ -25,7 +25,7 @@ import { getQuestionsByTaskId, Question, matchStoredIdWithAdminId } from "@/lib/
 import { getAnswers, saveAnswer, Answer } from "@/utils/answerStorage";
 import { getStoredTasks, updateTaskStatus, Task } from "@/utils/taskStorage";
 import { saveTaskResult, TaskResult, GradingDetail } from "@/utils/taskResultStorage";
-import { INITIAL_TASKS } from "@/lib/task-center-mock";
+import { INITIAL_TASKS, StudentAssignment } from "@/lib/task-center-mock";
 import { useToast } from "@/hooks/use-toast";
 import PrintPreviewPanel from "@/components/admin/task-center/print/print-preview-panel";
 
@@ -189,7 +189,7 @@ export default function MathSolvePage(props: PageProps) {
   const adminTask = INITIAL_TASKS.find((t) => matchStoredIdWithAdminId(taskId, t.id) || matchStoredIdWithAdminId(t.id, taskId)) || null;
   const activeStudents = adminTask?.assignedStudents || [];
   const currentStudentId = searchParams.previewStudentId || activeStudents[0]?.studentId || "student-1";
-  const currentStudent = activeStudents.find(s => s.studentId === currentStudentId) || {
+  const currentStudent: StudentAssignment = activeStudents.find(s => s.studentId === currentStudentId) || {
     studentId: currentStudentId,
     studentName: "김푸름",
     classGroup: "1반",

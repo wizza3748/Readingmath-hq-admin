@@ -120,7 +120,7 @@ const frontWorkItems: WorkItem[] = [
   {
     id: "RM-362",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-362",
-    title: "[프론트] 시험 대비 v2",
+    title: "[프론트] 시험 대비 개편",
     internalUrl: "/content/math-exam-prep",
     isNew: true,
   },

@@ -19,6 +19,7 @@ export default function ConditionalLayout({
     const isLearningOperationsTaskStatus = pathname?.startsWith(
         "/learning-operations/task-status"
     );
+    const isInstitutionsList = pathname === "/institutions";
     // P0-1: exam-prep, science-home, math-home, science-task-center 및 math-task-center 하위 경로 전체에서 사이드바 및 글로벌 헤더 미노출 보장
     const isStandalone = 
         pathname?.startsWith("/content/exam-prep") || 
@@ -56,7 +57,7 @@ export default function ConditionalLayout({
                     <SidebarStateController />
                     <AppSidebar />
                     <SidebarInset
-                        className={isLearningOperationsTaskStatus ? "min-w-0 overflow-x-hidden" : undefined}
+                        className={isLearningOperationsTaskStatus || isInstitutionsList ? "min-w-0 overflow-x-hidden" : undefined}
                     >
                         <Header />
                         <main>{children}</main>

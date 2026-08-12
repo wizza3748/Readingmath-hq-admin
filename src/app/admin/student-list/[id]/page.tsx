@@ -16,6 +16,7 @@ import {
   getStoredStudents,
   saveStoredStudents,
   getAssignedTeacherMap,
+  appendStudentServiceActivity,
 } from "@/lib/student-mock";
 import { getStoredTeachers, Teacher, ClassInfo, getStoredClasses } from "@/lib/teacher-mock";
 import {
@@ -77,6 +78,7 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
   // ── UI 상태 ──────────────────────────────────────────────
   const [isNotFound, setIsNotFound] = React.useState(false);
   const [deleteConfirmOpen, setDeleteConfirmOpen] = React.useState(false);
+  const [stopReservationConfirmOpen, setStopReservationConfirmOpen] = React.useState(false);
 
   // 탭 상태 (학생정보 | 시험 대비)
   const [activeTab, setActiveTab] = React.useState<"info" | "exam-prep">("info");
@@ -146,6 +148,50 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
     if (!classId) return "-";
     return teacherMap[classId] || "-";
   }, [classId, teacherMap]);
+
+  const nextMonthFirstDate = React.useMemo(() => {
+    const date = new Date();
+    const nextMonth = new Date(date.getFullYear(), date.getMonth() + 1, 1);
+    return `${nextMonth.getFullYear()}-${String(nextMonth.getMonth() + 1).padStart(2, "0")}-01`;
+  }, []);
+
+  const todayText = React.useMemo(() => {
+    const date = new Date();
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+  }, []);
+
+  const isStopReservationEligible = Boolean(
+    currentStudent?.institutionBillingType === "event"
+    && serviceStatus === "in_use"
+    && currentStudent.hasCurrentMonthOverageCharge
+    && currentStudent.serviceStartedAt
+    && currentStudent.serviceStartedAt < todayText
+    && (!currentStudent.institutionEventEndDate || currentStudent.institutionEventEndDate >= todayText)
+  );
+
+  const updateStudentService = (nextStatus: StudentServiceStatus, scheduledAt: string | null, activity: string) => {
+    if (!currentStudent) return;
+    const nextStudents = studentsList.map((student) => student.id === currentStudent.id
+      ? { ...student, serviceStatus: nextStatus, serviceStopScheduledAt: scheduledAt }
+      : student);
+    const nextStudent = nextStudents.find((student) => student.id === currentStudent.id)!;
+    saveStoredStudents(nextStudents);
+    setStudentsList(nextStudents);
+    setCurrentStudent(nextStudent);
+    setServiceStatus(nextStatus);
+    appendStudentServiceActivity(nextStudent, activity, scheduledAt || new Date().toISOString().slice(0, 10));
+  };
+
+  const reserveServiceStop = () => {
+    updateStudentService("in_use", nextMonthFirstDate, "서비스 정지 예약");
+    setStopReservationConfirmOpen(false);
+    toast({ title: `${nextMonthFirstDate.replaceAll("-", ".")} 서비스 정지가 예약되었습니다.` });
+  };
+
+  const cancelServiceStopReservation = () => {
+    updateStudentService("in_use", null, "서비스 정지 예약 취소");
+    toast({ title: "서비스 정지 예약이 취소되었습니다." });
+  };
 
   // ── 저장 핸들러 ───────────────────────────────────────────
   const handleSave = () => {
@@ -287,17 +333,17 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
         <p className="text-xs text-slate-400 mt-1">Home - 학생관리 - 학생상세</p>
       </div>
 
-      <div className="w-full space-y-6">
+      <div className="w-full space-y-5">
         
         {/* ── 상단 프로필 요약 요약 정보 카드 ─────────────────────── */}
-        <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-          <div className="flex items-center gap-4">
-            {/* 프로필 이미지 동그라미 플레이스홀더 */}
-            <div className="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center border border-slate-200">
-              <User className="h-8 w-8 text-slate-400" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-1.5">
+        <div className="bg-white rounded-lg border border-slate-200/80 shadow-sm px-6 pt-6">
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-6">
+            <div className="flex items-start gap-6">
+              <div className="w-36 h-36 shrink-0 rounded-md bg-slate-200 flex items-center justify-center border border-slate-200 overflow-hidden">
+                <User className="h-20 w-20 text-slate-400" strokeWidth={1.4} />
+              </div>
+              <div className="pt-1">
+                <div className="flex flex-wrap items-center gap-2 mb-4">
                 <span className="text-lg font-bold text-slate-800">{name}</span>
                 {/* 서비스상태 배지 */}
                 <span className={`text-xs px-2.5 py-0.5 rounded font-bold border ${
@@ -321,17 +367,23 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
                 </span>
               </div>
               
-              {/* 요약 텍스트 그리드 */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-1 text-xs text-slate-500">
-                <div>아이디: <span className="font-semibold text-slate-700">{loginId || "-"}</span></div>
-                <div>학년: <span className="font-semibold text-slate-700">{grade} {semester}</span></div>
-                <div>부모님 연락처: <span className="font-semibold text-slate-700">{parentPhone || "-"}</span></div>
-                <div>가입일시: <span className="font-semibold text-slate-700">{currentStudent.createdAt} 08:47:20</span></div>
+                <div className="flex flex-wrap items-center gap-x-7 gap-y-2 text-xs text-slate-400">
+                  <div>아이디: <span className="font-medium text-slate-500">{loginId || "-"}</span></div>
+                  <div>학년: <span className="font-medium text-slate-500">{grade} {semester}</span></div>
+                  <div>부모님 연락처: <span className="font-medium text-slate-500">{parentPhone || "-"}</span></div>
+                </div>
+                <div className="mt-3 flex flex-wrap items-center gap-x-7 gap-y-2 text-xs text-slate-400">
+                  <div>시작일: <span className="font-medium text-slate-500">-</span></div>
+                  <div>종료일: <span className="font-medium text-slate-500">-</span></div>
+                  <div>가입일시: <span className="font-medium text-slate-500">{currentStudent.createdAt} 08:47:20</span></div>
+                </div>
+                <div className="mt-4 text-xs text-slate-400">
+                  기관: <span className="font-medium text-slate-500">개발연구소</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="flex gap-2 self-stretch md:self-auto justify-end">
+            <div className="flex gap-2 self-stretch lg:self-auto justify-end pt-1">
             <Button
               variant="outline"
               className="h-9 px-4 text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100/80 hover:text-emerald-700 font-bold"
@@ -346,19 +398,17 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
             >
               학생 삭제
             </Button>
+            </div>
           </div>
-        </div>
 
-        {/* ── 탭 레이아웃 ──────────────────────────────────────── */}
-        {/* 탭 순서: 학생정보 | 학습내역 | 시험 대비 | 주간알림장 | 월간보고서 | 진단평가 보고서 */}
-        <div className="border-b border-slate-200 flex items-center gap-1">
+          <div className="mt-6 flex items-center gap-1 overflow-x-auto">
           {/* 학생정보 — activeTab 변경 */}
           <button
             onClick={() => handleTabChange("info")}
-            className={`px-5 py-2.5 font-bold text-sm rounded-t-lg transition-all ${
+            className={`px-5 py-3 font-bold text-sm whitespace-nowrap border-b-2 transition-colors ${
               activeTab === "info"
-                ? "text-blue-600 border-b-2 border-blue-600 bg-white"
-                : "text-slate-500 hover:text-slate-700 hover:bg-slate-50"
+                ? "text-sky-500 border-sky-500"
+                : "text-slate-400 border-transparent hover:text-slate-600"
             }`}
           >
             학생정보
@@ -366,17 +416,17 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
           {/* 학습내역 — toast만, activeTab 불변 */}
           <button
             onClick={() => toast({ title: "'학습내역' 탭은 다음 프롬프트에서 순차 구현될 예정입니다." })}
-            className="px-5 py-2.5 font-semibold text-sm text-slate-500 hover:text-slate-700 hover:bg-slate-50 rounded-t-lg transition-all"
+            className="px-5 py-3 font-semibold text-sm whitespace-nowrap text-slate-400 border-b-2 border-transparent hover:text-slate-600 transition-colors"
           >
             학습내역
           </button>
           {/* 시험 대비 — activeTab 변경 */}
           <button
             onClick={() => handleTabChange("exam-prep")}
-            className={`px-5 py-2.5 font-bold text-sm rounded-t-lg transition-all ${
+            className={`px-5 py-3 font-bold text-sm whitespace-nowrap border-b-2 transition-colors ${
               activeTab === "exam-prep"
-                ? "text-blue-600 border-b-2 border-blue-600 bg-white"
-                : "text-slate-500 hover:text-slate-700 hover:bg-slate-50"
+                ? "text-sky-500 border-sky-500"
+                : "text-slate-400 border-transparent hover:text-slate-600"
             }`}
           >
             시험 대비
@@ -386,11 +436,12 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
             <button
               key={tab}
               onClick={() => toast({ title: `'${tab}' 탭은 다음 프롬프트에서 순차 구현될 예정입니다.` })}
-              className="px-5 py-2.5 font-semibold text-sm text-slate-500 hover:text-slate-700 hover:bg-slate-50 rounded-t-lg transition-all"
+              className="px-5 py-3 font-semibold text-sm whitespace-nowrap text-slate-400 border-b-2 border-transparent hover:text-slate-600 transition-colors"
             >
               {tab}
             </button>
           ))}
+          </div>
         </div>
 
         {/* ── 시험 대비 탭 콘텐츠 ──────────────────────────────────── */}
@@ -404,382 +455,180 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
           />
         )}
 
-        {/* ── 계정 / 개인 / 학부모 / 서비스 카드 레이아웃 ──────────────── */}
+        {/* ── 계정 / 개인 / 학부모 / 서비스 정보 ─────────────────── */}
         {activeTab === "info" && (
-        <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm p-6 space-y-8">
-          
-          {/* 계정 정보 섹션 */}
-          <div>
-            <h2 className="text-base font-bold text-slate-800 border-b border-slate-100 pb-2 mb-4 flex items-center gap-2">
-              <Lock className="h-4 w-4 text-slate-500" />
-              계정 정보
-            </h2>
-            <div className="space-y-4">
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">
-                  아이디
-                </label>
-                <div className="col-span-3">
-                  <Input
-                    value={loginId}
-                    disabled
-                    className="h-10 text-sm w-full max-w-2xl bg-slate-50 border-slate-200 text-slate-500 cursor-not-allowed"
-                  />
+          <div className="bg-white rounded-lg border border-slate-200/80 shadow-sm p-6 md:p-8 space-y-10">
+            <section>
+              <h2 className="text-sm font-bold text-slate-800 border-b border-slate-200 pb-4 mb-5">계정 정보</h2>
+              <div className="space-y-3">
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500">아이디</label>
+                  <Input value={loginId} disabled className="h-9 text-sm bg-slate-50 border-slate-200 text-slate-500" />
+                </div>
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500">비밀번호</label>
+                  <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="입력 후 저장 시 비밀번호가 변경 저장됩니다" className="h-9 text-sm border-slate-200" />
+                </div>
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500">PIN번호</label>
+                  <Input value={pinNumber} onChange={(e) => setPinNumber(e.target.value)} placeholder="PIN 번호" className="h-9 text-sm border-slate-200" />
                 </div>
               </div>
+            </section>
 
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">비밀번호</label>
-                <div className="col-span-3">
-                  <Input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="입력 후 저장 시 비밀번호가 변경 저장됩니다"
-                    className="h-10 text-sm w-full max-w-2xl bg-white border-slate-200 focus:border-blue-500"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">PIN 번호</label>
-                <div className="col-span-3">
-                  <Input
-                    value={pinNumber}
-                    onChange={(e) => setPinNumber(e.target.value)}
-                    placeholder="PIN 번호"
-                    className="h-10 text-sm w-full max-w-2xl bg-white border-slate-200 focus:border-blue-500"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* 개인 정보 섹션 */}
-          <div>
-            <h2 className="text-base font-bold text-slate-800 border-b border-slate-100 pb-2 mb-4 flex items-center gap-2">
-              <User className="h-4 w-4 text-slate-500" />
-              개인 정보
-            </h2>
-            <div className="space-y-4">
-              
-              <div className="grid grid-cols-4 gap-4 items-start">
-                <label className="text-sm font-semibold text-slate-600 pt-2.5 col-span-1">대표이미지</label>
-                <div className="col-span-3 flex items-center gap-4">
-                  <div className="w-20 h-20 rounded-full bg-slate-50 border-2 border-dashed border-slate-200 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-100/50 transition-colors">
-                    <User className="h-6 w-6 text-slate-300" />
-                    <span className="text-[10px] text-slate-400 mt-1">파일 선택</span>
-                  </div>
-                  <div className="text-[11px] text-slate-400 space-y-0.5">
-                    <p>허용이미지 타입: .png, .jpg, .jpeg</p>
-                    <p>최대 업로드 크기: 5MB 이하</p>
+            <section>
+              <h2 className="text-sm font-bold text-slate-800 border-b border-slate-200 pb-4 mb-5">개인 정보</h2>
+              <div className="space-y-3">
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-start gap-4">
+                  <label className="pt-2 text-sm text-right text-slate-500">대표이미지</label>
+                  <div>
+                    <div className="w-28 h-28 rounded-md bg-slate-200 border border-slate-200 flex items-center justify-center">
+                      <User className="h-16 w-16 text-slate-400" strokeWidth={1.4} />
+                    </div>
+                    <p className="mt-2 text-xs text-slate-400">허용이미지 타입: .png, .jpg, .jpeg</p>
                   </div>
                 </div>
-              </div>
-
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">
-                  <span className="text-red-500 mr-1">*</span>학생 이름
-                </label>
-                <div className="col-span-3">
-                  <Input
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="학생 이름"
-                    className="h-10 text-sm w-full max-w-2xl bg-white border-slate-200 focus:border-blue-500"
-                  />
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500"><span className="mr-1 text-red-500">*</span>학생 이름</label>
+                  <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="학생 이름" className="h-9 text-sm border-slate-200" />
+                </div>
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500"><span className="mr-1 text-red-500">*</span>생년월일</label>
+                  <Input type="date" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} className="h-9 text-sm border-slate-200" />
+                </div>
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500">기관명</label>
+                  <Input value="개발연구소" disabled className="h-9 text-sm bg-slate-50 border-slate-200 text-slate-500" />
+                </div>
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500">전화번호</label>
+                  <Input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="전화번호" className="h-9 text-sm border-slate-200" />
+                </div>
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500">주소</label>
+                  <Input value={address} onChange={(e) => setAddress(e.target.value)} placeholder="주소" className="h-9 text-sm border-slate-200" />
+                </div>
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500">마지막 로그인</label>
+                  <Input value="2026-05-28 17:34:00" disabled className="h-9 text-sm bg-slate-50 border-slate-200 text-slate-500" />
                 </div>
               </div>
+            </section>
 
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">생년월일</label>
-                <div className="col-span-3">
-                  <Input
-                    type="date"
-                    value={birthDate}
-                    onChange={(e) => setBirthDate(e.target.value)}
-                    className="h-10 text-sm w-full max-w-2xl bg-white border-slate-200"
-                  />
+            <section>
+              <h2 className="text-sm font-bold text-slate-800 border-b border-slate-200 pb-4 mb-5">학부모 정보</h2>
+              <div className="space-y-3">
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500">학부모 이름</label>
+                  <Input value={parentName} onChange={(e) => setParentName(e.target.value)} placeholder="학부모 이름" className="h-9 text-sm border-slate-200" />
+                </div>
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500"><span className="mr-1 text-red-500">*</span>학부모 전화번호</label>
+                  <Input value={parentPhone} onChange={(e) => setParentPhone(e.target.value)} placeholder="학부모 전화번호" className="h-9 text-sm border-slate-200" />
                 </div>
               </div>
+            </section>
 
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">기관명</label>
-                <div className="col-span-3">
-                  <Input
-                    value="개발연구소"
-                    disabled
-                    className="h-10 text-sm w-full max-w-2xl bg-slate-50 border-slate-200 text-slate-500 cursor-not-allowed"
-                  />
+            <section>
+              <h2 className="text-sm font-bold text-slate-800 border-b border-slate-200 pb-4 mb-5">서비스 정보</h2>
+              <div className="space-y-3">
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500"><span className="mr-1 text-red-500">*</span>서비스 타입</label>
+                  <div className="flex flex-wrap items-center gap-6">
+                    <select value={serviceType} onChange={(e) => setServiceType(e.target.value as StudentServiceType)} className="h-9 min-w-[190px] rounded-md border border-slate-200 bg-white px-3 text-sm text-slate-600">
+                      {(["math", "science", "combo"] as StudentServiceType[]).map((type) => <option key={type} value={type}>{getStudentServiceTypeLabel(type)}</option>)}
+                    </select>
+                    <label className="text-sm text-slate-500"><span className="mr-1 text-red-500">*</span>학년</label>
+                    <select value={grade} onChange={(e) => setGrade(e.target.value)} className="h-9 w-[150px] rounded-md border border-slate-200 bg-white px-3 text-sm text-slate-600">
+                      {["초등 3", "초등 4", "초등 5", "초등 6", "중등 1", "중등 2", "중등 3", "고등 1", "미지정"].map((g) => <option key={g} value={g}>{g}</option>)}
+                    </select>
+                    <label className="text-sm text-slate-500"><span className="mr-1 text-red-500">*</span>학기</label>
+                    <select value={semester} onChange={(e) => setSemester(e.target.value)} className="h-9 w-[120px] rounded-md border border-slate-200 bg-white px-3 text-sm text-slate-600">
+                      {["1학기", "2학기", "미지정"].map((s) => <option key={s} value={s}>{s}</option>)}
+                    </select>
+                  </div>
                 </div>
-              </div>
 
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">전화번호</label>
-                <div className="col-span-3">
-                  <Input
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="전화번호"
-                    className="h-10 text-sm w-full max-w-2xl bg-white border-slate-200"
-                  />
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500">학습 학기</label>
+                  <div className="flex flex-wrap items-center gap-4">
+                    {(serviceType === "math" || serviceType === "combo") && (
+                      <div className="flex items-center gap-2">
+                        <span className="rounded bg-violet-50 px-2 py-1 text-xs font-bold text-violet-500">수학</span>
+                        <select value={mathGradeTerm} onChange={(e) => setMathGradeTerm(e.target.value)} className="h-9 w-[150px] rounded-md border border-slate-200 bg-white px-3 text-sm text-slate-600">
+                          {["초3-1","초3-2","초4-1","초4-2","초5-1","초5-2","초6-1","초6-2","중1-1","중1-2","중2-1","중2-2","중3-1","중3-2","고1-1","고1-2"].map((v) => <option key={v} value={v}>{v}</option>)}
+                        </select>
+                      </div>
+                    )}
+                    {(serviceType === "science" || serviceType === "combo") && (
+                      <div className="flex items-center gap-2">
+                        <span className="rounded bg-sky-50 px-2 py-1 text-xs font-bold text-sky-500">과학</span>
+                        <select value={scienceGradeTerm} onChange={(e) => setScienceGradeTerm(e.target.value)} className="h-9 w-[150px] rounded-md border border-slate-200 bg-white px-3 text-sm text-slate-600">
+                          {["초3-1","초3-2","초4-1","초4-2","초5-1","초5-2","초6-1","초6-2","중1-1","중1-2","중2-1","중2-2","중3-1","중3-2","고1-1","고1-2"].map((v) => <option key={v} value={v}>{v}</option>)}
+                        </select>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
 
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">주소</label>
-                <div className="col-span-3">
-                  <Input
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                    placeholder="주소"
-                    className="h-10 text-sm w-full max-w-2xl bg-white border-slate-200"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">마지막 로그인</label>
-                <div className="col-span-3">
-                  <Input
-                    value="2026-05-28 17:34:00"
-                    disabled
-                    className="h-10 text-sm w-full max-w-2xl bg-slate-50 border-slate-200 text-slate-500"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* 학부모 정보 섹션 */}
-          <div>
-            <h2 className="text-base font-bold text-slate-800 border-b border-slate-100 pb-2 mb-4 flex items-center gap-2">
-              <Phone className="h-4 w-4 text-slate-500" />
-              학부모 정보
-            </h2>
-            <div className="space-y-4">
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">학부모 이름</label>
-                <div className="col-span-3">
-                  <Input
-                    value={parentName}
-                    onChange={(e) => setParentName(e.target.value)}
-                    placeholder="학부모 이름"
-                    className="h-10 text-sm w-full max-w-2xl bg-white border-slate-200 focus:border-blue-500"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">
-                  <span className="text-red-500 mr-1">*</span>학부모 전화번호
-                </label>
-                <div className="col-span-3">
-                  <Input
-                    value={parentPhone}
-                    onChange={(e) => setParentPhone(e.target.value)}
-                    placeholder="학부모 전화번호"
-                    className="h-10 text-sm w-full max-w-2xl bg-white border-slate-200 focus:border-blue-500"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* 서비스 정보 섹션 (핵심 반/선생님 이식 영역) */}
-          <div>
-            <h2 className="text-base font-bold text-slate-800 border-b border-slate-100 pb-2 mb-4 flex items-center gap-2">
-              <Building className="h-4 w-4 text-slate-500" />
-              서비스 정보
-            </h2>
-            <div className="space-y-4">
-
-              {/* ── 서비스 타입 ── */}
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">
-                  <span className="text-red-500 mr-1">*</span>서비스 타입
-                </label>
-                <div className="col-span-3 flex gap-3 flex-wrap">
-                  {(["math", "science", "combo"] as StudentServiceType[]).map((type) => (
-                    <button
-                      key={type}
-                      type="button"
-                      onClick={() => setServiceType(type)}
-                      className={`h-9 px-4 text-sm font-semibold rounded-lg border transition-all ${
-                        serviceType === type
-                          ? "bg-blue-600 border-blue-600 text-white shadow-sm"
-                          : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
-                      }`}
-                    >
-                      {getStudentServiceTypeLabel(type)}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* ── 기본 학기 (학년 + 학기 한 행) ── */}
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">기본 학기</label>
-                <div className="col-span-3 flex items-center gap-2">
-                  <select
-                    value={grade}
-                    onChange={(e) => setGrade(e.target.value)}
-                    className="h-9 text-sm w-[130px] bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                  >
-                    {["초등 3", "초등 4", "초등 5", "초등 6", "중등 1", "중등 2", "중등 3", "고등 1", "미지정"].map((g) => (
-                      <option key={g} value={g}>{g}</option>
-                    ))}
-                  </select>
-                  <select
-                    value={semester}
-                    onChange={(e) => setSemester(e.target.value)}
-                    className="h-9 text-sm w-[90px] bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                  >
-                    {["1학기", "2학기", "미지정"].map((s) => (
-                      <option key={s} value={s}>{s}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              {/* ── 학습 학기 (서비스 타입에 따라 수학/과학 조건부 노출) ── */}
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">학습 학기</label>
-                <div className="col-span-3 flex items-center gap-3 flex-wrap">
-                  {(serviceType === "math" || serviceType === "combo") && (
-                    <div className="flex items-center gap-2">
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-bold bg-blue-50 text-blue-600 border border-blue-200 whitespace-nowrap">수학</span>
-                      <select
-                        value={mathGradeTerm}
-                        onChange={(e) => setMathGradeTerm(e.target.value)}
-                        className="h-9 text-sm w-[110px] bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                      >
-                        {["초3-1","초3-2","초4-1","초4-2","초5-1","초5-2","초6-1","초6-2","중1-1","중1-2","중2-1","중2-2","중3-1","중3-2","고1-1","고1-2"].map((v) => (
-                          <option key={v} value={v}>{v}</option>
-                        ))}
-                      </select>
-                    </div>
-                  )}
-                  {(serviceType === "science" || serviceType === "combo") && (
-                    <div className="flex items-center gap-2">
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-200 whitespace-nowrap">과학</span>
-                      <select
-                        value={scienceGradeTerm}
-                        onChange={(e) => setScienceGradeTerm(e.target.value)}
-                        className="h-9 text-sm w-[110px] bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500"
-                      >
-                        {["초3-1","초3-2","초4-1","초4-2","초5-1","초5-2","초6-1","초6-2","중1-1","중1-2","중2-1","중2-2","중3-1","중3-2","고1-1","고1-2"].map((v) => (
-                          <option key={v} value={v}>{v}</option>
-                        ))}
-                      </select>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* ── 반 / 담당 선생님 (한 행) ── */}
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">반 / 담당 선생님</label>
-                <div className="col-span-3 flex items-center gap-2">
-                  <select
-                    value={classId || "all"}
-                    onChange={(e) => {
-                      const val = e.target.value;
-                      setClassId(val === "all" ? null : val);
-                    }}
-                    className="h-9 text-sm w-[140px] bg-white border border-slate-200 rounded-lg px-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 font-semibold"
-                  >
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500">반</label>
+                  <select value={classId || "all"} onChange={(e) => setClassId(e.target.value === "all" ? null : e.target.value)} className="h-9 w-[190px] rounded-md border border-slate-200 bg-white px-3 text-sm text-slate-600">
                     <option value="all">미지정 (-)</option>
-                    {classesList.map((cls) => (
-                      <option key={cls.id} value={cls.id}>{cls.name}</option>
-                    ))}
+                    {classesList.map((cls) => <option key={cls.id} value={cls.id}>{cls.name}</option>)}
                   </select>
-                  <Input
-                    value={assignedTeacherName}
-                    readOnly
-                    disabled
-                    className="h-9 text-sm w-[100px] bg-slate-50 border-slate-200 text-slate-700 font-bold cursor-not-allowed"
-                  />
                 </div>
-              </div>
-
-              {/* 서비스 상태 */}
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">서비스 상태</label>
-                <div className="col-span-3 flex items-center gap-3">
-                  {/* 현재 상태 배지 */}
-                  {serviceStatus === "in_use" ? (
-                    <span className="inline-flex items-center gap-1.5 h-9 px-4 text-xs font-bold rounded-lg border bg-emerald-50 border-emerald-200 text-emerald-700">
-                      <span className="h-2 w-2 rounded-full bg-emerald-500 inline-block" />
-                      사용중
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500">담당 선생님</label>
+                  <Input value={assignedTeacherName} readOnly disabled className="h-9 w-[190px] bg-slate-50 border-slate-200 text-sm text-slate-500" />
+                </div>
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500">서비스 상태</label>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className={`inline-flex h-9 items-center rounded-md px-3 text-xs font-bold ${serviceStatus === "in_use" ? "bg-emerald-50 text-emerald-500" : "bg-amber-50 text-amber-600"}`}>
+                      {serviceStatus === "in_use" ? "사용중" : "서비스 정지"}
                     </span>
-                  ) : (
-                    <span className="inline-flex items-center gap-1.5 h-9 px-4 text-xs font-bold rounded-lg border bg-amber-50 border-amber-200 text-amber-700">
-                      <span className="h-2 w-2 rounded-full bg-amber-500 inline-block" />
-                      서비스 정지
-                    </span>
-                  )}
-                  {/* 액션 버튼 */}
-                  {serviceStatus === "in_use" ? (
-                    <Button
-                      type="button"
-                      onClick={() => setSuspendModalOpen(true)}
-                      className="h-9 px-4 text-xs font-bold rounded-lg border bg-rose-50 border-rose-300 text-rose-600 hover:bg-rose-100 transition-all"
-                    >
-                      서비스 정지
-                    </Button>
-                  ) : (
-                    <Button
-                      type="button"
-                      onClick={() => setResumeModalOpen(true)}
-                      className="h-9 px-4 text-xs font-bold rounded-lg border bg-blue-600 border-blue-600 text-white hover:bg-blue-700 shadow-sm transition-all"
-                    >
-                      서비스 시작
-                    </Button>
-                  )}
+                    {serviceStatus === "in_use" ? (
+                      <Button type="button" onClick={() => setSuspendModalOpen(true)} className="h-9 bg-red-400 px-4 text-xs font-bold text-white hover:bg-red-500">서비스 정지</Button>
+                    ) : (
+                        <Button type="button" onClick={() => setResumeModalOpen(true)} className="h-9 bg-blue-500 px-4 text-xs font-bold text-white hover:bg-blue-600">서비스 시작</Button>
+                    )}
+                    {isStopReservationEligible && serviceStatus === "in_use" && (
+                      currentStudent.serviceStopScheduledAt ? (
+                        <Button type="button" variant="outline" onClick={cancelServiceStopReservation} className="h-9 border-slate-300 px-4 text-xs font-bold text-slate-600 hover:bg-slate-50">정지 예약 취소</Button>
+                      ) : (
+                        <Button type="button" variant="outline" onClick={() => setStopReservationConfirmOpen(true)} className="h-9 border-blue-300 px-4 text-xs font-bold text-blue-500 hover:bg-blue-50">서비스 정지 예약</Button>
+                      )
+                    )}
+                    {serviceStatus === "in_use" && currentStudent.serviceStopScheduledAt && (
+                      <span className="text-xs font-semibold text-orange-500">{currentStudent.serviceStopScheduledAt.replaceAll("-", ".")} 정지 예정</span>
+                    )}
+                  </div>
+                </div>
+                <div className="grid grid-cols-[110px_minmax(0,1fr)] items-center gap-4">
+                  <label className="text-sm text-right text-slate-500">가입일</label>
+                  <div className="text-sm font-semibold text-slate-500">{currentStudent.createdAt} 08:47:20</div>
                 </div>
               </div>
+            </section>
 
-              <div className="grid grid-cols-4 gap-4 items-center">
-                <label className="text-sm font-semibold text-slate-600 col-span-1">가입일</label>
-                <div className="col-span-3 text-sm text-slate-500 font-medium">
-                  2025-12-17 08:47:20
-                </div>
+            <section>
+              <h2 className="text-sm font-bold text-slate-800 border-b border-slate-200 pb-4 mb-5">메모</h2>
+              <div className="grid grid-cols-[110px_minmax(0,1fr)] items-start gap-4">
+                <label className="pt-2 text-sm text-right text-slate-500">관리자 메모</label>
+                <textarea value={memo} onChange={(e) => setMemo(e.target.value)} placeholder="내용을 입력해 주세요." rows={3} className="w-full rounded-md border border-slate-200 bg-white p-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500" />
               </div>
-            </div>
+            </section>
           </div>
-
-          {/* 메모 섹션 */}
-          <div>
-            <h2 className="text-base font-bold text-slate-800 border-b border-slate-100 pb-2 mb-4 flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-slate-500" />
-              메모
-            </h2>
-            <div className="space-y-4">
-              <div className="grid grid-cols-4 gap-4 items-start">
-                <label className="text-sm font-semibold text-slate-600 pt-2 col-span-1">관리자 메모</label>
-                <div className="col-span-3">
-                  <textarea
-                    value={memo}
-                    onChange={(e) => setMemo(e.target.value)}
-                    placeholder="내용을 입력해 주세요."
-                    rows={4}
-                    className="w-full max-w-2xl text-sm bg-white border border-slate-200 rounded-lg p-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        )}{/* end activeTab === "info" */}
+        )}
       </div>
 
-      {/* ── 하단 고정 액션 바 (Footer) ─────────────────────────── */}
+      {/* ── 하단 액션 ─────────────────────────────────────────── */}
       {activeTab === "info" && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-[2px] border-t border-slate-200 px-6 py-4 flex items-center justify-between shadow-[0_-6px_20px_-4px_rgba(0,0,0,0.06)]">
+        <div className="mt-4 flex items-center justify-between">
           <button
             onClick={() => router.push("/admin/student-list")}
-            className="h-9 px-3.5 border border-slate-200 rounded-lg bg-white hover:bg-slate-50 text-slate-600 font-semibold text-sm flex items-center gap-2.5 transition-colors"
+            className="h-9 px-3.5 border border-slate-200 rounded-md bg-white hover:bg-slate-50 text-slate-600 font-semibold text-sm flex items-center gap-2.5 transition-colors"
           >
             <div className="flex flex-col gap-1 w-3.5">
               <span className="h-0.5 w-full bg-slate-500 rounded-full" />
@@ -790,10 +639,9 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
           </button>
 
           <Button
-            className="h-9 px-5 gap-1.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-sm rounded-lg"
+            className="h-9 px-5 bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow-sm rounded-md"
             onClick={handleSave}
           >
-            <Save className="h-4 w-4" />
             저장
           </Button>
         </div>
@@ -808,6 +656,15 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
         confirmLabel="삭제"
         confirmVariant="destructive"
         onConfirm={handleDeleteConfirm}
+      />
+
+      <ConfirmDialog
+        open={stopReservationConfirmOpen}
+        onOpenChange={setStopReservationConfirmOpen}
+        title="서비스 정지 예약"
+        description={`서비스 정지를 예약하시겠습니까?\n\n학생은 이번 달 말일까지 서비스를 이용할 수 있으며,\n${nextMonthFirstDate.replaceAll("-", ".")}부터 서비스가 정지됩니다.`}
+        confirmLabel="예약"
+        onConfirm={reserveServiceStop}
       />
 
       {/* ── 서비스 정지 모달 팝업 ─────────────────────────────── */}
@@ -846,7 +703,7 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
             <Button
               size="sm"
               onClick={() => {
-                setServiceStatus("suspended");
+                updateStudentService("suspended", null, "서비스 정지");
                 setSuspendModalOpen(false);
                 toast({ title: "서비스가 정지 처리되었습니다." });
               }}
