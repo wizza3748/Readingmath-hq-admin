@@ -1,19 +1,12 @@
 import { InstitutionsTable } from "@/components/app/institutions/table";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 
 export default function InstitutionsPage() {
   return (
-    <div className="p-4 sm:p-6 lg:p-8">
-      <h1 className="text-2xl font-bold font-headline tracking-tight">
-        기관 목록
-      </h1>
-      
+    <div className="min-w-0 space-y-5 bg-slate-50/70 p-4 sm:p-6 lg:p-8">
+      <div>
+        <h1 className="text-xl font-bold tracking-tight text-slate-900">기관목록</h1>
+        <p className="mt-1 text-xs text-slate-400">Home&nbsp; - &nbsp;기관관리&nbsp; - &nbsp;기관목록</p>
+      </div>
       <InstitutionsTable />
     </div>
   );

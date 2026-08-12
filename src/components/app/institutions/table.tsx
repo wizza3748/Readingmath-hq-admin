@@ -1,35 +1,11 @@
-
 "use client";
 
 import * as React from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import {
-  ColumnDef,
-  ColumnFiltersState,
-  SortingState,
-  VisibilityState,
-  flexRender,
-  getCoreRowModel,
-  getFilteredRowModel,
-  getPaginationRowModel,
-  getSortedRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
-import { ArrowUpDown, Download, Plus } from "lucide-react";
-import { onSnapshot, type Query } from "firebase/firestore";
+import { Download, Pencil, Plus, Search, Trash2 } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { DataTablePagination } from "@/components/ui/data-table-pagination";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -38,420 +14,261 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { MultiSelect, type MultiSelectOption } from "@/components/ui/multi-select";
-import { useFirebase, useFirestore } from "@/firebase";
-import { getInstitutionsQuery, type Institution } from "@/lib/db";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  INSTITUTION_BRANCH1_OPTIONS,
+  INSTITUTION_BRANCH2_OPTIONS,
+  INSTITUTION_SERVICE_TYPE_OPTIONS,
+  MOCK_INSTITUTIONS,
+  type MockInstitution,
+} from "@/lib/institution-mock";
+import { cn } from "@/lib/utils";
 
-const serviceStatusVariant: {
-  [key in Institution["serviceStatus"]]:
-    | "default"
-    | "secondary"
-    | "destructive"
-    | "outline";
-} = {
-  정상: "default",
-  무료사용: "secondary",
-  일시정지: "outline",
-  미납정지: "destructive",
+const PAGE_SIZE = 10;
+
+type Filters = {
+  branch1: string;
+  branch2: string;
+  serviceType: string;
+  serviceStatus: string;
+  franchiseType: string;
+  automaticPayment: string;
+  search: string;
 };
 
-const franchiseTypeVariant: {
-  [key in NonNullable<Institution["franchiseType"]>]: "default" | "secondary" | "outline";
-} = {
-  스탠다드: "default",
-  슬림: "secondary",
-  가맹전: "outline",
-  학교: "default",
+const emptyFilters: Filters = {
+  branch1: "all",
+  branch2: "all",
+  serviceType: "all",
+  serviceStatus: "all",
+  franchiseType: "all",
+  automaticPayment: "all",
+  search: "",
 };
 
-const columns: ColumnDef<Institution>[] = [
-  {
-    accessorKey: "id",
-    header: "고유번호",
-    cell: ({ row }) => <div className="lowercase truncate w-20">{row.getValue("id")}</div>,
-  },
-  {
-    accessorKey: "branch1",
-    header: "지사1",
-  },
-  {
-    accessorKey: "branch2",
-    header: "지사2",
-  },
-  {
-    accessorKey: "name",
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      >
-        기관명
-        <ArrowUpDown className="ml-2 h-4 w-4" />
-      </Button>
-    ),
-    cell: ({ row }) => (
-      <Link href={`/institutions/${row.original.id}`} className="font-medium text-primary hover:underline">
-        {row.getValue("name")}
-      </Link>
-    ),
-  },
-  {
-    accessorKey: "serviceType",
-    header: "서비스 타입",
-  },
-  {
-    accessorKey: "serviceStatus",
-    header: "서비스 상태",
-    cell: ({ row }) => (
-      <Badge variant={serviceStatusVariant[row.original.serviceStatus]}>
-        {row.original.serviceStatus}
-      </Badge>
-    ),
-  },
-  {
-    accessorKey: "franchiseType",
-    header: "가맹 타입",
-    cell: ({ row }) => {
-        const franchiseType = row.getValue("franchiseType") as Institution["franchiseType"];
-        if (!franchiseType) return null;
-        return (
-            <Badge variant={franchiseTypeVariant[franchiseType]}>
-                {franchiseType}
-            </Badge>
-        )
-    },
-  },
-  {
-    accessorKey: "ownerName",
-    header: "기관장명",
-  },
-  {
-    accessorKey: "ownerContact",
-    header: "기관장 연락처",
-  },
-   {
-    accessorKey: "fees.minFee",
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      >
-        최소 이용 금액
-        <ArrowUpDown className="ml-2 h-4 w-4" />
-      </Button>
-    ),
-    cell: ({ row }) => (
-      <div className="text-right">
-        {(row.original.fees?.minFee ?? 0).toLocaleString()}
-      </div>
-    ),
-  },
-  {
-    accessorKey: "createdAt",
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      >
-        등록일
-        <ArrowUpDown className="ml-2 h-4 w-4" />
-      </Button>
-    ),
-    cell: ({ row }) => {
-        const createdAt = row.getValue("createdAt") as any;
-        if (!createdAt) return '';
-        const date = createdAt.toDate();
-        return date.toLocaleDateString('ko-KR');
-    }
-  },
-];
-
-const branchOptions: MultiSelectOption[] = [
-  { value: "서울", label: "서울" },
-  { value: "경기", label: "경기" },
-  { value: "부산", label: "부산" },
-  { value: "인천", label: "인천" },
-];
-const serviceTypeOptions: MultiSelectOption[] = [
-  { value: "수학+과학", label: "수학+과학" },
-  { value: "수학", label: "수학" },
-  { value: "과학", label: "과학" },
-];
-const serviceStatusOptions: MultiSelectOption[] = [
-  { value: "정상", label: "정상" },
-  { value: "무료사용", label: "무료사용" },
-  { value: "일시정지", label: "일시정지" },
-  { value: "미납정지", label: "미납정지" },
-];
-const franchiseTypeOptions: MultiSelectOption[] = [
-  { value: "스탠다드", label: "스탠다드" },
-  { value: "슬림", label: "슬림" },
-  { value: "가맹전", label: "가맹전" },
-  { value: "학교", label: "학교" },
-];
-
-function SearchFilters({
-  table,
+function FilterSelect({
+  value,
+  onValueChange,
+  placeholder,
+  options,
 }: {
-  table: ReturnType<typeof useReactTable<Institution>>;
+  value: string;
+  onValueChange: (value: string) => void;
+  placeholder: string;
+  options: readonly string[];
 }) {
-  const [search, setSearch] = React.useState("");
-
-  const handleSearch = () => {
-    if (search.trim().length < 2 && search.trim().length > 0) {
-      alert("검색어는 2자 이상 입력해주세요.");
-      return;
-    }
-    table.getColumn("name")?.setFilterValue(search);
-  };
-
-  const handleReset = () => {
-    setSearch("");
-    table.resetColumnFilters();
-  };
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-      <MultiSelect
-        options={branchOptions}
-        placeholder="지사"
-        className="lg:col-span-1"
-      />
-      <MultiSelect
-        options={serviceTypeOptions}
-        placeholder="서비스 타입"
-        className="lg:col-span-1"
-      />
-      <MultiSelect
-        options={serviceStatusOptions}
-        placeholder="서비스 상태"
-        className="lg:col-span-1"
-      />
-      <MultiSelect
-        options={franchiseTypeOptions}
-        placeholder="가맹 타입"
-        className="lg:col-span-1"
-      />
-      <Select>
-        <SelectTrigger>
-          <SelectValue placeholder="자동 결제" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="all">전체</SelectItem>
-          <SelectItem value="registered">등록</SelectItem>
-          <SelectItem value="unregistered">미등록</SelectItem>
-        </SelectContent>
-      </Select>
-      <Input
-        placeholder="기관명으로 검색"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className="xl:col-span-2"
-      />
-      <div className="flex gap-2 xl:col-start-5 xl:col-span-2">
-        <Button onClick={handleSearch} className="flex-1">
-          검색
-        </Button>
-        <Button onClick={handleReset} variant="outline" className="flex-1">
-          초기화
-        </Button>
-      </div>
-    </div>
+    <Select value={value} onValueChange={onValueChange}>
+      <SelectTrigger className="h-9 min-w-[145px] bg-white text-xs">
+        <SelectValue placeholder={placeholder} />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="all">{placeholder}</SelectItem>
+        {options.map((option) => (
+          <SelectItem key={option} value={option}>
+            {option}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   );
 }
 
-function TableSkeleton() {
-    return (
-        <div className="space-y-4">
-             <div className="rounded-md border">
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            {Array.from({ length: 11 }).map((_, i) => (
-                                <TableHead key={i}><Skeleton className="h-5 w-20" /></TableHead>
-                            ))}
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {Array.from({ length: 10 }).map((_, i) => (
-                            <TableRow key={i}>
-                                {Array.from({ length: 11 }).map((_, j) => (
-                                    <TableCell key={j}><Skeleton className="h-5 w-full" /></TableCell>
-                                ))}
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </div>
-        </div>
-    )
+function ServiceTypeBadge({ value }: { value: MockInstitution["serviceType"] }) {
+  return (
+    <span className="inline-flex whitespace-nowrap rounded-full bg-amber-50 px-2 py-1 text-[11px] font-semibold text-amber-500">
+      {value}
+    </span>
+  );
 }
 
-function InstitutionsTableContent() {
-  const router = useRouter();
-  const firestore = useFirestore();
-  const [data, setData] = React.useState<Institution[]>([]);
-  const [loading, setLoading] = React.useState(true);
-
-  const [sorting, setSorting] = React.useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] =
-    React.useState<ColumnFiltersState>([]);
-  const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({});
-  const [rowSelection, setRowSelection] = React.useState({});
-
-  React.useEffect(() => {
-    if (!firestore) {
-      setLoading(false);
-      return;
-    }
-    
-    setLoading(true);
-    const q = getInstitutionsQuery(firestore);
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-        const institutions: Institution[] = [];
-        querySnapshot.forEach((doc) => {
-            institutions.push({ id: doc.id, ...doc.data() } as Institution);
-        });
-        setData(institutions);
-        setLoading(false);
-    });
-
-    return unsubscribe;
-  }, [firestore]);
-
-
-  const table = useReactTable({
-    data,
-    columns,
-    onSortingChange: setSorting,
-    onColumnFiltersChange: setColumnFilters,
-    getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
-    onColumnVisibilityChange: setColumnVisibility,
-    onRowSelectionChange: setRowSelection,
-    state: {
-      sorting,
-      columnFilters,
-      columnVisibility,
-      rowSelection,
-    },
-    initialState: {
-        pagination: {
-            pageSize: 10,
-        },
-    }
-  });
+function ServiceStatusBadge({ value }: { value: MockInstitution["serviceStatus"] }) {
+  const styles = {
+    무료사용: "bg-blue-50 text-blue-500",
+    정상: "bg-emerald-50 text-emerald-600",
+    일시정지: "bg-orange-50 text-orange-500",
+    미납정지: "bg-red-50 text-red-500",
+  } as const;
 
   return (
-    <div className="w-full space-y-6">
-      <Card>
-        <CardContent className="pt-6">
-          <SearchFilters table={table} />
-        </CardContent>
-      </Card>
+    <span className={cn("inline-flex whitespace-nowrap rounded-md px-2 py-1 text-[11px] font-semibold", styles[value])}>
+      {value}
+    </span>
+  );
+}
 
-      <div>
-        <div className="flex items-center justify-between py-4">
-          <div className="flex-1 text-sm text-muted-foreground">
-            총 {table.getFilteredRowModel().rows.length}개
-          </div>
-          <div className="flex gap-2">
-            <Button variant="outline">
-              <Download className="mr-2 h-4 w-4" />
-              엑셀 다운로드
-            </Button>
-            <Button onClick={() => router.push("/institutions/new")}>
-              <Plus className="mr-2 h-4 w-4" />
-              기관 등록
-            </Button>
-          </div>
+function InstitutionsTableRow({ institution }: { institution: MockInstitution }) {
+  return (
+    <tr className="border-b border-slate-100 text-xs text-slate-500 transition-colors hover:bg-slate-50/70">
+      <td className="px-3 py-4"><Checkbox aria-label={`${institution.name} 선택`} /></td>
+      <td className="px-3 py-4 font-medium">{institution.id}</td>
+      <td className="px-3 py-4">{institution.branch1 || "-"}</td>
+      <td className="px-3 py-4">{institution.branch2 || "-"}</td>
+      <td className="px-3 py-4">
+        <Link href={`/institutions/${institution.id}`} className="font-semibold text-sky-500 hover:underline">
+          {institution.name}
+        </Link>
+      </td>
+      <td className="px-3 py-4"><ServiceTypeBadge value={institution.serviceType} /></td>
+      <td className="px-3 py-4"><ServiceStatusBadge value={institution.serviceStatus} /></td>
+      <td className="px-3 py-4">
+        <span className="rounded-full bg-pink-50 px-2 py-1 text-[11px] font-semibold text-pink-500">
+          {institution.franchiseType}
+        </span>
+      </td>
+      <td className="px-3 py-4 font-semibold text-slate-500">{institution.automaticPayment}</td>
+      <td className="px-3 py-4 whitespace-nowrap">
+        {institution.paidPoints.toLocaleString()}P
+        <span className="ml-1 rounded bg-slate-200 px-1.5 py-0.5 text-[10px] font-bold text-slate-600">
+          {institution.freePoints}P
+        </span>
+      </td>
+      <td className="px-3 py-4 text-right">{institution.minFee.toLocaleString()}원</td>
+      <td className="px-3 py-4 text-right">{institution.perStudentFee.toLocaleString()}원</td>
+      <td className="px-3 py-4 text-center">{institution.studentCount}</td>
+      <td className="px-3 py-4 whitespace-nowrap">{institution.createdAt}</td>
+      <td className="px-3 py-4">
+        <div className="flex items-center gap-1.5">
+          <Button type="button" variant="ghost" size="icon" className="h-8 w-8 bg-sky-50 text-sky-500 hover:bg-sky-100" aria-label="수정 UI">
+            <Pencil className="h-3.5 w-3.5" />
+          </Button>
+          <Button type="button" variant="ghost" size="icon" className="h-8 w-8 bg-rose-50 text-rose-400 hover:bg-rose-100" aria-label="삭제 UI">
+            <Trash2 className="h-3.5 w-3.5" />
+          </Button>
         </div>
-        {loading ? <TableSkeleton /> : (
-            <>
-                <div className="rounded-md border">
-                <Table>
-                    <TableHeader>
-                    {table.getHeaderGroups().map((headerGroup) => (
-                        <TableRow key={headerGroup.id}>
-                        {headerGroup.headers.map((header) => {
-                            return (
-                            <TableHead key={header.id}>
-                                {header.isPlaceholder
-                                ? null
-                                : flexRender(
-                                    header.column.columnDef.header,
-                                    header.getContext()
-                                    )}
-                            </TableHead>
-                            );
-                        })}
-                        </TableRow>
-                    ))}
-                    </TableHeader>
-                    <TableBody>
-                    {table.getRowModel().rows?.length ? (
-                        table.getRowModel().rows.map((row) => (
-                        <TableRow
-                            key={row.id}
-                            data-state={row.getIsSelected() && "selected"}
-                        >
-                            {row.getVisibleCells().map((cell) => (
-                            <TableCell key={cell.id}>
-                                {flexRender(
-                                cell.column.columnDef.cell,
-                                cell.getContext()
-                                )}
-                            </TableCell>
-                            ))}
-                        </TableRow>
-                        ))
-                    ) : (
-                        <TableRow>
-                        <TableCell
-                            colSpan={columns.length}
-                            className="h-24 text-center"
-                        >
-                            결과가 없습니다.
-                        </TableCell>
-                        </TableRow>
-                    )}
-                    </TableBody>
-                </Table>
-                </div>
-                <div className="py-4">
-                <DataTablePagination table={table} />
-                </div>
-            </>
-        )}
-      </div>
-    </div>
+      </td>
+    </tr>
   );
 }
 
 export function InstitutionsTable() {
-    const { firestore } = useFirebase() ?? { firestore: null };
+  const [draftFilters, setDraftFilters] = React.useState<Filters>(emptyFilters);
+  const [filters, setFilters] = React.useState<Filters>(emptyFilters);
+  const [page, setPage] = React.useState(1);
 
-    if (!firestore) {
-        return (
-            <div className="w-full space-y-6">
-                <Card>
-                    <CardContent className="pt-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-                            {Array.from({length: 7}).map((_, i) => <Skeleton key={i} className="h-10 w-full" />)}
-                        </div>
-                    </CardContent>
-                </Card>
-                <div className="py-4">
-                  <TableSkeleton />
-                </div>
-            </div>
-        )
-    }
+  const filteredInstitutions = React.useMemo(() => {
+    const search = filters.search.trim().toLowerCase();
 
-    return <InstitutionsTableContent />;
+    return MOCK_INSTITUTIONS.filter((institution) => {
+      if (filters.branch1 !== "all" && institution.branch1 !== filters.branch1) return false;
+      if (filters.branch2 !== "all" && institution.branch2 !== filters.branch2) return false;
+      if (filters.serviceType !== "all" && institution.serviceType !== filters.serviceType) return false;
+      if (filters.serviceStatus !== "all" && institution.serviceStatus !== filters.serviceStatus) return false;
+      if (filters.franchiseType !== "all" && institution.franchiseType !== filters.franchiseType) return false;
+      if (filters.automaticPayment !== "all" && institution.automaticPayment !== filters.automaticPayment) return false;
+      if (search && !`${institution.name} ${institution.id}`.toLowerCase().includes(search)) return false;
+      return true;
+    });
+  }, [filters]);
+
+  const pageCount = Math.max(1, Math.ceil(filteredInstitutions.length / PAGE_SIZE));
+  const safePage = Math.min(page, pageCount);
+  const pagedInstitutions = filteredInstitutions.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
+
+  const updateDraft = (key: keyof Filters, value: string) => {
+    setDraftFilters((current) => ({ ...current, [key]: value }));
+  };
+
+  const applyFilters = () => {
+    setFilters(draftFilters);
+    setPage(1);
+  };
+
+  const resetFilters = () => {
+    setDraftFilters(emptyFilters);
+    setFilters(emptyFilters);
+    setPage(1);
+  };
+
+  return (
+    <section className="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm">
+      <div className="border-b border-slate-100 p-5">
+        <div className="flex flex-wrap items-center gap-2.5">
+          <FilterSelect value={draftFilters.branch1} onValueChange={(value) => updateDraft("branch1", value)} placeholder="지사1" options={INSTITUTION_BRANCH1_OPTIONS} />
+          <FilterSelect value={draftFilters.branch2} onValueChange={(value) => updateDraft("branch2", value)} placeholder="지사2" options={INSTITUTION_BRANCH2_OPTIONS} />
+          <FilterSelect value={draftFilters.serviceType} onValueChange={(value) => updateDraft("serviceType", value)} placeholder="서비스 타입" options={INSTITUTION_SERVICE_TYPE_OPTIONS} />
+          <FilterSelect value={draftFilters.serviceStatus} onValueChange={(value) => updateDraft("serviceStatus", value)} placeholder="서비스 상태" options={["무료사용", "정상", "일시정지", "미납정지"]} />
+          <FilterSelect value={draftFilters.franchiseType} onValueChange={(value) => updateDraft("franchiseType", value)} placeholder="가맹타입" options={["가맹전", "스탠다드", "학교"]} />
+          <FilterSelect value={draftFilters.automaticPayment} onValueChange={(value) => updateDraft("automaticPayment", value)} placeholder="자동 결제" options={["등록", "미등록"]} />
+          <Button type="button" size="sm" className="h-9 bg-blue-500 px-4 hover:bg-blue-600" onClick={applyFilters}>적용</Button>
+          <Button type="button" size="sm" variant="secondary" className="h-9 px-4" onClick={resetFilters}>초기화</Button>
+        </div>
+
+        <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="relative w-full sm:max-w-sm">
+            <Input
+              value={draftFilters.search}
+              onChange={(event) => updateDraft("search", event.target.value)}
+              onKeyDown={(event) => event.key === "Enter" && applyFilters()}
+              placeholder="검색어를 입력해주세요"
+              className="h-10 bg-slate-50 pr-10 text-xs"
+            />
+            <button type="button" onClick={applyFilters} className="absolute inset-y-0 right-0 flex w-10 items-center justify-center text-slate-400" aria-label="기관 검색">
+              <Search className="h-4 w-4" />
+            </button>
+          </div>
+          <div className="flex items-center justify-end gap-2">
+            <Button type="button" variant="ghost" className="h-10 bg-emerald-50 text-emerald-500 hover:bg-emerald-100 hover:text-emerald-600">
+              <Download className="mr-2 h-4 w-4" />엑셀 다운로드
+            </Button>
+            <Button type="button" className="h-10 bg-sky-500 hover:bg-sky-600">
+              <Plus className="mr-2 h-4 w-4" />기관추가
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <div className="overflow-x-auto">
+        <table className="min-w-[1850px] w-full border-collapse">
+          <thead className="bg-white">
+            <tr className="border-b border-slate-200 text-left text-[11px] font-semibold text-slate-400">
+              <th className="w-10 px-3 py-3"><Checkbox aria-label="전체 선택" /></th>
+              <th className="px-3 py-3">고유번호</th>
+              <th className="px-3 py-3">지사1</th>
+              <th className="px-3 py-3">지사2</th>
+              <th className="min-w-[240px] px-3 py-3">기관명</th>
+              <th className="px-3 py-3">서비스 타입</th>
+              <th className="px-3 py-3">서비스 상태</th>
+              <th className="px-3 py-3">가맹 타입</th>
+              <th className="px-3 py-3">자동 결제</th>
+              <th className="px-3 py-3">포인트</th>
+              <th className="px-3 py-3 text-right">최소 이용 금액</th>
+              <th className="px-3 py-3 text-right">인당 이용료</th>
+              <th className="px-3 py-3 text-center">사용 중 학생 수</th>
+              <th className="px-3 py-3">등록일</th>
+              <th className="px-3 py-3">관리</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pagedInstitutions.length > 0 ? (
+              pagedInstitutions.map((institution) => <InstitutionsTableRow key={institution.id} institution={institution} />)
+            ) : (
+              <tr><td colSpan={15} className="h-36 text-center text-sm text-slate-400">검색 결과가 없습니다.</td></tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="flex flex-col gap-4 border-t border-slate-100 px-5 py-4 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-3">
+          <span>{filteredInstitutions.length === 0 ? 0 : (safePage - 1) * PAGE_SIZE + 1} - {Math.min(safePage * PAGE_SIZE, filteredInstitutions.length)} / 전체 {filteredInstitutions.length}</span>
+          <span className="rounded-md border px-3 py-2">10</span>
+        </div>
+        <div className="flex items-center gap-1">
+          <Button type="button" variant="ghost" size="sm" disabled={safePage === 1} onClick={() => setPage(1)}>«</Button>
+          <Button type="button" variant="ghost" size="sm" disabled={safePage === 1} onClick={() => setPage((current) => Math.max(1, current - 1))}>‹</Button>
+          {Array.from({ length: Math.min(5, pageCount) }, (_, index) => {
+            const start = Math.min(Math.max(1, safePage - 2), Math.max(1, pageCount - 4));
+            const pageNumber = start + index;
+            return (
+              <Button key={pageNumber} type="button" size="sm" variant={safePage === pageNumber ? "default" : "ghost"} className={cn("h-8 w-8 p-0", safePage === pageNumber && "bg-sky-500 hover:bg-sky-600")} onClick={() => setPage(pageNumber)}>
+                {pageNumber}
+              </Button>
+            );
+          })}
+          <Button type="button" variant="ghost" size="sm" disabled={safePage === pageCount} onClick={() => setPage((current) => Math.min(pageCount, current + 1))}>›</Button>
+          <Button type="button" variant="ghost" size="sm" disabled={safePage === pageCount} onClick={() => setPage(pageCount)}>»</Button>
+        </div>
+      </div>
+    </section>
+  );
 }
