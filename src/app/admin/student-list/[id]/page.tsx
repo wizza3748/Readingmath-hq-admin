@@ -597,7 +597,7 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
                       currentStudent.serviceStopScheduledAt ? (
                         <Button type="button" variant="outline" onClick={cancelServiceStopReservation} className="h-9 border-slate-300 px-4 text-xs font-bold text-slate-600 hover:bg-slate-50">정지 예약 취소</Button>
                       ) : (
-                        <Button type="button" variant="outline" onClick={() => setStopReservationConfirmOpen(true)} className="h-9 border-blue-300 px-4 text-xs font-bold text-blue-500 hover:bg-blue-50">서비스 정지 예약</Button>
+                        <Button type="button" variant="outline" onClick={() => setStopReservationConfirmOpen(true)} className="h-9 border-blue-300 px-4 text-xs font-bold text-blue-500 hover:bg-blue-50 hover:text-blue-600">서비스 정지 예약</Button>
                       )
                     )}
                     {serviceStatus === "in_use" && currentStudent.serviceStopScheduledAt && (

@@ -104,6 +104,13 @@ const navConfig: NavItem[] = [
     type: "label",
   },
   {
+    title: "기관정보",
+    icon: <Building2 />,
+    children: [
+      { title: "기관 프로필", href: "/admin/institution-profile" },
+    ],
+  },
+  {
     title: "학생관리",
     icon: <Users />,
     children: [
