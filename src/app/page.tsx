@@ -13,52 +13,58 @@ type WorkItem = {
   jiraUrl: string;
   title: string;
   internalUrl?: string;
+  titleLinks?: Array<{ text: string; url: string }>;
   isNew?: boolean;
 };
 
 const hqWorkItems: WorkItem[] = [
   {
+    id: "RM-435",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-435",
+    title: "이벤트 과금 설정 및 조회 기능 추가",
+    internalUrl: "/institutions",
+    isNew: true,
+  },
+  {
     id: "RM-429",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-429",
-    title: "[본사] 문제은행 과제 출력 기능 추가",
+    title: "문제은행 과제 출력 기능 추가",
     internalUrl: "/content/science-question-bank/499?tab=questions",
-    isNew: true,
   },
   {
     id: "RM-422",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-422",
-    title: "[본사] 학습운영관리 > 과제 현황",
+    title: "학습운영관리 > 과제 현황",
     internalUrl: "/learning-operations/task-status",
-    isNew: true,
   },
   {
     id: "RM-267",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-267",
-    title: "[본사] 지사관리 및 지사 정산 조회 기능 개발",
+    title: "지사관리 및 지사 정산 조회 기능 개발",
     internalUrl: "/branches",
   },
   {
     id: "RM-263",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-263",
-    title: "[본사] 기관 서비스 변경 예약 기능 확장",
+    title: "기관 서비스 변경 예약 기능 확장",
     internalUrl: "/institutions/zhQ9cSA29ExPK4FlcSDH",
   },
   {
     id: "RM-236",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-236",
-    title: "[본사/프론트] 리딩과학 문제은행/시험대비",
+    title: "리딩과학 문제은행/시험대비",
     internalUrl: "/content/science-question-bank",
   },
   {
     id: "RM-235",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-235",
-    title: "[본사] 선생님관리(B2C) 주간학습알림 화면 개발",
+    title: "선생님관리(B2C) 주간학습알림 화면 개발",
     internalUrl: "/b2c/weekly-notification",
   },
   {
     id: "RM-226",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-226",
-    title: "[본사] 공동구매 운영 시스템",
+    title: "공동구매 운영 시스템",
     internalUrl: "/admin/groupbuy",
   },
   {
@@ -76,7 +82,7 @@ const hqWorkItems: WorkItem[] = [
   {
     id: "RM-198",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-198",
-    title: "[본사] 콘텐츠관리 > 진단평가관리(과학)",
+    title: "콘텐츠관리 > 진단평가관리(과학)",
     internalUrl: "/content/diagnostic-tests",
   },
   {
@@ -89,29 +95,37 @@ const hqWorkItems: WorkItem[] = [
 
 const agencyWorkItems: WorkItem[] = [
   {
+    id: "RM-435",
+    jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-435",
+    title: "이벤트 과금 조회 / 학생 서비스 정지 예약 기능 추가",
+    titleLinks: [
+      { text: "이벤트 과금 조회", url: "/admin/institution-profile" },
+      { text: "학생 서비스 정지 예약 기능 추가", url: "/admin/student-list" },
+    ],
+    isNew: true,
+  },
+  {
     id: "RM-402",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-402",
-    title: "[기관] 학생상세 > 시험대비 탭",
+    title: "학생상세 > 시험대비 탭",
     internalUrl: "/admin/student-list/s1?tab=exam-prep",
-    isNew: true,
   },
   {
     id: "RM-360",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-360",
-    title: "[기관] 과제 센터",
+    title: "과제 센터",
     internalUrl: "/admin/task-center",
-    isNew: true,
   },
   {
     id: "RM-383",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-383",
-    title: "[기관] 선생님별 담당 반 설정",
+    title: "선생님별 담당 반 설정",
     internalUrl: "/admin/teacher-list",
   },
   {
     id: "RM-237",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-237",
-    title: "[기관] 학습내역 기능 개선",
+    title: "학습내역 기능 개선",
     internalUrl: "/admin/learning-history",
   },
 ];
@@ -120,39 +134,37 @@ const frontWorkItems: WorkItem[] = [
   {
     id: "RM-362",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-362",
-    title: "[프론트] 시험 대비 개편",
+    title: "시험 대비 개편",
     internalUrl: "/content/math-exam-prep",
-    isNew: true,
   },
   {
     id: "RM-361",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-361",
-    title: "[프론트] 과제 센터",
+    title: "과제 센터",
     internalUrl: "/content/math-home",
-    isNew: true,
   },
   {
     id: "RM-293",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-293",
-    title: "[프론트] 공통 커리큘럼 레이어 수정 - 유형도전 영역 추가 (UI 설계)",
+    title: "공통 커리큘럼 레이어 수정 - 유형도전 영역 추가 (UI 설계)",
     internalUrl: "/content/exam-prep/common-curriculum",
   },
   {
     id: "RM-236",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-236",
-    title: "[프론트] 리딩과학 시험대비",
+    title: "리딩과학 시험대비",
     internalUrl: "/content/science-home",
   },
   {
     id: "RM-236",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-236",
-    title: "[프론트] 리딩과학 시험대비 - 훈련 완료 화면",
+    title: "리딩과학 시험대비 - 훈련 완료 화면",
     internalUrl: "/content/exam-prep/mock/training-complete",
   },
   {
     id: "RM-236",
     jiraUrl: "https://sloop-dev.atlassian.net/browse/RM-236",
-    title: "[프론트] 리딩과학 시험대비 - 훈련 결과 화면",
+    title: "리딩과학 시험대비 - 훈련 결과 화면",
     internalUrl: "/content/exam-prep/mock/training-result",
   },
 ];
@@ -194,7 +206,17 @@ export default function WorkListPage() {
                 )}
               </div>
               <div className="col-span-9">
-                {item.internalUrl ? (
+                {item.titleLinks ? (
+                  <div className={`text-base font-semibold truncate ${item.isNew ? "text-amber-700" : ""}`}>
+                    <Link href={item.titleLinks[0].url} className="hover:underline transition-colors">
+                      {item.titleLinks[0].text}
+                    </Link>
+                    <span> / </span>
+                    <Link href={item.titleLinks[1].url} className="hover:underline transition-colors">
+                      {item.titleLinks[1].text}
+                    </Link>
+                  </div>
+                ) : item.internalUrl ? (
                   <Link
                     href={item.internalUrl}
                     className={`text-base font-semibold hover:underline transition-colors block truncate ${

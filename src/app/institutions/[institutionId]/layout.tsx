@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getMockInstitution, type MockInstitution } from "@/lib/institution-mock";
 
-function Summary({ institution }: { institution: MockInstitution }) {
+function Summary({ institution, onInstitutionLogin }: { institution: MockInstitution; onInstitutionLogin?: () => void }) {
   return (
     <section className="rounded-xl border border-slate-100 bg-white px-7 py-6 shadow-sm">
       <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
@@ -42,7 +42,7 @@ function Summary({ institution }: { institution: MockInstitution }) {
           </div>
         </div>
         <div className="flex gap-2 lg:pt-3">
-          <Button type="button" className="bg-emerald-400 hover:bg-emerald-500">기관 로그인</Button>
+          <Button type="button" onClick={onInstitutionLogin} className="bg-emerald-400 hover:bg-emerald-500">기관 로그인</Button>
           <Button type="button" className="bg-rose-500 hover:bg-rose-600">기관 삭제</Button>
         </div>
       </div>
@@ -59,6 +59,10 @@ export default function InstitutionDetailLayout({ children }: { children: React.
   const institution = getMockInstitution(institutionId);
 
   const handleTabChange = (value: string) => {
+    if (institutionId === "1238" && value === "students") {
+      router.push("/admin/student-list");
+      return;
+    }
     router.push(value === "info" ? `/institutions/${institutionId}` : `/institutions/${institutionId}/${value}`);
   };
 
@@ -80,7 +84,10 @@ export default function InstitutionDetailLayout({ children }: { children: React.
         <p className="mt-1 text-xs text-slate-400">Home&nbsp; - &nbsp;기관관리&nbsp; - &nbsp;기관상세</p>
       </div>
 
-      <Summary institution={institution} />
+      <Summary
+        institution={institution}
+        onInstitutionLogin={institution.id === "1238" ? () => router.push("/admin/institution-profile") : undefined}
+      />
 
       <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
         <div className="rounded-xl border border-slate-100 bg-white px-6 shadow-sm">

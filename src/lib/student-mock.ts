@@ -6,6 +6,7 @@ import { ClassInfo, ALL_CLASSES, getStoredTeachers, Teacher } from "./teacher-mo
 
 export type StudentServiceStatus = "before_use" | "in_use" | "suspended"; // 사용전 | 사용중 | 서비스 정지
 export type StudentServiceType = "math" | "science" | "combo"; // 리딩수학 | 리딩과학 | 리딩수학+과학 통합
+export type StudentStopReservationStatus = "available" | "scheduled" | "none";
 
 export interface Student {
   id: string;
@@ -49,6 +50,45 @@ export function getStudentServiceTypeLabel(type: StudentServiceType): string {
     case "combo": return "리딩수학+과학 통합";
     default: return "-";
   }
+}
+
+export function getStudentStopReservationStatus(
+  student: Student,
+  todayText = (() => {
+    const today = new Date();
+    return `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+  })(),
+): StudentStopReservationStatus {
+  if (
+    student.serviceStatus === "in_use"
+    && student.serviceStopScheduledAt
+    && student.serviceStopScheduledAt > todayText
+  ) {
+    return "scheduled";
+  }
+
+  if (
+    student.institutionBillingType === "event"
+    && student.serviceStatus === "in_use"
+    && student.hasCurrentMonthOverageCharge
+    && student.serviceStartedAt
+    && student.serviceStartedAt < todayText
+    && !student.serviceStopScheduledAt
+    && (!student.institutionEventEndDate || student.institutionEventEndDate >= todayText)
+  ) {
+    return "available";
+  }
+
+  return "none";
+}
+
+export function getStudentStopReservationLabel(student: Student, todayText?: string): string {
+  const status = getStudentStopReservationStatus(student, todayText);
+  if (status === "available") return "예약 가능";
+  if (status === "scheduled" && student.serviceStopScheduledAt) {
+    return `${student.serviceStopScheduledAt.replaceAll("-", ".")} 정지 예정`;
+  }
+  return "-";
 }
 
 /** 담당 선생님 연산 매핑 생성 */

@@ -13,6 +13,7 @@ import {
   StudentServiceType,
   getStudentStatusLabel,
   getStudentServiceTypeLabel,
+  getStudentStopReservationStatus,
   getStoredStudents,
   saveStoredStudents,
   getAssignedTeacherMap,
@@ -161,12 +162,10 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
   }, []);
 
   const isStopReservationEligible = Boolean(
-    currentStudent?.institutionBillingType === "event"
-    && serviceStatus === "in_use"
-    && currentStudent.hasCurrentMonthOverageCharge
-    && currentStudent.serviceStartedAt
-    && currentStudent.serviceStartedAt < todayText
-    && (!currentStudent.institutionEventEndDate || currentStudent.institutionEventEndDate >= todayText)
+    currentStudent && getStudentStopReservationStatus(
+      { ...currentStudent, serviceStatus },
+      todayText,
+    ) === "available"
   );
 
   const updateStudentService = (nextStatus: StudentServiceStatus, scheduledAt: string | null, activity: string) => {
@@ -593,12 +592,12 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
                     ) : (
                         <Button type="button" onClick={() => setResumeModalOpen(true)} className="h-9 bg-blue-500 px-4 text-xs font-bold text-white hover:bg-blue-600">서비스 시작</Button>
                     )}
-                    {isStopReservationEligible && serviceStatus === "in_use" && (
+                    {serviceStatus === "in_use" && (
                       currentStudent.serviceStopScheduledAt ? (
                         <Button type="button" variant="outline" onClick={cancelServiceStopReservation} className="h-9 border-slate-300 px-4 text-xs font-bold text-slate-600 hover:bg-slate-50">정지 예약 취소</Button>
-                      ) : (
+                      ) : isStopReservationEligible ? (
                         <Button type="button" variant="outline" onClick={() => setStopReservationConfirmOpen(true)} className="h-9 border-blue-300 px-4 text-xs font-bold text-blue-500 hover:bg-blue-50 hover:text-blue-600">서비스 정지 예약</Button>
-                      )
+                      ) : null
                     )}
                     {serviceStatus === "in_use" && currentStudent.serviceStopScheduledAt && (
                       <span className="text-xs font-semibold text-orange-500">{currentStudent.serviceStopScheduledAt.replaceAll("-", ".")} 정지 예정</span>

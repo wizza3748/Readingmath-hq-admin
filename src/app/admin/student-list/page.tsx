@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { Plus, Pencil, Trash2, Download, RefreshCw, Layers, FileSpreadsheet } from "lucide-react";
+import { Plus, Pencil, Trash2, RefreshCw, Layers, FileSpreadsheet, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -20,6 +20,8 @@ import {
   StudentServiceType,
   getStudentStatusLabel,
   getStudentServiceTypeLabel,
+  getStudentStopReservationLabel,
+  getStudentStopReservationStatus,
   getStoredStudents,
   saveStoredStudents,
   getAssignedTeacherMap,
@@ -49,6 +51,7 @@ export default function StudentListPage() {
   const [filterGrade, setFilterGrade] = React.useState<string>("all");
   const [filterClass, setFilterClass] = React.useState<string>("all");
   const [filterRecommend, setFilterRecommend] = React.useState<string>("all");
+  const [filterStopReservation, setFilterStopReservation] = React.useState<"all" | "available" | "scheduled">("all");
   const [searchText, setSearchText] = React.useState("");
 
   const [appliedStatus, setAppliedStatus] = React.useState<StudentServiceStatus | "all">("all");
@@ -56,6 +59,7 @@ export default function StudentListPage() {
   const [appliedGrade, setAppliedGrade] = React.useState<string>("all");
   const [appliedClass, setAppliedClass] = React.useState<string>("all");
   const [appliedRecommend, setAppliedRecommend] = React.useState<string>("all");
+  const [appliedStopReservation, setAppliedStopReservation] = React.useState<"all" | "available" | "scheduled">("all");
   const [searchApplied, setSearchApplied] = React.useState("");
 
   // ── 정렬 상태 ──────────────────────────────────────────────
@@ -158,6 +162,7 @@ export default function StudentListPage() {
       if (appliedGrade !== "all" && s.grade !== appliedGrade) return false;
       if (appliedClass !== "all" && s.classId !== appliedClass) return false;
       if (appliedRecommend !== "all" && s.recommendCode !== appliedRecommend) return false;
+      if (appliedStopReservation !== "all" && getStudentStopReservationStatus(s) !== appliedStopReservation) return false;
       if (searchApplied.length >= 1) {
         const q = searchApplied.toLowerCase();
         if (
@@ -167,7 +172,7 @@ export default function StudentListPage() {
       }
       return true;
     });
-  }, [students, appliedStatus, appliedType, appliedGrade, appliedClass, appliedRecommend, searchApplied]);
+  }, [students, appliedStatus, appliedType, appliedGrade, appliedClass, appliedRecommend, appliedStopReservation, searchApplied]);
 
   // ── 정렬 연산 ──────────────────────────────────────────────
   const sorted = React.useMemo(() => {
@@ -244,6 +249,7 @@ export default function StudentListPage() {
     setAppliedGrade(filterGrade);
     setAppliedClass(filterClass);
     setAppliedRecommend(filterRecommend);
+    setAppliedStopReservation(filterStopReservation);
     setSearchApplied(searchText.trim());
     setPage(1);
   };
@@ -254,6 +260,7 @@ export default function StudentListPage() {
     setFilterGrade("all");
     setFilterClass("all");
     setFilterRecommend("all");
+    setFilterStopReservation("all");
     setSearchText("");
 
     setAppliedStatus("all");
@@ -261,6 +268,7 @@ export default function StudentListPage() {
     setAppliedGrade("all");
     setAppliedClass("all");
     setAppliedRecommend("all");
+    setAppliedStopReservation("all");
     setSearchApplied("");
     setPage(1);
   };
@@ -484,43 +492,26 @@ export default function StudentListPage() {
   }
 
   return (
-    <div className="w-full min-h-[calc(100vh-80px)] bg-[#f4f6f9] px-6 pt-5 pb-6">
+    <div className="w-full min-h-[calc(100vh-80px)] bg-[#f4f6f9] px-5 pt-4 pb-6">
       
       {/* ── 페이지 헤더 ───────────────────────────────────────── */}
-      <div className="pb-4 flex items-center justify-between">
-        <h1 className="text-[1.5rem] font-bold text-foreground">학생목록</h1>
-        <div className="flex items-center gap-2">
-          {/* 학생 개별 등록 */}
-          <Button
-            className="h-9 px-4 gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold shadow-sm"
-            onClick={() => toast({ title: "준비중입니다!" })}
-          >
-            <Plus className="h-4 w-4" />
-            학생 개별 등록
-          </Button>
-          {/* 학생 일괄 등록 (개별 등록 우측 배치, 솔리드 스타일 대칭) */}
-          <Button
-            className="h-9 px-4 gap-1.5 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold shadow-sm"
-            onClick={() => toast({ title: "학생 일괄 등록이 준비중입니다." })}
-          >
-            <Plus className="h-4 w-4" />
-            학생 일괄 등록
-          </Button>
-        </div>
+      <div className="pb-5">
+        <h1 className="text-xl font-bold text-slate-900">학생목록</h1>
+        <p className="mt-1 text-xs text-slate-400">Home&nbsp;&nbsp;-&nbsp;&nbsp;학생관리&nbsp;&nbsp;-&nbsp;&nbsp;학생목록</p>
       </div>
 
-      <div className="space-y-4">
+      <div className="rounded-xl border border-slate-100 bg-white px-5 py-5 shadow-sm">
         
         {/* ── 통합 검색 필터 영역 (선생님목록의 고급스러운 패밀리룩 이식) ── */}
-        <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm px-5 py-4">
-          <div className="flex flex-wrap items-end gap-x-4 gap-y-3">
+        <div>
+          <div className="flex flex-wrap items-end gap-2.5">
             
             {/* 서비스 상태 필터 */}
             <div>
-              <p className="text-xs font-semibold text-muted-foreground mb-1.5">서비스 상태</p>
-              <Select value={filterStatus} onValueChange={v => setFilterStatus(v as any)}>
-                <SelectTrigger className="h-9 w-32 text-sm bg-white border-slate-200">
-                  <SelectValue placeholder="서비스 상태" />
+              <p className="sr-only">서비스 상태</p>
+              <Select value={filterStatus === "all" ? undefined : filterStatus} onValueChange={v => setFilterStatus(v as any)}>
+                <SelectTrigger className="h-9 w-44 text-sm bg-white border-slate-200 text-slate-500">
+                  <SelectValue placeholder="서비스상태" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">전체</SelectItem>
@@ -533,9 +524,9 @@ export default function StudentListPage() {
 
             {/* 서비스 타입 필터 */}
             <div>
-              <p className="text-xs font-semibold text-muted-foreground mb-1.5">서비스 타입</p>
-              <Select value={filterType} onValueChange={v => setFilterType(v as any)}>
-                <SelectTrigger className="h-9 w-36 text-sm bg-white border-slate-200">
+              <p className="sr-only">서비스 타입</p>
+              <Select value={filterType === "all" ? undefined : filterType} onValueChange={v => setFilterType(v as any)}>
+                <SelectTrigger className="h-9 w-44 text-sm bg-white border-slate-200 text-slate-500">
                   <SelectValue placeholder="서비스 타입" />
                 </SelectTrigger>
                 <SelectContent>
@@ -549,9 +540,9 @@ export default function StudentListPage() {
 
             {/* 학년 필터 */}
             <div>
-              <p className="text-xs font-semibold text-muted-foreground mb-1.5">학년</p>
-              <Select value={filterGrade} onValueChange={setFilterGrade}>
-                <SelectTrigger className="h-9 w-28 text-sm bg-white border-slate-200">
+              <p className="sr-only">학년</p>
+              <Select value={filterGrade === "all" ? undefined : filterGrade} onValueChange={setFilterGrade}>
+                <SelectTrigger className="h-9 w-44 text-sm bg-white border-slate-200 text-slate-500">
                   <SelectValue placeholder="학년" />
                 </SelectTrigger>
                 <SelectContent>
@@ -563,27 +554,11 @@ export default function StudentListPage() {
               </Select>
             </div>
 
-            {/* 반 필터 */}
-            <div>
-              <p className="text-xs font-semibold text-muted-foreground mb-1.5">반</p>
-              <Select value={filterClass} onValueChange={setFilterClass}>
-                <SelectTrigger className="h-9 w-32 text-sm bg-white border-slate-200">
-                  <SelectValue placeholder="반 전체" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">전체</SelectItem>
-                  {classesList.map(c => (
-                    <SelectItem key={c.id} value={c.id}>{c.name}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
             {/* 추천코드 필터 */}
             <div>
-              <p className="text-xs font-semibold text-muted-foreground mb-1.5">추천코드</p>
-              <Select value={filterRecommend} onValueChange={setFilterRecommend}>
-                <SelectTrigger className="h-9 w-32 text-sm bg-white border-slate-200">
+              <p className="sr-only">추천코드</p>
+              <Select value={filterRecommend === "all" ? undefined : filterRecommend} onValueChange={setFilterRecommend}>
+                <SelectTrigger className="h-9 w-44 text-sm bg-white border-slate-200 text-slate-500">
                   <SelectValue placeholder="추천코드" />
                 </SelectTrigger>
                 <SelectContent>
@@ -595,16 +570,38 @@ export default function StudentListPage() {
               </Select>
             </div>
 
-            {/* 검색어 인풋 */}
-            <div className="flex-1 min-w-[200px] max-w-xs">
-              <p className="text-xs font-semibold text-muted-foreground mb-1.5">검색어</p>
-              <Input
-                value={searchText}
-                onChange={e => setSearchText(e.target.value)}
-                onKeyDown={e => e.key === "Enter" && handleSearch()}
-                placeholder="학생 이름 또는 아이디 입력"
-                className="h-9 text-sm bg-white border-slate-200"
-              />
+            {/* 반 필터 */}
+            <div>
+              <p className="sr-only">반</p>
+              <Select value={filterClass === "all" ? undefined : filterClass} onValueChange={setFilterClass}>
+                <SelectTrigger className="h-9 w-44 text-sm bg-white border-slate-200 text-slate-500">
+                  <SelectValue placeholder="반" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">전체</SelectItem>
+                  {classesList.map(c => (
+                    <SelectItem key={c.id} value={c.id}>{c.name}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* 정지 예약 상태 필터 */}
+            <div>
+              <p className="sr-only">정지 예약 상태</p>
+              <Select
+                value={filterStopReservation === "all" ? undefined : filterStopReservation}
+                onValueChange={value => setFilterStopReservation(value as "all" | "available" | "scheduled")}
+              >
+                <SelectTrigger className="h-9 w-44 text-sm bg-white border-slate-200 text-slate-500">
+                  <SelectValue placeholder="정지 예약 상태" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">전체</SelectItem>
+                  <SelectItem value="available">정지 예약 가능</SelectItem>
+                  <SelectItem value="scheduled">정지 예정</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
 
             {/* 필터 조작 버튼군 */}
@@ -612,15 +609,14 @@ export default function StudentListPage() {
               <Button
                 size="sm"
                 onClick={handleSearch}
-                className="h-9 px-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold"
+                className="h-9 px-5 bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold"
               >
-                검색
+                적용
               </Button>
               <Button
                 size="sm"
-                variant="outline"
                 onClick={handleReset}
-                className="h-9 px-4 text-sm font-semibold bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
+                className="h-9 px-5 text-sm font-semibold bg-slate-400 text-white hover:bg-slate-500"
               >
                 초기화
               </Button>
@@ -629,7 +625,25 @@ export default function StudentListPage() {
         </div>
 
         {/* ── 보조 및 기능 액션 버튼 영역 ───────────────────────── */}
-        <div className="flex flex-wrap items-center justify-end gap-2">
+        <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
+          <div className="relative w-72">
+            <Input
+              value={searchText}
+              onChange={e => setSearchText(e.target.value)}
+              onKeyDown={e => e.key === "Enter" && handleSearch()}
+              placeholder="검색어를 입력해주세요"
+              className="h-10 border-0 bg-slate-50 pr-10 text-sm shadow-none"
+            />
+            <button
+              type="button"
+              onClick={handleSearch}
+              className="absolute right-0 top-0 flex h-10 w-10 items-center justify-center text-slate-400 hover:text-slate-600"
+              aria-label="검색"
+            >
+              <Search className="h-5 w-5" />
+            </button>
+          </div>
+          <div className="flex flex-wrap items-center justify-end gap-2">
           {/* 선택 표시기 (체크된 학생 수 > 0 일 때 실시간 등장) */}
           {selectedStudentIds.length > 0 && (
             <div className="flex items-center gap-2 mr-2 text-xs font-bold text-slate-700 animate-in fade-in slide-in-from-right-1 duration-200">
@@ -647,7 +661,7 @@ export default function StudentListPage() {
           <Button
             size="sm"
             variant="outline"
-            className="h-9 px-3 gap-1.5 bg-green-50 hover:bg-green-100/80 text-green-700 hover:text-green-800 border-green-200 font-semibold"
+            className="h-10 px-4 gap-1.5 bg-emerald-500 hover:bg-emerald-600 text-white border-0 font-semibold"
             onClick={() => {
               if (selectedStudentIds.length === 0) {
                 toast({ title: "반을 일괄 변경할 학생을 먼저 선택해 주세요.", variant: "destructive" });
@@ -665,7 +679,7 @@ export default function StudentListPage() {
           <Button
             size="sm"
             variant="outline"
-            className="h-9 px-3 gap-1.5 bg-blue-50 hover:bg-blue-100/80 text-blue-700 hover:text-blue-800 border-blue-200 font-semibold"
+            className="h-10 px-4 gap-1.5 bg-sky-500 hover:bg-sky-600 text-white border-0 font-semibold"
             onClick={() => {
               setClassModalMode("list");
               setIsClassModalOpen(true);
@@ -679,20 +693,35 @@ export default function StudentListPage() {
           <Button
             size="sm"
             variant="outline"
-            className="h-9 px-3 gap-1.5 bg-slate-50 hover:bg-slate-100/80 text-slate-700 hover:text-slate-800 border-slate-200 font-semibold"
+            className="order-first h-10 px-4 gap-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-500 border-0 font-semibold"
             onClick={() => toast({ title: "엑셀 다운로드가 준비중입니다." })}
           >
             <FileSpreadsheet className="h-4 w-4 text-slate-500" />
             엑셀 다운로드
           </Button>
+          <Button
+            className="h-10 px-4 gap-1.5 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold"
+            onClick={() => toast({ title: "학생 일괄 등록이 준비중입니다." })}
+          >
+            <Plus className="h-4 w-4" />
+            학생 일괄 등록
+          </Button>
+          <Button
+            className="h-10 px-4 gap-1.5 bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold"
+            onClick={() => toast({ title: "준비중입니다!" })}
+          >
+            <Plus className="h-4 w-4" />
+            학생 개별 등록
+          </Button>
+          </div>
         </div>
 
         {/* ── 테이블 ────────────────────────────────────────── */}
-        <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm overflow-hidden">
+        <div className="mt-4 overflow-hidden border-y border-slate-100">
           <div className="overflow-x-auto">
-            <table className="w-full text-sm min-w-[1200px]">
+            <table className="w-full text-sm min-w-[1800px]">
               <thead>
-                <tr className="border-b border-slate-100 bg-slate-50/80">
+                <tr className="border-b border-slate-100 bg-white">
                   <th className="px-4 py-3 w-10">
                     <input
                       type="checkbox"
@@ -744,6 +773,9 @@ export default function StudentListPage() {
                   <th className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-24">
                     서비스상태
                   </th>
+                  <th className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-40">
+                    정지 예약 상태
+                  </th>
                   <th
                     onClick={() => handleSort("serviceEndDate")}
                     className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-28 cursor-pointer select-none hover:bg-slate-100/80"
@@ -765,7 +797,7 @@ export default function StudentListPage() {
               <tbody>
                 {paged.length === 0 ? (
                   <tr>
-                    <td colSpan={16} className="text-center py-16 text-slate-400 text-sm">
+                    <td colSpan={17} className="text-center py-16 text-slate-400 text-sm">
                       조회된 학생 정보가 없습니다.
                     </td>
                   </tr>
@@ -897,6 +929,17 @@ export default function StudentListPage() {
                           </span>
                         </td>
 
+                        {/* 정지 예약 상태 */}
+                        <td className="px-4 py-3 text-xs whitespace-nowrap">
+                          {getStudentStopReservationStatus(student) === "available" ? (
+                            <span className="font-semibold text-blue-500">정지 예약 가능</span>
+                          ) : getStudentStopReservationStatus(student) === "scheduled" ? (
+                            <span className="font-semibold text-orange-500">{getStudentStopReservationLabel(student)}</span>
+                          ) : (
+                            <span className="text-slate-400">-</span>
+                          )}
+                        </td>
+
                         {/* 서비스 종료일 */}
                         <td className="px-4 py-3 text-slate-500 text-xs">
                           {student.serviceEndDate || "-"}
@@ -944,7 +987,7 @@ export default function StudentListPage() {
         </div>
 
         {/* ── 페이징 ─────────────────────────────────────────── */}
-        <div className="flex items-center justify-between">
+        <div className="mt-4 flex items-center justify-between">
           {/* 좌측: 건수 + 페이지당 */}
           <div className="flex items-center gap-2 text-sm text-slate-500">
             <span>
