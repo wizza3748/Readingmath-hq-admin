@@ -12,6 +12,35 @@ export type MockInstitutionServiceStatus =
 export type InstitutionBillingType = "일반 과금" | "이벤트 과금";
 export type InstitutionEventBillingMethod = "1년 선납" | "월별 과금";
 
+export type InstitutionServiceReservation = {
+  version: 1;
+  date: string;
+  status: Exclude<MockInstitutionServiceStatus, "미납정지">;
+  serviceType?: MockInstitutionServiceType;
+  billingType?: InstitutionBillingType;
+  eventBillingMethod?: InstitutionEventBillingMethod;
+  minFee?: string;
+  perStudentFeeOneSubject?: string;
+  perStudentFeeTwoSubjects?: string;
+  eventAnnualPrepaidFee?: string;
+  eventMonthlyFee?: string;
+  eventStartDate?: string;
+  eventEndDate?: string;
+  includedStudents?: string;
+  excessMonthlyFee?: string;
+  reason: string;
+  beforeStatus: MockInstitutionServiceStatus;
+  beforeServiceType: MockInstitutionServiceType;
+  beforeBillingType: InstitutionBillingType;
+  beforeContractSummary?: string;
+  afterContractSummary?: string;
+};
+
+export type InstitutionServiceState = {
+  status: MockInstitutionServiceStatus;
+  serviceType: MockInstitutionServiceType;
+};
+
 export type InstitutionBillingSettings = {
   version: 3;
   billingType: InstitutionBillingType;
@@ -181,6 +210,8 @@ export function getMockInstitution(id: string) {
 }
 
 const BILLING_STORAGE_PREFIX = "institution-billing-settings:";
+const SERVICE_RESERVATION_STORAGE_PREFIX = "institution-service-reservation:";
+const SERVICE_STATE_STORAGE_PREFIX = "institution-service-state:";
 
 export function getInstitutionBillingSettings(institution: MockInstitution): InstitutionBillingSettings {
   const fallback: InstitutionBillingSettings = {
@@ -236,5 +267,47 @@ export function getInstitutionBillingSettings(institution: MockInstitution): Ins
 export function saveInstitutionBillingSettings(institutionId: string, settings: InstitutionBillingSettings) {
   if (typeof window !== "undefined") {
     window.localStorage.setItem(`${BILLING_STORAGE_PREFIX}${institutionId}`, JSON.stringify(settings));
+  }
+}
+
+export function getInstitutionServiceReservation(institutionId: string): InstitutionServiceReservation | null {
+  if (typeof window === "undefined") return null;
+  const stored = window.localStorage.getItem(`${SERVICE_RESERVATION_STORAGE_PREFIX}${institutionId}`);
+  if (!stored) return null;
+  try {
+    const parsed = JSON.parse(stored) as InstitutionServiceReservation;
+    return parsed.version === 1 ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
+export function saveInstitutionServiceReservation(institutionId: string, reservation: InstitutionServiceReservation) {
+  if (typeof window !== "undefined") {
+    window.localStorage.setItem(`${SERVICE_RESERVATION_STORAGE_PREFIX}${institutionId}`, JSON.stringify(reservation));
+  }
+}
+
+export function removeInstitutionServiceReservation(institutionId: string) {
+  if (typeof window !== "undefined") {
+    window.localStorage.removeItem(`${SERVICE_RESERVATION_STORAGE_PREFIX}${institutionId}`);
+  }
+}
+
+export function getInstitutionServiceState(institution: MockInstitution): InstitutionServiceState {
+  const fallback = { status: institution.serviceStatus, serviceType: institution.serviceType };
+  if (typeof window === "undefined") return fallback;
+  const stored = window.localStorage.getItem(`${SERVICE_STATE_STORAGE_PREFIX}${institution.id}`);
+  if (!stored) return fallback;
+  try {
+    return { ...fallback, ...(JSON.parse(stored) as Partial<InstitutionServiceState>) };
+  } catch {
+    return fallback;
+  }
+}
+
+export function saveInstitutionServiceState(institutionId: string, state: InstitutionServiceState) {
+  if (typeof window !== "undefined") {
+    window.localStorage.setItem(`${SERVICE_STATE_STORAGE_PREFIX}${institutionId}`, JSON.stringify(state));
   }
 }
