@@ -5,6 +5,7 @@ import { useSidebar } from "@/components/ui/sidebar";
 
 // 진입 시 사이드바를 자동으로 닫아야 하는 경로 목록
 const SIDEBAR_CLOSE_PATHS = [
+  "/institutions",
   "/admin/task-center",
   "/admin/teacher-list",
   "/admin/student-list",

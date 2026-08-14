@@ -19,7 +19,7 @@ import {
   getAssignedTeacherMap,
   appendStudentServiceActivity,
 } from "@/lib/student-mock";
-import { getStoredTeachers, Teacher, ClassInfo, getStoredClasses } from "@/lib/teacher-mock";
+import { getStoredTeachers, saveStoredTeachers, Teacher, ClassInfo, getStoredClasses, saveStoredClasses } from "@/lib/teacher-mock";
 import {
   Dialog,
   DialogContent,
@@ -238,27 +238,17 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
       return { ...cls, studentCount: count };
     });
     setClassesList(nextClasses);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("readingmath_classes_data", JSON.stringify(nextClasses));
+    saveStoredClasses(nextClasses);
 
-      // 선생님관리(assignedClasses) 반 인원수 실시간 동기화
-      const storedTeachers = localStorage.getItem("readingmath_teachers_data");
-      if (storedTeachers) {
-        try {
-          const teachers = JSON.parse(storedTeachers) as Teacher[];
-          const nextTeachers = teachers.map((t) => {
-            const nextAssigned = t.assignedClasses.map((c) => {
-              const matched = nextClasses.find((nc) => nc.id === c.id);
-              return matched ? { ...c, studentCount: matched.studentCount } : c;
-            });
-            return { ...t, assignedClasses: nextAssigned };
-          });
-          localStorage.setItem("readingmath_teachers_data", JSON.stringify(nextTeachers));
-        } catch (e) {
-          console.error(e);
-        }
-      }
-    }
+    // 선생님관리(assignedClasses) 반 인원수 실시간 동기화
+    const nextTeachers = getStoredTeachers().map((t) => {
+      const nextAssigned = t.assignedClasses.map((c) => {
+        const matched = nextClasses.find((nc) => nc.id === c.id);
+        return matched ? { ...c, studentCount: matched.studentCount } : c;
+      });
+      return { ...t, assignedClasses: nextAssigned };
+    });
+    saveStoredTeachers(nextTeachers);
 
     // 저장 후 상세 페이지에 머무르기 위해 currentStudent 상태 업데이트
     const updatedTarget = updatedStudents.find((s) => s.id === currentStudent.id);
@@ -283,27 +273,17 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
         }
         return cls;
       });
-      if (typeof window !== "undefined") {
-        localStorage.setItem("readingmath_classes_data", JSON.stringify(nextClasses));
+      saveStoredClasses(nextClasses);
 
-        // 선생님관리(assignedClasses) 반 인원수 실시간 동기화
-        const storedTeachers = localStorage.getItem("readingmath_teachers_data");
-        if (storedTeachers) {
-          try {
-            const teachers = JSON.parse(storedTeachers) as Teacher[];
-            const nextTeachers = teachers.map((t) => {
-              const nextAssigned = t.assignedClasses.map((c) => {
-                const matched = nextClasses.find((nc) => nc.id === c.id);
-                return matched ? { ...c, studentCount: matched.studentCount } : c;
-              });
-              return { ...t, assignedClasses: nextAssigned };
-            });
-            localStorage.setItem("readingmath_teachers_data", JSON.stringify(nextTeachers));
-          } catch (e) {
-            console.error(e);
-          }
-        }
-      }
+      // 선생님관리(assignedClasses) 반 인원수 실시간 동기화
+      const nextTeachers = getStoredTeachers().map((t) => {
+        const nextAssigned = t.assignedClasses.map((c) => {
+          const matched = nextClasses.find((nc) => nc.id === c.id);
+          return matched ? { ...c, studentCount: matched.studentCount } : c;
+        });
+        return { ...t, assignedClasses: nextAssigned };
+      });
+      saveStoredTeachers(nextTeachers);
     }
 
     toast({ title: "학생 정보가 삭제되었습니다." });

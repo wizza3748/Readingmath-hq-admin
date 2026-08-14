@@ -324,10 +324,8 @@ const ADDITIONAL_STUDENTS: Student[] = ADDITIONAL_STUDENT_NAMES.map((name, index
 
 export const INITIAL_STUDENTS: Student[] = [...BASE_INITIAL_STUDENTS, ...ADDITIONAL_STUDENTS];
 
-const STUDENT_STORAGE_KEY = "readingmath_students_data";
-const STUDENT_STORAGE_VERSION_KEY = "readingmath_students_data_version";
-const STUDENT_STORAGE_VERSION = "6";
-const STUDENT_ACTIVITY_STORAGE_KEY = "readingmath_student_service_activity";
+let runtimeStudents: Student[] | null = null;
+let runtimeStudentActivities: unknown[] = [];
 
 function applyEventBillingPrototypeDefaults(student: Student): Student {
   const hasCurrentMonthOverageCharge = student.seq <= 4;
@@ -357,67 +355,19 @@ function deriveGradeTerm(grade: string, semester: string): string {
 }
 
 export function getStoredStudents(): Student[] {
-  if (typeof window === "undefined") {
-    return INITIAL_STUDENTS;
-  }
-  const stored = localStorage.getItem(STUDENT_STORAGE_KEY);
-  if (!stored) {
-    const initialStudents = INITIAL_STUDENTS.map(applyEventBillingPrototypeDefaults);
-    localStorage.setItem(STUDENT_STORAGE_KEY, JSON.stringify(initialStudents));
-    localStorage.setItem(STUDENT_STORAGE_VERSION_KEY, STUDENT_STORAGE_VERSION);
-    return initialStudents;
-  }
-  try {
-    let parsed = JSON.parse(stored) as Student[];
-    // 구버전 학생 데이터 자동 마이그레이션
-    const hasLegacyData = parsed.some(s => s.id.startsWith("student-") || !s.hasOwnProperty("semester") || !s.semester || s.semester === "-");
-    if (hasLegacyData) {
-      localStorage.setItem(STUDENT_STORAGE_KEY, JSON.stringify(INITIAL_STUDENTS));
-      localStorage.setItem(STUDENT_STORAGE_VERSION_KEY, STUDENT_STORAGE_VERSION);
-      return INITIAL_STUDENTS;
-    }
-    if (localStorage.getItem(STUDENT_STORAGE_VERSION_KEY) !== STUDENT_STORAGE_VERSION) {
-      const storedIds = new Set(parsed.map(student => student.id));
-      const missingPrototypeStudents = INITIAL_STUDENTS.filter(student => !storedIds.has(student.id));
-      parsed = [...parsed, ...missingPrototypeStudents].map(applyEventBillingPrototypeDefaults);
-      localStorage.setItem(STUDENT_STORAGE_VERSION_KEY, STUDENT_STORAGE_VERSION);
-    }
-    // mathGradeTerm / scienceGradeTerm 누락 시 기본학기에서 파생 자동 적용
-    const needsMigration = parsed.some(s => !s.mathGradeTerm || !s.scienceGradeTerm);
-    if (needsMigration) {
-      const migrated = parsed.map(s => ({
-        ...s,
-        mathGradeTerm: s.mathGradeTerm || deriveGradeTerm(s.grade, s.semester),
-        scienceGradeTerm: s.scienceGradeTerm || deriveGradeTerm(s.grade, s.semester),
-      }));
-      localStorage.setItem(STUDENT_STORAGE_KEY, JSON.stringify(migrated));
-      parsed = migrated;
-    }
-    const today = new Date();
-    const todayText = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
-    let reservationApplied = false;
-    const applied = parsed.map((student) => {
-      if (student.serviceStatus === "in_use" && student.serviceStopScheduledAt && student.serviceStopScheduledAt <= todayText) {
-        reservationApplied = true;
-        appendStudentServiceActivity(student, "서비스 정지 예약 적용", student.serviceStopScheduledAt);
-        return { ...student, serviceStatus: "suspended" as StudentServiceStatus, serviceStopScheduledAt: null };
-      }
-      return student;
-    });
-    if (reservationApplied || localStorage.getItem(STUDENT_STORAGE_VERSION_KEY) === STUDENT_STORAGE_VERSION) {
-      localStorage.setItem(STUDENT_STORAGE_KEY, JSON.stringify(applied));
-    }
-    return applied;
-  } catch (e) {
-    return INITIAL_STUDENTS;
-  }
+  const initialStudents = INITIAL_STUDENTS.map((student) => ({
+    ...applyEventBillingPrototypeDefaults(student),
+    mathGradeTerm: student.mathGradeTerm || deriveGradeTerm(student.grade, student.semester),
+    scienceGradeTerm: student.scienceGradeTerm || deriveGradeTerm(student.grade, student.semester),
+  }));
+  if (typeof window === "undefined") return initialStudents;
+  if (!runtimeStudents) runtimeStudents = initialStudents;
+  return runtimeStudents;
 }
 
 export function appendStudentServiceActivity(student: Student, action: string, scheduledDate: string) {
   if (typeof window === "undefined") return;
-  const stored = window.localStorage.getItem(STUDENT_ACTIVITY_STORAGE_KEY);
-  const activities = stored ? JSON.parse(stored) as unknown[] : [];
-  activities.unshift({
+  runtimeStudentActivities.unshift({
     processedAt: new Date().toISOString(),
     processor: "기관관리자",
     studentId: student.id,
@@ -425,11 +375,10 @@ export function appendStudentServiceActivity(student: Student, action: string, s
     action,
     scheduledDate,
   });
-  window.localStorage.setItem(STUDENT_ACTIVITY_STORAGE_KEY, JSON.stringify(activities));
 }
 
 export function saveStoredStudents(students: Student[]): void {
   if (typeof window !== "undefined") {
-    localStorage.setItem(STUDENT_STORAGE_KEY, JSON.stringify(students));
+    runtimeStudents = students.map((student) => ({ ...student }));
   }
 }

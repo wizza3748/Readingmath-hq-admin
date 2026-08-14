@@ -109,7 +109,7 @@ export type MockInstitution = {
 const featuredInstitutions: Array<
   Pick<MockInstitution, "id" | "branch1" | "branch2" | "name" | "serviceStatus" | "studentCount" | "createdAt">
 > = [
-  { id: "1238", branch1: "", branch2: "", name: "리딩수학과학 QA학원", serviceStatus: "무료사용", studentCount: 22, createdAt: "2026-06-24 20:10:58" },
+  { id: "1238", branch1: "", branch2: "", name: "리딩수학과학 QA학원", serviceStatus: "정상", studentCount: 22, createdAt: "2026-06-24 20:10:58" },
   { id: "1235", branch1: "전주", branch2: "", name: "ARA(에이알에이)학원", serviceStatus: "일시정지", studentCount: 0, createdAt: "2026-06-15 11:26:09" },
   { id: "1233", branch1: "평택안성", branch2: "", name: "탑브레인수학과학학원", serviceStatus: "일시정지", studentCount: 0, createdAt: "2026-06-15 09:18:15" },
   { id: "1232", branch1: "평택안성", branch2: "", name: "에이플러스학원", serviceStatus: "일시정지", studentCount: 0, createdAt: "2026-06-15 09:15:26" },
@@ -145,9 +145,11 @@ function createInstitution(
   const isQa = seed.id === "1238";
   const serviceType = isQa ? "리딩수학+과학 통합" : serviceTypes[index % serviceTypes.length];
   const perStudentFee = serviceType === "리딩수학+과학 통합" ? 15_000 : 10_000;
+  const billingType: InstitutionBillingType = isQa || index % 4 === 0 ? "이벤트 과금" : "일반 과금";
 
   return {
     ...seed,
+    serviceStatus: billingType === "이벤트 과금" ? "정상" : seed.serviceStatus,
     ownerName: isQa ? "김대표" : `${seed.name.slice(0, 2)} 원장`,
     loginId: isQa ? "qa_owner" : `academy_${seed.id}`,
     ownerContact: isQa ? "01000000001" : `010-${String(2300 + index).padStart(4, "0")}-${String(5100 + index).padStart(4, "0")}`,
@@ -161,7 +163,7 @@ function createInstitution(
     perStudentFee,
     perStudentFeeOneSubject: 10_000,
     perStudentFeeTwoSubjects: 15_000,
-    billingType: isQa || index % 4 === 0 ? "이벤트 과금" : "일반 과금",
+    billingType,
     eventBillingMethod: index % 2 === 0 ? "1년 선납" : "월별 과금",
     eventAnnualPrepaidFee: serviceType === "리딩수학+과학 통합" ? 1_200_000 : 840_000,
     eventMonthlyFee: serviceType === "리딩수학+과학 통합" ? 100_000 : 70_000,
@@ -214,9 +216,9 @@ export function getMockInstitution(id: string) {
   return MOCK_INSTITUTIONS.find((institution) => institution.id === id) ?? null;
 }
 
-const BILLING_STORAGE_PREFIX = "institution-billing-settings:";
-const SERVICE_RESERVATION_STORAGE_PREFIX = "institution-service-reservation:";
-const SERVICE_STATE_STORAGE_PREFIX = "institution-service-state:";
+const runtimeBillingSettings = new Map<string, InstitutionBillingSettings>();
+const runtimeServiceReservations = new Map<string, InstitutionServiceReservation>();
+const runtimeServiceStates = new Map<string, InstitutionServiceState>();
 
 export function getInstitutionBillingSettings(institution: MockInstitution): InstitutionBillingSettings {
   const fallback: InstitutionBillingSettings = {
@@ -232,92 +234,40 @@ export function getInstitutionBillingSettings(institution: MockInstitution): Ins
   };
 
   if (typeof window === "undefined") return fallback;
-  const stored = window.localStorage.getItem(`${BILLING_STORAGE_PREFIX}${institution.id}`);
-  if (!stored) return fallback;
-
-  try {
-    const parsed = JSON.parse(stored) as Partial<Omit<InstitutionBillingSettings, "version">> & {
-      version?: number;
-      mockDefaultsVersion?: number;
-      eventPrepaidFee?: string;
-      eventPeriod?: "1년" | "직접 설정";
-      excessFee?: string;
-    };
-    const normalized: InstitutionBillingSettings = {
-      ...fallback,
-      version: 3,
-      billingType: parsed.billingType || fallback.billingType,
-      eventBillingMethod: parsed.eventBillingMethod || (parsed.eventPeriod === "직접 설정" ? "월별 과금" : "1년 선납"),
-      eventAnnualPrepaidFee: [parsed.eventAnnualPrepaidFee, parsed.eventPrepaidFee].some((value) =>
-        ["600,000", "840,000", "1,200,000"].includes(value || "") && value !== fallback.eventAnnualPrepaidFee,
-      )
-        ? fallback.eventAnnualPrepaidFee
-        : parsed.eventAnnualPrepaidFee || parsed.eventPrepaidFee || fallback.eventAnnualPrepaidFee,
-      eventMonthlyFee: ["55,000", "70,000", "100,000"].includes(parsed.eventMonthlyFee || "")
-        && parsed.eventMonthlyFee !== fallback.eventMonthlyFee
-        ? fallback.eventMonthlyFee
-        : parsed.eventMonthlyFee || fallback.eventMonthlyFee,
-      eventStartDate: parsed.eventStartDate || fallback.eventStartDate,
-      eventEndDate: parsed.eventEndDate || fallback.eventEndDate,
-      includedStudents: parsed.includedStudents || fallback.includedStudents,
-      excessMonthlyFee: parsed.excessMonthlyFee || parsed.excessFee || fallback.excessMonthlyFee,
-      eventEnded: parsed.eventEnded,
-      studentsPaused: parsed.studentsPaused,
-      serviceStatusAfterEvent: parsed.serviceStatusAfterEvent,
-    };
-    if (parsed.version !== 3) {
-      window.localStorage.setItem(`${BILLING_STORAGE_PREFIX}${institution.id}`, JSON.stringify(normalized));
-    }
-    return normalized;
-  } catch {
-    return fallback;
-  }
+  return runtimeBillingSettings.get(institution.id) ?? fallback;
 }
 
 export function saveInstitutionBillingSettings(institutionId: string, settings: InstitutionBillingSettings) {
   if (typeof window !== "undefined") {
-    window.localStorage.setItem(`${BILLING_STORAGE_PREFIX}${institutionId}`, JSON.stringify(settings));
+    runtimeBillingSettings.set(institutionId, { ...settings });
   }
 }
 
 export function getInstitutionServiceReservation(institutionId: string): InstitutionServiceReservation | null {
   if (typeof window === "undefined") return null;
-  const stored = window.localStorage.getItem(`${SERVICE_RESERVATION_STORAGE_PREFIX}${institutionId}`);
-  if (!stored) return null;
-  try {
-    const parsed = JSON.parse(stored) as InstitutionServiceReservation;
-    return parsed.version === 1 ? parsed : null;
-  } catch {
-    return null;
-  }
+  return runtimeServiceReservations.get(institutionId) ?? null;
 }
 
 export function saveInstitutionServiceReservation(institutionId: string, reservation: InstitutionServiceReservation) {
   if (typeof window !== "undefined") {
-    window.localStorage.setItem(`${SERVICE_RESERVATION_STORAGE_PREFIX}${institutionId}`, JSON.stringify(reservation));
+    runtimeServiceReservations.set(institutionId, { ...reservation });
   }
 }
 
 export function removeInstitutionServiceReservation(institutionId: string) {
   if (typeof window !== "undefined") {
-    window.localStorage.removeItem(`${SERVICE_RESERVATION_STORAGE_PREFIX}${institutionId}`);
+    runtimeServiceReservations.delete(institutionId);
   }
 }
 
 export function getInstitutionServiceState(institution: MockInstitution): InstitutionServiceState {
   const fallback = { status: institution.serviceStatus, serviceType: institution.serviceType };
   if (typeof window === "undefined") return fallback;
-  const stored = window.localStorage.getItem(`${SERVICE_STATE_STORAGE_PREFIX}${institution.id}`);
-  if (!stored) return fallback;
-  try {
-    return { ...fallback, ...(JSON.parse(stored) as Partial<InstitutionServiceState>) };
-  } catch {
-    return fallback;
-  }
+  return runtimeServiceStates.get(institution.id) ?? fallback;
 }
 
 export function saveInstitutionServiceState(institutionId: string, state: InstitutionServiceState) {
   if (typeof window !== "undefined") {
-    window.localStorage.setItem(`${SERVICE_STATE_STORAGE_PREFIX}${institutionId}`, JSON.stringify(state));
+    runtimeServiceStates.set(institutionId, { ...state });
   }
 }

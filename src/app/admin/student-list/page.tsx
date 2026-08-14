@@ -27,7 +27,7 @@ import {
   getAssignedTeacherMap,
 } from "@/lib/student-mock";
 import { getMockInstitution } from "@/lib/institution-mock";
-import { ALL_CLASSES, getStoredTeachers, Teacher, getStoredClasses, saveStoredClasses, ClassInfo } from "@/lib/teacher-mock";
+import { ALL_CLASSES, getStoredTeachers, saveStoredTeachers, Teacher, getStoredClasses, saveStoredClasses, ClassInfo } from "@/lib/teacher-mock";
 import {
   Dialog,
   DialogContent,
@@ -122,7 +122,7 @@ export default function StudentListPage() {
       });
 
       if (isTeacherDataModified) {
-        localStorage.setItem("readingmath_teachers_data", JSON.stringify(nextTeachers));
+        saveStoredTeachers(nextTeachers);
         storedTeachers = nextTeachers;
       }
 
@@ -137,7 +137,7 @@ export default function StudentListPage() {
       });
 
       if (isClassDataModified) {
-        localStorage.setItem("readingmath_classes_data", JSON.stringify(nextClasses));
+        saveStoredClasses(nextClasses);
       }
     }
 
@@ -333,25 +333,15 @@ export default function StudentListPage() {
       setClassesList(nextClasses);
       saveStoredClasses(nextClasses);
 
-      if (typeof window !== "undefined") {
-        const storedTeachers = localStorage.getItem("readingmath_teachers_data");
-        if (storedTeachers) {
-          try {
-            const teachersData = JSON.parse(storedTeachers) as Teacher[];
-            const nextTeachers = teachersData.map((t) => {
-              const nextAssigned = t.assignedClasses.map((c) => {
-                const matched = nextClasses.find((nc) => nc.id === c.id);
-                return matched ? { ...c, studentCount: matched.studentCount } : c;
-              });
-              return { ...t, assignedClasses: nextAssigned };
-            });
-            localStorage.setItem("readingmath_teachers_data", JSON.stringify(nextTeachers));
-            setTeachers(nextTeachers); // 현재 페이지 상태도 실시간 갱신
-          } catch (e) {
-            console.error(e);
-          }
-        }
-      }
+      const nextTeachers = getStoredTeachers().map((t) => {
+        const nextAssigned = t.assignedClasses.map((c) => {
+          const matched = nextClasses.find((nc) => nc.id === c.id);
+          return matched ? { ...c, studentCount: matched.studentCount } : c;
+        });
+        return { ...t, assignedClasses: nextAssigned };
+      });
+      saveStoredTeachers(nextTeachers);
+      setTeachers(nextTeachers);
     }
 
     toast({ title: "학생 정보가 삭제되었습니다." });
@@ -399,27 +389,17 @@ export default function StudentListPage() {
     saveStoredClasses(nextClasses);
 
     // 선생님관리(assignedClasses) 반 이름 실시간 동기화
-    if (typeof window !== "undefined") {
-      const storedTeachers = localStorage.getItem("readingmath_teachers_data");
-      if (storedTeachers) {
-        try {
-          const teachersData = JSON.parse(storedTeachers) as Teacher[];
-          const nextTeachers = teachersData.map((t) => {
-            const nextAssigned = t.assignedClasses.map((c) => {
-              if (c.id === editingClassId) {
-                return { ...c, name: editingClassName.trim() };
-              }
-              return c;
-            });
-            return { ...t, assignedClasses: nextAssigned };
-          });
-          localStorage.setItem("readingmath_teachers_data", JSON.stringify(nextTeachers));
-          setTeachers(nextTeachers); // 현재 페이지 상태도 실시간 갱신
-        } catch (e) {
-          console.error(e);
+    const nextTeachers = getStoredTeachers().map((t) => {
+      const nextAssigned = t.assignedClasses.map((c) => {
+        if (c.id === editingClassId) {
+          return { ...c, name: editingClassName.trim() };
         }
-      }
-    }
+        return c;
+      });
+      return { ...t, assignedClasses: nextAssigned };
+    });
+    saveStoredTeachers(nextTeachers);
+    setTeachers(nextTeachers);
 
     toast({ title: "반 이름이 수정되었습니다." });
     setEditingClassId(null);
@@ -500,25 +480,15 @@ export default function StudentListPage() {
     saveStoredClasses(nextClasses);
 
     // 선생님관리(assignedClasses) 반 인원수 실시간 동기화
-    if (typeof window !== "undefined") {
-      const storedTeachers = localStorage.getItem("readingmath_teachers_data");
-      if (storedTeachers) {
-        try {
-          const teachersData = JSON.parse(storedTeachers) as Teacher[];
-          const nextTeachers = teachersData.map((t) => {
-            const nextAssigned = t.assignedClasses.map((c) => {
-              const matched = nextClasses.find((nc) => nc.id === c.id);
-              return matched ? { ...c, studentCount: matched.studentCount } : c;
-            });
-            return { ...t, assignedClasses: nextAssigned };
-          });
-          localStorage.setItem("readingmath_teachers_data", JSON.stringify(nextTeachers));
-          setTeachers(nextTeachers); // 현재 페이지 상태도 실시간 갱신
-        } catch (e) {
-          console.error(e);
-        }
-      }
-    }
+    const nextTeachers = getStoredTeachers().map((t) => {
+      const nextAssigned = t.assignedClasses.map((c) => {
+        const matched = nextClasses.find((nc) => nc.id === c.id);
+        return matched ? { ...c, studentCount: matched.studentCount } : c;
+      });
+      return { ...t, assignedClasses: nextAssigned };
+    });
+    saveStoredTeachers(nextTeachers);
+    setTeachers(nextTeachers);
 
     toast({ title: `성공적으로 ${selectedStudentIds.length}명 학생의 반이 변경되었습니다.` });
     setSelectedStudentIds([]); 

@@ -107,120 +107,38 @@ export const ALL_CLASSES_INITIAL: ClassInfo[] = [
 
 export const ALL_CLASSES = ALL_CLASSES_INITIAL;
 
-const CLASSES_STORAGE_KEY = "readingmath_classes_data";
+let runtimeClasses: ClassInfo[] | null = null;
 
 export function getStoredClasses(): ClassInfo[] {
-  if (typeof window === "undefined") {
-    return ALL_CLASSES_INITIAL;
-  }
-  const stored = localStorage.getItem(CLASSES_STORAGE_KEY);
-  if (!stored) {
-    localStorage.setItem(CLASSES_STORAGE_KEY, JSON.stringify(ALL_CLASSES_INITIAL));
-    return ALL_CLASSES_INITIAL;
-  }
-  try {
-    const parsed = JSON.parse(stored) as ClassInfo[];
-    let changed = false;
-    const updated = parsed.map(c => {
-      let count = c.studentCount;
-      let name = c.name;
-      
-      if (c.id === "class-1") {
-        if (c.studentCount !== 4) { count = 4; changed = true; }
-        if (c.name === "초3A반" || c.name === "대표선생님반") { name = "중1반"; changed = true; }
-      }
-      else if (c.id === "class-2") {
-        if (c.studentCount !== 3) { count = 3; changed = true; }
-        if (c.name === "초4B반" || c.name === "그냥선생님반") { name = "중2반"; changed = true; }
-      }
-      else if (c.id === "class-3") {
-        if (c.name === "초5C반") { name = "중3반"; changed = true; }
-      }
-      
-      return { ...c, name, studentCount: count };
-    });
-    if (changed) {
-      localStorage.setItem(CLASSES_STORAGE_KEY, JSON.stringify(updated));
-    }
-    return updated;
-  } catch (e) {
-    return ALL_CLASSES_INITIAL;
-  }
+  if (typeof window === "undefined") return ALL_CLASSES_INITIAL;
+  if (!runtimeClasses) runtimeClasses = ALL_CLASSES_INITIAL.map((item) => ({ ...item }));
+  return runtimeClasses;
 }
 
 export function saveStoredClasses(classes: ClassInfo[]): void {
   if (typeof window !== "undefined") {
-    localStorage.setItem(CLASSES_STORAGE_KEY, JSON.stringify(classes));
+    runtimeClasses = classes.map((item) => ({ ...item }));
   }
 }
 
-const TEACHER_STORAGE_KEY = "readingmath_teachers_data";
+let runtimeTeachers: Teacher[] | null = null;
 
 export function getStoredTeachers(): Teacher[] {
-  if (typeof window === "undefined") {
-    return MOCK_TEACHERS;
+  if (typeof window === "undefined") return MOCK_TEACHERS;
+  if (!runtimeTeachers) {
+    runtimeTeachers = MOCK_TEACHERS.map((teacher) => ({
+      ...teacher,
+      assignedClasses: teacher.assignedClasses.map((item) => ({ ...item })),
+    }));
   }
-  const stored = localStorage.getItem(TEACHER_STORAGE_KEY);
-  if (!stored) {
-    localStorage.setItem(TEACHER_STORAGE_KEY, JSON.stringify(MOCK_TEACHERS));
-    return MOCK_TEACHERS;
-  }
-  try {
-    const parsed = JSON.parse(stored) as Teacher[];
-    let changed = false;
-    const updated = parsed.map(t => {
-      // 1. teacher-34 (진원장) 보정
-      if (t.id === "teacher-34") {
-        const isNameDiff = t.name !== "진원장";
-        const class1 = t.assignedClasses.find(c => c.id === "class-1");
-        const isClass1Invalid = !class1 || class1.studentCount !== 4 || class1.name === "초3A반" || class1.name === "대표선생님반";
-        const hasExtraClasses = t.assignedClasses.length !== 1;
-        
-        if (isNameDiff || isClass1Invalid || hasExtraClasses) {
-          changed = true;
-          const currentName = (class1 && class1.name !== "초3A반" && class1.name !== "대표선생님반") ? class1.name : "중1반";
-          return {
-            ...t,
-            name: "진원장",
-            assignedClasses: [
-              { id: "class-1", name: currentName, studentCount: 4 }
-            ]
-          };
-        }
-      }
-      
-      // 2. teacher-35 (진선생) 보정
-      if (t.id === "teacher-35") {
-        const isNameDiff = t.name !== "진선생";
-        const class2 = t.assignedClasses.find(c => c.id === "class-2");
-        const isClass2Invalid = !class2 || class2.studentCount !== 3 || class2.name === "초4B반" || class2.name === "그냥선생님반";
-        const hasExtraClasses = t.assignedClasses.length !== 1;
-        
-        if (isNameDiff || isClass2Invalid || hasExtraClasses) {
-          changed = true;
-          const currentName = (class2 && class2.name !== "초4B반" && class2.name !== "그냥선생님반") ? class2.name : "중2반";
-          return {
-            ...t,
-            name: "진선생",
-            assignedClasses: [
-              { id: "class-2", name: currentName, studentCount: 3 }
-            ]
-          };
-        }
-      }
-      return t;
-    });
-    if (changed) {
-      localStorage.setItem(TEACHER_STORAGE_KEY, JSON.stringify(updated));
-    }
-    return updated;
-  } catch (e) {
-    return MOCK_TEACHERS;
-  }
+  return runtimeTeachers;
 }
 
 export function saveStoredTeachers(teachers: Teacher[]): void {
   if (typeof window !== "undefined") {
-    localStorage.setItem(TEACHER_STORAGE_KEY, JSON.stringify(teachers));
+    runtimeTeachers = teachers.map((teacher) => ({
+      ...teacher,
+      assignedClasses: teacher.assignedClasses.map((item) => ({ ...item })),
+    }));
   }
 }
