@@ -414,6 +414,18 @@ export default function InstitutionInfoPage() {
     }
   };
 
+  const changeEventBillingMethod = (method: InstitutionEventBillingMethod) => {
+    setEventBillingMethod(method);
+    clearBillingError("method");
+    if (method === "1년 선납") {
+      setEventAnnualPrepaidFee(displayedServiceType === "리딩수학+과학 통합" ? "1,200,000" : "840,000");
+      clearBillingError("annualPrepaidFee");
+    } else {
+      setEventMonthlyFee(displayedServiceType === "리딩수학+과학 통합" ? "100,000" : "70,000");
+      clearBillingError("monthlyFee");
+    }
+  };
+
   const changeReservationBillingType = (nextBillingType: InstitutionBillingType) => {
     setReservationBillingType(nextBillingType);
     clearReservationError("billingType");
@@ -436,9 +448,30 @@ export default function InstitutionInfoPage() {
   const changeReservationServiceType = (serviceType: MockInstitutionServiceType) => {
     setReservationServiceType(serviceType);
     clearReservationError("serviceType");
+    if (reservationBillingType === "이벤트 과금") {
+      if (reservationEventMethod === "1년 선납") {
+        setReservationAnnualFee(serviceType === "리딩수학+과학 통합" ? "1,200,000" : "840,000");
+        clearReservationError("annualPrepaidFee");
+      } else {
+        setReservationMonthlyFee(serviceType === "리딩수학+과학 통합" ? "100,000" : "70,000");
+        clearReservationError("monthlyFee");
+      }
+    }
     if (billingType === "이벤트 과금" && eventBillingMethod === "월별 과금" && serviceType !== displayedServiceType) {
       setReservationDate(format(startOfMonth(addMonths(new Date(), 1)), "yyyy-MM-dd"));
       setReservationMonthlyFee(serviceType === "리딩수학+과학 통합" ? "100,000" : "70,000");
+    }
+  };
+
+  const changeReservationEventMethod = (method: InstitutionEventBillingMethod) => {
+    setReservationEventMethod(method);
+    clearReservationError("method");
+    if (method === "1년 선납") {
+      setReservationAnnualFee(reservationServiceType === "리딩수학+과학 통합" ? "1,200,000" : "840,000");
+      clearReservationError("annualPrepaidFee");
+    } else {
+      setReservationMonthlyFee(reservationServiceType === "리딩수학+과학 통합" ? "100,000" : "70,000");
+      clearReservationError("monthlyFee");
     }
   };
 
@@ -742,8 +775,8 @@ export default function InstitutionInfoPage() {
                     <span className="w-28 shrink-0 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>이벤트 과금 방식</span>
                     <div>
                       <div className="flex items-center gap-5">
-                        <RadioOption name="eventBillingMethod" label="1년 선납" checked={eventBillingMethod === "1년 선납"} onChange={() => { setEventBillingMethod("1년 선납"); clearBillingError("method"); }} />
-                        <RadioOption name="eventBillingMethod" label="월별 과금" checked={eventBillingMethod === "월별 과금"} onChange={() => { setEventBillingMethod("월별 과금"); clearBillingError("method"); }} />
+                        <RadioOption name="eventBillingMethod" label="1년 선납" checked={eventBillingMethod === "1년 선납"} onChange={() => changeEventBillingMethod("1년 선납")} />
+                        <RadioOption name="eventBillingMethod" label="월별 과금" checked={eventBillingMethod === "월별 과금"} onChange={() => changeEventBillingMethod("월별 과금")} />
                       </div>
                       {billingErrors.method && <p className="mt-1 text-xs text-rose-500">{billingErrors.method}</p>}
                     </div>
@@ -914,7 +947,7 @@ export default function InstitutionInfoPage() {
                     <div className="space-y-4 border-t pt-5">
                       <div className="grid grid-cols-[145px_minmax(0,1fr)] items-start gap-3">
                         <span className="text-right text-sm text-slate-600"><span className="mr-1 text-rose-400">*</span>이벤트 과금 방식</span>
-                        <div><div className="flex items-center gap-8"><RadioOption name="reservationEventMethod" label="1년 선납" checked={reservationEventMethod === "1년 선납"} onChange={() => { setReservationEventMethod("1년 선납"); clearReservationError("method"); }} /><RadioOption name="reservationEventMethod" label="월별 과금" checked={reservationEventMethod === "월별 과금"} onChange={() => { setReservationEventMethod("월별 과금"); clearReservationError("method"); }} /></div>{reservationErrors.method && <p className="mt-1 text-xs text-rose-500">{reservationErrors.method}</p>}</div>
+                        <div><div className="flex items-center gap-8"><RadioOption name="reservationEventMethod" label="1년 선납" checked={reservationEventMethod === "1년 선납"} onChange={() => changeReservationEventMethod("1년 선납")} /><RadioOption name="reservationEventMethod" label="월별 과금" checked={reservationEventMethod === "월별 과금"} onChange={() => changeReservationEventMethod("월별 과금")} /></div>{reservationErrors.method && <p className="mt-1 text-xs text-rose-500">{reservationErrors.method}</p>}</div>
                       </div>
                       <label className="grid grid-cols-[145px_minmax(0,1fr)] items-start gap-3">
                         <span className="pt-2 text-right text-sm text-slate-600"><span className="mr-1 text-rose-400">*</span>{reservationEventMethod === "1년 선납" ? "이벤트 1년 선납 이용료" : "이벤트 월 이용료"}</span>

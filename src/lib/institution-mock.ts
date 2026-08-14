@@ -163,7 +163,7 @@ function createInstitution(
     perStudentFeeTwoSubjects: 15_000,
     billingType: isQa || index % 4 === 0 ? "이벤트 과금" : "일반 과금",
     eventBillingMethod: index % 2 === 0 ? "1년 선납" : "월별 과금",
-    eventAnnualPrepaidFee: 600_000,
+    eventAnnualPrepaidFee: serviceType === "리딩수학+과학 통합" ? 1_200_000 : 840_000,
     eventMonthlyFee: serviceType === "리딩수학+과학 통합" ? 100_000 : 70_000,
     eventStartDate: "2026-09-01",
     eventEndDate: "2027-08-31",
@@ -248,8 +248,13 @@ export function getInstitutionBillingSettings(institution: MockInstitution): Ins
       version: 3,
       billingType: parsed.billingType || fallback.billingType,
       eventBillingMethod: parsed.eventBillingMethod || (parsed.eventPeriod === "직접 설정" ? "월별 과금" : "1년 선납"),
-      eventAnnualPrepaidFee: parsed.eventAnnualPrepaidFee || parsed.eventPrepaidFee || fallback.eventAnnualPrepaidFee,
-      eventMonthlyFee: parsed.version === 2 && parsed.eventMonthlyFee === "55,000"
+      eventAnnualPrepaidFee: [parsed.eventAnnualPrepaidFee, parsed.eventPrepaidFee].some((value) =>
+        ["600,000", "840,000", "1,200,000"].includes(value || "") && value !== fallback.eventAnnualPrepaidFee,
+      )
+        ? fallback.eventAnnualPrepaidFee
+        : parsed.eventAnnualPrepaidFee || parsed.eventPrepaidFee || fallback.eventAnnualPrepaidFee,
+      eventMonthlyFee: ["55,000", "70,000", "100,000"].includes(parsed.eventMonthlyFee || "")
+        && parsed.eventMonthlyFee !== fallback.eventMonthlyFee
         ? fallback.eventMonthlyFee
         : parsed.eventMonthlyFee || fallback.eventMonthlyFee,
       eventStartDate: parsed.eventStartDate || fallback.eventStartDate,
