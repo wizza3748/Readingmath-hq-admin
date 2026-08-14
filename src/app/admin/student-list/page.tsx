@@ -200,7 +200,10 @@ export default function StudentListPage() {
   }, [students, appliedStatus, appliedType, appliedGrade, appliedClass, appliedRecommend, appliedAdditionalFee, searchApplied]);
 
   const usageSummary = React.useMemo(() => ({
+    total: students.length,
     active: students.filter(student => student.serviceStatus === "in_use").length,
+    beforeUse: students.filter(student => student.serviceStatus === "before_use").length,
+    suspended: students.filter(student => student.serviceStatus === "suspended").length,
     overage: students.filter(student => student.hasCurrentMonthOverageCharge).length,
   }), [students]);
 
@@ -662,18 +665,29 @@ export default function StudentListPage() {
         </div>
 
         {institutionBillingType === "이벤트 과금" && (
-          <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-lg border border-blue-100 bg-blue-50/60 px-4 py-3 text-sm text-slate-600">
-            <span>기본 포함 인원 <strong className="font-bold text-slate-900">{includedStudents}명</strong></span>
-            <span className="text-slate-300">·</span>
-            <span>이용 중 학생 <strong className="font-bold text-slate-900">{usageSummary.active}명</strong></span>
-            <span className="text-slate-300">·</span>
-            <button
-              type="button"
-              onClick={handleOverageSummaryClick}
-              className="font-semibold text-orange-500 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
-            >
-              추가 이용료 발생 {usageSummary.overage}명
-            </button>
+          <div className="mt-4 flex flex-wrap items-stretch gap-3 rounded-lg border border-blue-100 bg-blue-50/60 p-3 text-sm">
+            <div className="flex min-w-48 items-center justify-between gap-5 rounded-md border border-blue-100 bg-white px-4 py-3">
+              <span className="font-semibold text-slate-500">계약 기준</span>
+              <span className="text-slate-700">기본 포함 인원 <strong className="font-bold text-slate-900">{includedStudents}명</strong></span>
+            </div>
+            <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-1 rounded-md border border-slate-100 bg-white px-4 py-3 text-slate-600">
+              <span className="mr-2 font-semibold text-slate-500">현재 이용 현황</span>
+              <span>전체 <strong className="font-bold text-slate-900">{usageSummary.total}명</strong></span>
+              <span className="text-slate-300">|</span>
+              <span>사용중 <strong className="font-bold text-emerald-600">{usageSummary.active}명</strong></span>
+              <span className="text-slate-300">|</span>
+              <span>사용전 <strong className="font-bold text-slate-700">{usageSummary.beforeUse}명</strong></span>
+              <span className="text-slate-300">|</span>
+              <span>서비스 정지 <strong className="font-bold text-slate-700">{usageSummary.suspended}명</strong></span>
+              <span className="text-slate-300">|</span>
+              <button
+                type="button"
+                onClick={handleOverageSummaryClick}
+                className="font-semibold text-orange-500 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
+              >
+                추가 이용료 발생 {usageSummary.overage}명
+              </button>
+            </div>
           </div>
         )}
 

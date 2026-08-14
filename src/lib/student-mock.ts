@@ -292,7 +292,8 @@ const BASE_INITIAL_STUDENTS: Student[] = [
 
 const ADDITIONAL_STUDENT_NAMES = [
   "서하준", "김도윤", "이하은", "박서준", "최지우", "정예준", "한서아",
-  "윤시우", "임채원", "오준서", "신유나", "강은우", "송지안",
+  "윤시우", "임채원", "오준서", "신유나", "강은우", "송지안", "홍민재",
+  "문서윤", "배지훈", "백하린",
 ];
 
 const ADDITIONAL_STUDENTS: Student[] = ADDITIONAL_STUDENT_NAMES.map((name, index) => {
@@ -325,7 +326,7 @@ export const INITIAL_STUDENTS: Student[] = [...BASE_INITIAL_STUDENTS, ...ADDITIO
 
 const STUDENT_STORAGE_KEY = "readingmath_students_data";
 const STUDENT_STORAGE_VERSION_KEY = "readingmath_students_data_version";
-const STUDENT_STORAGE_VERSION = "5";
+const STUDENT_STORAGE_VERSION = "6";
 const STUDENT_ACTIVITY_STORAGE_KEY = "readingmath_student_service_activity";
 
 function applyEventBillingPrototypeDefaults(student: Student): Student {
