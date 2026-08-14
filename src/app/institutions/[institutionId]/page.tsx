@@ -426,6 +426,29 @@ export default function InstitutionInfoPage() {
     }
   };
 
+  const changeServiceType = (serviceType: MockInstitutionServiceType) => {
+    setDisplayedServiceType(serviceType);
+    if (billingType !== "이벤트 과금") return;
+    if (eventBillingMethod === "1년 선납") {
+      setEventAnnualPrepaidFee(serviceType === "리딩수학+과학 통합" ? "1,200,000" : "840,000");
+      clearBillingError("annualPrepaidFee");
+    } else {
+      setEventMonthlyFee(serviceType === "리딩수학+과학 통합" ? "100,000" : "70,000");
+      clearBillingError("monthlyFee");
+    }
+  };
+
+  const changeBillingType = (nextBillingType: InstitutionBillingType) => {
+    setBillingType(nextBillingType);
+    setBillingErrors({});
+    if (nextBillingType !== "이벤트 과금") return;
+    if (eventBillingMethod === "1년 선납") {
+      setEventAnnualPrepaidFee(displayedServiceType === "리딩수학+과학 통합" ? "1,200,000" : "840,000");
+    } else {
+      setEventMonthlyFee(displayedServiceType === "리딩수학+과학 통합" ? "100,000" : "70,000");
+    }
+  };
+
   const changeReservationBillingType = (nextBillingType: InstitutionBillingType) => {
     setReservationBillingType(nextBillingType);
     clearReservationError("billingType");
@@ -723,9 +746,9 @@ export default function InstitutionInfoPage() {
             )}
             <div className="flex flex-wrap items-center gap-5">
               <span className="w-28 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>서비스 타입</span>
-              <RadioOption name="serviceType" label="리딩수학" checked={displayedServiceType === "리딩수학"} />
-              <RadioOption name="serviceType" label="리딩과학" checked={displayedServiceType === "리딩과학"} />
-              <RadioOption name="serviceType" label="리딩수학+과학 통합" checked={displayedServiceType === "리딩수학+과학 통합"} />
+              <RadioOption name="serviceType" label="리딩수학" checked={displayedServiceType === "리딩수학"} onChange={() => changeServiceType("리딩수학")} />
+              <RadioOption name="serviceType" label="리딩과학" checked={displayedServiceType === "리딩과학"} onChange={() => changeServiceType("리딩과학")} />
+              <RadioOption name="serviceType" label="리딩수학+과학 통합" checked={displayedServiceType === "리딩수학+과학 통합"} onChange={() => changeServiceType("리딩수학+과학 통합")} />
             </div>
             <div className="flex flex-wrap items-center gap-5">
               <span className="w-28 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>가맹 타입</span>
@@ -736,8 +759,8 @@ export default function InstitutionInfoPage() {
 
             <div className="flex flex-wrap items-center gap-5">
               <span className="w-28 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>과금 유형</span>
-              <RadioOption name="billingType" label="일반 과금" checked={billingType === "일반 과금"} onChange={() => { setBillingType("일반 과금"); setBillingErrors({}); }} />
-              <RadioOption name="billingType" label="이벤트 과금" checked={billingType === "이벤트 과금"} onChange={() => { setBillingType("이벤트 과금"); clearBillingError("billingType"); }} />
+              <RadioOption name="billingType" label="일반 과금" checked={billingType === "일반 과금"} onChange={() => changeBillingType("일반 과금")} />
+              <RadioOption name="billingType" label="이벤트 과금" checked={billingType === "이벤트 과금"} onChange={() => changeBillingType("이벤트 과금")} />
               {billingErrors.billingType && <p className="w-full pl-[132px] text-xs text-rose-500">{billingErrors.billingType}</p>}
             </div>
 
