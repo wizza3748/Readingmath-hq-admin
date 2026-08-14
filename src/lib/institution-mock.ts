@@ -34,6 +34,11 @@ export type InstitutionServiceReservation = {
   beforeBillingType: InstitutionBillingType;
   beforeContractSummary?: string;
   afterContractSummary?: string;
+  changes?: Array<{
+    label: string;
+    before: string;
+    after: string;
+  }>;
 };
 
 export type InstitutionServiceState = {
