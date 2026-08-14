@@ -104,7 +104,7 @@ export function getAssignedTeacherMap(teachers: Teacher[]): Record<string, strin
 
 // ── 목 데이터 ──────────────────────────────────────────────────
 
-export const INITIAL_STUDENTS: Student[] = [
+const BASE_INITIAL_STUDENTS: Student[] = [
   {
     id: "s1",
     seq: 1,
@@ -290,10 +290,57 @@ export const INITIAL_STUDENTS: Student[] = [
   },
 ];
 
+const ADDITIONAL_STUDENT_NAMES = [
+  "서하준", "김도윤", "이하은", "박서준", "최지우", "정예준", "한서아",
+  "윤시우", "임채원", "오준서", "신유나", "강은우", "송지안",
+];
+
+const ADDITIONAL_STUDENTS: Student[] = ADDITIONAL_STUDENT_NAMES.map((name, index) => {
+  const seq = index + 12;
+  const gradeNumber = (index % 3) + 1;
+  const semester = index % 2 === 0 ? "1학기" : "2학기";
+  const gradeTerm = `중${gradeNumber}-${semester === "1학기" ? "1" : "2"}`;
+
+  return {
+    id: `s${seq}`,
+    seq,
+    name,
+    pinNumber: "1234",
+    loginId: `student${seq}`,
+    parentPhone: `010${String(12000000 + seq * 10101).padStart(8, "0")}`,
+    serviceType: seq % 4 === 0 ? "math" : seq % 4 === 1 ? "science" : "combo",
+    grade: `중등 ${gradeNumber}`,
+    semester,
+    mathGradeTerm: gradeTerm,
+    scienceGradeTerm: gradeTerm,
+    classId: `class-${gradeNumber}`,
+    serviceStatus: seq === 24 ? "before_use" : "in_use",
+    serviceEndDate: "2027-12-31",
+    createdAt: `2026-07-${String(index + 2).padStart(2, "0")}`,
+    recommendCode: "",
+  };
+});
+
+export const INITIAL_STUDENTS: Student[] = [...BASE_INITIAL_STUDENTS, ...ADDITIONAL_STUDENTS];
+
 const STUDENT_STORAGE_KEY = "readingmath_students_data";
 const STUDENT_STORAGE_VERSION_KEY = "readingmath_students_data_version";
-const STUDENT_STORAGE_VERSION = "3";
+const STUDENT_STORAGE_VERSION = "5";
 const STUDENT_ACTIVITY_STORAGE_KEY = "readingmath_student_service_activity";
+
+function applyEventBillingPrototypeDefaults(student: Student): Student {
+  const hasCurrentMonthOverageCharge = student.seq <= 4;
+  const defaultScheduledAt = student.id === "s3" ? "2026-09-01" : null;
+
+  return {
+    ...student,
+    institutionBillingType: "event",
+    hasCurrentMonthOverageCharge,
+    serviceStartedAt: student.serviceStartedAt || (student.id === "s4" ? "2026-08-14" : "2026-07-01"),
+    institutionEventEndDate: student.institutionEventEndDate || "2027-08-31",
+    serviceStopScheduledAt: student.serviceStopScheduledAt ?? defaultScheduledAt,
+  };
+}
 
 /** grade(중등 1) + semester(1학기) → 학습학기 코드(중1-1) 파생 */
 function deriveGradeTerm(grade: string, semester: string): string {
@@ -314,9 +361,10 @@ export function getStoredStudents(): Student[] {
   }
   const stored = localStorage.getItem(STUDENT_STORAGE_KEY);
   if (!stored) {
-    localStorage.setItem(STUDENT_STORAGE_KEY, JSON.stringify(INITIAL_STUDENTS));
+    const initialStudents = INITIAL_STUDENTS.map(applyEventBillingPrototypeDefaults);
+    localStorage.setItem(STUDENT_STORAGE_KEY, JSON.stringify(initialStudents));
     localStorage.setItem(STUDENT_STORAGE_VERSION_KEY, STUDENT_STORAGE_VERSION);
-    return INITIAL_STUDENTS;
+    return initialStudents;
   }
   try {
     let parsed = JSON.parse(stored) as Student[];
@@ -328,17 +376,9 @@ export function getStoredStudents(): Student[] {
       return INITIAL_STUDENTS;
     }
     if (localStorage.getItem(STUDENT_STORAGE_VERSION_KEY) !== STUDENT_STORAGE_VERSION) {
-      parsed = parsed.map((student) => {
-        const defaults = INITIAL_STUDENTS.find((item) => item.id === student.id);
-        return {
-          ...student,
-          institutionBillingType: defaults?.institutionBillingType || "general",
-          hasCurrentMonthOverageCharge: defaults?.hasCurrentMonthOverageCharge || false,
-          serviceStartedAt: defaults?.serviceStartedAt || student.createdAt,
-          institutionEventEndDate: defaults?.institutionEventEndDate,
-          serviceStopScheduledAt: null,
-        };
-      });
+      const storedIds = new Set(parsed.map(student => student.id));
+      const missingPrototypeStudents = INITIAL_STUDENTS.filter(student => !storedIds.has(student.id));
+      parsed = [...parsed, ...missingPrototypeStudents].map(applyEventBillingPrototypeDefaults);
       localStorage.setItem(STUDENT_STORAGE_VERSION_KEY, STUDENT_STORAGE_VERSION);
     }
     // mathGradeTerm / scienceGradeTerm 누락 시 기본학기에서 파생 자동 적용

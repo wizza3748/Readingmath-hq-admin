@@ -26,6 +26,7 @@ import {
   saveStoredStudents,
   getAssignedTeacherMap,
 } from "@/lib/student-mock";
+import { getMockInstitution } from "@/lib/institution-mock";
 import { ALL_CLASSES, getStoredTeachers, Teacher, getStoredClasses, saveStoredClasses, ClassInfo } from "@/lib/teacher-mock";
 import {
   Dialog,
@@ -34,6 +35,8 @@ import {
   DialogTitle,
   DialogFooter,
 } from "@/components/ui/dialog";
+
+type AdditionalFeeFilter = "all" | "overage" | "available" | "scheduled";
 
 export default function StudentListPage() {
   const { toast } = useToast();
@@ -44,6 +47,8 @@ export default function StudentListPage() {
   const [students, setStudents] = React.useState<Student[]>([]);
   const [teachers, setTeachers] = React.useState<Teacher[]>([]);
   const [classesList, setClassesList] = React.useState<ClassInfo[]>([]);
+  const [institutionBillingType, setInstitutionBillingType] = React.useState<"일반 과금" | "이벤트 과금">("일반 과금");
+  const [includedStudents, setIncludedStudents] = React.useState(0);
 
   // ── 필터 상태 (선생님목록 스타일에 맞춰 한 줄 통합형) ─────────────────
   const [filterStatus, setFilterStatus] = React.useState<StudentServiceStatus | "all">("all");
@@ -51,7 +56,7 @@ export default function StudentListPage() {
   const [filterGrade, setFilterGrade] = React.useState<string>("all");
   const [filterClass, setFilterClass] = React.useState<string>("all");
   const [filterRecommend, setFilterRecommend] = React.useState<string>("all");
-  const [filterStopReservation, setFilterStopReservation] = React.useState<"all" | "available" | "scheduled">("all");
+  const [filterAdditionalFee, setFilterAdditionalFee] = React.useState<AdditionalFeeFilter>("all");
   const [searchText, setSearchText] = React.useState("");
 
   const [appliedStatus, setAppliedStatus] = React.useState<StudentServiceStatus | "all">("all");
@@ -59,7 +64,7 @@ export default function StudentListPage() {
   const [appliedGrade, setAppliedGrade] = React.useState<string>("all");
   const [appliedClass, setAppliedClass] = React.useState<string>("all");
   const [appliedRecommend, setAppliedRecommend] = React.useState<string>("all");
-  const [appliedStopReservation, setAppliedStopReservation] = React.useState<"all" | "available" | "scheduled">("all");
+  const [appliedAdditionalFee, setAppliedAdditionalFee] = React.useState<AdditionalFeeFilter>("all");
   const [searchApplied, setSearchApplied] = React.useState("");
 
   // ── 정렬 상태 ──────────────────────────────────────────────
@@ -136,9 +141,25 @@ export default function StudentListPage() {
       }
     }
 
-    setStudents(storedStudents);
     setTeachers(storedTeachers);
     setClassesList(getStoredClasses());
+
+    const institution = getMockInstitution("1238");
+    if (institution) {
+      const institutionBillingTypeValue: "event" | "general" = institution.billingType === "이벤트 과금" ? "event" : "general";
+      const synchronizedStudents = storedStudents.map(student => ({
+        ...student,
+        institutionBillingType: institutionBillingTypeValue,
+      }));
+      setStudents(synchronizedStudents);
+      if (storedStudents.some(student => student.institutionBillingType !== institutionBillingTypeValue)) {
+        saveStoredStudents(synchronizedStudents);
+      }
+      setInstitutionBillingType(institution.billingType);
+      setIncludedStudents(institution.includedStudents);
+    } else {
+      setStudents(storedStudents);
+    }
   }, []);
 
   // ── 실시간 담당 선생님 매핑용 딕셔너리 연산 ─────────────────
@@ -162,7 +183,11 @@ export default function StudentListPage() {
       if (appliedGrade !== "all" && s.grade !== appliedGrade) return false;
       if (appliedClass !== "all" && s.classId !== appliedClass) return false;
       if (appliedRecommend !== "all" && s.recommendCode !== appliedRecommend) return false;
-      if (appliedStopReservation !== "all" && getStudentStopReservationStatus(s) !== appliedStopReservation) return false;
+      if (appliedAdditionalFee === "overage" && !s.hasCurrentMonthOverageCharge) return false;
+      if (
+        (appliedAdditionalFee === "available" || appliedAdditionalFee === "scheduled")
+        && getStudentStopReservationStatus(s) !== appliedAdditionalFee
+      ) return false;
       if (searchApplied.length >= 1) {
         const q = searchApplied.toLowerCase();
         if (
@@ -172,7 +197,12 @@ export default function StudentListPage() {
       }
       return true;
     });
-  }, [students, appliedStatus, appliedType, appliedGrade, appliedClass, appliedRecommend, appliedStopReservation, searchApplied]);
+  }, [students, appliedStatus, appliedType, appliedGrade, appliedClass, appliedRecommend, appliedAdditionalFee, searchApplied]);
+
+  const usageSummary = React.useMemo(() => ({
+    active: students.filter(student => student.serviceStatus === "in_use").length,
+    overage: students.filter(student => student.hasCurrentMonthOverageCharge).length,
+  }), [students]);
 
   // ── 정렬 연산 ──────────────────────────────────────────────
   const sorted = React.useMemo(() => {
@@ -249,7 +279,7 @@ export default function StudentListPage() {
     setAppliedGrade(filterGrade);
     setAppliedClass(filterClass);
     setAppliedRecommend(filterRecommend);
-    setAppliedStopReservation(filterStopReservation);
+    setAppliedAdditionalFee(filterAdditionalFee);
     setSearchApplied(searchText.trim());
     setPage(1);
   };
@@ -260,7 +290,7 @@ export default function StudentListPage() {
     setFilterGrade("all");
     setFilterClass("all");
     setFilterRecommend("all");
-    setFilterStopReservation("all");
+    setFilterAdditionalFee("all");
     setSearchText("");
 
     setAppliedStatus("all");
@@ -268,8 +298,14 @@ export default function StudentListPage() {
     setAppliedGrade("all");
     setAppliedClass("all");
     setAppliedRecommend("all");
-    setAppliedStopReservation("all");
+    setAppliedAdditionalFee("all");
     setSearchApplied("");
+    setPage(1);
+  };
+
+  const handleOverageSummaryClick = () => {
+    setFilterAdditionalFee("overage");
+    setAppliedAdditionalFee("overage");
     setPage(1);
   };
 
@@ -586,18 +622,19 @@ export default function StudentListPage() {
               </Select>
             </div>
 
-            {/* 정지 예약 상태 필터 */}
+            {/* 추가 이용료 상태 필터 */}
             <div>
-              <p className="sr-only">정지 예약 상태</p>
+              <p className="sr-only">추가 이용료 상태</p>
               <Select
-                value={filterStopReservation === "all" ? undefined : filterStopReservation}
-                onValueChange={value => setFilterStopReservation(value as "all" | "available" | "scheduled")}
+                value={filterAdditionalFee === "all" ? undefined : filterAdditionalFee}
+                onValueChange={value => setFilterAdditionalFee(value as AdditionalFeeFilter)}
               >
                 <SelectTrigger className="h-9 w-44 text-sm bg-white border-slate-200 text-slate-500">
-                  <SelectValue placeholder="정지 예약 상태" />
+                  <SelectValue placeholder="추가 이용료 상태" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">전체</SelectItem>
+                  <SelectItem value="overage">추가 이용료 발생</SelectItem>
                   <SelectItem value="available">정지 예약 가능</SelectItem>
                   <SelectItem value="scheduled">정지 예정</SelectItem>
                 </SelectContent>
@@ -623,6 +660,22 @@ export default function StudentListPage() {
             </div>
           </div>
         </div>
+
+        {institutionBillingType === "이벤트 과금" && (
+          <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-lg border border-blue-100 bg-blue-50/60 px-4 py-3 text-sm text-slate-600">
+            <span>기본 포함 인원 <strong className="font-bold text-slate-900">{includedStudents}명</strong></span>
+            <span className="text-slate-300">·</span>
+            <span>이용 중 학생 <strong className="font-bold text-slate-900">{usageSummary.active}명</strong></span>
+            <span className="text-slate-300">·</span>
+            <button
+              type="button"
+              onClick={handleOverageSummaryClick}
+              className="font-semibold text-orange-500 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
+            >
+              추가 이용료 발생 {usageSummary.overage}명
+            </button>
+          </div>
+        )}
 
         {/* ── 보조 및 기능 액션 버튼 영역 ───────────────────────── */}
         <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
@@ -774,7 +827,7 @@ export default function StudentListPage() {
                     서비스상태
                   </th>
                   <th className="text-left px-4 py-3 text-[11px] font-bold text-slate-500 whitespace-nowrap w-40">
-                    정지 예약 상태
+                    추가 이용료
                   </th>
                   <th
                     onClick={() => handleSort("serviceEndDate")}
@@ -929,14 +982,25 @@ export default function StudentListPage() {
                           </span>
                         </td>
 
-                        {/* 정지 예약 상태 */}
+                        {/* 추가 이용료 및 서비스 정지 예약 상태 */}
                         <td className="px-4 py-3 text-xs whitespace-nowrap">
-                          {getStudentStopReservationStatus(student) === "available" ? (
-                            <span className="font-semibold text-blue-500">정지 예약 가능</span>
-                          ) : getStudentStopReservationStatus(student) === "scheduled" ? (
-                            <span className="font-semibold text-orange-500">{getStudentStopReservationLabel(student)}</span>
-                          ) : (
+                          {institutionBillingType !== "이벤트 과금" || !student.hasCurrentMonthOverageCharge ? (
                             <span className="text-slate-400">-</span>
+                          ) : (
+                            <div className="flex flex-col items-start gap-1">
+                              <span
+                                className="font-semibold text-orange-500"
+                                title="기본 포함 인원을 초과해 이번 달 추가 이용료가 발생한 학생입니다."
+                              >
+                                월 추가 이용료 발생
+                              </span>
+                              {getStudentStopReservationStatus(student) === "available" && (
+                                <span className="font-semibold text-blue-500">정지 예약 가능</span>
+                              )}
+                              {getStudentStopReservationStatus(student) === "scheduled" && (
+                                <span className="font-semibold text-orange-500">{getStudentStopReservationLabel(student)}</span>
+                              )}
+                            </div>
                           )}
                         </td>
 
