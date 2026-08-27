@@ -117,7 +117,7 @@ const EVENT_CALENDAR_CLASS_NAMES = {
   hidden: "invisible",
 };
 
-function ContractDatePicker({ label, value, onChange, disabled, minDate }: { label: string; value: string; onChange: (value: string) => void; disabled?: boolean; minDate?: Date }) {
+function ContractDatePicker({ label, value, onChange, disabled, minDate, dateDisabled }: { label: string; value: string; onChange: (value: string) => void; disabled?: boolean; minDate?: Date; dateDisabled?: (date: Date) => boolean }) {
   const [open, setOpen] = React.useState(false);
   return (
     <Popover modal open={open} onOpenChange={setOpen}>
@@ -140,7 +140,7 @@ function ContractDatePicker({ label, value, onChange, disabled, minDate }: { lab
             setOpen(false);
             window.setTimeout(() => setOpen(false), 0);
           }}
-          disabled={minDate ? (date) => date < minDate : undefined}
+          disabled={(date) => Boolean((minDate && date < minDate) || dateDisabled?.(date))}
           initialFocus
         />
       </PopoverContent>
@@ -148,12 +148,13 @@ function ContractDatePicker({ label, value, onChange, disabled, minDate }: { lab
   );
 }
 
-function IntegerInput({ label, value, onChange, suffix }: { label: string; value: string; onChange: (value: string) => void; suffix: string }) {
+function IntegerInput({ label, value, onChange, suffix, disabled }: { label: string; value: string; onChange: (value: string) => void; suffix: string; disabled?: boolean }) {
   return (
     <div className="relative">
       <Input
         aria-label={label}
         value={value}
+        disabled={disabled}
         inputMode="numeric"
         onChange={(event) => {
           const digits = event.target.value.replace(/\D/g, "");
@@ -234,6 +235,7 @@ export default function InstitutionInfoPage() {
   const [serviceReservation, setServiceReservation] = React.useState<InstitutionServiceReservation | null>(null);
   const [cancelReservationOpen, setCancelReservationOpen] = React.useState(false);
   const [billingType, setBillingType] = React.useState<InstitutionBillingType>(institution?.billingType || "일반 과금");
+  const [appliedBillingType, setAppliedBillingType] = React.useState<InstitutionBillingType>(institution?.billingType || "일반 과금");
   const [eventBillingMethod, setEventBillingMethod] = React.useState<InstitutionEventBillingMethod>(institution?.eventBillingMethod || "1년 선납");
   const [eventAnnualPrepaidFee, setEventAnnualPrepaidFee] = React.useState(institution?.eventAnnualPrepaidFee.toLocaleString("ko-KR") || "");
   const [eventMonthlyFee, setEventMonthlyFee] = React.useState(institution?.eventMonthlyFee.toLocaleString("ko-KR") || "");
@@ -284,6 +286,7 @@ export default function InstitutionInfoPage() {
     }
 
     setBillingType(settings.billingType);
+    setAppliedBillingType(settings.billingType);
     setEventBillingMethod(settings.eventBillingMethod);
     setEventAnnualPrepaidFee(settings.eventAnnualPrepaidFee);
     setEventMonthlyFee(settings.eventMonthlyFee);
@@ -346,6 +349,10 @@ export default function InstitutionInfoPage() {
 
   const saveBillingSettings = () => {
     if (isSaving) return;
+    if (appliedBillingType === "이벤트 과금") {
+      toast({ title: "이벤트 계약 설정값은 서비스 변경 예약에서 변경할 수 있습니다." });
+      return;
+    }
     const errors: BillingValidationErrors = {};
     if (!billingType) errors.billingType = "과금 유형을 선택해 주세요.";
     if (billingType === "이벤트 과금") {
@@ -368,6 +375,7 @@ export default function InstitutionInfoPage() {
       ? { version: 3, billingType, eventBillingMethod, eventAnnualPrepaidFee: eventBillingMethod === "1년 선납" ? eventAnnualPrepaidFee : "", eventMonthlyFee: eventBillingMethod === "월별 과금" ? eventMonthlyFee : "", eventStartDate, eventEndDate, includedStudents, excessMonthlyFee, eventEnded: false, studentsPaused: false }
       : { version: 3, billingType, eventBillingMethod: "1년 선납", eventAnnualPrepaidFee: "", eventMonthlyFee: "", eventStartDate: "", eventEndDate: "", includedStudents: "", excessMonthlyFee: "", eventEnded: false, studentsPaused: false };
     saveInstitutionBillingSettings(institution.id, settings);
+    setAppliedBillingType(settings.billingType);
     toast({ title: "저장되었습니다." });
     setIsSaving(false);
   };
@@ -379,7 +387,9 @@ export default function InstitutionInfoPage() {
   const openServiceReservation = () => {
     const settings = getInstitutionBillingSettings(institution);
     setReservationStatus(displayedServiceStatus === "미납정지" ? "무료사용" : displayedServiceStatus);
-    setReservationDate("");
+    setReservationDate(settings.billingType === "이벤트 과금" && settings.eventBillingMethod === "월별 과금"
+      ? format(startOfMonth(addMonths(new Date(), 1)), "yyyy-MM-dd")
+      : "");
     setReservationServiceType(displayedServiceType);
     setReservationBillingType(settings.billingType);
     setReservationEventMethod(settings.eventBillingMethod);
@@ -453,7 +463,14 @@ export default function InstitutionInfoPage() {
     setReservationBillingType(nextBillingType);
     clearReservationError("billingType");
     if (billingType === "일반 과금" && nextBillingType === "이벤트 과금" && reservationDate) {
-      setReservationEventStartDate(reservationDate);
+      if (parseISO(reservationDate).getDate() !== 1) {
+        setReservationDate("");
+        setReservationEventStartDate("");
+        setReservationEventEndDate("");
+      } else {
+        setReservationEventStartDate(reservationDate);
+        setReservationEventEndDate(format(subDays(addYears(parseISO(reservationDate), 1), 1), "yyyy-MM-dd"));
+      }
     }
     if (billingType === "이벤트 과금" && nextBillingType === "일반 과금" && eventEndDate) {
       setReservationDate(format(addDays(parseISO(eventEndDate), 1), "yyyy-MM-dd"));
@@ -465,6 +482,7 @@ export default function InstitutionInfoPage() {
     clearReservationError("date");
     if (billingType === "일반 과금" && reservationBillingType === "이벤트 과금") {
       setReservationEventStartDate(value);
+      setReservationEventEndDate(format(subDays(addYears(parseISO(value), 1), 1), "yyyy-MM-dd"));
     }
   };
 
@@ -495,6 +513,9 @@ export default function InstitutionInfoPage() {
     } else {
       setReservationMonthlyFee(reservationServiceType === "리딩수학+과학 통합" ? "100,000" : "70,000");
       clearReservationError("monthlyFee");
+    }
+    if (reservationEventStartDate) {
+      setReservationEventEndDate(format(subDays(addYears(parseISO(reservationEventStartDate), 1), 1), "yyyy-MM-dd"));
     }
   };
 
@@ -602,6 +623,15 @@ export default function InstitutionInfoPage() {
       if (reservationDate !== requiredDate) errors.date = "월별 과금 기관의 서비스 타입 변경일은 다음 달 1일로 선택해 주세요.";
     }
 
+    if (billingType === "일반 과금" && reservationBillingType === "이벤트 과금" && reservationDate && parseISO(reservationDate).getDate() !== 1) {
+      errors.date = "이벤트 시작일은 매월 1일로 선택해 주세요.";
+    }
+
+    if (billingType === "이벤트 과금" && eventBillingMethod === "월별 과금") {
+      const requiredDate = format(startOfMonth(addMonths(new Date(), 1)), "yyyy-MM-dd");
+      if (reservationDate !== requiredDate) errors.date = "월별 과금 계약 변경일은 다음 달 1일로 선택해 주세요.";
+    }
+
     if (!hasReservationChanges) errors.unchanged = "변경할 서비스 정보를 선택하거나 입력해 주세요.";
 
     setReservationErrors(errors);
@@ -647,10 +677,12 @@ export default function InstitutionInfoPage() {
   };
 
   const activeAnnualPrepaid = billingType === "이벤트 과금" && eventBillingMethod === "1년 선납" && !getInstitutionBillingSettings(institution).eventEnded;
+  const eventContractReadOnly = appliedBillingType === "이벤트 과금";
   const annualPrepaidEarliestDate = activeAnnualPrepaid && eventEndDate ? addDays(parseISO(eventEndDate), 1) : null;
   const reservationMinDate = annualPrepaidEarliestDate || addDays(startOfToday(), 1);
   const reservationDateLocked = !activeAnnualPrepaid && (
-    (billingType === "이벤트 과금" && reservationBillingType === "일반 과금")
+    (billingType === "이벤트 과금" && eventBillingMethod === "월별 과금")
+    || (billingType === "이벤트 과금" && reservationBillingType === "일반 과금")
     || (billingType === "이벤트 과금" && eventBillingMethod === "월별 과금" && reservationServiceType !== displayedServiceType)
   );
 
@@ -722,10 +754,10 @@ export default function InstitutionInfoPage() {
           <div className="mt-6 space-y-5">
             <div className="flex flex-wrap items-center gap-5">
               <span className="w-28 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>서비스 상태</span>
-              <RadioOption name="serviceStatus" label="무료사용" checked={displayedServiceStatus === "무료사용"} disabled={serviceReservation !== null} onChange={() => setDisplayedServiceStatus("무료사용")} />
-              <RadioOption name="serviceStatus" label="정상" checked={displayedServiceStatus === "정상"} disabled={serviceReservation !== null} onChange={() => setDisplayedServiceStatus("정상")} />
-              <RadioOption name="serviceStatus" label="미납정지" checked={displayedServiceStatus === "미납정지"} disabled={serviceReservation !== null} onChange={() => setDisplayedServiceStatus("미납정지")} />
-              <RadioOption name="serviceStatus" label="일시정지" checked={displayedServiceStatus === "일시정지"} disabled={serviceReservation !== null} onChange={() => setDisplayedServiceStatus("일시정지")} />
+              <RadioOption name="serviceStatus" label="무료사용" checked={displayedServiceStatus === "무료사용"} disabled={serviceReservation !== null || eventContractReadOnly} onChange={() => setDisplayedServiceStatus("무료사용")} />
+              <RadioOption name="serviceStatus" label="정상" checked={displayedServiceStatus === "정상"} disabled={serviceReservation !== null || eventContractReadOnly} onChange={() => setDisplayedServiceStatus("정상")} />
+              <RadioOption name="serviceStatus" label="미납정지" checked={displayedServiceStatus === "미납정지"} disabled onChange={() => setDisplayedServiceStatus("미납정지")} />
+              <RadioOption name="serviceStatus" label="일시정지" checked={displayedServiceStatus === "일시정지"} disabled={serviceReservation !== null || eventContractReadOnly} onChange={() => setDisplayedServiceStatus("일시정지")} />
             </div>
             {serviceReservation && (
               <div className="ml-[132px] space-y-3">
@@ -746,9 +778,9 @@ export default function InstitutionInfoPage() {
             )}
             <div className="flex flex-wrap items-center gap-5">
               <span className="w-28 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>서비스 타입</span>
-              <RadioOption name="serviceType" label="리딩수학" checked={displayedServiceType === "리딩수학"} onChange={() => changeServiceType("리딩수학")} />
-              <RadioOption name="serviceType" label="리딩과학" checked={displayedServiceType === "리딩과학"} onChange={() => changeServiceType("리딩과학")} />
-              <RadioOption name="serviceType" label="리딩수학+과학 통합" checked={displayedServiceType === "리딩수학+과학 통합"} onChange={() => changeServiceType("리딩수학+과학 통합")} />
+              <RadioOption name="serviceType" label="리딩수학" checked={displayedServiceType === "리딩수학"} disabled={serviceReservation !== null || eventContractReadOnly} onChange={() => changeServiceType("리딩수학")} />
+              <RadioOption name="serviceType" label="리딩과학" checked={displayedServiceType === "리딩과학"} disabled={serviceReservation !== null || eventContractReadOnly} onChange={() => changeServiceType("리딩과학")} />
+              <RadioOption name="serviceType" label="리딩수학+과학 통합" checked={displayedServiceType === "리딩수학+과학 통합"} disabled={serviceReservation !== null || eventContractReadOnly} onChange={() => changeServiceType("리딩수학+과학 통합")} />
             </div>
             <div className="flex flex-wrap items-center gap-5">
               <span className="w-28 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>가맹 타입</span>
@@ -759,8 +791,8 @@ export default function InstitutionInfoPage() {
 
             <div className="flex flex-wrap items-center gap-5">
               <span className="w-28 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>과금 유형</span>
-              <RadioOption name="billingType" label="일반 과금" checked={billingType === "일반 과금"} onChange={() => changeBillingType("일반 과금")} />
-              <RadioOption name="billingType" label="이벤트 과금" checked={billingType === "이벤트 과금"} onChange={() => changeBillingType("이벤트 과금")} />
+              <RadioOption name="billingType" label="일반 과금" checked={billingType === "일반 과금"} disabled={serviceReservation !== null || eventContractReadOnly} onChange={() => changeBillingType("일반 과금")} />
+              <RadioOption name="billingType" label="이벤트 과금" checked={billingType === "이벤트 과금"} disabled={serviceReservation !== null || eventContractReadOnly} onChange={() => changeBillingType("이벤트 과금")} />
               {billingErrors.billingType && <p className="w-full pl-[132px] text-xs text-rose-500">{billingErrors.billingType}</p>}
             </div>
 
@@ -794,12 +826,13 @@ export default function InstitutionInfoPage() {
 
               {billingType === "이벤트 과금" && (
                 <>
+                  {eventContractReadOnly && <p className="col-span-full ml-[132px] text-xs text-slate-400">이벤트 계약 설정값은 조회 전용입니다. 변경은 서비스 변경 예약을 이용해 주세요.</p>}
                   <div className="flex items-start gap-5 pt-2">
                     <span className="w-28 shrink-0 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>이벤트 과금 방식</span>
                     <div>
                       <div className="flex items-center gap-5">
-                        <RadioOption name="eventBillingMethod" label="1년 선납" checked={eventBillingMethod === "1년 선납"} onChange={() => changeEventBillingMethod("1년 선납")} />
-                        <RadioOption name="eventBillingMethod" label="월별 과금" checked={eventBillingMethod === "월별 과금"} onChange={() => changeEventBillingMethod("월별 과금")} />
+                        <RadioOption name="eventBillingMethod" label="1년 선납" checked={eventBillingMethod === "1년 선납"} disabled={eventContractReadOnly} onChange={() => changeEventBillingMethod("1년 선납")} />
+                        <RadioOption name="eventBillingMethod" label="월별 과금" checked={eventBillingMethod === "월별 과금"} disabled={eventContractReadOnly} onChange={() => changeEventBillingMethod("월별 과금")} />
                       </div>
                       {billingErrors.method && <p className="mt-1 text-xs text-rose-500">{billingErrors.method}</p>}
                     </div>
@@ -808,7 +841,7 @@ export default function InstitutionInfoPage() {
                     <label className="grid grid-cols-[110px_minmax(0,1fr)] items-start gap-3">
                       <span className="pt-2 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>이벤트 1년 선납 이용료</span>
                       <div>
-                        <WonInput label="이벤트 1년 선납 이용료" value={eventAnnualPrepaidFee} onChange={(value) => { setEventAnnualPrepaidFee(value); clearBillingError("annualPrepaidFee"); }} />
+                        <WonInput label="이벤트 1년 선납 이용료" value={eventAnnualPrepaidFee} disabled={eventContractReadOnly} onChange={(value) => { setEventAnnualPrepaidFee(value); clearBillingError("annualPrepaidFee"); }} />
                         {billingErrors.annualPrepaidFee && <p className="mt-1 text-xs text-rose-500">{billingErrors.annualPrepaidFee}</p>}
                       </div>
                     </label>
@@ -816,7 +849,7 @@ export default function InstitutionInfoPage() {
                     <label className="grid grid-cols-[110px_minmax(0,1fr)] items-start gap-3">
                       <span className="pt-2 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>이벤트 월 이용료</span>
                       <div>
-                        <WonInput label="이벤트 월 이용료" value={eventMonthlyFee} onChange={(value) => { setEventMonthlyFee(value); clearBillingError("monthlyFee"); }} />
+                        <WonInput label="이벤트 월 이용료" value={eventMonthlyFee} disabled={eventContractReadOnly} onChange={(value) => { setEventMonthlyFee(value); clearBillingError("monthlyFee"); }} />
                         {billingErrors.monthlyFee && <p className="mt-1 text-xs text-rose-500">{billingErrors.monthlyFee}</p>}
                       </div>
                     </label>
@@ -824,7 +857,7 @@ export default function InstitutionInfoPage() {
                   <label className="grid grid-cols-[110px_minmax(0,1fr)] items-start gap-3">
                     <span className="pt-2 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>이벤트 시작일</span>
                     <div>
-                      <ContractDatePicker label="이벤트 시작일" value={eventStartDate} onChange={(value) => { setEventStartDate(value); clearBillingError("startDate"); clearBillingError("endDate"); }} />
+                      <ContractDatePicker label="이벤트 시작일" value={eventStartDate} disabled={eventContractReadOnly} onChange={(value) => { setEventStartDate(value); clearBillingError("startDate"); clearBillingError("endDate"); }} />
                       {billingErrors.startDate && <p className="mt-1 text-xs text-rose-500">{billingErrors.startDate}</p>}
                     </div>
                   </label>
@@ -834,7 +867,7 @@ export default function InstitutionInfoPage() {
                       <ContractDatePicker
                         label="이벤트 종료일"
                         value={eventEndDate}
-                        disabled={eventBillingMethod === "1년 선납"}
+                        disabled={eventContractReadOnly || eventBillingMethod === "1년 선납"}
                         minDate={eventStartDate ? addDays(parseISO(eventStartDate), 1) : undefined}
                         onChange={(value) => { setEventEndDate(value); clearBillingError("endDate"); }}
                       />
@@ -844,14 +877,14 @@ export default function InstitutionInfoPage() {
                   <label className="grid grid-cols-[110px_minmax(0,1fr)] items-start gap-3">
                     <span className="pt-2 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>기본 포함 인원</span>
                     <div>
-                      <IntegerInput label="기본 포함 인원" value={includedStudents} suffix="명" onChange={(value) => { setIncludedStudents(value); clearBillingError("includedStudents"); }} />
+                      <IntegerInput label="기본 포함 인원" value={includedStudents} suffix="명" disabled={eventContractReadOnly} onChange={(value) => { setIncludedStudents(value); clearBillingError("includedStudents"); }} />
                       {billingErrors.includedStudents && <p className="mt-1 text-xs text-rose-500">{billingErrors.includedStudents}</p>}
                     </div>
                   </label>
                   <label className="grid grid-cols-[110px_minmax(0,1fr)] items-start gap-3">
                     <span className="pt-2 text-right text-xs text-slate-500"><span className="mr-1 text-rose-400">*</span>초과 인당 월 이용료</span>
                     <div>
-                      <WonInput label="초과 인당 월 이용료" value={excessMonthlyFee} onChange={(value) => { setExcessMonthlyFee(value); clearBillingError("excessMonthlyFee"); }} />
+                      <WonInput label="초과 인당 월 이용료" value={excessMonthlyFee} disabled={eventContractReadOnly} onChange={(value) => { setExcessMonthlyFee(value); clearBillingError("excessMonthlyFee"); }} />
                       {billingErrors.excessMonthlyFee && <p className="mt-1 text-xs text-rose-500">{billingErrors.excessMonthlyFee}</p>}
                     </div>
                   </label>
@@ -897,7 +930,14 @@ export default function InstitutionInfoPage() {
             <label className="grid grid-cols-[145px_minmax(0,1fr)] items-start gap-3">
               <span className="pt-2 text-right text-sm text-slate-600"><span className="mr-1 text-rose-400">*</span>예약일자</span>
               <div>
-                <ContractDatePicker label="예약일자" value={reservationDate} onChange={changeReservationDate} disabled={reservationDateLocked} minDate={reservationMinDate} />
+                <ContractDatePicker
+                  label="예약일자"
+                  value={reservationDate}
+                  onChange={changeReservationDate}
+                  disabled={reservationDateLocked}
+                  minDate={reservationMinDate}
+                  dateDisabled={billingType === "일반 과금" && reservationBillingType === "이벤트 과금" ? (date) => date.getDate() !== 1 : undefined}
+                />
                 {reservationErrors.date && <p className="mt-1 text-xs text-rose-500">{reservationErrors.date}</p>}
                 {activeAnnualPrepaid && <p className="mt-2 text-xs text-slate-400">1년 선납 이용 기간 중 서비스 정보를 변경할 수 없습니다. 예약일자는 이벤트 종료일 다음 날부터 선택해 주세요.</p>}
               </div>

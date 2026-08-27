@@ -161,11 +161,15 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
   }, []);
 
-  const isStopReservationEligible = Boolean(
-    currentStudent && getStudentStopReservationStatus(
-      { ...currentStudent, serviceStatus },
-      todayText,
-    ) === "available"
+  const studentStopAction = currentStudent
+    ? getStudentStopReservationStatus({ ...currentStudent, serviceStatus }, todayText)
+    : "none";
+  const isImmediateStopEligible = studentStopAction === "immediate";
+  const isStopReservationEligible = studentStopAction === "available";
+  const canStopImmediately = Boolean(
+    currentStudent
+    && serviceStatus === "in_use"
+    && (!currentStudent.hasCurrentMonthOverageCharge || isImmediateStopEligible)
   );
 
   const updateStudentService = (nextStatus: StudentServiceStatus, scheduledAt: string | null, activity: string) => {
@@ -567,11 +571,11 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
                     <span className={`inline-flex h-9 items-center rounded-md px-3 text-xs font-bold ${serviceStatus === "in_use" ? "bg-emerald-50 text-emerald-500" : "bg-amber-50 text-amber-600"}`}>
                       {serviceStatus === "in_use" ? "사용중" : "서비스 정지"}
                     </span>
-                    {serviceStatus === "in_use" ? (
+                    {canStopImmediately ? (
                       <Button type="button" onClick={() => setSuspendModalOpen(true)} className="h-9 bg-red-400 px-4 text-xs font-bold text-white hover:bg-red-500">서비스 정지</Button>
-                    ) : (
+                    ) : serviceStatus !== "in_use" ? (
                         <Button type="button" onClick={() => setResumeModalOpen(true)} className="h-9 bg-blue-500 px-4 text-xs font-bold text-white hover:bg-blue-600">서비스 시작</Button>
-                    )}
+                    ) : null}
                     {serviceStatus === "in_use" && (
                       currentStudent.serviceStopScheduledAt ? (
                         <Button type="button" variant="outline" onClick={cancelServiceStopReservation} className="h-9 border-slate-300 px-4 text-xs font-bold text-slate-600 hover:bg-slate-50">정지 예약 취소</Button>
@@ -667,7 +671,7 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
             </div>
             <div className="flex justify-between">
               <span>환불 예정 포인트</span>
-              <span className="font-bold text-rose-500">966P</span>
+              <span className="font-bold text-rose-500">{isImmediateStopEligible ? "5,000P" : "966P"}</span>
             </div>
           </div>
           <DialogFooter className="flex items-center justify-end gap-2 pt-2">
@@ -684,7 +688,11 @@ export default function StudentDetailPage({ params }: StudentDetailPageProps) {
               onClick={() => {
                 updateStudentService("suspended", null, "서비스 정지");
                 setSuspendModalOpen(false);
-                toast({ title: "서비스가 정지 처리되었습니다." });
+                toast({
+                  title: isImmediateStopEligible
+                    ? "서비스가 정지되고 당월 초과 이용료가 무료포인트로 전액 환불되었습니다."
+                    : "서비스가 정지 처리되었습니다.",
+                });
               }}
               className="h-9 px-4 text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white"
             >

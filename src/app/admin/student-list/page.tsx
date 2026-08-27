@@ -978,6 +978,9 @@ export default function StudentListPage() {
                               >
                                 월 추가 이용료 발생
                               </span>
+                              {getStudentStopReservationStatus(student) === "immediate" && (
+                                <span className="font-semibold text-red-500">즉시 정지 가능</span>
+                              )}
                               {getStudentStopReservationStatus(student) === "available" && (
                                 <span className="font-semibold text-blue-500">정지 예약 가능</span>
                               )}

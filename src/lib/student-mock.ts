@@ -6,7 +6,7 @@ import { ClassInfo, ALL_CLASSES, getStoredTeachers, Teacher } from "./teacher-mo
 
 export type StudentServiceStatus = "before_use" | "in_use" | "suspended"; // 사용전 | 사용중 | 서비스 정지
 export type StudentServiceType = "math" | "science" | "combo"; // 리딩수학 | 리딩과학 | 리딩수학+과학 통합
-export type StudentStopReservationStatus = "available" | "scheduled" | "none";
+export type StudentStopReservationStatus = "immediate" | "available" | "scheduled" | "none";
 
 export interface Student {
   id: string;
@@ -60,6 +60,17 @@ export function getStudentStopReservationStatus(
   })(),
 ): StudentStopReservationStatus {
   if (
+    student.institutionBillingType === "event"
+    && student.serviceStatus === "in_use"
+    && student.hasCurrentMonthOverageCharge
+    && student.serviceStartedAt === todayText
+    && !student.serviceStopScheduledAt
+    && (!student.institutionEventEndDate || student.institutionEventEndDate >= todayText)
+  ) {
+    return "immediate";
+  }
+
+  if (
     student.serviceStatus === "in_use"
     && student.serviceStopScheduledAt
     && student.serviceStopScheduledAt > todayText
@@ -84,6 +95,7 @@ export function getStudentStopReservationStatus(
 
 export function getStudentStopReservationLabel(student: Student, todayText?: string): string {
   const status = getStudentStopReservationStatus(student, todayText);
+  if (status === "immediate") return "즉시 정지 가능";
   if (status === "available") return "예약 가능";
   if (status === "scheduled" && student.serviceStopScheduledAt) {
     return `${student.serviceStopScheduledAt.replaceAll("-", ".")} 정지 예정`;
@@ -330,12 +342,14 @@ let runtimeStudentActivities: unknown[] = [];
 function applyEventBillingPrototypeDefaults(student: Student): Student {
   const hasCurrentMonthOverageCharge = student.seq <= 4;
   const defaultScheduledAt = student.id === "s3" ? "2026-09-01" : null;
+  const now = new Date();
+  const todayText = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
 
   return {
     ...student,
     institutionBillingType: "event",
     hasCurrentMonthOverageCharge,
-    serviceStartedAt: student.serviceStartedAt || (student.id === "s4" ? "2026-08-14" : "2026-07-01"),
+    serviceStartedAt: student.id === "s4" ? todayText : (student.serviceStartedAt || "2026-07-01"),
     institutionEventEndDate: student.institutionEventEndDate || "2027-08-31",
     serviceStopScheduledAt: student.serviceStopScheduledAt ?? defaultScheduledAt,
   };
@@ -355,13 +369,25 @@ function deriveGradeTerm(grade: string, semester: string): string {
 }
 
 export function getStoredStudents(): Student[] {
-  const initialStudents = INITIAL_STUDENTS.map((student) => ({
-    ...applyEventBillingPrototypeDefaults(student),
-    mathGradeTerm: student.mathGradeTerm || deriveGradeTerm(student.grade, student.semester),
-    scienceGradeTerm: student.scienceGradeTerm || deriveGradeTerm(student.grade, student.semester),
-  }));
+  const now = new Date();
+  const todayText = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+  const applyScheduledState = (student: Student): Student => {
+    if (student.serviceStopScheduledAt && student.serviceStopScheduledAt <= todayText) {
+      return { ...student, serviceStatus: "suspended", serviceStopScheduledAt: null };
+    }
+    if (student.institutionEventEndDate && student.institutionEventEndDate < todayText) {
+      return { ...student, serviceStatus: "suspended", serviceStopScheduledAt: null };
+    }
+    return student;
+  };
+  const initialStudents = INITIAL_STUDENTS.map((student) => applyScheduledState({
+      ...applyEventBillingPrototypeDefaults(student),
+      mathGradeTerm: student.mathGradeTerm || deriveGradeTerm(student.grade, student.semester),
+      scienceGradeTerm: student.scienceGradeTerm || deriveGradeTerm(student.grade, student.semester),
+    }));
   if (typeof window === "undefined") return initialStudents;
   if (!runtimeStudents) runtimeStudents = initialStudents;
+  runtimeStudents = runtimeStudents.map(applyScheduledState);
   return runtimeStudents;
 }
 
